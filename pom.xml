@@ -1,32 +1,65 @@
 <project
-xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.jboss.tools</groupId>
-		<artifactId>parent</artifactId>
-		<version>4.30.0.Final-SNAPSHOT</version>
-	</parent>
+	<groupId>org.jboss.tools</groupId>
 	<artifactId>hibernatetools</artifactId>
 	<name>jbosstools-hibernate</name>
 	<version>5.4.24-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<properties>
+		<tychoVersion>4.0.4</tychoVersion>
 		<tycho.scmUrl>scm:git:https://github.com/jbosstools/jbosstools-hibernate.git</tycho.scmUrl>
 		<testFrameworkProvider>junit5</testFrameworkProvider>
+		<eclipse-repo.url>https://download.eclipse.org/releases/2024-03</eclipse-repo.url>
+		<eclipse-updates.url>https://download.eclipse.org/eclipse/updates/4.31</eclipse-updates.url>
+		<orbit-repo.url>https://download.eclipse.org/tools/orbit/simrel/orbit-aggregation/2024-03</orbit-repo.url>
+		<wtp-repo.url>https://download.eclipse.org/webtools/repository/2024-03/</wtp-repo.url>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<modules>
 		<module>common</module>
 		<module>orm</module>
 		<module>search</module>
-		<module>test-framework</module>
-		<module>itests</module>
 		<module>features</module>
 		<module>site</module>
-		<module>docs</module>
-                <module>tests</module>
+		<!-- tests excluded for now: some test plugins depend on org.jboss.tools.tests -->
+		<!-- <module>tests</module> -->
 	</modules>
 	<repositories>
-		<!-- To resolve parent artifact -->
+		<repository>
+			<id>eclipse-releases</id>
+			<layout>p2</layout>
+			<url>${eclipse-repo.url}</url>
+		</repository>
+		<repository>
+			<id>eclipse-updates</id>
+			<layout>p2</layout>
+			<url>${eclipse-updates.url}</url>
+		</repository>
+		<repository>
+			<id>orbit</id>
+			<layout>p2</layout>
+			<url>${orbit-repo.url}</url>
+		</repository>
+		<repository>
+			<id>webtools</id>
+			<layout>p2</layout>
+			<url>${wtp-repo.url}</url>
+		</repository>
+		<!-- Maven Central for dependency-plugin artifact downloads -->
+		<repository>
+			<id>central</id>
+			<name>Maven Central</name>
+			<url>https://repo.maven.apache.org/maven2</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
 		<repository>
 			<id>jboss-public-repository-group</id>
 			<name>JBoss Public Repository Group</name>
@@ -38,70 +71,46 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 				<enabled>true</enabled>
 			</snapshots>
 		</repository>
-
-		<repository>
-			<id>jbosstools-base</id>
-			<layout>p2</layout>
-			<url>${jbosstools-base-site}</url>
-		</repository>
-
-		<repository>
-			<id>jbosstools-central</id>
-			<layout>p2</layout>
-			<url>${jbosstools-central-site}</url>
-		</repository>
-		
-		<repository>
-			<id>jbosstools-jst</id>
-			<layout>p2</layout>
-			<url>${jbosstools-jst-site}</url>
-		</repository>
-
 	</repositories>
-	
-	
+
 	<build>
-	  <plugins>
-	      <plugin>
-	        <groupId>org.eclipse.tycho</groupId>
-	        <artifactId>target-platform-configuration</artifactId>
-	        <version>4.0.4</version>
-	        <configuration>
-	          <target>
-	            <artifact>
-	              <groupId>org.jboss.tools.targetplatforms</groupId>
-	              <artifactId>jbosstools-multiple</artifactId>
-	              <version>4.29.0.Final-SNAPSHOT</version>
-	              <classifier>jbosstools-multiple</classifier>
-	            </artifact>
-	          </target>
-	          <environments>
-	            <environment>
-	              <os>macosx</os>
-	              <ws>cocoa</ws>
-	              <arch>aarch64</arch>
-	            </environment>
-	            <environment>
-	              <os>macosx</os>
-	              <ws>cocoa</ws>
-	              <arch>x86_64</arch>
-	            </environment>
-	            <environment>
-	              <os>win32</os>
-	              <ws>win32</ws>
-	              <arch>x86_64</arch>
-	            </environment>
-	            <environment>
-	              <os>linux</os>
-	              <ws>gtk</ws>
-	              <arch>x86_64</arch>
-	            </environment> 
-	          </environments>
-	        </configuration>
-	      </plugin>
-	  </plugins>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tychoVersion}</version>
+				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tychoVersion}</version>
+				<configuration>
+					<environments>
+						<environment>
+							<os>macosx</os>
+							<ws>cocoa</ws>
+							<arch>aarch64</arch>
+						</environment>
+						<environment>
+							<os>macosx</os>
+							<ws>cocoa</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
-	
-	
-	
+
 </project>

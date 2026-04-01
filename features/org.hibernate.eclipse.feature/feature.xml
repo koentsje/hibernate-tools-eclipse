@@ -5,8 +5,7 @@
       version="5.4.24.qualifier"
       provider-name="%providerName"
       plugin="org.hibernate.eclipse"
-      license-feature="org.jboss.tools.foundation.license.feature"
-      license-feature-version="0.0.0">
+>
 
    <description url="http://tools.hibernate.org">
       %description
@@ -183,20 +182,6 @@
 
    <plugin
          id="org.jboss.tools.hibernate.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.jboss.tools.hibernate.xml"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.jboss.tools.hibernate.xml.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"

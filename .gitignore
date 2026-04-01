@@ -2,5 +2,6 @@
 .classpath
 .java-version
 .settings/
+.idea/
 lib/
 target/
