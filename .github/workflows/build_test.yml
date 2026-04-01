@@ -6,6 +6,7 @@ on:
 
 env:
   LANG: "en_US.UTF-8"
+  ECLIPSE_REPO: "https://download.eclipse.org/releases/2024-03"
 
 jobs:
   test:
@@ -48,11 +49,22 @@ jobs:
       if: runner.os == 'Linux'
       uses: GabrielBB/xvfb-action@v1
       with:
-        run: mvn clean verify -U -fae -DskipITests=true -Dmaven.test.error.ignore=true -Dmaven.test.failure.ignore=true -ntp
+        run: >-
+          mvn clean verify -U -fae
+          -DskipITests=true
+          -Dmaven.test.error.ignore=true
+          -Dmaven.test.failure.ignore=true
+          -ntp
 
     - name: Build and run tests (macOS / Windows)
       if: runner.os != 'Linux'
-      run: mvn clean verify -U -fae -DskipITests=true -Dmaven.test.error.ignore=true -Dmaven.test.failure.ignore=true -ntp
+      shell: bash
+      run: >-
+        mvn clean verify -U -fae
+        "-DskipITests=true"
+        "-Dmaven.test.error.ignore=true"
+        "-Dmaven.test.failure.ignore=true"
+        -ntp
 
     - name: Verify p2 installation (Linux)
       if: runner.os == 'Linux'
@@ -62,7 +74,7 @@ jobs:
         ./eclipse/eclipse \
           -nosplash \
           -application org.eclipse.equinox.p2.director \
-          -repository "file:$(pwd)/site/target/repository/" \
+          -repository "file:$(pwd)/site/target/repository/,$ECLIPSE_REPO" \
           -installIU org.hibernate.eclipse.feature.feature.group,org.hibernate.search.eclipse.feature.feature.group \
           -destination ./eclipse
 
@@ -74,7 +86,7 @@ jobs:
         ./Eclipse.app/Contents/MacOS/eclipse \
           -nosplash \
           -application org.eclipse.equinox.p2.director \
-          -repository "file:$(pwd)/site/target/repository/" \
+          -repository "file:$(pwd)/site/target/repository/,$ECLIPSE_REPO" \
           -installIU org.hibernate.eclipse.feature.feature.group,org.hibernate.search.eclipse.feature.feature.group \
           -destination ./Eclipse.app/Contents/Eclipse
 
@@ -87,7 +99,7 @@ jobs:
         ./eclipse/eclipsec.exe \
           -nosplash \
           -application org.eclipse.equinox.p2.director \
-          -repository "file:$(cygpath -m $(pwd))/site/target/repository/" \
+          -repository "file:$(cygpath -m $(pwd))/site/target/repository/,$ECLIPSE_REPO" \
           -installIU org.hibernate.eclipse.feature.feature.group,org.hibernate.search.eclipse.feature.feature.group \
           -destination ./eclipse
 
