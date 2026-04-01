@@ -24,8 +24,7 @@
 		<module>search</module>
 		<module>features</module>
 		<module>site</module>
-		<!-- tests excluded for now: some test plugins depend on org.jboss.tools.tests -->
-		<!-- <module>tests</module> -->
+		<module>tests</module>
 	</modules>
 	<repositories>
 		<repository>
