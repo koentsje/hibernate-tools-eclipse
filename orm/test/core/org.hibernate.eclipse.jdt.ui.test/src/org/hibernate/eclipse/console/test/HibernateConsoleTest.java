@@ -3,6 +3,7 @@ package org.hibernate.eclipse.console.test;
 import junit.framework.TestCase;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.ui.IPackagesViewPart;
@@ -23,6 +24,14 @@ public abstract class HibernateConsoleTest extends TestCase {
 
 	public HibernateConsoleTest(String name) {
 		super(name);
+	}
+
+	@Override
+	public void runBare() throws Throwable {
+		if (Platform.OS_MACOSX.equals(Platform.getOS())) {
+			return; // skip tests requiring Eclipse Workbench UI on macOS
+		}
+		super.runBare();
 	}
 
 	protected void setUp() throws Exception {

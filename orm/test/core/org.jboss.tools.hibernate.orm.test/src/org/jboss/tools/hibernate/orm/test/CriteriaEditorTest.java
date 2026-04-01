@@ -19,6 +19,7 @@ import java.util.List;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
@@ -36,6 +37,7 @@ import org.jboss.tools.hibernate.orm.test.utils.project.SimpleTestProjectWithMap
 import org.jboss.tools.hibernate.orm.test.utils.project.TestProject;
 import org.junit.After;
 import org.junit.Assert;
+import org.junit.Assume;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -70,6 +72,8 @@ public class CriteriaEditorTest {
 
 	@Before
 	public void setUp() throws Exception {
+		Assume.assumeFalse("Tests requiring Eclipse Workbench UI are not supported on macOS",
+				Platform.OS_MACOSX.equals(Platform.getOS()));
 		cfgXmlFile = new File(temporaryFolder.getRoot(), "hibernate.cfg.xml");
 		FileWriter fw = new FileWriter(cfgXmlFile);
 		fw.write(HIBERNATE_CFG_XML);

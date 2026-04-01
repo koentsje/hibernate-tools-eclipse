@@ -1,11 +1,14 @@
 package org.jboss.tools.hibernate.orm.test;
 
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.preference.PreferenceDialog;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.PreferencesUtil;
 import org.hibernate.eclipse.hqleditor.preferences.HQLEditorPreferencePage;
 import org.junit.Assert;
+import org.junit.Assume;
+import org.junit.Before;
 import org.junit.Test;
 /**
  * TODO Get rid of copy paste code
@@ -14,6 +17,12 @@ import org.junit.Test;
  *
  */
 public class HQLEditorPreferencePageTest {
+
+	@Before
+	public void setUp() {
+		Assume.assumeFalse("Tests requiring Eclipse Workbench UI are not supported on macOS",
+				Platform.OS_MACOSX.equals(Platform.getOS()));
+	}
 
 	@Test
 	public void testHQLEditorPreferencePageShow() {

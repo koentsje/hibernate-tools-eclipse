@@ -3,6 +3,7 @@ package org.jboss.tools.hibernate.orm.test;
 import java.io.File;
 import java.io.FileWriter;
 
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PlatformUI;
@@ -28,6 +29,7 @@ import org.jboss.tools.hibernate.runtime.spi.ITypeFactory;
 import org.jboss.tools.hibernate.runtime.spi.IValue;
 import org.junit.After;
 import org.junit.Assert;
+import org.junit.Assume;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -146,6 +148,8 @@ public class ConsoleConfigurationTest {
 	
 	@Test
 	public void testHQLListParameters() throws SecurityException, NoSuchFieldException, IllegalArgumentException, IllegalAccessException {
+		Assume.assumeFalse("Tests requiring Eclipse Workbench UI are not supported on macOS",
+				Platform.OS_MACOSX.equals(Platform.getOS()));
 		//fix for https://issues.jboss.org/browse/JBIDE-9392
 		//the view calls jdbc connection
 		IWorkbenchPage activePage = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();

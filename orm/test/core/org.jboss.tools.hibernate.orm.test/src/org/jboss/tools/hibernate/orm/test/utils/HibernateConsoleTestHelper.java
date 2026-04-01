@@ -1,6 +1,7 @@
 package org.jboss.tools.hibernate.orm.test.utils;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.ui.IPackagesViewPart;
 import org.eclipse.jdt.ui.JavaUI;
@@ -10,12 +11,15 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.FileEditorInput;
 import org.hibernate.eclipse.console.HibernateConsolePerspectiveFactory;
 import org.jboss.tools.hibernate.orm.test.utils.project.SimpleTestProject;
+import org.junit.Assume;
 
 public class HibernateConsoleTestHelper {
 
 	private SimpleTestProject project;
 
 	public void setUp() throws Exception {
+		Assume.assumeFalse("Tests requiring Eclipse Workbench UI are not supported on macOS",
+				Platform.OS_MACOSX.equals(Platform.getOS()));
 
 		this.project = new SimpleTestProject();
 
@@ -43,6 +47,9 @@ public class HibernateConsoleTestHelper {
 	}
 
 	public void tearDown() throws Exception {
+		if (this.project == null) {
+			return; // setUp was skipped (e.g., on macOS)
+		}
 
 		IEditorPart editorPart = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
 		PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().closeEditor(editorPart, false);

@@ -12,6 +12,7 @@ import org.eclipse.core.resources.IncrementalProjectBuilder;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.ui.IPackagesViewPart;
@@ -40,6 +41,7 @@ import org.jboss.tools.hibernate.runtime.spi.IService;
 import org.jboss.tools.hibernate.runtime.spi.RuntimeServiceManager;
 import org.jboss.tools.hibernate.ui.view.OpenDiagramActionDelegate;
 import org.junit.Assert;
+import org.junit.Assume;
 import org.junit.rules.TestName;
 
 public class JpaMappingTestHelper {
@@ -57,9 +59,11 @@ public class JpaMappingTestHelper {
 	private TestProject testProject = null;
 	
 	public void beforeClass() throws Exception {
-		testProject = 
+		Assume.assumeFalse("Tests requiring Eclipse Workbench UI are not supported on macOS",
+				Platform.OS_MACOSX.equals(Platform.getOS()));
+		testProject =
 				new TestProject(
-						"JUnitTestProj" + System.currentTimeMillis());		
+						"JUnitTestProj" + System.currentTimeMillis());
 		PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().setPerspective(
 				PlatformUI.getWorkbench().getPerspectiveRegistry().findPerspectiveWithId("org.eclipse.ui.resourcePerspective")); //$NON-NLS-1$
 
@@ -102,6 +106,9 @@ public class JpaMappingTestHelper {
 	}
 	
 	public void afterClass() {
+		if (testProject == null) {
+			return; // setUp was skipped (e.g., on macOS)
+		}
 		String projectName = testProject.getIProject().getName();
 		ProjectUtils.toggleHibernateOnProject(testProject.getIProject(), false, projectName);
 		testProject.deleteIProject(false);

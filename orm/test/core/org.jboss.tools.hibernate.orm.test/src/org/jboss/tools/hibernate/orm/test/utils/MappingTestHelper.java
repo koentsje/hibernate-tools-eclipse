@@ -15,6 +15,7 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.ui.IPackagesViewPart;
@@ -43,6 +44,7 @@ import org.jboss.tools.hibernate.runtime.spi.IService;
 import org.jboss.tools.hibernate.runtime.spi.RuntimeServiceManager;
 import org.jboss.tools.hibernate.ui.view.OpenDiagramActionDelegate;
 import org.junit.Assert;
+import org.junit.Assume;
 import org.junit.rules.TestName;
 
 public class MappingTestHelper {
@@ -64,10 +66,13 @@ public class MappingTestHelper {
 	private TestProject testProject = null;
 	
 	public void setUp() throws Exception {
-		testProject = 
+		Assume.assumeFalse("Tests requiring Eclipse Workbench UI are not supported on macOS",
+				Platform.OS_MACOSX.equals(Platform.getOS()));
+
+		testProject =
 				new TestProject(
 						"JUnitTestProj" + System.currentTimeMillis());
-		
+
 		String consoleConfigName = testProject.getIProject().getName();
 
 		PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().setPerspective(
@@ -97,6 +102,9 @@ public class MappingTestHelper {
 	}
 	
 	public void tearDown() {
+		if (testProject == null) {
+			return; // setUp was skipped (e.g., on macOS)
+		}
 		String consoleConfigName = testProject.getIProject().getName();
 		ProjectUtils.toggleHibernateOnProject(testProject.getIProject(), false, consoleConfigName);
 		ConsoleConfigUtils.deleteConsoleConfig(consoleConfigName);

@@ -11,6 +11,7 @@ import junit.framework.TestCase;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
@@ -39,7 +40,15 @@ import org.hibernate.eclipse.jdt.ui.internal.HQLJavaCompletionProposalComputer;
  * 
  */
 public class JavaHBMQueryTest extends TestCase {
-	
+
+	@Override
+	public void runBare() throws Throwable {
+		if (Platform.OS_MACOSX.equals(Platform.getOS())) {
+			return; // skip tests requiring Eclipse Workbench UI on macOS
+		}
+		super.runBare();
+	}
+
 	private static final String PROJ_NAME = "JavaHBMQueryTest"; //$NON-NLS-1$
 	private static final String CONSOLE_NAME = PROJ_NAME;
 	

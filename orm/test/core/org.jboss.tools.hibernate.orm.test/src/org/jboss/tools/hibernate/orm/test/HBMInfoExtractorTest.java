@@ -13,6 +13,7 @@ package org.jboss.tools.hibernate.orm.test;
 import java.util.List;
 
 import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
@@ -24,6 +25,7 @@ import org.jboss.tools.hibernate.runtime.spi.IService;
 import org.jboss.tools.hibernate.runtime.spi.RuntimeServiceManager;
 import org.junit.After;
 import org.junit.Assert;
+import org.junit.Assume;
 import org.junit.Before;
 import org.junit.Test;
 import org.w3c.dom.Node;
@@ -38,6 +40,8 @@ public class HBMInfoExtractorTest {
 
 	@Before
 	public void setUp() throws Exception {
+		Assume.assumeFalse("Tests requiring Eclipse Workbench UI are not supported on macOS",
+				Platform.OS_MACOSX.equals(Platform.getOS()));
 		testProj = new TestProject("HBMInfoProj" + System.currentTimeMillis()); //$NON-NLS-1$
 		IPackageFragmentRoot sourcePackageFragment = testProj.createSourceFolder();
 		List<IPath> libs = testProj.copyLibs(testProj.getFolder("lib"));
@@ -48,6 +52,9 @@ public class HBMInfoExtractorTest {
 
 	@After
 	public void tearDown() throws Exception {
+		if (testProj == null) {
+			return;
+		}
 		testProj.deleteIProject();
 		testProj = null;
 		sourceLocator = null;

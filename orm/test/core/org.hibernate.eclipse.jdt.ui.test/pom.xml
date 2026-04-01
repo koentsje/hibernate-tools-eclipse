@@ -26,6 +26,10 @@
 					<explodedBundles>
 						<bundle>org.hibernate.eclipse.jdt.ui.test</bundle>
 					</explodedBundles>
+					<useUIThread>false</useUIThread>
+					<excludes>
+						<exclude>**/JDTuiAllTests.class</exclude>
+					</excludes>
 					<skip>${skipTests}</skip>
 				</configuration>
 			</plugin>
