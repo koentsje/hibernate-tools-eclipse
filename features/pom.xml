@@ -2,11 +2,11 @@
 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>org.jboss.tools</groupId>
+		<groupId>org.hibernate.tool.eclipse</groupId>
 		<artifactId>hibernatetools</artifactId>
 		<version>5.4.24-SNAPSHOT</version>
 	</parent>
-	<groupId>org.jboss.tools.hibernatetools</groupId>
+	<groupId>org.hibernate.tool.eclipsetools</groupId>
 	<artifactId>features</artifactId>
 	<name>hibernatetools.features</name>
 	
@@ -14,7 +14,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 	<modules>
 		<module>org.hibernate.eclipse.feature</module>
 		<module>org.hibernate.search.eclipse.feature</module>
-		<module>org.jboss.tools.hibernate.orm.runtime.feature</module>
+		<module>org.hibernate.tool.eclipse.orm.runtime.feature</module>
 	</modules>
 	<build>
 		<plugins>

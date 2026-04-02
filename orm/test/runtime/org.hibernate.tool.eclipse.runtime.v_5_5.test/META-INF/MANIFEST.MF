@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Hibernate Runtime 5.5 Tests
+Automatic-Module-Name: org.hibernate.tool.eclipse.runtime.v.5.5.test
+Bundle-SymbolicName: org.hibernate.tool.eclipse.runtime.v_5_5.test
+Bundle-Version: 5.4.24.qualifier
+Fragment-Host: org.hibernate.tool.eclipse.runtime.v_5_5
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Require-Bundle: org.hibernate.tool.eclipse.libs.h2.v_1_4,
+ junit-jupiter-api
+Bundle-ClassPath: .

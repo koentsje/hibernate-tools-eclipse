@@ -25,8 +25,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.jboss.tools.hibernate.runtime.spi.IColumn;
-import org.jboss.tools.hibernate.runtime.spi.ITable;
+import org.hibernate.tool.eclipse.runtime.spi.IColumn;
+import org.hibernate.tool.eclipse.runtime.spi.ITable;
 
 
 public class TableViewAdapter extends GraphNode {

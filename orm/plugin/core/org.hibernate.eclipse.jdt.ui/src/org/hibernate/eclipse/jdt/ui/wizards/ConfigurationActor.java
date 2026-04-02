@@ -50,14 +50,14 @@ import org.hibernate.eclipse.jdt.ui.internal.jpa.common.RefType;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.common.Utils;
 import org.hibernate.eclipse.nature.HibernateNature;
 import org.hibernate.util.xpl.StringHelper;
-import org.jboss.tools.hibernate.runtime.spi.IColumn;
-import org.jboss.tools.hibernate.runtime.spi.IConfiguration;
-import org.jboss.tools.hibernate.runtime.spi.IPersistentClass;
-import org.jboss.tools.hibernate.runtime.spi.IProperty;
-import org.jboss.tools.hibernate.runtime.spi.IService;
-import org.jboss.tools.hibernate.runtime.spi.ITable;
-import org.jboss.tools.hibernate.runtime.spi.IValue;
-import org.jboss.tools.hibernate.runtime.spi.RuntimeServiceManager;
+import org.hibernate.tool.eclipse.runtime.spi.IColumn;
+import org.hibernate.tool.eclipse.runtime.spi.IConfiguration;
+import org.hibernate.tool.eclipse.runtime.spi.IPersistentClass;
+import org.hibernate.tool.eclipse.runtime.spi.IProperty;
+import org.hibernate.tool.eclipse.runtime.spi.IService;
+import org.hibernate.tool.eclipse.runtime.spi.ITable;
+import org.hibernate.tool.eclipse.runtime.spi.IValue;
+import org.hibernate.tool.eclipse.runtime.spi.RuntimeServiceManager;
 
 /**
  * @author Dmitry Geraskov

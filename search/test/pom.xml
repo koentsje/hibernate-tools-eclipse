@@ -2,11 +2,11 @@
 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>org.jboss.tools.hibernatetools</groupId>
+		<groupId>org.hibernate.tool.eclipsetools</groupId>
 		<artifactId>search</artifactId>
 		<version>5.4.24-SNAPSHOT</version>
 	</parent>
-	<groupId>org.jboss.tools.hibernatetools.search</groupId>
+	<groupId>org.hibernate.tool.eclipsetools.search</groupId>
 	<artifactId>test</artifactId>
 	<name>Hibernate Search Tooling Test Plugins</name>
 	

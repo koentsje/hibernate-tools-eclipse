@@ -48,9 +48,9 @@ import org.hibernate.eclipse.builder.HibernateBuilder;
 import org.hibernate.eclipse.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
 import org.hibernate.eclipse.console.properties.HibernatePropertiesConstants;
-import org.jboss.tools.hibernate.runtime.spi.IConfiguration;
-import org.jboss.tools.hibernate.runtime.spi.IService;
-import org.jboss.tools.hibernate.runtime.spi.ITable;
+import org.hibernate.tool.eclipse.runtime.spi.IConfiguration;
+import org.hibernate.tool.eclipse.runtime.spi.IService;
+import org.hibernate.tool.eclipse.runtime.spi.ITable;
 import org.osgi.service.prefs.Preferences;
 
 public class HibernateNature implements IProjectNature {

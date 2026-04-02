@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Hibernate 4.3 libraries
+Bundle-Vendor: Red Hat
+Bundle-SymbolicName: org.hibernate.tool.eclipse.runtime.v_4_3;singleton:=true
+Bundle-Version: 5.4.24.qualifier
+Bundle-Localization: plugin
+Require-Bundle: org.hibernate.tool.eclipse.libs.antlr.v_2_7_7,
+ org.hibernate.tool.eclipse.libs.commons-collections4.v_4_4,
+ org.hibernate.tool.eclipse.libs.dom4j.v_1_6_1,
+ org.hibernate.tool.eclipse.libs.freemarker.v_2_3,
+ org.hibernate.tool.eclipse.libs.hibernate-commons-annotations.v_5_1,
+ org.hibernate.tool.eclipse.libs.javassist.v_3_28,
+ org.hibernate.tool.eclipse.libs.jandex.v_2_4,
+ org.hibernate.tool.eclipse.libs.jboss-logging.v_3_4,
+ org.hibernate.tool.eclipse.libs.jtidy.v_r8-20060801,
+ org.hibernate.tool.eclipse.libs.jpa.v_2_2,
+ org.hibernate.tool.eclipse.libs.transaction-api.v_1_2,
+ org.hibernate.tool.eclipse.runtime.common,
+ org.hibernate.tool.eclipse.runtime.spi
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-ClassPath: .,
+ lib/hibernate-core-4.3.11.Final.jar,
+ lib/hibernate-entitymanager-4.3.11.Final.jar,
+ lib/hibernate-tools-4.3.6.Final.jar

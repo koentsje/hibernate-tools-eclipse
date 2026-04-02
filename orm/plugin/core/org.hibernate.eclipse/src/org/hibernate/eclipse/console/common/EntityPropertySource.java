@@ -28,9 +28,9 @@ import org.eclipse.ui.views.properties.IPropertySource2;
 import org.eclipse.ui.views.properties.PropertyDescriptor;
 import org.hibernate.console.execution.ExecutionContext.Command;
 import org.hibernate.eclipse.console.HibernateConsoleMessages;
-import org.jboss.tools.hibernate.runtime.spi.IClassMetadata;
-import org.jboss.tools.hibernate.runtime.spi.ICollectionMetadata;
-import org.jboss.tools.hibernate.runtime.spi.ISession;
+import org.hibernate.tool.eclipse.runtime.spi.IClassMetadata;
+import org.hibernate.tool.eclipse.runtime.spi.ICollectionMetadata;
+import org.hibernate.tool.eclipse.runtime.spi.ISession;
 
 
 

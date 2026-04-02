@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Hibernate 3.6 libraries
+Bundle-SymbolicName: org.hibernate.tool.eclipse.runtime.v_3_6;singleton:=true
+Bundle-Version: 5.4.24.qualifier
+Bundle-Localization: plugin
+Require-Bundle: org.apache.commons.collections,
+ org.hibernate.tool.eclipse.libs.antlr.v_2_7_7,
+ org.hibernate.tool.eclipse.libs.dom4j.v_1_6_1,
+ org.hibernate.tool.eclipse.libs.freemarker.v_2_3,
+ org.hibernate.tool.eclipse.libs.hibernate-commons-annotations.v_5_1,
+ org.hibernate.tool.eclipse.libs.javassist.v_3_28,
+ org.hibernate.tool.eclipse.libs.jpa.v_2_2,
+ org.hibernate.tool.eclipse.libs.jtidy.v_r8-20060801,
+ org.hibernate.tool.eclipse.libs.transaction-api.v_1_2,
+ org.hibernate.tool.eclipse.runtime.common,
+ org.hibernate.tool.eclipse.runtime.spi,
+ org.hibernate.eclipse,
+ slf4j.api
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-ClassPath: .,
+ lib/hibernate-core-3.6.10.Final.jar,
+ lib/hibernate-entitymanager-3.6.10.Final.jar,
+ lib/hibernate-tools-3.6.2.Final.jar
+Bundle-Vendor: Red Hat

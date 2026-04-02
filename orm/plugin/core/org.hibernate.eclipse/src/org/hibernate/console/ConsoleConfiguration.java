@@ -42,9 +42,9 @@ import org.hibernate.console.execution.ExecutionContextHolder;
 import org.hibernate.console.preferences.ConsoleConfigurationPreferences;
 import org.hibernate.console.preferences.PreferencesClassPathUtils;
 import org.hibernate.eclipse.console.common.HibernateExtension;
-import org.jboss.tools.hibernate.runtime.spi.IConfiguration;
-import org.jboss.tools.hibernate.runtime.spi.IEnvironment;
-import org.jboss.tools.hibernate.runtime.spi.ISessionFactory;
+import org.hibernate.tool.eclipse.runtime.spi.IConfiguration;
+import org.hibernate.tool.eclipse.runtime.spi.IEnvironment;
+import org.hibernate.tool.eclipse.runtime.spi.ISessionFactory;
 
 public class ConsoleConfiguration implements ExecutionContextHolder {
 

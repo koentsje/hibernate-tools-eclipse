@@ -1,0 +1,36 @@
+package org.hibernate.tool.eclipse.runtime.v_5_4.internal;
+
+import static org.junit.jupiter.api.Assertions.assertNotSame;
+import static org.junit.jupiter.api.Assertions.assertSame;
+
+import java.lang.reflect.Field;
+
+import org.hibernate.cfg.reveng.DefaultReverseEngineeringStrategy;
+import org.hibernate.cfg.reveng.ReverseEngineeringSettings;
+import org.hibernate.cfg.reveng.ReverseEngineeringStrategy;
+import org.hibernate.tool.eclipse.runtime.common.AbstractReverseEngineeringStrategyFacade;
+import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.runtime.spi.IReverseEngineeringSettings;
+import org.hibernate.tool.eclipse.runtime.spi.IReverseEngineeringStrategy;
+import org.junit.jupiter.api.Test;
+
+public class ReverseEngineeringStrategyFacadeTest {
+
+	private static IFacadeFactory FACADE_FACTORY = new FacadeFactoryImpl();
+	
+	@Test
+	public void testSetSettings() throws Exception {
+		ReverseEngineeringStrategy revengStrategyTarget = new DefaultReverseEngineeringStrategy();
+		ReverseEngineeringSettings revengSettingsTarget = new ReverseEngineeringSettings(revengStrategyTarget);
+		IReverseEngineeringSettings revengSettingsFacade = 
+				FACADE_FACTORY.createReverseEngineeringSettings(revengSettingsTarget);
+		IReverseEngineeringStrategy revengStrategyFacade = 
+				new AbstractReverseEngineeringStrategyFacade(FACADE_FACTORY, revengStrategyTarget) {};
+		Field field = DefaultReverseEngineeringStrategy.class.getDeclaredField("settings");
+		field.setAccessible(true);
+		assertNotSame(field.get(revengStrategyTarget), revengSettingsTarget);
+		revengStrategyFacade.setSettings(revengSettingsFacade);
+		assertSame(field.get(revengStrategyTarget), revengSettingsTarget);
+	}
+	
+}

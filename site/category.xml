@@ -3,10 +3,10 @@
    <description>
       To install these features, point Eclipse at this site.
    </description>
-   <feature id="org.hibernate.eclipse.feature"><category name="jbosstools-hibernate"/></feature>
-   <feature id="org.hibernate.search.eclipse.feature"><category name="jbosstools-hibernate"/></feature>
-   <feature id="org.jboss.tools.hibernate.orm.runtime.feature"><category name="jbosstools-hibernate"/></feature>
-   <category-def name="jbosstools-hibernate" label="JBoss Tools hibernatetools Nightly Build Update Site">
+   <feature id="org.hibernate.eclipse.feature"><category name="hibernate-tools-eclipse"/></feature>
+   <feature id="org.hibernate.search.eclipse.feature"><category name="hibernate-tools-eclipse"/></feature>
+   <feature id="org.hibernate.tool.eclipse.orm.runtime.feature"><category name="hibernate-tools-eclipse"/></feature>
+   <category-def name="hibernate-tools-eclipse" label="JBoss Tools hibernatetools Nightly Build Update Site">
       <description>
          JBoss Tools hibernatetools Nightly Build Update Site: contains all features in this build.
       </description>

@@ -21,12 +21,12 @@ import org.hibernate.console.execution.ExecutionContext;
 import org.hibernate.console.execution.ExecutionContext.Command;
 import org.hibernate.console.preferences.ConsoleConfigurationPreferences;
 import org.hibernate.console.preferences.PreferencesClassPathUtils;
-import org.jboss.tools.hibernate.runtime.spi.HibernateException;
-import org.jboss.tools.hibernate.runtime.spi.IConfiguration;
-import org.jboss.tools.hibernate.runtime.spi.IService;
-import org.jboss.tools.hibernate.runtime.spi.ISession;
-import org.jboss.tools.hibernate.runtime.spi.ISessionFactory;
-import org.jboss.tools.hibernate.runtime.spi.RuntimeServiceManager;
+import org.hibernate.tool.eclipse.runtime.spi.HibernateException;
+import org.hibernate.tool.eclipse.runtime.spi.IConfiguration;
+import org.hibernate.tool.eclipse.runtime.spi.IService;
+import org.hibernate.tool.eclipse.runtime.spi.ISession;
+import org.hibernate.tool.eclipse.runtime.spi.ISessionFactory;
+import org.hibernate.tool.eclipse.runtime.spi.RuntimeServiceManager;
 
 public class HibernateExtension {
 

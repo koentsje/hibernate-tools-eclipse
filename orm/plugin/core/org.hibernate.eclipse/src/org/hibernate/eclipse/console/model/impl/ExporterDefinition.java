@@ -49,8 +49,8 @@ import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.hibernate.eclipse.HibernatePlugin;
-import org.jboss.tools.hibernate.runtime.spi.IExporter;
-import org.jboss.tools.hibernate.runtime.spi.IService;
+import org.hibernate.tool.eclipse.runtime.spi.IExporter;
+import org.hibernate.tool.eclipse.runtime.spi.IService;
 
 /**
  * Represents what is specified in plugin.xml about possible exporters.

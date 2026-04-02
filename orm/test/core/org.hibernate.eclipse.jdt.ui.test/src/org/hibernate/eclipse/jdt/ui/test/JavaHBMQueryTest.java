@@ -118,7 +118,7 @@ public class JavaHBMQueryTest extends TestCase {
 			assertTrue(computeCompletionProposals.size() > 0);
 			for (ICompletionProposal iCompletionProposal : computeCompletionProposals) {
 				Class<? extends ICompletionProposal> class1 = iCompletionProposal.getClass();
-				if (class1.getPackage().getName().indexOf("org.jboss.tools.hibernate") == 0){
+				if (class1.getPackage().getName().indexOf("org.hibernate.tool.eclipse") == 0){
 					//this is our completion proposal
 					Field declaredField = class1.getDeclaredField("documentOffset");
 					declaredField.setAccessible(true);

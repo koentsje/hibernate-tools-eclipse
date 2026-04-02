@@ -2,39 +2,39 @@
 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>org.jboss.tools.hibernatetools.orm</groupId>
+		<groupId>org.hibernate.tool.eclipsetools.orm</groupId>
 		<artifactId>plugin</artifactId>
 		<version>5.4.24-SNAPSHOT</version>
 	</parent>
-	<groupId>org.jboss.tools.hibernatetools.orm.plugin</groupId>
+	<groupId>org.hibernate.tool.eclipsetools.orm.plugin</groupId>
 	<artifactId>runtime</artifactId>
 	<name>Hibernate ORM Runtime Plugins</name>
 	
 	<packaging>pom</packaging>
 	
 	<modules>
-		<module>org.jboss.tools.hibernate.orm.runtime.common</module>
-		<module>org.jboss.tools.hibernate.orm.runtime.v_6_2</module>
-		<module>org.jboss.tools.hibernate.orm.runtime.v_6_3</module>
-		<module>org.jboss.tools.hibernate.orm.runtime.v_6_4</module>
-		<module>org.jboss.tools.hibernate.orm.runtime.v_6_5</module>
-		<module>org.jboss.tools.hibernate.orm.runtime.v_6_6</module>
-		<module>org.jboss.tools.hibernate.orm.runtime.v_7_0</module>
-		<module>org.jboss.tools.hibernate.runtime.common</module>
-		<module>org.jboss.tools.hibernate.runtime.spi</module>
-		<module>org.jboss.tools.hibernate.runtime.v_3_5</module>
-		<module>org.jboss.tools.hibernate.runtime.v_3_6</module>
-		<module>org.jboss.tools.hibernate.runtime.v_4_0</module>
-		<module>org.jboss.tools.hibernate.runtime.v_4_3</module>
-		<module>org.jboss.tools.hibernate.runtime.v_5_0</module>
-		<module>org.jboss.tools.hibernate.runtime.v_5_1</module>
-		<module>org.jboss.tools.hibernate.runtime.v_5_2</module>
-		<module>org.jboss.tools.hibernate.runtime.v_5_3</module>
-		<module>org.jboss.tools.hibernate.runtime.v_5_4</module>
-		<module>org.jboss.tools.hibernate.runtime.v_5_5</module>
-		<module>org.jboss.tools.hibernate.runtime.v_5_6</module>
-		<module>org.jboss.tools.hibernate.runtime.v_6_0</module>
-		<module>org.jboss.tools.hibernate.runtime.v_6_1</module>
+		<module>org.hibernate.tool.eclipse.orm.runtime.common</module>
+		<module>org.hibernate.tool.eclipse.orm.runtime.v_6_2</module>
+		<module>org.hibernate.tool.eclipse.orm.runtime.v_6_3</module>
+		<module>org.hibernate.tool.eclipse.orm.runtime.v_6_4</module>
+		<module>org.hibernate.tool.eclipse.orm.runtime.v_6_5</module>
+		<module>org.hibernate.tool.eclipse.orm.runtime.v_6_6</module>
+		<module>org.hibernate.tool.eclipse.orm.runtime.v_7_0</module>
+		<module>org.hibernate.tool.eclipse.runtime.common</module>
+		<module>org.hibernate.tool.eclipse.runtime.spi</module>
+		<module>org.hibernate.tool.eclipse.runtime.v_3_5</module>
+		<module>org.hibernate.tool.eclipse.runtime.v_3_6</module>
+		<module>org.hibernate.tool.eclipse.runtime.v_4_0</module>
+		<module>org.hibernate.tool.eclipse.runtime.v_4_3</module>
+		<module>org.hibernate.tool.eclipse.runtime.v_5_0</module>
+		<module>org.hibernate.tool.eclipse.runtime.v_5_1</module>
+		<module>org.hibernate.tool.eclipse.runtime.v_5_2</module>
+		<module>org.hibernate.tool.eclipse.runtime.v_5_3</module>
+		<module>org.hibernate.tool.eclipse.runtime.v_5_4</module>
+		<module>org.hibernate.tool.eclipse.runtime.v_5_5</module>
+		<module>org.hibernate.tool.eclipse.runtime.v_5_6</module>
+		<module>org.hibernate.tool.eclipse.runtime.v_6_0</module>
+		<module>org.hibernate.tool.eclipse.runtime.v_6_1</module>
 	</modules>
 
 </project>

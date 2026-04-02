@@ -72,11 +72,11 @@ import org.hibernate.eclipse.jdt.ui.internal.jpa.collect.AllEntitiesInfoCollecto
 import org.hibernate.eclipse.jdt.ui.internal.jpa.common.EntityInfo;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.common.Utils;
 import org.hibernate.eclipse.nature.HibernateNature;
-import org.jboss.tools.hibernate.runtime.spi.IConfiguration;
-import org.jboss.tools.hibernate.runtime.spi.IExportPOJODelegate;
-import org.jboss.tools.hibernate.runtime.spi.IHibernateMappingExporter;
-import org.jboss.tools.hibernate.runtime.spi.IService;
-import org.jboss.tools.hibernate.runtime.spi.RuntimeServiceManager;
+import org.hibernate.tool.eclipse.runtime.spi.IConfiguration;
+import org.hibernate.tool.eclipse.runtime.spi.IExportPOJODelegate;
+import org.hibernate.tool.eclipse.runtime.spi.IHibernateMappingExporter;
+import org.hibernate.tool.eclipse.runtime.spi.IService;
+import org.hibernate.tool.eclipse.runtime.spi.RuntimeServiceManager;
 
 /**
  * @author Dmitry Geraskov

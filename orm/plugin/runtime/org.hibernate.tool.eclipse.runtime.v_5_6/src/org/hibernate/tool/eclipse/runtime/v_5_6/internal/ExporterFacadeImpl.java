@@ -1,0 +1,22 @@
+package org.hibernate.tool.eclipse.runtime.v_5_6.internal;
+
+import org.hibernate.tool.hbm2x.Exporter;
+import org.hibernate.tool.eclipse.runtime.common.AbstractExporterFacade;
+import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.runtime.spi.IConfiguration;
+import org.hibernate.tool.eclipse.runtime.v_5_6.internal.util.ConfigurationMetadataDescriptor;
+
+public class ExporterFacadeImpl extends AbstractExporterFacade {
+
+	public ExporterFacadeImpl(IFacadeFactory facadeFactory, Object target) {
+		super(facadeFactory, target);
+	}
+
+	@Override
+	public void setConfiguration(IConfiguration configuration) {
+		Exporter exporter = (Exporter)getTarget();
+		setCustomProperties(configuration.getProperties());
+		exporter.setMetadataDescriptor(new ConfigurationMetadataDescriptor(configuration));
+	}
+
+}
