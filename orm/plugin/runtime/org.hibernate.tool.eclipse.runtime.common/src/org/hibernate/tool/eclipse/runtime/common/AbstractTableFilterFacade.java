@@ -1,0 +1,89 @@
+package org.hibernate.tool.eclipse.runtime.common;
+
+import org.hibernate.tool.eclipse.runtime.spi.ITableFilter;
+
+public abstract class AbstractTableFilterFacade 
+extends AbstractFacade 
+implements ITableFilter {
+
+	public AbstractTableFilterFacade(
+			IFacadeFactory facadeFactory, 
+			Object target) {
+		super(facadeFactory, target);
+	}
+
+	@Override
+	public void setExclude(Boolean exclude) {
+		Util.invokeMethod(
+				getTarget(), 
+				"setExclude", 
+				new Class[] { Boolean.class }, 
+				new Object[] { exclude });
+	}
+
+	@Override
+	public void setMatchCatalog(String catalog) {
+		Util.invokeMethod(
+				getTarget(), 
+				"setMatchCatalog", 
+				new Class[] { String.class }, 
+				new Object[] { catalog });
+	}
+
+	@Override
+	public void setMatchSchema(String schema) {
+		Util.invokeMethod(
+				getTarget(), 
+				"setMatchSchema", 
+				new Class[] { String.class }, 
+				new Object[] { schema });
+	}
+
+	@Override
+	public void setMatchName(String name) {
+		Util.invokeMethod(
+				getTarget(), 
+				"setMatchName", 
+				new Class[] { String.class }, 
+				new Object[] { name });
+	}
+	
+	@Override
+	public Boolean getExclude() {
+		return (Boolean)Util.invokeMethod(
+				getTarget(), 
+				"getExclude", 
+				new Class[] {}, 
+				new Object[] {});
+	}
+
+	@Override
+	public String getMatchCatalog() {
+		return (String)Util.invokeMethod(
+				getTarget(), 
+				"getMatchCatalog", 
+				new Class[] {}, 
+				new Object[] {});
+	}
+
+	@Override
+	public String getMatchSchema() {
+		return (String)Util.invokeMethod(
+				getTarget(), 
+				"getMatchSchema", 
+				new Class[] {}, 
+				new Object[] {});
+	}
+
+	@Override
+	public String getMatchName() {
+		return (String)Util.invokeMethod(
+				getTarget(), 
+				"getMatchName", 
+				new Class[] {}, 
+				new Object[] {});
+	}
+
+
+
+}

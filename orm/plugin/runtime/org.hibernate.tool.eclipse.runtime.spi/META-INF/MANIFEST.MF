@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Hibernate Tools Service Provider Interface
+Bundle-Vendor: Red Hat
+Bundle-SymbolicName: org.hibernate.tool.eclipse.runtime.spi;singleton:=true
+Bundle-Version: 6.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: org.hibernate.tool.eclipse.runtime.spi
+Require-Bundle: org.eclipse.core.runtime
+Bundle-Activator: org.hibernate.tool.eclipse.spi.internal.HibernateServicePlugin
+Bundle-ActivationPolicy: lazy

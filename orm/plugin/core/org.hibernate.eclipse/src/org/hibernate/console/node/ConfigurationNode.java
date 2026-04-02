@@ -25,7 +25,7 @@ import org.hibernate.console.ConcoleConfigurationAdapter;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.ConsoleMessages;
 import org.hibernate.console.ImageConstants;
-import org.jboss.tools.hibernate.runtime.spi.ISessionFactory;
+import org.hibernate.tool.eclipse.runtime.spi.ISessionFactory;
 
 /**
  * @author max

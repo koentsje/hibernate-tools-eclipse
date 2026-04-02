@@ -2,9 +2,9 @@
 <feature
       id="org.hibernate.search.eclipse.feature"
       label="%featureName"
-      version="5.4.24.qualifier"
+      version="6.0.0.qualifier"
       provider-name="%providerName"
-      plugin="org.jboss.tools.hibernate.search"
+      plugin="org.hibernate.tool.eclipse.search"
 >
 
    <description url="http://www.example.com/description">
@@ -31,42 +31,34 @@ Also this plugin is an addition to JBoss Tools Hibernate plugin which is license
       <import plugin="org.eclipse.datatools.connectivity.ui"/>
       <import plugin="org.eclipse.debug.core"/>
       <import plugin="org.hibernate.eclipse.console" version="5.1.2" match="greaterOrEqual"/>
-      <import plugin="org.jboss.tools.hibernate.runtime.spi" version="5.1.2" match="greaterOrEqual"/>
-      <import plugin="org.jboss.tools.hibernate.runtime.v_4_0" version="5.1.2.qualifier" match="greaterOrEqual"/>
-      <import plugin="org.jboss.tools.hibernate.runtime.v_4_3" version="5.1.2.qualifier" match="greaterOrEqual"/>
-      <import plugin="org.jboss.tools.hibernate.runtime.v_5_0" version="5.1.2.qualifier" match="greaterOrEqual"/>
-      <import plugin="org.jboss.tools.hibernate.runtime.v_5_1" version="5.1.2.qualifier" match="greaterOrEqual"/>
-      <import plugin="org.jboss.tools.hibernate.runtime.common" version="5.1.2" match="greaterOrEqual"/>
-      <import plugin="org.jboss.tools.hibernate.runtime.v_5_2" version="5.1.2.qualifier" match="greaterOrEqual"/>
-      <import plugin="org.jboss.tools.hibernate.runtime.v_5_3" version="5.2.3.qualifier" match="greaterOrEqual"/>
+      <import plugin="org.hibernate.tool.eclipse.runtime.spi" version="5.1.2" match="greaterOrEqual"/>
+      <import plugin="org.hibernate.tool.eclipse.runtime.v_4_0" version="5.1.2.qualifier" match="greaterOrEqual"/>
+      <import plugin="org.hibernate.tool.eclipse.runtime.v_4_3" version="5.1.2.qualifier" match="greaterOrEqual"/>
+      <import plugin="org.hibernate.tool.eclipse.runtime.v_5_0" version="5.1.2.qualifier" match="greaterOrEqual"/>
+      <import plugin="org.hibernate.tool.eclipse.runtime.v_5_1" version="5.1.2.qualifier" match="greaterOrEqual"/>
+      <import plugin="org.hibernate.tool.eclipse.runtime.common" version="5.1.2" match="greaterOrEqual"/>
+      <import plugin="org.hibernate.tool.eclipse.runtime.v_5_2" version="5.1.2.qualifier" match="greaterOrEqual"/>
+      <import plugin="org.hibernate.tool.eclipse.runtime.v_5_3" version="5.2.3.qualifier" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui" version="3.109.0" match="greaterOrEqual"/>
       <import feature="org.hibernate.eclipse.feature" version="5.1.2.qualifier" match="greaterOrEqual"/>
    </requires>
 
    <plugin
-         id="org.jboss.tools.hibernate.search"
+         id="org.hibernate.tool.eclipse.search"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.jboss.tools.hibernate.search.runtime.spi"
+         id="org.hibernate.tool.eclipse.search.runtime.spi"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.jboss.tools.hibernate.search.runtime.v_4_0"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         fragment="true"
-         unpack="false"/>
-
-   <plugin
-         id="org.jboss.tools.hibernate.search.runtime.v_5_3"
+         id="org.hibernate.tool.eclipse.search.runtime.v_4_0"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -74,7 +66,7 @@ Also this plugin is an addition to JBoss Tools Hibernate plugin which is license
          unpack="false"/>
 
    <plugin
-         id="org.jboss.tools.hibernate.search.runtime.v_5_5"
+         id="org.hibernate.tool.eclipse.search.runtime.v_5_3"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -82,7 +74,7 @@ Also this plugin is an addition to JBoss Tools Hibernate plugin which is license
          unpack="false"/>
 
    <plugin
-         id="org.jboss.tools.hibernate.search.runtime.v_5_5.1"
+         id="org.hibernate.tool.eclipse.search.runtime.v_5_5"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -90,14 +82,22 @@ Also this plugin is an addition to JBoss Tools Hibernate plugin which is license
          unpack="false"/>
 
    <plugin
-         id="org.jboss.tools.hibernate.search.runtime.common"
+         id="org.hibernate.tool.eclipse.search.runtime.v_5_5.1"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="org.hibernate.tool.eclipse.search.runtime.common"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.jboss.tools.hibernate.search.runtime.v_5_7"
+         id="org.hibernate.tool.eclipse.search.runtime.v_5_7"
          download-size="0"
          install-size="0"
          version="0.0.0"

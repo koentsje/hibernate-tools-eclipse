@@ -33,13 +33,13 @@ import org.eclipse.ui.views.properties.IPropertySource2;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.console.node.BaseNode;
-import org.jboss.tools.hibernate.runtime.spi.IColumn;
-import org.jboss.tools.hibernate.runtime.spi.IConfiguration;
-import org.jboss.tools.hibernate.runtime.spi.IPersistentClass;
-import org.jboss.tools.hibernate.runtime.spi.IPrimaryKey;
-import org.jboss.tools.hibernate.runtime.spi.IProperty;
-import org.jboss.tools.hibernate.runtime.spi.ITable;
-import org.jboss.tools.hibernate.runtime.spi.IValue;
+import org.hibernate.tool.eclipse.runtime.spi.IColumn;
+import org.hibernate.tool.eclipse.runtime.spi.IConfiguration;
+import org.hibernate.tool.eclipse.runtime.spi.IPersistentClass;
+import org.hibernate.tool.eclipse.runtime.spi.IPrimaryKey;
+import org.hibernate.tool.eclipse.runtime.spi.IProperty;
+import org.hibernate.tool.eclipse.runtime.spi.ITable;
+import org.hibernate.tool.eclipse.runtime.spi.IValue;
 
 public class ConfigurationAdapterFactory implements IAdapterFactory {
 

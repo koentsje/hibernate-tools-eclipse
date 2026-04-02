@@ -805,7 +805,7 @@
    <extension
          point="org.eclipse.ui.perspectiveExtensions">
       <perspectiveExtension
-            targetID="org.jboss.tools.common.ui.JBossPerspective">
+            targetID="org.hibernate.eclipse.console.HibernateConsolePerspective">
          <newWizardShortcut
                id="org.hibernate.eclipse.console.wizards.ConsoleConfigurationCreationWizard">
          </newWizardShortcut>

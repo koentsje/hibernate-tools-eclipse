@@ -11,6 +11,7 @@ import junit.framework.TestCase;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
@@ -39,7 +40,15 @@ import org.hibernate.eclipse.jdt.ui.internal.HQLJavaCompletionProposalComputer;
  * 
  */
 public class JavaHBMQueryTest extends TestCase {
-	
+
+	@Override
+	public void runBare() throws Throwable {
+		if (Platform.OS_MACOSX.equals(Platform.getOS())) {
+			return; // skip tests requiring Eclipse Workbench UI on macOS
+		}
+		super.runBare();
+	}
+
 	private static final String PROJ_NAME = "JavaHBMQueryTest"; //$NON-NLS-1$
 	private static final String CONSOLE_NAME = PROJ_NAME;
 	
@@ -109,7 +118,7 @@ public class JavaHBMQueryTest extends TestCase {
 			assertTrue(computeCompletionProposals.size() > 0);
 			for (ICompletionProposal iCompletionProposal : computeCompletionProposals) {
 				Class<? extends ICompletionProposal> class1 = iCompletionProposal.getClass();
-				if (class1.getPackage().getName().indexOf("org.jboss.tools.hibernate") == 0){
+				if (class1.getPackage().getName().indexOf("org.hibernate.tool.eclipse") == 0){
 					//this is our completion proposal
 					Field declaredField = class1.getDeclaredField("documentOffset");
 					declaredField.setAccessible(true);

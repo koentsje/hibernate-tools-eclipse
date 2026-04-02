@@ -2,7 +2,7 @@
 <feature
       id="org.hibernate.eclipse.test.feature"
       label="%featureName"
-      version="5.4.24.qualifier"
+      version="6.0.0.qualifier"
       provider-name="%providerName"
 >
 
@@ -19,40 +19,20 @@
    </license>
 
    <plugin
-         id="org.jboss.tools.hibernate.ui.bot.test"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
-
-   <plugin
-         id="org.jboss.tools.hibernate.reddeer"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
-
-   <plugin
          id="org.hibernate.eclipse.jdt.ui.test"
          download-size="0"
          install-size="0"
          version="0.0.0"/>
 
    <plugin
-         id="org.jboss.tools.hibernate.jpt.core.test"
+         id="org.hibernate.tool.eclipse.jpt.core.test"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.jboss.tools.hibernate.runtime.spi.test"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         fragment="true"
-         unpack="false"/>
-
-   <plugin
-         id="org.jboss.tools.hibernate.runtime.v_5_0.test"
+         id="org.hibernate.tool.eclipse.runtime.spi.test"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -60,7 +40,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.jboss.tools.hibernate.runtime.v_4_3.test"
+         id="org.hibernate.tool.eclipse.runtime.v_5_0.test"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -68,7 +48,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.jboss.tools.hibernate.runtime.v_4_0.test"
+         id="org.hibernate.tool.eclipse.runtime.v_4_3.test"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -76,7 +56,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.jboss.tools.hibernate.runtime.v_3_6.test"
+         id="org.hibernate.tool.eclipse.runtime.v_4_0.test"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -84,7 +64,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.jboss.tools.hibernate.runtime.v_3_5.test"
+         id="org.hibernate.tool.eclipse.runtime.v_3_6.test"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -92,7 +72,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.jboss.tools.hibernate.runtime.v_5_1.test"
+         id="org.hibernate.tool.eclipse.runtime.v_3_5.test"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -100,7 +80,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.jboss.tools.hibernate.runtime.v_5_2.test"
+         id="org.hibernate.tool.eclipse.runtime.v_5_1.test"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -108,7 +88,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.jboss.tools.hibernate.runtime.v_5_3.test"
+         id="org.hibernate.tool.eclipse.runtime.v_5_2.test"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -116,7 +96,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.jboss.tools.hibernate.runtime.v_5_4.test"
+         id="org.hibernate.tool.eclipse.runtime.v_5_3.test"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -124,14 +104,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.jboss.tools.hibernate.orm.test"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.jboss.tools.hibernate.runtime.v_5_5.test"
+         id="org.hibernate.tool.eclipse.runtime.v_5_4.test"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -139,13 +112,28 @@
          unpack="false"/>
 
    <plugin
-         id="org.jboss.tools.hibernate.libs.h2.v_1_4"
+         id="org.hibernate.tool.eclipse.orm.test"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.hibernate.tool.eclipse.runtime.v_5_5.test"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="org.hibernate.tool.eclipse.libs.h2.v_1_4"
          download-size="0"
          install-size="0"
          version="0.0.0"/>
 
    <plugin
-         id="org.jboss.tools.hibernate.runtime.v_5_6.test"
+         id="org.hibernate.tool.eclipse.runtime.v_5_6.test"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -153,7 +141,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.jboss.tools.hibernate.runtime.v_6_0.test"
+         id="org.hibernate.tool.eclipse.runtime.v_6_0.test"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -161,7 +149,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.jboss.tools.hibernate.runtime.v_6_1.test"
+         id="org.hibernate.tool.eclipse.runtime.v_6_1.test"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -169,7 +157,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.jboss.tools.hibernate.orm.runtime.v_6_3.test"
+         id="org.hibernate.tool.eclipse.orm.runtime.v_6_3.test"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -177,7 +165,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.jboss.tools.hibernate.orm.runtime.v_6_2.test"
+         id="org.hibernate.tool.eclipse.orm.runtime.v_6_2.test"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -185,7 +173,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.jboss.tools.hibernate.orm.runtime.v_6_4.test"
+         id="org.hibernate.tool.eclipse.orm.runtime.v_6_4.test"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -193,7 +181,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.jboss.tools.hibernate.orm.runtime.v_6_5.test"
+         id="org.hibernate.tool.eclipse.orm.runtime.v_6_5.test"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -201,7 +189,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.jboss.tools.hibernate.orm.runtime.v_7_0.test"
+         id="org.hibernate.tool.eclipse.orm.runtime.v_7_0.test"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -209,7 +197,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.jboss.tools.hibernate.orm.runtime.v_6_6.test"
+         id="org.hibernate.tool.eclipse.orm.runtime.v_6_6.test"
          download-size="0"
          install-size="0"
          version="0.0.0"

@@ -38,7 +38,7 @@ import org.hibernate.eclipse.graph.figures.EditableLabel;
 import org.hibernate.eclipse.graph.model.PersistentClassViewAdapter;
 import org.hibernate.eclipse.graph.model.PropertyAssociationViewAdapter;
 import org.hibernate.eclipse.graph.model.PropertyViewAdapter;
-import org.jboss.tools.hibernate.runtime.spi.IProperty;
+import org.hibernate.tool.eclipse.runtime.spi.IProperty;
 
 public class PropertyEditPart extends AbstractGraphicalEditPart implements NodeEditPart, Observer {
 

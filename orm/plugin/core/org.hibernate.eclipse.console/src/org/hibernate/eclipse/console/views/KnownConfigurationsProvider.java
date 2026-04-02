@@ -45,7 +45,7 @@ import org.hibernate.console.KnownConfigurations;
 import org.hibernate.console.KnownConfigurationsListener;
 import org.hibernate.eclipse.console.utils.LaunchHelper;
 import org.hibernate.eclipse.console.workbench.DeferredContentProvider;
-import org.jboss.tools.hibernate.runtime.spi.ISessionFactory;
+import org.hibernate.tool.eclipse.runtime.spi.ISessionFactory;
 
 @SuppressWarnings("restriction")
 public class KnownConfigurationsProvider extends DeferredContentProvider implements KnownConfigurationsListener,

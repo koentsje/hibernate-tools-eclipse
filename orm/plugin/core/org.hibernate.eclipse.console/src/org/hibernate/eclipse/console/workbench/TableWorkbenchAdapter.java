@@ -29,9 +29,9 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.model.IWorkbenchAdapter;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.eclipse.console.utils.EclipseImages;
-import org.jboss.tools.hibernate.runtime.spi.IColumn;
-import org.jboss.tools.hibernate.runtime.spi.IPrimaryKey;
-import org.jboss.tools.hibernate.runtime.spi.ITable;
+import org.hibernate.tool.eclipse.runtime.spi.IColumn;
+import org.hibernate.tool.eclipse.runtime.spi.IPrimaryKey;
+import org.hibernate.tool.eclipse.runtime.spi.ITable;
 
 public class TableWorkbenchAdapter implements IWorkbenchAdapter {
 

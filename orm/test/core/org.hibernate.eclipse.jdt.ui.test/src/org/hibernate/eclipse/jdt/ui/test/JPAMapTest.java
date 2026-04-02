@@ -177,10 +177,28 @@ public class JPAMapTest extends TestCase {
 
 	protected ASTNode getGenerated(String strName) {
 		ICompilationUnit icu = Utils.findCompilationUnit(project.getIJavaProject(),
-				"test.annotated." + testSelection + //$NON-NLS-1$ 
+				"test.annotated." + testSelection + //$NON-NLS-1$
 				"." + strName); //$NON-NLS-1$
 		ASTParser parser = ASTParser.newParser(AST.JLS9);
-		parser.setSource(icu);
+		try {
+			IPath location = icu.getResource().getLocation();
+			if (location != null) {
+				File file = location.toFile();
+				StringBuffer cbuf = new StringBuffer((int) file.length());
+				String ls = System.getProperties().getProperty("line.separator", "\n"); //$NON-NLS-1$//$NON-NLS-2$
+				BufferedReader in = new BufferedReader(new FileReader(file));
+				String str;
+				while ((str = in.readLine()) != null) {
+					cbuf.append(str + ls);
+				}
+				in.close();
+				parser.setSource(cbuf.toString().toCharArray());
+			} else {
+				parser.setSource(icu);
+			}
+		} catch (Exception e) {
+			parser.setSource(icu);
+		}
 		ASTNode astNode = parser.createAST(null);
 		return astNode;
 	}

@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Hibernate Runtime 4.3 Tests
+Bundle-SymbolicName: org.hibernate.tool.eclipse.runtime.v_4_3.test
+Bundle-Version: 6.0.0.qualifier
+Fragment-Host: org.hibernate.tool.eclipse.runtime.v_4_3
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Require-Bundle: org.hibernate.tool.eclipse.libs.h2.v_1_4,
+ junit-jupiter-api
+Bundle-ClassPath: .

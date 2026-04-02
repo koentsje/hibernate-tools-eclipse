@@ -20,13 +20,13 @@ import org.hibernate.eclipse.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.launch.HibernateLaunchConstants;
 import org.hibernate.eclipse.launch.PathHelper;
 import org.hibernate.util.xpl.StringHelper;
-import org.jboss.tools.hibernate.runtime.spi.IArtifactCollector;
-import org.jboss.tools.hibernate.runtime.spi.IConfiguration;
-import org.jboss.tools.hibernate.runtime.spi.IExporter;
-import org.jboss.tools.hibernate.runtime.spi.IGenericExporter;
-import org.jboss.tools.hibernate.runtime.spi.IHbm2DDLExporter;
-import org.jboss.tools.hibernate.runtime.spi.IQueryExporter;
-import org.jboss.tools.hibernate.runtime.spi.IService;
+import org.hibernate.tool.eclipse.runtime.spi.IArtifactCollector;
+import org.hibernate.tool.eclipse.runtime.spi.IConfiguration;
+import org.hibernate.tool.eclipse.runtime.spi.IExporter;
+import org.hibernate.tool.eclipse.runtime.spi.IGenericExporter;
+import org.hibernate.tool.eclipse.runtime.spi.IHbm2DDLExporter;
+import org.hibernate.tool.eclipse.runtime.spi.IQueryExporter;
+import org.hibernate.tool.eclipse.runtime.spi.IService;
 
 /**
  * ExporterFactory is used in UI to hold additional configuration for Exporter definitions

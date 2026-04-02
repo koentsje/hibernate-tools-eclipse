@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Hibernate Search Tools Service Provider Interface
+Bundle-SymbolicName: org.hibernate.tool.eclipse.search.runtime.common;singleton:=true
+Bundle-Version: 6.0.0.qualifier
+Bundle-Vendor: bdshadow
+Require-Bundle: org.eclipse.core.runtime,
+ org.hibernate.tool.eclipse.search.runtime.spi;bundle-version="2.0.0",
+ org.hibernate.tool.eclipse.runtime.common;bundle-version="5.1.2",
+ org.hibernate.tool.eclipse.runtime.spi;bundle-version="5.1.2"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-ActivationPolicy: lazy
+Export-Package: org.hibernate.tool.eclipse.search.runtime.common
+Bundle-Activator: org.hibernate.tool.eclipse.search.runtime.common.internal.HibernateSearchRuntimeCommon

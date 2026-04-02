@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Hibernate ORM Runtime 6.4
+Bundle-Vendor: Red Hat
+Bundle-SymbolicName: org.hibernate.tool.eclipse.orm.runtime.v_6_4;singleton:=true
+Bundle-Version: 6.0.0.qualifier
+Require-Bundle: org.hibernate.tool.eclipse.libs.antlr4-runtime.v_4_10,
+ org.hibernate.tool.eclipse.libs.byte-buddy.v_1_12,
+ org.hibernate.tool.eclipse.libs.classmate.v_1_5,
+ org.hibernate.tool.eclipse.libs.commons-collections4.v_4_4,
+ org.hibernate.tool.eclipse.libs.freemarker.v_2_3,
+ org.hibernate.tool.eclipse.libs.jakarta-persistence-api.v_3_1,
+ org.hibernate.tool.eclipse.libs.jakarta-transaction-api.v_2_0,
+ org.hibernate.tool.eclipse.libs.jakarta-xml-bind-api.v_3_0,
+ org.hibernate.tool.eclipse.libs.jandex.v_2_4,
+ org.hibernate.tool.eclipse.libs.jaxb.v_3_0,
+ org.hibernate.tool.eclipse.libs.jboss-logging.v_3_4,
+ org.hibernate.tool.eclipse.libs.hibernate-commons-annotations.v_6_0,
+ org.hibernate.tool.eclipse.orm.runtime.common,
+ org.hibernate.tool.eclipse.runtime.spi
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-ClassPath: .,
+ lib/hibernate-ant-6.4.10.Final.jar,
+ lib/hibernate-core-6.4.10.Final.jar,
+ lib/hibernate-tools-orm-6.4.10.Final.jar,
+ lib/hibernate-tools-orm-jbt-6.4.10.Final.jar,
+ lib/hibernate-tools-utils-6.4.10.Final.jar

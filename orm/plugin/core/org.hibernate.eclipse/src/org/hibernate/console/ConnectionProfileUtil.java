@@ -31,8 +31,8 @@ import org.eclipse.datatools.connectivity.IConnectionProfile;
 import org.eclipse.datatools.connectivity.ProfileManager;
 import org.eclipse.datatools.connectivity.drivers.DriverInstance;
 import org.eclipse.datatools.connectivity.drivers.jdbc.IJDBCDriverDefinitionConstants;
-import org.jboss.tools.hibernate.runtime.spi.IEnvironment;
-import org.jboss.tools.hibernate.runtime.spi.IService;
+import org.hibernate.tool.eclipse.runtime.spi.IEnvironment;
+import org.hibernate.tool.eclipse.runtime.spi.IService;
 
 /**
  * @author Vitali Yemialyanchyk

@@ -8,8 +8,8 @@ import org.eclipse.swt.graphics.Image;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.eclipse.console.utils.EclipseImages;
 import org.hibernate.eclipse.console.workbench.HibernateWorkbenchHelper;
-import org.jboss.tools.hibernate.runtime.spi.IHQLCompletionHandler;
-import org.jboss.tools.hibernate.runtime.spi.IHQLCompletionProposal;
+import org.hibernate.tool.eclipse.runtime.spi.IHQLCompletionHandler;
+import org.hibernate.tool.eclipse.runtime.spi.IHQLCompletionProposal;
 
 public class HQLCompletionHandler implements IHQLCompletionHandler {
 

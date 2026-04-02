@@ -213,7 +213,7 @@ public class AllEntitiesProcessor implements IHibernateJPAWizardParams {
 		final ITextFileBufferManager bufferManager = FileBuffers.getTextFileBufferManager();
 		for (int i = 0; i < changes.size(); i++) {
 			ChangeStructure cs = changes.get(i);
-			if (cs.textEdit != null && ((cs.change != null && cs.change.isEnabled()) || (cs.change == null))) {
+				if (cs.textEdit != null && ((cs.change != null && cs.change.isEnabled()) || (cs.change == null))) {
 				ITextFileBuffer textFileBuffer = bufferManager.getTextFileBuffer(cs.path, LocationKind.IFILE);
 				IDocument document = textFileBuffer.getDocument();
 				try {

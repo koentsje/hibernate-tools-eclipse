@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<fragment>
+   <extension
+         point="org.hibernate.tool.eclipse.search.runtime.spi.services">
+      <serivce
+            class="org.hibernate.tool.eclipse.search.HSearchServiceImpl"
+            name="5.3">
+      </serivce>
+   </extension>
+
+</fragment>

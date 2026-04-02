@@ -29,9 +29,9 @@ import java.util.Observable;
 import org.eclipse.swt.graphics.Image;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
 import org.hibernate.eclipse.console.workbench.HibernateWorkbenchHelper;
-import org.jboss.tools.hibernate.runtime.spi.IProperty;
-import org.jboss.tools.hibernate.runtime.spi.IType;
-import org.jboss.tools.hibernate.runtime.spi.IValue;
+import org.hibernate.tool.eclipse.runtime.spi.IProperty;
+import org.hibernate.tool.eclipse.runtime.spi.IType;
+import org.hibernate.tool.eclipse.runtime.spi.IValue;
 
 public class PropertyViewAdapter extends Observable {
 
