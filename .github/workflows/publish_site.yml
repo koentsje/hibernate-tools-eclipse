@@ -49,8 +49,107 @@ jobs:
 
     - name: Prepare Pages content
       run: |
-        mkdir -p _site
-        cp -r site/target/repository/* _site/
+        VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+        SITE_DIR=_site/snapshots/${VERSION}
+        mkdir -p "${SITE_DIR}"
+        cp -r site/target/repository/* "${SITE_DIR}/"
+        SITE_URL="https://koentsje.github.io/hibernate-tools-eclipse/snapshots/${VERSION}/"
+        TIMESTAMP=$(date -u '+%Y-%m-%d %H:%M UTC')
+        COMMIT_SHA="${GITHUB_SHA:0:8}"
+
+        cat > "${SITE_DIR}/index.html" <<SITEHTML
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Hibernate Tools Eclipse - ${VERSION}</title>
+          <style>
+            body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; line-height: 1.6; }
+            h1 { color: #59666e; border-bottom: 2px solid #bcab79; padding-bottom: 10px; }
+            h2 { color: #59666e; margin-top: 30px; }
+            code { background: #f4f1eb; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+            pre { background: #f4f1eb; padding: 16px; border-radius: 6px; overflow-x: auto; }
+            pre code { padding: 0; }
+            .url-box { background: #f4f1eb; border: 1px solid #bcab79; border-radius: 6px; padding: 12px 16px; font-family: monospace; font-size: 1.05em; margin: 10px 0; user-select: all; }
+            .info { color: #666; font-size: 0.9em; }
+            a { color: #bcab79; }
+          </style>
+        </head>
+        <body>
+          <h1>Hibernate Tools Eclipse - ${VERSION}</h1>
+          <p>This is the p2 update site for Hibernate Tools Eclipse <strong>${VERSION}</strong>.</p>
+          <p class="info">Built from commit <a href="https://github.com/koentsje/hibernate-tools-eclipse/commit/${GITHUB_SHA}">${COMMIT_SHA}</a> on ${TIMESTAMP}.</p>
+
+          <h2>Update Site URL</h2>
+          <div class="url-box">${SITE_URL}</div>
+
+          <h2>Installation Instructions</h2>
+          <ol>
+            <li>Open Eclipse IDE</li>
+            <li>Go to <strong>Help &rarr; Install New Software...</strong></li>
+            <li>Click <strong>Add...</strong> to add a new repository</li>
+            <li>Enter a name (e.g. <code>Hibernate Tools Eclipse</code>) and paste the update site URL above</li>
+            <li>Click <strong>Add</strong></li>
+            <li>Select the features you want to install</li>
+            <li>Click <strong>Next</strong>, accept the license, and finish the installation</li>
+            <li>Restart Eclipse when prompted</li>
+          </ol>
+
+          <h2>Features</h2>
+          <ul>
+            <li>Hibernate Console for interactive HQL/JPQL query execution</li>
+            <li>Reverse engineering editor for database-to-model configuration</li>
+            <li>Structured XML editors for <code>hibernate.cfg.xml</code> and <code>.hbm.xml</code> files</li>
+            <li>Code generation from Hibernate mappings and JPA annotations</li>
+            <li>Hibernate mapping diagram visualization</li>
+            <li>Support for Hibernate ORM 3.5 through 7.0</li>
+            <li>Hibernate Search tooling</li>
+          </ul>
+
+          <p><a href="https://github.com/koentsje/hibernate-tools-eclipse">GitHub Repository</a></p>
+        </body>
+        </html>
+        SITEHTML
+
+        cat > _site/index.html <<ROOTHTML
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Hibernate Tools Eclipse</title>
+          <style>
+            body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; line-height: 1.6; }
+            h1 { color: #59666e; border-bottom: 2px solid #bcab79; padding-bottom: 10px; }
+            h2 { color: #59666e; margin-top: 30px; }
+            a { color: #bcab79; }
+            .site-entry { background: #f4f1eb; border: 1px solid #bcab79; border-radius: 6px; padding: 16px; margin: 10px 0; }
+            .site-entry a { font-family: monospace; font-size: 1.05em; }
+            .info { color: #666; font-size: 0.9em; }
+          </style>
+        </head>
+        <body>
+          <h1>Hibernate Tools Eclipse</h1>
+          <p>Eclipse IDE plugins for working with Hibernate ORM and Hibernate Search.</p>
+
+          <h2>Available Update Sites</h2>
+
+          <div class="site-entry">
+            <strong>Snapshot</strong><br>
+            <a href="snapshots/${VERSION}/">${VERSION}</a>
+            <p class="info">Latest development build from <code>main</code> branch. Updated on ${TIMESTAMP}.</p>
+          </div>
+
+          <h2>Quick Install</h2>
+          <ol>
+            <li>In Eclipse, go to <strong>Help &rarr; Install New Software...</strong></li>
+            <li>Add the update site URL for the version you want</li>
+            <li>Select the Hibernate Tools features and complete the wizard</li>
+          </ol>
+
+          <p><a href="https://github.com/koentsje/hibernate-tools-eclipse">Source Code on GitHub</a></p>
+        </body>
+        </html>
+        ROOTHTML
 
     - name: Upload Pages artifact
       uses: actions/upload-pages-artifact@v3
