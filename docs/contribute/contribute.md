@@ -58,22 +58,22 @@ Press 'Next >' again to review and accept the licenses.
 
 <img src="images/review-licenses-core-tests.png" width="600" />
 
-Press 'Finish' to launch the installation and 'Install anyway' in the security warning popup. After restarting, the JBoss Tools test plugins are installed as well and we are ready to import the JBoss Tools Hibernate code base.
+Press 'Finish' to launch the installation and 'Install anyway' in the security warning popup. After restarting, the JBoss Tools test plugins are installed as well and we are ready to import the Hibernate Tools Eclipse code base.
 
-## Prepare the JBoss Tools Hibernate Code Base
+## Prepare the Hibernate Tools Eclipse Code Base
 
-### Fork the JBoss Tools Hibernate GitHub Repository
+### Fork the Hibernate Tools Eclipse GitHub Repository
 
-Navigate to the [JBoss Tools Hibernate](https://github.com/jbosstools/jbosstools-hibernate) repository on GitHub and use the 'Fork' button in the topright corner of your screen to create a fork in your own github account.
+Navigate to the [Hibernate Tools Eclipse](https://github.com/koentsje/hibernate-tools-eclipse) repository on GitHub and use the 'Fork' button in the topright corner of your screen to create a fork in your own github account.
 
 <img src="images/fork-from-github.png" width="400" />
  
 ### Create a Local Clone
 
-In a command-line window, navigate to the parent folder of where you want the JBoss Tools Hibernate code base to be cloned and issue the following command :
+In a command-line window, navigate to the parent folder of where you want the Hibernate Tools Eclipse code base to be cloned and issue the following command :
 
 ```
-git clone https://github.com/jbosstools/jbosstools-hibernate
+git clone https://github.com/koentsje/hibernate-tools-eclipse
 ```
 
 <img src="images/create-local-clone.png" width="600" />
@@ -107,13 +107,13 @@ Building the project is as simple as issuing `mvn clean install` or `mvn clean v
 
 Now we are ready to import the project into our JBoss Tools installation.
 
-## Import the JBoss Tools Hibernate Code Base
+## Import the Hibernate Tools Eclipse Code Base
 
 In the fresh JBoss Tools workbench that you installed earlier, open the Eclipse import wizard e.g. using the 'File > Import...' menu. On the 'Select' page of the wizard, select the 'Maven -> Existing Maven Projects' and afterwards push the 'Next >' button. 
 
 <img src="images/import-select.png" width="400" />
 
-On the 'Maven Projects' page of the wizard, use the 'Browse...' button to navigate to the root folder of your local JBoss Tools Hibernate clone that you created previously.
+On the 'Maven Projects' page of the wizard, use the 'Browse...' button to navigate to the root folder of your local Hibernate Tools Eclipse clone that you created previously.
 
 <img src="images/import-maven-projects.png" width="400" />
 
@@ -143,13 +143,13 @@ When the workbench reopens, you will need to wait some time for the Maven projec
 
 <img src="images/final-eclipse-window.png" width="800" />
 
-Congratulations! You have succesfully imported the JBoss Tools Hibernate code base. In the next section, we will talk more about how to contribute the changes you make.
+Congratulations! You have succesfully imported the Hibernate Tools Eclipse code base. In the next section, we will talk more about how to contribute the changes you make.
 
 ## Contributing Code
 
 ### Create a Topic Branch
 
-All changes to the JBoss Tools Hibernate code base have to be related to a bug, task or new feature that was registered in the [JBoss Tools JIRA repository](https://issues.redhat.com/projects/JBIDE). All the issues in this repository are identified by an identifier of the form 'JBIDE-XXXXX' where the X's represent the issue number. A good practice is to create a topic branch in your local code base with the same name as the identifier of the issue you are working on. You can do this in from a command-line prompt. When you are on the master branch, use:
+All changes to the Hibernate Tools Eclipse code base have to be related to a bug, task or new feature that was registered in the [JBoss Tools JIRA repository](https://issues.redhat.com/projects/JBIDE). All the issues in this repository are identified by an identifier of the form 'JBIDE-XXXXX' where the X's represent the issue number. A good practice is to create a topic branch in your local code base with the same name as the identifier of the issue you are working on. You can do this in from a command-line prompt. When you are on the master branch, use:
 
 ```
 git checkout -b JBIDE-XXXXX
@@ -163,7 +163,7 @@ The main thing to think about when you are adding code or doing modifications is
 
 ```
 git add .
-git commit -s -s "JBIDE-XXXXX: <JBoss Tools Hibernate issue summary> - <Description of the changes>"
+git commit -s -s "JBIDE-XXXXX: <Hibernate Tools Eclipse issue summary> - <Description of the changes>"
 ```
 
 ### Create a Pull Request
@@ -176,4 +176,4 @@ git push <remote-name> JBIDE-XXXXX
 
 You can then use a browser to navigate to your GitHub page (https://github.com/koentsje/jbosstools-hibernate/pulls). The recently pushed branch should be listed. Push the 'Compare & pull request' button and on the next page the 'Create pull request' button to create the pull request.
 
-One of the JBoss Tools Hibernate developers will then review your pull request and accept it when everything is OK or give some feedback when there are things that need to be adapted.
+One of the Hibernate Tools Eclipse developers will then review your pull request and accept it when everything is OK or give some feedback when there are things that need to be adapted.

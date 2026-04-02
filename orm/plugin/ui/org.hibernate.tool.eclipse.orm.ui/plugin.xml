@@ -6,7 +6,7 @@
        <page
              id="org.hibernate.tool.eclipse.orm.ui.preferences"
              name="Hibernate"
-             category="org.jboss.tools.common.model.ui.MainPreferencePage"
+             category=""
              class="org.hibernate.tool.eclipse.orm.ui.internal.RuntimesPreferencePage">
        </page>
    </extension>
