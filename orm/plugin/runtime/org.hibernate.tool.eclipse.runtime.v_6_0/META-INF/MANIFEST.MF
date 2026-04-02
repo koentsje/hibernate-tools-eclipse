@@ -3,7 +3,7 @@ Automatic-Module-Name: org.hibernate.tool.eclipse.runtime.v.6.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Hibernate 6.0 libraries
 Bundle-SymbolicName: org.hibernate.tool.eclipse.runtime.v_6_0;singleton:=true
-Bundle-Version: 5.4.24.qualifier
+Bundle-Version: 6.0.0.qualifier
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-ClassPath: .,

@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Hibernate 4.3 libraries
 Bundle-Vendor: Red Hat
 Bundle-SymbolicName: org.hibernate.tool.eclipse.runtime.v_4_3;singleton:=true
-Bundle-Version: 5.4.24.qualifier
+Bundle-Version: 6.0.0.qualifier
 Bundle-Localization: plugin
 Require-Bundle: org.hibernate.tool.eclipse.libs.antlr.v_2_7_7,
  org.hibernate.tool.eclipse.libs.commons-collections4.v_4_4,

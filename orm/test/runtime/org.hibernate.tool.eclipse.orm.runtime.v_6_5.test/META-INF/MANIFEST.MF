@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name:  Hibernate Runtime 6.5 Tests
 Bundle-SymbolicName: org.hibernate.tool.eclipse.orm.runtime.v_6_5.test
 Automatic-Module-Name: org.hibernate.tool.eclipse.orm.runtime.v_6_5.test
-Bundle-Version: 5.4.24.qualifier
+Bundle-Version: 6.0.0.qualifier
 Fragment-Host: org.hibernate.tool.eclipse.orm.runtime.v_6_5
 Require-Bundle: junit-jupiter-api,
  org.hibernate.tool.eclipse.libs.h2.v_1_4

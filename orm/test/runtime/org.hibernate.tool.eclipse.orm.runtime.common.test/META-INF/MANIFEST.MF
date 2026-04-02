@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Hibernate ORM Runtime Common Tests
 Bundle-SymbolicName: org.hibernate.tool.eclipse.orm.runtime.common.test
 Automatic-Module-Name: org.hibernate.tool.eclipse.orm.runtime.common.test
-Bundle-Version: 5.4.24.qualifier
+Bundle-Version: 6.0.0.qualifier
 Fragment-Host: org.hibernate.tool.eclipse.orm.runtime.common
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: junit-jupiter-api

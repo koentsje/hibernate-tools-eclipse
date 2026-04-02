@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Experimental Hibernate Runtime Tests
 Bundle-SymbolicName: org.hibernate.tool.eclipse.orm.runtime.v_6_3.test
 Automatic-Module-Name: org.hibernate.tool.eclipse.orm.runtime.v_6_3.test
-Bundle-Version: 5.4.24.qualifier
+Bundle-Version: 6.0.0.qualifier
 Fragment-Host: org.hibernate.tool.eclipse.orm.runtime.v_6_3
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: org.hibernate.tool.eclipse.libs.h2.v_1_4,

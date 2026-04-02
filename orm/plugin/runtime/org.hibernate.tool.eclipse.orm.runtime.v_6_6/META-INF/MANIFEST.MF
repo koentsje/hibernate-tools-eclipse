@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Hibernate ORM Runtime 6.6
 Bundle-Vendor: Red Hat
 Bundle-SymbolicName: org.hibernate.tool.eclipse.orm.runtime.v_6_6;singleton:=true
-Bundle-Version: 5.4.24.qualifier
+Bundle-Version: 6.0.0.qualifier
 Require-Bundle: org.hibernate.tool.eclipse.orm.runtime.common,
  org.hibernate.tool.eclipse.runtime.spi,
  org.hibernate.tool.eclipse.libs.antlr4-runtime.v_4_10,
