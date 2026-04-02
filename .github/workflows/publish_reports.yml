@@ -2,7 +2,7 @@ name: Publish reports
 
 on:
   workflow_run:
-    workflows: ["Build And Test"]
+    workflows: ["Build and Test"]
     types:
       - completed
 
@@ -10,40 +10,19 @@ jobs:
   publish:
     name: Publish Test Report
     runs-on: ubuntu-latest
+    if: github.event.workflow_run.conclusion != 'cancelled'
     steps:
       - name: Download artifacts
-        uses: actions/github-script@v3.1.0
+        uses: actions/download-artifact@v4
         with:
-          script: |
-            var artifacts = await github.actions.listWorkflowRunArtifacts({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                run_id: ${{github.event.workflow_run.id}},
-            });
-            for (var artifact of artifacts.data.artifacts) {
-              if (artifact.name.endsWith('test-reports')) {
-                var zipfile = await github.actions.downloadArtifact({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  artifact_id: artifact.id,
-                  archive_format: 'zip',
-                });
-                var fs = require('fs');
-                var path = require('path');
-                var pathFile = path.format({
-                  root: '${{github.workspace}}/',
-                  name: artifact.name,
-                  ext: '.zip'
-                });
-                fs.writeFileSync(pathFile, Buffer.from(zipfile.data));
-              }
-            }
-      - name: Unzip artifacts
-        run: |
-          find . -name '*.zip' -exec sh -c 'unzip -d "${1%.*}" "$1"' _ {} \;
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          pattern: "*-test-reports"
+          merge-multiple: false
+
       - name: Publish aggregated tests reports
-        uses: scacap/action-surefire-report@4cbb611f23a9b5a030c73c2b32190a80983956ed #v1
+        uses: scacap/action-surefire-report@v1
         with:
-          github_token: ${{secrets.GITHUB_TOKEN}}
-          report_paths: '${{github.workspace}}/*test-reports/**/TEST-*.xml'
-          commit: ${{github.event.workflow_run.head_sha}}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          report_paths: '**/*-test-reports/**/TEST-*.xml'
+          commit: ${{ github.event.workflow_run.head_sha }}
