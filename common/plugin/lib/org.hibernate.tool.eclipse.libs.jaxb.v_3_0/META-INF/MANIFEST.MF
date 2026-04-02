@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: JAXB 3.0 implementation for JBoss Tools Hibernate
+Bundle-Name: JAXB 3.0 implementation for Hibernate Tools Eclipse
 Bundle-SymbolicName: org.hibernate.tool.eclipse.libs.jaxb.v_3_0;singleton:=true
 Bundle-Version: 6.0.0.qualifier
 Bundle-Vendor: Red Hat

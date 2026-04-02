@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Hibernate Commons Annotations Version 6.0.x  for JBoss Tools Hibernate
+Bundle-Name: Hibernate Commons Annotations Version 6.0.x  for Hibernate Tools Eclipse
 Bundle-SymbolicName: org.hibernate.tool.eclipse.libs.hibernate-commons-annotations.v_6_0
 Bundle-Version: 6.0.0.qualifier
 Bundle-Vendor: Red Hat

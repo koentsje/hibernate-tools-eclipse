@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Classmate 1.5.x for JBoss Tools Hibernate
+Bundle-Name: Classmate 1.5.x for Hibernate Tools Eclipse
 Bundle-SymbolicName: org.hibernate.tool.eclipse.libs.classmate.v_1_5
 Bundle-Version: 6.0.0.qualifier
 Bundle-Vendor: Red Hat

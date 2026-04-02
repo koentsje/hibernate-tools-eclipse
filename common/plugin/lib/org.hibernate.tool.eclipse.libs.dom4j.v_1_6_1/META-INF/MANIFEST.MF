@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Dom4j for JBoss Tools Hibernate
+Bundle-Name: Dom4j for Hibernate Tools Eclipse
 Bundle-SymbolicName: org.hibernate.tool.eclipse.libs.dom4j.v_1_6_1
 Bundle-Vendor: Red Hat
 Bundle-Version: 6.0.0.qualifier

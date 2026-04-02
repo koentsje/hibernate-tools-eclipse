@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Antlr for JBoss Tools Hibernate
+Bundle-Name: Antlr for Hibernate Tools Eclipse
 Bundle-SymbolicName: org.hibernate.tool.eclipse.libs.antlr.v_2_7_7
 Bundle-Version: 6.0.0.qualifier
 Bundle-Vendor: Red Hat

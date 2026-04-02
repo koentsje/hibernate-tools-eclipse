@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Javassist for JBoss Tools Hibernate
+Bundle-Name: Javassist for Hibernate Tools Eclipse
 Bundle-SymbolicName: org.hibernate.tool.eclipse.libs.javassist.v_3_28
 Bundle-Version: 6.0.0.qualifier
 Bundle-Vendor: Red Hat

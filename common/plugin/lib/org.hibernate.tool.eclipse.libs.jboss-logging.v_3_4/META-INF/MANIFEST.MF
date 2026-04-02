@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: JBoss Logging for JBoss Tools Hibernate
+Bundle-Name: JBoss Logging for Hibernate Tools Eclipse
 Bundle-SymbolicName: org.hibernate.tool.eclipse.libs.jboss-logging.v_3_4
 Bundle-Version: 6.0.0.qualifier
 Bundle-Vendor: Red Hat

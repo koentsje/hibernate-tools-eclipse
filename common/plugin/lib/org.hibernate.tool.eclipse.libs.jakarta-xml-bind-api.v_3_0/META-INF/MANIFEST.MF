@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Jakarta Transaction API for JBoss Tools Hibernate
+Bundle-Name: Jakarta Transaction API for Hibernate Tools Eclipse
 Bundle-SymbolicName: org.hibernate.tool.eclipse.libs.jakarta-xml-bind-api.v_3_0
 Bundle-Version: 6.0.0.qualifier
 Bundle-Vendor: Red Hat
