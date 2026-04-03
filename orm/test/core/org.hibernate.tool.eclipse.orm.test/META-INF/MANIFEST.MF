@@ -11,7 +11,7 @@ Bundle-ClassPath: .,
  lib/hamcrest-all-1.1.jar
 Bundle-Vendor: %Bundle-Vendor.0
 Bundle-Localization: plugin
-Require-Bundle: org.hibernate.eclipse.core,
+Require-Bundle: org.hibernate.tool.eclipse.orm.core,
  org.hibernate.eclipse.console,
  org.junit,
  org.hibernate.tool.eclipse.runtime.spi,

@@ -16,7 +16,7 @@ Require-Bundle: org.apache.commons.collections,
  org.hibernate.tool.eclipse.libs.transaction-api.v_1_2,
  org.hibernate.tool.eclipse.runtime.common,
  org.hibernate.tool.eclipse.runtime.spi,
- org.hibernate.eclipse.core,
+ org.hibernate.tool.eclipse.orm.core,
  slf4j.api
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-ClassPath: .,

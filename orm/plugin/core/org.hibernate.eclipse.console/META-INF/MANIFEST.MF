@@ -41,7 +41,7 @@ Export-Package: org.hibernate.eclipse.builder,
  org.hibernate.eclipse.nature,
  org.hibernate.eclipse.util.xpl,
  org.hibernate.eclipse.utils
-Require-Bundle: org.hibernate.eclipse.core;bundle-version="5.0.0",
+Require-Bundle: org.hibernate.tool.eclipse.orm.core;bundle-version="5.0.0",
  org.hibernate.eclipse.ui;bundle-version="6.0.0",
  org.eclipse.jdt.ui;bundle-version="3.10.100",
  org.eclipse.jdt.core;bundle-version="3.11.0",
