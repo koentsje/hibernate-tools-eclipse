@@ -27,7 +27,7 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.ide.IDE;
 import org.eclipse.ui.internal.ObjectPluginAction;
 import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateConsoleCorePlugin;
 import org.hibernate.tool.eclipse.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.runtime.spi.IPersistentClass;
 import org.hibernate.tool.eclipse.ui.diagram.DiagramViewerMessages;
@@ -76,9 +76,8 @@ public class OpenDiagramActionDelegate implements IObjectActionDelegate {
     				try {
         				consoleConfig.build();
     				} catch (Exception he) {
-    					HibernateConsolePlugin.getDefault().showError(
-    						HibernateConsolePlugin.getShell(), 
-    						DiagramViewerMessages.OpenDiagramActionDelegate_could_not_load_configuration + 
+    					HibernateConsoleCorePlugin.getDefault().logErrorMessage(
+    						DiagramViewerMessages.OpenDiagramActionDelegate_could_not_load_configuration +
     						' ' + consoleConfig.getName(), he);
     				}
 					if (consoleConfig.hasConfiguration()) {
@@ -100,7 +99,7 @@ public class OpenDiagramActionDelegate implements IObjectActionDelegate {
 	    	try {
 	    		openEditor(setPC, consoleConfiguration);
 	    	} catch (PartInitException e) {
-	    		HibernateConsolePlugin.getDefault().logErrorMessage("Can't open mapping view.", e);		//$NON-NLS-1$
+	    		HibernateConsoleCorePlugin.getDefault().logErrorMessage("Can't open mapping view.", e);		//$NON-NLS-1$
 			} 
     	}
 	}

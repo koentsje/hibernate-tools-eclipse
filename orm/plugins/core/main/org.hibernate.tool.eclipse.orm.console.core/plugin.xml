@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+   <extension-point id="exporters" name="Hibernate Console Exporter" schema="schema/exporters.exsd"/>
+
+   <extension
+        id="hibernateNature"
+        name="Hibernate Nature"
+        point="org.eclipse.core.resources.natures">
+        <runtime>
+            <run
+                class="org.hibernate.eclipse.nature.HibernateNature">
+            </run>
+        </runtime>
+        <requires-nature
+            id="org.eclipse.jdt.core.javanature">
+        </requires-nature>
+    </extension>
+
+     <extension
+         id="hibernateBuilder"
+         name="Hibernate Builder"
+         point="org.eclipse.core.resources.builders">
+      <builder hasNature="false">
+         <run class="org.hibernate.eclipse.builder.HibernateBuilder"/>
+      </builder>
+   </extension>
+
+  <extension
+         point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+            delegate="org.hibernate.eclipse.launch.ConsoleConfigurationLaunchDelegate"
+            id="org.hibernate.eclipse.launch.ConsoleConfigurationLaunchConfigurationType"
+            modes="run"
+            name="Hibernate Console Configuration"
+            public="true"/>
+   </extension>
+
+   <extension
+         point="org.eclipse.ltk.core.refactoring.renameParticipants">
+         <renameParticipant
+            class="org.hibernate.eclipse.launch.core.refactoring.ConsoleConfigurationITypeRenameParticipant"
+            name="Console Configuration IType Participant"
+            id="org.hibernate.eclipse.launch.core.refactoring.ConsoleConfigurationITypeRenameParticipant">
+         <enablement>
+           <with variable="affectedNatures">
+             <iterate operator="or">
+               <equals value="org.eclipse.jdt.core.javanature"/>
+             </iterate>
+           </with>
+           <with variable="element">
+   	         <instanceof value="org.eclipse.jdt.core.IType"/>
+           </with>
+         </enablement>
+      </renameParticipant>
+      <renameParticipant
+            class="org.hibernate.eclipse.launch.core.refactoring.RenameResourceParticipant"
+            id="org.hibernate.eclipse.launch.core.refactoring.RenameResourceParticipant"
+            name="Launch Configurations resource rename updates">
+           <enablement>
+           	<and>
+				<or>
+					<with variable="processorIdentifier">
+						<equals
+							value="org.eclipse.jdt.ui.renameJavaProjectProcessor">
+						</equals>
+					</with>
+					<with variable="processorIdentifier">
+						<equals
+							value="org.eclipse.ltk.core.refactoring.renameResourceProcessor">
+						</equals>
+					</with>
+				</or>
+	            <with variable="element">
+	                   <instanceof value="org.eclipse.core.resources.IResource"/>
+	            </with>
+			</and>
+         </enablement>
+      </renameParticipant>
+      <renameParticipant
+            class="org.hibernate.eclipse.launch.core.refactoring.ConnectionProfileRenameParticipant"
+            id="org.hibernate.eclipse.console.renameConnectionProfileParticipant"
+            name="name">
+         <enablement>
+            <with
+                  variable="element">
+               <instanceof
+                     value="org.eclipse.datatools.connectivity.IConnectionProfile">
+               </instanceof>
+            </with>
+         </enablement>
+      </renameParticipant>
+      <renameParticipant
+            class="org.hibernate.eclipse.launch.core.refactoring.ConsoleConfigurationRenameParticipant"
+            id="org.hibernate.eclipse.console.renameParticipant1"
+            name="ConsoleConfigurationRenameParticipant">
+         <enablement>
+            <with
+                  variable="element">
+               <and>
+                  <instanceof
+                        value="org.eclipse.debug.internal.core.LaunchConfiguration">
+                  </instanceof>
+               </and>
+            </with>
+         </enablement>
+      </renameParticipant>
+   </extension>
+   <extension
+         point="org.eclipse.ltk.core.refactoring.moveParticipants">
+      <moveParticipant
+            class="org.hibernate.eclipse.launch.core.refactoring.MoveResourceParticipant"
+            id="org.hibernate.eclipse.launch.core.refactoring.MoveResourceParticipant"
+            name="Launch Configurations resource move updates">
+            <enablement>
+            <with variable="element">
+                   <instanceof value="org.eclipse.core.resources.IResource"/>
+            </with>
+         </enablement>
+      </moveParticipant>
+      <moveParticipant
+            class="org.hibernate.eclipse.launch.core.refactoring.ConsoleConfigurationITypeMoveParticipant"
+            name="Console Configuration IType Participant"
+            id="org.hibernate.eclipse.launch.core.refactoring.ConsoleConfigurationITypeMoveParticipant">
+         <enablement>
+           <with variable="affectedNatures">
+             <iterate operator="or">
+               <equals value="org.eclipse.jdt.core.javanature"/>
+             </iterate>
+           </with>
+           <with variable="element">
+   	         <instanceof value="org.eclipse.jdt.core.IType"/>
+           </with>
+         </enablement>
+      </moveParticipant>
+   </extension>
+
+</plugin>

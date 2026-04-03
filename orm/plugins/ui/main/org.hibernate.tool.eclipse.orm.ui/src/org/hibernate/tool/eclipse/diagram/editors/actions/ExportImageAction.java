@@ -37,7 +37,7 @@ import org.eclipse.swt.graphics.ImageData;
 import org.eclipse.swt.graphics.ImageLoader;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 import org.eclipse.ui.dialogs.SaveAsDialog;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateConsoleCorePlugin;
 import org.hibernate.tool.eclipse.ui.diagram.DiagramViewerMessages;
 import org.hibernate.tool.eclipse.ui.diagram.editors.DiagramViewer;
 
@@ -137,7 +137,7 @@ public class ExportImageAction extends DiagramBaseAction {
 					}
 				
 				} catch (CoreException e) {
-					HibernateConsolePlugin.getDefault().logErrorMessage("ExportImageAction", e); //$NON-NLS-1$
+					HibernateConsoleCorePlugin.getDefault().logErrorMessage("ExportImageAction", e); //$NON-NLS-1$
 					if (showErrDialog) {
 						MessageDialog.openInformation(getDiagramViewer().getSite().getShell(),
 							DiagramViewerMessages.ExportImageAction_error, DiagramViewerMessages.ExportImageAction_failed_to_export_image + e.getMessage());
@@ -196,7 +196,7 @@ public class ExportImageAction extends DiagramBaseAction {
 			imageLoader.data = new ImageData[] { image.getImageData() };
 			imageLoader.save(result, format);
 		} catch (Throwable e) {
-			HibernateConsolePlugin.getDefault().logErrorMessage("ExportImageAction - save:", e); //$NON-NLS-1$
+			HibernateConsoleCorePlugin.getDefault().logErrorMessage("ExportImageAction - save:", e); //$NON-NLS-1$
 		} finally {
 			if (g != null) {
 				g.dispose();

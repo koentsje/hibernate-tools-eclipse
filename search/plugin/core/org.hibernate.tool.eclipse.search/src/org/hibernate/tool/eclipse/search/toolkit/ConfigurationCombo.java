@@ -5,7 +5,7 @@ import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.eclipse.console.utils.LaunchHelper;
+import org.hibernate.eclipse.console.utils.LaunchHelperUI;
 
 public class ConfigurationCombo {
 	
@@ -19,7 +19,7 @@ public class ConfigurationCombo {
 	}
 
 	protected void populateComboBox() {
-		ConsoleConfiguration[] configurations = LaunchHelper.findFilteredSortedConsoleConfigs();
+		ConsoleConfiguration[] configurations = LaunchHelperUI.findFilteredSortedConsoleConfigs();
 		final String[] names = new String[configurations.length];
 		for (int i = 0; i < configurations.length; i++) {
 			names[i] = configurations[i].getName();

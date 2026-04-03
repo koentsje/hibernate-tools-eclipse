@@ -20,7 +20,7 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchPart;
 import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateConsoleCorePlugin;
 import org.hibernate.tool.eclipse.runtime.spi.IColumn;
 import org.hibernate.tool.eclipse.runtime.spi.IPersistentClass;
 import org.hibernate.tool.eclipse.runtime.spi.IProperty;
@@ -66,9 +66,9 @@ public class OpenMappingAction extends SelectionAction {
 				try {
 					editorPart = org.hibernate.eclipse.console.actions.OpenMappingAction.run(consoleConfig, compositSel, parentProperty);
 				} catch (CoreException e) {
-					HibernateConsolePlugin.getDefault().logErrorMessage(DiagramViewerMessages.OpenMappingAction_canot_find_or_open_mapping_file, e);
+					HibernateConsoleCorePlugin.getDefault().logErrorMessage(DiagramViewerMessages.OpenMappingAction_canot_find_or_open_mapping_file, e);
 				} catch (FileNotFoundException e) {
-					HibernateConsolePlugin.getDefault().logErrorMessage(DiagramViewerMessages.OpenMappingAction_canot_find_or_open_mapping_file, e);
+					HibernateConsoleCorePlugin.getDefault().logErrorMessage(DiagramViewerMessages.OpenMappingAction_canot_find_or_open_mapping_file, e);
 				}
 				continue;
 			}
@@ -84,9 +84,9 @@ public class OpenMappingAction extends SelectionAction {
 			try {
 				editorPart = org.hibernate.eclipse.console.actions.OpenMappingAction.run(consoleConfig, selection, selectionParent);
 			} catch (CoreException e) {
-				HibernateConsolePlugin.getDefault().logErrorMessage(DiagramViewerMessages.OpenMappingAction_open_mapping_file, e);
+				HibernateConsoleCorePlugin.getDefault().logErrorMessage(DiagramViewerMessages.OpenMappingAction_open_mapping_file, e);
 			} catch (FileNotFoundException e) {
-				HibernateConsolePlugin.getDefault().logErrorMessage(DiagramViewerMessages.OpenMappingAction_open_mapping_file, e);
+				HibernateConsoleCorePlugin.getDefault().logErrorMessage(DiagramViewerMessages.OpenMappingAction_open_mapping_file, e);
 			}
 		}
 	}

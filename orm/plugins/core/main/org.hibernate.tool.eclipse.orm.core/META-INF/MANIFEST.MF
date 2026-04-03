@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %Bundle-Name.0
-Bundle-SymbolicName: org.hibernate.eclipse.core;singleton:=true
+Bundle-SymbolicName: org.hibernate.tool.eclipse.orm.core;singleton:=true
 Bundle-Version: 6.0.0.qualifier
 Bundle-Activator: org.hibernate.eclipse.HibernatePlugin
 Bundle-Vendor: %Bundle-Vendor.0

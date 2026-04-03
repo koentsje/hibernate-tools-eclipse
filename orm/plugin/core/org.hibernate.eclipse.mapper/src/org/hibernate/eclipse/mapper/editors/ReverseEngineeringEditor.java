@@ -43,7 +43,7 @@ import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
 import org.hibernate.eclipse.console.model.IReverseEngineeringDefinition;
-import org.hibernate.eclipse.console.utils.ProjectUtils;
+import org.hibernate.eclipse.console.utils.ProjectUtilsUI;
 import org.hibernate.eclipse.console.workbench.LazyDatabaseSchema;
 import org.hibernate.eclipse.mapper.MapperMessages;
 import org.hibernate.eclipse.mapper.MapperPlugin;
@@ -178,7 +178,7 @@ public class ReverseEngineeringEditor extends XMLFormEditorPart {
 
 	public HibernateNature getHibernateNature() throws CoreException {
 		if(getEditorInput()!=null) {
-			IJavaProject project = ProjectUtils.findJavaProject(getEditorInput());
+			IJavaProject project = ProjectUtilsUI.findJavaProject(getEditorInput());
 			return HibernateNature.getHibernateNature( project );
 		} else {
 			return null;

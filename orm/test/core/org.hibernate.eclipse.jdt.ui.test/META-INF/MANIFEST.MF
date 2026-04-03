@@ -5,7 +5,8 @@ Bundle-SymbolicName: org.hibernate.eclipse.jdt.ui.test
 Bundle-Version: 6.0.0.qualifier
 Require-Bundle: org.eclipse.ui;bundle-version="3.107.0",
  org.eclipse.core.runtime;bundle-version="3.10.0",
- org.hibernate.eclipse.console;bundle-version="5.0.0",
+ org.hibernate.tool.eclipse.orm.console.core,
+ org.hibernate.tool.eclipse.orm.console.ui,
  org.hibernate.tool.eclipse.orm.core;bundle-version="5.0.0",
  org.junit;bundle-version="4.12.0",
  org.eclipse.core.resources;bundle-version="3.9.100",

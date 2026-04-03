@@ -31,7 +31,7 @@ import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.eclipse.console.model.IReverseEngineeringDefinition;
-import org.hibernate.eclipse.console.utils.LaunchHelper;
+import org.hibernate.eclipse.console.utils.LaunchHelperUI;
 import org.hibernate.eclipse.mapper.MapperMessages;
 import org.hibernate.eclipse.mapper.MapperPlugin;
 import org.hibernate.eclipse.mapper.editors.ReverseEngineeringEditor;
@@ -76,7 +76,7 @@ public class ConsoleConfigNamePart extends RevEngSectionPart {
 		text.setEditable(false);
 		adaptRecursively(toolkit, text);
 
-		ConsoleConfiguration[] cfg = LaunchHelper.findFilteredSortedConsoleConfigs();
+		ConsoleConfiguration[] cfg = LaunchHelperUI.findFilteredSortedConsoleConfigs();
 		String[] names = new String[cfg.length];
 		for (int i = 0; i < cfg.length; i++) {
 			ConsoleConfiguration configuration = cfg[i];

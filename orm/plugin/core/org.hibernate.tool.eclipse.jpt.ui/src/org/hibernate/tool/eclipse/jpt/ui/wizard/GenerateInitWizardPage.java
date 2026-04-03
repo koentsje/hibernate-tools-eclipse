@@ -48,7 +48,7 @@ import org.hibernate.eclipse.console.EclipseConsoleConfigurationPreferences;
 import org.hibernate.eclipse.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.utils.DialogSelectionHelper;
 import org.hibernate.eclipse.console.utils.DriverClassHelpers;
-import org.hibernate.eclipse.console.utils.LaunchHelper;
+import org.hibernate.eclipse.console.utils.LaunchHelperUI;
 import org.hibernate.eclipse.launch.PathHelper;
 import org.hibernate.util.xpl.StringHelper;
 import org.hibernate.tool.eclipse.jpt.core.internal.HibernateJpaProject;
@@ -151,7 +151,7 @@ public abstract class GenerateInitWizardPage extends WizardPage {
 		
 		consoleConfigurationName = new ComboDialogField(SWT.READ_ONLY);
 		consoleConfigurationName.setLabelText(HibernateConsoleMessages.CodeGenerationSettingsTab_console_configuration);
-		ConsoleConfiguration[] cfg = LaunchHelper.findFilteredSortedConsoleConfigs();
+		ConsoleConfiguration[] cfg = LaunchHelperUI.findFilteredSortedConsoleConfigs();
 		String[] names = new String[cfg.length];
 		for (int i = 0; i < cfg.length; i++) {
 			ConsoleConfiguration configuration = cfg[i];

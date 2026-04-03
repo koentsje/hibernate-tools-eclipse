@@ -12,7 +12,7 @@ package org.hibernate.tool.eclipse.ui.diagram.editors.model;
 
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.execution.ExecutionContext.Command;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateConsoleCorePlugin;
 import org.hibernate.tool.eclipse.runtime.spi.IType;
 import org.hibernate.tool.eclipse.runtime.spi.IValue;
 
@@ -40,7 +40,7 @@ public class UtilTypeExtract {
 			//type is not accessible
 			// EnumType -> setParameterValues(Properties parameters) in case parameters := null NPE
 			// and this is only way to catch java.lang.reflect.InvocationTargetException
-			HibernateConsolePlugin.getDefault().logErrorMessage("Exception: ", e); //$NON-NLS-1$
+			HibernateConsoleCorePlugin.getDefault().logErrorMessage("Exception: ", e); //$NON-NLS-1$
 		}
 		return type;
 	}

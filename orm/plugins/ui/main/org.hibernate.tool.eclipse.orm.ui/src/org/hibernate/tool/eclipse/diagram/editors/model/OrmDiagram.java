@@ -48,7 +48,7 @@ import org.eclipse.ui.views.properties.IPropertyDescriptor;
 import org.eclipse.ui.views.properties.TextPropertyDescriptor;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.KnownConfigurations;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateConsoleCorePlugin;
 import org.hibernate.eclipse.console.utils.ProjectUtils;
 import org.hibernate.tool.eclipse.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.runtime.spi.IPersistentClass;
@@ -634,7 +634,7 @@ public class OrmDiagram extends BaseElement {
 			try {
 				file.delete(true, null);
 			} catch (CoreException e) {
-				HibernateConsolePlugin.getDefault().logErrorMessage("Can't delete file.", e); //$NON-NLS-1$
+				HibernateConsoleCorePlugin.getDefault().logErrorMessage("Can't delete file.", e); //$NON-NLS-1$
 			}
 		}
 		if (file.exists()) {
@@ -656,13 +656,13 @@ public class OrmDiagram extends BaseElement {
 				arrSave = baos.toByteArray();
 			}
 		} catch (IOException e) {
-			HibernateConsolePlugin.getDefault().logErrorMessage("Can't save layout of mapping.", e); //$NON-NLS-1$
+			HibernateConsoleCorePlugin.getDefault().logErrorMessage("Can't save layout of mapping.", e); //$NON-NLS-1$
 		}
 		ByteArrayInputStream inputStream = new ByteArrayInputStream(arrSave);
 		try {
 			file.create(inputStream, true, null);
 		} catch (CoreException e) {
-			HibernateConsolePlugin.getDefault().logErrorMessage("Can't save layout of mapping.", e); //$NON-NLS-1$
+			HibernateConsoleCorePlugin.getDefault().logErrorMessage("Can't save layout of mapping.", e); //$NON-NLS-1$
 		}
 	}
 	
@@ -686,7 +686,7 @@ public class OrmDiagram extends BaseElement {
 				properties.store(fos, ""); //$NON-NLS-1$
 			}
 		} catch (IOException e) {
-			HibernateConsolePlugin.getDefault().logErrorMessage("Can't save layout of mapping.", e); //$NON-NLS-1$
+			HibernateConsoleCorePlugin.getDefault().logErrorMessage("Can't save layout of mapping.", e); //$NON-NLS-1$
 		} finally {
 			if (fos != null) {
 				try {
@@ -726,7 +726,7 @@ public class OrmDiagram extends BaseElement {
 					file.create(source, true, null);
 				}
 			} catch (CoreException e) {
-				HibernateConsolePlugin.getDefault().logErrorMessage("CoreException: ", e); //$NON-NLS-1$
+				HibernateConsoleCorePlugin.getDefault().logErrorMessage("CoreException: ", e); //$NON-NLS-1$
 			}
 		}
 		return file;
@@ -747,7 +747,7 @@ public class OrmDiagram extends BaseElement {
 						loadState(memento);
 						fileLoadSuccessfull = true;
 					} catch (WorkbenchException e) {
-						HibernateConsolePlugin.getDefault().logErrorMessage("Can't load layout of mapping.", e); //$NON-NLS-1$
+						HibernateConsoleCorePlugin.getDefault().logErrorMessage("Can't load layout of mapping.", e); //$NON-NLS-1$
 					}
 				} else {
 					Properties properties = new Properties();
@@ -757,7 +757,7 @@ public class OrmDiagram extends BaseElement {
 				}
 			}
 		} catch (IOException ex) {
-			HibernateConsolePlugin.getDefault().logErrorMessage("Can't load layout of mapping.", ex); //$NON-NLS-1$
+			HibernateConsoleCorePlugin.getDefault().logErrorMessage("Can't load layout of mapping.", ex); //$NON-NLS-1$
 		} finally {
 			if (fis != null) {
 				try {

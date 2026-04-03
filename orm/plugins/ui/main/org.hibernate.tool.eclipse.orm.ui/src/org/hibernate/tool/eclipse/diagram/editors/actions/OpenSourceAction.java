@@ -20,7 +20,7 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchPart;
 import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateConsoleCorePlugin;
 import org.hibernate.tool.eclipse.runtime.spi.IColumn;
 import org.hibernate.tool.eclipse.runtime.spi.IPersistentClass;
 import org.hibernate.tool.eclipse.runtime.spi.IProperty;
@@ -93,9 +93,9 @@ public class OpenSourceAction extends SelectionAction {
 			try {
 				editorPart = org.hibernate.eclipse.console.actions.OpenSourceAction.run(consoleConfig, selection, fullyQualifiedName);
 			} catch (CoreException e) {
-				HibernateConsolePlugin.getDefault().logErrorMessage(DiagramViewerMessages.OpenSourceAction_canot_open_source_file, e);
+				HibernateConsoleCorePlugin.getDefault().logErrorMessage(DiagramViewerMessages.OpenSourceAction_canot_open_source_file, e);
 			} catch (FileNotFoundException e) {
-				HibernateConsolePlugin.getDefault().logErrorMessage(DiagramViewerMessages.OpenSourceAction_canot_find_source_file, e);
+				HibernateConsoleCorePlugin.getDefault().logErrorMessage(DiagramViewerMessages.OpenSourceAction_canot_find_source_file, e);
 			}
 		}
 	}

@@ -26,7 +26,7 @@ import org.eclipse.swt.widgets.Display;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.console.execution.ExecutionContext;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateConsoleCorePlugin;
 import org.hibernate.tool.eclipse.runtime.spi.IColumn;
 import org.hibernate.tool.eclipse.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.runtime.spi.IPersistentClass;
@@ -77,7 +77,7 @@ public class OrmLabelProvider extends LabelProvider implements IColorProvider, I
     				consoleConfig.build();
     				consoleConfig.buildMappings();
 				} catch (Exception he) {
-					HibernateConsolePlugin.getDefault().logErrorMessage("HibernateException: ", he); //$NON-NLS-1$
+					HibernateConsoleCorePlugin.getDefault().logErrorMessage("HibernateException: ", he); //$NON-NLS-1$
 				}
 			}
 			return consoleConfig.getConfiguration();
@@ -159,7 +159,7 @@ public class OrmLabelProvider extends LabelProvider implements IColorProvider, I
 				} );
 			} catch (Exception e) {
 				// do not ignore it - print in Error Log
-				HibernateConsolePlugin.getDefault().logErrorMessage("Exception: ", e); //$NON-NLS-1$
+				HibernateConsoleCorePlugin.getDefault().logErrorMessage("Exception: ", e); //$NON-NLS-1$
 			}
 		}
 		if (sqlType != null) {

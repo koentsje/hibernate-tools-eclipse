@@ -73,7 +73,14 @@
          unpack="false"/>
 
    <plugin
-         id="org.hibernate.eclipse.console"
+         id="org.hibernate.tool.eclipse.orm.console.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.hibernate.tool.eclipse.orm.console.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
