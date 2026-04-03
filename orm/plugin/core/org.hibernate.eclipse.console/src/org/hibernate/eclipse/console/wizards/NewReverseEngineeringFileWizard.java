@@ -48,7 +48,7 @@ import org.hibernate.console.ImageConstants;
 import org.hibernate.eclipse.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
 import org.hibernate.eclipse.console.model.ITableFilter;
-import org.hibernate.eclipse.console.utils.EclipseImages;
+import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 
 /**
  * Creates a new reveng.xml

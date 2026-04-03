@@ -16,7 +16,7 @@ import org.eclipse.jface.action.Action;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.console.QueryPage;
-import org.hibernate.eclipse.console.utils.EclipseImages;
+import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 
 /**
  * @author Dmitry Geraskov

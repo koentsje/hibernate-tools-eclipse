@@ -66,7 +66,7 @@ import org.hibernate.console.ImageConstants;
 import org.hibernate.console.QueryInputModel;
 import org.hibernate.eclipse.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.QueryEditor;
-import org.hibernate.eclipse.console.utils.EclipseImages;
+import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.util.xpl.StringHelper;
 import org.hibernate.tool.eclipse.runtime.spi.IType;
 

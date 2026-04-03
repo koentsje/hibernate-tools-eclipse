@@ -27,7 +27,7 @@ import org.eclipse.jface.action.IAction;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.eclipse.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
-import org.hibernate.eclipse.console.utils.EclipseImages;
+import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.eclipse.graph.AbstractGraphViewPart;
 
 public class ToggleLayoutAction extends Action {

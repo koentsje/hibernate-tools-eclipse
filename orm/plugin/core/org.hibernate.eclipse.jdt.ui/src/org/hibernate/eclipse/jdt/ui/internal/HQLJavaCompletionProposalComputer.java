@@ -36,8 +36,9 @@ import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.jface.text.contentassist.IContextInformation;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
-import org.hibernate.eclipse.console.common.CompletionProposalsResult;
+import org.hibernate.eclipse.ui.console.common.CompletionProposalsResult;
 import org.hibernate.eclipse.console.common.ConsoleExtension;
+import org.hibernate.eclipse.ui.console.common.ConsoleExtensionUI;
 import org.hibernate.eclipse.hqleditor.HQLCompletionProcessor;
 import org.hibernate.eclipse.nature.HibernateNature;
 
@@ -82,7 +83,8 @@ public class HQLJavaCompletionProposalComputer implements IJavaCompletionProposa
 					 query = ctx.getDocument().get(stringStart, stringEnd-stringStart );
 					 ConsoleExtension consoleExtension = consoleConfiguration.getHibernateExtension().getConsoleExtension();
 					 if (consoleExtension != null){
-							CompletionProposalsResult codeCompletions = consoleExtension.hqlCodeComplete(query, stringStart, ctx.getInvocationOffset() - stringStart);
+							ConsoleExtensionUI consoleExtensionUI = new ConsoleExtensionUI(consoleExtension);
+							CompletionProposalsResult codeCompletions = consoleExtensionUI.hqlCodeComplete(query, stringStart, ctx.getInvocationOffset() - stringStart);
 					
 							errorMessage = codeCompletions.getErrorMessage();
 							proposals = codeCompletions.getCompletionProposals();

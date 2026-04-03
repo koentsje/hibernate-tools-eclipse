@@ -30,7 +30,7 @@ import org.eclipse.wst.sse.ui.internal.contentoutline.IJFaceNodeAdapter;
 import org.eclipse.wst.xml.ui.internal.contentoutline.JFaceNodeAdapter;
 import org.eclipse.wst.xml.ui.internal.contentoutline.JFaceNodeAdapterFactory;
 import org.hibernate.console.ImageConstants;
-import org.hibernate.eclipse.console.utils.EclipseImages;
+import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.eclipse.mapper.MapperMessages;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;

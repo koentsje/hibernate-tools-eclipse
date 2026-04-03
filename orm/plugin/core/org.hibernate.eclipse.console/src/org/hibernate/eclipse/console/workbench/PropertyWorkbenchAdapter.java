@@ -23,6 +23,7 @@ package org.hibernate.eclipse.console.workbench;
 
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.model.IWorkbenchAdapter;
+import org.hibernate.eclipse.ui.console.workbench.HibernateWorkbenchHelper;
 import org.hibernate.tool.eclipse.runtime.spi.IProperty;
 import org.hibernate.tool.eclipse.runtime.spi.IValue;
 

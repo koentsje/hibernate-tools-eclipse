@@ -38,8 +38,9 @@ import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.eclipse.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
 import org.hibernate.eclipse.console.QueryEditor;
-import org.hibernate.eclipse.console.common.CompletionProposalsResult;
+import org.hibernate.eclipse.ui.console.common.CompletionProposalsResult;
 import org.hibernate.eclipse.console.common.ConsoleExtension;
+import org.hibernate.eclipse.ui.console.common.ConsoleExtensionUI;
 
 /**
  * content assist processor for HQL code.
@@ -118,7 +119,8 @@ public class HQLCompletionProcessor implements IContentAssistProcessor {
 				if(consoleConfiguration != null) {
 					ConsoleExtension consoleExtension = consoleConfiguration.getHibernateExtension().getConsoleExtension();
 					if (consoleExtension != null){
-						CompletionProposalsResult codeCompletions = consoleExtension.hqlCodeComplete(doc.get(), 0, currentOffset);
+						ConsoleExtensionUI consoleExtensionUI = new ConsoleExtensionUI(consoleExtension);
+						CompletionProposalsResult codeCompletions = consoleExtensionUI.hqlCodeComplete(doc.get(), 0, currentOffset);
 						
 						proposalList.addAll(codeCompletions.getCompletionProposals());
 						errorMessage = codeCompletions.getErrorMessage();//eclipseHQLCompletionCollector.getLastErrorMessage();

@@ -28,7 +28,7 @@ import org.hibernate.console.node.BaseNode;
 import org.hibernate.console.node.NodeFactory;
 import org.hibernate.eclipse.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
-import org.hibernate.eclipse.console.utils.EclipseImages;
+import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 
 public class LazySessionFactoryAdapter extends BasicWorkbenchAdapter {
 

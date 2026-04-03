@@ -28,7 +28,7 @@ import java.util.Observable;
 
 import org.eclipse.swt.graphics.Image;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
-import org.hibernate.eclipse.console.workbench.HibernateWorkbenchHelper;
+import org.hibernate.eclipse.ui.console.workbench.HibernateWorkbenchHelper;
 import org.hibernate.tool.eclipse.runtime.spi.IProperty;
 import org.hibernate.tool.eclipse.runtime.spi.IType;
 import org.hibernate.tool.eclipse.runtime.spi.IValue;

@@ -27,6 +27,7 @@ import org.hibernate.console.QueryPage;
 import org.hibernate.eclipse.console.common.ConsoleExtension;
 import org.hibernate.eclipse.console.common.HibernateExtension;
 import org.hibernate.eclipse.console.views.QueryPageTabView;
+import org.hibernate.eclipse.ui.console.common.ConsoleExtensionUI;
 
 public class HibernatePropertySourceProvider implements IPropertySourceProvider {	
 
@@ -55,7 +56,8 @@ public class HibernatePropertySourceProvider implements IPropertySourceProvider 
 				if (hibernateExtension != null) {
 					ConsoleExtension consoleExtension = hibernateExtension.getConsoleExtension();
 					if (consoleExtension != null) {
-						result = consoleExtension.getPropertySource(object, selectedQueryPage);
+						ConsoleExtensionUI consoleExtensionUI = new ConsoleExtensionUI(consoleExtension);
+						result = consoleExtensionUI.getPropertySource(object, selectedQueryPage);
 					}
 				}
 			}

@@ -89,9 +89,11 @@ import org.hibernate.eclipse.console.ExtensionManager;
 import org.hibernate.eclipse.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
 import org.hibernate.eclipse.console.model.impl.ExporterFactoryStrings;
+import org.eclipse.jface.resource.ImageDescriptor;
 import org.hibernate.eclipse.console.model.impl.ExporterDefinition;
+import org.hibernate.eclipse.ui.ExporterDefinitionUI;
 import org.hibernate.eclipse.console.model.impl.ExporterFactory;
-import org.hibernate.eclipse.console.utils.EclipseImages;
+import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.eclipse.console.wizards.UpDownListComposite;
 
 public class ExporterSettingsTab extends AbstractLaunchConfigurationTab {
@@ -722,7 +724,8 @@ public class ExporterSettingsTab extends AbstractLaunchConfigurationTab {
 			ExporterDefinition definition = getExporterDefinition(element);
 			Image image = exp2img.get( definition.getId() );
 			if ( image == null ) {
-				image = definition.getIconDescriptor().createImage();
+				ImageDescriptor iconDescriptor = ExporterDefinitionUI.getIconDescriptor(definition);
+				image = iconDescriptor != null ? iconDescriptor.createImage() : null;
 				exp2img.put( definition.getId(), image );
 			}
 			return image;

@@ -16,7 +16,7 @@ import org.eclipse.ui.texteditor.ITextEditor;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.eclipse.console.AbstractQueryEditor;
 import org.hibernate.eclipse.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.utils.EclipseImages;
+import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 
 /**
  * Actor to pin/unpin query results tab to the editor. 

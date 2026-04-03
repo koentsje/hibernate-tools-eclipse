@@ -50,7 +50,7 @@ import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
-import org.hibernate.eclipse.console.utils.EclipseImages;
+import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 
 // Based on what was found in JBPM GPD 19/4/2006 04:34 AM
 public class NodeHeaderFigure extends Figure {

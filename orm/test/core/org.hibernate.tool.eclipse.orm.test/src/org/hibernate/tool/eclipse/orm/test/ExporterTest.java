@@ -27,6 +27,7 @@ public class ExporterTest {
 								"exporterDescription", //$NON-NLS-1$
 								"exporterId", //$NON-NLS-1$
 								map,
+								null,
 								null);
 		
 		
