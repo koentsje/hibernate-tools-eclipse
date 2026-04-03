@@ -188,13 +188,6 @@
          version="0.0.0"/>
 
    <plugin
-         id="org.hibernate.tool.eclipse.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.hibernate.tool.eclipse.runtime.v_5_1"
          download-size="0"
          install-size="0"
