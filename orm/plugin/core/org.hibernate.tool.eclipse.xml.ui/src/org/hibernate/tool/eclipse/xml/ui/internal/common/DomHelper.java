@@ -64,12 +64,26 @@ public class DomHelper {
 
 	public static String getTextContent(Element element) {
 		if (element == null) return "";
-		String text = element.getTextContent();
-		return text != null ? text.trim() : "";
+		// Read text from child nodes (WTP's DOM may not support Element.getTextContent)
+		StringBuilder sb = new StringBuilder();
+		NodeList children = element.getChildNodes();
+		for (int i = 0; i < children.getLength(); i++) {
+			Node child = children.item(i);
+			if (child.getNodeType() == Node.TEXT_NODE || child.getNodeType() == Node.CDATA_SECTION_NODE) {
+				sb.append(child.getNodeValue());
+			}
+		}
+		return sb.toString().trim();
 	}
 
 	public static void setTextContent(Element element, String text) {
-		element.setTextContent(text != null ? text : "");
+		// Remove existing child nodes (WTP's DOM does not support Element.setTextContent)
+		while (element.getFirstChild() != null) {
+			element.removeChild(element.getFirstChild());
+		}
+		if (text != null && !text.isEmpty()) {
+			element.appendChild(element.getOwnerDocument().createTextNode(text));
+		}
 	}
 
 	public static Element findPropertyElement(Element sessionFactory, String propertyName) {
