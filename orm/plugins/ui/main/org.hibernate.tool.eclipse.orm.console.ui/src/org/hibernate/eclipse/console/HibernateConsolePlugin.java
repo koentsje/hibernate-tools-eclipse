@@ -112,6 +112,8 @@ public class HibernateConsolePlugin extends AbstractUIPlugin implements PluginLo
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		logger=new EclipseLogger(context.getBundle());
+		KnownConfigurations.getInstance().setLoggingStreamProvider(
+				new org.hibernate.eclipse.ui.logging.EclipseLoggingStreamProvider());
 		//HibernateConsoleSaveParticipant participant = new HibernateConsoleSaveParticipant();
 		//participant.doStart(this);
 
@@ -291,6 +293,7 @@ public class HibernateConsolePlugin extends AbstractUIPlugin implements PluginLo
 	 * This method is called when the plug-in is stopped
 	 */
 	public void stop(BundleContext context) throws Exception {
+		KnownConfigurations.getInstance().setLoggingStreamProvider(null);
 		super.stop(context);
 		stopListeningForConfigurations();
 		setPlugin(null);
