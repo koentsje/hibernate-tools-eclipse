@@ -30,15 +30,15 @@ import org.eclipse.wst.xml.core.internal.encoding.XMLDocumentCharsetDetector;
 import org.eclipse.wst.xml.core.internal.encoding.XMLDocumentLoader;
 import org.eclipse.wst.xml.core.internal.modelhandler.XMLModelLoader;
 
+
 /**
- * Provides persistence unit model handling. 
+ * Provides hbm.xml model handling. 
  */
-public class ModelHandlerForPersistenceUnitXML extends AbstractModelHandler implements IModelHandler {
+public class ModelHandlerForREVENGXML extends AbstractModelHandler implements IModelHandler {
+	final static String CONTENTTYPE_ID = "org.hibernate.tool.eclipse.orm.xml.core.revengxmlsource"; //$NON-NLS-1$
+	final static String MODELHANDLER_ID = "org.hibernate.tool.eclipse.orm.xml.core.handler.reveng.xml"; //$NON-NLS-1$
 	
-	final static String CONTENTTYPE_ID = "org.hibernate.eclipse.mapper.persistenceunitxml"; //$NON-NLS-1$
-	final private static String MODELHANDLER_ID = "org.hibernate.eclipse.mapper.handler.persistenceunitxml"; //$NON-NLS-1$
-	
-	public ModelHandlerForPersistenceUnitXML() {
+	public ModelHandlerForREVENGXML() {
 		super();
 		setId(MODELHANDLER_ID);
 		setAssociatedContentTypeId(CONTENTTYPE_ID);

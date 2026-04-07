@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Hibernate XML Core Plug-in
+Bundle-SymbolicName: org.hibernate.tool.eclipse.orm.xml.core; singleton:=true
+Bundle-Version: 6.0.0.qualifier
+Bundle-Vendor: Hibernate
+Bundle-Localization: plugin
+Export-Package: org.hibernate.eclipse.mapper,
+ org.hibernate.eclipse.mapper.extractor,
+ org.hibernate.eclipse.mapper.factory,
+ org.hibernate.eclipse.mapper.model,
+ org.hibernate.eclipse.mapper.modelhandler
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.wst.sse.core,
+ org.eclipse.wst.xml.core,
+ org.eclipse.wst.dtd.core,
+ org.hibernate.tool.eclipse.orm.core
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Eclipse-BundleShape: dir

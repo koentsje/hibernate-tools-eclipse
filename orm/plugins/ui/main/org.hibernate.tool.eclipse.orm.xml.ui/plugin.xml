@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.wst.sse.ui.editorConfiguration">
+      <sourceViewerConfiguration
+            target="org.hibernate.tool.eclipse.orm.xml.core.hbmxmlsource"
+            class="org.hibernate.eclipse.mapper.editors.HBMXMLStructuredTextViewerConfiguration"
+            />
+      <contentOutlineConfiguration
+            target="org.hibernate.tool.eclipse.orm.xml.core.hbmxmlsource"
+            class="org.hibernate.eclipse.mapper.views.contentoutline.HibernateXMLContentOutlineConfiguration"
+            />
+	  <sourceViewerConfiguration
+            target="org.hibernate.tool.eclipse.orm.xml.core.cfgxmlsource"
+            class="org.hibernate.eclipse.mapper.editors.CFGXMLStructuredTextViewerConfiguration"
+            />
+      <contentOutlineConfiguration
+            target="org.hibernate.tool.eclipse.orm.xml.core.cfgxmlsource"
+            class="org.hibernate.eclipse.mapper.views.contentoutline.HibernateXMLContentOutlineConfiguration"
+            />
+      <contentOutlineConfiguration
+            target="org.hibernate.tool.eclipse.orm.xml.core.revengxmlsource"
+            class="org.hibernate.eclipse.mapper.views.contentoutline.HibernateXMLContentOutlineConfiguration"
+            />
+	  <sourceViewerConfiguration
+            target="org.eclipse.jpt.core.content.persistence"
+            class="org.hibernate.eclipse.mapper.editors.PersistenceUnitStructuredTextViewerConfiguration"
+            />
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="org.hibernate.eclipse.mapper.editors.ReverseEngineeringEditor"
+            contributorClass="org.hibernate.eclipse.mapper.editors.ReverseEngineeringEditorContributor"
+            icon="icons/hibernate_small_icon.gif"
+            id="org.hibernate.tool.eclipse.orm.xml.ui.editors.ReverseEngineeringEditor"
+            name="Hibernate Reverse Engineering Editor">
+         <contentTypeBinding contentTypeId="org.hibernate.tool.eclipse.orm.xml.core.revengxmlsource"/>
+      </editor>
+      <editor
+            id="org.hibernate.tool.eclipse.orm.xml.ui.cfg.CfgXmlEditor"
+            name="Hibernate Configuration Editor"
+            class="org.hibernate.tool.eclipse.xml.ui.internal.cfg.CfgXmlEditor"
+            default="true">
+         <contentTypeBinding contentTypeId="org.hibernate.tool.eclipse.orm.xml.core.cfgxmlsource"/>
+      </editor>
+      <editor
+            id="org.hibernate.tool.eclipse.orm.xml.ui.hbm.HbmXmlEditor"
+            name="Hibernate Mapping Editor"
+            class="org.hibernate.tool.eclipse.xml.ui.internal.hbm.HbmXmlEditor"
+            default="true">
+         <contentTypeBinding contentTypeId="org.hibernate.tool.eclipse.orm.xml.core.hbmxmlsource"/>
+      </editor>
+   </extension>
+
+    <extension
+		point="org.eclipse.wst.sse.ui.adapterFactoryDescription">
+		<adapterFactoryDescription
+			class="org.hibernate.eclipse.mapper.registry.AdapterFactoryProviderForHBMXML">
+		</adapterFactoryDescription>
+		<adapterFactoryDescription
+			class="org.hibernate.eclipse.mapper.registry.AdapterFactoryProviderForCFGXML">
+		</adapterFactoryDescription>
+		<adapterFactoryDescription
+			class="org.hibernate.eclipse.mapper.registry.AdapterFactoryProviderForREVENGXML">
+		</adapterFactoryDescription>
+	</extension>
+
+      <extension
+        point="org.eclipse.ui.decorators">
+     <decorator
+           adaptable="true"
+           icon="icons/images/hibernate_overlay.gif"
+           id="org.hibernate.tool.eclipse.orm.xml.ui.decorators.HibernateDecorator"
+           label="Hibernate Decorator"
+           lightweight="true"
+           location="BOTTOM_LEFT"
+           state="true">
+        <enablement>
+           <and>
+              <objectClass name="org.eclipse.core.resources.IResource"/>
+              <or>
+                    <objectState
+                    name="contentTypeId"
+                    value="org.hibernate.tool.eclipse.orm.xml.core.hbmxmlsource"/>
+                    <objectState
+                    name="contentTypeId"
+                    value="org.hibernate.tool.eclipse.orm.xml.core.cfgxmlsource"/>
+                    <objectState
+                    name="contentTypeId"
+                    value="org.hibernate.tool.eclipse.orm.xml.core.revengxmlsource"/>
+              </or>
+           </and>
+        </enablement>
+     </decorator>
+  </extension>
+
+</plugin>

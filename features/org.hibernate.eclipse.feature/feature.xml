@@ -87,7 +87,14 @@
          unpack="false"/>
 
    <plugin
-         id="org.hibernate.eclipse.mapper"
+         id="org.hibernate.tool.eclipse.orm.xml.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.hibernate.tool.eclipse.orm.xml.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -210,13 +217,6 @@
 
    <plugin
          id="org.hibernate.tool.eclipse.runtime.v_5_5"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.hibernate.tool.eclipse.xml.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"

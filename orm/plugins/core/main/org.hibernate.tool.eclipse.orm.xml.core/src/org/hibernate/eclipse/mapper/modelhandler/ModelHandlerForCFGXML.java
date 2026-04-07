@@ -35,8 +35,8 @@ import org.eclipse.wst.xml.core.internal.modelhandler.XMLModelLoader;
  */
 public class ModelHandlerForCFGXML extends AbstractModelHandler implements IModelHandler {
 	
-	final static String CONTENTTYPE_ID = "org.hibernate.eclipse.mapper.cfgxmlsource"; //$NON-NLS-1$
-	final private static String MODELHANDLER_ID = "org.hibernate.eclipse.mapper.handler.cfg.xml"; //$NON-NLS-1$
+	final static String CONTENTTYPE_ID = "org.hibernate.tool.eclipse.orm.xml.core.cfgxmlsource"; //$NON-NLS-1$
+	final private static String MODELHANDLER_ID = "org.hibernate.tool.eclipse.orm.xml.core.handler.cfg.xml"; //$NON-NLS-1$
 	
 	public ModelHandlerForCFGXML() {
 		super();
