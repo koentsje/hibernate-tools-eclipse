@@ -66,7 +66,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.hibernate.eclipse.help"
+         id="org.hibernate.tool.eclipse.orm.help.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
