@@ -150,7 +150,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.hibernate.tool.eclipse.jpt.ui"
+         id="org.hibernate.tool.eclipse.orm.jpt.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
