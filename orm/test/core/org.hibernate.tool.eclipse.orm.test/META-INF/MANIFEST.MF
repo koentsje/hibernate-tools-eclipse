@@ -12,7 +12,7 @@ Bundle-ClassPath: .,
 Bundle-Vendor: %Bundle-Vendor.0
 Bundle-Localization: plugin
 Require-Bundle: org.hibernate.tool.eclipse.orm.core,
- org.hibernate.tool.eclipse.orm.console.ui,
+ org.hibernate.tool.eclipse.orm.ui,
  org.junit,
  org.hibernate.tool.eclipse.runtime.spi,
  org.eclipse.core.resources,
