@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.jdt.core.compilationParticipant">
+      <compilationParticipant
+            class="org.hibernate.eclipse.jdt.ui.internal.HQLExpressionCompilerParticipant"
+            createsProblems="true"
+            id="org.hibernate.tool.eclipse.orm.jdt.core.HQLExpressionCompilerParticipant">
+         <managedMarker markerType="org.hibernate.tool.eclipse.orm.jdt.core.hqlsyntax.problem"/>
+      </compilationParticipant>
+   </extension>
+   <extension id="org.hibernate.tool.eclipse.orm.jdt.core.hqlsyntax.problem" point="org.eclipse.core.resources.markers" name="HQL syntax problem">
+      <super type="org.eclipse.core.resources.problemmarker"/>
+      <super type="org.eclipse.core.resources.textmarker"/>
+      <persistent value="true"/>
+   </extension>
+</plugin>

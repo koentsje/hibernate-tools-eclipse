@@ -41,7 +41,7 @@ import org.eclipse.jdt.core.dom.VariableDeclarationFragment;
 import org.eclipse.jdt.core.dom.WildcardType;
 import org.eclipse.jdt.internal.core.BinaryType;
 import org.eclipse.jdt.internal.core.SourceType;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateConsoleCorePlugin;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.common.EntityInfo;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.common.JPAConst;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.common.RefType;
@@ -321,7 +321,7 @@ public class CollectEntityInfo extends ASTVisitor {
 						entityFullyQualifiedName = sourceT.getFullyQualifiedParameterizedName();
 					}
 					catch (JavaModelException e) {
-						HibernateConsolePlugin.getDefault().logErrorMessage("JavaModelException: ", e); //$NON-NLS-1$
+						HibernateConsoleCorePlugin.getDefault().logErrorMessage("JavaModelException: ", e); //$NON-NLS-1$
 					}
 				}
 				entityInfo.addDependency(entityFullyQualifiedName);
@@ -546,7 +546,7 @@ public class CollectEntityInfo extends ASTVisitor {
 						entityFullyQualifiedName = sourceT.getFullyQualifiedParameterizedName();
 					}
 					catch (JavaModelException e) {
-						HibernateConsolePlugin.getDefault().logErrorMessage("JavaModelException: ", e); //$NON-NLS-1$
+						HibernateConsoleCorePlugin.getDefault().logErrorMessage("JavaModelException: ", e); //$NON-NLS-1$
 					}
 					entityInfo.addDependency(entityFullyQualifiedName);
 					Iterator<String> itVarNames = list.iterator();
@@ -591,7 +591,7 @@ public class CollectEntityInfo extends ASTVisitor {
 							try {
 								entityFullyQualifiedName = sourceT.getFullyQualifiedParameterizedName();
 							} catch (JavaModelException e) {
-								HibernateConsolePlugin.getDefault().logErrorMessage("JavaModelException: ", e); //$NON-NLS-1$
+								HibernateConsoleCorePlugin.getDefault().logErrorMessage("JavaModelException: ", e); //$NON-NLS-1$
 							}
 							entityInfo.addDependency(entityFullyQualifiedName);
 							Iterator<String> itVarNames = list.iterator();

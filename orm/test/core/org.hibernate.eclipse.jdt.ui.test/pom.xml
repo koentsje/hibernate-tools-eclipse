@@ -13,7 +13,7 @@
 
 	<properties>
 		<coverage.filter>org.hibernate.eclipse.jdt.ui*</coverage.filter>
-		<emma.instrument.bundles>org.hibernate.eclipse.jdt.ui</emma.instrument.bundles>
+		<emma.instrument.bundles>org.hibernate.tool.eclipse.orm.jdt.ui</emma.instrument.bundles>
 		<jmock.version>2.5.1</jmock.version>
 	</properties>
 	

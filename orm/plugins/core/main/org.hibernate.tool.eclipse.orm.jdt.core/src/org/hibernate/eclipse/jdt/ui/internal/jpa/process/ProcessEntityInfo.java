@@ -47,6 +47,7 @@ import org.eclipse.jdt.core.dom.VariableDeclarationFragment;
 import org.eclipse.jdt.core.dom.rewrite.ASTRewrite;
 import org.eclipse.jdt.core.dom.rewrite.ListRewrite;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.collect.CollectEntityInfo;
+import org.hibernate.eclipse.jdt.ui.internal.jpa.process.wizard.IHibernateJPAWizardParams;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.common.EntityInfo;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.common.EntityInfosCollection;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.common.JPAConst;
@@ -88,7 +89,7 @@ public class ProcessEntityInfo extends ASTVisitor {
 	/**
 	 * default length for column which corresponds to String field
 	 */
-	protected int defaultStrLength = AllEntitiesProcessor.columnLength;
+	protected int defaultStrLength = IHibernateJPAWizardParams.columnLength;
 	/**
 	 * flag to enable optimistic locking
 	 */
@@ -383,7 +384,7 @@ public class ProcessEntityInfo extends ASTVisitor {
 				}
 			}
 		}
-		if (type.isSimpleType() && (AllEntitiesProcessor.columnLength != defaultStrLength)) {
+		if (type.isSimpleType() && (IHibernateJPAWizardParams.columnLength != defaultStrLength)) {
 			SimpleType simpleType = (SimpleType)type;
 			String typeName = simpleType.getName().getFullyQualifiedName();
 			if ("java.lang.String".equals(typeName) || "String".equals(typeName)) { //$NON-NLS-1$ //$NON-NLS-2$
@@ -531,7 +532,7 @@ public class ProcessEntityInfo extends ASTVisitor {
 				}
 			}
 		}
-		if (type.isSimpleType() && (AllEntitiesProcessor.columnLength != defaultStrLength)) {
+		if (type.isSimpleType() && (IHibernateJPAWizardParams.columnLength != defaultStrLength)) {
 			SimpleType simpleType = (SimpleType)type;
 			String typeName = simpleType.getName().getFullyQualifiedName();
 			if ("java.lang.String".equals(typeName) || "String".equals(typeName)) { //$NON-NLS-1$ //$NON-NLS-2$

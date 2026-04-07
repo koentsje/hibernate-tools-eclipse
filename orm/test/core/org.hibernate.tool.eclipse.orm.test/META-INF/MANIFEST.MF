@@ -33,11 +33,11 @@ Require-Bundle: org.hibernate.tool.eclipse.orm.core,
  org.eclipse.ui.editors,
  org.eclipse.jdt.apt.core,
  org.eclipse.datatools.connectivity,
- org.hibernate.tool.eclipse.orm.ui,
  org.eclipse.ui.workbench,
  org.hibernate.eclipse.mapper,
  org.eclipse.gef,
- org.hibernate.eclipse.jdt.ui,
+ org.hibernate.tool.eclipse.orm.jdt.core,
+ org.hibernate.tool.eclipse.orm.jdt.ui,
  org.hibernate.tool.eclipse.runtime.v_5_6
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-11

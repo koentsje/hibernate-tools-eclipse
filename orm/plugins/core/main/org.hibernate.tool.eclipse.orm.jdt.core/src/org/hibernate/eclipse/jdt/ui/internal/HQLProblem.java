@@ -3,7 +3,6 @@ package org.hibernate.eclipse.jdt.ui.internal;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.core.compiler.IProblem;
-import org.hibernate.eclipse.jdt.ui.Activator;
 
 public class HQLProblem extends CategorizedProblem {	
 	private int startingOffset;
@@ -81,6 +80,6 @@ public class HQLProblem extends CategorizedProblem {
 	}
 	
 	public String getMarkerType() {
-		return Activator.HQL_SYNTAX_PROBLEM;
+		return "org.hibernate.tool.eclipse.orm.jdt.core.hqlsyntax.problem"; //$NON-NLS-1$
 	}
 }

@@ -41,7 +41,7 @@ import org.eclipse.jdt.core.dom.TypeDeclaration;
 import org.eclipse.jdt.core.dom.VariableDeclarationFragment;
 import org.eclipse.jdt.core.dom.WildcardType;
 import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateConsoleCorePlugin;
 import org.hibernate.eclipse.console.common.HibernateExtension;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.collect.AllEntitiesInfoCollector;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.common.EntityInfo;
@@ -224,7 +224,7 @@ public class ConfigurationActor {
 					entry.setValue(subclass);
 				}
 			} catch (JavaModelException e) {
-				HibernateConsolePlugin.getDefault().log(e);
+				HibernateConsoleCorePlugin.getDefault().log(e);
 			}			
 		}
 		return pcCopy.values();
