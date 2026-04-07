@@ -31,7 +31,7 @@ import org.eclipse.jpt.jpa.core.JpaProjectManager;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.console.KnownConfigurationsAdapter;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateConsoleCorePlugin;
 import org.osgi.framework.BundleContext;
 
 /**
@@ -40,7 +40,7 @@ import org.osgi.framework.BundleContext;
  */
 public class HibernateJptPlugin extends Plugin {
 
-	public static final String ID = "org.hibernate.tool.eclipse.jpt.core"; //$NON-NLS-1$
+	public static final String ID = "org.hibernate.tool.eclipse.orm.jpt.core"; //$NON-NLS-1$
 
 	private static HibernateJptPlugin inst = null;
 	
@@ -161,7 +161,7 @@ public class HibernateJptPlugin extends Plugin {
 					try {
 						((JpaProject.Reference) project.getAdapter(JpaProject.Reference.class)).rebuild();
 					} catch (InterruptedException e) {
-						throw new CoreException(new Status(IStatus.CANCEL, HibernateConsolePlugin.ID, null, e));
+						throw new CoreException(new Status(IStatus.CANCEL, HibernateConsoleCorePlugin.ID, null, e));
 					}
 					//TODO why we need this???
 					project.build(IncrementalProjectBuilder.FULL_BUILD, monitor);

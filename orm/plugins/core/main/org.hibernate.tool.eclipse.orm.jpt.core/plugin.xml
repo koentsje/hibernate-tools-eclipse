@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.2"?>
 <plugin>
-	<extension id="org.hibernate.tool.eclipse.jpt.core"
+	<extension id="org.hibernate.tool.eclipse.orm.jpt.core"
 		point="org.eclipse.jpt.jpa.core.jpaPlatforms">
 		
 		<jpaPlatformGroup
