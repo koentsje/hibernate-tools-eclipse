@@ -394,7 +394,7 @@
             plugin="org.hibernate.tool.eclipse.orm.console.ui"/>
    </extension>
    <extension
-         point="org.hibernate.tool.eclipse.orm.console.core.exporters">
+         point="org.hibernate.tool.eclipse.orm.core.exporters">
       <exporter
             classname="org.hibernate.tool.hbm2x.POJOExporter"
             description="Domain code (.java)"

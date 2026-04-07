@@ -12,7 +12,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 	
 	<packaging>pom</packaging>
 	<modules>
-		<module>plugin</module>
+		<module>plugins</module>
 	</modules>
 
 </project>
