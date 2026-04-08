@@ -19,7 +19,7 @@
    </license>
 
    <plugin
-         id="org.hibernate.eclipse.jdt.ui.test"
+         id="org.hibernate.tool.eclipse.orm.jdt.ui.test"
          download-size="0"
          install-size="0"
          version="0.0.0"/>
