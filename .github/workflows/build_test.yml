@@ -75,7 +75,7 @@ jobs:
           -nosplash \
           -application org.eclipse.equinox.p2.director \
           -repository "file:$(pwd)/site/target/repository/,$ECLIPSE_REPO" \
-          -installIU org.hibernate.eclipse.feature.feature.group,org.hibernate.search.eclipse.feature.feature.group \
+          -installIU org.hibernate.tool.eclipse.orm.main.feature.group,org.hibernate.search.eclipse.feature.feature.group \
           -destination ./eclipse
 
     - name: Verify p2 installation (macOS)
@@ -87,7 +87,7 @@ jobs:
           -nosplash \
           -application org.eclipse.equinox.p2.director \
           -repository "file:$(pwd)/site/target/repository/,$ECLIPSE_REPO" \
-          -installIU org.hibernate.eclipse.feature.feature.group,org.hibernate.search.eclipse.feature.feature.group \
+          -installIU org.hibernate.tool.eclipse.orm.main.feature.group,org.hibernate.search.eclipse.feature.feature.group \
           -destination ./Eclipse.app/Contents/Eclipse
 
     - name: Verify p2 installation (Windows)
@@ -100,7 +100,7 @@ jobs:
           -nosplash \
           -application org.eclipse.equinox.p2.director \
           -repository "file:$(cygpath -m $(pwd))/site/target/repository/,$ECLIPSE_REPO" \
-          -installIU org.hibernate.eclipse.feature.feature.group,org.hibernate.search.eclipse.feature.feature.group \
+          -installIU org.hibernate.tool.eclipse.orm.main.feature.group,org.hibernate.search.eclipse.feature.feature.group \
           -destination ./eclipse
 
     - name: Archive test reports
