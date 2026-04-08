@@ -6,7 +6,6 @@ Bundle-Version: 6.0.0.qualifier
 Bundle-Vendor: Hibernate
 Bundle-Localization: plugin
 Export-Package: org.hibernate.eclipse.mapper,
- org.hibernate.eclipse.mapper.extractor,
  org.hibernate.eclipse.mapper.factory,
  org.hibernate.eclipse.mapper.model,
  org.hibernate.eclipse.mapper.modelhandler

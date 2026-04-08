@@ -6,8 +6,7 @@ Bundle-Version: 6.0.0.qualifier
 Bundle-Activator: org.hibernate.eclipse.mapper.MapperPlugin
 Bundle-Vendor: Hibernate
 Bundle-Localization: plugin
-Export-Package: org.hibernate.eclipse.mapper,
- org.hibernate.eclipse.mapper.editors,
+Export-Package: org.hibernate.eclipse.mapper.editors,
  org.hibernate.eclipse.mapper.editors.reveng,
  org.hibernate.eclipse.mapper.editors.reveng.xpl,
  org.hibernate.eclipse.mapper.editors.xpl,
