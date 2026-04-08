@@ -4,7 +4,7 @@
       To install these features, point Eclipse at this site.
    </description>
    <feature id="org.hibernate.tool.eclipse.orm.main"><category name="hibernate-tools-eclipse"/></feature>
-   <feature id="org.hibernate.search.eclipse.feature"><category name="hibernate-tools-eclipse"/></feature>
+   <feature id="org.hibernate.tool.eclipse.search"><category name="hibernate-tools-eclipse"/></feature>
    <feature id="org.hibernate.tool.eclipse.orm.runtime.all"><category name="hibernate-tools-eclipse"/></feature>
    <category-def name="hibernate-tools-eclipse" label="Hibernate Tools Eclipse">
       <description>

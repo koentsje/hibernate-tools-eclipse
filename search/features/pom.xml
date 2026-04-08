@@ -3,18 +3,17 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.hibernate.tool.eclipse</groupId>
-		<artifactId>orm</artifactId>
+		<artifactId>search</artifactId>
 		<version>6.0.0-SNAPSHOT</version>
 	</parent>
-	<groupId>org.hibernate.tool.eclipse.orm</groupId>
+	<groupId>org.hibernate.tool.eclipse.search</groupId>
 	<artifactId>features</artifactId>
-	<name>Hibernate ORM Features</name>
+	<name>Hibernate Search Features</name>
 
 	<packaging>pom</packaging>
 	<modules>
-		<module>org.hibernate.tool.eclipse.orm.main</module>
-		<module>org.hibernate.tool.eclipse.orm.runtime.all</module>
-		<module>org.hibernate.tool.eclipse.orm.tests</module>
+		<module>org.hibernate.tool.eclipse.search</module>
+		<module>org.hibernate.tool.eclipse.search.tests</module>
 	</modules>
 	<build>
 		<plugins>

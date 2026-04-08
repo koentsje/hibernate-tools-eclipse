@@ -3,15 +3,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>org.hibernate.tool.eclipse</groupId>
-		<artifactId>hibernate-tools-eclipse</artifactId>
+		<groupId>org.hibernate.tool.eclipse.search</groupId>
+		<artifactId>features</artifactId>
 		<version>6.0.0-SNAPSHOT</version>
 	</parent>
-	<groupId>org.hibernate.tool.eclipse</groupId>
-	<artifactId>all-tests</artifactId>
-	<packaging>pom</packaging>
-
-	<modules>
-		<module>../orm/test</module>
-	</modules>
+	<groupId>org.hibernate.tool.eclipse.search.features</groupId>
+	<artifactId>org.hibernate.tool.eclipse.search.tests</artifactId>
+	<packaging>eclipse-feature</packaging>
 </project>
