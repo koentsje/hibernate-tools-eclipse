@@ -5,7 +5,7 @@
    </description>
    <feature id="org.hibernate.eclipse.feature"><category name="hibernate-tools-eclipse"/></feature>
    <feature id="org.hibernate.search.eclipse.feature"><category name="hibernate-tools-eclipse"/></feature>
-   <feature id="org.hibernate.tool.eclipse.orm.runtime.feature"><category name="hibernate-tools-eclipse"/></feature>
+   <feature id="org.hibernate.tool.eclipse.orm.runtime.all"><category name="hibernate-tools-eclipse"/></feature>
    <category-def name="hibernate-tools-eclipse" label="Hibernate Tools Eclipse">
       <description>
          Hibernate Tools Eclipse: Eclipse IDE plugins for working with Hibernate ORM and Hibernate Search.

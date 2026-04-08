@@ -20,7 +20,7 @@
    </license>
 
    <includes
-         id="org.hibernate.tool.eclipse.orm.runtime.feature"
+         id="org.hibernate.tool.eclipse.orm.runtime.all"
          version="0.0.0"/>
 
    <requires>
