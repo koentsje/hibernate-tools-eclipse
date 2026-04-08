@@ -3,10 +3,10 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.hibernate.tool.eclipse</groupId>
-		<artifactId>hibernatetools</artifactId>
+		<artifactId>hibernate-tools-eclipse</artifactId>
 		<version>6.0.0-SNAPSHOT</version>
 	</parent>
-	<groupId>org.hibernate.tool.eclipsetools</groupId>
+	<groupId>org.hibernate.tool.eclipse</groupId>
 	<artifactId>common</artifactId>
 	<name>Hibernate Tooling Common Stuff</name>
 	

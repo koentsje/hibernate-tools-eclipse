@@ -2,12 +2,12 @@
   <modelVersion>4.0.0</modelVersion>
   <packaging>eclipse-plugin</packaging>
   <parent>
-		<groupId>org.hibernate.tool.eclipsetools.search.plugin</groupId>
+		<groupId>org.hibernate.tool.eclipse.search.plugin</groupId>
 		<artifactId>runtime</artifactId>
 		<version>6.0.0-SNAPSHOT</version>
   </parent>
   
-	<groupId>org.hibernate.tool.eclipsetools.search.plugin.runtime</groupId>
+	<groupId>org.hibernate.tool.eclipse.search.plugin.runtime</groupId>
 	<artifactId>org.hibernate.tool.eclipse.search.runtime.v_5_7</artifactId>
 
   <properties>

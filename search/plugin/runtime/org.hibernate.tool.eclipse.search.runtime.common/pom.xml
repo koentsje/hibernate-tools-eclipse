@@ -2,11 +2,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
     <parent>
-		<groupId>org.hibernate.tool.eclipsetools.search.plugin</groupId>
+		<groupId>org.hibernate.tool.eclipse.search.plugin</groupId>
 		<artifactId>runtime</artifactId>
 		<version>6.0.0-SNAPSHOT</version>
     </parent>
-    <groupId>org.hibernate.tool.eclipsetools.search.plugin.runtime</groupId>
+    <groupId>org.hibernate.tool.eclipse.search.plugin.runtime</groupId>
 	<artifactId>org.hibernate.tool.eclipse.search.runtime.common</artifactId>
 	
 	<packaging>eclipse-plugin</packaging>
