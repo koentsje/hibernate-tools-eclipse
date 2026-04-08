@@ -12,7 +12,7 @@ import org.hibernate.tool.ide.completion.HQLCompletionProposal;
 import org.hibernate.tool.orm.jbt.wrp.Wrapper;
 import org.hibernate.tool.orm.jbt.wrp.WrapperFactory;
 import org.hibernate.tool.eclipse.orm.runtime.common.GenericFacadeFactory;
-import org.hibernate.tool.eclipse.orm.runtime.common.IFacade;
+import org.hibernate.tool.eclipse.common.runtime.IFacade;
 import org.hibernate.tool.eclipse.runtime.spi.IHQLCompletionProposal;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

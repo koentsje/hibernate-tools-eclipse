@@ -50,7 +50,7 @@ import org.hibernate.type.OneToOneType;
 import org.hibernate.type.SetType;
 import org.hibernate.type.Type;
 import org.hibernate.tool.eclipse.orm.runtime.common.GenericFacadeFactory;
-import org.hibernate.tool.eclipse.orm.runtime.common.IFacade;
+import org.hibernate.tool.eclipse.common.runtime.IFacade;
 import org.hibernate.tool.eclipse.runtime.spi.IColumn;
 import org.hibernate.tool.eclipse.runtime.spi.IPersistentClass;
 import org.hibernate.tool.eclipse.runtime.spi.IProperty;

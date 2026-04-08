@@ -69,7 +69,7 @@ import org.hibernate.tool.eclipse.runtime.common.AbstractPersistentClassFacade;
 import org.hibernate.tool.eclipse.runtime.common.AbstractService;
 import org.hibernate.tool.eclipse.runtime.common.IFacade;
 import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
-import org.hibernate.tool.eclipse.runtime.common.Util;
+import org.hibernate.tool.eclipse.common.runtime.Util;
 import org.hibernate.tool.eclipse.runtime.spi.HibernateException;
 import org.hibernate.tool.eclipse.runtime.spi.IArtifactCollector;
 import org.hibernate.tool.eclipse.runtime.spi.ICfg2HbmTool;

@@ -1,4 +1,4 @@
-package org.hibernate.tool.eclipse.runtime.common;
+package org.hibernate.tool.eclipse.common.runtime;
 
 public class UsageTracker {
 

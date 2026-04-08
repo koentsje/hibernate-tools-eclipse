@@ -13,7 +13,7 @@ import org.hibernate.tool.ide.completion.HQLCodeAssist;
 import org.hibernate.tool.orm.jbt.util.NativeConfiguration;
 import org.hibernate.tool.orm.jbt.wrp.WrapperFactory;
 import org.hibernate.tool.eclipse.orm.runtime.common.GenericFacadeFactory;
-import org.hibernate.tool.eclipse.orm.runtime.common.IFacade;
+import org.hibernate.tool.eclipse.common.runtime.IFacade;
 import org.hibernate.tool.eclipse.runtime.spi.IHQLCodeAssist;
 import org.hibernate.tool.eclipse.runtime.spi.IHQLCompletionHandler;
 import org.hibernate.tool.eclipse.runtime.spi.IHQLCompletionProposal;

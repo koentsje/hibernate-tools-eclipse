@@ -5,7 +5,7 @@ import org.apache.lucene.queryParser.QueryParser;
 import org.apache.lucene.util.Version;
 import org.hibernate.tool.eclipse.runtime.common.IFacade;
 import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
-import org.hibernate.tool.eclipse.runtime.common.Util;
+import org.hibernate.tool.eclipse.common.runtime.Util;
 import org.hibernate.tool.eclipse.search.runtime.common.AbstractFacadeFactory;
 import org.hibernate.tool.eclipse.search.runtime.common.AbstractQueryParser;
 import org.hibernate.tool.eclipse.search.runtime.spi.IAnalyzer;

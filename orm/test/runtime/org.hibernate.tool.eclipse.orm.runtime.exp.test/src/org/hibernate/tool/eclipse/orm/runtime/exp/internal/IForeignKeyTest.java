@@ -16,7 +16,7 @@ import org.hibernate.mapping.Table;
 import org.hibernate.tool.orm.jbt.wrp.DelegatingColumnWrapperImpl;
 import org.hibernate.tool.orm.jbt.wrp.ForeignKeyWrapperFactory;
 import org.hibernate.tool.eclipse.orm.runtime.common.GenericFacadeFactory;
-import org.hibernate.tool.eclipse.orm.runtime.common.IFacade;
+import org.hibernate.tool.eclipse.common.runtime.IFacade;
 import org.hibernate.tool.eclipse.runtime.spi.IColumn;
 import org.hibernate.tool.eclipse.runtime.spi.IForeignKey;
 import org.hibernate.tool.eclipse.runtime.spi.ITable;

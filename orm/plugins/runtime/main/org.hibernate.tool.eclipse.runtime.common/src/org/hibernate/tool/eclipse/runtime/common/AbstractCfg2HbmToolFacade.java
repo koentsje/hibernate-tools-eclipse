@@ -1,5 +1,7 @@
 package org.hibernate.tool.eclipse.runtime.common;
 
+import org.hibernate.tool.eclipse.common.runtime.Util;
+
 import org.hibernate.tool.eclipse.runtime.spi.ICfg2HbmTool;
 import org.hibernate.tool.eclipse.runtime.spi.IPersistentClass;
 import org.hibernate.tool.eclipse.runtime.spi.IProperty;

@@ -1,6 +1,6 @@
 package org.hibernate.tool.eclipse.search.runtime.common;
 
-import org.hibernate.tool.eclipse.runtime.common.Util;
+import org.hibernate.tool.eclipse.common.runtime.Util;
 import org.hibernate.tool.eclipse.search.runtime.spi.IDocument;
 import org.hibernate.tool.eclipse.search.runtime.spi.IIndexReader;
 

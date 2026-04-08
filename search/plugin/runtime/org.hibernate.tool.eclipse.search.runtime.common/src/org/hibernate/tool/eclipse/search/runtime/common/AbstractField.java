@@ -1,6 +1,6 @@
 package org.hibernate.tool.eclipse.search.runtime.common;
 
-import org.hibernate.tool.eclipse.runtime.common.Util;
+import org.hibernate.tool.eclipse.common.runtime.Util;
 import org.hibernate.tool.eclipse.search.runtime.spi.IField;
 
 public abstract class AbstractField extends AbstractFacade implements IField {

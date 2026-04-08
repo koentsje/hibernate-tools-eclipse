@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.hibernate.tool.eclipse.common.runtime.IFacade;
 import org.hibernate.tool.eclipse.runtime.spi.IClassMetadata;
 import org.hibernate.tool.eclipse.runtime.spi.ICollectionMetadata;
 import org.hibernate.tool.eclipse.runtime.spi.IColumn;

@@ -1,5 +1,6 @@
 package org.hibernate.tool.eclipse.runtime.common;
 
+import org.hibernate.tool.eclipse.common.runtime.UsageTracker;
 import org.hibernate.tool.eclipse.runtime.spi.IExporter;
 import org.hibernate.tool.eclipse.runtime.spi.IService;
 

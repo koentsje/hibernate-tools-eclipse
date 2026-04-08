@@ -24,7 +24,7 @@ import org.hibernate.query.sqm.internal.QuerySqmImpl;
 import org.hibernate.tool.orm.jbt.wrp.Wrapper;
 import org.hibernate.tool.orm.jbt.wrp.WrapperFactory;
 import org.hibernate.tool.eclipse.orm.runtime.common.GenericFacadeFactory;
-import org.hibernate.tool.eclipse.orm.runtime.common.IFacade;
+import org.hibernate.tool.eclipse.common.runtime.IFacade;
 import org.hibernate.tool.eclipse.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.runtime.spi.IQuery;
 import org.hibernate.tool.eclipse.runtime.spi.ISession;

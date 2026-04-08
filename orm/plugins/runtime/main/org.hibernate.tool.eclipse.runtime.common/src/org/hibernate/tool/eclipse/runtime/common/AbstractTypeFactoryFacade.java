@@ -1,5 +1,7 @@
 package org.hibernate.tool.eclipse.runtime.common;
 
+import org.hibernate.tool.eclipse.common.runtime.Util;
+
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Currency;

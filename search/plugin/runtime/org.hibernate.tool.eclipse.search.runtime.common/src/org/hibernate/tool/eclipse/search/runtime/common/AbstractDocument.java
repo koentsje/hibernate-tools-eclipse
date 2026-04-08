@@ -3,7 +3,7 @@ package org.hibernate.tool.eclipse.search.runtime.common;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.hibernate.tool.eclipse.runtime.common.Util;
+import org.hibernate.tool.eclipse.common.runtime.Util;
 import org.hibernate.tool.eclipse.search.runtime.spi.IDocument;
 import org.hibernate.tool.eclipse.search.runtime.spi.IField;
 

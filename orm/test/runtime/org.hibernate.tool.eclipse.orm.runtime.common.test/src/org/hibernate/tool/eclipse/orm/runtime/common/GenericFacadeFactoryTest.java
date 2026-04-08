@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.tool.eclipse.orm.runtime.common.GenericFacadeFactory;
-import org.hibernate.tool.eclipse.orm.runtime.common.IFacade;
+import org.hibernate.tool.eclipse.common.runtime.IFacade;
 import org.junit.jupiter.api.Test;
 
 public class GenericFacadeFactoryTest {

@@ -1,4 +1,4 @@
-package org.hibernate.tool.eclipse.runtime.common.internal;
+package org.hibernate.tool.eclipse.common.runtime.internal;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Plugin;
@@ -7,7 +7,7 @@ import org.osgi.framework.BundleContext;
 
 public class HibernateRuntimeCommon extends Plugin {
 	
-	private static final String PLUGIN_ID = "org.hibernate.tool.eclipse.runtime.common";
+	private static final String PLUGIN_ID = "org.hibernate.tool.eclipse.common.runtime";
 	private static HibernateRuntimeCommon PLUGIN;
 
 

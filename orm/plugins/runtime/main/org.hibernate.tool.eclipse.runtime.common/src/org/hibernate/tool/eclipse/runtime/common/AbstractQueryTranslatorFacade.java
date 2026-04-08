@@ -1,5 +1,7 @@
 package org.hibernate.tool.eclipse.runtime.common;
 
+import org.hibernate.tool.eclipse.common.runtime.Util;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;

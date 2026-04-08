@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Hibernate Common Runtime
+Bundle-Vendor: Red Hat
+Bundle-SymbolicName: org.hibernate.tool.eclipse.common.runtime;singleton:=true
+Bundle-Version: 6.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Require-Bundle: org.eclipse.core.runtime
+Bundle-ActivationPolicy: lazy
+Export-Package: org.hibernate.tool.eclipse.common.runtime
+Bundle-Activator: org.hibernate.tool.eclipse.common.runtime.internal.HibernateRuntimeCommon

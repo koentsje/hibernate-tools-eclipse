@@ -2,7 +2,7 @@ package org.hibernate.tool.eclipse.search.runtime.common;
 
 import java.util.Set;
 
-import org.hibernate.tool.eclipse.runtime.common.Util;
+import org.hibernate.tool.eclipse.common.runtime.Util;
 import org.hibernate.tool.eclipse.search.runtime.spi.IIndexReader;
 import org.hibernate.tool.eclipse.search.runtime.spi.ISearchFactory;
 

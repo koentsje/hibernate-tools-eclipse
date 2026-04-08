@@ -7,4 +7,5 @@ Bundle-Version: 6.0.0.qualifier
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.hibernate.tool.eclipse.orm.runtime.common
-Require-Bundle: org.hibernate.tool.eclipse.runtime.spi
+Require-Bundle: org.hibernate.tool.eclipse.common.runtime;visibility:=reexport,
+ org.hibernate.tool.eclipse.runtime.spi

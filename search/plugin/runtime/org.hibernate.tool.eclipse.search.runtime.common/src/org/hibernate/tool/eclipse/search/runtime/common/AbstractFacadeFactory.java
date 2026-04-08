@@ -4,7 +4,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
 import org.hibernate.tool.eclipse.runtime.common.IFacade;
-import org.hibernate.tool.eclipse.runtime.common.Util;
+import org.hibernate.tool.eclipse.common.runtime.Util;
 import org.hibernate.tool.eclipse.runtime.spi.ISession;
 import org.hibernate.tool.eclipse.runtime.spi.ISessionFactory;
 import org.hibernate.tool.eclipse.search.runtime.spi.IAnalyzer;

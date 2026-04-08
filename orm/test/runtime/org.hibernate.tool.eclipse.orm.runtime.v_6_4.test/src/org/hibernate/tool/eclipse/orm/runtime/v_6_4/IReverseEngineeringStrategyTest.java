@@ -8,7 +8,7 @@ import java.lang.reflect.Field;
 import org.hibernate.tool.internal.reveng.strategy.AbstractStrategy;
 import org.hibernate.tool.orm.jbt.wrp.WrapperFactory;
 import org.hibernate.tool.eclipse.orm.runtime.common.GenericFacadeFactory;
-import org.hibernate.tool.eclipse.orm.runtime.common.IFacade;
+import org.hibernate.tool.eclipse.common.runtime.IFacade;
 import org.hibernate.tool.eclipse.runtime.spi.IReverseEngineeringSettings;
 import org.hibernate.tool.eclipse.runtime.spi.IReverseEngineeringStrategy;
 import org.junit.jupiter.api.Test;

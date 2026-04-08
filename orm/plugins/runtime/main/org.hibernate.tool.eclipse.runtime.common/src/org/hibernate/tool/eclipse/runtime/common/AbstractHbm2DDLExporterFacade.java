@@ -1,5 +1,7 @@
 package org.hibernate.tool.eclipse.runtime.common;
 
+import org.hibernate.tool.eclipse.common.runtime.Util;
+
 import java.util.Hashtable;
 
 import org.hibernate.tool.eclipse.runtime.spi.IHbm2DDLExporter;

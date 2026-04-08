@@ -23,7 +23,7 @@ import org.hibernate.type.CollectionType;
 import org.hibernate.type.Type;
 import org.hibernate.type.internal.NamedBasicTypeImpl;
 import org.hibernate.tool.eclipse.orm.runtime.common.GenericFacadeFactory;
-import org.hibernate.tool.eclipse.orm.runtime.common.IFacade;
+import org.hibernate.tool.eclipse.common.runtime.IFacade;
 import org.hibernate.tool.eclipse.runtime.spi.IClassMetadata;
 import org.hibernate.tool.eclipse.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.runtime.spi.ISession;

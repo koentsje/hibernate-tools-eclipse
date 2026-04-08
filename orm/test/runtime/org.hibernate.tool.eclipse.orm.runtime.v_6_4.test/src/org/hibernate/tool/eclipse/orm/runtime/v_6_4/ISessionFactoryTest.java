@@ -21,7 +21,7 @@ import org.hibernate.tool.orm.jbt.util.MockDialect;
 import org.hibernate.tool.orm.jbt.wrp.Wrapper;
 import org.hibernate.tool.orm.jbt.wrp.WrapperFactory;
 import org.hibernate.tool.eclipse.orm.runtime.common.GenericFacadeFactory;
-import org.hibernate.tool.eclipse.orm.runtime.common.IFacade;
+import org.hibernate.tool.eclipse.common.runtime.IFacade;
 import org.hibernate.tool.eclipse.runtime.spi.IClassMetadata;
 import org.hibernate.tool.eclipse.runtime.spi.ICollectionMetadata;
 import org.hibernate.tool.eclipse.runtime.spi.IConfiguration;

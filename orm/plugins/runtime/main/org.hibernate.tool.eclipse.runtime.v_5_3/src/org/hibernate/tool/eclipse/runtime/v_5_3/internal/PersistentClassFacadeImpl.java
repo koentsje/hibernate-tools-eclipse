@@ -3,7 +3,7 @@ package org.hibernate.tool.eclipse.runtime.v_5_3.internal;
 import org.hibernate.tool.eclipse.runtime.common.AbstractPersistentClassFacade;
 import org.hibernate.tool.eclipse.runtime.common.IFacade;
 import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
-import org.hibernate.tool.eclipse.runtime.common.Util;
+import org.hibernate.tool.eclipse.common.runtime.Util;
 import org.hibernate.tool.eclipse.runtime.spi.IValue;
 
 public class PersistentClassFacadeImpl extends AbstractPersistentClassFacade {

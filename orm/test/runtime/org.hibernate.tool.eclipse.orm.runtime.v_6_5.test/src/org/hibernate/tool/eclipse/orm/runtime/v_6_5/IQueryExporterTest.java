@@ -14,7 +14,7 @@ import org.hibernate.tool.internal.export.query.QueryExporter;
 import org.hibernate.tool.orm.jbt.api.wrp.Wrapper;
 import org.hibernate.tool.orm.jbt.internal.factory.QueryExporterWrapperFactory;
 import org.hibernate.tool.eclipse.orm.runtime.common.GenericFacadeFactory;
-import org.hibernate.tool.eclipse.orm.runtime.common.IFacade;
+import org.hibernate.tool.eclipse.common.runtime.IFacade;
 import org.hibernate.tool.eclipse.runtime.spi.IQueryExporter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

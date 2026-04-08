@@ -25,7 +25,7 @@ import org.hibernate.tool.orm.jbt.util.JpaMappingFileHelper;
 import org.hibernate.tool.orm.jbt.wrp.WrapperFactory;
 import org.hibernate.tool.eclipse.orm.runtime.common.GenericFacadeFactory;
 import org.hibernate.tool.eclipse.orm.runtime.common.IDatabaseReader;
-import org.hibernate.tool.eclipse.orm.runtime.common.IFacade;
+import org.hibernate.tool.eclipse.common.runtime.IFacade;
 import org.hibernate.tool.eclipse.runtime.spi.HibernateException;
 import org.hibernate.tool.eclipse.runtime.spi.IArtifactCollector;
 import org.hibernate.tool.eclipse.runtime.spi.ICfg2HbmTool;

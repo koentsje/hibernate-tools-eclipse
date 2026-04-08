@@ -1,10 +1,10 @@
-package org.hibernate.tool.eclipse.runtime.common;
+package org.hibernate.tool.eclipse.common.runtime;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import org.hibernate.tool.eclipse.runtime.common.internal.HibernateRuntimeCommon;
+import org.hibernate.tool.eclipse.common.runtime.internal.HibernateRuntimeCommon;
 
 public class Util {
 	

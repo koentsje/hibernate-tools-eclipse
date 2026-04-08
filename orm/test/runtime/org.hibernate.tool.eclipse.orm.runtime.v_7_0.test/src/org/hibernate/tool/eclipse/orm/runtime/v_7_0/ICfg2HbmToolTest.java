@@ -9,7 +9,7 @@ import org.hibernate.tool.orm.jbt.api.wrp.PersistentClassWrapper;
 import org.hibernate.tool.orm.jbt.api.wrp.PropertyWrapper;
 import org.hibernate.tool.orm.jbt.api.wrp.ValueWrapper;
 import org.hibernate.tool.eclipse.orm.runtime.common.GenericFacadeFactory;
-import org.hibernate.tool.eclipse.orm.runtime.common.IFacade;
+import org.hibernate.tool.eclipse.common.runtime.IFacade;
 import org.hibernate.tool.eclipse.runtime.spi.ICfg2HbmTool;
 import org.hibernate.tool.eclipse.runtime.spi.IPersistentClass;
 import org.hibernate.tool.eclipse.runtime.spi.IProperty;

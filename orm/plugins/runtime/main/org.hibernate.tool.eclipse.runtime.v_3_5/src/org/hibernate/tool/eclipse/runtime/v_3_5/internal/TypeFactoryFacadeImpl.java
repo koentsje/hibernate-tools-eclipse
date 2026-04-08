@@ -2,7 +2,7 @@ package org.hibernate.tool.eclipse.runtime.v_3_5.internal;
 
 import org.hibernate.tool.eclipse.runtime.common.AbstractTypeFactoryFacade;
 import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
-import org.hibernate.tool.eclipse.runtime.common.Util;
+import org.hibernate.tool.eclipse.common.runtime.Util;
 import org.hibernate.tool.eclipse.runtime.spi.IType;
 
 public class TypeFactoryFacadeImpl extends AbstractTypeFactoryFacade {
