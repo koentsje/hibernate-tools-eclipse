@@ -1,4 +1,4 @@
-package org.hibernate.tool.eclipse.xml.ui.internal.common;
+package org.hibernate.tool.eclipse.xml.core.common;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;

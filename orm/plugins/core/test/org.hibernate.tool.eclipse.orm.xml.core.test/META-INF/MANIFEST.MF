@@ -1,13 +1,12 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Hibernate XML Editor Tests
-Bundle-SymbolicName: org.hibernate.tool.eclipse.xml.ui.test
+Bundle-Name: Hibernate XML Core Tests
+Bundle-SymbolicName: org.hibernate.tool.eclipse.orm.xml.core.test
 Bundle-Version: 6.0.0.qualifier
 Bundle-Vendor: Hibernate
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: org.junit,
  org.eclipse.wst.sse.core,
  org.eclipse.wst.xml.core,
- org.hibernate.tool.eclipse.orm.xml.core,
- org.hibernate.tool.eclipse.orm.xml.ui
+ org.hibernate.tool.eclipse.orm.xml.core
 Bundle-ActivationPolicy: lazy

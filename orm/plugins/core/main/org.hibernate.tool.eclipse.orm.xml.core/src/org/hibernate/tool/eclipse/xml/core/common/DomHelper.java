@@ -1,4 +1,4 @@
-package org.hibernate.tool.eclipse.xml.ui.internal.common;
+package org.hibernate.tool.eclipse.xml.core.common;
 
 import java.util.ArrayList;
 import java.util.List;

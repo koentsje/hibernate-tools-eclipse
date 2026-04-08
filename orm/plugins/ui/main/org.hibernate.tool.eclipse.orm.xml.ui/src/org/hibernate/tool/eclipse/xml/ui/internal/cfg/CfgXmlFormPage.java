@@ -6,7 +6,7 @@ import org.eclipse.ui.forms.editor.FormPage;
 import org.eclipse.ui.forms.widgets.ColumnLayout;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.wst.xml.core.internal.provisional.document.IDOMDocument;
-import org.hibernate.tool.eclipse.xml.ui.internal.common.DomHelper;
+import org.hibernate.tool.eclipse.xml.core.common.DomHelper;
 import org.w3c.dom.Element;
 
 @SuppressWarnings("restriction")

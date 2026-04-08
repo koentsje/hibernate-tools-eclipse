@@ -11,7 +11,7 @@ import org.eclipse.ui.forms.SectionPart;
 import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
-import org.hibernate.tool.eclipse.xml.ui.internal.common.DomHelper;
+import org.hibernate.tool.eclipse.xml.core.common.DomHelper;
 import org.w3c.dom.Element;
 
 public class SessionFactorySection extends SectionPart {
