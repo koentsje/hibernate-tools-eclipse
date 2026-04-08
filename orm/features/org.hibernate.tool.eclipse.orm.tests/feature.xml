@@ -112,7 +112,14 @@
          unpack="false"/>
 
    <plugin
-         id="org.hibernate.tool.eclipse.orm.test"
+         id="org.hibernate.tool.eclipse.orm.core.test"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.hibernate.tool.eclipse.orm.ui.test"
          download-size="0"
          install-size="0"
          version="0.0.0"
