@@ -29,9 +29,9 @@ import org.eclipse.datatools.connectivity.drivers.jdbc.IJDBCDriverDefinitionCons
 import org.eclipse.datatools.connectivity.internal.ConnectionProfile;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.hibernate.console.preferences.ConsoleConfigurationPreferences;
-import org.hibernate.eclipse.console.ExtensionManager;
-import org.hibernate.eclipse.console.model.impl.ExporterDefinition;
-import org.hibernate.eclipse.console.model.impl.ExporterFactoryStrings;
+import org.hibernate.eclipse.launch.ExtensionManager;
+import org.hibernate.eclipse.launch.model.ExporterDefinition;
+import org.hibernate.eclipse.launch.model.ExporterFactoryStrings;
 import org.hibernate.eclipse.launch.CodeGenXMLFactory;
 import org.hibernate.eclipse.launch.CodeGenerationStrings;
 import org.hibernate.eclipse.launch.ExporterAttributes;

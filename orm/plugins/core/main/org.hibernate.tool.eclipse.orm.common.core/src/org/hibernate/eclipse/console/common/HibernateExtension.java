@@ -43,15 +43,23 @@ public class HibernateExtension implements IHibernateExtension {
 	
 	private Map<String, FakeDelegatingDriver> fakeDrivers = new HashMap<String, FakeDelegatingDriver>();
 	
-	private ConsoleExtension consoleExtension;
-	
+	private IConsoleExtension consoleExtension;
+
+	private static java.util.function.Function<HibernateExtension, IConsoleExtension> consoleExtensionFactory;
+
+	public static void setConsoleExtensionFactory(
+			java.util.function.Function<HibernateExtension, IConsoleExtension> factory) {
+		consoleExtensionFactory = factory;
+	}
+
 	public HibernateExtension(ConsoleConfigurationPreferences prefs) {
 		this.prefs = prefs;
-		consoleExtension = new ConsoleExtension();
-		consoleExtension.setHibernateExtention(this);
+		if (consoleExtensionFactory != null) {
+			consoleExtension = consoleExtensionFactory.apply(this);
+		}
 	}
-	
-	public ConsoleExtension getConsoleExtension() {
+
+	public IConsoleExtension getConsoleExtension() {
 		return consoleExtension;
 	}
 

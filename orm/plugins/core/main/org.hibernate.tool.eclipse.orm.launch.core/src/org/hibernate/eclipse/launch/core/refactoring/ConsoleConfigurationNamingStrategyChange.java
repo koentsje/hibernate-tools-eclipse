@@ -19,22 +19,22 @@ import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.ltk.core.refactoring.Change;
 import org.eclipse.ltk.core.refactoring.RefactoringStatus;
 import org.hibernate.eclipse.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.launch.IConsoleConfigurationLaunchConstants;
+import org.hibernate.eclipse.console.launch.IConsoleConfigurationLaunchConstants;
 
 /**
  * @author Dmitry Geraskov
  *
  */
-public class ConsoleConfigurationEntityResolverChange extends Change {
-
+public class ConsoleConfigurationNamingStrategyChange extends Change {
+	
 	private ILaunchConfiguration fLaunchConfiguration;
-	private String fNewEntityResolverName;
-	private String fOldEntityResolverTypeName;
+	private String fNewNamingStrategyName;
+	private String fOldNamingStrategyTypeName;
     
-	public ConsoleConfigurationEntityResolverChange(ILaunchConfiguration launchConfiguration, String newEntityResolverName) throws CoreException {
+	public ConsoleConfigurationNamingStrategyChange(ILaunchConfiguration launchConfiguration, String newNamingStrategyName) throws CoreException {
 		fLaunchConfiguration = launchConfiguration;
-		fNewEntityResolverName = newEntityResolverName;
-		fOldEntityResolverTypeName = fLaunchConfiguration.getAttribute(IConsoleConfigurationLaunchConstants.NAMING_STRATEGY, (String) null);
+		fNewNamingStrategyName = newNamingStrategyName;
+		fOldNamingStrategyTypeName = fLaunchConfiguration.getAttribute(IConsoleConfigurationLaunchConstants.NAMING_STRATEGY, (String) null);
 	}
 
 	@Override
@@ -59,12 +59,13 @@ public class ConsoleConfigurationEntityResolverChange extends Change {
 	@Override
 	public Change perform(IProgressMonitor pm) throws CoreException {
 		final ILaunchConfigurationWorkingCopy wc = fLaunchConfiguration.getWorkingCopy();
-		String oldEntityResolverTypeName = fOldEntityResolverTypeName;
-		wc.setAttribute(IConsoleConfigurationLaunchConstants.ENTITY_RESOLVER, fNewEntityResolverName);
+		String oldNamingStrategyTypeName = fOldNamingStrategyTypeName;
+		wc.setAttribute(IConsoleConfigurationLaunchConstants.NAMING_STRATEGY, fNewNamingStrategyName);
 
 		fLaunchConfiguration = wc.doSave();
 
 		// create the undo change
-		return new ConsoleConfigurationEntityResolverChange(fLaunchConfiguration, oldEntityResolverTypeName);
+		return new ConsoleConfigurationNamingStrategyChange(fLaunchConfiguration, oldNamingStrategyTypeName);
 	}
+
 }

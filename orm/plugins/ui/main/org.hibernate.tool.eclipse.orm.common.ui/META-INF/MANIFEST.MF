@@ -58,6 +58,7 @@ Export-Package: org.hibernate.eclipse.ui,
  org.hibernate.tool.eclipse.ui.diagram.editors.parts,
  org.hibernate.tool.eclipse.ui.view
 Require-Bundle: org.hibernate.tool.eclipse.orm.common.core;bundle-version="5.0.0",
+ org.hibernate.tool.eclipse.orm.launch.core,
  org.hibernate.tool.eclipse.orm.runtime.spi;bundle-version="5.0.0",
  org.hibernate.tool.eclipse.libs.dom4j.v_1_6_1;bundle-version="5.0.0",
  org.hibernate.tool.eclipse.libs.antlr.v_2_7_7;bundle-version="5.0.0",

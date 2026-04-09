@@ -54,6 +54,7 @@ import org.hibernate.eclipse.console.wizards.NewConfigurationWizardPage;
 import org.hibernate.eclipse.utils.HibernateEclipseUtils;
 import org.hibernate.util.xpl.StringHelper;
 import org.hibernate.tool.eclipse.orm.runtime.spi.RuntimeServiceManager;
+import org.hibernate.eclipse.console.launch.IConsoleConfigurationLaunchConstants;
 
 @SuppressWarnings("restriction")
 public class ConsoleConfigurationMainTab extends ConsoleConfigurationTab {

@@ -24,7 +24,7 @@ package org.hibernate.eclipse.console.views.properties;
 import org.eclipse.ui.views.properties.IPropertySource;
 import org.eclipse.ui.views.properties.IPropertySourceProvider;
 import org.hibernate.console.QueryPage;
-import org.hibernate.eclipse.console.common.ConsoleExtension;
+import org.hibernate.eclipse.launch.exporter.ConsoleExtension;
 import org.hibernate.eclipse.console.common.HibernateExtension;
 import org.hibernate.eclipse.console.views.QueryPageTabView;
 import org.hibernate.eclipse.ui.console.common.ConsoleExtensionUI;
@@ -54,7 +54,7 @@ public class HibernatePropertySourceProvider implements IPropertySourceProvider 
 			if (selectedQueryPage != null) {
 				HibernateExtension hibernateExtension = (HibernateExtension) selectedQueryPage.getHibernateExtension();
 				if (hibernateExtension != null) {
-					ConsoleExtension consoleExtension = hibernateExtension.getConsoleExtension();
+					ConsoleExtension consoleExtension = (ConsoleExtension) hibernateExtension.getConsoleExtension();
 					if (consoleExtension != null) {
 						ConsoleExtensionUI consoleExtensionUI = new ConsoleExtensionUI(consoleExtension);
 						result = consoleExtensionUI.getPropertySource(object, selectedQueryPage);

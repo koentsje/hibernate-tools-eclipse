@@ -7,8 +7,8 @@ import java.util.Map;
 import org.eclipse.ui.views.properties.IPropertyDescriptor;
 import org.eclipse.ui.views.properties.IPropertySource;
 import org.eclipse.ui.views.properties.TextPropertyDescriptor;
-import org.hibernate.eclipse.console.model.impl.ExporterFactory;
-import org.hibernate.eclipse.console.model.impl.ExporterProperty;
+import org.hibernate.eclipse.launch.model.ExporterFactory;
+import org.hibernate.eclipse.launch.model.ExporterProperty;
 
 public class ExporterFactoryPropertySource implements IPropertySource {
 

@@ -85,14 +85,14 @@ import org.eclipse.ui.views.properties.IPropertySourceProvider;
 import org.eclipse.ui.views.properties.PropertySheetEntry;
 import org.eclipse.ui.views.properties.PropertySheetPage;
 import org.hibernate.console.ImageConstants;
-import org.hibernate.eclipse.console.ExtensionManager;
+import org.hibernate.eclipse.launch.ExtensionManager;
 import org.hibernate.eclipse.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
-import org.hibernate.eclipse.console.model.impl.ExporterFactoryStrings;
+import org.hibernate.eclipse.launch.model.ExporterFactoryStrings;
 import org.eclipse.jface.resource.ImageDescriptor;
-import org.hibernate.eclipse.console.model.impl.ExporterDefinition;
+import org.hibernate.eclipse.launch.model.ExporterDefinition;
 import org.hibernate.eclipse.ui.ExporterDefinitionUI;
-import org.hibernate.eclipse.console.model.impl.ExporterFactory;
+import org.hibernate.eclipse.launch.model.ExporterFactory;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.eclipse.console.wizards.UpDownListComposite;
 

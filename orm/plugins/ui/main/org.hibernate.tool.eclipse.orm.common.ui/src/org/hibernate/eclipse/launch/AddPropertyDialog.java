@@ -50,8 +50,8 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.hibernate.eclipse.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.model.impl.ExporterFactory;
-import org.hibernate.eclipse.console.model.impl.ExporterProperty;
+import org.hibernate.eclipse.launch.model.ExporterFactory;
+import org.hibernate.eclipse.launch.model.ExporterProperty;
 import org.hibernate.eclipse.console.utils.DialogSelectionHelper;
 import org.hibernate.util.xpl.StringHelper;
 

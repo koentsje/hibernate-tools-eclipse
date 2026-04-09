@@ -4,9 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.ui.views.properties.IPropertyDescriptor;
-import org.hibernate.eclipse.console.model.impl.ExporterDefinition;
-import org.hibernate.eclipse.console.model.impl.ExporterFactory;
-import org.hibernate.eclipse.console.model.impl.ExporterProperty;
+import org.hibernate.eclipse.launch.model.ExporterDefinition;
+import org.hibernate.eclipse.launch.model.ExporterFactory;
+import org.hibernate.eclipse.launch.model.ExporterProperty;
 import org.hibernate.eclipse.launch.ExporterFactoryPropertySource;
 import org.junit.After;
 import org.junit.Assert;

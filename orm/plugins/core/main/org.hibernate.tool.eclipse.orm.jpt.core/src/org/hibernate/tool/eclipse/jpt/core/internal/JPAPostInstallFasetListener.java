@@ -53,7 +53,7 @@ import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.preferences.ConsoleConfigurationPreferences.ConfigurationMode;
 import org.hibernate.eclipse.console.utils.LaunchHelper;
 import org.hibernate.eclipse.console.utils.ProjectUtils;
-import org.hibernate.eclipse.launch.IConsoleConfigurationLaunchConstants;
+import org.hibernate.eclipse.console.launch.IConsoleConfigurationLaunchConstants;
 import org.hibernate.eclipse.nature.HibernateNature;
 import org.hibernate.eclipse.utils.HibernateEclipseUtils;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;

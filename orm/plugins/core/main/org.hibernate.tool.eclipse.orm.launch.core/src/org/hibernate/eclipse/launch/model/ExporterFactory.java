@@ -1,4 +1,4 @@
-package org.hibernate.eclipse.console.model.impl;
+package org.hibernate.eclipse.launch.model;
 
 import java.io.File;
 import java.util.ArrayList;

@@ -38,7 +38,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.hibernate.eclipse.console;
+package org.hibernate.eclipse.launch;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -50,7 +50,7 @@ import org.eclipse.core.runtime.IExtension;
 import org.eclipse.core.runtime.IExtensionPoint;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
-import org.hibernate.eclipse.console.model.impl.ExporterDefinition;
+import org.hibernate.eclipse.launch.model.ExporterDefinition;
 
 public class ExtensionManager
 {

@@ -50,7 +50,7 @@ import org.hibernate.console.preferences.ConsoleConfigurationPreferences.Configu
 import org.hibernate.eclipse.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
 import org.hibernate.eclipse.console.utils.LaunchHelper;
-import org.hibernate.eclipse.launch.IConsoleConfigurationLaunchConstants;
+import org.hibernate.eclipse.console.launch.IConsoleConfigurationLaunchConstants;
 
 @SuppressWarnings("restriction")
 public class ConsoleConfigurationPropertySource implements IPropertySource {

@@ -41,7 +41,7 @@
 package org.hibernate.eclipse.launch;
 
 import org.hibernate.console.ConfigurationXMLStrings;
-import org.hibernate.eclipse.console.model.impl.ExporterFactoryStrings;
+import org.hibernate.eclipse.launch.model.ExporterFactoryStrings;
 
 public class HibernateLaunchConstants
 {

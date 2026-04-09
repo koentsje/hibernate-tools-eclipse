@@ -22,6 +22,7 @@ import org.hibernate.eclipse.console.HibernateConsolePlugin;
 import org.hibernate.eclipse.console.utils.DialogSelectionHelper;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.eclipse.console.wizards.UpDownListComposite;
+import org.hibernate.eclipse.console.launch.IConsoleConfigurationLaunchConstants;
 
 public class ConsoleConfigurationMappingsTab extends ConsoleConfigurationTab {
 

@@ -8,7 +8,7 @@
  * Contributor:
  *     Red Hat, Inc. - initial API and implementation
  ******************************************************************************/
-package org.hibernate.eclipse.console.model.impl;
+package org.hibernate.eclipse.launch.model;
 
 /**
  * ExporterFactory strings

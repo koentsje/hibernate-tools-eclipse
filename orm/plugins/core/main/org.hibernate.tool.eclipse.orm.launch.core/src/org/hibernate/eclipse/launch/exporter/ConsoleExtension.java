@@ -8,7 +8,7 @@
  * Contributor:
  *     Red Hat, Inc. - initial API and implementation
  ******************************************************************************/
-package org.hibernate.eclipse.console.common;
+package org.hibernate.eclipse.launch.exporter;
 
 import java.io.File;
 import java.util.HashMap;
@@ -33,7 +33,9 @@ import org.hibernate.console.KnownConfigurations;
 import org.hibernate.console.execution.ExecutionContext.Command;
 import org.hibernate.eclipse.HibernatePlugin;
 import org.hibernate.eclipse.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.model.impl.ExporterFactory;
+import org.hibernate.eclipse.console.common.HibernateExtension;
+import org.hibernate.eclipse.console.common.IConsoleExtension;
+import org.hibernate.eclipse.launch.model.ExporterFactory;
 import org.hibernate.eclipse.launch.CodeGenerationStrings;
 import org.hibernate.eclipse.launch.CodeGenerationUtils;
 import org.hibernate.eclipse.launch.ExporterAttributes;
@@ -52,7 +54,7 @@ import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
  * @author Dmitry Geraskov
  *
  */
-public class ConsoleExtension {
+public class ConsoleExtension implements IConsoleExtension {
 	
 	private HibernateExtension hibernateExtension;
 

@@ -2,7 +2,7 @@ package org.hibernate.eclipse.ui.console.common;
 
 import org.eclipse.ui.views.properties.IPropertySource;
 import org.hibernate.console.QueryPage;
-import org.hibernate.eclipse.console.common.ConsoleExtension;
+import org.hibernate.eclipse.launch.exporter.ConsoleExtension;
 import org.hibernate.eclipse.console.common.HibernateExtension;
 import org.hibernate.tool.eclipse.orm.runtime.spi.HibernateException;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IHQLCodeAssist;

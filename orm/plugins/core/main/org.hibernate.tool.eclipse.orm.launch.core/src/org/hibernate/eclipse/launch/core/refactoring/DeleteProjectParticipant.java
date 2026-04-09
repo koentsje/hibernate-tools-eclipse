@@ -1,4 +1,4 @@
-package org.hibernate.eclipse.console;
+package org.hibernate.eclipse.launch.core.refactoring;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,8 +12,7 @@ import org.eclipse.ltk.core.refactoring.Change;
 import org.eclipse.ltk.core.refactoring.RefactoringStatus;
 import org.eclipse.ltk.core.refactoring.participants.CheckConditionsContext;
 import org.eclipse.ltk.core.refactoring.participants.DeleteParticipant;
-import org.hibernate.eclipse.launch.core.refactoring.ConsoleConfigurationDeleteJavaProjectChange;
-import org.hibernate.eclipse.launch.core.refactoring.HibernateRefactoringUtil;
+import org.hibernate.eclipse.console.HibernateConsoleMessages;
 
 public class DeleteProjectParticipant extends DeleteParticipant {
 	
