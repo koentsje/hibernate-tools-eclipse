@@ -43,8 +43,8 @@ import org.hibernate.eclipse.console.actions.OpenMappingAction;
 import org.hibernate.eclipse.console.actions.OpenSourceAction;
 import org.hibernate.eclipse.console.actions.RefreshAction;
 import org.hibernate.eclipse.console.actions.RenameAction;
-import org.hibernate.tool.eclipse.runtime.spi.IPersistentClass;
-import org.hibernate.tool.eclipse.runtime.spi.IProperty;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IProperty;
 
 /**
  * @author max

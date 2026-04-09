@@ -56,7 +56,7 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.hibernate.console.ConnectionProfileUtil;
 import org.hibernate.eclipse.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.utils.DriverClassHelpers;
-import org.hibernate.tool.eclipse.runtime.spi.RuntimeServiceManager;
+import org.hibernate.tool.eclipse.orm.runtime.spi.RuntimeServiceManager;
 
 /**
  * Wizard for creating basic hibernate.cfg.xml

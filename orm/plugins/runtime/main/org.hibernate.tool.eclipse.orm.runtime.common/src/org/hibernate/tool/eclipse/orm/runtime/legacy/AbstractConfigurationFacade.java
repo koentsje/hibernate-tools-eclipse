@@ -8,12 +8,12 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Properties;
 
-import org.hibernate.tool.eclipse.runtime.spi.IConfiguration;
-import org.hibernate.tool.eclipse.runtime.spi.INamingStrategy;
-import org.hibernate.tool.eclipse.runtime.spi.IPersistentClass;
-import org.hibernate.tool.eclipse.runtime.spi.IReverseEngineeringStrategy;
-import org.hibernate.tool.eclipse.runtime.spi.ISessionFactory;
-import org.hibernate.tool.eclipse.runtime.spi.ITable;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
+import org.hibernate.tool.eclipse.orm.runtime.spi.INamingStrategy;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IReverseEngineeringStrategy;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ITable;
 import org.w3c.dom.Document;
 import org.xml.sax.EntityResolver;
 

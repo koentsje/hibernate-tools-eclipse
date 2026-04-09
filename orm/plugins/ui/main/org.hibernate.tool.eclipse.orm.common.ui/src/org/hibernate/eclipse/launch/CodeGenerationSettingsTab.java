@@ -65,7 +65,7 @@ import org.hibernate.eclipse.console.utils.DialogSelectionHelper;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.eclipse.console.utils.LaunchHelperUI;
 import org.hibernate.eclipse.console.wizards.NewReverseEngineeringFileWizard;
-import org.hibernate.tool.eclipse.runtime.spi.IService;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 
 @SuppressWarnings("restriction")
 public class CodeGenerationSettingsTab extends	AbstractLaunchConfigurationTab {

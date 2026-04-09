@@ -106,7 +106,7 @@
 						     <iterate
 	                              ifEmpty="false">
 	                           <instanceof
-	                                 value="org.hibernate.tool.eclipse.runtime.spi.IPersistentClass">
+	                                 value="org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass">
 	                           </instanceof>
 	                        </iterate>
 						 </and>

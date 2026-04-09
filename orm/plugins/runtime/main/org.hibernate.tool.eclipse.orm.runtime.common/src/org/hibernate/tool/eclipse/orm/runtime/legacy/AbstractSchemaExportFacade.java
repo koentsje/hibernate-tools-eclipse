@@ -4,7 +4,7 @@ import org.hibernate.tool.eclipse.common.runtime.Util;
 
 import java.util.List;
 
-import org.hibernate.tool.eclipse.runtime.spi.ISchemaExport;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ISchemaExport;
 
 public abstract class AbstractSchemaExportFacade 
 extends AbstractFacade 

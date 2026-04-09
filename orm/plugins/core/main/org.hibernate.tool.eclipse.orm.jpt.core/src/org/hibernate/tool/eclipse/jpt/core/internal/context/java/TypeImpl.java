@@ -25,8 +25,8 @@ import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernatePersistence
 import org.hibernate.tool.eclipse.jpt.core.internal.context.Messages;
 import org.hibernate.tool.eclipse.jpt.core.internal.resource.java.TypeAnnotation;
 import org.hibernate.tool.eclipse.jpt.core.internal.validation.HibernateJpaValidationMessage;
-import org.hibernate.tool.eclipse.runtime.spi.IService;
-import org.hibernate.tool.eclipse.runtime.spi.ITypeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ITypeFactory;
 
 /**
  * @author Dmitry Geraskov

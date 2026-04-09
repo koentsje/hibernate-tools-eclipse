@@ -29,8 +29,8 @@ import org.hibernate.console.node.BaseNode;
 import org.hibernate.eclipse.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
-import org.hibernate.tool.eclipse.runtime.spi.IPersistentClass;
-import org.hibernate.tool.eclipse.runtime.spi.IProperty;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IProperty;
 
 public class CriteriaEditorAction extends OpenQueryEditorAction {
 	

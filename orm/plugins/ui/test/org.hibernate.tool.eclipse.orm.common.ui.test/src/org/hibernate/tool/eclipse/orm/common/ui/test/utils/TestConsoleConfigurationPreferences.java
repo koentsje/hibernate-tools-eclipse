@@ -5,9 +5,9 @@ import java.net.URL;
 import java.util.Properties;
 
 import org.hibernate.console.preferences.ConsoleConfigurationPreferences;
-import org.hibernate.tool.eclipse.runtime.spi.IEnvironment;
-import org.hibernate.tool.eclipse.runtime.spi.IService;
-import org.hibernate.tool.eclipse.runtime.spi.RuntimeServiceManager;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IEnvironment;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
+import org.hibernate.tool.eclipse.orm.runtime.spi.RuntimeServiceManager;
 import org.w3c.dom.Element;
 
 public class TestConsoleConfigurationPreferences implements ConsoleConfigurationPreferences {

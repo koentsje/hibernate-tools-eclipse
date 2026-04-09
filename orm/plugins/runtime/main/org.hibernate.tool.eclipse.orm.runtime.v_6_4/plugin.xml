@@ -2,7 +2,7 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         point="org.hibernate.tool.eclipse.runtime.spi.services">
+         point="org.hibernate.tool.eclipse.orm.runtime.spi.services">
       <service
             class="org.hibernate.tool.eclipse.orm.runtime.v_6_4.ServiceImpl"
             disabled="true"

@@ -31,8 +31,8 @@ import org.hibernate.console.KnownConfigurations;
 import org.hibernate.eclipse.ui.console.workbench.HibernateWorkbenchHelper;
 import org.hibernate.eclipse.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
-import org.hibernate.tool.eclipse.runtime.spi.IConfiguration;
-import org.hibernate.tool.eclipse.runtime.spi.IPersistentClass;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
 
 public class ConfigurationWorkbenchAdapter extends BasicWorkbenchAdapter {
 

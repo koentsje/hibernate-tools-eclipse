@@ -16,7 +16,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.tool.eclipse.runtime.spi.IClassMetadata;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IClassMetadata;
 import org.hibernate.tool.eclipse.search.console.ConsoleConfigurationUtils;
 
 public class SearchResultTable {

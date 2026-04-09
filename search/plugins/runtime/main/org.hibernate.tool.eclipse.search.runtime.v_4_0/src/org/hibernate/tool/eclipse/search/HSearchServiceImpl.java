@@ -8,10 +8,10 @@ import java.util.TreeSet;
 
 import org.apache.lucene.util.Version;
 import org.hibernate.search.annotations.Indexed;
-import org.hibernate.tool.eclipse.runtime.spi.IClassMetadata;
-import org.hibernate.tool.eclipse.runtime.spi.IService;
-import org.hibernate.tool.eclipse.runtime.spi.ISessionFactory;
-import org.hibernate.tool.eclipse.runtime.spi.RuntimeServiceManager;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IClassMetadata;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
+import org.hibernate.tool.eclipse.orm.runtime.spi.RuntimeServiceManager;
 import org.hibernate.tool.eclipse.search.runtime.common.AbstractHSearchService;
 import org.hibernate.tool.eclipse.search.runtime.common.IFacadeFactory;
 import org.hibernate.tool.eclipse.search.runtime.spi.IAnalyzer;

@@ -5,11 +5,11 @@ import org.hibernate.tool.eclipse.common.runtime.Util;
 import java.util.HashSet;
 import java.util.Iterator;
 
-import org.hibernate.tool.eclipse.runtime.spi.IColumn;
-import org.hibernate.tool.eclipse.runtime.spi.IForeignKey;
-import org.hibernate.tool.eclipse.runtime.spi.IPrimaryKey;
-import org.hibernate.tool.eclipse.runtime.spi.ITable;
-import org.hibernate.tool.eclipse.runtime.spi.IValue;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IColumn;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IForeignKey;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IPrimaryKey;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ITable;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IValue;
 
 public abstract class AbstractTableFacade 
 extends AbstractFacade 

@@ -4,8 +4,8 @@ import org.hibernate.tool.eclipse.common.runtime.Util;
 
 import java.util.ArrayList;
 
-import org.hibernate.tool.eclipse.runtime.spi.IHQLQueryPlan;
-import org.hibernate.tool.eclipse.runtime.spi.IQueryTranslator;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IHQLQueryPlan;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IQueryTranslator;
 
 public abstract class AbstractHQLQueryPlanFacade 
 extends AbstractFacade 

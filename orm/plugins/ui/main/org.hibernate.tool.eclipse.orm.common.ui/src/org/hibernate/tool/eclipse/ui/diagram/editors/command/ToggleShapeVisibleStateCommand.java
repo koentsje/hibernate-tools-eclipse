@@ -14,8 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.gef.commands.Command;
-import org.hibernate.tool.eclipse.runtime.spi.IPersistentClass;
-import org.hibernate.tool.eclipse.runtime.spi.ITable;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ITable;
 import org.hibernate.tool.eclipse.ui.diagram.editors.model.OrmShape;
 
 /**

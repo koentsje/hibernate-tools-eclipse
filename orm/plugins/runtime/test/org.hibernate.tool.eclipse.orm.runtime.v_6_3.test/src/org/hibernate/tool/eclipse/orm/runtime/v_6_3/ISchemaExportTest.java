@@ -18,7 +18,7 @@ import org.hibernate.tool.orm.jbt.util.MockDialect;
 import org.hibernate.tool.orm.jbt.wrp.SchemaExportWrapper;
 import org.hibernate.tool.schema.TargetType;
 import org.hibernate.tool.eclipse.orm.runtime.common.GenericFacadeFactory;
-import org.hibernate.tool.eclipse.runtime.spi.ISchemaExport;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ISchemaExport;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

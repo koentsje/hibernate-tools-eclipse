@@ -19,7 +19,7 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
-import org.hibernate.tool.eclipse.runtime.spi.RuntimeServiceManager;
+import org.hibernate.tool.eclipse.orm.runtime.spi.RuntimeServiceManager;
 
 public class RuntimesPreferencePage extends PreferencePage implements IWorkbenchPreferencePage {
 	

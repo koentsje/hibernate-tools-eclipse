@@ -38,14 +38,14 @@ import org.hibernate.eclipse.launch.CodeGenerationStrings;
 import org.hibernate.eclipse.launch.CodeGenerationUtils;
 import org.hibernate.eclipse.launch.ExporterAttributes;
 import org.hibernate.eclipse.launch.PathHelper;
-import org.hibernate.tool.eclipse.runtime.spi.HibernateException;
-import org.hibernate.tool.eclipse.runtime.spi.IArtifactCollector;
-import org.hibernate.tool.eclipse.runtime.spi.IConfiguration;
-import org.hibernate.tool.eclipse.runtime.spi.IExporter;
-import org.hibernate.tool.eclipse.runtime.spi.IOverrideRepository;
-import org.hibernate.tool.eclipse.runtime.spi.IReverseEngineeringSettings;
-import org.hibernate.tool.eclipse.runtime.spi.IReverseEngineeringStrategy;
-import org.hibernate.tool.eclipse.runtime.spi.IService;
+import org.hibernate.tool.eclipse.orm.runtime.spi.HibernateException;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IArtifactCollector;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IExporter;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IOverrideRepository;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IReverseEngineeringSettings;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IReverseEngineeringStrategy;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 
 
 /**

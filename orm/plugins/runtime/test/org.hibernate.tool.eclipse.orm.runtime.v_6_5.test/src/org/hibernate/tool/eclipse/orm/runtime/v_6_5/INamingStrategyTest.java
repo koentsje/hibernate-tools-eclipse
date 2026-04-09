@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.hibernate.cfg.DefaultNamingStrategy;
 import org.hibernate.tool.orm.jbt.api.factory.WrapperFactory;
 import org.hibernate.tool.eclipse.orm.runtime.common.GenericFacadeFactory;
-import org.hibernate.tool.eclipse.runtime.spi.INamingStrategy;
+import org.hibernate.tool.eclipse.orm.runtime.spi.INamingStrategy;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

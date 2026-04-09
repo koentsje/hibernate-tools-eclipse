@@ -63,8 +63,8 @@ import org.eclipse.jpt.jpa.core.resource.java.SequenceGeneratorAnnotation;
 import org.eclipse.jpt.jpa.db.DatabaseIdentifierAdapter;
 import org.hibernate.tool.eclipse.jpt.core.internal.HibernateAbstractJpaFactory;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.java.jpa2.HibernateJavaElementCollectionMapping2_0;
-import org.hibernate.tool.eclipse.runtime.spi.IService;
-import org.hibernate.tool.eclipse.runtime.spi.RuntimeServiceManager;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
+import org.hibernate.tool.eclipse.orm.runtime.spi.RuntimeServiceManager;
 
 
 

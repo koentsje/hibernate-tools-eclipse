@@ -10,7 +10,7 @@ import org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl;
 import org.hibernate.boot.model.naming.ImplicitPrimaryKeyJoinColumnNameSource;
 import org.hibernate.tool.orm.jbt.api.factory.WrapperFactory;
 import org.hibernate.tool.eclipse.orm.runtime.common.GenericFacadeFactory;
-import org.hibernate.tool.eclipse.runtime.spi.INamingStrategy;
+import org.hibernate.tool.eclipse.orm.runtime.spi.INamingStrategy;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

@@ -4,9 +4,9 @@ import org.hibernate.tool.eclipse.common.runtime.Util;
 
 import java.util.Properties;
 
-import org.hibernate.tool.eclipse.runtime.spi.IColumn;
-import org.hibernate.tool.eclipse.runtime.spi.IConfiguration;
-import org.hibernate.tool.eclipse.runtime.spi.IValue;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IColumn;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IValue;
 
 public abstract class AbstractColumnFacade 
 extends AbstractFacade 

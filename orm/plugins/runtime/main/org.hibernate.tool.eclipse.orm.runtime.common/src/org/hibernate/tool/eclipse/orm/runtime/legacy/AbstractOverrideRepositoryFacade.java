@@ -4,9 +4,9 @@ import org.hibernate.tool.eclipse.common.runtime.Util;
 
 import java.io.File;
 
-import org.hibernate.tool.eclipse.runtime.spi.IOverrideRepository;
-import org.hibernate.tool.eclipse.runtime.spi.IReverseEngineeringStrategy;
-import org.hibernate.tool.eclipse.runtime.spi.ITableFilter;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IOverrideRepository;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IReverseEngineeringStrategy;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ITableFilter;
 
 public abstract class AbstractOverrideRepositoryFacade 
 extends AbstractFacade 

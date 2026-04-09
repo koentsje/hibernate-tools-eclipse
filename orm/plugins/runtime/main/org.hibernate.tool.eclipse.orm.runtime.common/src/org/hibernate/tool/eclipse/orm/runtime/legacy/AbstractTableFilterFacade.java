@@ -2,7 +2,7 @@ package org.hibernate.tool.eclipse.orm.runtime.legacy;
 
 import org.hibernate.tool.eclipse.common.runtime.Util;
 
-import org.hibernate.tool.eclipse.runtime.spi.ITableFilter;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ITableFilter;
 
 public abstract class AbstractTableFilterFacade 
 extends AbstractFacade 

@@ -10,4 +10,4 @@ Export-Package: org.hibernate.tool.eclipse.orm.runtime.common,
  org.hibernate.tool.eclipse.orm.runtime.legacy
 Require-Bundle: org.eclipse.core.runtime,
  org.hibernate.tool.eclipse.common.runtime;visibility:=reexport,
- org.hibernate.tool.eclipse.runtime.spi
+ org.hibernate.tool.eclipse.orm.runtime.spi

@@ -12,10 +12,10 @@ package org.hibernate.tool.eclipse.ui.diagram.editors.model;
 
 import java.util.Iterator;
 
-import org.hibernate.tool.eclipse.runtime.spi.IPersistentClass;
-import org.hibernate.tool.eclipse.runtime.spi.IProperty;
-import org.hibernate.tool.eclipse.runtime.spi.IType;
-import org.hibernate.tool.eclipse.runtime.spi.IValue;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IProperty;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IType;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IValue;
 
 /**
  * 

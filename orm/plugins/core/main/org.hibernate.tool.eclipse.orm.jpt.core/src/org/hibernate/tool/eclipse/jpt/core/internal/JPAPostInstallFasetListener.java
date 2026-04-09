@@ -56,7 +56,7 @@ import org.hibernate.eclipse.console.utils.ProjectUtils;
 import org.hibernate.eclipse.launch.IConsoleConfigurationLaunchConstants;
 import org.hibernate.eclipse.nature.HibernateNature;
 import org.hibernate.eclipse.utils.HibernateEclipseUtils;
-import org.hibernate.tool.eclipse.runtime.spi.IService;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 
 /**
  * @author Dmitry Geraskov

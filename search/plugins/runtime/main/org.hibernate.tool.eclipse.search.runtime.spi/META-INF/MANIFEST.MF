@@ -6,7 +6,7 @@ Bundle-Version: 6.0.0.qualifier
 Bundle-Activator: org.hibernate.tool.eclipse.search.runtime.spi.internal.HibernateSearchServicePlugin
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: org.eclipse.core.runtime,
- org.hibernate.tool.eclipse.runtime.spi;bundle-version="5.1.2"
-Export-Package: org.hibernate.tool.eclipse.search.runtime.spi;uses:="org.hibernate.tool.eclipse.runtime.spi"
+ org.hibernate.tool.eclipse.orm.runtime.spi;bundle-version="5.1.2"
+Export-Package: org.hibernate.tool.eclipse.search.runtime.spi;uses:="org.hibernate.tool.eclipse.orm.runtime.spi"
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: bdshadow

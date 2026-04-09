@@ -4,10 +4,10 @@ import org.hibernate.tool.eclipse.common.runtime.Util;
 
 import java.util.ArrayList;
 
-import org.hibernate.tool.eclipse.runtime.spi.HibernateException;
-import org.hibernate.tool.eclipse.runtime.spi.IClassMetadata;
-import org.hibernate.tool.eclipse.runtime.spi.ISession;
-import org.hibernate.tool.eclipse.runtime.spi.IType;
+import org.hibernate.tool.eclipse.orm.runtime.spi.HibernateException;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IClassMetadata;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ISession;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IType;
 
 public abstract class AbstractClassMetadataFacade 
 extends AbstractFacade 

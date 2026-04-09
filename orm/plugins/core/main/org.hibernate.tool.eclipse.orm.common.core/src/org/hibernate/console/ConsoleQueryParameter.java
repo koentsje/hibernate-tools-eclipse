@@ -21,9 +21,9 @@
  */
 package org.hibernate.console;
 
-import org.hibernate.tool.eclipse.runtime.spi.IService;
-import org.hibernate.tool.eclipse.runtime.spi.IType;
-import org.hibernate.tool.eclipse.runtime.spi.ITypeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IType;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ITypeFactory;
 
 
 public class ConsoleQueryParameter {

@@ -27,11 +27,11 @@ import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.console.execution.ExecutionContext;
 import org.hibernate.eclipse.console.HibernateConsoleCorePlugin;
-import org.hibernate.tool.eclipse.runtime.spi.IColumn;
-import org.hibernate.tool.eclipse.runtime.spi.IConfiguration;
-import org.hibernate.tool.eclipse.runtime.spi.IPersistentClass;
-import org.hibernate.tool.eclipse.runtime.spi.IProperty;
-import org.hibernate.tool.eclipse.runtime.spi.IService;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IColumn;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IProperty;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 
 /**
  *

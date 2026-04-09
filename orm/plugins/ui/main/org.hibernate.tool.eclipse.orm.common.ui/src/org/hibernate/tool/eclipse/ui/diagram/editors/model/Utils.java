@@ -14,10 +14,10 @@ import java.util.List;
 import java.util.Properties;
 
 import org.eclipse.ui.IMemento;
-import org.hibernate.tool.eclipse.runtime.spi.IPersistentClass;
-import org.hibernate.tool.eclipse.runtime.spi.IProperty;
-import org.hibernate.tool.eclipse.runtime.spi.ITable;
-import org.hibernate.tool.eclipse.runtime.spi.IValue;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IProperty;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ITable;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IValue;
 
 /**
  * Some common model utils.

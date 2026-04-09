@@ -31,14 +31,14 @@ Also this plugin is an addition to Hibernate Tools Eclipse plugin which is licen
       <import plugin="org.eclipse.datatools.connectivity.ui"/>
       <import plugin="org.eclipse.debug.core"/>
       <import plugin="org.hibernate.tool.eclipse.orm.common.ui"/>
-      <import plugin="org.hibernate.tool.eclipse.runtime.spi" version="5.1.2" match="greaterOrEqual"/>
-      <import plugin="org.hibernate.tool.eclipse.runtime.v_4_0" version="5.1.2.qualifier" match="greaterOrEqual"/>
-      <import plugin="org.hibernate.tool.eclipse.runtime.v_4_3" version="5.1.2.qualifier" match="greaterOrEqual"/>
-      <import plugin="org.hibernate.tool.eclipse.runtime.v_5_0" version="5.1.2.qualifier" match="greaterOrEqual"/>
-      <import plugin="org.hibernate.tool.eclipse.runtime.v_5_1" version="5.1.2.qualifier" match="greaterOrEqual"/>
+      <import plugin="org.hibernate.tool.eclipse.orm.runtime.spi" version="5.1.2" match="greaterOrEqual"/>
+      <import plugin="org.hibernate.tool.eclipse.orm.runtime.v_4_0" version="5.1.2.qualifier" match="greaterOrEqual"/>
+      <import plugin="org.hibernate.tool.eclipse.orm.runtime.v_4_3" version="5.1.2.qualifier" match="greaterOrEqual"/>
+      <import plugin="org.hibernate.tool.eclipse.orm.runtime.v_5_0" version="5.1.2.qualifier" match="greaterOrEqual"/>
+      <import plugin="org.hibernate.tool.eclipse.orm.runtime.v_5_1" version="5.1.2.qualifier" match="greaterOrEqual"/>
       <import plugin="org.hibernate.tool.eclipse.orm.runtime.common" version="6.0.0" match="greaterOrEqual"/>
-      <import plugin="org.hibernate.tool.eclipse.runtime.v_5_2" version="5.1.2.qualifier" match="greaterOrEqual"/>
-      <import plugin="org.hibernate.tool.eclipse.runtime.v_5_3" version="5.2.3.qualifier" match="greaterOrEqual"/>
+      <import plugin="org.hibernate.tool.eclipse.orm.runtime.v_5_2" version="5.1.2.qualifier" match="greaterOrEqual"/>
+      <import plugin="org.hibernate.tool.eclipse.orm.runtime.v_5_3" version="5.2.3.qualifier" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui" version="3.109.0" match="greaterOrEqual"/>
       <import feature="org.hibernate.tool.eclipse.orm.main" version="5.1.2.qualifier" match="greaterOrEqual"/>
    </requires>

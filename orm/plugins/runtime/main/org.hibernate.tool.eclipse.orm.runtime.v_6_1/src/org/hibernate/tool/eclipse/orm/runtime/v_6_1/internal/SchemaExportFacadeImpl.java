@@ -1,0 +1,31 @@
+package org.hibernate.tool.eclipse.orm.runtime.v_6_1.internal;
+
+import java.util.EnumSet;
+
+import org.hibernate.boot.Metadata;
+import org.hibernate.tool.hbm2ddl.SchemaExport;
+import org.hibernate.tool.schema.TargetType;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractSchemaExportFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
+
+public class SchemaExportFacadeImpl extends AbstractSchemaExportFacade {
+
+	SchemaExport target = null;
+	Metadata metadata = null;
+
+	public SchemaExportFacadeImpl(IFacadeFactory facadeFactory, Object target) {
+		super(facadeFactory, target);
+		this.target = (SchemaExport)target;
+	}
+
+	public void setConfiguration(IConfiguration configuration) {
+		metadata = ((ConfigurationFacadeImpl)configuration).getMetadata();
+	}
+
+	@Override
+	public void create() {
+		target.create(EnumSet.of(TargetType.DATABASE), metadata);
+	}
+
+}

@@ -30,7 +30,7 @@ import java.util.List;
 import org.eclipse.jface.text.contentassist.CompletionProposal;
 import org.eclipse.wst.xml.ui.internal.contentassist.ContentAssistRequest;
 import org.hibernate.eclipse.mapper.extractor.HBMInfoExtractor;
-import org.hibernate.tool.eclipse.runtime.spi.IService;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 

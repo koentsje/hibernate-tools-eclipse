@@ -21,7 +21,7 @@
  */
 package org.hibernate.console;
 
-import org.hibernate.tool.eclipse.runtime.spi.HibernateException;
+import org.hibernate.tool.eclipse.orm.runtime.spi.HibernateException;
 
 
 /**

@@ -1,6 +1,6 @@
 package org.hibernate.tool.eclipse.exception;
 
-import org.hibernate.tool.eclipse.runtime.spi.HibernateException;
+import org.hibernate.tool.eclipse.orm.runtime.spi.HibernateException;
 
 
 @SuppressWarnings("serial")

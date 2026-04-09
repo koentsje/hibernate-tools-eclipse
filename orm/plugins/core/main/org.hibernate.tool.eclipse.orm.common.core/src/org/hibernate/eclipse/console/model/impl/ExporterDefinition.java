@@ -47,8 +47,8 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.hibernate.eclipse.HibernatePlugin;
-import org.hibernate.tool.eclipse.runtime.spi.IExporter;
-import org.hibernate.tool.eclipse.runtime.spi.IService;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IExporter;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 
 /**
  * Represents what is specified in plugin.xml about possible exporters.

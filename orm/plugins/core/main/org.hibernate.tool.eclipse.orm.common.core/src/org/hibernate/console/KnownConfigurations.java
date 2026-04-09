@@ -48,7 +48,7 @@ import java.io.PrintStream;
 
 import org.hibernate.console.node.BaseNode;
 import org.hibernate.console.node.ConfigurationListNode;
-import org.hibernate.tool.eclipse.runtime.spi.ISessionFactory;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 

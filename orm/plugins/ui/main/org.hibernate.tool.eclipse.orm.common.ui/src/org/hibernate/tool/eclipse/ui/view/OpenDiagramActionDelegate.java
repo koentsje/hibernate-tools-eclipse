@@ -28,8 +28,8 @@ import org.eclipse.ui.ide.IDE;
 import org.eclipse.ui.internal.ObjectPluginAction;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.eclipse.console.HibernateConsoleCorePlugin;
-import org.hibernate.tool.eclipse.runtime.spi.IConfiguration;
-import org.hibernate.tool.eclipse.runtime.spi.IPersistentClass;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
 import org.hibernate.tool.eclipse.ui.diagram.DiagramViewerMessages;
 import org.hibernate.tool.eclipse.ui.diagram.UiPlugin;
 

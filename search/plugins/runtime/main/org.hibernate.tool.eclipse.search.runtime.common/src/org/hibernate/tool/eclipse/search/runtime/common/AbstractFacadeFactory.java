@@ -5,8 +5,8 @@ import java.lang.reflect.InvocationTargetException;
 
 import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacade;
 import org.hibernate.tool.eclipse.common.runtime.Util;
-import org.hibernate.tool.eclipse.runtime.spi.ISession;
-import org.hibernate.tool.eclipse.runtime.spi.ISessionFactory;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ISession;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
 import org.hibernate.tool.eclipse.search.runtime.spi.IAnalyzer;
 import org.hibernate.tool.eclipse.search.runtime.spi.IFullTextSession;
 import org.hibernate.tool.eclipse.search.runtime.spi.IQueryParser;

@@ -17,7 +17,7 @@ import java.util.Set;
 import org.hibernate.tool.orm.jbt.wrp.WrapperFactory;
 import org.hibernate.tool.eclipse.orm.runtime.common.GenericFacadeFactory;
 import org.hibernate.tool.eclipse.common.runtime.IFacade;
-import org.hibernate.tool.eclipse.runtime.spi.IArtifactCollector;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IArtifactCollector;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;

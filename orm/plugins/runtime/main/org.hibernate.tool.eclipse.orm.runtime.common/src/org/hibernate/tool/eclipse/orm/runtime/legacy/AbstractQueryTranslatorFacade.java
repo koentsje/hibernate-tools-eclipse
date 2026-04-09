@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-import org.hibernate.tool.eclipse.runtime.spi.IQueryTranslator;
-import org.hibernate.tool.eclipse.runtime.spi.IType;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IQueryTranslator;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IType;
 
 public abstract class AbstractQueryTranslatorFacade 
 extends AbstractFacade 

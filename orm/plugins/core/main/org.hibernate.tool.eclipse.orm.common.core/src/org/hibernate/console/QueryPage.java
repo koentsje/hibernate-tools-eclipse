@@ -25,7 +25,7 @@ import java.beans.PropertyChangeListener;
 import java.util.List;
 
 import org.hibernate.eclipse.console.common.HibernateExtension;
-import org.hibernate.tool.eclipse.runtime.spi.ISession;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ISession;
 
 /**
  * @author MAX

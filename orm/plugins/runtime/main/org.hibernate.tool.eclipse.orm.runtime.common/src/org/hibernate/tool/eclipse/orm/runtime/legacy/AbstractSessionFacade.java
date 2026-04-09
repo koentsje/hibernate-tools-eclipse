@@ -2,10 +2,10 @@ package org.hibernate.tool.eclipse.orm.runtime.legacy;
 
 import org.hibernate.tool.eclipse.common.runtime.Util;
 
-import org.hibernate.tool.eclipse.runtime.spi.ICriteria;
-import org.hibernate.tool.eclipse.runtime.spi.IQuery;
-import org.hibernate.tool.eclipse.runtime.spi.ISession;
-import org.hibernate.tool.eclipse.runtime.spi.ISessionFactory;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ICriteria;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IQuery;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ISession;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
 
 public abstract class AbstractSessionFacade 
 extends AbstractFacade 

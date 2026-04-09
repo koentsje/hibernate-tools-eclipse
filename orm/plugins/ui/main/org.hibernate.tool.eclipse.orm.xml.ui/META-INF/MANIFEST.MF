@@ -34,7 +34,7 @@ Require-Bundle: org.eclipse.ui,
  org.hibernate.tool.eclipse.orm.common.core,
  org.hibernate.tool.eclipse.orm.common.ui,
  org.hibernate.tool.eclipse.orm.xml.core,
- org.hibernate.tool.eclipse.runtime.spi
+ org.hibernate.tool.eclipse.orm.runtime.spi
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Eclipse-BundleShape: dir

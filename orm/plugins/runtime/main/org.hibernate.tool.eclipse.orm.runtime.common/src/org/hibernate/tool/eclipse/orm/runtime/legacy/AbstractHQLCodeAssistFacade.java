@@ -6,8 +6,8 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
-import org.hibernate.tool.eclipse.runtime.spi.IHQLCodeAssist;
-import org.hibernate.tool.eclipse.runtime.spi.IHQLCompletionHandler;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IHQLCodeAssist;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IHQLCompletionHandler;
 
 public abstract class AbstractHQLCodeAssistFacade 
 extends AbstractFacade 

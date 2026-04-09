@@ -2,7 +2,7 @@ package org.hibernate.tool.eclipse.orm.runtime.legacy;
 
 import org.hibernate.tool.eclipse.common.runtime.Util;
 
-import org.hibernate.tool.eclipse.runtime.spi.IReverseEngineeringSettings;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IReverseEngineeringSettings;
 
 public abstract class AbstractReverseEngineeringSettingsFacade 
 extends AbstractFacade 

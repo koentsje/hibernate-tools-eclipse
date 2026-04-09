@@ -72,9 +72,9 @@ import org.hibernate.eclipse.mapper.model.RevEngGeneratorAdapter;
 import org.hibernate.eclipse.mapper.model.RevEngParamAdapter;
 import org.hibernate.eclipse.mapper.model.RevEngPrimaryKeyAdapter;
 import org.hibernate.eclipse.mapper.model.RevEngTableAdapter;
-import org.hibernate.tool.eclipse.runtime.spi.IColumn;
-import org.hibernate.tool.eclipse.runtime.spi.IPrimaryKey;
-import org.hibernate.tool.eclipse.runtime.spi.ITable;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IColumn;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IPrimaryKey;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ITable;
 
 public class TablePropertiesBlock extends MasterDetailsBlock {
 

@@ -2,8 +2,8 @@ package org.hibernate.tool.eclipse.orm.runtime.legacy;
 
 import org.hibernate.tool.eclipse.common.runtime.Util;
 
-import org.hibernate.tool.eclipse.runtime.spi.IHQLCompletionProposal;
-import org.hibernate.tool.eclipse.runtime.spi.IProperty;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IHQLCompletionProposal;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IProperty;
 
 public abstract class AbstractHQLCompletionProposalFacade 
 extends AbstractFacade 

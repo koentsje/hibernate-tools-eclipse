@@ -2,9 +2,9 @@ package org.hibernate.tool.eclipse.orm.runtime.legacy;
 
 import org.hibernate.tool.eclipse.common.runtime.Util;
 
-import org.hibernate.tool.eclipse.runtime.spi.ICfg2HbmTool;
-import org.hibernate.tool.eclipse.runtime.spi.IPersistentClass;
-import org.hibernate.tool.eclipse.runtime.spi.IProperty;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ICfg2HbmTool;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IProperty;
 
 public abstract class AbstractCfg2HbmToolFacade 
 extends AbstractFacade 

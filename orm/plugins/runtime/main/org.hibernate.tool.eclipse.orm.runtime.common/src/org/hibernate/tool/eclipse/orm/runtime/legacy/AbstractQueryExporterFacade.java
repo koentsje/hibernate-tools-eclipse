@@ -4,7 +4,7 @@ import org.hibernate.tool.eclipse.common.runtime.Util;
 
 import java.util.List;
 
-import org.hibernate.tool.eclipse.runtime.spi.IQueryExporter;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IQueryExporter;
 
 public abstract class AbstractQueryExporterFacade 
 extends AbstractFacade 

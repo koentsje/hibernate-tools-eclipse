@@ -14,7 +14,7 @@ import org.hibernate.tool.eclipse.search.runtime.spi.IQueryParser;
 public class FacadeFactoryImpl extends AbstractFacadeFactory {
 	
 	private IFacadeFactory hibernateFacadeFactory = 
-			new org.hibernate.tool.eclipse.runtime.v_4_0.internal.FacadeFactoryImpl();
+			new org.hibernate.tool.eclipse.orm.runtime.v_4_0.internal.FacadeFactoryImpl();
 	
 	@Override
 	protected Class<?> getQueryParserClass() {

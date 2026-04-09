@@ -1,0 +1,26 @@
+package org.hibernate.tool.eclipse.orm.runtime.spi;
+
+public interface IProperty {
+
+	IValue getValue();
+	void setName(String name);
+	void setPersistentClass(IPersistentClass persistentClass);
+	IPersistentClass getPersistentClass();
+	boolean isComposite();
+	String getPropertyAccessorName();
+	String getName();
+	IType getType();
+	void setValue(IValue value);
+	void setPropertyAccessorName(String string);
+	void setCascade(String string);
+	boolean isBackRef();
+	boolean isSelectable();
+	boolean isInsertable();
+	boolean isUpdateable();
+	String getCascade();
+	boolean isLazy();
+	boolean isOptional();
+	boolean isNaturalIdentifier();
+	boolean isOptimisticLocked();
+
+}

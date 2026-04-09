@@ -2,8 +2,8 @@ package org.hibernate.tool.eclipse.orm.runtime.legacy;
 
 import org.hibernate.tool.eclipse.common.runtime.Util;
 
-import org.hibernate.tool.eclipse.runtime.spi.ICollectionMetadata;
-import org.hibernate.tool.eclipse.runtime.spi.IType;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ICollectionMetadata;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IType;
 
 public abstract class AbstractCollectionMetadataFacade 
 extends AbstractFacade 

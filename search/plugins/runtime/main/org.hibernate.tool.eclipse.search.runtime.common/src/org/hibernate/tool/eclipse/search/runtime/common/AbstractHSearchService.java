@@ -11,8 +11,8 @@ import java.util.TreeSet;
 
 import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacade;
 import org.hibernate.tool.eclipse.common.runtime.Util;
-import org.hibernate.tool.eclipse.runtime.spi.IQuery;
-import org.hibernate.tool.eclipse.runtime.spi.ISessionFactory;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IQuery;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
 import org.hibernate.tool.eclipse.search.runtime.spi.IAnalyzer;
 import org.hibernate.tool.eclipse.search.runtime.spi.IDocument;
 import org.hibernate.tool.eclipse.search.runtime.spi.IField;

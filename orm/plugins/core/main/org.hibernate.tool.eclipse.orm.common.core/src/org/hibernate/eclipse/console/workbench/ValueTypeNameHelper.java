@@ -21,7 +21,7 @@
  */
 package org.hibernate.eclipse.console.workbench;
 
-import org.hibernate.tool.eclipse.runtime.spi.IValue;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IValue;
 
 public class ValueTypeNameHelper {
 

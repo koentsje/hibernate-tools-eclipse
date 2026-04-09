@@ -23,7 +23,7 @@ package org.hibernate.eclipse.graph.model;
 
 import java.util.Observable;
 
-import org.hibernate.tool.eclipse.runtime.spi.IColumn;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IColumn;
 
 public class ColumnViewAdapter extends Observable {
 

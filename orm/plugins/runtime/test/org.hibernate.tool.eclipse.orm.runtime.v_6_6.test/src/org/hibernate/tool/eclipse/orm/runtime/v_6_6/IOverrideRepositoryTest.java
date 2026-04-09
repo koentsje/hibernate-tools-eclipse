@@ -18,9 +18,9 @@ import org.hibernate.tool.orm.jbt.api.factory.WrapperFactory;
 import org.hibernate.tool.orm.jbt.api.wrp.Wrapper;
 import org.hibernate.tool.eclipse.orm.runtime.common.GenericFacadeFactory;
 import org.hibernate.tool.eclipse.common.runtime.IFacade;
-import org.hibernate.tool.eclipse.runtime.spi.IOverrideRepository;
-import org.hibernate.tool.eclipse.runtime.spi.IReverseEngineeringStrategy;
-import org.hibernate.tool.eclipse.runtime.spi.ITableFilter;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IOverrideRepository;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IReverseEngineeringStrategy;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ITableFilter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

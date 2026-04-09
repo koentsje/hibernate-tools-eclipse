@@ -20,7 +20,7 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.internal.ErrorEditorPart;
 import org.eclipse.ui.texteditor.ITextEditor;
 import org.hibernate.eclipse.console.utils.OpenMappingUtils;
-import org.hibernate.tool.eclipse.runtime.spi.IPersistentClass;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
 
 /**
  * @author Dmitry Geraskov

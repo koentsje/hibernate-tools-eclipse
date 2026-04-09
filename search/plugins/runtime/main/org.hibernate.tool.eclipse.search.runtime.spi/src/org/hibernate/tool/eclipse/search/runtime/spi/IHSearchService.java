@@ -4,8 +4,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.hibernate.tool.eclipse.runtime.spi.IService;
-import org.hibernate.tool.eclipse.runtime.spi.ISessionFactory;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
 
 public interface IHSearchService {
 

@@ -5,8 +5,8 @@ import org.hibernate.tool.eclipse.common.runtime.Util;
 import java.util.HashSet;
 import java.util.Iterator;
 
-import org.hibernate.tool.eclipse.runtime.spi.IJoin;
-import org.hibernate.tool.eclipse.runtime.spi.IProperty;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IJoin;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IProperty;
 
 public abstract class AbstractJoinFacade 
 extends AbstractFacade 

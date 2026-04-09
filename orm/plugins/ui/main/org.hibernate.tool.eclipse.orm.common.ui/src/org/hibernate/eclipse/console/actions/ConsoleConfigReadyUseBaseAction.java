@@ -20,7 +20,7 @@ import org.hibernate.console.ConsoleConfigurationListener;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.console.KnownConfigurationsListener;
 import org.hibernate.console.QueryPage;
-import org.hibernate.tool.eclipse.runtime.spi.ISessionFactory;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
 
 /**
  * @author Vitali Yemialyanchyk

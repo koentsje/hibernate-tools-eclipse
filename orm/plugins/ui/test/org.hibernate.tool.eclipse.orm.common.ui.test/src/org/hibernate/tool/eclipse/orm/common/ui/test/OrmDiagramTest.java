@@ -18,8 +18,8 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.tool.eclipse.runtime.spi.IConfiguration;
-import org.hibernate.tool.eclipse.runtime.spi.IPersistentClass;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
 import org.hibernate.tool.eclipse.ui.diagram.editors.model.OrmDiagram;
 import org.jmock.Expectations;
 import org.jmock.Mockery;

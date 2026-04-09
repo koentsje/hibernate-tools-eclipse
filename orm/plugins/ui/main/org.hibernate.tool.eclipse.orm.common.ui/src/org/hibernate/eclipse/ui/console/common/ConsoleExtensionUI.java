@@ -4,9 +4,9 @@ import org.eclipse.ui.views.properties.IPropertySource;
 import org.hibernate.console.QueryPage;
 import org.hibernate.eclipse.console.common.ConsoleExtension;
 import org.hibernate.eclipse.console.common.HibernateExtension;
-import org.hibernate.tool.eclipse.runtime.spi.HibernateException;
-import org.hibernate.tool.eclipse.runtime.spi.IHQLCodeAssist;
-import org.hibernate.tool.eclipse.runtime.spi.ISession;
+import org.hibernate.tool.eclipse.orm.runtime.spi.HibernateException;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IHQLCodeAssist;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ISession;
 
 public class ConsoleExtensionUI {
 

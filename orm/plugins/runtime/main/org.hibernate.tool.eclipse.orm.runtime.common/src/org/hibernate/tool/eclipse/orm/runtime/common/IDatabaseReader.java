@@ -3,7 +3,7 @@ package org.hibernate.tool.eclipse.orm.runtime.common;
 import java.util.List;
 import java.util.Map;
 
-import org.hibernate.tool.eclipse.runtime.spi.ITable;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ITable;
 
 public interface IDatabaseReader {
 	

@@ -9,9 +9,9 @@ import org.hibernate.tool.orm.jbt.util.DummyMetadataBuildingContext;
 import org.hibernate.tool.orm.jbt.wrp.WrapperFactory;
 import org.hibernate.tool.eclipse.orm.runtime.common.GenericFacadeFactory;
 import org.hibernate.tool.eclipse.common.runtime.IFacade;
-import org.hibernate.tool.eclipse.runtime.spi.ICfg2HbmTool;
-import org.hibernate.tool.eclipse.runtime.spi.IPersistentClass;
-import org.hibernate.tool.eclipse.runtime.spi.IProperty;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ICfg2HbmTool;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IProperty;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

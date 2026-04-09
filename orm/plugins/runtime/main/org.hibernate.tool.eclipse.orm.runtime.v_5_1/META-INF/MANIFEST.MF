@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Hibernate 5.1 libraries
+Bundle-SymbolicName: org.hibernate.tool.eclipse.orm.runtime.v_5_1;singleton:=true
+Bundle-Version: 6.0.0.qualifier
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-ClassPath: lib/hibernate-core-5.1.16.Final.jar,
+ lib/hibernate-entitymanager-5.1.16.Final.jar,
+ lib/hibernate-tools-5.1.12.Final.jar,
+ .
+Require-Bundle: org.apache.commons.logging,
+ org.hibernate.tool.eclipse.libs.antlr.v_2_7_7,
+ org.hibernate.tool.eclipse.libs.classmate.v_1_5,
+ org.hibernate.tool.eclipse.libs.commons-collections4.v_4_4,
+ org.hibernate.tool.eclipse.libs.dom4j.v_1_6_1,
+ org.hibernate.tool.eclipse.libs.freemarker.v_2_3,
+ org.hibernate.tool.eclipse.libs.hibernate-commons-annotations.v_5_1,
+ org.hibernate.tool.eclipse.libs.javassist.v_3_28,
+ org.hibernate.tool.eclipse.libs.jaxb.v_2_3,
+ org.hibernate.tool.eclipse.libs.jboss-logging.v_3_4,
+ org.hibernate.tool.eclipse.libs.jpa.v_2_2,
+ org.hibernate.tool.eclipse.libs.jtidy.v_r8-20060801,
+ org.hibernate.tool.eclipse.libs.transaction-api.v_1_2,
+ org.hibernate.tool.eclipse.orm.runtime.common,
+ org.hibernate.tool.eclipse.orm.runtime.spi

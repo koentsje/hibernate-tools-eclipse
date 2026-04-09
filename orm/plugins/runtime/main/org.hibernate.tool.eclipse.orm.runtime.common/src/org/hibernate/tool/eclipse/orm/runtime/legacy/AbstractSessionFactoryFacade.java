@@ -5,10 +5,10 @@ import org.hibernate.tool.eclipse.common.runtime.Util;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.hibernate.tool.eclipse.runtime.spi.IClassMetadata;
-import org.hibernate.tool.eclipse.runtime.spi.ICollectionMetadata;
-import org.hibernate.tool.eclipse.runtime.spi.ISession;
-import org.hibernate.tool.eclipse.runtime.spi.ISessionFactory;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IClassMetadata;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ICollectionMetadata;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ISession;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
 
 public abstract class AbstractSessionFactoryFacade 
 extends AbstractFacade 

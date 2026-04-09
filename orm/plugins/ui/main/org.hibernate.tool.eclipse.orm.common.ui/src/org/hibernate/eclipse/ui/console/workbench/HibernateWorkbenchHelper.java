@@ -26,8 +26,8 @@ import org.eclipse.swt.graphics.Image;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.util.xpl.StringHelper;
-import org.hibernate.tool.eclipse.runtime.spi.IProperty;
-import org.hibernate.tool.eclipse.runtime.spi.IValue;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IProperty;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IValue;
 
 public class HibernateWorkbenchHelper {
 

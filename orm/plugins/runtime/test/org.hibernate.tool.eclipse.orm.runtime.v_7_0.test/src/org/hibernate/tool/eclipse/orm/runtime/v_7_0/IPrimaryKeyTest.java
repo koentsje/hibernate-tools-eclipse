@@ -21,8 +21,8 @@ import org.hibernate.tool.orm.jbt.internal.factory.ColumnWrapperFactory;
 import org.hibernate.tool.orm.jbt.internal.factory.PrimaryKeyWrapperFactory;
 import org.hibernate.tool.eclipse.orm.runtime.common.GenericFacadeFactory;
 import org.hibernate.tool.eclipse.common.runtime.IFacade;
-import org.hibernate.tool.eclipse.runtime.spi.IColumn;
-import org.hibernate.tool.eclipse.runtime.spi.IPrimaryKey;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IColumn;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IPrimaryKey;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

@@ -7,12 +7,12 @@ import java.io.StringWriter;
 import java.io.Writer;
 import java.util.Properties;
 
-import org.hibernate.tool.eclipse.runtime.spi.IArtifactCollector;
-import org.hibernate.tool.eclipse.runtime.spi.IConfiguration;
-import org.hibernate.tool.eclipse.runtime.spi.IExporter;
-import org.hibernate.tool.eclipse.runtime.spi.IGenericExporter;
-import org.hibernate.tool.eclipse.runtime.spi.IHbm2DDLExporter;
-import org.hibernate.tool.eclipse.runtime.spi.IQueryExporter;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IArtifactCollector;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IExporter;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IGenericExporter;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IHbm2DDLExporter;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IQueryExporter;
 
 public abstract class AbstractExporterFacade 
 extends AbstractFacade 

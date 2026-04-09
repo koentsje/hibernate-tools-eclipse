@@ -12,9 +12,9 @@ package org.hibernate.tool.eclipse.ui.view;
 
 import java.util.Iterator;
 
-import org.hibernate.tool.eclipse.runtime.spi.IColumn;
-import org.hibernate.tool.eclipse.runtime.spi.IForeignKey;
-import org.hibernate.tool.eclipse.runtime.spi.ITable;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IColumn;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IForeignKey;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ITable;
 
 /**
  * @author some modifications from Vitali

@@ -5,8 +5,8 @@ import org.hibernate.tool.eclipse.common.runtime.Util;
 import java.io.File;
 import java.util.Map;
 
-import org.hibernate.tool.eclipse.runtime.spi.IExportPOJODelegate;
-import org.hibernate.tool.eclipse.runtime.spi.IHibernateMappingExporter;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IExportPOJODelegate;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IHibernateMappingExporter;
 
 public abstract class AbstractHibernateMappingExporterFacade 
 extends AbstractFacade 

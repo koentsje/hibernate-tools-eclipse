@@ -1,6 +1,6 @@
 package org.hibernate.tool.eclipse.search.runtime.spi;
 
-import org.hibernate.tool.eclipse.runtime.spi.IQuery;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IQuery;
 
 public interface IFullTextSession {
 	ISearchFactory getSearchFactory();

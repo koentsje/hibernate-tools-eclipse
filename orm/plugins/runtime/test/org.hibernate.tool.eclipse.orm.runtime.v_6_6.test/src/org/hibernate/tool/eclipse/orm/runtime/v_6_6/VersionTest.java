@@ -4,7 +4,7 @@ package org.hibernate.tool.eclipse.orm.runtime.v_6_6;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
 
-import org.hibernate.tool.eclipse.runtime.spi.RuntimeServiceManager;
+import org.hibernate.tool.eclipse.orm.runtime.spi.RuntimeServiceManager;
 import org.junit.jupiter.api.Test;
 
 public class VersionTest {

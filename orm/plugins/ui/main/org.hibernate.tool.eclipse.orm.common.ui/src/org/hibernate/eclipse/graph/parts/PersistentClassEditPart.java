@@ -32,8 +32,8 @@ import org.hibernate.eclipse.graph.figures.PersistentClassFigure;
 import org.hibernate.eclipse.graph.model.PersistentClassViewAdapter;
 import org.hibernate.eclipse.graph.model.PropertyViewAdapter;
 import org.hibernate.eclipse.graph.policy.PersistentClassLayoutPolicy;
-import org.hibernate.tool.eclipse.runtime.spi.IPersistentClass;
-import org.hibernate.tool.eclipse.runtime.spi.IProperty;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IProperty;
 
 public class PersistentClassEditPart extends GraphNodeEditPart  {
 

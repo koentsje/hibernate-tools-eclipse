@@ -30,7 +30,7 @@ import org.eclipse.ui.model.IWorkbenchAdapter;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.eclipse.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
-import org.hibernate.tool.eclipse.runtime.spi.ITable;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ITable;
 
 public class TableContainerWorkbenchAdapter implements IWorkbenchAdapter {
 

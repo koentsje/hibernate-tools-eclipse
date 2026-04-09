@@ -1,6 +1,6 @@
 package org.hibernate.tool.eclipse.search.runtime.common;
 
-import org.hibernate.tool.eclipse.runtime.spi.ISessionFactory;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
 import org.hibernate.tool.eclipse.search.runtime.spi.IAnalyzer;
 import org.hibernate.tool.eclipse.search.runtime.spi.IFullTextSession;
 import org.hibernate.tool.eclipse.search.runtime.spi.IQueryParser;

@@ -41,7 +41,7 @@ import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernateNamedQuery;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernateTable;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.Messages;
 import org.hibernate.tool.eclipse.jpt.core.internal.validation.HibernateJpaValidationMessage;
-import org.hibernate.tool.eclipse.runtime.spi.INamingStrategy;
+import org.hibernate.tool.eclipse.orm.runtime.spi.INamingStrategy;
 
 /**
  * @author Dmitry Geraskov

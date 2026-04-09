@@ -76,14 +76,14 @@ import org.hibernate.eclipse.console.HibernateConsolePlugin;
 import org.hibernate.eclipse.console.common.ConsoleExtension;
 import org.hibernate.eclipse.console.model.impl.ExporterFactory;
 import org.hibernate.util.xpl.StringHelper;
-import org.hibernate.tool.eclipse.runtime.spi.HibernateException;
-import org.hibernate.tool.eclipse.runtime.spi.IArtifactCollector;
-import org.hibernate.tool.eclipse.runtime.spi.IConfiguration;
-import org.hibernate.tool.eclipse.runtime.spi.IExporter;
-import org.hibernate.tool.eclipse.runtime.spi.IOverrideRepository;
-import org.hibernate.tool.eclipse.runtime.spi.IReverseEngineeringSettings;
-import org.hibernate.tool.eclipse.runtime.spi.IReverseEngineeringStrategy;
-import org.hibernate.tool.eclipse.runtime.spi.IService;
+import org.hibernate.tool.eclipse.orm.runtime.spi.HibernateException;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IArtifactCollector;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IExporter;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IOverrideRepository;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IReverseEngineeringSettings;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IReverseEngineeringStrategy;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 
 @SuppressWarnings("restriction")
 public class CodeGenerationLaunchDelegate extends AntLaunchDelegate { 

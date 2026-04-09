@@ -4,7 +4,7 @@ import org.hibernate.tool.eclipse.common.runtime.Util;
 
 import java.util.Hashtable;
 
-import org.hibernate.tool.eclipse.runtime.spi.IHbm2DDLExporter;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IHbm2DDLExporter;
 
 public abstract class AbstractHbm2DDLExporterFacade 
 extends AbstractFacade 

@@ -1,8 +1,8 @@
 package org.hibernate.tool.eclipse.search;
 
 import org.apache.lucene.util.Version;
-import org.hibernate.tool.eclipse.runtime.spi.IService;
-import org.hibernate.tool.eclipse.runtime.spi.RuntimeServiceManager;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
+import org.hibernate.tool.eclipse.orm.runtime.spi.RuntimeServiceManager;
 import org.hibernate.tool.eclipse.search.runtime.common.AbstractHSearchService;
 import org.hibernate.tool.eclipse.search.runtime.common.IFacadeFactory;
 import org.hibernate.tool.eclipse.search.runtime.spi.IAnalyzer;

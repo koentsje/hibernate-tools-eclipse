@@ -28,7 +28,7 @@ import org.hibernate.eclipse.console.HibernateConsolePlugin;
 import org.hibernate.eclipse.console.views.KnownConfigurationsView;
 import org.hibernate.eclipse.graph.model.ConfigurationViewAdapter;
 import org.hibernate.eclipse.graph.parts.ConfigurationEditPart;
-import org.hibernate.tool.eclipse.runtime.spi.IConfiguration;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 
 public class EntityGraphView extends AbstractGraphViewPart {
 

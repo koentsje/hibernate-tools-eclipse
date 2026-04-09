@@ -2,7 +2,7 @@ package org.hibernate.tool.eclipse.search.runtime.common;
 
 import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacade;
 import org.hibernate.tool.eclipse.common.runtime.Util;
-import org.hibernate.tool.eclipse.runtime.spi.IQuery;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IQuery;
 import org.hibernate.tool.eclipse.search.runtime.spi.IFullTextSession;
 import org.hibernate.tool.eclipse.search.runtime.spi.ILuceneQuery;
 import org.hibernate.tool.eclipse.search.runtime.spi.ISearchFactory;

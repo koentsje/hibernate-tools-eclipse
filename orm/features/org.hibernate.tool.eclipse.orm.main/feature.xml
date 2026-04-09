@@ -115,35 +115,35 @@
          unpack="false"/>
 
    <plugin
-         id="org.hibernate.tool.eclipse.runtime.v_3_5"
+         id="org.hibernate.tool.eclipse.orm.runtime.v_3_5"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.hibernate.tool.eclipse.runtime.v_3_6"
+         id="org.hibernate.tool.eclipse.orm.runtime.v_3_6"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.hibernate.tool.eclipse.runtime.v_4_0"
+         id="org.hibernate.tool.eclipse.orm.runtime.v_4_0"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.hibernate.tool.eclipse.runtime.v_4_3"
+         id="org.hibernate.tool.eclipse.orm.runtime.v_4_3"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.hibernate.tool.eclipse.runtime.v_5_0"
+         id="org.hibernate.tool.eclipse.orm.runtime.v_5_0"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -189,41 +189,41 @@
          version="0.0.0"/>
 
    <plugin
-         id="org.hibernate.tool.eclipse.runtime.spi"
+         id="org.hibernate.tool.eclipse.orm.runtime.spi"
          download-size="0"
          install-size="0"
          version="0.0.0"/>
 
    <plugin
-         id="org.hibernate.tool.eclipse.runtime.v_5_1"
+         id="org.hibernate.tool.eclipse.orm.runtime.v_5_1"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.hibernate.tool.eclipse.runtime.v_5_2"
+         id="org.hibernate.tool.eclipse.orm.runtime.v_5_2"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.hibernate.tool.eclipse.runtime.v_5_3"
+         id="org.hibernate.tool.eclipse.orm.runtime.v_5_3"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.hibernate.tool.eclipse.runtime.v_5_4"
+         id="org.hibernate.tool.eclipse.orm.runtime.v_5_4"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.hibernate.tool.eclipse.runtime.v_5_5"
+         id="org.hibernate.tool.eclipse.orm.runtime.v_5_5"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -291,7 +291,7 @@
          version="0.0.0"/>
 
    <plugin
-         id="org.hibernate.tool.eclipse.runtime.v_5_6"
+         id="org.hibernate.tool.eclipse.orm.runtime.v_5_6"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -329,7 +329,7 @@
          version="0.0.0"/>
 
    <plugin
-         id="org.hibernate.tool.eclipse.runtime.v_6_0"
+         id="org.hibernate.tool.eclipse.orm.runtime.v_6_0"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -373,7 +373,7 @@
          version="0.0.0"/>
 
    <plugin
-         id="org.hibernate.tool.eclipse.runtime.v_6_1"
+         id="org.hibernate.tool.eclipse.orm.runtime.v_6_1"
          download-size="0"
          install-size="0"
          version="0.0.0"

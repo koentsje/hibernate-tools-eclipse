@@ -43,7 +43,7 @@ import org.hibernate.tool.eclipse.jpt.core.internal.context.java.HibernateJavaId
 import org.hibernate.tool.eclipse.jpt.core.internal.context.java.HibernateJavaJoinTable;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.java.HibernateJavaManyToManyMapping;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.java.HibernateJavaTable;
-import org.hibernate.tool.eclipse.runtime.spi.IConfiguration;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.jpt.core.test.ResourcesUtils;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;

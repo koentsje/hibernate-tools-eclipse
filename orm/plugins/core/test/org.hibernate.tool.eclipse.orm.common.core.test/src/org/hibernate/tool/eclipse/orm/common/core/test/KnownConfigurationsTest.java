@@ -11,7 +11,7 @@ import org.hibernate.console.KnownConfigurations;
 import org.hibernate.console.KnownConfigurationsAdapter;
 import org.hibernate.console.preferences.ConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.orm.common.core.test.utils.TestConsoleMessages;
-import org.hibernate.tool.eclipse.runtime.spi.ISessionFactory;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
 import org.junit.Assert;
 import org.junit.Test;
 import org.w3c.dom.Element;

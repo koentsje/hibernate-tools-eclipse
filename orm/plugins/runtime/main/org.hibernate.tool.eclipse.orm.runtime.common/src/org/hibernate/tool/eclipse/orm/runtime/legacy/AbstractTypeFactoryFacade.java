@@ -12,9 +12,9 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.TimeZone;
 
-import org.hibernate.tool.eclipse.runtime.spi.ITable;
-import org.hibernate.tool.eclipse.runtime.spi.IType;
-import org.hibernate.tool.eclipse.runtime.spi.ITypeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ITable;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IType;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ITypeFactory;
 
 public abstract class AbstractTypeFactoryFacade 
 extends AbstractFacade 

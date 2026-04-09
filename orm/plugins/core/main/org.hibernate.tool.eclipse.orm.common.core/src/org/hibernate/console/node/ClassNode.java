@@ -26,8 +26,8 @@ import java.util.List;
 
 import org.hibernate.console.ConsoleMessages;
 import org.hibernate.console.ImageConstants;
-import org.hibernate.tool.eclipse.runtime.spi.IClassMetadata;
-import org.hibernate.tool.eclipse.runtime.spi.IType;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IClassMetadata;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IType;
 
 /**
  * @author MAX

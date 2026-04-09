@@ -92,7 +92,7 @@ import org.hibernate.tool.eclipse.jpt.core.internal.resource.java.IndexAnnotatio
 import org.hibernate.tool.eclipse.jpt.core.internal.resource.java.ParameterAnnotation;
 import org.hibernate.tool.eclipse.jpt.core.internal.resource.java.TypeAnnotation;
 import org.hibernate.tool.eclipse.jpt.core.internal.resource.java.TypeDefAnnotation;
-import org.hibernate.tool.eclipse.runtime.spi.IService;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 
 /**
  * @author Dmitry Geraskov

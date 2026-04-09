@@ -55,9 +55,9 @@ import org.hibernate.eclipse.mapper.editors.xpl.XMLFormEditorPart;
 import org.hibernate.eclipse.mapper.model.DOMReverseEngineeringDefinition;
 import org.hibernate.eclipse.nature.HibernateNature;
 import org.hibernate.util.xpl.StringHelper;
-import org.hibernate.tool.eclipse.runtime.spi.IOverrideRepository;
-import org.hibernate.tool.eclipse.runtime.spi.IService;
-import org.hibernate.tool.eclipse.runtime.spi.ITableFilter;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IOverrideRepository;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ITableFilter;
 import org.w3c.dom.Document;
 
 public class ReverseEngineeringEditor extends XMLFormEditorPart {

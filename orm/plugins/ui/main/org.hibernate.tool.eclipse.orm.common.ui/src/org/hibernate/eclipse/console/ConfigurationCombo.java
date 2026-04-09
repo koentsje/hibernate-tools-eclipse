@@ -13,7 +13,7 @@ import org.hibernate.console.KnownConfigurations;
 import org.hibernate.console.KnownConfigurationsAdapter;
 import org.hibernate.console.KnownConfigurationsListener;
 import org.hibernate.eclipse.console.utils.LaunchHelperUI;
-import org.hibernate.tool.eclipse.runtime.spi.ISessionFactory;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
 
 final class ConfigurationCombo extends ComboContribution {
 

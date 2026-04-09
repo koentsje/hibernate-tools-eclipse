@@ -21,7 +21,7 @@
  */
 package org.hibernate.console.node;
 
-import org.hibernate.tool.eclipse.runtime.spi.ITable;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ITable;
 
 class TableNode extends BaseNode {
 

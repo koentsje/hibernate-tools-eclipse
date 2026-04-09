@@ -21,7 +21,7 @@
  */
 package org.hibernate.console;
 
-import org.hibernate.tool.eclipse.runtime.spi.ISessionFactory;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
 
 
 

@@ -6,9 +6,9 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 import org.hibernate.tool.orm.jbt.api.factory.WrapperFactory;
 import org.hibernate.tool.eclipse.orm.runtime.common.GenericFacadeFactory;
-import org.hibernate.tool.eclipse.runtime.spi.IHQLCompletionHandler;
-import org.hibernate.tool.eclipse.runtime.spi.IHQLCompletionProposal;
-import org.hibernate.tool.eclipse.runtime.spi.IProperty;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IHQLCompletionHandler;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IHQLCompletionProposal;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IProperty;
 import org.junit.jupiter.api.Test;
 
 public class IHQLCompletionHandlerTest {

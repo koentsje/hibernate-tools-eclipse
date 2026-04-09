@@ -21,7 +21,7 @@
  */
 package org.hibernate.eclipse.graph.model;
 
-import org.hibernate.tool.eclipse.runtime.spi.IPersistentClass;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
 
 
 public class PersistentClassViewAdapter extends GraphNode {

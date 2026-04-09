@@ -14,8 +14,8 @@ import org.eclipse.jpt.jpa.core.context.java.JavaEmbeddable;
 import org.eclipse.jpt.jpa.core.context.java.JavaPersistentType;
 import org.eclipse.jpt.jpa.core.resource.java.EmbeddableAnnotation;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.java.HibernateJavaEmbeddable;
-import org.hibernate.tool.eclipse.runtime.spi.IService;
-import org.hibernate.tool.eclipse.runtime.spi.RuntimeServiceManager;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
+import org.hibernate.tool.eclipse.orm.runtime.spi.RuntimeServiceManager;
 
 
 /**

@@ -5,7 +5,7 @@ import org.hibernate.tool.eclipse.common.runtime.Util;
 import java.io.File;
 import java.util.Set;
 
-import org.hibernate.tool.eclipse.runtime.spi.IArtifactCollector;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IArtifactCollector;
 
 public abstract class AbstractArtifactCollectorFacade 
 extends AbstractFacade 

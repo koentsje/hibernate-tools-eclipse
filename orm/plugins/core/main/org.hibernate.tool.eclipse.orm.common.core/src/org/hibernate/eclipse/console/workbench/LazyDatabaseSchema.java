@@ -22,7 +22,7 @@
 package org.hibernate.eclipse.console.workbench;
 
 import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.tool.eclipse.runtime.spi.IReverseEngineeringStrategy;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IReverseEngineeringStrategy;
 
 public class LazyDatabaseSchema {
 

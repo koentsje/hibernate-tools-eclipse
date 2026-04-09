@@ -17,12 +17,12 @@ import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.views.properties.IPropertyDescriptor;
 import org.eclipse.ui.views.properties.TextPropertyDescriptor;
-import org.hibernate.tool.eclipse.runtime.spi.IColumn;
-import org.hibernate.tool.eclipse.runtime.spi.IPersistentClass;
-import org.hibernate.tool.eclipse.runtime.spi.IProperty;
-import org.hibernate.tool.eclipse.runtime.spi.ITable;
-import org.hibernate.tool.eclipse.runtime.spi.IType;
-import org.hibernate.tool.eclipse.runtime.spi.IValue;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IColumn;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IProperty;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ITable;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IType;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IValue;
 import org.hibernate.tool.eclipse.ui.diagram.rulers.DiagramGuide;
 
 /**

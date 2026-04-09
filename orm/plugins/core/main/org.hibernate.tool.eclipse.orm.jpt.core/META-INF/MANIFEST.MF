@@ -23,7 +23,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.datatools.connectivity,
  org.eclipse.wst.common.emf,
  org.eclipse.emf.ecore.xmi,
- org.hibernate.tool.eclipse.runtime.spi
+ org.hibernate.tool.eclipse.orm.runtime.spi
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-Vendor: %Bundle-Vendor.0
 Export-Package: org.hibernate.tool.eclipse.jpt.core.internal,

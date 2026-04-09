@@ -7,7 +7,7 @@ Bundle-Activator: org.hibernate.tool.eclipse.jpt.ui.HibernateJptUIPlugin
 Require-Bundle: org.hibernate.tool.eclipse.orm.common.ui,
  org.hibernate.tool.eclipse.orm.common.core,
  org.hibernate.tool.eclipse.orm.jpt.core,
- org.hibernate.tool.eclipse.runtime.spi,
+ org.hibernate.tool.eclipse.orm.runtime.spi,
  org.eclipse.debug.core,
  org.eclipse.jdt.core,
  org.eclipse.jdt.ui,

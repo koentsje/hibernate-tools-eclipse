@@ -20,20 +20,20 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		<module>org.hibernate.tool.eclipse.orm.runtime.v_6_5</module>
 		<module>org.hibernate.tool.eclipse.orm.runtime.v_6_6</module>
 		<module>org.hibernate.tool.eclipse.orm.runtime.v_7_0</module>
-		<module>org.hibernate.tool.eclipse.runtime.spi</module>
-		<module>org.hibernate.tool.eclipse.runtime.v_3_5</module>
-		<module>org.hibernate.tool.eclipse.runtime.v_3_6</module>
-		<module>org.hibernate.tool.eclipse.runtime.v_4_0</module>
-		<module>org.hibernate.tool.eclipse.runtime.v_4_3</module>
-		<module>org.hibernate.tool.eclipse.runtime.v_5_0</module>
-		<module>org.hibernate.tool.eclipse.runtime.v_5_1</module>
-		<module>org.hibernate.tool.eclipse.runtime.v_5_2</module>
-		<module>org.hibernate.tool.eclipse.runtime.v_5_3</module>
-		<module>org.hibernate.tool.eclipse.runtime.v_5_4</module>
-		<module>org.hibernate.tool.eclipse.runtime.v_5_5</module>
-		<module>org.hibernate.tool.eclipse.runtime.v_5_6</module>
-		<module>org.hibernate.tool.eclipse.runtime.v_6_0</module>
-		<module>org.hibernate.tool.eclipse.runtime.v_6_1</module>
+		<module>org.hibernate.tool.eclipse.orm.runtime.spi</module>
+		<module>org.hibernate.tool.eclipse.orm.runtime.v_3_5</module>
+		<module>org.hibernate.tool.eclipse.orm.runtime.v_3_6</module>
+		<module>org.hibernate.tool.eclipse.orm.runtime.v_4_0</module>
+		<module>org.hibernate.tool.eclipse.orm.runtime.v_4_3</module>
+		<module>org.hibernate.tool.eclipse.orm.runtime.v_5_0</module>
+		<module>org.hibernate.tool.eclipse.orm.runtime.v_5_1</module>
+		<module>org.hibernate.tool.eclipse.orm.runtime.v_5_2</module>
+		<module>org.hibernate.tool.eclipse.orm.runtime.v_5_3</module>
+		<module>org.hibernate.tool.eclipse.orm.runtime.v_5_4</module>
+		<module>org.hibernate.tool.eclipse.orm.runtime.v_5_5</module>
+		<module>org.hibernate.tool.eclipse.orm.runtime.v_5_6</module>
+		<module>org.hibernate.tool.eclipse.orm.runtime.v_6_0</module>
+		<module>org.hibernate.tool.eclipse.orm.runtime.v_6_1</module>
 	</modules>
 
 </project>

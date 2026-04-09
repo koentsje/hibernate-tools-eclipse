@@ -12,8 +12,8 @@ package org.hibernate.tool.eclipse.ui.diagram.editors.model;
 
 import java.util.Properties;
 
-import org.hibernate.tool.eclipse.runtime.spi.IProperty;
-import org.hibernate.tool.eclipse.runtime.spi.IValue;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IProperty;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IValue;
 
 /**
  * @author some modifications from Vitali

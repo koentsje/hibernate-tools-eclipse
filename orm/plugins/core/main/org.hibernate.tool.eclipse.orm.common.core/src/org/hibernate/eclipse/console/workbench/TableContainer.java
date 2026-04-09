@@ -23,7 +23,7 @@ package org.hibernate.eclipse.console.workbench;
 
 import java.util.List;
 
-import org.hibernate.tool.eclipse.runtime.spi.ITable;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ITable;
 
 public class TableContainer {
 

@@ -2,7 +2,7 @@ package org.hibernate.tool.eclipse.orm.runtime.legacy;
 
 import org.hibernate.tool.eclipse.common.runtime.Util;
 
-import org.hibernate.tool.eclipse.runtime.spi.IGenericExporter;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IGenericExporter;
 
 public abstract class AbstractGenericExporterFacade 
 extends AbstractFacade 

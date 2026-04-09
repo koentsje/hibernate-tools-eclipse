@@ -15,8 +15,8 @@ import org.hibernate.tool.orm.jbt.api.wrp.Wrapper;
 import org.hibernate.type.Type;
 import org.hibernate.tool.eclipse.orm.runtime.common.GenericFacadeFactory;
 import org.hibernate.tool.eclipse.common.runtime.IFacade;
-import org.hibernate.tool.eclipse.runtime.spi.IType;
-import org.hibernate.tool.eclipse.runtime.spi.ITypeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IType;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ITypeFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

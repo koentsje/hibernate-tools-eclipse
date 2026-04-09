@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import org.hibernate.tool.eclipse.runtime.spi.IQuery;
-import org.hibernate.tool.eclipse.runtime.spi.IType;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IQuery;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IType;
 
 public abstract class AbstractQueryFacade 
 extends AbstractFacade 

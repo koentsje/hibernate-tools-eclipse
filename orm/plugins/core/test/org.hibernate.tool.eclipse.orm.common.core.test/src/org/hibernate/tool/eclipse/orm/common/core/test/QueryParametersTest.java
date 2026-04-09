@@ -10,7 +10,7 @@ import org.hibernate.console.ConsoleQueryParameter;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.console.QueryInputModel;
 import org.hibernate.tool.eclipse.orm.common.core.test.utils.TestConsoleConfigurationPreferences;
-import org.hibernate.tool.eclipse.runtime.spi.IService;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

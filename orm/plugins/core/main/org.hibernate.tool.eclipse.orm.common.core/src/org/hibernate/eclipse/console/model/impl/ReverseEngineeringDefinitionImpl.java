@@ -35,7 +35,7 @@ import org.hibernate.eclipse.console.model.IRevEngTable;
 import org.hibernate.eclipse.console.model.IReverseEngineeringDefinition;
 import org.hibernate.eclipse.console.model.ITableFilter;
 import org.hibernate.eclipse.console.model.ITypeMapping;
-import org.hibernate.tool.eclipse.runtime.spi.IService;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 
 public class ReverseEngineeringDefinitionImpl implements
 		IReverseEngineeringDefinition {

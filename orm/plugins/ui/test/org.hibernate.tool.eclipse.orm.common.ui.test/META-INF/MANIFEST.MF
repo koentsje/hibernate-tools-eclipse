@@ -14,7 +14,7 @@ Bundle-Localization: plugin
 Require-Bundle: org.hibernate.tool.eclipse.orm.common.core,
  org.hibernate.tool.eclipse.orm.common.ui,
  org.junit,
- org.hibernate.tool.eclipse.runtime.spi,
+ org.hibernate.tool.eclipse.orm.runtime.spi,
  org.eclipse.core.resources,
  org.eclipse.jdt.core,
  org.eclipse.core.runtime,
@@ -39,7 +39,7 @@ Require-Bundle: org.hibernate.tool.eclipse.orm.common.core,
  org.eclipse.gef,
  org.hibernate.tool.eclipse.orm.jdt.core,
  org.hibernate.tool.eclipse.orm.jdt.ui,
- org.hibernate.tool.eclipse.runtime.v_5_6
+ org.hibernate.tool.eclipse.orm.runtime.v_5_6
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Import-Package: org.eclipse.osgi.util

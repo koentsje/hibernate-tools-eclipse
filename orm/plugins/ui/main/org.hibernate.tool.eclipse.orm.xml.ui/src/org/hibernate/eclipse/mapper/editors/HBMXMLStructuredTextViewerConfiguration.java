@@ -32,7 +32,7 @@ import org.eclipse.wst.sse.core.internal.provisional.text.IStructuredPartitionTy
 import org.eclipse.wst.xml.core.internal.provisional.text.IXMLPartitions;
 import org.eclipse.wst.xml.ui.StructuredTextViewerConfigurationXML;
 import org.eclipse.wst.xml.ui.internal.contentassist.NoRegionContentAssistProcessor;
-import org.hibernate.tool.eclipse.runtime.spi.IService;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 
 public class HBMXMLStructuredTextViewerConfiguration extends StructuredTextViewerConfigurationXML {
 

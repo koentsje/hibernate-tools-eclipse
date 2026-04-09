@@ -17,7 +17,7 @@ Require-Bundle: org.hibernate.tool.eclipse.libs.antlr4-runtime.v_4_10,
  org.hibernate.tool.eclipse.libs.jboss-logging.v_3_4,
  org.hibernate.tool.eclipse.libs.hibernate-commons-annotations.v_6_0,
  org.hibernate.tool.eclipse.orm.runtime.common,
- org.hibernate.tool.eclipse.runtime.spi
+ org.hibernate.tool.eclipse.orm.runtime.spi
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-ClassPath: .,

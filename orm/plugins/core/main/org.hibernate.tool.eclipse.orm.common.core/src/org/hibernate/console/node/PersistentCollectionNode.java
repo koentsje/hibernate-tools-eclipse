@@ -28,10 +28,10 @@ import javax.swing.tree.TreeNode;
 
 import org.eclipse.osgi.util.NLS;
 import org.hibernate.console.ConsoleMessages;
-import org.hibernate.tool.eclipse.runtime.spi.HibernateException;
-import org.hibernate.tool.eclipse.runtime.spi.IClassMetadata;
-import org.hibernate.tool.eclipse.runtime.spi.ICollectionMetadata;
-import org.hibernate.tool.eclipse.runtime.spi.IType;
+import org.hibernate.tool.eclipse.orm.runtime.spi.HibernateException;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IClassMetadata;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ICollectionMetadata;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IType;
 
 /**
  * @author MAX
