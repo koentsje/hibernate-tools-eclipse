@@ -52,7 +52,7 @@ public class HibernatePropertySourceProvider implements IPropertySourceProvider 
 		else {
 			QueryPage selectedQueryPage = view.getSelectedQueryPage();
 			if (selectedQueryPage != null) {
-				HibernateExtension hibernateExtension = selectedQueryPage.getHibernateExtension();
+				HibernateExtension hibernateExtension = (HibernateExtension) selectedQueryPage.getHibernateExtension();
 				if (hibernateExtension != null) {
 					ConsoleExtension consoleExtension = hibernateExtension.getConsoleExtension();
 					if (consoleExtension != null) {

@@ -42,7 +42,7 @@ import org.eclipse.jdt.core.dom.VariableDeclarationFragment;
 import org.eclipse.jdt.core.dom.WildcardType;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.eclipse.console.HibernateConsoleCorePlugin;
-import org.hibernate.eclipse.console.common.HibernateExtension;
+import org.hibernate.console.IHibernateExtension;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.collect.AllEntitiesInfoCollector;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.common.EntityInfo;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.common.RefEntityInfo;
@@ -128,7 +128,7 @@ public class ConfigurationActor {
 		if (hibnat != null) {
 			ConsoleConfiguration cc = hibnat.getDefaultConsoleConfiguration();
 			if (cc != null) {
-				HibernateExtension ext = cc.getHibernateExtension();
+				IHibernateExtension ext = cc.getHibernateExtension();
 				if (ext != null) {
 					result = ext.getHibernateService();
 				}

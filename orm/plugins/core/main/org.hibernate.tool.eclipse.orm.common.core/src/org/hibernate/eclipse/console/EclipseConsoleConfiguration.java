@@ -22,7 +22,9 @@
 package org.hibernate.eclipse.console;
 
 import org.hibernate.console.ConsoleConfiguration;
+import org.hibernate.console.IHibernateExtension;
 import org.hibernate.console.preferences.ConsoleConfigurationPreferences;
+import org.hibernate.eclipse.console.common.HibernateExtension;
 
 /**
  * @author max
@@ -34,7 +36,12 @@ public class EclipseConsoleConfiguration extends ConsoleConfiguration {
 		super(config);
 	}
 
-	protected ClassLoader getParentClassLoader() {				
+	@Override
+	protected IHibernateExtension createHibernateExtension() {
+		return new HibernateExtension(prefs);
+	}
+
+	protected ClassLoader getParentClassLoader() {
 		return org.hibernate.eclipse.HibernatePlugin.getDefault().getClass().getClassLoader();
 	}
 

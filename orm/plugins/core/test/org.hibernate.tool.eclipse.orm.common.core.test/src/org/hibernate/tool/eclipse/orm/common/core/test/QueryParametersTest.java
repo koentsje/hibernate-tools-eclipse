@@ -9,6 +9,7 @@ import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.ConsoleQueryParameter;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.console.QueryInputModel;
+import org.hibernate.eclipse.console.common.HibernateExtension;
 import org.hibernate.tool.eclipse.orm.common.core.test.utils.TestConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 import org.junit.After;
@@ -38,6 +39,8 @@ public class QueryParametersTest {
 
 	@Before
 	public void setUp() throws Exception {
+		ConsoleConfiguration.setHibernateExtensionFactory(
+			prefs -> new HibernateExtension(prefs));
 		cfgXmlFile = new File(temporaryFolder.getRoot(), "hibernate.cfg.xml");
 		FileWriter fw = new FileWriter(cfgXmlFile);
 		fw.write(HIBERNATE_CFG_XML);

@@ -40,6 +40,7 @@ import org.hibernate.eclipse.console.HibernateConsolePlugin;
 import org.hibernate.eclipse.console.QueryEditor;
 import org.hibernate.eclipse.ui.console.common.CompletionProposalsResult;
 import org.hibernate.eclipse.console.common.ConsoleExtension;
+import org.hibernate.eclipse.console.common.HibernateExtension;
 import org.hibernate.eclipse.ui.console.common.ConsoleExtensionUI;
 
 /**
@@ -117,7 +118,7 @@ public class HQLCompletionProcessor implements IContentAssistProcessor {
 				}
 
 				if(consoleConfiguration != null) {
-					ConsoleExtension consoleExtension = consoleConfiguration.getHibernateExtension().getConsoleExtension();
+					ConsoleExtension consoleExtension = ((HibernateExtension) consoleConfiguration.getHibernateExtension()).getConsoleExtension();
 					if (consoleExtension != null){
 						ConsoleExtensionUI consoleExtensionUI = new ConsoleExtensionUI(consoleExtension);
 						CompletionProposalsResult codeCompletions = consoleExtensionUI.hqlCodeComplete(doc.get(), 0, currentOffset);

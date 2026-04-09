@@ -36,7 +36,9 @@ import org.eclipse.core.runtime.MultiStatus;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Plugin;
 import org.eclipse.core.runtime.Status;
+import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.eclipse.console.HibernateConsoleMessages;
+import org.hibernate.eclipse.console.common.HibernateExtension;
 import org.hibernate.eclipse.logging.LoggingHelper;
 import org.hibernate.eclipse.logging.PluginLogManager;
 import org.osgi.framework.BundleContext;
@@ -59,6 +61,8 @@ public class HibernatePlugin extends Plugin {
 
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
+		ConsoleConfiguration.setHibernateExtensionFactory(
+			prefs -> new HibernateExtension(prefs));
 		configureLog4jHooks();
 		Log log = LogFactory.getLog(HibernatePlugin.class);
 		log.info("HibernatePlugin Started"); //$NON-NLS-1$

@@ -41,7 +41,6 @@ import org.hibernate.console.execution.ExecutionContext.Command;
 import org.hibernate.console.execution.ExecutionContextHolder;
 import org.hibernate.console.preferences.ConsoleConfigurationPreferences;
 import org.hibernate.console.preferences.PreferencesClassPathUtils;
-import org.hibernate.eclipse.console.common.HibernateExtension;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IEnvironment;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
@@ -59,20 +58,28 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
 	
 	//****************************** EXTENSION **********************
 	private String hibernateVersion = "==<None>=="; //set to some unused value //$NON-NLS-1$
-	
-	private HibernateExtension extension;
-	
+
+	private IHibernateExtension extension;
+
+	private static java.util.function.Function<ConsoleConfigurationPreferences, IHibernateExtension> extensionFactory;
+
+	public static void setHibernateExtensionFactory(
+			java.util.function.Function<ConsoleConfigurationPreferences, IHibernateExtension> factory) {
+		extensionFactory = factory;
+	}
+
+	protected IHibernateExtension createHibernateExtension(){
+		if (extensionFactory != null) {
+			return extensionFactory.apply(prefs);
+		}
+		throw new IllegalStateException(
+			"No HibernateExtension factory registered. " + //$NON-NLS-1$
+			"Ensure the plugin activator has called " + //$NON-NLS-1$
+			"ConsoleConfiguration.setHibernateExtensionFactory()"); //$NON-NLS-1$
+	}
+
 	private void loadHibernateExtension(){
-		extension = new HibernateExtension(prefs);
-//		String version = hibernateVersion == null ? "3.5" : hibernateVersion;//3.5 is a default version //$NON-NLS-1$
-//		HibernateExtensionDefinition def = HibernateExtensionManager.findHibernateExtensionDefinition(version);
-//		if (def != null){
-//			HibernateExtension hibernateExtension = def.createHibernateExtensionInstance();
-//			hibernateExtension.setConsoleConfigurationPreferences(prefs);
-//			extension = hibernateExtension;
-//		} else {
-//			throw new IllegalArgumentException("Can't find definition for hibernate version " + version); //$NON-NLS-1$
-//		}
+		extension = createHibernateExtension();
 	}
 	
 	private void updateHibernateVersion(String hibernateVersion){
@@ -86,7 +93,7 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
         return (str1 == null ? str2 == null : str1.equals(str2) );
     }
 
-    public HibernateExtension getHibernateExtension(){
+    public IHibernateExtension getHibernateExtension(){
 		updateHibernateVersion(prefs.getHibernateVersion());//reinit if necessary
 		return this.extension;
 	}
@@ -247,7 +254,7 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
 	}
 
 	protected ClassLoader getParentClassLoader() {
-		HibernateExtension extension = getHibernateExtension();
+		IHibernateExtension extension = getHibernateExtension();
 		if (extension != null) {
 			return extension.getHibernateService().getClassLoader();
 		} else {

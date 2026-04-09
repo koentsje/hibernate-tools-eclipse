@@ -29,6 +29,7 @@ import java.util.List;
 
 import org.hibernate.console.AbstractQueryPage;
 import org.hibernate.console.ConsoleQueryParameter;
+import org.hibernate.console.IHibernateExtension;
 import org.hibernate.console.QueryInputModel;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IQuery;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
@@ -121,7 +122,7 @@ public class HQLQueryPage extends AbstractQueryPage {
 	 * @param string
 	 * @param queryParameters 
 	 */
-	public HQLQueryPage(HibernateExtension extension, String string, QueryInputModel model) {
+	public HQLQueryPage(IHibernateExtension extension, String string, QueryInputModel model) {
 		super(extension, model);
 		queryString = string;
 		setTabName(getQueryString().replace('\n', ' ').replace('\r', ' ').replace('\t', ' '));

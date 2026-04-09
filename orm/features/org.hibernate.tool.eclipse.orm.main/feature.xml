@@ -59,6 +59,13 @@
    </requires>
 
    <plugin
+         id="org.hibernate.tool.eclipse.orm.console.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
          id="org.hibernate.tool.eclipse.orm.common.core"
          download-size="0"
          install-size="0"

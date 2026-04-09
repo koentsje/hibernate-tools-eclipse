@@ -26,7 +26,6 @@ import java.beans.PropertyChangeSupport;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.hibernate.eclipse.console.common.HibernateExtension;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ISession;
 
 /**
@@ -38,7 +37,7 @@ public abstract class AbstractQueryPage implements QueryPage {
 	protected PropertyChangeSupport pcs = new PropertyChangeSupport(this);    
     private int id;
     private ISession session;
-	private final HibernateExtension extension;
+	private final IHibernateExtension extension;
     protected List<?> list;
     protected long queryTime = -1;				//shows how long query runs
     protected boolean sticky = true;
@@ -61,7 +60,7 @@ public abstract class AbstractQueryPage implements QueryPage {
 		}
 	}
 
-	public AbstractQueryPage(HibernateExtension extension, QueryInputModel model) {
+	public AbstractQueryPage(IHibernateExtension extension, QueryInputModel model) {
 		this.extension = extension;
 		this.model = model;
 	}
@@ -129,7 +128,7 @@ public abstract class AbstractQueryPage implements QueryPage {
 	}
 	
 	@Override
-	public HibernateExtension getHibernateExtension() {
+	public IHibernateExtension getHibernateExtension() {
 		return extension;
 	}
 	
