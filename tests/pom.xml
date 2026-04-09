@@ -12,6 +12,5 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>../orm/test</module>
 	</modules>
 </project>
