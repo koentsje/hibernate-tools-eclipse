@@ -20,8 +20,8 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.dialect.Dialect;
 import org.hibernate.tool.hbm2ddl.SchemaExport;
 import org.hibernate.tool.schema.TargetType;
-import org.hibernate.tool.eclipse.runtime.common.AbstractFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

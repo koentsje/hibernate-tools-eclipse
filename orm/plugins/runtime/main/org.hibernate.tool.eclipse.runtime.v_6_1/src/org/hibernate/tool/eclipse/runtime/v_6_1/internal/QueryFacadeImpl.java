@@ -3,8 +3,8 @@ package org.hibernate.tool.eclipse.runtime.v_6_1.internal;
 import java.util.List;
 
 import org.hibernate.query.Query;
-import org.hibernate.tool.eclipse.runtime.common.AbstractQueryFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractQueryFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 import org.hibernate.tool.eclipse.runtime.spi.IType;
 
 public class QueryFacadeImpl extends AbstractQueryFacade {

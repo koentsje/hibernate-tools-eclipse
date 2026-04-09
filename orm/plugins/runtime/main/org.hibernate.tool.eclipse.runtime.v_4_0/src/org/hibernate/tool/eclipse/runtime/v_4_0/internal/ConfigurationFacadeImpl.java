@@ -4,8 +4,8 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 import org.hibernate.service.jdbc.dialect.spi.DialectFactory;
-import org.hibernate.tool.eclipse.runtime.common.AbstractConfigurationFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractConfigurationFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 
 public class ConfigurationFacadeImpl extends AbstractConfigurationFacade {
 	

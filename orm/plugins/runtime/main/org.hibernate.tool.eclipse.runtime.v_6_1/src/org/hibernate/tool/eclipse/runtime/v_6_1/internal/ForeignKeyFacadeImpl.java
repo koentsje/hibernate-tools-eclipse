@@ -5,8 +5,8 @@ import java.util.Iterator;
 
 import org.hibernate.mapping.Column;
 import org.hibernate.mapping.ForeignKey;
-import org.hibernate.tool.eclipse.runtime.common.AbstractForeignKeyFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractForeignKeyFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 import org.hibernate.tool.eclipse.runtime.spi.IColumn;
 
 public class ForeignKeyFacadeImpl extends AbstractForeignKeyFacade {

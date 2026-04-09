@@ -8,9 +8,9 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.dialect.Dialect;
 import org.hibernate.engine.jdbc.dialect.spi.DialectFactory;
 import org.hibernate.mapping.Column;
-import org.hibernate.tool.eclipse.runtime.common.AbstractColumnFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractColumnFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 import org.hibernate.tool.eclipse.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.runtime.v_5_4.internal.util.MetadataHelper;
 

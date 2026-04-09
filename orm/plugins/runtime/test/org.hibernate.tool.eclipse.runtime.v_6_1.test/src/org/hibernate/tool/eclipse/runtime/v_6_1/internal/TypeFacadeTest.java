@@ -26,7 +26,7 @@ import org.hibernate.type.EntityType;
 import org.hibernate.type.ManyToOneType;
 import org.hibernate.type.OneToOneType;
 import org.hibernate.type.spi.TypeConfiguration;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 import org.hibernate.tool.eclipse.runtime.spi.IType;
 import org.hibernate.tool.eclipse.runtime.v_6_1.internal.legacy.ClassType;
 import org.hibernate.tool.eclipse.runtime.v_6_1.internal.legacy.IntegerType;

@@ -9,7 +9,7 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
-import org.hibernate.tool.eclipse.runtime.common.IFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacade;
 import org.hibernate.tool.eclipse.common.runtime.Util;
 import org.hibernate.tool.eclipse.runtime.spi.IQuery;
 import org.hibernate.tool.eclipse.runtime.spi.ISessionFactory;

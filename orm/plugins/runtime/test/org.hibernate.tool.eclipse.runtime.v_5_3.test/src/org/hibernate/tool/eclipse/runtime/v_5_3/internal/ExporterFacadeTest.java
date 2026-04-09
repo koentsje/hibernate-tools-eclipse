@@ -21,7 +21,7 @@ import org.hibernate.tool.hbm2x.GenericExporter;
 import org.hibernate.tool.hbm2x.Hbm2DDLExporter;
 import org.hibernate.tool.hbm2x.HibernateConfigurationExporter;
 import org.hibernate.tool.hbm2x.QueryExporter;
-import org.hibernate.tool.eclipse.runtime.common.IFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacade;
 import org.hibernate.tool.eclipse.runtime.spi.IArtifactCollector;
 import org.hibernate.tool.eclipse.runtime.spi.IGenericExporter;
 import org.hibernate.tool.eclipse.runtime.spi.IHbm2DDLExporter;

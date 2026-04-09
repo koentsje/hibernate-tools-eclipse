@@ -5,8 +5,8 @@ import java.util.EnumSet;
 import org.hibernate.boot.Metadata;
 import org.hibernate.tool.hbm2ddl.SchemaExport;
 import org.hibernate.tool.schema.TargetType;
-import org.hibernate.tool.eclipse.runtime.common.AbstractSchemaExportFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractSchemaExportFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 import org.hibernate.tool.eclipse.runtime.spi.IConfiguration;
 
 public class SchemaExportFacadeImpl extends AbstractSchemaExportFacade {

@@ -6,9 +6,9 @@ import org.hibernate.boot.spi.MetadataBuildingContext;
 import org.hibernate.mapping.PersistentClass;
 import org.hibernate.mapping.Property;
 import org.hibernate.mapping.RootClass;
-import org.hibernate.tool.eclipse.runtime.common.AbstractSpecialRootClassFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractSpecialRootClassFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 import org.hibernate.tool.eclipse.runtime.spi.IProperty;
 
 public class SpecialRootClassFacadeImpl extends AbstractSpecialRootClassFacade {

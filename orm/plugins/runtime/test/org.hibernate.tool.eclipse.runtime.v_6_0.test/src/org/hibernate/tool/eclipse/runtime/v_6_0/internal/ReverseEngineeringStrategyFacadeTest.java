@@ -9,7 +9,7 @@ import org.hibernate.tool.api.reveng.RevengSettings;
 import org.hibernate.tool.api.reveng.RevengStrategy;
 import org.hibernate.tool.internal.reveng.strategy.AbstractStrategy;
 import org.hibernate.tool.internal.reveng.strategy.DefaultStrategy;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 import org.hibernate.tool.eclipse.runtime.spi.IReverseEngineeringSettings;
 import org.hibernate.tool.eclipse.runtime.spi.IReverseEngineeringStrategy;
 import org.junit.jupiter.api.Test;

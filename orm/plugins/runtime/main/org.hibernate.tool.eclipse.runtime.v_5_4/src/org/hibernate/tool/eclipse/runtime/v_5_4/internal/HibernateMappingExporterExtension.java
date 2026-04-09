@@ -5,7 +5,7 @@ import java.util.Map;
 
 import org.hibernate.tool.hbm2x.HibernateMappingExporter;
 import org.hibernate.tool.hbm2x.pojo.POJOClass;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 import org.hibernate.tool.eclipse.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.runtime.spi.IExportPOJODelegate;
 import org.hibernate.tool.eclipse.runtime.v_5_4.internal.util.ConfigurationMetadataDescriptor;

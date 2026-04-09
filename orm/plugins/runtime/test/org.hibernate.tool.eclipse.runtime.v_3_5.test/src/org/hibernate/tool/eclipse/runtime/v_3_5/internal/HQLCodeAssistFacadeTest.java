@@ -6,9 +6,9 @@ import static org.junit.jupiter.api.Assertions.assertSame;
 
 import org.hibernate.tool.ide.completion.HQLCompletionProposal;
 import org.hibernate.tool.ide.completion.IHQLCompletionRequestor;
-import org.hibernate.tool.eclipse.runtime.common.AbstractHQLCodeAssistFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractHQLCodeAssistFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 import org.hibernate.tool.eclipse.runtime.spi.IHQLCodeAssist;
 import org.hibernate.tool.eclipse.runtime.spi.IHQLCompletionHandler;
 import org.hibernate.tool.eclipse.runtime.spi.IHQLCompletionProposal;

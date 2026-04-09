@@ -2,7 +2,7 @@ package org.hibernate.tool.eclipse.runtime.v_4_0.internal;
 
 import org.hibernate.cfg.Configuration;
 import org.hibernate.mapping.Column;
-import org.hibernate.tool.eclipse.runtime.common.AbstractFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractFacadeFactory;
 import org.hibernate.tool.eclipse.runtime.spi.IColumn;
 import org.hibernate.tool.eclipse.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.runtime.spi.IPersistentClass;

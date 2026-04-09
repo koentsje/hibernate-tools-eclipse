@@ -8,9 +8,9 @@ import java.lang.reflect.Proxy;
 
 import org.hibernate.metadata.CollectionMetadata;
 import org.hibernate.type.Type;
-import org.hibernate.tool.eclipse.runtime.common.AbstractCollectionMetadataFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractCollectionMetadataFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 import org.hibernate.tool.eclipse.runtime.spi.ICollectionMetadata;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

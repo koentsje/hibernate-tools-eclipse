@@ -10,8 +10,8 @@ import java.util.Collections;
 import java.util.List;
 
 import org.hibernate.tool.hbm2x.QueryExporter;
-import org.hibernate.tool.eclipse.runtime.common.AbstractQueryExporterFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractQueryExporterFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 import org.hibernate.tool.eclipse.runtime.spi.IQueryExporter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

@@ -62,7 +62,7 @@ import org.hibernate.tool.hbm2x.QueryExporter;
 import org.hibernate.tool.ide.completion.HQLCodeAssist;
 import org.hibernate.tool.ide.completion.HQLCompletionProposal;
 import org.hibernate.type.Type;
-import org.hibernate.tool.eclipse.runtime.common.IFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacade;
 import org.hibernate.tool.eclipse.runtime.spi.IArtifactCollector;
 import org.hibernate.tool.eclipse.runtime.spi.ICfg2HbmTool;
 import org.hibernate.tool.eclipse.runtime.spi.IClassMetadata;

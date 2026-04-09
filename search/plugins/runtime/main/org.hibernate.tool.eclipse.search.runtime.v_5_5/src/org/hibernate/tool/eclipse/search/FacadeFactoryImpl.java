@@ -1,6 +1,6 @@
 package org.hibernate.tool.eclipse.search;
 
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 import org.hibernate.tool.eclipse.search.runtime.common.AbstractFacadeFactory;
 
 public class FacadeFactoryImpl extends AbstractFacadeFactory {

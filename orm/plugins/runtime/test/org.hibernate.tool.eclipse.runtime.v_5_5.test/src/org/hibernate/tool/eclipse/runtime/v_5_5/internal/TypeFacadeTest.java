@@ -30,7 +30,7 @@ import org.hibernate.type.ManyToOneType;
 import org.hibernate.type.OneToOneType;
 import org.hibernate.type.StringType;
 import org.hibernate.type.TypeFactory.TypeScope;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 import org.hibernate.tool.eclipse.runtime.spi.IType;
 import org.hibernate.tool.eclipse.runtime.v_5_5.internal.util.MockConnectionProvider;
 import org.hibernate.tool.eclipse.runtime.v_5_5.internal.util.MockDialect;

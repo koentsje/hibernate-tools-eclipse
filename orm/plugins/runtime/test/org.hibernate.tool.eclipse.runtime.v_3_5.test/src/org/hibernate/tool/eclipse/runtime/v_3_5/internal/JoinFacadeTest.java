@@ -8,9 +8,9 @@ import java.util.Iterator;
 
 import org.hibernate.mapping.Join;
 import org.hibernate.mapping.Property;
-import org.hibernate.tool.eclipse.runtime.common.AbstractJoinFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractJoinFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 import org.hibernate.tool.eclipse.runtime.spi.IJoin;
 import org.hibernate.tool.eclipse.runtime.spi.IProperty;
 import org.junit.jupiter.api.BeforeEach;

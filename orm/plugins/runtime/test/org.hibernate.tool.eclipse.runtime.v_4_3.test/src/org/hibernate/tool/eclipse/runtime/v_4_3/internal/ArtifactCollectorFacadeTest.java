@@ -9,8 +9,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.hibernate.tool.hbm2x.ArtifactCollector;
-import org.hibernate.tool.eclipse.runtime.common.AbstractArtifactCollectorFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractArtifactCollectorFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 import org.hibernate.tool.eclipse.runtime.spi.IArtifactCollector;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

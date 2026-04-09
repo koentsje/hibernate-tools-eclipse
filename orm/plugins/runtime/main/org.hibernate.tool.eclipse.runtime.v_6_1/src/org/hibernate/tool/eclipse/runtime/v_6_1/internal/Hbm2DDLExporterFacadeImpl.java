@@ -2,8 +2,8 @@ package org.hibernate.tool.eclipse.runtime.v_6_1.internal;
 
 import org.hibernate.tool.api.export.ExporterConstants;
 import org.hibernate.tool.internal.export.ddl.DdlExporter;
-import org.hibernate.tool.eclipse.runtime.common.AbstractHbm2DDLExporterFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractHbm2DDLExporterFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 
 public class Hbm2DDLExporterFacadeImpl extends AbstractHbm2DDLExporterFacade {
 

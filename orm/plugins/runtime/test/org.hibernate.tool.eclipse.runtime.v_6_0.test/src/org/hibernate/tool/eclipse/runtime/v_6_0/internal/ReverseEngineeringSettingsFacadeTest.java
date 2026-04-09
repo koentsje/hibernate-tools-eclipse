@@ -6,8 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.hibernate.tool.api.reveng.RevengSettings;
 import org.hibernate.tool.internal.reveng.strategy.DefaultStrategy;
-import org.hibernate.tool.eclipse.runtime.common.AbstractReverseEngineeringSettingsFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractReverseEngineeringSettingsFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 import org.hibernate.tool.eclipse.runtime.spi.IReverseEngineeringSettings;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

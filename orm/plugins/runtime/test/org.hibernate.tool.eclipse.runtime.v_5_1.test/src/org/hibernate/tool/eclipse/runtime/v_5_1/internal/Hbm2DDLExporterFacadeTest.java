@@ -10,7 +10,7 @@ import java.util.Properties;
 
 import org.hibernate.tool.hbm2x.AbstractExporter;
 import org.hibernate.tool.hbm2x.Hbm2DDLExporter;
-import org.hibernate.tool.eclipse.runtime.common.AbstractHbm2DDLExporterFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractHbm2DDLExporterFacade;
 import org.hibernate.tool.eclipse.runtime.spi.IHbm2DDLExporter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

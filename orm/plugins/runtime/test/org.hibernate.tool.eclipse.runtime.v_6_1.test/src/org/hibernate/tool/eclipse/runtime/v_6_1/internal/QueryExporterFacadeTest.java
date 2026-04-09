@@ -10,7 +10,7 @@ import java.util.List;
 
 import org.hibernate.tool.api.export.ExporterConstants;
 import org.hibernate.tool.internal.export.query.QueryExporter;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 import org.hibernate.tool.eclipse.runtime.spi.IQueryExporter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

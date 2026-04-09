@@ -1,6 +1,6 @@
 package org.hibernate.tool.eclipse.search.runtime.common;
 
-import org.hibernate.tool.eclipse.runtime.common.IFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacade;
 import org.hibernate.tool.eclipse.search.runtime.common.IFacadeFactory;
 
 public class AbstractFacade implements IFacade {

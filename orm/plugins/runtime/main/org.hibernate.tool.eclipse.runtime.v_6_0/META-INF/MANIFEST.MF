@@ -23,6 +23,6 @@ Require-Bundle: org.hibernate.tool.eclipse.libs.antlr4-runtime.v_4_10,
  org.hibernate.tool.eclipse.libs.jandex.v_2_4,
  org.hibernate.tool.eclipse.libs.jaxb.v_2_3,
  org.hibernate.tool.eclipse.libs.jboss-logging.v_3_4,
- org.hibernate.tool.eclipse.runtime.common,
+ org.hibernate.tool.eclipse.orm.runtime.common,
  org.hibernate.tool.eclipse.runtime.spi,
  org.hibernate.tool.eclipse.libs.jaxb.v_3_0

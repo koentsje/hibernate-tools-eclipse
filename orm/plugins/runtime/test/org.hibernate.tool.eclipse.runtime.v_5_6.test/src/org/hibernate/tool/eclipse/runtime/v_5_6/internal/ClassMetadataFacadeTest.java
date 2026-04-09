@@ -39,7 +39,7 @@ import org.hibernate.persister.entity.SingleTableEntityPersister;
 import org.hibernate.persister.spi.PersisterCreationContext;
 import org.hibernate.type.StringType;
 import org.hibernate.type.Type;
-import org.hibernate.tool.eclipse.runtime.common.IFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacade;
 import org.hibernate.tool.eclipse.runtime.spi.ISession;
 import org.hibernate.tool.eclipse.runtime.spi.IType;
 import org.hibernate.tool.eclipse.runtime.v_5_6.internal.util.MockConnectionProvider;

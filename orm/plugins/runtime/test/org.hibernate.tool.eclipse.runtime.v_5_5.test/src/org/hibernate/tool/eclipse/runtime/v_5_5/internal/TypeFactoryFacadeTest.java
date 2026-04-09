@@ -12,7 +12,7 @@ import java.util.TimeZone;
 
 import org.hibernate.type.StandardBasicTypes;
 import org.hibernate.type.Type;
-import org.hibernate.tool.eclipse.runtime.common.IFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacade;
 import org.hibernate.tool.eclipse.runtime.spi.ITable;
 import org.hibernate.tool.eclipse.runtime.spi.IType;
 import org.hibernate.tool.eclipse.runtime.spi.ITypeFactory;

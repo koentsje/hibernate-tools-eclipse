@@ -9,9 +9,9 @@ import java.lang.reflect.Field;
 
 import org.hibernate.mapping.Property;
 import org.hibernate.tool.ide.completion.HQLCompletionProposal;
-import org.hibernate.tool.eclipse.runtime.common.AbstractHQLCompletionProposalFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractHQLCompletionProposalFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 import org.hibernate.tool.eclipse.runtime.spi.IHQLCompletionProposal;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

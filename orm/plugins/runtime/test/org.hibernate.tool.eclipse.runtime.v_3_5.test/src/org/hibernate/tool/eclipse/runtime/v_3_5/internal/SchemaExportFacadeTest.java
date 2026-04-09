@@ -14,7 +14,7 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.dialect.H2Dialect;
 import org.hibernate.tool.hbm2ddl.SchemaExport;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 import org.hibernate.tool.eclipse.runtime.spi.HibernateException;
 import org.hibernate.tool.eclipse.runtime.spi.ISchemaExport;
 import org.junit.jupiter.api.BeforeAll;

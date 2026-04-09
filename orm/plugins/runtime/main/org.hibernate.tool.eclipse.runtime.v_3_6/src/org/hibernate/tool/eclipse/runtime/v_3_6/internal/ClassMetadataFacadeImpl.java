@@ -3,8 +3,8 @@ package org.hibernate.tool.eclipse.runtime.v_3_6.internal;
 import org.hibernate.EntityMode;
 import org.hibernate.metadata.ClassMetadata;
 import org.hibernate.persister.entity.EntityPersister;
-import org.hibernate.tool.eclipse.runtime.common.AbstractClassMetadataFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractClassMetadataFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 import org.hibernate.tool.eclipse.runtime.spi.HibernateException;
 
 public class ClassMetadataFacadeImpl extends AbstractClassMetadataFacade {

@@ -14,9 +14,9 @@ import org.hibernate.engine.jdbc.dialect.spi.DialectFactory;
 import org.hibernate.mapping.Column;
 import org.hibernate.mapping.Value;
 import org.hibernate.type.spi.TypeConfiguration;
-import org.hibernate.tool.eclipse.runtime.common.AbstractColumnFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractColumnFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 import org.hibernate.tool.eclipse.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.runtime.spi.IValue;
 

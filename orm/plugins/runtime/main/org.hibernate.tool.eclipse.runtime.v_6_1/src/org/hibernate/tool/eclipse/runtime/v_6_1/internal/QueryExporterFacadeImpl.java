@@ -2,8 +2,8 @@ package org.hibernate.tool.eclipse.runtime.v_6_1.internal;
 
 import org.hibernate.tool.api.export.ExporterConstants;
 import org.hibernate.tool.internal.export.query.QueryExporter;
-import org.hibernate.tool.eclipse.runtime.common.AbstractQueryExporterFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractQueryExporterFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 
 public class QueryExporterFacadeImpl extends AbstractQueryExporterFacade {
 

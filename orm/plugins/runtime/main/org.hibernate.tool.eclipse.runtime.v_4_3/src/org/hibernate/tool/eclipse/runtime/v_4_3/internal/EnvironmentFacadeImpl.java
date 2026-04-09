@@ -1,7 +1,7 @@
 package org.hibernate.tool.eclipse.runtime.v_4_3.internal;
 
-import org.hibernate.tool.eclipse.runtime.common.AbstractEnvironmentFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractEnvironmentFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 
 public class EnvironmentFacadeImpl extends AbstractEnvironmentFacade {
 

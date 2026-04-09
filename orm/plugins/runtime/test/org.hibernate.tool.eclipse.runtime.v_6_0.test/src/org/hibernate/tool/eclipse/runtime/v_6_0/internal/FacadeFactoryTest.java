@@ -40,7 +40,7 @@ import org.hibernate.tool.internal.export.query.QueryExporter;
 import org.hibernate.tool.internal.reveng.strategy.OverrideRepository;
 import org.hibernate.tool.internal.reveng.strategy.TableFilter;
 import org.hibernate.type.Type;
-import org.hibernate.tool.eclipse.runtime.common.IFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacade;
 import org.hibernate.tool.eclipse.runtime.spi.IArtifactCollector;
 import org.hibernate.tool.eclipse.runtime.spi.ICfg2HbmTool;
 import org.hibernate.tool.eclipse.runtime.spi.IClassMetadata;

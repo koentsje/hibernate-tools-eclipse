@@ -9,8 +9,8 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.TimeZone;
 
-import org.hibernate.tool.eclipse.runtime.common.AbstractTypeFactoryFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractTypeFactoryFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 import org.hibernate.tool.eclipse.runtime.spi.ITable;
 import org.hibernate.tool.eclipse.runtime.spi.IType;
 import org.hibernate.tool.eclipse.runtime.v_6_0.internal.legacy.BigDecimalType;

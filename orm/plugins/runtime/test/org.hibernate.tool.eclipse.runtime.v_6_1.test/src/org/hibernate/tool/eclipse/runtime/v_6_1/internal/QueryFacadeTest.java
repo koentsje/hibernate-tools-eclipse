@@ -3,7 +3,7 @@ package org.hibernate.tool.eclipse.runtime.v_6_1.internal;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.hibernate.query.Query;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 import org.hibernate.tool.eclipse.runtime.spi.IQuery;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;

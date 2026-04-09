@@ -1,6 +1,6 @@
 package org.hibernate.tool.eclipse.runtime.v_6_1.internal;
 
-import org.hibernate.tool.eclipse.runtime.common.AbstractFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractFacadeFactory;
 import org.hibernate.tool.eclipse.runtime.spi.IClassMetadata;
 import org.hibernate.tool.eclipse.runtime.spi.IColumn;
 import org.hibernate.tool.eclipse.runtime.spi.IConfiguration;

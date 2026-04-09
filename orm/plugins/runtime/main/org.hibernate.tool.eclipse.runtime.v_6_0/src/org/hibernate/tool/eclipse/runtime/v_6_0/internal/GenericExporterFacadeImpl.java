@@ -2,8 +2,8 @@ package org.hibernate.tool.eclipse.runtime.v_6_0.internal;
 
 import org.hibernate.tool.api.export.ExporterConstants;
 import org.hibernate.tool.internal.export.common.GenericExporter;
-import org.hibernate.tool.eclipse.runtime.common.AbstractGenericExporterFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractGenericExporterFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 
 public class GenericExporterFacadeImpl extends AbstractGenericExporterFacade {
 

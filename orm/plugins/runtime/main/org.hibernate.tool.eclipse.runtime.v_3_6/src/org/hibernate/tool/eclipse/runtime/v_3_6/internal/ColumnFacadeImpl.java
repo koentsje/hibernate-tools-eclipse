@@ -1,8 +1,8 @@
 package org.hibernate.tool.eclipse.runtime.v_3_6.internal;
 
 import org.hibernate.mapping.Column;
-import org.hibernate.tool.eclipse.runtime.common.AbstractColumnFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractColumnFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 
 public class ColumnFacadeImpl extends AbstractColumnFacade {
 	

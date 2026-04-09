@@ -2,9 +2,9 @@ package org.hibernate.tool.eclipse.runtime.v_6_1.internal;
 
 import org.hibernate.tool.api.reveng.RevengStrategy;
 import org.hibernate.tool.internal.reveng.strategy.OverrideRepository;
-import org.hibernate.tool.eclipse.runtime.common.AbstractOverrideRepositoryFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractOverrideRepositoryFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 import org.hibernate.tool.eclipse.runtime.spi.IReverseEngineeringStrategy;
 
 public class OverrideRepositoryFacadeImpl extends AbstractOverrideRepositoryFacade {

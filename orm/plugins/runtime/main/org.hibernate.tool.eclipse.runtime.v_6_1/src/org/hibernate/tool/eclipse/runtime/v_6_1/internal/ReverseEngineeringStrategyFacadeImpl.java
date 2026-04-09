@@ -1,7 +1,7 @@
 package org.hibernate.tool.eclipse.runtime.v_6_1.internal;
 
-import org.hibernate.tool.eclipse.runtime.common.AbstractReverseEngineeringStrategyFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractReverseEngineeringStrategyFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 
 public class ReverseEngineeringStrategyFacadeImpl extends AbstractReverseEngineeringStrategyFacade {
 

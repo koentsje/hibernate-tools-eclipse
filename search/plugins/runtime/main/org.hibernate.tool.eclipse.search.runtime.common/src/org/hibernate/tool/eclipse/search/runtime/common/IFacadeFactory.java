@@ -7,7 +7,7 @@ import org.hibernate.tool.eclipse.search.runtime.spi.IQueryParser;
 import org.hibernate.tool.eclipse.search.runtime.spi.ISearchFactory;
 
 public interface IFacadeFactory {
-	org.hibernate.tool.eclipse.runtime.common.IFacadeFactory getHibernateFacadeFactory();
+	org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory getHibernateFacadeFactory();
 	ClassLoader getClassLoader();
 	IFullTextSession createFullTextSession(ISessionFactory sessionFactory);
 	ISearchFactory createSearchFactory(Object target);

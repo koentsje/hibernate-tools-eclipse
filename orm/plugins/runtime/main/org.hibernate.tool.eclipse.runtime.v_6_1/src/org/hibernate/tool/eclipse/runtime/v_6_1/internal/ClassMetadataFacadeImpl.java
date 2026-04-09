@@ -1,8 +1,8 @@
 package org.hibernate.tool.eclipse.runtime.v_6_1.internal;
 
 import org.hibernate.persister.entity.EntityPersister;
-import org.hibernate.tool.eclipse.runtime.common.AbstractClassMetadataFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractClassMetadataFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 
 public class ClassMetadataFacadeImpl extends AbstractClassMetadataFacade {
 

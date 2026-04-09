@@ -4,8 +4,8 @@ import java.util.List;
 
 import javax.persistence.Query;
 
-import org.hibernate.tool.eclipse.runtime.common.AbstractCriteriaFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractCriteriaFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 import org.hibernate.tool.eclipse.runtime.spi.ICriteria;
 
 public class CriteriaFacadeImpl extends AbstractCriteriaFacade implements ICriteria {

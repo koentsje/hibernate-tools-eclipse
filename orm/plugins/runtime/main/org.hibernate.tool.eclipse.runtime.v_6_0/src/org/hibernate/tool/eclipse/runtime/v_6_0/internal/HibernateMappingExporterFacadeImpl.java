@@ -5,8 +5,8 @@ import java.io.File;
 import org.hibernate.tool.api.export.Exporter;
 import org.hibernate.tool.api.export.ExporterConstants;
 import org.hibernate.tool.internal.export.java.POJOClass;
-import org.hibernate.tool.eclipse.runtime.common.AbstractHibernateMappingExporterFacade;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractHibernateMappingExporterFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 
 public class HibernateMappingExporterFacadeImpl extends AbstractHibernateMappingExporterFacade {
 

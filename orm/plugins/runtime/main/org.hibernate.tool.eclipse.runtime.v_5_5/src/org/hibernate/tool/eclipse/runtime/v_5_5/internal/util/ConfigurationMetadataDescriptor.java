@@ -8,7 +8,7 @@ import org.hibernate.boot.Metadata;
 import org.hibernate.boot.internal.MetadataImpl;
 import org.hibernate.mapping.PersistentClass;
 import org.hibernate.tool.api.metadata.MetadataDescriptor;
-import org.hibernate.tool.eclipse.runtime.common.IFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacade;
 import org.hibernate.tool.eclipse.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.runtime.spi.IPersistentClass;
 import org.hibernate.tool.eclipse.runtime.v_5_5.internal.ConfigurationFacadeImpl;

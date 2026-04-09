@@ -35,7 +35,7 @@ import org.hibernate.tool.internal.export.hbm.Cfg2HbmTool;
 import org.hibernate.tool.internal.export.java.Cfg2JavaTool;
 import org.hibernate.tool.internal.export.java.EntityPOJOClass;
 import org.hibernate.tool.internal.export.java.POJOClass;
-import org.hibernate.tool.eclipse.runtime.common.IFacadeFactory;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 import org.hibernate.tool.eclipse.runtime.spi.IExportPOJODelegate;
 import org.hibernate.tool.eclipse.runtime.spi.IHibernateMappingExporter;
 import org.hibernate.tool.eclipse.runtime.v_6_0.internal.util.DummyMetadataBuildingContext;

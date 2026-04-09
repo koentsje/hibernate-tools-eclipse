@@ -41,7 +41,7 @@ import org.hibernate.persister.spi.PersisterCreationContext;
 import org.hibernate.type.StringType;
 import org.hibernate.type.Type;
 import org.hibernate.type.TypeResolver;
-import org.hibernate.tool.eclipse.runtime.common.IFacade;
+import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacade;
 import org.hibernate.tool.eclipse.runtime.spi.ISession;
 import org.hibernate.tool.eclipse.runtime.spi.IType;
 import org.junit.jupiter.api.BeforeEach;
