@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.core.expressions.propertyTesters">
+      <propertyTester
+            class="org.hibernate.tool.eclipse.search.core.property.testers.HibernateSearchEnabledPropertyTester"
+            id="org.hibernate.tool.eclipse.search.core.property.testers.HibernateSearchEnabledPropertyTester"
+            namespace="org.hibernate.tool.eclipse.search"
+            properties="hibernateSearchEnabled"
+            type="org.eclipse.jface.viewers.ITreeSelection">
+      </propertyTester>
+   </extension>
+</plugin>

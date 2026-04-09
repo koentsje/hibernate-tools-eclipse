@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Hibernate Search Core
+Bundle-SymbolicName: org.hibernate.tool.eclipse.search.core;singleton:=true
+Bundle-Version: 6.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: org.hibernate.tool.eclipse.search.core,
+ org.hibernate.tool.eclipse.search.core.property.testers
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.expressions,
+ org.eclipse.jface,
+ org.hibernate.tool.eclipse.orm.common.core
