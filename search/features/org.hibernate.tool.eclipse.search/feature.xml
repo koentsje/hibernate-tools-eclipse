@@ -25,12 +25,12 @@ Also this plugin is an addition to Hibernate Tools Eclipse plugin which is licen
       <import plugin="org.eclipse.ui.workbench"/>
       <import plugin="org.eclipse.jdt.core"/>
       <import plugin="org.eclipse.datatools.connectivity"/>
-      <import plugin="org.hibernate.tool.eclipse.orm.core"/>
+      <import plugin="org.hibernate.tool.eclipse.orm.common.core"/>
       <import plugin="org.eclipse.osgi"/>
       <import plugin="org.eclipse.jface"/>
       <import plugin="org.eclipse.datatools.connectivity.ui"/>
       <import plugin="org.eclipse.debug.core"/>
-      <import plugin="org.hibernate.tool.eclipse.orm.ui"/>
+      <import plugin="org.hibernate.tool.eclipse.orm.common.ui"/>
       <import plugin="org.hibernate.tool.eclipse.runtime.spi" version="5.1.2" match="greaterOrEqual"/>
       <import plugin="org.hibernate.tool.eclipse.runtime.v_4_0" version="5.1.2.qualifier" match="greaterOrEqual"/>
       <import plugin="org.hibernate.tool.eclipse.runtime.v_4_3" version="5.1.2.qualifier" match="greaterOrEqual"/>

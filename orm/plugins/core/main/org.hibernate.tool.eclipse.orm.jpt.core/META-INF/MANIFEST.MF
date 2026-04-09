@@ -5,7 +5,7 @@ Bundle-SymbolicName: org.hibernate.tool.eclipse.orm.jpt.core;singleton:=true
 Bundle-Version: 6.0.0.qualifier
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.wst.validation,
- org.hibernate.tool.eclipse.orm.core,
+ org.hibernate.tool.eclipse.orm.common.core,
  org.eclipse.jdt.launching,
  org.eclipse.debug.core,
  org.eclipse.emf.ecore,

@@ -5,7 +5,7 @@ Bundle-SymbolicName: org.hibernate.tool.eclipse.search.test;singleton:=true
 Bundle-Version: 6.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: org.junit;bundle-version="4.12.0",
- org.hibernate.tool.eclipse.orm.core,
+ org.hibernate.tool.eclipse.orm.common.core,
  org.hibernate.tool.eclipse.search.main,
  org.eclipse.jface,
  org.eclipse.core.expressions;bundle-version="3.6.0",

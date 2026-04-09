@@ -31,8 +31,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.wst.dtd.core,
  org.eclipse.wst.common.ui,
  org.eclipse.pde.core,
- org.hibernate.tool.eclipse.orm.core,
- org.hibernate.tool.eclipse.orm.ui,
+ org.hibernate.tool.eclipse.orm.common.core,
+ org.hibernate.tool.eclipse.orm.common.ui,
  org.hibernate.tool.eclipse.orm.xml.core,
  org.hibernate.tool.eclipse.runtime.spi
 Bundle-ActivationPolicy: lazy

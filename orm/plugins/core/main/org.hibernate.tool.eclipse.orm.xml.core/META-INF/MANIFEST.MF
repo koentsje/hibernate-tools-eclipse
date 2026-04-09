@@ -14,7 +14,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.wst.sse.core,
  org.eclipse.wst.xml.core,
  org.eclipse.wst.dtd.core,
- org.hibernate.tool.eclipse.orm.core
+ org.hibernate.tool.eclipse.orm.common.core
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Eclipse-BundleShape: dir

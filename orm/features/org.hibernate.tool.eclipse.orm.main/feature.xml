@@ -4,7 +4,7 @@
       label="%featureName"
       version="6.0.0.qualifier"
       provider-name="%providerName"
-      plugin="org.hibernate.tool.eclipse.orm.core"
+      plugin="org.hibernate.tool.eclipse.orm.common.core"
 >
 
    <description url="http://tools.hibernate.org">
@@ -59,7 +59,7 @@
    </requires>
 
    <plugin
-         id="org.hibernate.tool.eclipse.orm.core"
+         id="org.hibernate.tool.eclipse.orm.common.core"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -230,7 +230,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.hibernate.tool.eclipse.orm.ui"
+         id="org.hibernate.tool.eclipse.orm.common.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
