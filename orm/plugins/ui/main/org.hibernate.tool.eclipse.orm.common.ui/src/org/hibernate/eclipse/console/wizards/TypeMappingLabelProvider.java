@@ -24,7 +24,7 @@ package org.hibernate.eclipse.console.wizards;
 import org.eclipse.jface.viewers.ITableLabelProvider;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.graphics.Image;
-import org.hibernate.eclipse.console.model.ITypeMapping;
+import org.hibernate.tool.eclipse.orm.common.core.console.model.ITypeMapping;
 
 public class TypeMappingLabelProvider extends LabelProvider implements ITableLabelProvider {
 

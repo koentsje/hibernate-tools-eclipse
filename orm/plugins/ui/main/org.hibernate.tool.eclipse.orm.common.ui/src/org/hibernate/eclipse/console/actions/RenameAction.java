@@ -24,9 +24,9 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.actions.SelectionListenerAction;
 import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
-import org.hibernate.eclipse.console.utils.LaunchHelper;
+import org.hibernate.tool.eclipse.orm.common.core.console.utils.LaunchHelper;
 
 /**
  * 

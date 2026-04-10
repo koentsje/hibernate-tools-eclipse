@@ -13,7 +13,7 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Text;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
 import org.hibernate.util.xpl.StringHelper;
 
 abstract public class ConsoleConfigurationTab extends AbstractLaunchConfigurationTab {

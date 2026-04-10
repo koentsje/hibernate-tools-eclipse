@@ -42,7 +42,7 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Widget;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.SelectionDialog;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.wizards.UpDownListComposite;
 import org.hibernate.eclipse.jdt.ui.internal.JdtUiMessages;
 

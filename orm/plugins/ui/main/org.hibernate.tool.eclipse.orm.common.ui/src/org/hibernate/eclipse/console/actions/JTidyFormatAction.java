@@ -37,9 +37,9 @@ import org.eclipse.osgi.util.NLS;
 import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
-import org.hibernate.eclipse.utils.XMLPrettyPrinter;
+import org.hibernate.tool.eclipse.orm.common.core.utils.XMLPrettyPrinter;
 
 public class JTidyFormatAction implements IObjectActionDelegate {
 

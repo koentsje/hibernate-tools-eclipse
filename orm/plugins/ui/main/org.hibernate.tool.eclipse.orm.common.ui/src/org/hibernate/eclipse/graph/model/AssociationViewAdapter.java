@@ -25,7 +25,7 @@ import org.eclipse.draw2d.ConnectionRouter;
 import org.eclipse.draw2d.PolygonDecoration;
 import org.eclipse.draw2d.RotatableDecoration;
 import org.eclipse.osgi.util.NLS;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
 
 public abstract class AssociationViewAdapter {
 

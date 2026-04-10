@@ -27,8 +27,10 @@ import org.eclipse.osgi.util.NLS;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.console.KnownConfigurations;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
+import org.hibernate.tool.eclipse.orm.common.core.console.workbench.LazyDatabaseSchema;
+import org.hibernate.tool.eclipse.orm.common.core.console.workbench.LazySessionFactory;
 
 public class ConsoleConfigurationWorkbenchAdapter extends BasicWorkbenchAdapter {
 

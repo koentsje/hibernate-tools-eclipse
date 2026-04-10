@@ -42,9 +42,9 @@ import org.eclipse.wst.xml.core.internal.provisional.document.IDOMDocument;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
-import org.hibernate.eclipse.console.model.IReverseEngineeringDefinition;
+import org.hibernate.tool.eclipse.orm.common.core.console.model.IReverseEngineeringDefinition;
 import org.hibernate.eclipse.console.utils.ProjectUtilsUI;
-import org.hibernate.eclipse.console.workbench.LazyDatabaseSchema;
+import org.hibernate.tool.eclipse.orm.common.core.console.workbench.LazyDatabaseSchema;
 import org.hibernate.eclipse.mapper.MapperMessages;
 import org.hibernate.eclipse.mapper.MapperPlugin;
 import org.hibernate.eclipse.mapper.editors.reveng.RevEngOverviewPage;
@@ -53,7 +53,7 @@ import org.hibernate.eclipse.mapper.editors.reveng.RevEngTablesPage;
 import org.hibernate.eclipse.mapper.editors.reveng.RevEngTypeMappingPage;
 import org.hibernate.eclipse.mapper.editors.xpl.XMLFormEditorPart;
 import org.hibernate.eclipse.mapper.model.DOMReverseEngineeringDefinition;
-import org.hibernate.eclipse.nature.HibernateNature;
+import org.hibernate.tool.eclipse.orm.common.core.nature.HibernateNature;
 import org.hibernate.util.xpl.StringHelper;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IOverrideRepository;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
@@ -197,12 +197,12 @@ public class ReverseEngineeringEditor extends XMLFormEditorPart {
 				}
 			}
 
-			org.hibernate.eclipse.console.model.ITableFilter[] tableFilters = getReverseEngineeringDefinition().getTableFilters();
+			org.hibernate.tool.eclipse.orm.common.core.console.model.ITableFilter[] tableFilters = getReverseEngineeringDefinition().getTableFilters();
 			IService service = configuration.getHibernateExtension().getHibernateService();
 			IOverrideRepository repository = service.newOverrideRepository();
 			boolean hasIncludes = false;
 			for (int i = 0; i < tableFilters.length; i++) {
-				org.hibernate.eclipse.console.model.ITableFilter filter = tableFilters[i];
+				org.hibernate.tool.eclipse.orm.common.core.console.model.ITableFilter filter = tableFilters[i];
 				ITableFilter tf = service.newTableFilter();
 				tf.setExclude(filter.getExclude());
 				if(filter.getExclude()!=null && !filter.getExclude().booleanValue()) {

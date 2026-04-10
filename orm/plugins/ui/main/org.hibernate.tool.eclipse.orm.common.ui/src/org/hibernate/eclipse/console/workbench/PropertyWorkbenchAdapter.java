@@ -26,6 +26,7 @@ import org.eclipse.ui.model.IWorkbenchAdapter;
 import org.hibernate.eclipse.ui.console.workbench.HibernateWorkbenchHelper;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IProperty;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IValue;
+import org.hibernate.tool.eclipse.orm.common.core.console.workbench.ValueTypeNameHelper;
 
 public class PropertyWorkbenchAdapter implements IWorkbenchAdapter {
 	

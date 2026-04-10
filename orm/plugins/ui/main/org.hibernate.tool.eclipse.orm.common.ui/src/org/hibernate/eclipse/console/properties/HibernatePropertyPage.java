@@ -19,7 +19,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.hibernate.eclipse.console.properties;
+package org.hibernate.tool.eclipse.orm.common.core.console.properties;
 
 import java.lang.reflect.InvocationTargetException;
 import java.net.MalformedURLException;
@@ -64,13 +64,13 @@ import org.eclipse.ui.dialogs.PropertyPage;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.console.KnownConfigurations;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
 import org.hibernate.eclipse.console.actions.EditConsoleConfiguration;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.eclipse.console.utils.LaunchHelperUI;
-import org.hibernate.eclipse.console.utils.ProjectUtils;
-import org.hibernate.eclipse.utils.HibernateEclipseUtils;
+import org.hibernate.tool.eclipse.orm.common.core.console.utils.ProjectUtils;
+import org.hibernate.tool.eclipse.orm.common.core.utils.HibernateEclipseUtils;
 import org.osgi.service.prefs.BackingStoreException;
 import org.osgi.service.prefs.Preferences;
 

@@ -46,7 +46,7 @@ import java.util.Map;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.debug.core.ILaunchConfiguration;
-import org.hibernate.eclipse.HibernatePlugin;
+import org.hibernate.tool.eclipse.orm.common.core.HibernatePlugin;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IExporter;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 

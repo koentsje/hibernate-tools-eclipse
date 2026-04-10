@@ -27,7 +27,7 @@ import java.beans.PropertyChangeListener;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.Viewer;
-import org.hibernate.eclipse.console.model.IReverseEngineeringDefinition;
+import org.hibernate.tool.eclipse.orm.common.core.console.model.IReverseEngineeringDefinition;
 
 public class TableFilterContentProvider implements IStructuredContentProvider, PropertyChangeListener {
 

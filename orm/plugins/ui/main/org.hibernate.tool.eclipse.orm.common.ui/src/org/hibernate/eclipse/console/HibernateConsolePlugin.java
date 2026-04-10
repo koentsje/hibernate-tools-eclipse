@@ -62,17 +62,21 @@ import org.hibernate.console.KnownConfigurationsAdapter;
 import org.hibernate.console.KnownConfigurationsListener;
 import org.hibernate.console.preferences.ConsoleConfigurationPreferences;
 import org.hibernate.eclipse.console.actions.AddConfigurationAction;
-import org.hibernate.eclipse.console.utils.LaunchHelper;
+import org.hibernate.tool.eclipse.orm.common.core.console.utils.LaunchHelper;
 import org.hibernate.eclipse.console.workbench.ConfigurationAdapterFactory;
 import org.hibernate.eclipse.criteriaeditor.CriteriaEditorInput;
 import org.hibernate.eclipse.criteriaeditor.CriteriaEditorStorage;
 import org.hibernate.eclipse.hqleditor.HQLEditorInput;
-import org.hibernate.eclipse.hqleditor.HQLEditorStorage;
-import org.hibernate.eclipse.console.launch.ICodeGenerationLaunchConstants;
+import org.hibernate.tool.eclipse.orm.common.core.hqleditor.HQLEditorStorage;
+import org.hibernate.tool.eclipse.orm.common.core.console.launch.ICodeGenerationLaunchConstants;
 import org.hibernate.eclipse.launch.core.refactoring.ConsoleConfigurationRenameProcessor;
 import org.hibernate.eclipse.logging.PluginLogger;
 import org.hibernate.eclipse.logging.xpl.EclipseLogger;
 import org.osgi.framework.BundleContext;
+import org.hibernate.tool.eclipse.orm.common.core.console.EclipseConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.common.core.console.EclipseConsoleConfigurationPreferences;
+import org.hibernate.tool.eclipse.orm.common.core.console.EclipseLaunchConsoleConfigurationPreferences;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
 
 /**
  * The main plugin class to be used in the desktop.

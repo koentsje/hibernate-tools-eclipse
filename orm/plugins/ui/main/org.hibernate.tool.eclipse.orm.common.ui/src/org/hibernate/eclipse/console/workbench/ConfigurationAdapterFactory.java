@@ -40,6 +40,9 @@ import org.hibernate.tool.eclipse.orm.runtime.spi.IPrimaryKey;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IProperty;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ITable;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IValue;
+import org.hibernate.tool.eclipse.orm.common.core.console.workbench.LazyDatabaseSchema;
+import org.hibernate.tool.eclipse.orm.common.core.console.workbench.LazySessionFactory;
+import org.hibernate.tool.eclipse.orm.common.core.console.workbench.TableContainer;
 
 public class ConfigurationAdapterFactory implements IAdapterFactory {
 

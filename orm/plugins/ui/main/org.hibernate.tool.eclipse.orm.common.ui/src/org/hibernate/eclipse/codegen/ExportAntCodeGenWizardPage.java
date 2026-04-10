@@ -45,7 +45,7 @@ import org.eclipse.ui.internal.ide.IDEWorkbenchPlugin;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.console.preferences.ConsoleConfigurationPreferences;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.utils.LaunchHelperUI;
 import org.hibernate.eclipse.launch.CodeGenXMLFactory;
 import org.hibernate.eclipse.launch.ExporterAttributes;

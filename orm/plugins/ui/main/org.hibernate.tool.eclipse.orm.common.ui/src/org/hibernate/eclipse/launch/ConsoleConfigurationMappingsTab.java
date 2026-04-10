@@ -17,12 +17,12 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableItem;
 import org.hibernate.console.ImageConstants;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
 import org.hibernate.eclipse.console.utils.DialogSelectionHelper;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.eclipse.console.wizards.UpDownListComposite;
-import org.hibernate.eclipse.console.launch.IConsoleConfigurationLaunchConstants;
+import org.hibernate.tool.eclipse.orm.common.core.console.launch.IConsoleConfigurationLaunchConstants;
 
 public class ConsoleConfigurationMappingsTab extends ConsoleConfigurationTab {
 

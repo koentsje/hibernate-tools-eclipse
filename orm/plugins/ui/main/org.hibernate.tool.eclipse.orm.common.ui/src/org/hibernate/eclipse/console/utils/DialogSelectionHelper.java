@@ -47,6 +47,7 @@ import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.eclipse.ui.dialogs.FilteredList;
 import org.eclipse.ui.dialogs.SelectionDialog;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.tool.eclipse.orm.common.core.console.utils.ProjectUtils;
 
 /**
  * @author max

@@ -9,7 +9,7 @@
         point="org.eclipse.core.resources.natures">
         <runtime>
             <run
-                class="org.hibernate.eclipse.nature.HibernateNature">
+                class="org.hibernate.tool.eclipse.orm.common.core.nature.HibernateNature">
             </run>
         </runtime>
         <requires-nature
@@ -22,7 +22,7 @@
          name="Hibernate Builder"
          point="org.eclipse.core.resources.builders">
       <builder hasNature="false">
-         <run class="org.hibernate.eclipse.builder.HibernateBuilder"/>
+         <run class="org.hibernate.tool.eclipse.orm.common.core.builder.HibernateBuilder"/>
       </builder>
    </extension>
 

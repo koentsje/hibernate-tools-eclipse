@@ -22,7 +22,7 @@
 package org.hibernate.eclipse.mapper.model;
 
 import org.eclipse.wst.sse.core.internal.provisional.INodeNotifier;
-import org.hibernate.eclipse.console.model.IRevEngParameter;
+import org.hibernate.tool.eclipse.orm.common.core.console.model.IRevEngParameter;
 import org.w3c.dom.Node;
 
 public class RevEngParamAdapter extends DOMAdapter implements IRevEngParameter {

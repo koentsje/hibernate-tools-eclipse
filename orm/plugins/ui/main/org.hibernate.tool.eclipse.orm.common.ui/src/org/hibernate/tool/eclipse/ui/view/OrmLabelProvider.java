@@ -26,7 +26,7 @@ import org.eclipse.swt.widgets.Display;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.console.execution.ExecutionContext;
-import org.hibernate.eclipse.console.HibernateConsoleCorePlugin;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleCorePlugin;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IColumn;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;

@@ -45,9 +45,9 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.ui.ide.IDE;
 import org.hibernate.console.ImageConstants;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
-import org.hibernate.eclipse.console.model.ITableFilter;
+import org.hibernate.tool.eclipse.orm.common.core.console.model.ITableFilter;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 
 /**

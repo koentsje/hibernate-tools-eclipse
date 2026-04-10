@@ -24,7 +24,7 @@ package org.hibernate.eclipse.graph;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPartFactory;
 import org.eclipse.osgi.util.NLS;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.graph.model.AssociationViewAdapter;
 import org.hibernate.eclipse.graph.model.ConfigurationViewAdapter;
 import org.hibernate.eclipse.graph.model.PersistentClassViewAdapter;

@@ -19,7 +19,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.dialogs.ElementTreeSelectionDialog;
 import org.eclipse.ui.dialogs.NewFolderDialog;
 import org.eclipse.ui.views.navigator.ResourceComparator;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
 
 public class FolderSelectionDialog extends ElementTreeSelectionDialog implements ISelectionChangedListener {
 

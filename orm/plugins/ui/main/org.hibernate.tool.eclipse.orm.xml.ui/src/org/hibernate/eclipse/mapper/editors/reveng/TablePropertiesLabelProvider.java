@@ -24,11 +24,11 @@ package org.hibernate.eclipse.mapper.editors.reveng;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.graphics.Image;
 import org.hibernate.console.ImageConstants;
-import org.hibernate.eclipse.console.model.IRevEngColumn;
-import org.hibernate.eclipse.console.model.IRevEngGenerator;
-import org.hibernate.eclipse.console.model.IRevEngParameter;
-import org.hibernate.eclipse.console.model.IRevEngPrimaryKey;
-import org.hibernate.eclipse.console.model.IRevEngTable;
+import org.hibernate.tool.eclipse.orm.common.core.console.model.IRevEngColumn;
+import org.hibernate.tool.eclipse.orm.common.core.console.model.IRevEngGenerator;
+import org.hibernate.tool.eclipse.orm.common.core.console.model.IRevEngParameter;
+import org.hibernate.tool.eclipse.orm.common.core.console.model.IRevEngPrimaryKey;
+import org.hibernate.tool.eclipse.orm.common.core.console.model.IRevEngTable;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.eclipse.mapper.MapperMessages;
 

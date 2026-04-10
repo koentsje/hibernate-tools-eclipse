@@ -31,7 +31,7 @@ import org.eclipse.jpt.jpa.core.JpaProjectManager;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.console.KnownConfigurationsAdapter;
-import org.hibernate.eclipse.console.HibernateConsoleCorePlugin;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleCorePlugin;
 import org.osgi.framework.BundleContext;
 
 /**

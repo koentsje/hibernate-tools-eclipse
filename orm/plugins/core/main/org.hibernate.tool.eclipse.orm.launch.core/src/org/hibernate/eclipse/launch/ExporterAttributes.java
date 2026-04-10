@@ -53,8 +53,8 @@ import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.jdt.core.JavaConventions;
 import org.eclipse.osgi.util.NLS;
 import org.hibernate.console.HibernateConsoleRuntimeException;
-import org.hibernate.eclipse.HibernatePlugin;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.HibernatePlugin;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.launch.model.ExporterDefinition;
 import org.hibernate.eclipse.launch.model.ExporterFactory;
 

@@ -28,7 +28,7 @@ import org.eclipse.ui.part.IPageBookViewPage;
 import org.eclipse.ui.part.MessagePage;
 import org.eclipse.ui.part.PageBook;
 import org.eclipse.ui.part.PageBookView;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.hqleditor.HQLEditor;
 
 public class QueryParametersView extends PageBookView {

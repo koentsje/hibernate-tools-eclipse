@@ -31,7 +31,7 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
 import org.hibernate.console.ImageMap;
-import org.hibernate.eclipse.HibernatePlugin;
+import org.hibernate.tool.eclipse.orm.common.core.HibernatePlugin;
 
 /**
  * @author max

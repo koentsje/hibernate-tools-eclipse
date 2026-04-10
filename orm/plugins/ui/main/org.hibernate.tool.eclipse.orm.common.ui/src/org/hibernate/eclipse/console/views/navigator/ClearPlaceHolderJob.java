@@ -16,7 +16,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.viewers.AbstractTreeViewer;
 import org.eclipse.ui.progress.UIJob;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.views.navigator.PendingJob.NonConflictingRule;
 
 public class ClearPlaceHolderJob extends UIJob {

@@ -21,7 +21,7 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.ViewPart;
 import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
 import org.hibernate.console.IHibernateExtension;
 import org.hibernate.eclipse.hqleditor.HQLEditor;
 import org.hibernate.eclipse.hqleditor.HQLEditorDocumentSetupParticipant;

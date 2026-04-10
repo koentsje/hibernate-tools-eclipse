@@ -23,7 +23,7 @@ package org.hibernate.eclipse.graph;
 
 
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.hibernate.eclipse.console.ConsolePreferencesConstants;
+import org.hibernate.tool.eclipse.orm.common.core.console.ConsolePreferencesConstants;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
 import org.hibernate.eclipse.console.views.KnownConfigurationsView;
 import org.hibernate.eclipse.graph.model.ConfigurationViewAdapter;

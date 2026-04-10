@@ -24,12 +24,12 @@ import org.eclipse.ui.PlatformUI;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.console.preferences.ConsoleConfigurationPreferences.ConfigurationMode;
-import org.hibernate.eclipse.console.EclipseConsoleConfiguration;
-import org.hibernate.eclipse.console.EclipseConsoleConfigurationPreferences;
+import org.hibernate.tool.eclipse.orm.common.core.console.EclipseConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.common.core.console.EclipseConsoleConfigurationPreferences;
 import org.hibernate.eclipse.console.test.HibernateConsoleTest;
 import org.hibernate.eclipse.console.test.project.JavaProjectHelper;
 import org.hibernate.eclipse.console.test.project.SimpleTestProject;
-import org.hibernate.eclipse.console.utils.ProjectUtils;
+import org.hibernate.tool.eclipse.orm.common.core.console.utils.ProjectUtils;
 import org.hibernate.eclipse.jdt.ui.internal.HQLDetector;
 import org.hibernate.eclipse.jdt.ui.internal.HQLProblem;
 

@@ -26,9 +26,10 @@ import org.eclipse.osgi.util.NLS;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.console.node.BaseNode;
 import org.hibernate.console.node.NodeFactory;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
+import org.hibernate.tool.eclipse.orm.common.core.console.workbench.LazySessionFactory;
 
 public class LazySessionFactoryAdapter extends BasicWorkbenchAdapter {
 

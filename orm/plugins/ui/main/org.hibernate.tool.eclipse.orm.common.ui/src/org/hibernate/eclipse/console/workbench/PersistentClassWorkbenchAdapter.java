@@ -30,7 +30,7 @@ import org.eclipse.ui.model.IWorkbenchAdapter;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.eclipse.ui.console.workbench.HibernateWorkbenchHelper;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
-import org.hibernate.eclipse.utils.JoinedIterator;
+import org.hibernate.tool.eclipse.orm.common.core.utils.JoinedIterator;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IProperty;
 

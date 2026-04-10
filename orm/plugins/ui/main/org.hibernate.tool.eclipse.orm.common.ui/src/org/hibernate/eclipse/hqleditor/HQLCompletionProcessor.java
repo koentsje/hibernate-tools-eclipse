@@ -35,12 +35,12 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.jface.text.contentassist.IContextInformation;
 import org.eclipse.jface.text.contentassist.IContextInformationValidator;
 import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
-import org.hibernate.eclipse.console.QueryEditor;
+import org.hibernate.tool.eclipse.orm.common.core.console.QueryEditor;
 import org.hibernate.eclipse.ui.console.common.CompletionProposalsResult;
 import org.hibernate.eclipse.launch.exporter.ConsoleExtension;
-import org.hibernate.eclipse.console.common.HibernateExtension;
+import org.hibernate.tool.eclipse.orm.common.core.console.common.HibernateExtension;
 import org.hibernate.eclipse.ui.console.common.ConsoleExtensionUI;
 
 /**

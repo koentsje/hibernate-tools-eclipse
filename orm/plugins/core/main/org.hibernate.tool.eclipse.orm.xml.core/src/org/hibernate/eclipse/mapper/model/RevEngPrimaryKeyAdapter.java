@@ -24,9 +24,9 @@ package org.hibernate.eclipse.mapper.model;
 import java.util.List;
 
 import org.eclipse.wst.sse.core.internal.provisional.INodeNotifier;
-import org.hibernate.eclipse.console.model.IRevEngColumn;
-import org.hibernate.eclipse.console.model.IRevEngGenerator;
-import org.hibernate.eclipse.console.model.IRevEngPrimaryKey;
+import org.hibernate.tool.eclipse.orm.common.core.console.model.IRevEngColumn;
+import org.hibernate.tool.eclipse.orm.common.core.console.model.IRevEngGenerator;
+import org.hibernate.tool.eclipse.orm.common.core.console.model.IRevEngPrimaryKey;
 import org.hibernate.eclipse.mapper.MapperMessages;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;

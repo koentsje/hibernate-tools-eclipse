@@ -29,7 +29,7 @@ import org.eclipse.ui.actions.SelectionListenerAction;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.console.QueryPage;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 
 /**

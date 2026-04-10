@@ -44,17 +44,17 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.console.preferences.ConsoleConfigurationPreferences.ConfigurationMode;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
 import org.hibernate.eclipse.console.utils.DialogSelectionHelper;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
-import org.hibernate.eclipse.console.utils.ProjectUtils;
+import org.hibernate.tool.eclipse.orm.common.core.console.utils.ProjectUtils;
 import org.hibernate.eclipse.console.wizards.NewConfigurationWizard;
 import org.hibernate.eclipse.console.wizards.NewConfigurationWizardPage;
-import org.hibernate.eclipse.utils.HibernateEclipseUtils;
+import org.hibernate.tool.eclipse.orm.common.core.utils.HibernateEclipseUtils;
 import org.hibernate.util.xpl.StringHelper;
 import org.hibernate.tool.eclipse.orm.runtime.spi.RuntimeServiceManager;
-import org.hibernate.eclipse.console.launch.IConsoleConfigurationLaunchConstants;
+import org.hibernate.tool.eclipse.orm.common.core.console.launch.IConsoleConfigurationLaunchConstants;
 
 @SuppressWarnings("restriction")
 public class ConsoleConfigurationMainTab extends ConsoleConfigurationTab {

@@ -30,7 +30,7 @@ import org.eclipse.ui.actions.SelectionListenerAction;
 import org.eclipse.ui.part.MultiPageEditorPart;
 import org.eclipse.ui.texteditor.ITextEditor;
 import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
 import org.hibernate.eclipse.console.utils.OpenMappingUtils;
 import org.hibernate.eclipse.console.utils.ProjectUtilsUI;

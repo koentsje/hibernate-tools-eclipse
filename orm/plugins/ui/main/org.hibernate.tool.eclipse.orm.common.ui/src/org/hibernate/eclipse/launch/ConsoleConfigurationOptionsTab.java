@@ -16,11 +16,11 @@ import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Text;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
 import org.hibernate.eclipse.console.utils.DialogSelectionHelper;
-import org.hibernate.eclipse.console.utils.DriverClassHelpers;
-import org.hibernate.eclipse.console.launch.IConsoleConfigurationLaunchConstants;
+import org.hibernate.tool.eclipse.orm.common.core.console.utils.DriverClassHelpers;
+import org.hibernate.tool.eclipse.orm.common.core.console.launch.IConsoleConfigurationLaunchConstants;
 import org.xml.sax.EntityResolver;
 
 public class ConsoleConfigurationOptionsTab extends ConsoleConfigurationTab {

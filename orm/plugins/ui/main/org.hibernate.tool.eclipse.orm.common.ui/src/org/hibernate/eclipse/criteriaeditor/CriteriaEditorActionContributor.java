@@ -27,7 +27,7 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.editors.text.TextEditorActionContributor;
 import org.eclipse.ui.part.EditorActionBarContributor;
-import org.hibernate.eclipse.console.QueryEditor;
+import org.hibernate.tool.eclipse.orm.common.core.console.QueryEditor;
 import org.hibernate.eclipse.console.actions.ExecuteQueryAction;
 
 

@@ -22,8 +22,8 @@
 package org.hibernate.eclipse.criteriaeditor;
 
 import org.eclipse.core.runtime.IPath;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.QueryEditorStorage;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.QueryEditorStorage;
 
 /**
  * Storage for Criteria editors without a file

@@ -29,7 +29,7 @@ import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.eclipse.console.actions.OpenMappingAction;
 import org.hibernate.eclipse.console.actions.OpenSourceAction;
-import org.hibernate.eclipse.console.utils.ProjectUtils;
+import org.hibernate.tool.eclipse.orm.common.core.console.utils.ProjectUtils;
 import org.hibernate.eclipse.console.workbench.ConfigurationWorkbenchAdapter;
 import org.hibernate.eclipse.console.workbench.ConsoleConfigurationWorkbenchAdapter;
 import org.hibernate.eclipse.console.workbench.PersistentClassWorkbenchAdapter;

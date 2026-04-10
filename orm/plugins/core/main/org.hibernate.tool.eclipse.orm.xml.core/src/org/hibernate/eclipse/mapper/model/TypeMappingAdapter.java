@@ -22,7 +22,7 @@
 package org.hibernate.eclipse.mapper.model;
 
 import org.eclipse.wst.sse.core.internal.provisional.INodeNotifier;
-import org.hibernate.eclipse.console.model.ITypeMapping;
+import org.hibernate.tool.eclipse.orm.common.core.console.model.ITypeMapping;
 import org.w3c.dom.Node;
 
 public class TypeMappingAdapter extends DOMAdapter implements ITypeMapping {

@@ -24,7 +24,7 @@ package org.hibernate.eclipse.launch;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.debug.core.IStatusHandler;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
 
 public class GeneralExceptionStatusHandler implements IStatusHandler {

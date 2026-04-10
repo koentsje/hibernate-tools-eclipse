@@ -25,7 +25,7 @@ import org.eclipse.ui.views.properties.IPropertySource;
 import org.eclipse.ui.views.properties.IPropertySourceProvider;
 import org.hibernate.console.QueryPage;
 import org.hibernate.eclipse.launch.exporter.ConsoleExtension;
-import org.hibernate.eclipse.console.common.HibernateExtension;
+import org.hibernate.tool.eclipse.orm.common.core.console.common.HibernateExtension;
 import org.hibernate.eclipse.console.views.QueryPageTabView;
 import org.hibernate.eclipse.ui.console.common.ConsoleExtensionUI;
 

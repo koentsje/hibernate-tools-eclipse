@@ -16,7 +16,8 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.widgets.Display;
 import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.eclipse.console.utils.ProjectUtils;
+import org.hibernate.tool.eclipse.orm.common.core.console.utils.ProjectUtils;
+import org.hibernate.tool.eclipse.orm.common.core.console.workbench.Messages;
 
 /**
  * @author Dmitry Geraskov (geraskov@gmail.com)

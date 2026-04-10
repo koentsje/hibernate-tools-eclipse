@@ -27,7 +27,7 @@ import org.eclipse.jdt.ui.text.java.IInvocationContext;
 import org.eclipse.jdt.ui.text.java.IJavaCompletionProposal;
 import org.eclipse.jdt.ui.text.java.IProblemLocation;
 import org.eclipse.jdt.ui.text.java.IQuickAssistProcessor;
-import org.hibernate.eclipse.nature.HibernateNature;
+import org.hibernate.tool.eclipse.orm.common.core.nature.HibernateNature;
 
 public abstract class BasicQuickAssistProcessor implements IQuickAssistProcessor{
 

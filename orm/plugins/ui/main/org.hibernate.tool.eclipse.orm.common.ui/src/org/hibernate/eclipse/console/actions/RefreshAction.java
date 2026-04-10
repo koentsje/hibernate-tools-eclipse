@@ -26,7 +26,7 @@ import java.util.List;
 
 import org.eclipse.jface.viewers.StructuredViewer;
 import org.eclipse.ui.actions.SelectionListenerAction;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
 
 /**

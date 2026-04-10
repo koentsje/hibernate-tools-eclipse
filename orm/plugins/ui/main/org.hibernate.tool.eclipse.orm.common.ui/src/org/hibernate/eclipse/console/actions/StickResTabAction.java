@@ -15,7 +15,7 @@ import org.eclipse.jface.text.ITextViewer;
 import org.eclipse.ui.texteditor.ITextEditor;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.eclipse.console.AbstractQueryEditor;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 
 /**

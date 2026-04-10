@@ -12,7 +12,7 @@ package org.hibernate.tool.eclipse.ui.diagram.editors.model;
 
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.execution.ExecutionContext.Command;
-import org.hibernate.eclipse.console.HibernateConsoleCorePlugin;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleCorePlugin;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IType;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IValue;
 

@@ -35,10 +35,10 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.model.IReverseEngineeringDefinition;
-import org.hibernate.eclipse.console.model.ITableFilter;
-import org.hibernate.eclipse.console.model.impl.ReverseEngineeringDefinitionImpl;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.model.IReverseEngineeringDefinition;
+import org.hibernate.tool.eclipse.orm.common.core.console.model.ITableFilter;
+import org.hibernate.tool.eclipse.orm.common.core.console.model.impl.ReverseEngineeringDefinitionImpl;
 import org.hibernate.eclipse.console.utils.LaunchHelperUI;
 
 

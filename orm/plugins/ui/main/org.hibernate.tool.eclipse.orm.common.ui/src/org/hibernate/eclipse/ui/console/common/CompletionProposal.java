@@ -28,7 +28,7 @@ import org.eclipse.jface.text.contentassist.ICompletionProposalExtension;
 import org.eclipse.jface.text.contentassist.IContextInformation;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Point;
-import org.hibernate.eclipse.HibernatePlugin;
+import org.hibernate.tool.eclipse.orm.common.core.HibernatePlugin;
 
 /**
  * Generic completion proposal to be used as is, or as base for other completion proposals.

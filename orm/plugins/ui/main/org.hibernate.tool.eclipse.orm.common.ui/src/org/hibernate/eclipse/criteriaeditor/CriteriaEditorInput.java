@@ -23,7 +23,7 @@ package org.hibernate.eclipse.criteriaeditor;
 
 import org.eclipse.core.resources.IStorage;
 import org.eclipse.ui.IMemento;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.QueryEditorInput;
 
 /**

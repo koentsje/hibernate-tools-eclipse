@@ -9,6 +9,7 @@ import org.eclipse.debug.internal.ui.DebugUIPlugin;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.tool.eclipse.orm.common.core.console.utils.LaunchHelper;
 
 @SuppressWarnings("restriction")
 public class LaunchHelperUI {

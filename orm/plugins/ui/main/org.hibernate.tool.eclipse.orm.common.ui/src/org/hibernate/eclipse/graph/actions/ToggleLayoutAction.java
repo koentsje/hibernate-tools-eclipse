@@ -25,7 +25,7 @@ import org.eclipse.core.runtime.Preferences;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IAction;
 import org.hibernate.console.ImageConstants;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.eclipse.graph.AbstractGraphViewPart;

@@ -54,8 +54,8 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.hibernate.console.ConnectionProfileUtil;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.utils.DriverClassHelpers;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.utils.DriverClassHelpers;
 import org.hibernate.tool.eclipse.orm.runtime.spi.RuntimeServiceManager;
 
 /**

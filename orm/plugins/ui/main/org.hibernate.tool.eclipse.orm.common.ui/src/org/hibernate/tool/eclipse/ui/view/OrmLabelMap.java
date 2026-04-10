@@ -11,7 +11,7 @@
 package org.hibernate.tool.eclipse.ui.view;
 
 import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.eclipse.console.workbench.ValueTypeNameHelper;
+import org.hibernate.tool.eclipse.orm.common.core.console.workbench.ValueTypeNameHelper;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IColumn;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IProperty;

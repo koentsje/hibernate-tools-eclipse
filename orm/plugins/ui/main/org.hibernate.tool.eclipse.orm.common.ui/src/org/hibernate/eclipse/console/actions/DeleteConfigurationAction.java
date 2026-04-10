@@ -30,7 +30,7 @@ import org.eclipse.jface.viewers.StructuredViewer;
 import org.eclipse.ui.actions.SelectionListenerAction;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.KnownConfigurations;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
 
 /**
  * @author max

@@ -6,7 +6,7 @@ import org.eclipse.jface.viewers.StructuredViewer;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.HibernateConsoleRuntimeException;
 import org.hibernate.console.ImageConstants;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
 import org.hibernate.eclipse.console.actions.ConsoleConfigurationBasedAction;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;

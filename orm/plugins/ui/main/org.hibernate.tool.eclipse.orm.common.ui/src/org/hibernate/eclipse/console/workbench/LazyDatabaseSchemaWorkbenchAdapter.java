@@ -35,7 +35,7 @@ import org.eclipse.osgi.util.NLS;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.console.execution.ExecutionContext;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.tool.eclipse.orm.runtime.spi.HibernateException;
@@ -43,6 +43,8 @@ import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IProgressListener;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IReverseEngineeringStrategy;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ITable;
+import org.hibernate.tool.eclipse.orm.common.core.console.workbench.LazyDatabaseSchema;
+import org.hibernate.tool.eclipse.orm.common.core.console.workbench.TableContainer;
 
 public class LazyDatabaseSchemaWorkbenchAdapter extends BasicWorkbenchAdapter {
 	

@@ -26,8 +26,8 @@ import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.ltk.core.refactoring.Change;
 import org.eclipse.ltk.core.refactoring.RefactoringStatus;
 import org.eclipse.ltk.core.refactoring.participants.RenameArguments;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.launch.IConsoleConfigurationLaunchConstants;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.launch.IConsoleConfigurationLaunchConstants;
 
 /**
  * @author Dmitry Geraskov

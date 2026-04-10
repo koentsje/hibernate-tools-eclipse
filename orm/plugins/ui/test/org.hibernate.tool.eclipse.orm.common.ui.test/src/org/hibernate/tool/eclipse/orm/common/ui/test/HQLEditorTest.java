@@ -34,7 +34,7 @@ import org.eclipse.ui.part.IPage;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.console.QueryInputModel;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
 import org.hibernate.eclipse.console.views.QueryParametersPage;
 import org.hibernate.eclipse.console.views.QueryParametersView;

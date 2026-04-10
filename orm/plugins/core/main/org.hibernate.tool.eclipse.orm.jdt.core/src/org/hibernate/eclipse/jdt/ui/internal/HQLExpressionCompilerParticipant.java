@@ -11,8 +11,8 @@ import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.ASTParser;
 import org.eclipse.jdt.core.dom.CompilationUnit;
 import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.eclipse.console.utils.ProjectUtils;
-import org.hibernate.eclipse.nature.HibernateNature;
+import org.hibernate.tool.eclipse.orm.common.core.console.utils.ProjectUtils;
+import org.hibernate.tool.eclipse.orm.common.core.nature.HibernateNature;
 
 public class HQLExpressionCompilerParticipant extends CompilationParticipant {
 

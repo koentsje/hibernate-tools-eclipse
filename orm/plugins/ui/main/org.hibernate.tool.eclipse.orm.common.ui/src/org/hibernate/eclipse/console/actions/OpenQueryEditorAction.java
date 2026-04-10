@@ -6,7 +6,7 @@ import org.eclipse.jface.viewers.TreeSelection;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.ui.actions.SelectionListenerAction;
 import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.eclipse.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
 
 public abstract class OpenQueryEditorAction extends SelectionListenerAction {

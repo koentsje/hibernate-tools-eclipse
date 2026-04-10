@@ -37,7 +37,7 @@ import org.eclipse.swt.graphics.ImageData;
 import org.eclipse.swt.graphics.ImageLoader;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 import org.eclipse.ui.dialogs.SaveAsDialog;
-import org.hibernate.eclipse.console.HibernateConsoleCorePlugin;
+import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleCorePlugin;
 import org.hibernate.tool.eclipse.ui.diagram.DiagramViewerMessages;
 import org.hibernate.tool.eclipse.ui.diagram.editors.DiagramViewer;
 

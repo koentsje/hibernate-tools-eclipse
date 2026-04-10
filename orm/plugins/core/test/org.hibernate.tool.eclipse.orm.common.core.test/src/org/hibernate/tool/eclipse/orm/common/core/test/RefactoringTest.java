@@ -26,7 +26,7 @@ import org.eclipse.jdt.internal.launching.DefaultProjectClasspathEntry;
 import org.eclipse.jdt.internal.launching.RuntimeClasspathEntry;
 import org.eclipse.jdt.launching.IRuntimeClasspathEntry;
 import org.hibernate.eclipse.launch.HibernateLaunchConstants;
-import org.hibernate.eclipse.console.launch.IConsoleConfigurationLaunchConstants;
+import org.hibernate.tool.eclipse.orm.common.core.console.launch.IConsoleConfigurationLaunchConstants;
 import org.hibernate.eclipse.launch.core.refactoring.HibernateRefactoringUtil;
 import org.hibernate.tool.eclipse.orm.common.core.test.utils.TestConsoleMessages;
 import org.hibernate.tool.eclipse.orm.common.core.test.utils.TestLaunchConfig;
