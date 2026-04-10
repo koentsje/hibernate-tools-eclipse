@@ -36,7 +36,7 @@ import org.eclipse.swt.widgets.TableItem;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.reveng.IReverseEngineeringDefinition;
-import org.hibernate.tool.eclipse.orm.base.core.console.model.ITypeMapping;
+import org.hibernate.tool.eclipse.orm.model.core.ITypeMapping;
 import org.hibernate.eclipse.console.wizards.TreeToTableComposite;
 import org.hibernate.eclipse.console.wizards.TypeMappingCellModifier;
 import org.hibernate.eclipse.console.wizards.TypeMappingContentProvider;

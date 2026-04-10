@@ -19,9 +19,9 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.hibernate.tool.eclipse.orm.base.core.console.model.impl;
+package org.hibernate.tool.eclipse.orm.model.core.impl;
 
-import org.hibernate.tool.eclipse.orm.base.core.console.model.ITypeMapping;
+import org.hibernate.tool.eclipse.orm.model.core.ITypeMapping;
 
 public class TypeMappingImpl implements ITypeMapping {
 

@@ -25,7 +25,7 @@ import org.eclipse.jface.viewers.ITableLabelProvider;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.graphics.Image;
 import org.hibernate.console.ImageConstants;
-import org.hibernate.tool.eclipse.orm.base.core.console.model.ITableFilter;
+import org.hibernate.tool.eclipse.orm.model.core.ITableFilter;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 
 public class TableFilterLabelProvider extends LabelProvider implements ITableLabelProvider {

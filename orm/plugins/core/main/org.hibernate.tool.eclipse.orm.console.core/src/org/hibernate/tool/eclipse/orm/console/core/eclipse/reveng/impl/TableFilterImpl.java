@@ -24,7 +24,7 @@ package org.hibernate.tool.eclipse.orm.console.core.eclipse.reveng.impl;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ITableFilter;
 
-public class TableFilterImpl implements org.hibernate.tool.eclipse.orm.base.core.console.model.ITableFilter {
+public class TableFilterImpl implements org.hibernate.tool.eclipse.orm.model.core.ITableFilter {
 
 	ITableFilter tf = null;
 	private final ReverseEngineeringDefinitionImpl revModel;

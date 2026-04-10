@@ -1,4 +1,4 @@
-package org.hibernate.tool.eclipse.orm.base.core.console.model;
+package org.hibernate.tool.eclipse.orm.model.core;
 
 public interface IConsoleConfigurationNameProvider {
 	

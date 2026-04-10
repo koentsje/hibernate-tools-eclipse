@@ -19,21 +19,32 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.hibernate.tool.eclipse.orm.base.core.console.model;
+package org.hibernate.tool.eclipse.orm.model.core;
 
-public interface IRevEngTable extends Notifiable {
+public interface ITypeMapping {
 
-	String getCatalog();
-	String getSchema();
-	String getName();
+	String getJDBCType();
+
+	String getHibernateType();
+
+	Integer getLength();
+
+	Integer getPrecision();
+
+	Integer getScale();
+
+	void setJDBCType(String string);
+
+	void setLength(Integer string);
+
+	void setHibernateType(String string);
+
+	void setPrecision(Integer string);
+
+	void setScale(Integer integer);
+
+	Boolean getNullable();
 	
-	IRevEngPrimaryKey getPrimaryKey();
-	IRevEngColumn[] getColumns();
-	void setName(String value);
-	void setCatalog(String value);
-	void setSchema(String value);
-	void addColumn(IRevEngColumn revCol);
-	void addPrimaryKey();
-	void setClassname(String classname);
-	String getClassname();
+	void setNullable(Boolean value);
+
 }

@@ -24,7 +24,7 @@ package org.hibernate.eclipse.console.wizards;
 import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.widgets.TableItem;
-import org.hibernate.tool.eclipse.orm.base.core.console.model.ITableFilter;
+import org.hibernate.tool.eclipse.orm.model.core.ITableFilter;
 
 final class TableFilterCellModifier implements ICellModifier {
 	private final TableViewer tv;

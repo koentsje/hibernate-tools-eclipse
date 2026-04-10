@@ -19,24 +19,15 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.hibernate.tool.eclipse.orm.base.core.console.model;
+package org.hibernate.tool.eclipse.orm.model.core;
 
-public interface ITableFilter {
+public interface IRevEngGenerator extends Notifiable {
 
-	void setExclude(Boolean exclude);
+	String getGeneratorClassName();
+	
+	IRevEngParameter[] getParameters();
 
-	void setMatchCatalog(String catalog);
+	void setGeneratorClassName(String value);
 
-	void setMatchSchema(String schema);
-
-	void setMatchName(String name);
-
-	Boolean getExclude();
-
-	String getMatchCatalog();
-
-	String getMatchSchema();
-
-	String getMatchName();
-
+	void addParameter();
 }

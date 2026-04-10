@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Hibernate ORM Model Core
+Bundle-SymbolicName: org.hibernate.tool.eclipse.orm.model.core
+Bundle-Version: 6.0.0.qualifier
+Bundle-Vendor: hibernate.org
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: org.hibernate.tool.eclipse.orm.model.core,
+ org.hibernate.tool.eclipse.orm.model.core.impl

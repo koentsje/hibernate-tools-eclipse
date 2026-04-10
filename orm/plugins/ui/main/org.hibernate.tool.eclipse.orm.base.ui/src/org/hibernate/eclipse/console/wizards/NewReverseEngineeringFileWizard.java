@@ -47,7 +47,7 @@ import org.eclipse.ui.ide.IDE;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
-import org.hibernate.tool.eclipse.orm.base.core.console.model.ITableFilter;
+import org.hibernate.tool.eclipse.orm.model.core.ITableFilter;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 
 /**

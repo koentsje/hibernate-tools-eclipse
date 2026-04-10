@@ -24,7 +24,7 @@ package org.hibernate.eclipse.console.wizards;
 import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.widgets.TableItem;
-import org.hibernate.tool.eclipse.orm.base.core.console.model.ITypeMapping;
+import org.hibernate.tool.eclipse.orm.model.core.ITypeMapping;
 
 final public class TypeMappingCellModifier implements ICellModifier {
 	private final TableViewer tv;

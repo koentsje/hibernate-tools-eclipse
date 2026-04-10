@@ -19,12 +19,21 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.hibernate.tool.eclipse.orm.base.core.console.model;
+package org.hibernate.tool.eclipse.orm.model.core;
 
-public interface IRevEngParameter extends Notifiable {
+public interface IRevEngTable extends Notifiable {
 
+	String getCatalog();
+	String getSchema();
 	String getName();
-	String getValue();
+	
+	IRevEngPrimaryKey getPrimaryKey();
+	IRevEngColumn[] getColumns();
 	void setName(String value);
-	void setValue(String value);
+	void setCatalog(String value);
+	void setSchema(String value);
+	void addColumn(IRevEngColumn revCol);
+	void addPrimaryKey();
+	void setClassname(String classname);
+	String getClassname();
 }

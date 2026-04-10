@@ -22,8 +22,8 @@
 package org.hibernate.eclipse.mapper.model;
 
 import org.eclipse.wst.sse.core.internal.provisional.INodeNotifier;
-import org.hibernate.tool.eclipse.orm.base.core.console.model.IRevEngGenerator;
-import org.hibernate.tool.eclipse.orm.base.core.console.model.IRevEngParameter;
+import org.hibernate.tool.eclipse.orm.model.core.IRevEngGenerator;
+import org.hibernate.tool.eclipse.orm.model.core.IRevEngParameter;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 

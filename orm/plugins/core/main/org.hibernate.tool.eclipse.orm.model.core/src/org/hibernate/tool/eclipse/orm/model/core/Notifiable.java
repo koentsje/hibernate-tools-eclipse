@@ -19,13 +19,15 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.hibernate.tool.eclipse.orm.base.core.console.model;
+package org.hibernate.tool.eclipse.orm.model.core;
 
-public interface IRevEngPrimaryKey extends Notifiable {
+import java.beans.PropertyChangeListener;
 
-	IRevEngGenerator getGenerator();
-	IRevEngColumn[] getColumns();
-	void addGenerator();
-	void addColumn();
-	
+public interface Notifiable {
+
+	public void addPropertyChangeListener(PropertyChangeListener pcl);
+	public void removePropertyChangeListener(PropertyChangeListener pcl);
+	public void addPropertyChangeListener(String property, PropertyChangeListener pcl);
+	public void removePropertyChangeListener(String property, PropertyChangeListener pcl);
+
 }

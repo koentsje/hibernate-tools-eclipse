@@ -73,6 +73,13 @@
          unpack="false"/>
 
    <plugin
+         id="org.hibernate.tool.eclipse.orm.model.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
          id="org.hibernate.tool.eclipse.orm.base.core"
          download-size="0"
          install-size="0"

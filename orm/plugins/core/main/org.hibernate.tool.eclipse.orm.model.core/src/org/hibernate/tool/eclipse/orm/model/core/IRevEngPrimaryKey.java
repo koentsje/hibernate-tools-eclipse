@@ -19,19 +19,13 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.hibernate.tool.eclipse.orm.base.core.console.model;
+package org.hibernate.tool.eclipse.orm.model.core;
 
-public interface IRevEngColumn extends Notifiable {
+public interface IRevEngPrimaryKey extends Notifiable {
 
-	String getJDBCType();
-	String getType();
-	String getPropertyName();
-	boolean getExclude();
-	String getName();
-	void setName(String value);
-	void setPropertyName(String value);
-	void setJDBCType(String value);
-	void setType(String value);
-	void setExcluded(boolean selection);
-		
+	IRevEngGenerator getGenerator();
+	IRevEngColumn[] getColumns();
+	void addGenerator();
+	void addColumn();
+	
 }

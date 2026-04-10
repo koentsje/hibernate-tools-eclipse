@@ -24,13 +24,13 @@ package org.hibernate.tool.eclipse.orm.console.core.eclipse.reveng;
 import java.beans.PropertyChangeListener;
 
 import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.tool.eclipse.orm.base.core.console.model.IRevEngColumn;
-import org.hibernate.tool.eclipse.orm.base.core.console.model.IRevEngGenerator;
-import org.hibernate.tool.eclipse.orm.base.core.console.model.IRevEngParameter;
-import org.hibernate.tool.eclipse.orm.base.core.console.model.IRevEngPrimaryKey;
-import org.hibernate.tool.eclipse.orm.base.core.console.model.IRevEngTable;
-import org.hibernate.tool.eclipse.orm.base.core.console.model.ITableFilter;
-import org.hibernate.tool.eclipse.orm.base.core.console.model.ITypeMapping;
+import org.hibernate.tool.eclipse.orm.model.core.IRevEngColumn;
+import org.hibernate.tool.eclipse.orm.model.core.IRevEngGenerator;
+import org.hibernate.tool.eclipse.orm.model.core.IRevEngParameter;
+import org.hibernate.tool.eclipse.orm.model.core.IRevEngPrimaryKey;
+import org.hibernate.tool.eclipse.orm.model.core.IRevEngTable;
+import org.hibernate.tool.eclipse.orm.model.core.ITableFilter;
+import org.hibernate.tool.eclipse.orm.model.core.ITypeMapping;
 
 public interface IReverseEngineeringDefinition {
 

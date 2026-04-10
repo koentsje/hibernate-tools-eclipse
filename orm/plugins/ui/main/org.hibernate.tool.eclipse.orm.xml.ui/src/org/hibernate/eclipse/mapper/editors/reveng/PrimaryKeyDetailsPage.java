@@ -35,7 +35,7 @@ import org.eclipse.ui.forms.IDetailsPage;
 import org.eclipse.ui.forms.IFormPart;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
-import org.hibernate.tool.eclipse.orm.base.core.console.model.IRevEngPrimaryKey;
+import org.hibernate.tool.eclipse.orm.model.core.IRevEngPrimaryKey;
 import org.hibernate.eclipse.mapper.MapperMessages;
 
 public class PrimaryKeyDetailsPage extends RevEngDetailsPage implements

@@ -37,7 +37,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.reveng.IReverseEngineeringDefinition;
-import org.hibernate.tool.eclipse.orm.base.core.console.model.ITableFilter;
+import org.hibernate.tool.eclipse.orm.model.core.ITableFilter;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.reveng.impl.ReverseEngineeringDefinitionImpl;
 import org.hibernate.eclipse.console.utils.LaunchHelperUI;
 

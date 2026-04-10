@@ -19,32 +19,12 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.hibernate.tool.eclipse.orm.base.core.console.model;
+package org.hibernate.tool.eclipse.orm.model.core;
 
-public interface ITypeMapping {
+public interface IRevEngParameter extends Notifiable {
 
-	String getJDBCType();
-
-	String getHibernateType();
-
-	Integer getLength();
-
-	Integer getPrecision();
-
-	Integer getScale();
-
-	void setJDBCType(String string);
-
-	void setLength(Integer string);
-
-	void setHibernateType(String string);
-
-	void setPrecision(Integer string);
-
-	void setScale(Integer integer);
-
-	Boolean getNullable();
-	
-	void setNullable(Boolean value);
-
+	String getName();
+	String getValue();
+	void setName(String value);
+	void setValue(String value);
 }

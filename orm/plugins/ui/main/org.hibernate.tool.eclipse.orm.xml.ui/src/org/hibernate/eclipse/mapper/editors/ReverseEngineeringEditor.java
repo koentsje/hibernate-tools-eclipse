@@ -197,12 +197,12 @@ public class ReverseEngineeringEditor extends XMLFormEditorPart {
 				}
 			}
 
-			org.hibernate.tool.eclipse.orm.base.core.console.model.ITableFilter[] tableFilters = getReverseEngineeringDefinition().getTableFilters();
+			org.hibernate.tool.eclipse.orm.model.core.ITableFilter[] tableFilters = getReverseEngineeringDefinition().getTableFilters();
 			IService service = configuration.getHibernateExtension().getHibernateService();
 			IOverrideRepository repository = service.newOverrideRepository();
 			boolean hasIncludes = false;
 			for (int i = 0; i < tableFilters.length; i++) {
-				org.hibernate.tool.eclipse.orm.base.core.console.model.ITableFilter filter = tableFilters[i];
+				org.hibernate.tool.eclipse.orm.model.core.ITableFilter filter = tableFilters[i];
 				ITableFilter tf = service.newTableFilter();
 				tf.setExclude(filter.getExclude());
 				if(filter.getExclude()!=null && !filter.getExclude().booleanValue()) {
