@@ -38,10 +38,10 @@ import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
 import org.hibernate.eclipse.ui.console.common.CompletionProposalsResult;
 import org.hibernate.eclipse.launch.exporter.ConsoleExtension;
-import org.hibernate.tool.eclipse.orm.common.core.console.common.HibernateExtension;
+import org.hibernate.tool.eclipse.orm.console.core.eclipse.common.HibernateExtension;
 import org.hibernate.eclipse.ui.console.common.ConsoleExtensionUI;
 import org.hibernate.eclipse.hqleditor.HQLCompletionProcessor;
-import org.hibernate.tool.eclipse.orm.common.core.nature.HibernateNature;
+import org.hibernate.tool.eclipse.orm.console.core.eclipse.nature.HibernateNature;
 
 public class HQLJavaCompletionProposalComputer implements IJavaCompletionProposalComputer {
 

@@ -26,12 +26,12 @@ import java.beans.PropertyChangeListener;
 
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
-import org.hibernate.tool.eclipse.orm.common.core.console.model.IRevEngColumn;
-import org.hibernate.tool.eclipse.orm.common.core.console.model.IRevEngGenerator;
-import org.hibernate.tool.eclipse.orm.common.core.console.model.IRevEngParameter;
-import org.hibernate.tool.eclipse.orm.common.core.console.model.IRevEngPrimaryKey;
-import org.hibernate.tool.eclipse.orm.common.core.console.model.IRevEngTable;
-import org.hibernate.tool.eclipse.orm.common.core.console.model.IReverseEngineeringDefinition;
+import org.hibernate.tool.eclipse.orm.base.core.console.model.IRevEngColumn;
+import org.hibernate.tool.eclipse.orm.base.core.console.model.IRevEngGenerator;
+import org.hibernate.tool.eclipse.orm.base.core.console.model.IRevEngParameter;
+import org.hibernate.tool.eclipse.orm.base.core.console.model.IRevEngPrimaryKey;
+import org.hibernate.tool.eclipse.orm.base.core.console.model.IRevEngTable;
+import org.hibernate.tool.eclipse.orm.console.core.eclipse.reveng.IReverseEngineeringDefinition;
 
 public class TablePropertiesContentProvider implements
 		ITreeContentProvider, PropertyChangeListener {

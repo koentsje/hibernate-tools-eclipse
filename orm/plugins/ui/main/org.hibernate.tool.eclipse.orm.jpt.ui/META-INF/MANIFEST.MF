@@ -4,8 +4,9 @@ Bundle-Name: Hibernate JPA UI
 Bundle-SymbolicName: org.hibernate.tool.eclipse.orm.jpt.ui;singleton:=true
 Bundle-Version: 6.0.0.qualifier
 Bundle-Activator: org.hibernate.tool.eclipse.jpt.ui.HibernateJptUIPlugin
-Require-Bundle: org.hibernate.tool.eclipse.orm.common.ui,
- org.hibernate.tool.eclipse.orm.common.core,
+Require-Bundle: org.hibernate.tool.eclipse.orm.base.ui,
+ org.hibernate.tool.eclipse.orm.base.core,
+ org.hibernate.tool.eclipse.orm.console.core,
  org.hibernate.tool.eclipse.orm.launch.core,
  org.hibernate.tool.eclipse.orm.jpt.core,
  org.hibernate.tool.eclipse.orm.runtime.spi,

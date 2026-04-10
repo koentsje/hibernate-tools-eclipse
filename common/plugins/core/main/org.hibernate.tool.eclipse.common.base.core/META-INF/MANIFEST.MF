@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Hibernate Tooling Common Core
+Bundle-SymbolicName: org.hibernate.tool.eclipse.common.base.core
+Bundle-Version: 6.0.0.qualifier
+Bundle-Vendor: hibernate.org
+Export-Package: org.hibernate.tool.eclipse.common.base.core.console,
+ org.hibernate.tool.eclipse.common.base.core.console.launch
+Require-Bundle: org.eclipse.core.runtime;bundle-version="3.10.0",
+ org.eclipse.jdt.launching
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Import-Package: org.eclipse.osgi.util

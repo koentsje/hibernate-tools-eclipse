@@ -22,7 +22,7 @@
 package org.hibernate.eclipse.mapper.model;
 
 import org.eclipse.wst.sse.core.internal.provisional.INodeNotifier;
-import org.hibernate.tool.eclipse.orm.common.core.console.model.IRevEngColumn;
+import org.hibernate.tool.eclipse.orm.base.core.console.model.IRevEngColumn;
 import org.w3c.dom.Node;
 
 public class RevEngColumnAdapter extends DOMAdapter implements IRevEngColumn {

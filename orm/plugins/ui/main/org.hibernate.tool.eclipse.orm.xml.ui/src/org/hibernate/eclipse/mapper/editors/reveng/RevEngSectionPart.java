@@ -30,7 +30,7 @@ import org.eclipse.ui.forms.events.ExpansionEvent;
 import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
-import org.hibernate.tool.eclipse.orm.common.core.console.model.IReverseEngineeringDefinition;
+import org.hibernate.tool.eclipse.orm.console.core.eclipse.reveng.IReverseEngineeringDefinition;
 
 public abstract class RevEngSectionPart extends SectionPart {
 

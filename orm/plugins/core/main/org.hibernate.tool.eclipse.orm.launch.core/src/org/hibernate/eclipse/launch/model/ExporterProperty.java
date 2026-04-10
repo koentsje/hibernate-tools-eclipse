@@ -21,7 +21,7 @@
  */
 package org.hibernate.eclipse.launch.model;
 
-import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.launch.CodeGenerationStrings;
 
 public class ExporterProperty

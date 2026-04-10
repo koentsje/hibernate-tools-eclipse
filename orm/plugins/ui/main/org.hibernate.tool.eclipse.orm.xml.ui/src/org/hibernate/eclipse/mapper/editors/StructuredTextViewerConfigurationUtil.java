@@ -18,7 +18,7 @@ import org.eclipse.wst.xml.ui.internal.contentassist.ContentAssistRequest;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.IHibernateExtension;
 import org.hibernate.eclipse.mapper.MapperPlugin;
-import org.hibernate.tool.eclipse.orm.common.core.nature.HibernateNature;
+import org.hibernate.tool.eclipse.orm.console.core.eclipse.nature.HibernateNature;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 import org.hibernate.tool.eclipse.orm.runtime.spi.RuntimeServiceManager;
 

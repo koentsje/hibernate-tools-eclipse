@@ -26,7 +26,7 @@ import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
-import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleCorePlugin;
+import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateConsoleCorePlugin;
 
 /**
  * Ant Hibernate Exporters tasks attribute description.

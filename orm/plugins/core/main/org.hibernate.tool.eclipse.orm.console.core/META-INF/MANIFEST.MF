@@ -1,8 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Hibernate Console Core
-Bundle-SymbolicName: org.hibernate.tool.eclipse.orm.console.core
+Bundle-SymbolicName: org.hibernate.tool.eclipse.orm.console.core;singleton:=true
 Bundle-Version: 6.0.0.qualifier
+Bundle-Activator: org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernatePlugin
 Bundle-Vendor: hibernate.org
 Export-Package: org.hibernate.console,
  org.hibernate.console.execution,
@@ -12,14 +13,40 @@ Export-Package: org.hibernate.console,
  org.hibernate.eclipse.logging.xpl,
  org.hibernate.util.xpl,
  org.hibernate.tool.eclipse.exception,
- org.hibernate.tool.eclipse.util
+ org.hibernate.tool.eclipse.util,
+ org.hibernate.tool.eclipse.orm.console.core.eclipse,
+ org.hibernate.tool.eclipse.orm.console.core.eclipse.common,
+ org.hibernate.tool.eclipse.orm.console.core.eclipse.nature,
+ org.hibernate.tool.eclipse.orm.console.core.eclipse.properties,
+ org.hibernate.tool.eclipse.orm.console.core.eclipse.reveng,
+ org.hibernate.tool.eclipse.orm.console.core.eclipse.reveng.impl,
+ org.hibernate.tool.eclipse.orm.console.core.eclipse.utils,
+ org.hibernate.tool.eclipse.orm.console.core.eclipse.workbench
 Require-Bundle: org.eclipse.core.runtime;bundle-version="3.10.0",
+ org.eclipse.core.resources,
+ org.eclipse.core.filesystem,
+ org.eclipse.core.variables;bundle-version="3.2.800",
+ org.eclipse.debug.core;bundle-version="3.10.0",
+ org.eclipse.jdt.core;bundle-version="3.11.0",
+ org.eclipse.jdt.launching,
+ org.eclipse.ltk.core.refactoring,
+ org.eclipse.jpt.jpa.core,
  org.eclipse.datatools.connectivity;bundle-version="1.2.11",
+ org.eclipse.datatools.connectivity.ui,
+ org.eclipse.wst.common.project.facet.core,
+ org.apache.ant,
  org.apache.log4j;bundle-version="1.2.15",
  org.apache.commons.logging;bundle-version="1.1.1",
+ org.hibernate.tool.eclipse.common.base.core,
+ org.hibernate.tool.eclipse.orm.base.core;visibility:=reexport,
  org.hibernate.tool.eclipse.orm.runtime.spi;bundle-version="5.0.0",
- org.hibernate.tool.eclipse.libs.dom4j.v_1_6_1;bundle-version="5.0.0"
+ org.hibernate.tool.eclipse.libs.dom4j.v_1_6_1;bundle-version="5.0.0",
+ org.hibernate.tool.eclipse.libs.antlr.v_2_7_7,
+ org.hibernate.tool.eclipse.libs.bsh.v_2_0_b4;bundle-version="5.0.0",
+ org.hibernate.tool.eclipse.libs.jtidy.v_r8-20060801
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-11
+Eclipse-BuddyPolicy: registered
+Eclipse-BundleShape: dir
 Import-Package: org.eclipse.osgi.util,
  org.slf4j;version="1.7.2"

@@ -35,7 +35,7 @@ import org.eclipse.ui.forms.IDetailsPage;
 import org.eclipse.ui.forms.IFormPart;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
-import org.hibernate.tool.eclipse.orm.common.core.console.model.IRevEngTable;
+import org.hibernate.tool.eclipse.orm.base.core.console.model.IRevEngTable;
 import org.hibernate.eclipse.mapper.MapperMessages;
 import org.hibernate.eclipse.mapper.editors.reveng.xpl.FormTextEntry;
 

@@ -29,7 +29,7 @@ import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.jface.text.contentassist.IContextInformation;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Point;
-import org.hibernate.tool.eclipse.orm.common.core.nature.HibernateNature;
+import org.hibernate.tool.eclipse.orm.console.core.eclipse.nature.HibernateNature;
 
 public abstract class ExternalActionQuickAssistProposal implements
 		IJavaCompletionProposal {

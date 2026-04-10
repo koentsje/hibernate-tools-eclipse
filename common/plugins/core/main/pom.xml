@@ -11,5 +11,8 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 	<name>Hibernate Tooling Common Core Plugins - Main</name>
 
 	<packaging>pom</packaging>
+	<modules>
+		<module>org.hibernate.tool.eclipse.common.base.core</module>
+	</modules>
 
 </project>

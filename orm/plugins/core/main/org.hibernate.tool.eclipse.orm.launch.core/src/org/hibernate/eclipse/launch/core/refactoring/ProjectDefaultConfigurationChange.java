@@ -19,8 +19,8 @@ import org.eclipse.core.runtime.preferences.IScopeContext;
 import org.eclipse.ltk.core.refactoring.Change;
 import org.eclipse.ltk.core.refactoring.NullChange;
 import org.eclipse.ltk.core.refactoring.RefactoringStatus;
-import org.hibernate.tool.eclipse.orm.common.core.console.HibernateConsoleCorePlugin;
-import org.hibernate.tool.eclipse.orm.common.core.console.properties.HibernatePropertiesConstants;
+import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateConsoleCorePlugin;
+import org.hibernate.tool.eclipse.orm.console.core.eclipse.properties.HibernatePropertiesConstants;
 import org.osgi.service.prefs.BackingStoreException;
 import org.osgi.service.prefs.Preferences;
 

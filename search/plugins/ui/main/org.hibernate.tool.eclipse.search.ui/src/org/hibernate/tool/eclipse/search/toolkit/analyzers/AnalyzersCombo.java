@@ -14,9 +14,9 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
-import org.hibernate.tool.eclipse.orm.common.core.console.utils.LaunchHelper;
-import org.hibernate.tool.eclipse.orm.common.core.console.utils.ProjectUtils;
-import org.hibernate.tool.eclipse.orm.common.core.console.launch.IConsoleConfigurationLaunchConstants;
+import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.LaunchHelper;
+import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.ProjectUtils;
+import org.hibernate.tool.eclipse.common.base.core.console.launch.IConsoleConfigurationLaunchConstants;
 import org.hibernate.tool.eclipse.search.HibernateSearchConsolePlugin;
 
 public class AnalyzersCombo {

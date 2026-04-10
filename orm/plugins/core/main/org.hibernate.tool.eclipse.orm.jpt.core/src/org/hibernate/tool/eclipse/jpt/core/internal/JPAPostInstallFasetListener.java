@@ -51,11 +51,11 @@ import org.eclipse.wst.common.project.facet.core.events.IProjectFacetActionEvent
 import org.hibernate.console.ConnectionProfileUtil;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.preferences.ConsoleConfigurationPreferences.ConfigurationMode;
-import org.hibernate.tool.eclipse.orm.common.core.console.utils.LaunchHelper;
-import org.hibernate.tool.eclipse.orm.common.core.console.utils.ProjectUtils;
-import org.hibernate.tool.eclipse.orm.common.core.console.launch.IConsoleConfigurationLaunchConstants;
-import org.hibernate.tool.eclipse.orm.common.core.nature.HibernateNature;
-import org.hibernate.tool.eclipse.orm.common.core.utils.HibernateEclipseUtils;
+import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.LaunchHelper;
+import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.ProjectUtils;
+import org.hibernate.tool.eclipse.common.base.core.console.launch.IConsoleConfigurationLaunchConstants;
+import org.hibernate.tool.eclipse.orm.console.core.eclipse.nature.HibernateNature;
+import org.hibernate.tool.eclipse.orm.base.core.utils.HibernateEclipseUtils;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 
 /**

@@ -54,7 +54,7 @@ import org.hibernate.eclipse.launch.model.ExporterDefinition;
 
 public class ExtensionManager
 {
-   public static final String EXPORTERS_EXTENSION_ID = "org.hibernate.tool.eclipse.orm.common.core.exporters"; //$NON-NLS-1$
+   public static final String EXPORTERS_EXTENSION_ID = "org.hibernate.tool.eclipse.orm.base.core.exporters"; //$NON-NLS-1$
    
    private static IExtension[] findExtensions (String extensionId)
    {
