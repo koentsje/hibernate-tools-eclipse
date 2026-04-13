@@ -14,7 +14,7 @@ import java.util.Iterator;
 
 import org.hibernate.console.ConsoleMessages;
 import org.hibernate.console.execution.ExecutionContext;
-import org.hibernate.tool.eclipse.orm.base.core.console.utils.QLFormatHelper;
+import org.hibernate.tool.eclipse.orm.utils.QLFormatHelper;
 import org.hibernate.util.xpl.StringHelper;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IHQLQueryPlan;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IQueryTranslator;

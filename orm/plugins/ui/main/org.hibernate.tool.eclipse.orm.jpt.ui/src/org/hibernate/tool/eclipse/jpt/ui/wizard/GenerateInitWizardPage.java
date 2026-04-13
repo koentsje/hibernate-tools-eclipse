@@ -47,7 +47,7 @@ import org.hibernate.console.preferences.ConsoleConfigurationPreferences.Configu
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.EclipseConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.utils.DialogSelectionHelper;
-import org.hibernate.tool.eclipse.orm.base.core.console.utils.DriverClassHelpers;
+import org.hibernate.tool.eclipse.orm.utils.DriverClassHelpers;
 import org.hibernate.eclipse.console.utils.LaunchHelperUI;
 import org.hibernate.eclipse.launch.PathHelper;
 import org.hibernate.util.xpl.StringHelper;

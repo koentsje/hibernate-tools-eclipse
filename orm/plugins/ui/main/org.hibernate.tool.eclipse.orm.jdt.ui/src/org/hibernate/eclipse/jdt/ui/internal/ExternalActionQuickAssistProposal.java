@@ -29,7 +29,7 @@ import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.jface.text.contentassist.IContextInformation;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Point;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.nature.HibernateNature;
+import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateProjectConsoleManager;
 
 public abstract class ExternalActionQuickAssistProposal implements
 		IJavaCompletionProposal {
@@ -40,12 +40,7 @@ public abstract class ExternalActionQuickAssistProposal implements
 
 	public ExternalActionQuickAssistProposal(String contents, Image image, String description, IInvocationContext context) {
 		this.contents = contents;
-		HibernateNature hibernateNature = HibernateNature.getHibernateNature(context.getCompilationUnit().getJavaProject());
-		if(hibernateNature!=null) {
-			name = hibernateNature.getDefaultConsoleConfigurationName();
-		} else {
-			name = null;
-		}
+		name = HibernateProjectConsoleManager.getDefaultConsoleConfigurationName(context.getCompilationUnit().getJavaProject());
 		
 		proposal = new CompletionProposal("",context.getSelectionLength(),0,context.getSelectionOffset()+context.getSelectionLength(), image, description, null,null); //$NON-NLS-1$
 	}

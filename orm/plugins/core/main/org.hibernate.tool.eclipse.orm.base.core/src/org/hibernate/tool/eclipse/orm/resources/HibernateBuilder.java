@@ -1,5 +1,4 @@
-/**
- * $Id$/*
+/*
  * JBoss, Home of Professional Open Source
  * Copyright 2005, JBoss Inc., and individual contributors as indicated
  * by the @authors tag. See the copyright.txt in the distribution for a
@@ -20,7 +19,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.hibernate.tool.eclipse.orm.base.core.builder;
+package org.hibernate.tool.eclipse.orm.resources;
 
 import java.util.Map;
 

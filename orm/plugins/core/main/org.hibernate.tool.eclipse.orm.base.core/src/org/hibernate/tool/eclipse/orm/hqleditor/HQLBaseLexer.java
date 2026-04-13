@@ -1,4 +1,4 @@
-package org.hibernate.tool.eclipse.orm.base.core.hqleditor;
+package org.hibernate.tool.eclipse.orm.hqleditor;
 
 import java.io.InputStream;
 import java.io.Reader;

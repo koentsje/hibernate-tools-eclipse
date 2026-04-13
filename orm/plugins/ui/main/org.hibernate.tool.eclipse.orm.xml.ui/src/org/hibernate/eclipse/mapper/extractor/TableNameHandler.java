@@ -29,7 +29,7 @@ import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jface.text.contentassist.CompletionProposal;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.nature.HibernateNature;
+import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateProjectConsoleManager;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ITable;
 import org.w3c.dom.Attr;
 import org.w3c.dom.Node;
@@ -41,12 +41,7 @@ public class TableNameHandler implements HBMInfoHandler {
 			IJavaProject javaProject, Node node, String attributeName,
 			String start, int offset) {
 
-		List tables = new ArrayList(); 
-		
-		HibernateNature nature = HibernateNature.getHibernateNature( javaProject );
-		if(nature!=null) {
-			tables = nature.getMatchingTables(start);
-		}
+		List tables = HibernateProjectConsoleManager.getMatchingTables(javaProject, start);
 		
 		List proposals = new ArrayList();
 		for (Iterator iter = tables.iterator(); iter.hasNext();) {

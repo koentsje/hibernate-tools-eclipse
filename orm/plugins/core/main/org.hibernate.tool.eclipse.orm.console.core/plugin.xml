@@ -2,18 +2,4 @@
 <?eclipse version="3.0"?>
 <plugin>
 
-   <extension
-        id="hibernateNature"
-        name="Hibernate Nature"
-        point="org.eclipse.core.resources.natures">
-        <runtime>
-            <run
-                class="org.hibernate.tool.eclipse.orm.console.core.eclipse.nature.HibernateNature">
-            </run>
-        </runtime>
-        <requires-nature
-            id="org.eclipse.jdt.core.javanature">
-        </requires-nature>
-    </extension>
-
 </plugin>

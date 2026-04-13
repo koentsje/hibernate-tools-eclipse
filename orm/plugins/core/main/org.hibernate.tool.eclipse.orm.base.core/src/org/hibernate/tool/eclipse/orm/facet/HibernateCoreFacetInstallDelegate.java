@@ -19,26 +19,20 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.hibernate.tool.eclipse.orm.base.core.hqleditor;
+package org.hibernate.tool.eclipse.orm.facet;
 
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.tool.eclipse.orm.base.core.console.QueryEditorStorage;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.wst.common.project.facet.core.IDelegate;
+import org.eclipse.wst.common.project.facet.core.IProjectFacetVersion;
 
-/**
- * Storage for HQL editors without a file
- */
-public class HQLEditorStorage extends QueryEditorStorage {
+public class HibernateCoreFacetInstallDelegate implements IDelegate {
 
-    public HQLEditorStorage( String source ) {
-        super(source);
-    }
+	public void execute(IProject project, IProjectFacetVersion fv,
+			Object config, IProgressMonitor monitor) throws CoreException {
+		System.out.println(config);
 
-    public HQLEditorStorage( String configurationName, String name, String source ) {
-        super(configurationName,name, source);
-    }
-
-    public HQLEditorStorage(String consoleName, String string) {
-		super(consoleName, "HQL: " + (consoleName==null?HibernateConsoleMessages.HQLEditorStorage_none:consoleName), string); //$NON-NLS-1$
 	}
 
 }

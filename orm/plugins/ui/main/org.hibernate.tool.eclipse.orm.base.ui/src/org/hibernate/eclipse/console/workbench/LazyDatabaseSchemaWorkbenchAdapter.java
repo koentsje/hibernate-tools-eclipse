@@ -44,7 +44,7 @@ import org.hibernate.tool.eclipse.orm.runtime.spi.IProgressListener;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IReverseEngineeringStrategy;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ITable;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.workbench.LazyDatabaseSchema;
-import org.hibernate.tool.eclipse.orm.base.core.console.workbench.TableContainer;
+import org.hibernate.tool.eclipse.orm.workbench.TableContainer;
 
 public class LazyDatabaseSchemaWorkbenchAdapter extends BasicWorkbenchAdapter {
 	

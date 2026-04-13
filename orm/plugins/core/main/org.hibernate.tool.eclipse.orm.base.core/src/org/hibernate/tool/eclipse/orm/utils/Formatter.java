@@ -1,4 +1,4 @@
-package org.hibernate.tool.eclipse.orm.base.core.console.utils;
+package org.hibernate.tool.eclipse.orm.utils;
 
 import java.util.HashSet;
 import java.util.LinkedList;

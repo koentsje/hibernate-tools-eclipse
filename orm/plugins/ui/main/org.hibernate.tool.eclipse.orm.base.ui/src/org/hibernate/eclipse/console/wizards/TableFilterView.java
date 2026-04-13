@@ -43,7 +43,7 @@ import org.hibernate.tool.eclipse.orm.console.core.eclipse.reveng.IReverseEngine
 import org.hibernate.tool.eclipse.orm.model.core.ITableFilter;
 import org.hibernate.eclipse.console.workbench.DeferredContentProvider;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.workbench.LazyDatabaseSchema;
-import org.hibernate.tool.eclipse.orm.base.core.console.workbench.TableContainer;
+import org.hibernate.tool.eclipse.orm.workbench.TableContainer;
 import org.hibernate.eclipse.console.workbench.xpl.AnyAdaptableLabelProvider;
 import org.hibernate.util.xpl.StringHelper;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IColumn;

@@ -29,7 +29,7 @@ import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jface.text.contentassist.CompletionProposal;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.nature.HibernateNature;
+import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateProjectConsoleManager;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IColumn;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ITable;
 import org.w3c.dom.Attr;
@@ -47,23 +47,20 @@ public class ColumnNameHandler implements HBMInfoHandler {
 			IJavaProject javaProject, Node node, String attributeName,
 			String start, int offset) {
 
-		List columns = new ArrayList(); 
-		
-		HibernateNature nature = HibernateNature.getHibernateNature( javaProject );
-		if(nature!=null) {
-			String nearestTableName = extractor.getNearestTableName(node);
-			if(nearestTableName!=null) {
-				ITable table = nature.getTable(nearestTableName);
-				if (table!=null) {
-					Iterator tableMappings = table.getColumnIterator();
-					while (tableMappings.hasNext() ) {
-						IColumn column = (IColumn) tableMappings.next();
-						if(column.getName().toUpperCase().startsWith(start.toUpperCase()) ) {
-							columns.add(column);
-						}
+		List columns = new ArrayList();
+
+		String nearestTableName = extractor.getNearestTableName(node);
+		if(nearestTableName!=null) {
+			ITable table = HibernateProjectConsoleManager.getTable(javaProject, nearestTableName);
+			if (table!=null) {
+				Iterator tableMappings = table.getColumnIterator();
+				while (tableMappings.hasNext() ) {
+					IColumn column = (IColumn) tableMappings.next();
+					if(column.getName().toUpperCase().startsWith(start.toUpperCase()) ) {
+						columns.add(column);
 					}
 				}
-			}			
+			}
 		}
 
 		List proposals = new ArrayList();

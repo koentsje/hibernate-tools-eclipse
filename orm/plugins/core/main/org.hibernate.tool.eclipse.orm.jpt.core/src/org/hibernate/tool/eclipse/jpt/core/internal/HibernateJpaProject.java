@@ -45,7 +45,7 @@ import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.console.preferences.ConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.properties.HibernatePropertiesConstants;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.nature.HibernateNature;
+import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateProjectConsoleManager;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernatePersistenceUnit;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.Messages;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.basic.BasicHibernateProperties;
@@ -83,11 +83,7 @@ public class HibernateJpaProject extends AbstractJpaProject {
 	}
 	
 	public ConsoleConfiguration getDefaultConsoleConfiguration(){
-		HibernateNature nature = HibernateNature.getHibernateNature(getJavaProject());
-		if (nature != null){
-			return nature.getDefaultConsoleConfiguration();
-		}
-		return null;
+		return HibernateProjectConsoleManager.getDefaultConsoleConfiguration(getJavaProject());
 	}
 
 	public INamingStrategy getNamingStrategy(){
@@ -189,11 +185,7 @@ public class HibernateJpaProject extends AbstractJpaProject {
 	}
 
 	public String getDefaultConsoleConfigurationName(){
-		HibernateNature nature = HibernateNature.getHibernateNature(getJavaProject());
-		if (nature != null){
-			return nature.getDefaultConsoleConfigurationName();
-		}
-		return null;
+		return HibernateProjectConsoleManager.getDefaultConsoleConfigurationName(getJavaProject());
 	}
 
 	public boolean isNamingStrategyEnabled(){

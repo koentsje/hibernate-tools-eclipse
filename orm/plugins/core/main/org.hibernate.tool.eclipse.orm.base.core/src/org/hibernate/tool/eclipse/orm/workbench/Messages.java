@@ -8,7 +8,7 @@
  * Contributor:
  *     Red Hat, Inc. - initial API and implementation
  ******************************************************************************/
-package org.hibernate.tool.eclipse.orm.base.core.console.workbench;
+package org.hibernate.tool.eclipse.orm.workbench;
 
 import org.eclipse.osgi.util.NLS;
 
@@ -17,7 +17,7 @@ import org.eclipse.osgi.util.NLS;
  *
  */
 public class Messages extends NLS {
-	private static final String BUNDLE_NAME = "org.hibernate.tool.eclipse.orm.base.core.console.workbench.messages"; //$NON-NLS-1$
+	private static final String BUNDLE_NAME = "org.hibernate.tool.eclipse.orm.workbench.messages"; //$NON-NLS-1$
 	public static String ProjectCompilerVersionChecker_title;
 	public static String ProjectCompilerVersionChecker_message;
 	static {

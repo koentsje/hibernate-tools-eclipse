@@ -40,7 +40,7 @@ import org.eclipse.jdt.launching.JavaRuntime;
 import org.eclipse.osgi.util.NLS;
 import org.hibernate.console.HibernateConsoleRuntimeException;
 import org.hibernate.console.preferences.AbstractConsoleConfigurationPreferences;
-import org.hibernate.tool.eclipse.orm.base.core.console.utils.ClassLoaderHelper;
+import org.hibernate.tool.eclipse.orm.utils.ClassLoaderHelper;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.ProjectUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;

@@ -30,6 +30,7 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.hibernate.console.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateProjectConsoleManager;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.reveng.IReverseEngineeringDefinition;
 import org.hibernate.eclipse.console.utils.LaunchHelperUI;
 import org.hibernate.eclipse.mapper.MapperMessages;
@@ -53,7 +54,8 @@ public class ConsoleConfigNamePart extends RevEngSectionPart {
 			String initialConfg = ""; //$NON-NLS-1$
 			try {
 				if (re.getHibernateNature()!=null) {
-					initialConfg = re.getHibernateNature().getDefaultConsoleConfigurationName();
+					initialConfg = HibernateProjectConsoleManager.getDefaultConsoleConfigurationName(
+						org.eclipse.jdt.core.JavaCore.create(re.getHibernateNature().getProject()));
 				}
 			} catch (CoreException e) {
 				MapperPlugin.getDefault().getLogger().logException(MapperMessages.ConsoleConfigNamePart_problem_when_trying_to_hibernate_project_info,e);

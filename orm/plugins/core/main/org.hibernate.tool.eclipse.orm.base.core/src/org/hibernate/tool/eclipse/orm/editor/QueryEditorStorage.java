@@ -1,4 +1,4 @@
-package org.hibernate.tool.eclipse.orm.base.core.console;
+package org.hibernate.tool.eclipse.orm.editor;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -46,9 +46,9 @@ public class QueryEditorStorage implements IStorage {
      */
     public String getContentsString() {
         String contentsString = "";  //$NON-NLS-1$
-        
+
         InputStream contentsStream = getContents();
-        
+
         // The following code was adapted from StorageDocumentProvider.setDocumentContent method.
         Reader in = null;
         try {
@@ -75,7 +75,7 @@ public class QueryEditorStorage implements IStorage {
 
         return contentsString;
     }
-    
+
     public IPath getFullPath() {
         return null;
     }
@@ -98,7 +98,7 @@ public class QueryEditorStorage implements IStorage {
 	}
 
 	public void setConfigurationName(String configurationName) {
-		this.configurationName = configurationName;		
+		this.configurationName = configurationName;
 	}
 
 	public void setContents(String query) {

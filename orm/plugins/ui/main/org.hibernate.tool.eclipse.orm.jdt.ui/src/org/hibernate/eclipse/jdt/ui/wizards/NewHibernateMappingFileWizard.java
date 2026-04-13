@@ -66,12 +66,12 @@ import org.hibernate.console.ImageConstants;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
-import org.hibernate.tool.eclipse.orm.base.core.console.utils.FileUtils;
+import org.hibernate.tool.eclipse.orm.utils.FileUtils;
 import org.hibernate.eclipse.jdt.ui.internal.JdtUiMessages;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.collect.AllEntitiesInfoCollector;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.common.EntityInfo;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.common.Utils;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.nature.HibernateNature;
+import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateProjectConsoleManager;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IExportPOJODelegate;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IHibernateMappingExporter;
@@ -296,9 +296,8 @@ public class NewHibernateMappingFileWizard extends Wizard implements INewWizard,
 	private IService getService(IJavaProject project) {
 		// Since generating HBM files does not work (yet) with the 5.x runtimes, we always use 3.5 (for now) 
 		// See JBIDE-23066 and JBIDE-21766
-		HibernateNature hibnat = HibernateNature.getHibernateNature(project);
-		if (hibnat != null) {
-			ConsoleConfiguration cc = hibnat.getDefaultConsoleConfiguration();
+		ConsoleConfiguration cc = HibernateProjectConsoleManager.getDefaultConsoleConfiguration(project);
+		if (cc != null) {
 			return cc.getHibernateExtension().getHibernateService();
 		} else {
 			return RuntimeServiceManager.getInstance().getDefaultService();

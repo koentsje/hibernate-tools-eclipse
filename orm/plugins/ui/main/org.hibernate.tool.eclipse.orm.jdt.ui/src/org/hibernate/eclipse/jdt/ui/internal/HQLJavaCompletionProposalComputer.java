@@ -41,7 +41,7 @@ import org.hibernate.eclipse.launch.exporter.ConsoleExtension;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.common.HibernateExtension;
 import org.hibernate.eclipse.ui.console.common.ConsoleExtensionUI;
 import org.hibernate.eclipse.hqleditor.HQLCompletionProcessor;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.nature.HibernateNature;
+import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateProjectConsoleManager;
 
 public class HQLJavaCompletionProposalComputer implements IJavaCompletionProposalComputer {
 
@@ -55,12 +55,7 @@ public class HQLJavaCompletionProposalComputer implements IJavaCompletionProposa
 
 	ConsoleConfiguration getConfiguration(IJavaProject javaProject) {
 		if(javaProject != null) {
-			HibernateNature nature = HibernateNature.getHibernateNature( javaProject );
-			if(nature!=null) {
-				return nature.getDefaultConsoleConfiguration();
-			} else {
-				return null;
-			}
+			return HibernateProjectConsoleManager.getDefaultConsoleConfiguration(javaProject);
 		} else {
 			return null;
 		}

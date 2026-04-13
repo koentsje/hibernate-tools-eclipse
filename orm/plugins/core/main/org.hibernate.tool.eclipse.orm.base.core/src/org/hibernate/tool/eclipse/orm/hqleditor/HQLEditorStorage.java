@@ -19,28 +19,26 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.hibernate.tool.eclipse.orm.base.core.console.workbench;
+package org.hibernate.tool.eclipse.orm.hqleditor;
 
-import java.util.List;
+import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.orm.editor.QueryEditorStorage;
 
-import org.hibernate.tool.eclipse.orm.runtime.spi.ITable;
+/**
+ * Storage for HQL editors without a file
+ */
+public class HQLEditorStorage extends QueryEditorStorage {
 
-public class TableContainer {
+    public HQLEditorStorage( String source ) {
+        super(source);
+    }
 
-	private final List<ITable> tables;
-	private final String name;
+    public HQLEditorStorage( String configurationName, String name, String source ) {
+        super(configurationName,name, source);
+    }
 
-	public TableContainer(String name, List<ITable> tables) {
-		this.tables = tables;
-		this.name = name;
-	}
-
-	public List<ITable> getTables() {
-		return tables;
-	}
-
-	public String getName() {
-		return name;
+    public HQLEditorStorage(String consoleName, String string) {
+		super(consoleName, "HQL: " + (consoleName==null?HibernateConsoleMessages.HQLEditorStorage_none:consoleName), string); //$NON-NLS-1$
 	}
 
 }

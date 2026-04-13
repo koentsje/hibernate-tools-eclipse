@@ -1,4 +1,4 @@
-package org.hibernate.tool.eclipse.orm.base.core.utils;
+package org.hibernate.tool.eclipse.orm.utils;
 
 import java.io.IOException;
 import java.io.InputStream;

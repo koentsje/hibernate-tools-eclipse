@@ -25,7 +25,7 @@ import org.eclipse.core.resources.IStorage;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.ui.IElementFactory;
 import org.eclipse.ui.IMemento;
-import org.hibernate.tool.eclipse.orm.base.core.hqleditor.HQLEditorStorage;
+import org.hibernate.tool.eclipse.orm.hqleditor.HQLEditorStorage;
 
 public class HQLEditorInputFactory implements IElementFactory {
 

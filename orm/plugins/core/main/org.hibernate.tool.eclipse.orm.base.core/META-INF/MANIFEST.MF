@@ -5,14 +5,13 @@ Bundle-SymbolicName: org.hibernate.tool.eclipse.orm.base.core;singleton:=true
 Bundle-Version: 6.0.0.qualifier
 Bundle-Vendor: %Bundle-Vendor.0
 Bundle-Localization: plugin
-Export-Package: org.hibernate.tool.eclipse.orm.base.core.builder,
- org.hibernate.tool.eclipse.orm.base.core.console,
- org.hibernate.tool.eclipse.orm.base.core.console.launch,
- org.hibernate.tool.eclipse.orm.base.core.console.utils,
- org.hibernate.tool.eclipse.orm.base.core.console.workbench,
- org.hibernate.tool.eclipse.orm.base.core.facet,
- org.hibernate.tool.eclipse.orm.base.core.hqleditor,
- org.hibernate.tool.eclipse.orm.base.core.utils
+Export-Package: org.hibernate.tool.eclipse.orm.editor,
+ org.hibernate.tool.eclipse.orm.facet,
+ org.hibernate.tool.eclipse.orm.hqleditor,
+ org.hibernate.tool.eclipse.orm.launch,
+ org.hibernate.tool.eclipse.orm.resources,
+ org.hibernate.tool.eclipse.orm.utils,
+ org.hibernate.tool.eclipse.orm.workbench
 Require-Bundle: org.hibernate.tool.eclipse.orm.model.core;visibility:=reexport,
  org.hibernate.tool.eclipse.common.base.core;visibility:=reexport,
  org.eclipse.core.runtime;bundle-version="3.10.0",

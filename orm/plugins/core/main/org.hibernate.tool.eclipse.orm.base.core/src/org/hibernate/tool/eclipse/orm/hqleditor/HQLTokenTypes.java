@@ -1,4 +1,4 @@
-package org.hibernate.tool.eclipse.orm.base.core.hqleditor;
+package org.hibernate.tool.eclipse.orm.hqleditor;
 
 public interface HQLTokenTypes {
 	

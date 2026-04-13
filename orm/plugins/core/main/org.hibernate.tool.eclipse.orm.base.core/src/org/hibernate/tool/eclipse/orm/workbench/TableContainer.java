@@ -1,4 +1,4 @@
-/*
+l/*
  * JBoss, Home of Professional Open Source
  * Copyright 2005, JBoss Inc., and individual contributors as indicated
  * by the @authors tag. See the copyright.txt in the distribution for a
@@ -19,20 +19,28 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.hibernate.tool.eclipse.orm.base.core.facet;
+package org.hibernate.tool.eclipse.orm.workbench;
 
-import org.eclipse.core.resources.IProject;
-import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.wst.common.project.facet.core.IDelegate;
-import org.eclipse.wst.common.project.facet.core.IProjectFacetVersion;
+import java.util.List;
 
-public class HibernateCoreFacetInstallDelegate implements IDelegate {
+import org.hibernate.tool.eclipse.orm.runtime.spi.ITable;
 
-	public void execute(IProject project, IProjectFacetVersion fv,
-			Object config, IProgressMonitor monitor) throws CoreException {
-		System.out.println(config);
+public class TableContainer {
 
+	private final List<ITable> tables;
+	private final String name;
+
+	public TableContainer(String name, List<ITable> tables) {
+		this.tables = tables;
+		this.name = name;
+	}
+
+	public List<ITable> getTables() {
+		return tables;
+	}
+
+	public String getName() {
+		return name;
 	}
 
 }

@@ -19,7 +19,7 @@ import org.eclipse.swt.widgets.Text;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.HibernateConsolePlugin;
 import org.hibernate.eclipse.console.utils.DialogSelectionHelper;
-import org.hibernate.tool.eclipse.orm.base.core.console.utils.DriverClassHelpers;
+import org.hibernate.tool.eclipse.orm.utils.DriverClassHelpers;
 import org.hibernate.tool.eclipse.common.base.core.console.launch.IConsoleConfigurationLaunchConstants;
 import org.xml.sax.EntityResolver;
 

@@ -70,7 +70,7 @@ import org.hibernate.eclipse.console.actions.EditConsoleConfiguration;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.eclipse.console.utils.LaunchHelperUI;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.ProjectUtils;
-import org.hibernate.tool.eclipse.orm.base.core.utils.HibernateEclipseUtils;
+import org.hibernate.tool.eclipse.orm.utils.HibernateEclipseUtils;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.properties.HibernatePropertiesConstants;
 import org.osgi.service.prefs.BackingStoreException;
 import org.osgi.service.prefs.Preferences;

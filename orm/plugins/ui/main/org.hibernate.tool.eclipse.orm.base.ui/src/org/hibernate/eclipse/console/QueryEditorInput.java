@@ -4,7 +4,7 @@ import org.eclipse.core.resources.IStorage;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.IPersistableElement;
 import org.eclipse.ui.IStorageEditorInput;
-import org.hibernate.tool.eclipse.orm.base.core.console.QueryEditorStorage;
+import org.hibernate.tool.eclipse.orm.editor.QueryEditorStorage;
 
 public abstract class QueryEditorInput  implements IStorageEditorInput, IPersistableElement {
 

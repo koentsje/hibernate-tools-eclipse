@@ -1,4 +1,4 @@
-package org.hibernate.tool.eclipse.orm.base.core.utils;
+package org.hibernate.tool.eclipse.orm.utils;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;

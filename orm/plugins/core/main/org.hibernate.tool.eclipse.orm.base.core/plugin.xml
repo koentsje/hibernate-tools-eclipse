@@ -4,13 +4,26 @@
    <extension-point id="exporters" name="Hibernate Console Exporter" schema="schema/exporters.exsd"/>
 
    <extension
+        id="hibernateNature"
+        name="Hibernate Nature"
+        point="org.eclipse.core.resources.natures">
+        <runtime>
+            <run
+                class="org.hibernate.tool.eclipse.orm.resources.HibernateNature">
+            </run>
+        </runtime>
+        <requires-nature
+            id="org.eclipse.jdt.core.javanature">
+        </requires-nature>
+    </extension>
+
+   <extension
          id="hibernateBuilder"
          name="Hibernate Builder"
          point="org.eclipse.core.resources.builders">
       <builder hasNature="false">
-         <run class="org.hibernate.tool.eclipse.orm.base.core.builder.HibernateBuilder"/>
+         <run class="org.hibernate.tool.eclipse.orm.resources.HibernateBuilder"/>
       </builder>
    </extension>
-
 
 </plugin>

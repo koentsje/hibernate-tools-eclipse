@@ -11,8 +11,9 @@ import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.ASTParser;
 import org.eclipse.jdt.core.dom.CompilationUnit;
 import org.hibernate.console.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateProjectConsoleManager;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.ProjectUtils;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.nature.HibernateNature;
+import org.hibernate.tool.eclipse.orm.resources.HibernateNature;
 
 public class HQLExpressionCompilerParticipant extends CompilationParticipant {
 
@@ -78,16 +79,7 @@ public class HQLExpressionCompilerParticipant extends CompilationParticipant {
 	
 	
 	private ConsoleConfiguration getConsoleConfiguration(IJavaProject project) {
-		return getConsoleConfiguration(HibernateNature.getHibernateNature( project ));
-	}
-	
-	static ConsoleConfiguration getConsoleConfiguration(HibernateNature hibernateNature) {
-
-		if(hibernateNature!=null) {
-			return hibernateNature.getDefaultConsoleConfiguration();
-		} else {
-			return null;
-		}
+		return HibernateProjectConsoleManager.getDefaultConsoleConfiguration(project);
 	}
 	
 	public void cleanStarting(IJavaProject javaProject){

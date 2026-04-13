@@ -54,8 +54,8 @@ import org.hibernate.console.preferences.ConsoleConfigurationPreferences.Configu
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.LaunchHelper;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.ProjectUtils;
 import org.hibernate.tool.eclipse.common.base.core.console.launch.IConsoleConfigurationLaunchConstants;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.nature.HibernateNature;
-import org.hibernate.tool.eclipse.orm.base.core.utils.HibernateEclipseUtils;
+import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateProjectConsoleManager;
+import org.hibernate.tool.eclipse.orm.utils.HibernateEclipseUtils;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 
 /**
@@ -111,12 +111,9 @@ public class JPAPostInstallFasetListener implements IFacetedProjectListener {
 		IJavaProject javaProject = JavaCore.create(project);
 		IService service = null;
 		if (javaProject != null) {
-			HibernateNature hibNat = HibernateNature.getHibernateNature(javaProject);
-			if (hibNat != null) {
-				ConsoleConfiguration cc = hibNat.getDefaultConsoleConfiguration();
-				if (cc != null) {
-					service = cc.getHibernateExtension().getHibernateService();
-				}
+			ConsoleConfiguration cc = HibernateProjectConsoleManager.getDefaultConsoleConfiguration(javaProject);
+			if (cc != null) {
+				service = cc.getHibernateExtension().getHibernateService();
 			}
 		}
 		String cpName = HibernateEclipseUtils.getConnectionProfileName(project);

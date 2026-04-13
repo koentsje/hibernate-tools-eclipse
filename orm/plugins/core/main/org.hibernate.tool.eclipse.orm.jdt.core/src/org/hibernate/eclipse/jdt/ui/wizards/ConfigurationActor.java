@@ -48,7 +48,7 @@ import org.hibernate.eclipse.jdt.ui.internal.jpa.common.EntityInfo;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.common.RefEntityInfo;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.common.RefType;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.common.Utils;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.nature.HibernateNature;
+import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateProjectConsoleManager;
 import org.hibernate.util.xpl.StringHelper;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IColumn;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
@@ -124,14 +124,11 @@ public class ConfigurationActor {
 	
 	private IService getService(IJavaProject project) {
 		IService result = null;
-		HibernateNature hibnat = HibernateNature.getHibernateNature(project);
-		if (hibnat != null) {
-			ConsoleConfiguration cc = hibnat.getDefaultConsoleConfiguration();
-			if (cc != null) {
-				IHibernateExtension ext = cc.getHibernateExtension();
-				if (ext != null) {
-					result = ext.getHibernateService();
-				}
+		ConsoleConfiguration cc = HibernateProjectConsoleManager.getDefaultConsoleConfiguration(project);
+		if (cc != null) {
+			IHibernateExtension ext = cc.getHibernateExtension();
+			if (ext != null) {
+				result = ext.getHibernateService();
 			}
 		}
 		if (result == null) {

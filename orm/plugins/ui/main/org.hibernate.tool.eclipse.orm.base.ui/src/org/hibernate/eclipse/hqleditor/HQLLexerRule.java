@@ -30,8 +30,8 @@ import org.eclipse.jface.text.rules.IToken;
 
 import antlr.Token;
 import antlr.TokenStreamException;
-import org.hibernate.tool.eclipse.orm.base.core.hqleditor.HQLBaseLexer;
-import org.hibernate.tool.eclipse.orm.base.core.hqleditor.HQLTokenTypes;
+import org.hibernate.tool.eclipse.orm.hqleditor.HQLBaseLexer;
+import org.hibernate.tool.eclipse.orm.hqleditor.HQLTokenTypes;
 
 public class HQLLexerRule implements IRule {
 

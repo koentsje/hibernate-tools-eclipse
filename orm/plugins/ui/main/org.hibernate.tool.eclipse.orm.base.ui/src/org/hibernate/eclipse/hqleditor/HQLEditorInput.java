@@ -25,7 +25,7 @@ import org.eclipse.core.resources.IStorage;
 import org.eclipse.ui.IMemento;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
 import org.hibernate.eclipse.console.QueryEditorInput;
-import org.hibernate.tool.eclipse.orm.base.core.hqleditor.HQLEditorStorage;
+import org.hibernate.tool.eclipse.orm.hqleditor.HQLEditorStorage;
 
 /**
  * input for hql editor on non file based storage.
