@@ -37,7 +37,7 @@ import org.eclipse.osgi.util.NLS;
 import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.utils.XMLPrettyPrinter;
 
@@ -67,9 +67,9 @@ public class JTidyFormatAction implements IObjectActionDelegate {
 	 * @see IActionDelegate#run(IAction)
 	 */
 	public void run(IAction action) {
-		String out = NLS.bind(HibernateConsoleMessages.JTidyFormatAction_do_you_want_format_xml_files_with_jtidy, currentSelection.size());
+		String out = NLS.bind(BasicHibernateMessages.JTidyFormatAction_do_you_want_format_xml_files_with_jtidy, currentSelection.size());
         if(currentSelection!=null && MessageDialog.openQuestion(targetPart.getSite().getShell(),
-        		HibernateConsoleMessages.JTidyFormatAction_format_with_jtidy, out) ) {
+        		BasicHibernateMessages.JTidyFormatAction_format_with_jtidy, out) ) {
             Iterator<?> iterator = currentSelection.iterator();
             try {
             while(iterator.hasNext() ) {
@@ -90,9 +90,9 @@ public class JTidyFormatAction implements IObjectActionDelegate {
                 }
             }
             } catch (CoreException e) {
-                HibernateBasePlugin.getDefault().showError(targetPart.getSite().getShell(), HibernateConsoleMessages.JTidyFormatAction_error_while_running_jtidy, e);
+                HibernateBasePlugin.getDefault().showError(targetPart.getSite().getShell(), BasicHibernateMessages.JTidyFormatAction_error_while_running_jtidy, e);
             } catch (IOException io) {
-                HibernateBasePlugin.getDefault().showError(targetPart.getSite().getShell(), HibernateConsoleMessages.JTidyFormatAction_error_while_running_jtidy, io);
+                HibernateBasePlugin.getDefault().showError(targetPart.getSite().getShell(), BasicHibernateMessages.JTidyFormatAction_error_while_running_jtidy, io);
             }
         }
 	}

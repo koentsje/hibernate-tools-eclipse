@@ -50,7 +50,7 @@ import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.hibernate.console.QueryPage;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 
 
@@ -76,7 +76,7 @@ public class QueryPageViewer {
 				if (value.getClass().isArray() ) {
 					Object[] arr = (Object[]) value;
 					if (columnIndex > arr.length - 1) {
-						return HibernateConsoleMessages.QueryPageViewer_unknown_value;
+						return BasicHibernateMessages.QueryPageViewer_unknown_value;
 					}
 					return "" + arr[columnIndex]; //$NON-NLS-1$
 				} else {
@@ -88,7 +88,7 @@ public class QueryPageViewer {
 				}
 			}
 			catch (RuntimeException e) {
-				String out = NLS.bind(HibernateConsoleMessages.QueryPageViewer_error, e.getMessage());
+				String out = NLS.bind(BasicHibernateMessages.QueryPageViewer_error, e.getMessage());
 				return out;
 			}
 		}
@@ -122,7 +122,7 @@ public class QueryPageViewer {
 					return ensureNotNull(objects);
 				} else {
 					Throwable[] throwables = qp.getExceptions().toArray(new Throwable[0]);
-					HibernateBasePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.QueryPageViewer_exception_while_executing_hql_query, throwables);
+					HibernateBasePlugin.getDefault().logErrorMessage(BasicHibernateMessages.QueryPageViewer_exception_while_executing_hql_query, throwables);
 					return throwables; // TODO: provide actual error page
 				}
 			} else {

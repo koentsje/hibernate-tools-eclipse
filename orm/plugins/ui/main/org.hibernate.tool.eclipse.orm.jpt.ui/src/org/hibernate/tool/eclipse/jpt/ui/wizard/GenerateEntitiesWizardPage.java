@@ -19,7 +19,7 @@ import org.eclipse.jdt.internal.ui.wizards.NewWizardMessages;
 import org.eclipse.jdt.internal.ui.wizards.dialogfields.StringDialogField;
 import org.eclipse.jpt.jpa.core.JpaProject;
 import org.eclipse.swt.widgets.Composite;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.launch.PathHelper;
 import org.hibernate.tool.eclipse.jpt.core.internal.HibernateJpaProject;
 
@@ -42,7 +42,7 @@ public class GenerateEntitiesWizardPage extends GenerateInitWizardPage {
 	protected void createChildControls(Composite container) {
 		packageName = new StringDialogField();
         packageName.setDialogFieldListener(fieldlistener);
-        packageName.setLabelText(HibernateConsoleMessages.CodeGenerationSettingsTab_package);
+        packageName.setLabelText(BasicHibernateMessages.CodeGenerationSettingsTab_package);
         packageName.doFillIntoGrid(container, numColumns);
 	}
 
@@ -72,7 +72,7 @@ public class GenerateEntitiesWizardPage extends GenerateInitWizardPage {
 			setWarningMessage(NewWizardMessages.NewTypeWizardPage_warning_DefaultPackageDiscouraged); 
 		}
 
-		String msg = PathHelper.checkDirectory(getOutputDir(), HibernateConsoleMessages.CodeGenerationSettingsTab_output_directory, false);
+		String msg = PathHelper.checkDirectory(getOutputDir(), BasicHibernateMessages.CodeGenerationSettingsTab_output_directory, false);
 
         if (msg!=null) {
         	setErrorMessage( msg );

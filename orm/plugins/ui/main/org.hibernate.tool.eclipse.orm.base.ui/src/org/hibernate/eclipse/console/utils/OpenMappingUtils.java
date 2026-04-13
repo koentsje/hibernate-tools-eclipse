@@ -46,7 +46,7 @@ import org.eclipse.ui.part.MultiPageEditorPart;
 import org.eclipse.ui.texteditor.ITextEditor;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.execution.ExecutionContext;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.util.xpl.StringHelper;
 import org.hibernate.util.xpl.XMLHelper;
@@ -422,7 +422,7 @@ public class OpenMappingUtils {
 				}
 			}
 		} catch (JavaModelException e) {
-			HibernateBasePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.OpenFileActionUtils_problems_while_get_project_package_fragment_roots, e);
+			HibernateBasePlugin.getDefault().logErrorMessage(BasicHibernateMessages.OpenFileActionUtils_problems_while_get_project_package_fragment_roots, e);
 		}
 		return res.toArray(new IPackageFragmentRoot[0]);
 	}

@@ -47,7 +47,7 @@ import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.console.preferences.ConsoleConfigurationPreferences;
 import org.hibernate.console.preferences.ConsoleConfigurationPreferences.ConfigurationMode;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.LaunchHelper;
 import org.hibernate.tool.eclipse.common.base.core.console.launch.IConsoleConfigurationLaunchConstants;
@@ -61,15 +61,15 @@ public class ConsoleConfigurationPropertySource implements IPropertySource {
 	static {
 		ComboBoxPropertyDescriptor modeDescriptor = new ComboBoxPropertyDescriptor(
 			"mode",  //$NON-NLS-1$
-			HibernateConsoleMessages.ConsoleConfigurationPropertySource_mode,
+			BasicHibernateMessages.ConsoleConfigurationPropertySource_mode,
 			ConfigurationMode.labels());
 		
 		List<IPropertyDescriptor> l = new ArrayList<IPropertyDescriptor>();
-		l.add(new TextPropertyDescriptor("name", HibernateConsoleMessages.ConsoleConfigurationPropertySource_name)); //$NON-NLS-1$
+		l.add(new TextPropertyDescriptor("name", BasicHibernateMessages.ConsoleConfigurationPropertySource_name)); //$NON-NLS-1$
 		l.add(modeDescriptor);
-		l.add(new PropertyDescriptor("hibernate.cfg.xml", HibernateConsoleMessages.ConsoleConfigurationPropertySource_config_file)); //$NON-NLS-1$
-		l.add(new PropertyDescriptor("hibernate.properties", HibernateConsoleMessages.ConsoleConfigurationPropertySource_properties_file)); //$NON-NLS-1$
-		l.add(new PropertyDescriptor("mapping.files", HibernateConsoleMessages.ConsoleConfigurationPropertySource_additional_mapping_files)); //$NON-NLS-1$
+		l.add(new PropertyDescriptor("hibernate.cfg.xml", BasicHibernateMessages.ConsoleConfigurationPropertySource_config_file)); //$NON-NLS-1$
+		l.add(new PropertyDescriptor("hibernate.properties", BasicHibernateMessages.ConsoleConfigurationPropertySource_properties_file)); //$NON-NLS-1$
+		l.add(new PropertyDescriptor("mapping.files", BasicHibernateMessages.ConsoleConfigurationPropertySource_additional_mapping_files)); //$NON-NLS-1$
 
 		pd = l;
 	}
@@ -128,9 +128,9 @@ public class ConsoleConfigurationPropertySource implements IPropertySource {
 					if (connectionName == null){
 						connectionName = lc.getAttribute(IConsoleConfigurationLaunchConstants.USE_JPA_PROJECT_PROFILE, Boolean.FALSE.toString());
 						if (Boolean.TRUE.toString().equalsIgnoreCase(connectionName)){
-							connectionName = HibernateConsoleMessages.ConnectionProfileCtrl_JPAConfiguredConnection;
+							connectionName = BasicHibernateMessages.ConnectionProfileCtrl_JPAConfiguredConnection;
 						} else {
-							connectionName = HibernateConsoleMessages.ConnectionProfileCtrl_HibernateConfiguredConnection;
+							connectionName = BasicHibernateMessages.ConnectionProfileCtrl_HibernateConfiguredConnection;
 						}
 					}
 					String[] values = getConnectionNames();
@@ -158,7 +158,7 @@ public class ConsoleConfigurationPropertySource implements IPropertySource {
 
 		return null;
 		} catch(RuntimeException e) {
-			return HibernateConsoleMessages.ConsoleConfigurationPropertySource_error + e.getMessage();
+			return BasicHibernateMessages.ConsoleConfigurationPropertySource_error + e.getMessage();
 		}
 	}
 
@@ -257,7 +257,7 @@ public class ConsoleConfigurationPropertySource implements IPropertySource {
 	private IPropertyDescriptor createProjectDescriptor(){		
 		ComboBoxPropertyDescriptor projectDescriptor = new ComboBoxPropertyDescriptor(
 			"project",  //$NON-NLS-1$
-			HibernateConsoleMessages.ConsoleConfigurationPropertySource_project,
+			BasicHibernateMessages.ConsoleConfigurationPropertySource_project,
 			getSortedProjectNames());
 		projectDescriptor.setValidator(new ICellEditorValidator(){		
 			public String isValid(Object value) {				
@@ -268,7 +268,7 @@ public class ConsoleConfigurationPropertySource implements IPropertySource {
 							if (lc != null){
 								String projectName = lc.getAttribute(IJavaLaunchConfigurationConstants.ATTR_PROJECT_NAME, (String)null);
 								if (projectName != null){
-									return NLS.bind(HibernateConsoleMessages.ConsoleConfigurationMainTab_the_java_project_does_not_exist, projectName);
+									return NLS.bind(BasicHibernateMessages.ConsoleConfigurationMainTab_the_java_project_does_not_exist, projectName);
 								}
 							} else {
 								HibernateBasePlugin.getDefault().log("Can't find Console Configuration \"" + cfg.getName() + "\"");//$NON-NLS-1$//$NON-NLS-2$
@@ -287,7 +287,7 @@ public class ConsoleConfigurationPropertySource implements IPropertySource {
 	private IPropertyDescriptor createConnectionDescriptor(){
 		ComboBoxPropertyDescriptor connectionDescriptor = new ComboBoxPropertyDescriptor(
 			"connection",  //$NON-NLS-1$
-			HibernateConsoleMessages.ConsoleConfigurationPropertySource_connection,
+			BasicHibernateMessages.ConsoleConfigurationPropertySource_connection,
 			getConnectionNames());
 		return connectionDescriptor;
 	}
@@ -311,8 +311,8 @@ public class ConsoleConfigurationPropertySource implements IPropertySource {
 		}
 		Arrays.sort(names);
 		String[] resNames = new String[names.length + 2];
-		resNames[0] = HibernateConsoleMessages.ConnectionProfileCtrl_JPAConfiguredConnection;
-		resNames[1] = HibernateConsoleMessages.ConnectionProfileCtrl_HibernateConfiguredConnection;		
+		resNames[0] = BasicHibernateMessages.ConnectionProfileCtrl_JPAConfiguredConnection;
+		resNames[1] = BasicHibernateMessages.ConnectionProfileCtrl_HibernateConfiguredConnection;		
 		System.arraycopy(names, 0, resNames, 2, names.length);
 		return resNames;
 	}

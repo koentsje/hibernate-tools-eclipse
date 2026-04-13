@@ -24,7 +24,7 @@ import org.eclipse.ltk.core.refactoring.participants.CheckConditionsContext;
 import org.eclipse.ltk.core.refactoring.participants.RenameParticipant;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.KnownConfigurations;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 
 /**
  * @author Dmitry Geraskov
@@ -77,7 +77,7 @@ public class RenameResourceParticipant extends RenameParticipant {
 	 * @see org.eclipse.ltk.core.refactoring.participants.RefactoringParticipant#getName()
 	 */
 	public String getName() {
-		return HibernateConsoleMessages.RenameResourceParticipant_launch_configurations_updates;
+		return BasicHibernateMessages.RenameResourceParticipant_launch_configurations_updates;
 	}
 
 	/* (non-Javadoc)

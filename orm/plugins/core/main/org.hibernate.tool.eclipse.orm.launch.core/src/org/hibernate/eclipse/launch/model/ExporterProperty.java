@@ -21,14 +21,14 @@
  */
 package org.hibernate.eclipse.launch.model;
 
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.launch.CodeGenerationStrings;
 
 public class ExporterProperty
 {
 	private static ExporterProperty[] globalProperties = new ExporterProperty[] {
-		new ExporterProperty (CodeGenerationStrings.JDK5, HibernateConsoleMessages.ExporterProperty_use_java5_syntax, "false", false), //$NON-NLS-1$
-		new ExporterProperty (CodeGenerationStrings.EJB3, HibernateConsoleMessages.ExporterProperty_generate_ejb3_annotations, "false", false) //$NON-NLS-1$
+		new ExporterProperty (CodeGenerationStrings.JDK5, BasicHibernateMessages.ExporterProperty_use_java5_syntax, "false", false), //$NON-NLS-1$
+		new ExporterProperty (CodeGenerationStrings.EJB3, BasicHibernateMessages.ExporterProperty_generate_ejb3_annotations, "false", false) //$NON-NLS-1$
 	};
 
 	private String defaultValue;

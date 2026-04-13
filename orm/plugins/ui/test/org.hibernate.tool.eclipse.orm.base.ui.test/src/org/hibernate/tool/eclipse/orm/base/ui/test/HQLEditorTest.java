@@ -34,7 +34,7 @@ import org.eclipse.ui.part.IPage;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.console.QueryInputModel;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.console.views.QueryParametersPage;
 import org.hibernate.eclipse.console.views.QueryParametersView;
@@ -148,7 +148,7 @@ public class HQLEditorTest {
 				break;
 			}
 		}
-		Assert.assertNotNull(HibernateConsoleMessages.QueryParametersPage_add_query_parameter_tooltip
+		Assert.assertNotNull(BasicHibernateMessages.QueryParametersPage_add_query_parameter_tooltip
 				+ " item not found", addParamItem); //$NON-NLS-1$
 		
 		addParamItem.getAction().run();//add query parameters automatically

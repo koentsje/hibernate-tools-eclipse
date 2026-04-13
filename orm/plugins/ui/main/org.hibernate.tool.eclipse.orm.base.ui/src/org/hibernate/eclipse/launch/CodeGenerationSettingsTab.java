@@ -59,7 +59,7 @@ import org.eclipse.ui.PlatformUI;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.console.KnownConfigurations;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.console.utils.DialogSelectionHelper;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
@@ -123,10 +123,10 @@ public class CodeGenerationSettingsTab extends	AbstractLaunchConfigurationTab {
 
 		useExternalProcess = new SelectionButtonDialogField(SWT.CHECK);
 		useExternalProcess.setDialogFieldListener(fieldlistener);
-		useExternalProcess.setLabelText(HibernateConsoleMessages.CodeGenerationSettingsTab_use_generation_in_external_process);
+		useExternalProcess.setLabelText(BasicHibernateMessages.CodeGenerationSettingsTab_use_generation_in_external_process);
 
 		consoleConfigurationName = new ComboDialogField(SWT.READ_ONLY);
-		consoleConfigurationName.setLabelText(HibernateConsoleMessages.CodeGenerationSettingsTab_console_configuration);
+		consoleConfigurationName.setLabelText(BasicHibernateMessages.CodeGenerationSettingsTab_console_configuration);
 		ConsoleConfiguration[] cfg = LaunchHelperUI.findFilteredSortedConsoleConfigs();
 		String[] names = new String[cfg.length + 1];
 		names[0] = NULL_CONFIG;
@@ -141,39 +141,39 @@ public class CodeGenerationSettingsTab extends	AbstractLaunchConfigurationTab {
 		outputdir = new StringButtonDialogField(new IStringButtonAdapter() {
 			public void changeControlPressed(DialogField field) {
 				//IPath[] paths = DialogSelectionHelper.chooseFileEntries(getShell(),  PathHelper.pathOrNull(outputdir.getText()), new IPath[0], "Select output directory", "Choose directory in which the generated files will be stored", new String[] {"cfg.xml"}, false, true, false);
-				IPath[] paths = DialogSelectionHelper.chooseFolderEntries(getShell(),  PathHelper.pathOrNull(outputdir.getText()), HibernateConsoleMessages.CodeGenerationSettingsTab_select_output_dir, HibernateConsoleMessages.CodeGenerationSettingsTab_choose_dir_for_generated_files, false);
+				IPath[] paths = DialogSelectionHelper.chooseFolderEntries(getShell(),  PathHelper.pathOrNull(outputdir.getText()), BasicHibernateMessages.CodeGenerationSettingsTab_select_output_dir, BasicHibernateMessages.CodeGenerationSettingsTab_choose_dir_for_generated_files, false);
 				if(paths!=null && paths.length==1) {
 					outputdir.setText( ( (paths[0]).toOSString() ) );
 				}
 			}
 		});
         outputdir.setDialogFieldListener(fieldlistener);
-		outputdir.setLabelText(HibernateConsoleMessages.CodeGenerationSettingsTab_output_dir);
-		outputdir.setButtonLabel(HibernateConsoleMessages.CodeGenerationSettingsTab_browse);
+		outputdir.setLabelText(BasicHibernateMessages.CodeGenerationSettingsTab_output_dir);
+		outputdir.setButtonLabel(BasicHibernateMessages.CodeGenerationSettingsTab_browse);
 
-        templatedir = new DirectoryBrowseField(null, null, HibernateConsoleMessages.CodeGenerationSettingsTab_select_template_dir, HibernateConsoleMessages.CodeGenerationSettingsTab_choose_dir_custom_templates);
+        templatedir = new DirectoryBrowseField(null, null, BasicHibernateMessages.CodeGenerationSettingsTab_select_template_dir, BasicHibernateMessages.CodeGenerationSettingsTab_choose_dir_custom_templates);
         templatedir.setDialogFieldListener(fieldlistener);
-        templatedir.setLabelText(HibernateConsoleMessages.CodeGenerationSettingsTab_template_directory);
-        templatedir.setFilesystemBrowseLabel(HibernateConsoleMessages.CodeGenerationSettingsTab_filesystem);
-        templatedir.setWorkspaceBrowseLabel(HibernateConsoleMessages.CodeGenerationSettingsTab_workspace);
+        templatedir.setLabelText(BasicHibernateMessages.CodeGenerationSettingsTab_template_directory);
+        templatedir.setFilesystemBrowseLabel(BasicHibernateMessages.CodeGenerationSettingsTab_filesystem);
+        templatedir.setWorkspaceBrowseLabel(BasicHibernateMessages.CodeGenerationSettingsTab_workspace);
 
 		packageName = new StringDialogField();
         packageName.setDialogFieldListener(fieldlistener);
-        packageName.setLabelText(HibernateConsoleMessages.CodeGenerationSettingsTab_package);
+        packageName.setLabelText(BasicHibernateMessages.CodeGenerationSettingsTab_package);
 
         reverseEngineeringStrategy = new StringButtonDialogField(new IStringButtonAdapter() {
 
 			public void changeControlPressed(DialogField field) {
 				IService service = getService();
-				String string = DialogSelectionHelper.chooseImplementation(service.getReverseEngineeringStrategyClassName(), reverseEngineeringStrategy.getText(), HibernateConsoleMessages.CodeGenerationSettingsTab_choose_reverse_engineering_strategy, getShell());
+				String string = DialogSelectionHelper.chooseImplementation(service.getReverseEngineeringStrategyClassName(), reverseEngineeringStrategy.getText(), BasicHibernateMessages.CodeGenerationSettingsTab_choose_reverse_engineering_strategy, getShell());
 				if(string!=null) {
 					reverseEngineeringStrategy.setText(string);
 				}
 			}
 		});
         reverseEngineeringStrategy.setDialogFieldListener(fieldlistener);
-        reverseEngineeringStrategy.setLabelText(HibernateConsoleMessages.CodeGenerationSettingsTab_reveng_strategy);
-        reverseEngineeringStrategy.setButtonLabel(HibernateConsoleMessages.CodeGenerationSettingsTab_browse);
+        reverseEngineeringStrategy.setLabelText(BasicHibernateMessages.CodeGenerationSettingsTab_reveng_strategy);
+        reverseEngineeringStrategy.setButtonLabel(BasicHibernateMessages.CodeGenerationSettingsTab_browse);
 
 		reverseEngineeringSettings= new StringButtonDialogField(new IStringButtonAdapter() {
             public void changeControlPressed(DialogField field) {
@@ -186,11 +186,11 @@ public class CodeGenerationSettingsTab extends	AbstractLaunchConfigurationTab {
             		defaultChoice = 1;
             	}
 				MessageDialog dialog = new MessageDialog(getShell(),
-						HibernateConsoleMessages.CodeGenerationSettingsTab_setup_reverse_engineering,
+						BasicHibernateMessages.CodeGenerationSettingsTab_setup_reverse_engineering,
 						null,
-						HibernateConsoleMessages.CodeGenerationSettingsTab_do_you_want_create_reveng_xml,
+						BasicHibernateMessages.CodeGenerationSettingsTab_do_you_want_create_reveng_xml,
 						MessageDialog.QUESTION,
-						new String[] { HibernateConsoleMessages.CodeGenerationSettingsTab_create_new, HibernateConsoleMessages.CodeGenerationSettingsTab_use_existing, IDialogConstants.CANCEL_LABEL},
+						new String[] { BasicHibernateMessages.CodeGenerationSettingsTab_create_new, BasicHibernateMessages.CodeGenerationSettingsTab_use_existing, IDialogConstants.CANCEL_LABEL},
 						defaultChoice);
 				int answer = dialog.open();
 				if(answer==0) { // create new
@@ -206,7 +206,7 @@ public class CodeGenerationSettingsTab extends	AbstractLaunchConfigurationTab {
 						reverseEngineeringSettings.setText(createdFilePath.toOSString());
 					}
 				} else if (answer==1) { // use existing
-					IPath[] paths = DialogSelectionHelper.chooseFileEntries(getShell(),  reverseEngineeringSettingsFile, new IPath[0], HibernateConsoleMessages.CodeGenerationSettingsTab_select_reverse_engineering_settings_file, HibernateConsoleMessages.CodeGenerationSettingsTab_choose_file_read_reverse_settings, new String[] {HibernateConsoleMessages.CodeGenerationSettingsTab_reveng_xml_1}, false, false, true);
+					IPath[] paths = DialogSelectionHelper.chooseFileEntries(getShell(),  reverseEngineeringSettingsFile, new IPath[0], BasicHibernateMessages.CodeGenerationSettingsTab_select_reverse_engineering_settings_file, BasicHibernateMessages.CodeGenerationSettingsTab_choose_file_read_reverse_settings, new String[] {BasicHibernateMessages.CodeGenerationSettingsTab_reveng_xml_1}, false, false, true);
 					if(paths!=null && paths.length==1) {
 						reverseEngineeringSettings.setText( ( (paths[0]).toOSString() ) );
 					}
@@ -214,35 +214,35 @@ public class CodeGenerationSettingsTab extends	AbstractLaunchConfigurationTab {
             }
         });
 		reverseEngineeringSettings.setDialogFieldListener(fieldlistener);
-        reverseEngineeringSettings.setLabelText(HibernateConsoleMessages.CodeGenerationSettingsTab_reveng_xml_2);
-        reverseEngineeringSettings.setButtonLabel(HibernateConsoleMessages.CodeGenerationSettingsTab_setup);
+        reverseEngineeringSettings.setLabelText(BasicHibernateMessages.CodeGenerationSettingsTab_reveng_xml_2);
+        reverseEngineeringSettings.setButtonLabel(BasicHibernateMessages.CodeGenerationSettingsTab_setup);
 
 		reverseengineer = new SelectionButtonDialogField(SWT.CHECK);
-		reverseengineer.setLabelText(HibernateConsoleMessages.CodeGenerationSettingsTab_reverse_engineer_from_jdbc_connection);
+		reverseengineer.setLabelText(BasicHibernateMessages.CodeGenerationSettingsTab_reverse_engineer_from_jdbc_connection);
 		reverseengineer.setDialogFieldListener(fieldlistener);
 
         useOwnTemplates = new SelectionButtonDialogField(SWT.CHECK);
         useOwnTemplates.setDialogFieldListener(fieldlistener);
-        useOwnTemplates.setLabelText(HibernateConsoleMessages.CodeGenerationSettingsTab_use_custom_templates);
+        useOwnTemplates.setLabelText(BasicHibernateMessages.CodeGenerationSettingsTab_use_custom_templates);
 
         preferRawCompositeIds = new SelectionButtonDialogField(SWT.CHECK);
-        preferRawCompositeIds.setLabelText(HibernateConsoleMessages.CodeGenerationSettingsTab_generate_basic_typed_composite_ids);
+        preferRawCompositeIds.setLabelText(BasicHibernateMessages.CodeGenerationSettingsTab_generate_basic_typed_composite_ids);
         preferRawCompositeIds.setSelection(true);
         preferRawCompositeIds.setDialogFieldListener(fieldlistener);
 
         autoManyToMany = new SelectionButtonDialogField(SWT.CHECK);
-        autoManyToMany.setLabelText(HibernateConsoleMessages.CodeGenerationSettingsTab_detect_many_to_many_tables);
+        autoManyToMany.setLabelText(BasicHibernateMessages.CodeGenerationSettingsTab_detect_many_to_many_tables);
         autoManyToMany.setSelection(true);
         autoManyToMany.setDialogFieldListener(fieldlistener);
 
         autoOneToOne = new SelectionButtonDialogField(SWT.CHECK);
-        autoOneToOne.setLabelText(HibernateConsoleMessages.CodeGenerationSettingsTab_detect_one_to_one_associations);
+        autoOneToOne.setLabelText(BasicHibernateMessages.CodeGenerationSettingsTab_detect_one_to_one_associations);
         autoOneToOne.setSelection(true);
         autoOneToOne.setDialogFieldListener(fieldlistener);
         
         
         autoVersioning = new SelectionButtonDialogField(SWT.CHECK);
-        autoVersioning.setLabelText(HibernateConsoleMessages.CodeGenerationSettingsTab_detect_optimistic_lock_columns);
+        autoVersioning.setLabelText(BasicHibernateMessages.CodeGenerationSettingsTab_detect_optimistic_lock_columns);
         autoVersioning.setSelection(true);
         autoVersioning.setDialogFieldListener(fieldlistener);
 
@@ -309,11 +309,11 @@ public class CodeGenerationSettingsTab extends	AbstractLaunchConfigurationTab {
 		}
 
 		if (configSelected) {
-			updateStatus(HibernateConsoleMessages.CodeGenerationSettingsTab_console_cfg_must_be_specified);
+			updateStatus(BasicHibernateMessages.CodeGenerationSettingsTab_console_cfg_must_be_specified);
 			return;
 		}
 		
-        String msg = PathHelper.checkDirectory(outputdir.getText(), HibernateConsoleMessages.CodeGenerationSettingsTab_output_directory, true);
+        String msg = PathHelper.checkDirectory(outputdir.getText(), BasicHibernateMessages.CodeGenerationSettingsTab_output_directory, true);
 
         if (msg!=null) {
             updateStatus(msg);
@@ -332,7 +332,7 @@ public class CodeGenerationSettingsTab extends	AbstractLaunchConfigurationTab {
         }
 
         if(reverseEngineeringSettings.isEnabled() && reverseEngineeringSettings.getText().trim().length()>0) {
-            msg = PathHelper.checkFile(reverseEngineeringSettings.getText(), HibernateConsoleMessages.CodeGenerationSettingsTab_reveng_xml_3, true);
+            msg = PathHelper.checkFile(reverseEngineeringSettings.getText(), BasicHibernateMessages.CodeGenerationSettingsTab_reveng_xml_3, true);
         	if(msg!=null) {
         		updateStatus(msg);
         		return;
@@ -350,7 +350,7 @@ public class CodeGenerationSettingsTab extends	AbstractLaunchConfigurationTab {
         }
 
         if(useOwnTemplates.isSelected() ) {
-            msg = PathHelper.checkDirectory(templatedir.getText(), HibernateConsoleMessages.CodeGenerationSettingsTab_template_dir, true);
+            msg = PathHelper.checkDirectory(templatedir.getText(), BasicHibernateMessages.CodeGenerationSettingsTab_template_dir, true);
             if (msg!=null) {
                 updateStatus(msg);
                 return;
@@ -400,10 +400,10 @@ public class CodeGenerationSettingsTab extends	AbstractLaunchConfigurationTab {
             if (resType == IResource.FILE) {
                 return null;
             } else {
-            	return NLS.bind(HibernateConsoleMessages.CodeGenerationSettingsTab_must_be_file, name);
+            	return NLS.bind(BasicHibernateMessages.CodeGenerationSettingsTab_must_be_file, name);
             }
         } else {
-            return NLS.bind(HibernateConsoleMessages.CodeGenerationSettingsTab_does_not_exist, name);
+            return NLS.bind(BasicHibernateMessages.CodeGenerationSettingsTab_does_not_exist, name);
         }
     }
 
@@ -473,7 +473,7 @@ public class CodeGenerationSettingsTab extends	AbstractLaunchConfigurationTab {
 			attributes = new ExporterAttributes(configuration);
 		} catch (CoreException ce) {
 			HibernateBasePlugin.getDefault().logErrorMessage(
-				HibernateConsoleMessages.CodeGenerationSettingsTab_problems_when_reading, ce);
+				BasicHibernateMessages.CodeGenerationSettingsTab_problems_when_reading, ce);
 		}
 		if (attributes == null) {
 			return;
@@ -532,7 +532,7 @@ public class CodeGenerationSettingsTab extends	AbstractLaunchConfigurationTab {
 	}
 
 	public String getName() {
-		return HibernateConsoleMessages.CodeGenerationSettingsTab_main;
+		return BasicHibernateMessages.CodeGenerationSettingsTab_main;
 	}
 
 	public Image getImage() {

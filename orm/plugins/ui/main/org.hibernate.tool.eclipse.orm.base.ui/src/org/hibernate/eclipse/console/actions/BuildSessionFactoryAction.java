@@ -26,7 +26,7 @@ import java.util.Iterator;
 import org.eclipse.jface.viewers.StructuredViewer;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.HibernateConsoleRuntimeException;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 
 /**
@@ -38,7 +38,7 @@ public class BuildSessionFactoryAction extends ConsoleConfigurationBasedAction {
 	private final StructuredViewer viewer;
 
 	public BuildSessionFactoryAction(StructuredViewer viewer) {
-		super(HibernateConsoleMessages.BuildSessionFactoryAction_build_session_factory);
+		super(BasicHibernateMessages.BuildSessionFactoryAction_build_session_factory);
 		this.viewer = viewer;
 		setEnabledWhenNoSessionFactory(true);
 	}
@@ -59,9 +59,9 @@ public class BuildSessionFactoryAction extends ConsoleConfigurationBasedAction {
             }
 
         	} catch(HibernateConsoleRuntimeException he) {
-        		 HibernateBasePlugin.getDefault().showError(viewer.getControl().getShell(), HibernateConsoleMessages.BuildSessionFactoryAction_exception_while_start_hibernate,he);
+        		 HibernateBasePlugin.getDefault().showError(viewer.getControl().getShell(), BasicHibernateMessages.BuildSessionFactoryAction_exception_while_start_hibernate,he);
         	} catch(UnsupportedClassVersionError ucve) {
-				 HibernateBasePlugin.getDefault().showError(viewer.getControl().getShell(), HibernateConsoleMessages.BuildSessionFactoryAction_start_hibernate_resulted,ucve);
+				 HibernateBasePlugin.getDefault().showError(viewer.getControl().getShell(), BasicHibernateMessages.BuildSessionFactoryAction_start_hibernate_resulted,ucve);
         	}
         }
 	}
@@ -72,9 +72,9 @@ public class BuildSessionFactoryAction extends ConsoleConfigurationBasedAction {
 	protected boolean updateState(ConsoleConfiguration config) {
 		setEnabledWhenNoSessionFactory(!config.isSessionFactoryCreated() );
 		if(enabledWhenNoSessionFactory) {
-			setText(HibernateConsoleMessages.BuildSessionFactoryAction_create_sessionfactory);
+			setText(BasicHibernateMessages.BuildSessionFactoryAction_create_sessionfactory);
 		} else {
-			setText(HibernateConsoleMessages.BuildSessionFactoryAction_close_sessionfactory);
+			setText(BasicHibernateMessages.BuildSessionFactoryAction_close_sessionfactory);
 		}
 		return super.updateState(config);
 	}

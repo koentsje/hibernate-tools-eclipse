@@ -15,7 +15,7 @@ import org.eclipse.jface.text.ITextViewer;
 import org.eclipse.ui.texteditor.ITextEditor;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.eclipse.console.AbstractQueryEditor;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 
 /**
@@ -29,9 +29,9 @@ public class StickResTabAction extends Action {
 	private ITextEditor fTextEditor;
 
 	public StickResTabAction(ITextViewer viewer) {
-		super(HibernateConsoleMessages.StickResTabAction_stick_editor, AS_CHECK_BOX);
+		super(BasicHibernateMessages.StickResTabAction_stick_editor, AS_CHECK_BOX);
 	    fViewer = viewer;
-		setToolTipText(HibernateConsoleMessages.StickResTabAction_stick_editor);
+		setToolTipText(BasicHibernateMessages.StickResTabAction_stick_editor);
 		AbstractQueryEditor queryEditor = getQueryEditor();
 		boolean checked = false;
 		if (queryEditor != null) {
@@ -43,9 +43,9 @@ public class StickResTabAction extends Action {
 	}
 	
 	public StickResTabAction(ITextEditor textEditor) {
-		super(HibernateConsoleMessages.StickResTabAction_stick_editor, AS_CHECK_BOX);
+		super(BasicHibernateMessages.StickResTabAction_stick_editor, AS_CHECK_BOX);
 		fTextEditor = textEditor;
-		setToolTipText(HibernateConsoleMessages.StickResTabAction_stick_editor);
+		setToolTipText(BasicHibernateMessages.StickResTabAction_stick_editor);
 		AbstractQueryEditor queryEditor = getQueryEditor();
 		boolean checked = false;
 		if (queryEditor != null) {

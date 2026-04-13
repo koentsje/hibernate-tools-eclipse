@@ -18,7 +18,7 @@ import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.ltk.core.refactoring.Change;
 import org.eclipse.ltk.core.refactoring.RefactoringStatus;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.tool.eclipse.common.base.core.console.launch.IConsoleConfigurationLaunchConstants;
 
 /**
@@ -44,7 +44,7 @@ public class ConsoleConfigurationNamingStrategyChange extends Change {
 
 	@Override
 	public String getName() {
-		return HibernateConsoleMessages.ConsoleConfigurationITypeRenameParticipant_update_names;
+		return BasicHibernateMessages.ConsoleConfigurationITypeRenameParticipant_update_names;
 	}
 
 	@Override

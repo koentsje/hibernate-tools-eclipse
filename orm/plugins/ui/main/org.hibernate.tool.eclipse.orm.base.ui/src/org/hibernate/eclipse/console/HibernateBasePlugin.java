@@ -76,7 +76,7 @@ import org.osgi.framework.BundleContext;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.EclipseConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.EclipseConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.EclipseLaunchConsoleConfigurationPreferences;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 
 /**
  * The main plugin class to be used in the desktop.
@@ -145,7 +145,7 @@ public class HibernateBasePlugin extends AbstractUIPlugin implements PluginLogge
 					try {
 						removeConfiguration(root.getName());
 					} catch (CoreException e) {
-						logErrorMessage(HibernateConsoleMessages.HibernateBasePlugin_could_not_delete_launch_config_for + root.getName(), e);
+						logErrorMessage(BasicHibernateMessages.HibernateBasePlugin_could_not_delete_launch_config_for + root.getName(), e);
 					}
 				}
 			}
@@ -239,7 +239,7 @@ public class HibernateBasePlugin extends AbstractUIPlugin implements PluginLogge
 			    	}
 			    	catch (CoreException ce) 
 			    	{
-			    		HibernateBasePlugin.openError(new Shell(), HibernateConsoleMessages.EditConsoleConfiguration_rename_refactoring_error_totle,
+			    		HibernateBasePlugin.openError(new Shell(), BasicHibernateMessages.EditConsoleConfiguration_rename_refactoring_error_totle,
 			    				ce.getLocalizedMessage(), ce, HibernateBasePlugin.PERFORM_SYNC_EXEC);
 			    	}
 				}
@@ -250,7 +250,7 @@ public class HibernateBasePlugin extends AbstractUIPlugin implements PluginLogge
 				try {
 					temporary = configuration.getAttribute(AddConfigurationAction.TEMPORARY_CONFIG_FLAG, false);
 				} catch (CoreException e) {
-					HibernateBasePlugin.getDefault().showError( getShell(), HibernateConsoleMessages.HibernateBasePlugin_problem_to_get_flag,  e);
+					HibernateBasePlugin.getDefault().showError( getShell(), BasicHibernateMessages.HibernateBasePlugin_problem_to_get_flag,  e);
 				}
 				return temporary;
 			}
@@ -384,10 +384,10 @@ public class HibernateBasePlugin extends AbstractUIPlugin implements PluginLogge
 		List<IStatus> causes = new ArrayList<IStatus>();
 		Throwable temp = t;
 		while(temp!=null && temp.getCause()!=temp) {
-			causes.add(new Status(IStatus.ERROR, ID, code, temp.getMessage()==null?temp.toString() + HibernateConsoleMessages.HibernateBasePlugin_no_message_1:temp.toString(), temp) );
+			causes.add(new Status(IStatus.ERROR, ID, code, temp.getMessage()==null?temp.toString() + BasicHibernateMessages.HibernateBasePlugin_no_message_1:temp.toString(), temp) );
 			temp = temp.getCause();
 		}
-        String msg = HibernateConsoleMessages.HibernateBasePlugin_no_message_2;
+        String msg = BasicHibernateMessages.HibernateBasePlugin_no_message_2;
         if(t!=null && t.getMessage()!=null) {
             msg = t.toString();
         }
@@ -433,7 +433,7 @@ public class HibernateBasePlugin extends AbstractUIPlugin implements PluginLogge
 				KnownConfigurations.getInstance().addConfiguration(new EclipseConsoleConfiguration(prefs), false); // TODO: do we need to broadcast every time when reading state ?
 			}
 		} catch(HibernateConsoleRuntimeException hcr) {
-			logErrorMessage(HibernateConsoleMessages.HibernateBasePlugin_error_while_reading_console_config, hcr);
+			logErrorMessage(BasicHibernateMessages.HibernateBasePlugin_error_while_reading_console_config, hcr);
 		}
 	}
 
@@ -451,13 +451,13 @@ public class HibernateBasePlugin extends AbstractUIPlugin implements PluginLogge
 		logErrorMessage(message, he);
 		IStatus warning = throwableToStatus(he);
 		 	   ErrorDialog.openError(shell,
-		 	      HibernateConsoleMessages.HibernateBasePlugin_hibernate_console, message, warning);
+		 	      BasicHibernateMessages.HibernateBasePlugin_hibernate_console, message, warning);
 	}
 
 	public void showError(Shell shell, String message, IStatus s) {
 		log(s);
 	 	   ErrorDialog.openError(shell,
-	 			  HibernateConsoleMessages.HibernateBasePlugin_hibernate_console, message, s);
+	 			  BasicHibernateMessages.HibernateBasePlugin_hibernate_console, message, s);
 	}
 
 	public IEditorPart openCriteriaEditor(String consoleName, String criteria) {
@@ -471,7 +471,7 @@ public class HibernateBasePlugin extends AbstractUIPlugin implements PluginLogge
 		        return page.openEditor(editorInput, "org.hibernate.eclipse.criteriaeditor.CriteriaEditor", true); //$NON-NLS-1$
 		        //page.openEditor(editorInput, "org.eclipse.jdt.ui.CompilationUnitEditor", true);
 		    } catch (PartInitException ex) {
-		    	logErrorMessage(HibernateConsoleMessages.HibernateBasePlugin_could_not_open_criteria_editor_for_console + consoleName, ex);
+		    	logErrorMessage(BasicHibernateMessages.HibernateBasePlugin_could_not_open_criteria_editor_for_console + consoleName, ex);
 		    	return null;
 		    }
 	}
@@ -485,7 +485,7 @@ public class HibernateBasePlugin extends AbstractUIPlugin implements PluginLogge
 		        final HQLEditorInput editorInput = new HQLEditorInput(storage);
 		            return page.openEditor(editorInput, "org.hibernate.eclipse.hqleditor.HQLEditor", true); //$NON-NLS-1$
 		    } catch (PartInitException ex) {
-		        logErrorMessage(HibernateConsoleMessages.HibernateBasePlugin_could_not_open_hql_editor_for_console + consoleName, ex);
+		        logErrorMessage(BasicHibernateMessages.HibernateBasePlugin_could_not_open_hql_editor_for_console + consoleName, ex);
 		        return null;
 		    }
 	}

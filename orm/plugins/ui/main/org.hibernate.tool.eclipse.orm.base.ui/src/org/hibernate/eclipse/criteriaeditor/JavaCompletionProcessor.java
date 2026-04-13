@@ -34,7 +34,7 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.jface.text.contentassist.IContextInformation;
 import org.eclipse.jface.text.contentassist.IContextInformationValidator;
 import org.eclipse.swt.widgets.Shell;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.ProjectUtils;
 import org.hibernate.eclipse.hqleditor.CompletionHelper;
@@ -86,17 +86,17 @@ public class JavaCompletionProcessor implements IContentAssistProcessor {
 		try {
 			setErrorMessage( null );
 			if(editor.getConsoleConfiguration()==null) {
-				setErrorMessage( HibernateConsoleMessages.JavaCompletionProcessor_no_console_configuration_found );
+				setErrorMessage( BasicHibernateMessages.JavaCompletionProcessor_no_console_configuration_found );
 				return new ICompletionProposal[0];
 			}
-			String prefix = HibernateConsoleMessages.JavaCompletionProcessor_session_session; // has to do this because of https://bugs.eclipse.org/bugs/show_bug.cgi?id=141518
+			String prefix = BasicHibernateMessages.JavaCompletionProcessor_session_session; // has to do this because of https://bugs.eclipse.org/bugs/show_bug.cgi?id=141518
 			
 			IJavaCompletionProposal[] results = new IJavaCompletionProposal[0];
 			IJavaProject[] projects = null;
 			//try {
 				projects = ProjectUtils.findJavaProjects(editor.getConsoleConfiguration());
 			/*} catch (RuntimeException e){
-				String mess = NLS.bind(HibernateConsoleMessages.JavaCompletionProcessor_error_find_project,
+				String mess = NLS.bind(BasicHibernateMessages.JavaCompletionProcessor_error_find_project,
 						editor.getConsoleConfiguration().getName());
 				HibernateBasePlugin.getDefault().logErrorMessage(mess, e);
 			}*/
@@ -112,7 +112,7 @@ public class JavaCompletionProcessor implements IContentAssistProcessor {
 					ErrorDialog
 							.openError(
 									shell,
-									HibernateConsoleMessages.JavaCompletionProcessor_error, HibernateConsoleMessages.JavaCompletionProcessor_error_while_performing_code_completion, x.getStatus() );
+									BasicHibernateMessages.JavaCompletionProcessor_error, BasicHibernateMessages.JavaCompletionProcessor_error_while_performing_code_completion, x.getStatus() );
 					HibernateBasePlugin.getDefault().log( x );
 				}
 				results = collector.getJavaCompletionProposals();

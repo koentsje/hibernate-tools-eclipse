@@ -32,7 +32,7 @@ import org.hibernate.console.HibernateConsoleRuntimeException;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.console.execution.ExecutionContext.Command;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernatePlugin;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.common.HibernateExtension;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.common.IConsoleExtension;
 import org.hibernate.eclipse.launch.model.ExporterFactory;
@@ -114,7 +114,7 @@ public class ConsoleExtension implements IConsoleExtension {
 					HibernatePlugin
 							.throwableToStatus(
 									new HibernateConsoleRuntimeException(
-											HibernateConsoleMessages.CodeGenerationLaunchDelegate_received_noclassdeffounderror,
+											BasicHibernateMessages.CodeGenerationLaunchDelegate_received_noclassdeffounderror,
 											e), 666));
 		} finally {
 			monitor.done();
@@ -129,7 +129,7 @@ public class ConsoleExtension implements IConsoleExtension {
 			throws CoreException {
 
 		monitor.beginTask(
-				HibernateConsoleMessages.CodeGenerationLaunchDelegate_generating_code_for
+				BasicHibernateMessages.CodeGenerationLaunchDelegate_generating_code_for
 						+ attributes.getConsoleConfigurationName(),
 				exporterFactories.length + 1);
 
@@ -139,7 +139,7 @@ public class ConsoleExtension implements IConsoleExtension {
 		ConsoleConfiguration cc = KnownConfigurations.getInstance().find(
 				attributes.getConsoleConfigurationName());
 		if (attributes.isReverseEngineer()) {
-			monitor.subTask(HibernateConsoleMessages.CodeGenerationLaunchDelegate_reading_jdbc_metadata);
+			monitor.subTask(BasicHibernateMessages.CodeGenerationLaunchDelegate_reading_jdbc_metadata);
 		}
 		final IConfiguration cfg = buildConfiguration(attributes, cc,
 				ResourcesPlugin.getWorkspace().getRoot());
@@ -180,7 +180,7 @@ public class ConsoleExtension implements IConsoleExtension {
 												.getHibernateService());
 					} catch (CoreException e) {
 						throw new HibernateConsoleRuntimeException(
-								HibernateConsoleMessages.CodeGenerationLaunchDelegate_error_while_setting_up
+								BasicHibernateMessages.CodeGenerationLaunchDelegate_error_while_setting_up
 										+ exporterFactories[i]
 												.getExporterDefinition(), e);
 					}
@@ -189,7 +189,7 @@ public class ConsoleExtension implements IConsoleExtension {
 						exporter.start();
 					} catch (HibernateException he) {
 						throw new HibernateConsoleRuntimeException(
-								HibernateConsoleMessages.CodeGenerationLaunchDelegate_error_while_running
+								BasicHibernateMessages.CodeGenerationLaunchDelegate_error_while_running
 										+ exporterFactories[i]
 												.getExporterDefinition()
 												.getDescription(), he);

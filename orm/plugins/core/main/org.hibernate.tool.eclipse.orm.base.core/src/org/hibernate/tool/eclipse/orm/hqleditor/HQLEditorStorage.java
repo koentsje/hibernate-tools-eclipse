@@ -21,7 +21,7 @@
  */
 package org.hibernate.tool.eclipse.orm.hqleditor;
 
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.tool.eclipse.orm.editor.QueryEditorStorage;
 
 /**
@@ -38,7 +38,7 @@ public class HQLEditorStorage extends QueryEditorStorage {
     }
 
     public HQLEditorStorage(String consoleName, String string) {
-		super(consoleName, "HQL: " + (consoleName==null?HibernateConsoleMessages.HQLEditorStorage_none:consoleName), string); //$NON-NLS-1$
+		super(consoleName, "HQL: " + (consoleName==null?BasicHibernateMessages.HQLEditorStorage_none:consoleName), string); //$NON-NLS-1$
 	}
 
 }

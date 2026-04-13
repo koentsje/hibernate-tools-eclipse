@@ -42,7 +42,7 @@ import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.internal.dialogs.PropertyDialog;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.util.xpl.StringHelper;
 
@@ -58,8 +58,8 @@ public class ConnectionProfileCtrl {
 	protected Button buttonEdit;
 	private boolean useSynteticValues = true;
 	
-	static final String NO_CONNECTIN_NAME = HibernateConsoleMessages.ConnectionProfileCtrl_HibernateConfiguredConnection;
-	static final String JPA_CONNECTIN_NAME = HibernateConsoleMessages.ConnectionProfileCtrl_JPAConfiguredConnection;
+	static final String NO_CONNECTIN_NAME = BasicHibernateMessages.ConnectionProfileCtrl_HibernateConfiguredConnection;
+	static final String JPA_CONNECTIN_NAME = BasicHibernateMessages.ConnectionProfileCtrl_JPAConfiguredConnection;
 
 	static final protected ConnectionWrapper NO_CONNECTION_PLACEHOLDER = new ConnectionWrapper(NO_CONNECTIN_NAME, null);
 	static final protected ConnectionWrapper JPA_CONNECTION_PLACEHOLDER = new ConnectionWrapper(JPA_CONNECTIN_NAME, null);
@@ -157,7 +157,7 @@ public class ConnectionProfileCtrl {
 		 * @param label
 		 */
 		public NewConnectionProfileAction() {
-			super(HibernateConsoleMessages.ConnectionProfileCtrl_New);
+			super(BasicHibernateMessages.ConnectionProfileCtrl_New);
 		}
 
 		@Override
@@ -212,7 +212,7 @@ public class ConnectionProfileCtrl {
 		 * @param label
 		 */
 		public EditConnectionProfileAction() {
-			super(HibernateConsoleMessages.ConnectionProfileCtrl_Edit);
+			super(BasicHibernateMessages.ConnectionProfileCtrl_Edit);
 		}
 
 		/**
@@ -280,11 +280,11 @@ public class ConnectionProfileCtrl {
 		combo.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_FILL | GridData.GRAB_HORIZONTAL));
 		
 		buttonNew = new Button(comp, SWT.PUSH);
-		buttonNew.setText(HibernateConsoleMessages.ConnectionProfileCtrl_New);
+		buttonNew.setText(BasicHibernateMessages.ConnectionProfileCtrl_New);
 		buttonNew.addSelectionListener(action1);
 
 		buttonEdit = new Button(comp, SWT.PUSH);
-		buttonEdit.setText(HibernateConsoleMessages.ConnectionProfileCtrl_Edit);
+		buttonEdit.setText(BasicHibernateMessages.ConnectionProfileCtrl_Edit);
 		buttonEdit.addSelectionListener(action2);
 
 		updateInput();		

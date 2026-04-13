@@ -29,7 +29,7 @@ import org.eclipse.ui.actions.SelectionListenerAction;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.console.QueryPage;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 
 /**
@@ -52,7 +52,7 @@ public class CloseQueryPageAction extends SelectionListenerAction {
 		setImageDescriptor(EclipseImages.getImageDescriptor(ImageConstants.CLOSE) );
 		setDisabledImageDescriptor(EclipseImages.getImageDescriptor(ImageConstants.CLOSE_DISABLED) );
 
-		setToolTipText(HibernateConsoleMessages.CloseQueryPageAction_close_query_page);
+		setToolTipText(BasicHibernateMessages.CloseQueryPageAction_close_query_page);
 	}
 
 	public void run() {

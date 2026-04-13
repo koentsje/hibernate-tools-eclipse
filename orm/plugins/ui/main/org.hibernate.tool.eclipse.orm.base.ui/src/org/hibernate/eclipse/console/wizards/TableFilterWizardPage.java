@@ -35,7 +35,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.reveng.IReverseEngineeringDefinition;
 import org.hibernate.tool.eclipse.orm.model.core.ITableFilter;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.reveng.impl.ReverseEngineeringDefinitionImpl;
@@ -53,8 +53,8 @@ public class TableFilterWizardPage extends WizardPage {
 	protected TableFilterWizardPage(String pageName, String selectedConfiguratonName) {
 		super( pageName );
 		this.selectedConfiguratonName = selectedConfiguratonName;
-		setTitle(HibernateConsoleMessages.TableFilterWizardPage_configure_table_filters);
-		setDescription(HibernateConsoleMessages.TableFilterWizardPage_specify_which_catalog);
+		setTitle(BasicHibernateMessages.TableFilterWizardPage_configure_table_filters);
+		setDescription(BasicHibernateMessages.TableFilterWizardPage_specify_which_catalog);
 	}
 
 	public void createControl(Composite parent) {
@@ -75,7 +75,7 @@ public class TableFilterWizardPage extends WizardPage {
 		layout.verticalSpacing = 10;
 
 		consoleConfigurationName = new ComboDialogField(SWT.READ_ONLY);
-		consoleConfigurationName.setLabelText(HibernateConsoleMessages.TableFilterWizardPage_console_configuration);
+		consoleConfigurationName.setLabelText(BasicHibernateMessages.TableFilterWizardPage_console_configuration);
 		ConsoleConfiguration[] cfg = LaunchHelperUI.findFilteredSortedConsoleConfigs();
 		String[] names = new String[cfg.length];
 		for (int i = 0; i < cfg.length; i++) {
@@ -121,7 +121,7 @@ public class TableFilterWizardPage extends WizardPage {
     	//updateButtons();
 
     	if (hasDuplicates()) {
-        	updateWarningStatus(HibernateConsoleMessages.TableFilterWizardPage_table_filters_contains_duplicates);
+        	updateWarningStatus(BasicHibernateMessages.TableFilterWizardPage_table_filters_contains_duplicates);
             return;
         }
 

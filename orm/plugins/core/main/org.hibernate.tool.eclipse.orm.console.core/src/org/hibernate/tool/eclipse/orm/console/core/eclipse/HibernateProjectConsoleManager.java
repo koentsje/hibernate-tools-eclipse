@@ -40,7 +40,7 @@ import org.eclipse.jdt.core.JavaCore;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.console.execution.ExecutionContext.Command;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.properties.HibernatePropertiesConstants;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
@@ -125,7 +125,7 @@ public class HibernateProjectConsoleManager {
 		private final TableCache cache;
 
 		public ReadDatabaseMetaData(IProject project, ConsoleConfiguration ccfg, TableCache cache) {
-			super(HibernateConsoleMessages.HibernateNature_reading_database_metadata_for + project.getName());
+			super(BasicHibernateMessages.HibernateNature_reading_database_metadata_for + project.getName());
 			this.ccfg = ccfg;
 			this.cache = cache;
 		}
@@ -135,7 +135,7 @@ public class HibernateProjectConsoleManager {
 			IService service = ccfg.getHibernateExtension().getHibernateService();
 			final IConfiguration jcfg = service.newJDBCMetaDataConfiguration();
 			jcfg.setProperties(cfg.getProperties());
-			monitor.beginTask(HibernateConsoleMessages.HibernateNature_reading_database_metadata, IProgressMonitor.UNKNOWN);
+			monitor.beginTask(BasicHibernateMessages.HibernateNature_reading_database_metadata, IProgressMonitor.UNKNOWN);
 			try {
 				ccfg.execute(new Command() {
 					public Object execute() {
@@ -157,7 +157,7 @@ public class HibernateProjectConsoleManager {
 				return Status.OK_STATUS;
 			} catch (Throwable t) {
 				return new Status(IStatus.ERROR, HibernateConsoleCorePlugin.ID, 1,
-					HibernateConsoleMessages.HibernateNature_error_while_performing_background_reading_of_database_schema, t);
+					BasicHibernateMessages.HibernateNature_error_while_performing_background_reading_of_database_schema, t);
 			}
 		}
 	}

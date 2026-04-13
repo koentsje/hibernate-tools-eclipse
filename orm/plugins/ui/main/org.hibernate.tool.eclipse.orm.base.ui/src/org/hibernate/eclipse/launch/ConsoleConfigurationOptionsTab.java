@@ -16,7 +16,7 @@ import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Text;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.console.utils.DialogSelectionHelper;
 import org.hibernate.tool.eclipse.orm.utils.DriverClassHelpers;
@@ -46,7 +46,7 @@ public class ConsoleConfigurationOptionsTab extends ConsoleConfigurationTab {
 	}
 	
 	private void createDialectNameCombo(Composite parent) {
-		Group group = createGroup( parent, HibernateConsoleMessages.NewConfigurationWizardPage_database_dialect );
+		Group group = createGroup( parent, BasicHibernateMessages.NewConfigurationWizardPage_database_dialect );
 		
 		dialectNameCombo = new Combo(group, SWT.NONE);
 		dialectNameCombo.setItems(helper.getDialectNames());
@@ -58,7 +58,7 @@ public class ConsoleConfigurationOptionsTab extends ConsoleConfigurationTab {
 	}
 
 	private void createNamingStrategyClassNameEditor(Composite parent) {
-		Group group = createGroup( parent, HibernateConsoleMessages.ConsoleConfigurationOptionsTab_naming_strategy );
+		Group group = createGroup( parent, BasicHibernateMessages.ConsoleConfigurationOptionsTab_naming_strategy );
 		namingStrategyClassNameText = createBrowseEditor( parent, group);
 		createBrowseButton( group, new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent e) {
@@ -68,7 +68,7 @@ public class ConsoleConfigurationOptionsTab extends ConsoleConfigurationTab {
 	}
 
 	private void createEntityResolverClassNameEditor(Composite parent) {
-		Group group = createGroup( parent, HibernateConsoleMessages.ConsoleConfigurationOptionsTab_entity_resolver );
+		Group group = createGroup( parent, BasicHibernateMessages.ConsoleConfigurationOptionsTab_entity_resolver );
 		entityResolverClassNameText = createBrowseEditor( parent, group);
 		createBrowseButton( group, new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent e) {
@@ -79,7 +79,7 @@ public class ConsoleConfigurationOptionsTab extends ConsoleConfigurationTab {
 
 
 	public String getName() {
-		return HibernateConsoleMessages.ConsoleConfigurationOptionsTab_options;
+		return BasicHibernateMessages.ConsoleConfigurationOptionsTab_options;
 	}
 
 	public Image getImage() {
@@ -113,14 +113,14 @@ public class ConsoleConfigurationOptionsTab extends ConsoleConfigurationTab {
 
 
 	private void handleEntityResolverBrowse() {
-		String string = DialogSelectionHelper.chooseImplementation(EntityResolver.class.getName(), entityResolverClassNameText.getText(), HibernateConsoleMessages.ConsoleConfigurationOptionsTab_select_entity_resolver_class, getShell());
+		String string = DialogSelectionHelper.chooseImplementation(EntityResolver.class.getName(), entityResolverClassNameText.getText(), BasicHibernateMessages.ConsoleConfigurationOptionsTab_select_entity_resolver_class, getShell());
 		if(string!=null) {
 			entityResolverClassNameText.setText(string);
 		}
 	}
 
 	private void handleNamingStrategyBrowse() {
-		String string = DialogSelectionHelper.chooseImplementation("org.hibernate.cfg.NamingStrategy", namingStrategyClassNameText.getText(), HibernateConsoleMessages.ConsoleConfigurationOptionsTab_select_naming_strategy_class, getShell());
+		String string = DialogSelectionHelper.chooseImplementation("org.hibernate.cfg.NamingStrategy", namingStrategyClassNameText.getText(), BasicHibernateMessages.ConsoleConfigurationOptionsTab_select_naming_strategy_class, getShell());
 		if(string!=null) {
 			namingStrategyClassNameText.setText(string);
 		}

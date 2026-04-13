@@ -56,7 +56,7 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.ui.ide.IDE;
 import org.hibernate.console.ImageConstants;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.console.actions.AddConfigurationAction;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
@@ -104,9 +104,9 @@ public class NewConfigurationWizard extends Wizard implements INewWizard {
         	if (super.validatePage()){
         		String fileName = getFileName();
         		if (!fileName.endsWith(".cfg.xml") ) { //$NON-NLS-1$
-        			setMessage(HibernateConsoleMessages.NewConfigurationWizardPage_file_extension_should_be_cfgxml, WARNING);
-                } else if (!fileName.equals(HibernateConsoleMessages.NewConfigurationWizardPage_filefile_name)){
-                	setMessage(NLS.bind(HibernateConsoleMessages.NewConfigurationWizardPage_fileshould_pass_configuration,
+        			setMessage(BasicHibernateMessages.NewConfigurationWizardPage_file_extension_should_be_cfgxml, WARNING);
+                } else if (!fileName.equals(BasicHibernateMessages.NewConfigurationWizardPage_filefile_name)){
+                	setMessage(NLS.bind(BasicHibernateMessages.NewConfigurationWizardPage_fileshould_pass_configuration,
                 			fileName), WARNING);
                 }
         		IPath path = getContainerFullPath().append(getFileName());
@@ -125,7 +125,7 @@ public class NewConfigurationWizard extends Wizard implements INewWizard {
 							if (root.getResource() != null && root.getResource().getProjectRelativePath().isPrefixOf(projRelPath)){
 								if (!root.getResource().getProjectRelativePath().equals(projRelPath)){
 				                	//this is not "src" folder
-									setMessage(NLS.bind(HibernateConsoleMessages.NewConfigurationWizardPage_fileshould_pass_configuration,
+									setMessage(NLS.bind(BasicHibernateMessages.NewConfigurationWizardPage_fileshould_pass_configuration,
 				                			fileName), WARNING);
 								}
 								found = true;
@@ -133,7 +133,7 @@ public class NewConfigurationWizard extends Wizard implements INewWizard {
 							}
 						}
 						if (!found){
-							setMessage(HibernateConsoleMessages.NewConfigurationWizardPage_fileoutside_classpath, WARNING);
+							setMessage(BasicHibernateMessages.NewConfigurationWizardPage_fileoutside_classpath, WARNING);
 						}										
 					}
 				} catch (CoreException e) {
@@ -163,8 +163,8 @@ public class NewConfigurationWizard extends Wizard implements INewWizard {
         		return openContentStream(props);
         	}
         };
-        cPage.setTitle( HibernateConsoleMessages.NewConfigurationWizard_create_hibernate_cfg_file );
-        cPage.setDescription( HibernateConsoleMessages.NewConfigurationWizard_create_new_hibernate_cfg_xml );
+        cPage.setTitle( BasicHibernateMessages.NewConfigurationWizard_create_hibernate_cfg_file );
+        cPage.setDescription( BasicHibernateMessages.NewConfigurationWizard_create_new_hibernate_cfg_xml );
         cPage.setFileName("hibernate.cfg.xml"); //$NON-NLS-1$
         cPage.setFileExtension("cfg.xml"); //$NON-NLS-1$
         addPage( cPage );
@@ -214,7 +214,7 @@ public class NewConfigurationWizard extends Wizard implements INewWizard {
 			return false;
 		} catch (InvocationTargetException e) {
 			Throwable realException = e.getTargetException();
-			HibernateBasePlugin.getDefault().showError(getShell(), HibernateConsoleMessages.NewConfigurationWizard_error, realException);
+			HibernateBasePlugin.getDefault().showError(getShell(), BasicHibernateMessages.NewConfigurationWizard_error, realException);
 			return false;
 		}
 		
@@ -225,7 +225,7 @@ public class NewConfigurationWizard extends Wizard implements INewWizard {
 				AddConfigurationAction.deleteTemporaryLaunchConfigurations();
 	        }
 		} catch (CoreException ce) {
-			HibernateBasePlugin.getDefault().showError(getShell(), HibernateConsoleMessages.AddConfigurationAction_problem_add_console_config,  ce);
+			HibernateBasePlugin.getDefault().showError(getShell(), BasicHibernateMessages.AddConfigurationAction_problem_add_console_config,  ce);
 		}
         
 		return true;
@@ -235,7 +235,7 @@ public class NewConfigurationWizard extends Wizard implements INewWizard {
 		try {
 			confPage.performCancel();
 		} catch (CoreException ce) {
-			HibernateBasePlugin.getDefault().showError(getShell(), HibernateConsoleMessages.AddConfigurationAction_problem_add_console_config,  ce);
+			HibernateBasePlugin.getDefault().showError(getShell(), BasicHibernateMessages.AddConfigurationAction_problem_add_console_config,  ce);
 		}
         return true;
     }
@@ -262,7 +262,7 @@ public class NewConfigurationWizard extends Wizard implements INewWizard {
 		final IFile file, Properties props, IProgressMonitor monitor)
 		throws CoreException {
 		// create a sample file
-		monitor.beginTask(HibernateConsoleMessages.NewConfigurationWizard_creating + file.getName(), 2);
+		monitor.beginTask(BasicHibernateMessages.NewConfigurationWizard_creating + file.getName(), 2);
 		InputStream stream = openContentStream(props);
 		if (file.exists() ) {
             file.setContents(stream, true, true, monitor);
@@ -274,7 +274,7 @@ public class NewConfigurationWizard extends Wizard implements INewWizard {
 		} catch (IOException e) {
 		}
 		monitor.worked(1);
-		monitor.setTaskName(HibernateConsoleMessages.NewConfigurationWizard_open_file_for_editing);
+		monitor.setTaskName(BasicHibernateMessages.NewConfigurationWizard_open_file_for_editing);
 		getShell().getDisplay().asyncExec(new Runnable() {
 			public void run() {
 				IWorkbenchPage page =
@@ -302,7 +302,7 @@ public class NewConfigurationWizard extends Wizard implements INewWizard {
         try {
             return new ByteArrayInputStream(stringWriter.toString().getBytes("UTF-8") ); //$NON-NLS-1$
         } catch (UnsupportedEncodingException uec) {
-            HibernateBasePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.NewConfigurationWizard_problems_converting_to_utf8, uec);
+            HibernateBasePlugin.getDefault().logErrorMessage(BasicHibernateMessages.NewConfigurationWizard_problems_converting_to_utf8, uec);
             return new ByteArrayInputStream(stringWriter.toString().getBytes() );
         }
 	}

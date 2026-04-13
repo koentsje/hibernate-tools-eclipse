@@ -2,8 +2,8 @@ package org.hibernate.tool.eclipse.common.base.core.console;
 
 import org.eclipse.osgi.util.NLS;
 
-public class HibernateConsoleMessages extends NLS {
-	public static final String BUNDLE_NAME = "org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages"; //$NON-NLS-1$
+public class BasicHibernateMessages extends NLS {
+	public static final String BUNDLE_NAME = "org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages"; //$NON-NLS-1$
 
 	//
 	public static String AbstractQueryEditor_could_not_show_query_editor_input;
@@ -552,9 +552,9 @@ public class HibernateConsoleMessages extends NLS {
 	//
 	static {
 		// initialize resource bundle
-		NLS.initializeMessages(BUNDLE_NAME, HibernateConsoleMessages.class);
+		NLS.initializeMessages(BUNDLE_NAME, BasicHibernateMessages.class);
 	}
 
-	private HibernateConsoleMessages() {
+	private BasicHibernateMessages() {
 	}
 }

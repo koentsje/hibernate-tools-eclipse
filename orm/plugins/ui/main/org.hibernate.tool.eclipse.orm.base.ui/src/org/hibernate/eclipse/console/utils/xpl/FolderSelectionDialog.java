@@ -19,7 +19,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.dialogs.ElementTreeSelectionDialog;
 import org.eclipse.ui.dialogs.NewFolderDialog;
 import org.eclipse.ui.views.navigator.ResourceComparator;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 
 public class FolderSelectionDialog extends ElementTreeSelectionDialog implements ISelectionChangedListener {
 
@@ -38,7 +38,7 @@ public class FolderSelectionDialog extends ElementTreeSelectionDialog implements
 		getTreeViewer().addSelectionChangedListener(this);
 
 		Button button = new Button(result, SWT.PUSH);
-		button.setText(HibernateConsoleMessages.FolderSelectionDialog_button);
+		button.setText(BasicHibernateMessages.FolderSelectionDialog_button);
 		button.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent event) {

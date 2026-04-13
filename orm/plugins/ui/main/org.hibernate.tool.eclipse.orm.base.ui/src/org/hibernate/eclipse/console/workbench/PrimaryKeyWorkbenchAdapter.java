@@ -24,7 +24,7 @@ package org.hibernate.eclipse.console.workbench;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.model.IWorkbenchAdapter;
 import org.hibernate.console.ImageConstants;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IColumn;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IPrimaryKey;
@@ -54,7 +54,7 @@ public class PrimaryKeyWorkbenchAdapter implements IWorkbenchAdapter {
 		if(table.getColumnSpan()==1) {
 			return ColumnWorkbenchAdapter.getColumnLabel(table.getColumn(0));
 		} else {
-			return HibernateConsoleMessages.PrimaryKeyWorkbenchAdapter_composite_primary_key;
+			return BasicHibernateMessages.PrimaryKeyWorkbenchAdapter_composite_primary_key;
 		}
 	}
 

@@ -17,7 +17,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableItem;
 import org.hibernate.console.ImageConstants;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.console.utils.DialogSelectionHelper;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
@@ -34,7 +34,7 @@ public class ConsoleConfigurationMappingsTab extends ConsoleConfigurationTab {
 	}
 
 	private UpDownListComposite buildMappingFileTable(Composite parent) {
-		mappingFilesViewer = new UpDownListComposite(parent, SWT.NONE, HibernateConsoleMessages.ConsoleConfigurationMappingsTab_additional_mapping_files) {
+		mappingFilesViewer = new UpDownListComposite(parent, SWT.NONE, BasicHibernateMessages.ConsoleConfigurationMappingsTab_additional_mapping_files) {
 			protected Object[] handleAdd(int idx) {
 				TableItem[] items = getTable().getItems();
 				IPath[] exclude = new IPath[items.length];
@@ -44,7 +44,7 @@ public class ConsoleConfigurationMappingsTab extends ConsoleConfigurationTab {
 					exclude[i] = (IPath) item.getData();
 				}
 
-				return DialogSelectionHelper.chooseFileEntries(getShell(), null, exclude, HibernateConsoleMessages.ConsoleConfigurationMappingsTab_add_hbm_xml_file, HibernateConsoleMessages.ConsoleConfigurationMappingsTab_add_hibernate_mapping_file, new String[] { "hbm.xml" }, true, false, true); //$NON-NLS-1$
+				return DialogSelectionHelper.chooseFileEntries(getShell(), null, exclude, BasicHibernateMessages.ConsoleConfigurationMappingsTab_add_hbm_xml_file, BasicHibernateMessages.ConsoleConfigurationMappingsTab_add_hibernate_mapping_file, new String[] { "hbm.xml" }, true, false, true); //$NON-NLS-1$
 			}
 
 			protected void listChanged() {
@@ -63,7 +63,7 @@ public class ConsoleConfigurationMappingsTab extends ConsoleConfigurationTab {
 	}
 
 	public String getName() {
-		return HibernateConsoleMessages.ConsoleConfigurationMappingsTab_mappings;
+		return BasicHibernateMessages.ConsoleConfigurationMappingsTab_mappings;
 	}
 
 	private IPath[] getMappings() {

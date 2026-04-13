@@ -35,7 +35,7 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.jface.text.contentassist.IContextInformation;
 import org.eclipse.jface.text.contentassist.IContextInformationValidator;
 import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.QueryEditor;
 import org.hibernate.eclipse.ui.console.common.CompletionProposalsResult;
@@ -86,7 +86,7 @@ public class HQLCompletionProcessor implements IContentAssistProcessor {
         catch (BadLocationException x) {
         }
         catch (RuntimeException re) {
-        	HibernateBasePlugin.getDefault().logErrorMessage( HibernateConsoleMessages.HQLCompletionProcessor_error_while_performing_hql_completion, re );
+        	HibernateBasePlugin.getDefault().logErrorMessage( BasicHibernateMessages.HQLCompletionProcessor_error_while_performing_hql_completion, re );
         }
 
         if (result != null)
@@ -113,7 +113,7 @@ public class HQLCompletionProcessor implements IContentAssistProcessor {
 					doc.get(0,doc.getLength()).toCharArray();
 				}
 				catch (BadLocationException e) {
-					errorMessage = HibernateConsoleMessages.HQLCompletionProcessor_could_not_get_document_contents;
+					errorMessage = BasicHibernateMessages.HQLCompletionProcessor_could_not_get_document_contents;
 					return result;
 				}
 
@@ -128,7 +128,7 @@ public class HQLCompletionProcessor implements IContentAssistProcessor {
 						
 						result = proposalList.toArray(new ICompletionProposal[proposalList.size()]);
 		    			if(result.length==0 && errorMessage==null) {
-		    				errorMessage = HibernateConsoleMessages.HQLCompletionProcessor_no_hql_completions_available;
+		    				errorMessage = BasicHibernateMessages.HQLCompletionProcessor_no_hql_completions_available;
 		    			}
 					} else {
 						errorMessage = "There is no completion proposal implementation for this hibernate version \'" //$NON-NLS-1$
@@ -136,7 +136,7 @@ public class HQLCompletionProcessor implements IContentAssistProcessor {
 					}
 				}
     		} else {
-    			errorMessage = HibernateConsoleMessages.HQLCompletionProcessor_no_start_word_found;
+    			errorMessage = BasicHibernateMessages.HQLCompletionProcessor_no_start_word_found;
     		}
     	}
 

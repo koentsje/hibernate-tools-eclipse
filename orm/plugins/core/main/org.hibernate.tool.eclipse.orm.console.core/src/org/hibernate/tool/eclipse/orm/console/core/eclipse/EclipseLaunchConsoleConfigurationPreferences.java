@@ -27,7 +27,7 @@ import org.hibernate.tool.eclipse.common.base.core.console.launch.IConsoleConfig
 import org.hibernate.tool.eclipse.orm.utils.HibernateEclipseUtils;
 import org.hibernate.util.xpl.StringHelper;
 import org.w3c.dom.Element;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 
 public class EclipseLaunchConsoleConfigurationPreferences implements ConsoleConfigurationPreferences {
 
@@ -66,7 +66,7 @@ public class EclipseLaunchConsoleConfigurationPreferences implements ConsoleConf
 				return rawLocation.toFile();
 			}
 		}
-		String out = NLS.bind(HibernateConsoleMessages.EclipseLaunchConsoleConfigurationPreferences_could_not_resolve_to_file, path);
+		String out = NLS.bind(BasicHibernateMessages.EclipseLaunchConsoleConfigurationPreferences_could_not_resolve_to_file, path);
 		throw new HibernateConsoleRuntimeException(out);
 	}
 
@@ -101,10 +101,10 @@ public class EclipseLaunchConsoleConfigurationPreferences implements ConsoleConf
 			return cp;
 		}
 		catch (CoreException e) {
-			throw new HibernateConsoleRuntimeException(HibernateConsoleMessages.EclipseLaunchConsoleConfigurationPreferences_could_not_compute_classpath, e);
+			throw new HibernateConsoleRuntimeException(BasicHibernateMessages.EclipseLaunchConsoleConfigurationPreferences_could_not_compute_classpath, e);
 		}
 		catch (MalformedURLException e) {
-			throw new HibernateConsoleRuntimeException(HibernateConsoleMessages.EclipseLaunchConsoleConfigurationPreferences_could_not_compute_classpath, e);
+			throw new HibernateConsoleRuntimeException(BasicHibernateMessages.EclipseLaunchConsoleConfigurationPreferences_could_not_compute_classpath, e);
 		}
 	}
 
@@ -172,7 +172,7 @@ public class EclipseLaunchConsoleConfigurationPreferences implements ConsoleConf
 			fileProp.load(fis);
 		}
 		catch(IOException io) {
-			throw new HibernateConsoleRuntimeException(NLS.bind(HibernateConsoleMessages.EclipseLaunchConsoleConfigurationPreferences_could_not_load_property_file, propFile), io);
+			throw new HibernateConsoleRuntimeException(NLS.bind(BasicHibernateMessages.EclipseLaunchConsoleConfigurationPreferences_could_not_load_property_file, propFile), io);
 		}
 		finally {
 			if (fis != null) {
@@ -197,15 +197,15 @@ public class EclipseLaunchConsoleConfigurationPreferences implements ConsoleConf
 	}
 
 	public void readStateFrom(Element element) {
-		throw new IllegalStateException(HibernateConsoleMessages.EclipseLaunchConsoleConfigurationPreferences_cannot_read_from_xml);
+		throw new IllegalStateException(BasicHibernateMessages.EclipseLaunchConsoleConfigurationPreferences_cannot_read_from_xml);
 	}
 
 	public void setName(String name) {
-		throw new IllegalStateException(NLS.bind(HibernateConsoleMessages.EclipseLaunchConsoleConfigurationPreferences_cannot_be_renamed, getName()));
+		throw new IllegalStateException(NLS.bind(BasicHibernateMessages.EclipseLaunchConsoleConfigurationPreferences_cannot_be_renamed, getName()));
 	}
 
 	public void writeStateTo(Element node) {
-		throw new IllegalStateException(HibernateConsoleMessages.EclipseLaunchConsoleConfigurationPreferences_cannot_write_to_xml);
+		throw new IllegalStateException(BasicHibernateMessages.EclipseLaunchConsoleConfigurationPreferences_cannot_write_to_xml);
 	}
 	
 	public String getDialectName() {

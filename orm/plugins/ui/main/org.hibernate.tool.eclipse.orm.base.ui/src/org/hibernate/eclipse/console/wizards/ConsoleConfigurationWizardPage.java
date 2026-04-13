@@ -70,7 +70,7 @@ import org.eclipse.ui.IWorkbenchPreferenceConstants;
 import org.eclipse.ui.PlatformUI;
 import org.hibernate.console.preferences.ConsoleConfigurationPreferences.ConfigurationMode;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.EclipseConsoleConfiguration;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.console.actions.AddConfigurationAction;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.LaunchHelper;
@@ -126,9 +126,9 @@ public class ConsoleConfigurationWizardPage extends WizardPage implements
 	 * @param pageName
 	 */
 	public ConsoleConfigurationWizardPage(ISelection selection) {
-		super(HibernateConsoleMessages.ConsoleConfigurationWizardPage_config_page);
-		setTitle(HibernateConsoleMessages.ConsoleConfigurationWizardPage_create_hibernate_console_config);
-		setDescription(HibernateConsoleMessages.ConsoleConfigurationWizardPage_this_wizard_allows);
+		super(BasicHibernateMessages.ConsoleConfigurationWizardPage_config_page);
+		setTitle(BasicHibernateMessages.ConsoleConfigurationWizardPage_create_hibernate_console_config);
+		setDescription(BasicHibernateMessages.ConsoleConfigurationWizardPage_this_wizard_allows);
 		this.selection = selection;
 	}
 
@@ -151,7 +151,7 @@ public class ConsoleConfigurationWizardPage extends WizardPage implements
 		container.setLayoutData(gd);
 
 		nameLabel = new Label(container, SWT.HORIZONTAL | SWT.LEFT);
-		nameLabel.setText(HibernateConsoleMessages.ConsoleConfigurationWizardPage_name);
+		nameLabel.setText(BasicHibernateMessages.ConsoleConfigurationWizardPage_name);
 		nameLabel.setLayoutData(new GridData(
 				GridData.HORIZONTAL_ALIGN_BEGINNING));
 
@@ -184,7 +184,7 @@ public class ConsoleConfigurationWizardPage extends WizardPage implements
 		} catch (CoreException ce) {
 			HibernateBasePlugin
 				.getDefault().showError(getShell(),
-					HibernateConsoleMessages.AddConfigurationAction_problem_add_console_config,
+					BasicHibernateMessages.AddConfigurationAction_problem_add_console_config,
 					ce);
 		}
 		try {
@@ -192,7 +192,7 @@ public class ConsoleConfigurationWizardPage extends WizardPage implements
 		} catch (CoreException ce) {
 			HibernateBasePlugin
 				.getDefault().logErrorMessage(
-					HibernateConsoleMessages.ConsoleConfigurationWizardPage_problem_while_initializing_cc,
+					BasicHibernateMessages.ConsoleConfigurationWizardPage_problem_while_initializing_cc,
 					ce);
 		}
 		performInit();
@@ -561,7 +561,7 @@ public class ConsoleConfigurationWizardPage extends WizardPage implements
 			initialize(currentLaunchConfig, new StructuredSelection(resource));
 		} catch (CoreException e) {
 			HibernateBasePlugin.getDefault().logErrorMessage(
-				HibernateConsoleMessages.ConsoleConfigurationWizardPage_problem_while_initializing_cc, e);
+				BasicHibernateMessages.ConsoleConfigurationWizardPage_problem_while_initializing_cc, e);
 		}
 		if (flagFileWillBeCreated) {
 			setPathAttribute(currentLaunchConfig, IConsoleConfigurationLaunchConstants.CFG_XML_FILE, configFullPath);

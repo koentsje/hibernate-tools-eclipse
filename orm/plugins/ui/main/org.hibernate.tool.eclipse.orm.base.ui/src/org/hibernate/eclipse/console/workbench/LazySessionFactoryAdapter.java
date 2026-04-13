@@ -26,7 +26,7 @@ import org.eclipse.osgi.util.NLS;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.console.node.BaseNode;
 import org.hibernate.console.node.NodeFactory;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.workbench.LazySessionFactory;
@@ -37,14 +37,14 @@ public class LazySessionFactoryAdapter extends BasicWorkbenchAdapter {
 
 	public Object[] getChildren(Object o) {
 		LazySessionFactory lazySessionFactory = getLazySessionFactory(o);
-		String label = HibernateConsoleMessages.LazySessionFactoryAdapter_session_factory;
+		String label = BasicHibernateMessages.LazySessionFactoryAdapter_session_factory;
 		if(lazySessionFactory.getCfgNode()==null) {
 			if(lazySessionFactory.getConsoleConfiguration().getSessionFactory()==null) {
 				try {
 					lazySessionFactory.getConsoleConfiguration().buildSessionFactory();
 				} catch(Throwable t) {
-					label = NLS.bind(HibernateConsoleMessages.LazySessionFactoryAdapter_sessionfactory_error, t.getMessage());
-					HibernateBasePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.LazySessionFactoryAdapter_problems_while_creating_sessionfactory, t);
+					label = NLS.bind(BasicHibernateMessages.LazySessionFactoryAdapter_sessionfactory_error, t.getMessage());
+					HibernateBasePlugin.getDefault().logErrorMessage(BasicHibernateMessages.LazySessionFactoryAdapter_problems_while_creating_sessionfactory, t);
 				}
 			}
 			if(lazySessionFactory.getConsoleConfiguration().isSessionFactoryCreated()) {
@@ -68,7 +68,7 @@ public class LazySessionFactoryAdapter extends BasicWorkbenchAdapter {
 	}
 
 	public String getLabel(Object o) {
-		return HibernateConsoleMessages.LazySessionFactoryAdapter_session_factory;
+		return BasicHibernateMessages.LazySessionFactoryAdapter_session_factory;
 	}
 
 	public Object getParent(Object o) {

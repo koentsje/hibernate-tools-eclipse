@@ -61,7 +61,7 @@ import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.console.QueryPage;
 import org.hibernate.eclipse.console.AbstractQueryEditor;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.console.views.QueryPageTabView;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
@@ -98,7 +98,7 @@ public class CriteriaEditor extends AbstractQueryEditor {
 	}
 
 	private ResourceBundle getResourceBundle() {
-		return ResourceBundle.getBundle( HibernateConsoleMessages.BUNDLE_NAME );
+		return ResourceBundle.getBundle( BasicHibernateMessages.BUNDLE_NAME );
 	}
 
 
@@ -166,7 +166,7 @@ public class CriteriaEditor extends AbstractQueryEditor {
 			 	consoleConfiguration.build();
 	 			consoleConfiguration.buildMappings();
 			} catch (Exception e) {
-				String mess = NLS.bind(HibernateConsoleMessages.CompletionHelper_error_could_not_build_cc, consoleConfiguration.getName());
+				String mess = NLS.bind(BasicHibernateMessages.CompletionHelper_error_could_not_build_cc, consoleConfiguration.getName());
 				HibernateBasePlugin.getDefault().logErrorMessage(mess, e);
 			}
 		}
@@ -254,7 +254,7 @@ public class CriteriaEditor extends AbstractQueryEditor {
 			}
 
 		});
-		initTextAndToolTip(HibernateConsoleMessages.ExecuteQueryAction_run_criteria);
+		initTextAndToolTip(BasicHibernateMessages.ExecuteQueryAction_run_criteria);
 	}
 
 	@Override

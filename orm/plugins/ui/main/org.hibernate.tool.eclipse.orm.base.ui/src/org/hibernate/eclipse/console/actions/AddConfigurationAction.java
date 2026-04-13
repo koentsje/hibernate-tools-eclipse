@@ -35,7 +35,7 @@ import org.eclipse.jface.action.Action;
 import org.eclipse.jface.window.Window;
 import org.eclipse.ui.IViewPart;
 import org.hibernate.console.ImageConstants;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.LaunchHelper;
@@ -58,7 +58,7 @@ public class AddConfigurationAction extends Action {
 
 	public AddConfigurationAction(IViewPart part) {
 		this.part = part;
-		setText(HibernateConsoleMessages.AddConfigurationAction_add_config);
+		setText(BasicHibernateMessages.AddConfigurationAction_add_config);
 		setImageDescriptor(EclipseImages.getImageDescriptor(ImageConstants.ADD) );
 		setId(ADDCONFIG_ACTIONID);
 	}
@@ -84,7 +84,7 @@ public class AddConfigurationAction extends Action {
 			}
 
 		} catch (CoreException ce) {
-			HibernateBasePlugin.getDefault().showError( part.getSite().getShell(), HibernateConsoleMessages.AddConfigurationAction_problem_add_console_config,  ce);
+			HibernateBasePlugin.getDefault().showError( part.getSite().getShell(), BasicHibernateMessages.AddConfigurationAction_problem_add_console_config,  ce);
 		}
 
 
@@ -95,7 +95,7 @@ public class AddConfigurationAction extends Action {
 		ILaunchManager launchManager = DebugPlugin.getDefault().getLaunchManager();
 
 		ILaunchConfigurationType launchConfigurationType = LaunchHelper.getHibernateLaunchConfigsType();
-		String launchName = launchManager.generateLaunchConfigurationName(HibernateConsoleMessages.AddConfigurationAction_hibernate);
+		String launchName = launchManager.generateLaunchConfigurationName(BasicHibernateMessages.AddConfigurationAction_hibernate);
 		//ILaunchConfiguration[] launchConfigurations = launchManager.getLaunchConfigurations( launchConfigurationType );
 		ILaunchConfigurationWorkingCopy wc = launchConfigurationType.newInstance(null, launchName);
 		wc.setAttribute(TEMPORARY_CONFIG_FLAG, true);

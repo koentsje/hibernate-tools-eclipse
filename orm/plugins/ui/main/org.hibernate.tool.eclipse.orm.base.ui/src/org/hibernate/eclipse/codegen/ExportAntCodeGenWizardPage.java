@@ -45,7 +45,7 @@ import org.eclipse.ui.internal.ide.IDEWorkbenchPlugin;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.console.preferences.ConsoleConfigurationPreferences;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.utils.LaunchHelperUI;
 import org.hibernate.eclipse.launch.CodeGenXMLFactory;
 import org.hibernate.eclipse.launch.ExporterAttributes;
@@ -105,7 +105,7 @@ public class ExportAntCodeGenWizardPage extends WizardNewFileCreationPage implem
 	protected void setControlCombo(Control newControl) {
 		consoleConfigurationName = new ComboDialogField(SWT.READ_ONLY);
 		consoleConfigurationName
-				.setLabelText(HibernateConsoleMessages.ExportAntCodeGenWizardPage_hibernate_code_generation_configurations);
+				.setLabelText(BasicHibernateMessages.ExportAntCodeGenWizardPage_hibernate_code_generation_configurations);
 		ILaunchConfiguration[] launchCfgs;
 		try {
 			launchCfgs = LaunchHelperUI.findFilteredCodeGenerationConfigsSorted();
@@ -134,12 +134,12 @@ public class ExportAntCodeGenWizardPage extends WizardNewFileCreationPage implem
 		boolean res = super.validatePage();
 		if (res) {
 			if (consoleConfigurationName.getSelectionIndex() == -1) {
-				setErrorMessage(HibernateConsoleMessages.ExportAntCodeGenWizardPage_empty_hibernate_code_generation_configuration);
+				setErrorMessage(BasicHibernateMessages.ExportAntCodeGenWizardPage_empty_hibernate_code_generation_configuration);
 				res = false;
 			} else {
 				ILaunchConfiguration lc = getSelectedLaunchConfig();
 				if (lc == null) {
-					setErrorMessage(HibernateConsoleMessages.ExportAntCodeGenWizardPage_cannot_find_selected_hibernate_code_generation_configuration);
+					setErrorMessage(BasicHibernateMessages.ExportAntCodeGenWizardPage_cannot_find_selected_hibernate_code_generation_configuration);
 					res = false;
 				} else {
 					String checkMessage = checkCodeGenLaunchConfig(lc);
@@ -170,7 +170,7 @@ public class ExportAntCodeGenWizardPage extends WizardNewFileCreationPage implem
 			checkMessage = e.getMessage();
 		}
 		if (checkMessage != null) {
-			checkMessage = NLS.bind(HibernateConsoleMessages.ExportAntCodeGenWizardPage_error_in_hibernate_code_generation_configuration, 
+			checkMessage = NLS.bind(BasicHibernateMessages.ExportAntCodeGenWizardPage_error_in_hibernate_code_generation_configuration, 
 					checkMessage);
 		}
 		if (checkMessage == null && attributes != null) {
@@ -183,7 +183,7 @@ public class ExportAntCodeGenWizardPage extends WizardNewFileCreationPage implem
 				IWorkspace workspace = ResourcesPlugin.getWorkspace();
 				String externalPropFileName = CodeGenXMLFactory.propFileNameSuffix;
 				externalPropFileName = getFileName() + "." + externalPropFileName; //$NON-NLS-1$
-				String problemMessage = NLS.bind(HibernateConsoleMessages.ExportAntCodeGenWizardPage_warning, 
+				String problemMessage = NLS.bind(BasicHibernateMessages.ExportAntCodeGenWizardPage_warning, 
 						externalPropFileName);
 				IPath resourcePath = getContainerFullPath().append(externalPropFileName);
 				if (workspace.getRoot().getFile(resourcePath).exists()) {

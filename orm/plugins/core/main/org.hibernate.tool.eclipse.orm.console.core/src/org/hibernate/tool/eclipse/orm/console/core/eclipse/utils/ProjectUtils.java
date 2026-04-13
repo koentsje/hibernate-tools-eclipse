@@ -66,7 +66,7 @@ import org.eclipse.jdt.internal.core.SourceType;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.preferences.ConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateConsoleCorePlugin;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.properties.HibernatePropertiesConstants;
 import org.hibernate.tool.eclipse.common.base.core.console.launch.IConsoleConfigurationLaunchConstants;
 import org.hibernate.util.xpl.StringHelper;
@@ -91,7 +91,7 @@ public class ProjectUtils {
 			try {
 				node.flush();
 			} catch (BackingStoreException e) {
-				HibernateConsoleCorePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.ProjectUtils_could_not_save_changes_to_preferences, e);
+				HibernateConsoleCorePlugin.getDefault().logErrorMessage(BasicHibernateMessages.ProjectUtils_could_not_save_changes_to_preferences, e);
 				return false;
 			}
 		} else {
@@ -105,7 +105,7 @@ public class ProjectUtils {
 				return ProjectUtils.removeProjectNature(project, HibernatePropertiesConstants.HIBERNATE_NATURE, new NullProgressMonitor() );
 			}
 		} catch(CoreException ce) {
-			HibernateConsoleCorePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.ProjectUtils_could_not_activate_hibernate_nature_on_project + project.getName(), ce);
+			HibernateConsoleCorePlugin.getDefault().logErrorMessage(BasicHibernateMessages.ProjectUtils_could_not_activate_hibernate_nature_on_project + project.getName(), ce);
 			HibernateConsoleCorePlugin.getDefault().log(ce.getStatus() );
 			return false;
 		}

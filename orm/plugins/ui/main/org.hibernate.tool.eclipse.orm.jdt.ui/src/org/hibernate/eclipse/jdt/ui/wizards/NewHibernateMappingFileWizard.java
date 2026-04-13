@@ -63,7 +63,7 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.ui.ide.IDE;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.ImageConstants;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.tool.eclipse.orm.utils.FileUtils;
@@ -369,7 +369,7 @@ public class NewHibernateMappingFileWizard extends Wizard implements INewWizard,
 				res = false;
 			} catch (InvocationTargetException e) {
 				Throwable realException = e.getTargetException();
-				HibernateBasePlugin.getDefault().showError(getShell(), HibernateConsoleMessages.NewReverseEngineeringFileWizard_error, realException);
+				HibernateBasePlugin.getDefault().showError(getShell(), BasicHibernateMessages.NewReverseEngineeringFileWizard_error, realException);
 				res = false;
 			}
 			cleanUpGenFolders();
@@ -413,7 +413,7 @@ public class NewHibernateMappingFileWizard extends Wizard implements INewWizard,
 		final IFile file, IProgressMonitor monitor)
 		throws CoreException {
 		// create a sample file
-		monitor.beginTask(HibernateConsoleMessages.NewReverseEngineeringFileWizard_creating + file.getName(), 2);
+		monitor.beginTask(BasicHibernateMessages.NewReverseEngineeringFileWizard_creating + file.getName(), 2);
 		InputStream stream = null;
 		try {
 			stream = openContentStream();
@@ -432,7 +432,7 @@ public class NewHibernateMappingFileWizard extends Wizard implements INewWizard,
 			}
 		}
 		monitor.worked(1);
-		monitor.setTaskName(HibernateConsoleMessages.NewConfigurationWizard_open_file_for_editing);
+		monitor.setTaskName(BasicHibernateMessages.NewConfigurationWizard_open_file_for_editing);
 		getShell().getDisplay().asyncExec(new Runnable() {
 			public void run() {
 				IWorkbenchPage page =
@@ -455,7 +455,7 @@ public class NewHibernateMappingFileWizard extends Wizard implements INewWizard,
 		try {
             return new ByteArrayInputStream(sw.toString().getBytes("UTF-8") ); //$NON-NLS-1$
         } catch (UnsupportedEncodingException uec) {
-            HibernateBasePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.NewConfigurationWizard_problems_converting_to_utf8, uec);
+            HibernateBasePlugin.getDefault().logErrorMessage(BasicHibernateMessages.NewConfigurationWizard_problems_converting_to_utf8, uec);
             return new ByteArrayInputStream(sw.toString().getBytes() );
         }
 	}

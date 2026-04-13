@@ -27,7 +27,7 @@ import org.eclipse.draw2d.ManhattanConnectionRouter;
 import org.eclipse.draw2d.PolygonDecoration;
 import org.eclipse.draw2d.RotatableDecoration;
 import org.eclipse.draw2d.geometry.PointList;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 
 public class InheritanceViewAdapter extends AssociationViewAdapter {
 
@@ -35,9 +35,9 @@ public class InheritanceViewAdapter extends AssociationViewAdapter {
 	private final PersistentClassViewAdapter superclass;
 
 	public InheritanceViewAdapter(PersistentClassViewAdapter subclass, PersistentClassViewAdapter superclass) {
-		if(subclass==superclass) throw new IllegalArgumentException(HibernateConsoleMessages.InheritanceViewAdapter_subclass_must_not_be_equal_to_superclass);
-		if(subclass==null) throw new IllegalArgumentException(HibernateConsoleMessages.InheritanceViewAdapter_subclass_must_not_null);
-		if(superclass==null) throw new IllegalArgumentException(HibernateConsoleMessages.InheritanceViewAdapter_superclass_must_not_null);
+		if(subclass==superclass) throw new IllegalArgumentException(BasicHibernateMessages.InheritanceViewAdapter_subclass_must_not_be_equal_to_superclass);
+		if(subclass==null) throw new IllegalArgumentException(BasicHibernateMessages.InheritanceViewAdapter_subclass_must_not_null);
+		if(superclass==null) throw new IllegalArgumentException(BasicHibernateMessages.InheritanceViewAdapter_superclass_must_not_null);
 		this.subclass = subclass;
 		this.superclass = superclass;
 	}
@@ -59,7 +59,7 @@ public class InheritanceViewAdapter extends AssociationViewAdapter {
 	}
 
 	public String toString() {
-		return HibernateConsoleMessages.InheritanceViewAdapter_inheritance + super.toString();
+		return BasicHibernateMessages.InheritanceViewAdapter_inheritance + super.toString();
 	}
 
 	public String getSourceName() {

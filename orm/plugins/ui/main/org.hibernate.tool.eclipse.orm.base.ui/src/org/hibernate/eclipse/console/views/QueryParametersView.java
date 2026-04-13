@@ -28,7 +28,7 @@ import org.eclipse.ui.part.IPageBookViewPage;
 import org.eclipse.ui.part.MessagePage;
 import org.eclipse.ui.part.PageBook;
 import org.eclipse.ui.part.PageBookView;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.hqleditor.HQLEditor;
 
 public class QueryParametersView extends PageBookView {
@@ -42,7 +42,7 @@ public class QueryParametersView extends PageBookView {
 		MessagePage page = new MessagePage();
         initPage(page);
         page.createControl(book);
-        page.setMessage(HibernateConsoleMessages.QueryParametersView_no_hql_editor_open);
+        page.setMessage(BasicHibernateMessages.QueryParametersView_no_hql_editor_open);
         return page;
 	}
 

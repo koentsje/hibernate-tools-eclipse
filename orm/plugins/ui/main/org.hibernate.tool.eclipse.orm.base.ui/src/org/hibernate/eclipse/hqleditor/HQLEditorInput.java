@@ -23,7 +23,7 @@ package org.hibernate.eclipse.hqleditor;
 
 import org.eclipse.core.resources.IStorage;
 import org.eclipse.ui.IMemento;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.QueryEditorInput;
 import org.hibernate.tool.eclipse.orm.hqleditor.HQLEditorStorage;
 
@@ -49,6 +49,6 @@ public class HQLEditorInput extends QueryEditorInput {
     }
 
     public void resetName() {
-    	setName( "HQL: " + getConsoleConfigurationName()==null?HibernateConsoleMessages.HQLEditorInput_none:getConsoleConfigurationName() );    	 //$NON-NLS-1$
+    	setName( "HQL: " + getConsoleConfigurationName()==null?BasicHibernateMessages.HQLEditorInput_none:getConsoleConfigurationName() );    	 //$NON-NLS-1$
     }
 }

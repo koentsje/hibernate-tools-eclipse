@@ -18,7 +18,7 @@ import org.eclipse.swt.graphics.Point;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.console.execution.ExecutionContext;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 
@@ -52,7 +52,7 @@ public class LoadConsoleCFGCompletionProposal implements ICompletionProposal {
 					}
 				} );
 			} catch (Exception he) {
-				HibernateBasePlugin.getDefault().showError(HibernateBasePlugin.getShell(), HibernateConsoleMessages.LoadConsoleCFGCompletionProposal_could_not_load_configuration + ' ' + consoleConfiguration.getName(), he);
+				HibernateBasePlugin.getDefault().showError(HibernateBasePlugin.getShell(), BasicHibernateMessages.LoadConsoleCFGCompletionProposal_could_not_load_configuration + ' ' + consoleConfiguration.getName(), he);
 			}
 		}
 	}
@@ -61,7 +61,7 @@ public class LoadConsoleCFGCompletionProposal implements ICompletionProposal {
 	 * @see org.eclipse.jface.text.contentassist.ICompletionProposal#getAdditionalProposalInfo()
 	 */
 	public String getAdditionalProposalInfo() {
-		return HibernateConsoleMessages.LoadConsoleCFGCompletionProposal_no_open_console_cfg_found;
+		return BasicHibernateMessages.LoadConsoleCFGCompletionProposal_no_open_console_cfg_found;
 	}
 
 	/* (non-Javadoc)
@@ -75,7 +75,7 @@ public class LoadConsoleCFGCompletionProposal implements ICompletionProposal {
 	 * @see org.eclipse.jface.text.contentassist.ICompletionProposal#getDisplayString()
 	 */
 	public String getDisplayString() {
-		return HibernateConsoleMessages.LoadConsoleCFGCompletionProposal_load_console_cfg;
+		return BasicHibernateMessages.LoadConsoleCFGCompletionProposal_load_console_cfg;
 	}
 
 	/* (non-Javadoc)

@@ -38,7 +38,7 @@ import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.TableItem;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.KnownConfigurations;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.reveng.IReverseEngineeringDefinition;
 import org.hibernate.tool.eclipse.orm.model.core.ITableFilter;
 import org.hibernate.eclipse.console.workbench.DeferredContentProvider;
@@ -203,7 +203,7 @@ public abstract class TableFilterView extends TreeToTableComposite {
 	}
 
 	protected String[] getAddButtonLabels() {
-		return new String[] { HibernateConsoleMessages.TableFilterView_include, HibernateConsoleMessages.TableFilterView_exclude };
+		return new String[] { BasicHibernateMessages.TableFilterView_include, BasicHibernateMessages.TableFilterView_exclude };
 	}
 
 	protected void handleAddButtonPressed(int i) {
@@ -215,12 +215,12 @@ public abstract class TableFilterView extends TreeToTableComposite {
 			doExclusion();
 			break;
 		default:
-			throw new IllegalArgumentException(NLS.bind(HibernateConsoleMessages.TableFilterView_not_known_button, i) );
+			throw new IllegalArgumentException(NLS.bind(BasicHibernateMessages.TableFilterView_not_known_button, i) );
 		}
 	}
 
 	protected void doRemoveAll() {
-		if(MessageDialog.openQuestion( getShell(), HibernateConsoleMessages.TableFilterView_remove_all_filters , HibernateConsoleMessages.TableFilterView_do_you_want_to_remove_all_filters)) {
+		if(MessageDialog.openQuestion( getShell(), BasicHibernateMessages.TableFilterView_remove_all_filters , BasicHibernateMessages.TableFilterView_do_you_want_to_remove_all_filters)) {
 			revEngDef.removeAllTableFilters();
 		}
 	}
@@ -254,19 +254,19 @@ public abstract class TableFilterView extends TreeToTableComposite {
 
 	protected void createTableColumns(org.eclipse.swt.widgets.Table table) {
 		TableColumn column = new TableColumn(table, SWT.CENTER, 0);
-		column.setText(HibernateConsoleMessages.TableFilterView_sign);
+		column.setText(BasicHibernateMessages.TableFilterView_sign);
 		column.setWidth(20);
 
 		column = new TableColumn(table, SWT.LEFT, 1);
-		column.setText(HibernateConsoleMessages.TableFilterView_catalog);
+		column.setText(BasicHibernateMessages.TableFilterView_catalog);
 		column.setWidth(100);
 
 		column = new TableColumn(table, SWT.LEFT, 2);
-		column.setText(HibernateConsoleMessages.TableFilterView_schema);
+		column.setText(BasicHibernateMessages.TableFilterView_schema);
 		column.setWidth(100);
 
 		column = new TableColumn(table, SWT.LEFT, 3);
-		column.setText(HibernateConsoleMessages.TableFilterView_table);
+		column.setText(BasicHibernateMessages.TableFilterView_table);
 		column.setWidth(100);
 	}
 

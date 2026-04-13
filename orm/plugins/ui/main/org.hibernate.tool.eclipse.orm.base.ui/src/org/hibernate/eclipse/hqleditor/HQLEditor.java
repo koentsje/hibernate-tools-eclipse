@@ -62,7 +62,7 @@ import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.console.QueryPage;
 import org.hibernate.eclipse.console.AbstractQueryEditor;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.console.views.IQueryParametersPage;
 import org.hibernate.eclipse.console.views.QueryPageTabView;
@@ -132,7 +132,7 @@ public class HQLEditor extends AbstractQueryEditor {
 	}
 
 	private ResourceBundle getResourceBundle() {
-		return ResourceBundle.getBundle( HibernateConsoleMessages.BUNDLE_NAME );
+		return ResourceBundle.getBundle( BasicHibernateMessages.BUNDLE_NAME );
 	}
 
 	/**
@@ -188,7 +188,7 @@ public class HQLEditor extends AbstractQueryEditor {
 			}
 
 		});
-		initTextAndToolTip(HibernateConsoleMessages.ExecuteQueryAction_run_hql);
+		initTextAndToolTip(BasicHibernateMessages.ExecuteQueryAction_run_hql);
 	}
 
 	/**

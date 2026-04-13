@@ -49,7 +49,7 @@ import org.eclipse.swt.widgets.DirectoryDialog;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.launch.model.ExporterFactory;
 import org.hibernate.eclipse.launch.model.ExporterProperty;
 import org.hibernate.eclipse.console.utils.DialogSelectionHelper;
@@ -85,11 +85,11 @@ public class AddPropertyDialog extends TitleAreaDialog {
 
 	protected Control createDialogArea(Composite parent) {
 		
-		String dialogTitle = HibernateConsoleMessages.AddPropertyDialog_add_exporter_property;
-		String editTitle = HibernateConsoleMessages.AddPropertyDialog_add_property_to;
+		String dialogTitle = BasicHibernateMessages.AddPropertyDialog_add_exporter_property;
+		String editTitle = BasicHibernateMessages.AddPropertyDialog_add_property_to;
 		if (flagEdit) {
-			dialogTitle = HibernateConsoleMessages.AddPropertyDialog_edit_exporter_property;
-			editTitle = HibernateConsoleMessages.AddPropertyDialog_edit_property_to;
+			dialogTitle = BasicHibernateMessages.AddPropertyDialog_edit_exporter_property;
+			editTitle = BasicHibernateMessages.AddPropertyDialog_edit_property_to;
 		}
 		getShell().setText(dialogTitle);
 		setTitle(editTitle + ef.getExporterDefinition().getDescription());
@@ -105,7 +105,7 @@ public class AddPropertyDialog extends TitleAreaDialog {
         composite.setLayout(layout);
 
 		Label label = new Label(composite, SWT.NONE);
-		label.setText( HibernateConsoleMessages.AddPropertyDialog_name );
+		label.setText( BasicHibernateMessages.AddPropertyDialog_name );
 		final Combo combo = new Combo(composite, SWT.BORDER | SWT.DROP_DOWN);
 		GridData pgd = new GridData(GridData.GRAB_HORIZONTAL | GridData.FILL_HORIZONTAL);
 		pgd.horizontalSpan = 2;
@@ -145,7 +145,7 @@ public class AddPropertyDialog extends TitleAreaDialog {
 		}
 
 		label = new Label(composite, SWT.NONE);
-		label.setText( HibernateConsoleMessages.AddPropertyDialog_value );
+		label.setText( BasicHibernateMessages.AddPropertyDialog_value );
 
 		value = new Text(composite, SWT.BORDER);
 		value.setLayoutData(new GridData(GridData.GRAB_HORIZONTAL | GridData.FILL_HORIZONTAL));
@@ -225,15 +225,15 @@ public class AddPropertyDialog extends TitleAreaDialog {
 						}
 			
 						public void widgetSelected(SelectionEvent e) {
-							String title = isPath ? HibernateConsoleMessages.ExporterSettingsTab_select_path: HibernateConsoleMessages.ExporterSettingsTab_select_dir;
-							String description = isPath ? HibernateConsoleMessages.ExporterSettingsTab_select_path2 : HibernateConsoleMessages.ExporterSettingsTab_select_dir2;
+							String title = isPath ? BasicHibernateMessages.ExporterSettingsTab_select_path: BasicHibernateMessages.ExporterSettingsTab_select_dir;
+							String description = isPath ? BasicHibernateMessages.ExporterSettingsTab_select_path2 : BasicHibernateMessages.ExporterSettingsTab_select_dir2;
 							
 							MessageDialog dialog = new MessageDialog(getShell(),
 									title,
 									null,
 									description,	
 									MessageDialog.QUESTION,
-									new String[] { HibernateConsoleMessages.CodeGenerationSettingsTab_filesystem, HibernateConsoleMessages.CodeGenerationSettingsTab_workspace, IDialogConstants.CANCEL_LABEL},
+									new String[] { BasicHibernateMessages.CodeGenerationSettingsTab_filesystem, BasicHibernateMessages.CodeGenerationSettingsTab_workspace, IDialogConstants.CANCEL_LABEL},
 									1);
 							int answer = dialog.open();
 							String strPath = null;
@@ -323,9 +323,9 @@ public class AddPropertyDialog extends TitleAreaDialog {
 		disposeBrowseButton();
 		addPathButton = new Button(value.getParent(), SWT.PUSH);
 		if ("path".equals(prop.getType())){ //$NON-NLS-1$
-			addPathButton.setText(HibernateConsoleMessages.AddPropertyDialog_add_path);
+			addPathButton.setText(BasicHibernateMessages.AddPropertyDialog_add_path);
 		} else {
-			addPathButton.setText(HibernateConsoleMessages.AddPropertyDialog_browse);
+			addPathButton.setText(BasicHibernateMessages.AddPropertyDialog_browse);
 		}		
 		addPathButton.setLayoutData(new GridData(GridData.END));
 		addPathButton.addSelectionListener(listener);		
@@ -375,14 +375,14 @@ public class AddPropertyDialog extends TitleAreaDialog {
 
 		boolean ok = false;
 		if(StringHelper.isEmpty( getPropertyName() )) {
-			setMessage( HibernateConsoleMessages.AddPropertyDialog_the_property_name_must_be_chosen_or_entered, IMessageProvider.ERROR);
+			setMessage( BasicHibernateMessages.AddPropertyDialog_the_property_name_must_be_chosen_or_entered, IMessageProvider.ERROR);
 		} else if (getPropertyName().indexOf( ' ' )>=0 || getPropertyName().indexOf( '\t' )>=0) {
-			setMessage( HibernateConsoleMessages.AddPropertyDialog_the_property_name_may_not_contain_whitespaces, IMessageProvider.ERROR);
+			setMessage( BasicHibernateMessages.AddPropertyDialog_the_property_name_may_not_contain_whitespaces, IMessageProvider.ERROR);
 		} else if(StringHelper.isEmpty( getPropertyValue() )) {
-			setMessage( HibernateConsoleMessages.AddPropertyDialog_the_property_value_must_be_non_empty, IMessageProvider.ERROR);
+			setMessage( BasicHibernateMessages.AddPropertyDialog_the_property_value_must_be_non_empty, IMessageProvider.ERROR);
 		} else {
 			if (!flagEdit && ef.hasLocalValueFor( getPropertyName() )) {
-				String out = NLS.bind(HibernateConsoleMessages.AddPropertyDialog_the_property_is_already_set, getPropertyName());
+				String out = NLS.bind(BasicHibernateMessages.AddPropertyDialog_the_property_is_already_set, getPropertyName());
 				setMessage(out, IMessageProvider.WARNING);
 			} else {
 				setMessage(null, IMessageProvider.ERROR);

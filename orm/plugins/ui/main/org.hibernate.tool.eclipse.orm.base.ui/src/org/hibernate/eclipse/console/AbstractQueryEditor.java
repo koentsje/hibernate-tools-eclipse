@@ -65,7 +65,7 @@ import org.hibernate.eclipse.console.actions.ClearAction;
 import org.hibernate.eclipse.console.actions.ExecuteQueryAction;
 import org.hibernate.eclipse.console.actions.StickResTabAction;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.QueryEditor;
 
 public abstract class AbstractQueryEditor extends TextEditor implements
@@ -87,10 +87,10 @@ public abstract class AbstractQueryEditor extends TextEditor implements
 	protected boolean pinToOneResTab = false;
 	
 	final public boolean askUserForConfiguration(String name) {
-		String out = NLS.bind(HibernateConsoleMessages.AbstractQueryEditor_do_you_want_open_session_factory, name);
+		String out = NLS.bind(BasicHibernateMessages.AbstractQueryEditor_do_you_want_open_session_factory, name);
 		return MessageDialog.openQuestion( HibernateBasePlugin.getDefault()
 				.getWorkbench().getActiveWorkbenchWindow().getShell(),
-				HibernateConsoleMessages.AbstractQueryEditor_open_session_factory, out );
+				BasicHibernateMessages.AbstractQueryEditor_open_session_factory, out );
 	}
 
 	final public ConsoleConfiguration getConsoleConfiguration() {
@@ -139,7 +139,7 @@ public abstract class AbstractQueryEditor extends TextEditor implements
 		}
 		catch (CoreException e) {
 			HibernateBasePlugin.getDefault().logErrorMessage(
-					HibernateConsoleMessages.AbstractQueryEditor_could_not_show_query_editor_input, e );
+					BasicHibernateMessages.AbstractQueryEditor_could_not_show_query_editor_input, e );
 		}
 	}
 
@@ -160,8 +160,8 @@ public abstract class AbstractQueryEditor extends TextEditor implements
 
 			} else {
 				Shell shell = getSite().getShell();
-				String title = HibernateConsoleMessages.AbstractQueryEditor_cannot_save;
-				String msg = HibernateConsoleMessages.AbstractQueryEditor_the_file_has_been_deleted_or_is_not_accessible;
+				String title = BasicHibernateMessages.AbstractQueryEditor_cannot_save;
+				String msg = BasicHibernateMessages.AbstractQueryEditor_the_file_has_been_deleted_or_is_not_accessible;
 				MessageDialog.openError(shell, title, msg);
 			}
 		} else {
@@ -258,7 +258,7 @@ public abstract class AbstractQueryEditor extends TextEditor implements
 				return 75;
 			}
 			protected String getLabelText() {
-				return HibernateConsoleMessages.AbstractQueryEditor_max_results;
+				return BasicHibernateMessages.AbstractQueryEditor_max_results;
 			}
 
 			protected boolean isReadOnly() {
@@ -363,9 +363,9 @@ public abstract class AbstractQueryEditor extends TextEditor implements
 			if (localFile.exists()) {
 		        MessageDialog overwriteDialog= new MessageDialog(
 		        		shell,
-		        		HibernateConsoleMessages.AbstractQueryEditor_save_as,
+		        		BasicHibernateMessages.AbstractQueryEditor_save_as,
 		        		null,
-		        		MessageFormat.format(HibernateConsoleMessages.AbstractQueryEditor_already_exists_do_you_want_to_replace_it, path),
+		        		MessageFormat.format(BasicHibernateMessages.AbstractQueryEditor_already_exists_do_you_want_to_replace_it, path),
 		        		MessageDialog.WARNING,
 		        		new String[] { IDialogConstants.YES_LABEL, IDialogConstants.NO_LABEL },
 		        		1); // 'No' is the default
@@ -382,8 +382,8 @@ public abstract class AbstractQueryEditor extends TextEditor implements
 				fileStore= EFS.getStore(localFile.toURI());
 			} catch (CoreException ex) {
 				HibernateBasePlugin.getDefault().log(ex.getStatus());
-				String title= HibernateConsoleMessages.AbstractQueryEditor_problems_during_save_as;
-				String msg= MessageFormat.format(HibernateConsoleMessages.AbstractQueryEditor_save_could_not_be_completed, ex.getMessage());
+				String title= BasicHibernateMessages.AbstractQueryEditor_problems_during_save_as;
+				String msg= MessageFormat.format(BasicHibernateMessages.AbstractQueryEditor_save_could_not_be_completed, ex.getMessage());
 				MessageDialog.openError(shell, title, msg);
 				return;
 			}
@@ -408,7 +408,7 @@ public abstract class AbstractQueryEditor extends TextEditor implements
 			dialog.create();
 
 			if (provider.isDeleted(input) && original != null) {
-				String message= MessageFormat.format(HibernateConsoleMessages.AbstractQueryEditor_the_original_file_has_been_deleted_or_is_not_accessible, original.getName());
+				String message= MessageFormat.format(BasicHibernateMessages.AbstractQueryEditor_the_original_file_has_been_deleted_or_is_not_accessible, original.getName());
 				dialog.setErrorMessage(null);
 				dialog.setMessage(message, IMessageProvider.WARNING);
 			}
@@ -447,8 +447,8 @@ public abstract class AbstractQueryEditor extends TextEditor implements
 		} catch (CoreException x) {
 			final IStatus status= x.getStatus();
 			if (status == null || status.getSeverity() != IStatus.CANCEL) {
-				String title= HibernateConsoleMessages.AbstractQueryEditor_problems_during_save_as;
-				String msg= MessageFormat.format(HibernateConsoleMessages.AbstractQueryEditor_save_could_not_be_completed, x.getMessage());
+				String title= BasicHibernateMessages.AbstractQueryEditor_problems_during_save_as;
+				String msg= MessageFormat.format(BasicHibernateMessages.AbstractQueryEditor_save_could_not_be_completed, x.getMessage());
 				MessageDialog.openError(shell, title, msg);
 			}
 		} finally {

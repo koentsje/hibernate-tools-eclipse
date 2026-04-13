@@ -12,7 +12,7 @@ import org.eclipse.ltk.core.refactoring.Change;
 import org.eclipse.ltk.core.refactoring.RefactoringStatus;
 import org.eclipse.ltk.core.refactoring.participants.CheckConditionsContext;
 import org.eclipse.ltk.core.refactoring.participants.DeleteParticipant;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 
 public class DeleteProjectParticipant extends DeleteParticipant {
 	
@@ -39,7 +39,7 @@ public class DeleteProjectParticipant extends DeleteParticipant {
 
 	@Override
 	public String getName() {
-		return HibernateConsoleMessages.DeleteProjectParticipant_console_configurations_updates;
+		return BasicHibernateMessages.DeleteProjectParticipant_console_configurations_updates;
 	}
 
 	@Override

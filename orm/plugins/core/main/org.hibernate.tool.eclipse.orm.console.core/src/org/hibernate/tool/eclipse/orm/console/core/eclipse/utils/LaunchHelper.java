@@ -14,7 +14,7 @@ import org.eclipse.debug.core.ILaunchConfigurationType;
 import org.eclipse.debug.core.ILaunchManager;
 import org.eclipse.jdt.launching.IJavaLaunchConfigurationConstants;
 import org.eclipse.osgi.util.NLS;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateConsoleCorePlugin;
 import org.hibernate.tool.eclipse.orm.launch.ICodeGenerationLaunchConstants;
 
@@ -39,7 +39,7 @@ public class LaunchHelper {
 	}
 
 	public static ILaunchConfiguration findLaunchConfigurationByName(String launchConfigurationTypeId, String name) throws CoreException {
-		Assert.isNotNull(launchConfigurationTypeId, HibernateConsoleMessages.LaunchHelper_launch_cfg_type_cannot_be_null);
+		Assert.isNotNull(launchConfigurationTypeId, BasicHibernateMessages.LaunchHelper_launch_cfg_type_cannot_be_null);
 		ILaunchManager launchManager = DebugPlugin.getDefault().getLaunchManager();
 
 		ILaunchConfigurationType launchConfigurationType = launchManager
@@ -70,7 +70,7 @@ public class LaunchHelper {
 
 	public static String verifyConfigurationName(String currentName) {
 		if (currentName == null || currentName.length() < 1) {
-			return HibernateConsoleMessages.ConsoleConfigurationWizardPage_name_must_specified;
+			return BasicHibernateMessages.ConsoleConfigurationWizardPage_name_must_specified;
 		}
 		if (Platform.OS_WIN32.equals(Platform.getOS())) {
 			String[] badnames = new String[] { "aux", "clock$", "com1", "com2", "com3", "com4", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$
@@ -78,7 +78,7 @@ public class LaunchHelper {
 					"lpt3", "lpt4", "lpt5", "lpt6", "lpt7", "lpt8", "lpt9", "nul", "prn" }; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$ //$NON-NLS-7$ //$NON-NLS-8$ //$NON-NLS-9$
 			for (int i = 0; i < badnames.length; i++) {
 				if (currentName.equals(badnames[i])) {
-					return NLS.bind(HibernateConsoleMessages.ConsoleConfigurationWizardPage_bad_name, currentName);
+					return NLS.bind(BasicHibernateMessages.ConsoleConfigurationWizardPage_bad_name, currentName);
 				}
 			}
 		}
@@ -86,12 +86,12 @@ public class LaunchHelper {
 		for (int i = 0; i < disallowedChars.length; i++) {
 			char c = disallowedChars[i];
 			if (currentName.indexOf(c) > -1) {
-				return NLS.bind(HibernateConsoleMessages.ConsoleConfigurationWizardPage_bad_char, c);
+				return NLS.bind(BasicHibernateMessages.ConsoleConfigurationWizardPage_bad_char, c);
 			}
 		}
 
 		if(existingLaunchConfiguration(currentName)) {
-			return HibernateConsoleMessages.ConsoleConfigurationWizardPage_config_name_already_exist;
+			return BasicHibernateMessages.ConsoleConfigurationWizardPage_config_name_already_exist;
 		}
 		return null;
 	}

@@ -19,7 +19,7 @@ import org.eclipse.osgi.util.NLS;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.HibernateConsoleRuntimeException;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.EclipseLaunchConsoleConfigurationPreferences;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 
 /**
  * 
@@ -69,7 +69,7 @@ public class ConsoleConfigurationJavaClasspathTab extends JavaClasspathTab {
 					if (entry.getType() == IRuntimeClasspathEntry.ARCHIVE) {
 						if (!entry.getPath().toFile().exists()) {
 							resExistArchive = false;
-							String out = NLS.bind(HibernateConsoleMessages.ConsoleConfigurationTabGroup_archive_classpath_entry_does_not_exist, entry.getPath().toString());
+							String out = NLS.bind(BasicHibernateMessages.ConsoleConfigurationTabGroup_archive_classpath_entry_does_not_exist, entry.getPath().toString());
 							setErrorMessage(out);
 						}
 					}
@@ -80,7 +80,7 @@ public class ConsoleConfigurationJavaClasspathTab extends JavaClasspathTab {
 			//We'll show warning to the user later
 		}
 		if (!resUserClasses) {
-			setErrorMessage(HibernateConsoleMessages.ConsoleConfigurationTabGroup_classpath_must_be_set_or_restored_to_default);
+			setErrorMessage(BasicHibernateMessages.ConsoleConfigurationTabGroup_classpath_must_be_set_or_restored_to_default);
 		}
 		if (resUserClasses && resExistArchive) {
 			boolean flagTryToBuild = true;

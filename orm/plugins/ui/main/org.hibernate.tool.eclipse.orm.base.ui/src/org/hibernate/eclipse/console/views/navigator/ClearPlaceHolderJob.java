@@ -16,7 +16,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.viewers.AbstractTreeViewer;
 import org.eclipse.ui.progress.UIJob;
-import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
+import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.views.navigator.PendingJob.NonConflictingRule;
 
 public class ClearPlaceHolderJob extends UIJob {
@@ -27,7 +27,7 @@ public class ClearPlaceHolderJob extends UIJob {
 	private Object parent;
 
 	public ClearPlaceHolderJob(AbstractTreeViewer viewer, PendingNode placeHolder, Object parent, Object[] children) {
-		super(HibernateConsoleMessages.ClearPlaceHolderJob_removing_place_holder);
+		super(BasicHibernateMessages.ClearPlaceHolderJob_removing_place_holder);
 		this.viewer = viewer;
 		this.placeHolder = placeHolder;
 		this.parent = parent;
