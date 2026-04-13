@@ -4,7 +4,7 @@ import org.eclipse.core.resources.IStorage;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.IPersistableElement;
 import org.eclipse.ui.IStorageEditorInput;
-import org.hibernate.tool.eclipse.orm.editor.QueryEditorStorage;
+import org.hibernate.tool.eclipse.common.base.core.resources.InMemoryStorage;
 
 public abstract class QueryEditorInput  implements IStorageEditorInput, IPersistableElement {
 
@@ -88,17 +88,17 @@ public abstract class QueryEditorInput  implements IStorageEditorInput, IPersist
 
 
 	public void setQuery(String query) {
-		if (getStorage() instanceof QueryEditorStorage) {
-			((QueryEditorStorage)getStorage()).setContents(query);
+		if (getStorage() instanceof InMemoryStorage) {
+			((InMemoryStorage)getStorage()).setContents(query);
 		}
 	}
 
 	public String getConsoleConfigurationName() {
-		return ((QueryEditorStorage)getStorage()).getConfigurationName();
+		return ((InMemoryStorage)getStorage()).getConfigurationName();
 	}
 
 	public void setConsoleConfigurationName(String name2) {
-		((QueryEditorStorage)getStorage()).setConfigurationName(name2);
+		((InMemoryStorage)getStorage()).setConfigurationName(name2);
 	}
 
 	abstract public void resetName();

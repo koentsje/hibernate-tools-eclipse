@@ -23,12 +23,12 @@ package org.hibernate.eclipse.criteriaeditor;
 
 import org.eclipse.core.runtime.IPath;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
-import org.hibernate.tool.eclipse.orm.editor.QueryEditorStorage;
+import org.hibernate.tool.eclipse.common.base.core.resources.InMemoryStorage;
 
 /**
  * Storage for Criteria editors without a file
  */
-public class CriteriaEditorStorage extends QueryEditorStorage {
+public class CriteriaEditorStorage extends InMemoryStorage {
 
 
     public CriteriaEditorStorage( String source ) {

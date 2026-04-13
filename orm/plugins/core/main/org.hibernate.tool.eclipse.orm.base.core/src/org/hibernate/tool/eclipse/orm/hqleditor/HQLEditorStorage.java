@@ -22,12 +22,12 @@
 package org.hibernate.tool.eclipse.orm.hqleditor;
 
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
-import org.hibernate.tool.eclipse.orm.editor.QueryEditorStorage;
+import org.hibernate.tool.eclipse.common.base.core.resources.InMemoryStorage;
 
 /**
  * Storage for HQL editors without a file
  */
-public class HQLEditorStorage extends QueryEditorStorage {
+public class HQLEditorStorage extends InMemoryStorage {
 
     public HQLEditorStorage( String source ) {
         super(source);

@@ -1,4 +1,4 @@
-package org.hibernate.tool.eclipse.orm.editor;
+package org.hibernate.tool.eclipse.common.base.core.resources;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -10,27 +10,22 @@ import java.io.Reader;
 import org.eclipse.core.resources.IStorage;
 import org.eclipse.core.runtime.IPath;
 
-public class QueryEditorStorage implements IStorage {
+public class InMemoryStorage implements IStorage {
 
 	private String contents;
     private String nameLabel;
 	private String configurationName;
 
-    public QueryEditorStorage( String source ) {
+    public InMemoryStorage( String source ) {
         this( "", source, source ); //$NON-NLS-1$
     }
 
-    public QueryEditorStorage( String configurationName, String name, String source ) {
+    public InMemoryStorage( String configurationName, String name, String source ) {
         super();
         setName( name );
-        setQuery( source );
+        setContents( source );
         setConfigurationName(configurationName);
     }
-
-	public void setQuery(String source) {
-		if(source==null) { return; }
-		setContents(source);
-	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public Object getAdapter( Class key ) {
@@ -101,8 +96,9 @@ public class QueryEditorStorage implements IStorage {
 		this.configurationName = configurationName;
 	}
 
-	public void setContents(String query) {
-		this.contents = query;
+	public void setContents(String contents) {
+		if(contents==null) { return; }
+		this.contents = contents;
 	}
 
 }
