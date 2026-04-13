@@ -19,7 +19,7 @@ import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.ltk.core.refactoring.Change;
 import org.eclipse.ltk.core.refactoring.RefactoringStatus;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
-import org.hibernate.tool.eclipse.common.base.core.console.launch.IConsoleConfigurationLaunchConstants;
+import org.hibernate.tool.eclipse.common.base.core.launch.IBasicHibernateLaunchConstants;
 
 /**
  * @author Dmitry Geraskov
@@ -34,7 +34,7 @@ public class ConsoleConfigurationNamingStrategyChange extends Change {
 	public ConsoleConfigurationNamingStrategyChange(ILaunchConfiguration launchConfiguration, String newNamingStrategyName) throws CoreException {
 		fLaunchConfiguration = launchConfiguration;
 		fNewNamingStrategyName = newNamingStrategyName;
-		fOldNamingStrategyTypeName = fLaunchConfiguration.getAttribute(IConsoleConfigurationLaunchConstants.NAMING_STRATEGY, (String) null);
+		fOldNamingStrategyTypeName = fLaunchConfiguration.getAttribute(IBasicHibernateLaunchConstants.NAMING_STRATEGY, (String) null);
 	}
 
 	@Override
@@ -60,7 +60,7 @@ public class ConsoleConfigurationNamingStrategyChange extends Change {
 	public Change perform(IProgressMonitor pm) throws CoreException {
 		final ILaunchConfigurationWorkingCopy wc = fLaunchConfiguration.getWorkingCopy();
 		String oldNamingStrategyTypeName = fOldNamingStrategyTypeName;
-		wc.setAttribute(IConsoleConfigurationLaunchConstants.NAMING_STRATEGY, fNewNamingStrategyName);
+		wc.setAttribute(IBasicHibernateLaunchConstants.NAMING_STRATEGY, fNewNamingStrategyName);
 
 		fLaunchConfiguration = wc.doSave();
 

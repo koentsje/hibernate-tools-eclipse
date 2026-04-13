@@ -20,7 +20,7 @@ import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessag
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.console.utils.DialogSelectionHelper;
 import org.hibernate.tool.eclipse.orm.utils.DriverClassHelpers;
-import org.hibernate.tool.eclipse.common.base.core.console.launch.IConsoleConfigurationLaunchConstants;
+import org.hibernate.tool.eclipse.common.base.core.launch.IBasicHibernateLaunchConstants;
 import org.xml.sax.EntityResolver;
 
 public class ConsoleConfigurationOptionsTab extends ConsoleConfigurationTab {
@@ -88,10 +88,10 @@ public class ConsoleConfigurationOptionsTab extends ConsoleConfigurationTab {
 
 	public void initializeFrom(ILaunchConfiguration configuration) {
 		try {
-			String dialect = configuration.getAttribute( IConsoleConfigurationLaunchConstants.DIALECT, "" ); //$NON-NLS-1$
+			String dialect = configuration.getAttribute( IBasicHibernateLaunchConstants.DIALECT, "" ); //$NON-NLS-1$
 			dialectNameCombo.setText( helper.getShortDialectName(dialect) );
-			namingStrategyClassNameText.setText( configuration.getAttribute( IConsoleConfigurationLaunchConstants.NAMING_STRATEGY, "" ) ); //$NON-NLS-1$
-			entityResolverClassNameText.setText( configuration.getAttribute( IConsoleConfigurationLaunchConstants.ENTITY_RESOLVER, "" ) ); //$NON-NLS-1$
+			namingStrategyClassNameText.setText( configuration.getAttribute( IBasicHibernateLaunchConstants.NAMING_STRATEGY, "" ) ); //$NON-NLS-1$
+			entityResolverClassNameText.setText( configuration.getAttribute( IBasicHibernateLaunchConstants.ENTITY_RESOLVER, "" ) ); //$NON-NLS-1$
 		}
 		catch (CoreException e) {
 			HibernateBasePlugin.getDefault().log(e);
@@ -102,9 +102,9 @@ public class ConsoleConfigurationOptionsTab extends ConsoleConfigurationTab {
 		String dialect = nonEmptyTrimOrNull( dialectNameCombo.getText() );
 		dialect = helper.getDialectClass(dialect);
 		
-		configuration.setAttribute( IConsoleConfigurationLaunchConstants.DIALECT, nonEmptyTrimOrNull( dialect ) );
-		configuration.setAttribute( IConsoleConfigurationLaunchConstants.NAMING_STRATEGY, nonEmptyTrimOrNull( namingStrategyClassNameText ) );
-		configuration.setAttribute( IConsoleConfigurationLaunchConstants.ENTITY_RESOLVER, nonEmptyTrimOrNull( entityResolverClassNameText ) );
+		configuration.setAttribute( IBasicHibernateLaunchConstants.DIALECT, nonEmptyTrimOrNull( dialect ) );
+		configuration.setAttribute( IBasicHibernateLaunchConstants.NAMING_STRATEGY, nonEmptyTrimOrNull( namingStrategyClassNameText ) );
+		configuration.setAttribute( IBasicHibernateLaunchConstants.ENTITY_RESOLVER, nonEmptyTrimOrNull( entityResolverClassNameText ) );
 	}
 
 	public void setDefaults(ILaunchConfigurationWorkingCopy configuration) {

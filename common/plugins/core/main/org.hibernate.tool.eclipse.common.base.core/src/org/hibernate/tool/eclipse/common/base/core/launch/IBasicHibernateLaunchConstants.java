@@ -2,7 +2,7 @@ package org.hibernate.tool.eclipse.common.base.core.console.launch;
 
 import org.eclipse.jdt.launching.IJavaLaunchConfigurationConstants;
 
-public interface IConsoleConfigurationLaunchConstants {
+public interface IBasicHibernateLaunchConstants {
 
 	public static final String ID = "org.hibernate.eclipse.launch"; //$NON-NLS-1$
 	public static final String DIALECT = ID + "DIALECT"; //$NON-NLS-1$

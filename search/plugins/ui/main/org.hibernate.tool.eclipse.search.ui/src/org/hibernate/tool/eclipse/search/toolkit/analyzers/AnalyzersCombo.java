@@ -16,7 +16,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.LaunchHelper;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.ProjectUtils;
-import org.hibernate.tool.eclipse.common.base.core.console.launch.IConsoleConfigurationLaunchConstants;
+import org.hibernate.tool.eclipse.common.base.core.launch.IBasicHibernateLaunchConstants;
 import org.hibernate.tool.eclipse.search.HibernateSearchConsolePlugin;
 
 public class AnalyzersCombo {
@@ -37,7 +37,7 @@ public class AnalyzersCombo {
 		String projName = null;
 		try {
 			ILaunchConfiguration launchConfiguration = LaunchHelper.findHibernateLaunchConfig(this.consoleConfigName);
-			projName = launchConfiguration.getAttribute(IConsoleConfigurationLaunchConstants.PROJECT_NAME, ""); //$NON-NLS-1$
+			projName = launchConfiguration.getAttribute(IBasicHibernateLaunchConstants.PROJECT_NAME, ""); //$NON-NLS-1$
 		} catch (CoreException e) {
 			HibernateSearchConsolePlugin.getDefault().logError(e);
 		}

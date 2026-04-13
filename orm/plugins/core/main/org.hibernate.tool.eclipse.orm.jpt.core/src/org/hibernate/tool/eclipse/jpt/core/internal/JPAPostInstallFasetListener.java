@@ -53,7 +53,7 @@ import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.preferences.ConsoleConfigurationPreferences.ConfigurationMode;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.LaunchHelper;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.ProjectUtils;
-import org.hibernate.tool.eclipse.common.base.core.console.launch.IConsoleConfigurationLaunchConstants;
+import org.hibernate.tool.eclipse.common.base.core.launch.IBasicHibernateLaunchConstants;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateProjectConsoleManager;
 import org.hibernate.tool.eclipse.orm.utils.HibernateEclipseUtils;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
@@ -172,26 +172,26 @@ public class JPAPostInstallFasetListener implements IFacetedProjectListener {
 			wc.setAttribute(LaunchConfiguration.ATTR_MAPPED_RESOURCE_PATHS,
 					Collections.singletonList(new Path(project.getName()).makeAbsolute().toString()));
 			wc.setAttribute(LaunchConfiguration.ATTR_MAPPED_RESOURCE_TYPES, Collections.singletonList(Integer.toString(IResource.PROJECT)));
-			wc.setAttribute(IConsoleConfigurationLaunchConstants.CONFIGURATION_FACTORY, ConfigurationMode.JPA.toString());
+			wc.setAttribute(IBasicHibernateLaunchConstants.CONFIGURATION_FACTORY, ConfigurationMode.JPA.toString());
 			wc.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROJECT_NAME, project.getName());
 			wc.setAttribute(IJavaLaunchConfigurationConstants.ATTR_DEFAULT_CLASSPATH, true );
-			wc.setAttribute(IConsoleConfigurationLaunchConstants.FILE_MAPPINGS, (List<String>)null);
-			wc.setAttribute(IConsoleConfigurationLaunchConstants.USE_JPA_PROJECT_PROFILE, Boolean.toString(true));
+			wc.setAttribute(IBasicHibernateLaunchConstants.FILE_MAPPINGS, (List<String>)null);
+			wc.setAttribute(IBasicHibernateLaunchConstants.USE_JPA_PROJECT_PROFILE, Boolean.toString(true));
 			String hibernateVersion = lookupHibernateVersion(project);
 			if  (HibernateJpaPlatform.HIBERNATE2_1_PLATFORM_ID.equals(platformId) || HibernateJpaPlatform.HIBERNATE2_2_PLATFORM_ID.equals(platformId)) {
-				wc.setAttribute(IConsoleConfigurationLaunchConstants.PERSISTENCE_UNIT_NAME, getPersistenceUnitName(project));
+				wc.setAttribute(IBasicHibernateLaunchConstants.PERSISTENCE_UNIT_NAME, getPersistenceUnitName(project));
 			}
 			if (hibernateVersion != null) {
-				wc.setAttribute(IConsoleConfigurationLaunchConstants.HIBERNATE_VERSION, hibernateVersion);
+				wc.setAttribute(IBasicHibernateLaunchConstants.HIBERNATE_VERSION, hibernateVersion);
 			} else {
 				if (HibernateJpaPlatform.HIBERNATE2_2_PLATFORM_ID.equals(platformId)) {
-					wc.setAttribute(IConsoleConfigurationLaunchConstants.HIBERNATE_VERSION, "5.2"); //$NON-NLS-1$
+					wc.setAttribute(IBasicHibernateLaunchConstants.HIBERNATE_VERSION, "5.2"); //$NON-NLS-1$
 				} else if (HibernateJpaPlatform.HIBERNATE2_1_PLATFORM_ID.equals(platformId)) {
-					wc.setAttribute(IConsoleConfigurationLaunchConstants.HIBERNATE_VERSION, "4.3"); //$NON-NLS-1$
+					wc.setAttribute(IBasicHibernateLaunchConstants.HIBERNATE_VERSION, "4.3"); //$NON-NLS-1$
 				} else if (HibernateJpaPlatform.HIBERNATE2_0_PLATFORM_ID.equals(platformId)) {
-					wc.setAttribute(IConsoleConfigurationLaunchConstants.HIBERNATE_VERSION, "4.0"); //$NON-NLS-1$
+					wc.setAttribute(IBasicHibernateLaunchConstants.HIBERNATE_VERSION, "4.0"); //$NON-NLS-1$
 				} else {
-					wc.setAttribute(IConsoleConfigurationLaunchConstants.HIBERNATE_VERSION, "3.6"); //$NON-NLS-1$
+					wc.setAttribute(IBasicHibernateLaunchConstants.HIBERNATE_VERSION, "3.6"); //$NON-NLS-1$
 				}
 			}
 

@@ -23,7 +23,7 @@ import org.hibernate.console.HibernateConsoleRuntimeException;
 import org.hibernate.console.preferences.ConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.orm.utils.ClassLoaderHelper;
 import org.hibernate.tool.eclipse.orm.utils.DriverClassHelpers;
-import org.hibernate.tool.eclipse.common.base.core.console.launch.IConsoleConfigurationLaunchConstants;
+import org.hibernate.tool.eclipse.common.base.core.launch.IBasicHibernateLaunchConstants;
 import org.hibernate.tool.eclipse.orm.utils.HibernateEclipseUtils;
 import org.hibernate.util.xpl.StringHelper;
 import org.w3c.dom.Element;
@@ -82,12 +82,12 @@ public class EclipseLaunchConsoleConfigurationPreferences implements ConsoleConf
 	}
 
 	public File getConfigXMLFile() {
-		String file = getAttribute( IConsoleConfigurationLaunchConstants.CFG_XML_FILE, null );
+		String file = getAttribute( IBasicHibernateLaunchConstants.CFG_XML_FILE, null );
 		return strToFile( file );
 	}
 
 	public ConfigurationMode getConfigurationMode() {
-		return ConfigurationMode.parse( getAttribute( IConsoleConfigurationLaunchConstants.CONFIGURATION_FACTORY, "" ) );		 //$NON-NLS-1$
+		return ConfigurationMode.parse( getAttribute( IBasicHibernateLaunchConstants.CONFIGURATION_FACTORY, "" ) );		 //$NON-NLS-1$
 	}
 
 	public URL[] getCustomClassPathURLS() {
@@ -110,13 +110,13 @@ public class EclipseLaunchConsoleConfigurationPreferences implements ConsoleConf
 
 
 	public String getEntityResolverName() {
-		return getAttribute( IConsoleConfigurationLaunchConstants.ENTITY_RESOLVER, null );
+		return getAttribute( IBasicHibernateLaunchConstants.ENTITY_RESOLVER, null );
 	}
 
 	@SuppressWarnings("unchecked")
 	public File[] getMappingFiles() {
 		try {
-			List<String> mappings = launchConfiguration.getAttribute( IConsoleConfigurationLaunchConstants.FILE_MAPPINGS, Collections.EMPTY_LIST );
+			List<String> mappings = launchConfiguration.getAttribute( IBasicHibernateLaunchConstants.FILE_MAPPINGS, Collections.EMPTY_LIST );
 			File[] result = new File[mappings.size()];
 			int i = 0;
 			for (String element : mappings) {
@@ -134,11 +134,11 @@ public class EclipseLaunchConsoleConfigurationPreferences implements ConsoleConf
 	}
 
 	public String getNamingStrategy() {
-		return getAttribute( IConsoleConfigurationLaunchConstants.NAMING_STRATEGY, null );
+		return getAttribute( IBasicHibernateLaunchConstants.NAMING_STRATEGY, null );
 	}
 
 	public String getConnectionProfileName() {
-		if (Boolean.parseBoolean(getAttribute(IConsoleConfigurationLaunchConstants.USE_JPA_PROJECT_PROFILE, null))){
+		if (Boolean.parseBoolean(getAttribute(IBasicHibernateLaunchConstants.USE_JPA_PROJECT_PROFILE, null))){
 			String projName = getProjectName();
 			if (projName != null){
 				IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(projName);
@@ -155,11 +155,11 @@ public class EclipseLaunchConsoleConfigurationPreferences implements ConsoleConf
 				}
 			}
 		}
-		return getAttribute(IConsoleConfigurationLaunchConstants.CONNECTION_PROFILE_NAME, null);
+		return getAttribute(IBasicHibernateLaunchConstants.CONNECTION_PROFILE_NAME, null);
 	}
 
 	public String getPersistenceUnitName() {
-		return getAttribute( IConsoleConfigurationLaunchConstants.PERSISTENCE_UNIT_NAME, null );
+		return getAttribute( IBasicHibernateLaunchConstants.PERSISTENCE_UNIT_NAME, null );
 	}
 
 	public Properties getProperties() {		
@@ -193,7 +193,7 @@ public class EclipseLaunchConsoleConfigurationPreferences implements ConsoleConf
 	}
 
 	public File getPropertyFile() {
-		return strToFile(getAttribute( IConsoleConfigurationLaunchConstants.PROPERTY_FILE, null ));
+		return strToFile(getAttribute( IBasicHibernateLaunchConstants.PROPERTY_FILE, null ));
 	}
 
 	public void readStateFrom(Element element) {
@@ -209,7 +209,7 @@ public class EclipseLaunchConsoleConfigurationPreferences implements ConsoleConf
 	}
 	
 	public String getDialectName() {
-		String dialect = getAttribute( IConsoleConfigurationLaunchConstants.DIALECT, null );
+		String dialect = getAttribute( IBasicHibernateLaunchConstants.DIALECT, null );
 		// determine dialect when connection profile is used
 		if (dialect == null && getConnectionProfileName() != null) {
 			String driver = ConnectionProfileUtil.getDriverClass(getConnectionProfileName());
@@ -255,7 +255,7 @@ public class EclipseLaunchConsoleConfigurationPreferences implements ConsoleConf
 	public String getHibernateVersion() {
 		String defaultVersion = "3.5"; //$NON-NLS-1$
 		if (launchConfiguration.exists()){
-			return getAttribute(IConsoleConfigurationLaunchConstants.HIBERNATE_VERSION, defaultVersion);
+			return getAttribute(IBasicHibernateLaunchConstants.HIBERNATE_VERSION, defaultVersion);
 		}
 		return defaultVersion; 
 	}

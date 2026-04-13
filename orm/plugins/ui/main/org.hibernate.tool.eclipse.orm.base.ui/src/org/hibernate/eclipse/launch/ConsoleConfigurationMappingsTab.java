@@ -22,7 +22,7 @@ import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.console.utils.DialogSelectionHelper;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.eclipse.console.wizards.UpDownListComposite;
-import org.hibernate.tool.eclipse.common.base.core.console.launch.IConsoleConfigurationLaunchConstants;
+import org.hibernate.tool.eclipse.common.base.core.launch.IBasicHibernateLaunchConstants;
 
 public class ConsoleConfigurationMappingsTab extends ConsoleConfigurationTab {
 
@@ -82,7 +82,7 @@ public class ConsoleConfigurationMappingsTab extends ConsoleConfigurationTab {
 	public void initializeFrom(ILaunchConfiguration configuration) {
 		try {
 			mappingFilesViewer.clear();
-			List<String> mappings = configuration.getAttribute( IConsoleConfigurationLaunchConstants.FILE_MAPPINGS, Collections.EMPTY_LIST );
+			List<String> mappings = configuration.getAttribute( IBasicHibernateLaunchConstants.FILE_MAPPINGS, Collections.EMPTY_LIST );
 			IPath[] mapA = new IPath[mappings.size()];
 			int i=0;
 			for (Iterator<String> iter = mappings.iterator(); iter.hasNext();) {
@@ -103,7 +103,7 @@ public class ConsoleConfigurationMappingsTab extends ConsoleConfigurationTab {
 			IPath path = mappings[i];
 			l.add(path.toPortableString());
 		}
-		configuration.setAttribute( IConsoleConfigurationLaunchConstants.FILE_MAPPINGS, l );
+		configuration.setAttribute( IBasicHibernateLaunchConstants.FILE_MAPPINGS, l );
 	}
 
 	public void setDefaults(ILaunchConfigurationWorkingCopy configuration) {

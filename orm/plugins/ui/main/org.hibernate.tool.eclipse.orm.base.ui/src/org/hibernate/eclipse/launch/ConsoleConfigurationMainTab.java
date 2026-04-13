@@ -54,7 +54,7 @@ import org.hibernate.eclipse.console.wizards.NewConfigurationWizardPage;
 import org.hibernate.tool.eclipse.orm.utils.HibernateEclipseUtils;
 import org.hibernate.util.xpl.StringHelper;
 import org.hibernate.tool.eclipse.orm.runtime.spi.RuntimeServiceManager;
-import org.hibernate.tool.eclipse.common.base.core.console.launch.IConsoleConfigurationLaunchConstants;
+import org.hibernate.tool.eclipse.common.base.core.launch.IBasicHibernateLaunchConstants;
 
 @SuppressWarnings("restriction")
 public class ConsoleConfigurationMainTab extends ConsoleConfigurationTab {
@@ -195,8 +195,8 @@ public class ConsoleConfigurationMainTab extends ConsoleConfigurationTab {
 
 	public void performApply(ILaunchConfigurationWorkingCopy configuration) {
 		String projectName = nonEmptyTrimOrNull( projectNameText );
-		configuration.setAttribute(IConsoleConfigurationLaunchConstants.CONFIGURATION_FACTORY, getConfigurationMode().toString());
-		configuration.setAttribute(IConsoleConfigurationLaunchConstants.HIBERNATE_VERSION, getHibernateVersion());
+		configuration.setAttribute(IBasicHibernateLaunchConstants.CONFIGURATION_FACTORY, getConfigurationMode().toString());
+		configuration.setAttribute(IBasicHibernateLaunchConstants.HIBERNATE_VERSION, getHibernateVersion());
 		configuration.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROJECT_NAME, projectName);
 		if (projectName != null){
 			configuration.setAttribute(LaunchConfiguration.ATTR_MAPPED_RESOURCE_PATHS,
@@ -206,19 +206,19 @@ public class ConsoleConfigurationMainTab extends ConsoleConfigurationTab {
 			configuration.removeAttribute(LaunchConfiguration.ATTR_MAPPED_RESOURCE_PATHS);
 			configuration.removeAttribute(LaunchConfiguration.ATTR_MAPPED_RESOURCE_TYPES);
 		}
-		configuration.setAttribute(IConsoleConfigurationLaunchConstants.PROPERTY_FILE, nonEmptyTrimOrNull(propertyFileText));
-		configuration.setAttribute(IConsoleConfigurationLaunchConstants.CFG_XML_FILE, nonEmptyTrimOrNull(configurationFileText));
-		configuration.setAttribute(IConsoleConfigurationLaunchConstants.PERSISTENCE_UNIT_NAME, nonEmptyTrimOrNull(persistenceUnitNameText));
+		configuration.setAttribute(IBasicHibernateLaunchConstants.PROPERTY_FILE, nonEmptyTrimOrNull(propertyFileText));
+		configuration.setAttribute(IBasicHibernateLaunchConstants.CFG_XML_FILE, nonEmptyTrimOrNull(configurationFileText));
+		configuration.setAttribute(IBasicHibernateLaunchConstants.PERSISTENCE_UNIT_NAME, nonEmptyTrimOrNull(persistenceUnitNameText));
 		String cpName = nonEmptyTrimOrNull(connectionProfileCtrl.getSelectedConnectionName());
 		if (ConnectionProfileCtrl.JPA_CONNECTIN_NAME.equals(cpName)){
-			configuration.setAttribute(IConsoleConfigurationLaunchConstants.USE_JPA_PROJECT_PROFILE, Boolean.toString(true));
-			configuration.removeAttribute(IConsoleConfigurationLaunchConstants.CONNECTION_PROFILE_NAME);
+			configuration.setAttribute(IBasicHibernateLaunchConstants.USE_JPA_PROJECT_PROFILE, Boolean.toString(true));
+			configuration.removeAttribute(IBasicHibernateLaunchConstants.CONNECTION_PROFILE_NAME);
 		} else if (ConnectionProfileCtrl.NO_CONNECTIN_NAME.equals(cpName)) {
-			configuration.setAttribute(IConsoleConfigurationLaunchConstants.CONNECTION_PROFILE_NAME, (String)null);
-			configuration.removeAttribute(IConsoleConfigurationLaunchConstants.USE_JPA_PROJECT_PROFILE);
+			configuration.setAttribute(IBasicHibernateLaunchConstants.CONNECTION_PROFILE_NAME, (String)null);
+			configuration.removeAttribute(IBasicHibernateLaunchConstants.USE_JPA_PROJECT_PROFILE);
 		} else {
-			configuration.setAttribute(IConsoleConfigurationLaunchConstants.CONNECTION_PROFILE_NAME, cpName);
-			configuration.removeAttribute(IConsoleConfigurationLaunchConstants.USE_JPA_PROJECT_PROFILE);
+			configuration.setAttribute(IBasicHibernateLaunchConstants.CONNECTION_PROFILE_NAME, cpName);
+			configuration.removeAttribute(IBasicHibernateLaunchConstants.USE_JPA_PROJECT_PROFILE);
 		}
 	}
 	
@@ -231,21 +231,21 @@ public class ConsoleConfigurationMainTab extends ConsoleConfigurationTab {
 	public void initializeFrom(ILaunchConfiguration configuration) {
 
 		try {
-			ConfigurationMode cm = ConfigurationMode.parse(configuration.getAttribute( IConsoleConfigurationLaunchConstants.CONFIGURATION_FACTORY, "" )); //$NON-NLS-1$
+			ConfigurationMode cm = ConfigurationMode.parse(configuration.getAttribute( IBasicHibernateLaunchConstants.CONFIGURATION_FACTORY, "" )); //$NON-NLS-1$
 			coreMode.setSelection( cm.equals( ConfigurationMode.CORE ) );
-			hibernateVersion.setText(configuration.getAttribute( IConsoleConfigurationLaunchConstants.HIBERNATE_VERSION, "")); //$NON-NLS-1$
+			hibernateVersion.setText(configuration.getAttribute( IBasicHibernateLaunchConstants.HIBERNATE_VERSION, "")); //$NON-NLS-1$
 			annotationsMode.setSelection( cm.equals( ConfigurationMode.ANNOTATIONS ) );
 			jpaMode.setSelection( cm.equals( ConfigurationMode.JPA ) );
 
 			projectNameText.setText( configuration.getAttribute( IJavaLaunchConfigurationConstants.ATTR_PROJECT_NAME, "" ) ); //$NON-NLS-1$
-			propertyFileText.setText( configuration.getAttribute( IConsoleConfigurationLaunchConstants.PROPERTY_FILE, "" ) ); //$NON-NLS-1$
-			configurationFileText.setText( configuration.getAttribute( IConsoleConfigurationLaunchConstants.CFG_XML_FILE, "" )); //$NON-NLS-1$
-			persistenceUnitNameText.setText( configuration.getAttribute( IConsoleConfigurationLaunchConstants.PERSISTENCE_UNIT_NAME, "" )); //$NON-NLS-1$
+			propertyFileText.setText( configuration.getAttribute( IBasicHibernateLaunchConstants.PROPERTY_FILE, "" ) ); //$NON-NLS-1$
+			configurationFileText.setText( configuration.getAttribute( IBasicHibernateLaunchConstants.CFG_XML_FILE, "" )); //$NON-NLS-1$
+			persistenceUnitNameText.setText( configuration.getAttribute( IBasicHibernateLaunchConstants.PERSISTENCE_UNIT_NAME, "" )); //$NON-NLS-1$
 
-			if (Boolean.parseBoolean(configuration.getAttribute(IConsoleConfigurationLaunchConstants.USE_JPA_PROJECT_PROFILE, Boolean.toString(false)))){
+			if (Boolean.parseBoolean(configuration.getAttribute(IBasicHibernateLaunchConstants.USE_JPA_PROJECT_PROFILE, Boolean.toString(false)))){
 				connectionProfileCtrl.selectValue(ConnectionProfileCtrl.JPA_CONNECTIN_NAME);
 			} else
-				connectionProfileCtrl.selectValue(configuration.getAttribute(IConsoleConfigurationLaunchConstants.CONNECTION_PROFILE_NAME, ConnectionProfileCtrl.NO_CONNECTIN_NAME));			
+				connectionProfileCtrl.selectValue(configuration.getAttribute(IBasicHibernateLaunchConstants.CONNECTION_PROFILE_NAME, ConnectionProfileCtrl.NO_CONNECTIN_NAME));			
 		}
 		catch (CoreException e) {
 			HibernateBasePlugin.getDefault().log( e );

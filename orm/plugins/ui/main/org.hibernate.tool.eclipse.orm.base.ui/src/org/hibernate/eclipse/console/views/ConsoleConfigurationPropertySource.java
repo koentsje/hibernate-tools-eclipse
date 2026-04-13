@@ -50,7 +50,7 @@ import org.hibernate.console.preferences.ConsoleConfigurationPreferences.Configu
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.LaunchHelper;
-import org.hibernate.tool.eclipse.common.base.core.console.launch.IConsoleConfigurationLaunchConstants;
+import org.hibernate.tool.eclipse.common.base.core.launch.IBasicHibernateLaunchConstants;
 
 @SuppressWarnings("restriction")
 public class ConsoleConfigurationPropertySource implements IPropertySource {
@@ -124,9 +124,9 @@ public class ConsoleConfigurationPropertySource implements IPropertySource {
 			try {
 				ILaunchConfiguration lc = HibernateBasePlugin.getDefault().findLaunchConfig(cfg.getName());
 				if (lc != null){
-					String connectionName = lc.getAttribute(IConsoleConfigurationLaunchConstants.CONNECTION_PROFILE_NAME, (String)null);  
+					String connectionName = lc.getAttribute(IBasicHibernateLaunchConstants.CONNECTION_PROFILE_NAME, (String)null);  
 					if (connectionName == null){
-						connectionName = lc.getAttribute(IConsoleConfigurationLaunchConstants.USE_JPA_PROJECT_PROFILE, Boolean.FALSE.toString());
+						connectionName = lc.getAttribute(IBasicHibernateLaunchConstants.USE_JPA_PROJECT_PROFILE, Boolean.FALSE.toString());
 						if (Boolean.TRUE.toString().equalsIgnoreCase(connectionName)){
 							connectionName = BasicHibernateMessages.ConnectionProfileCtrl_JPAConfiguredConnection;
 						} else {
@@ -234,15 +234,15 @@ public class ConsoleConfigurationPropertySource implements IPropertySource {
 				if (lc != null){
 					ILaunchConfigurationWorkingCopy wc = lc.getWorkingCopy();
 					if (index == 0){//jpa
-						wc.setAttribute(IConsoleConfigurationLaunchConstants.USE_JPA_PROJECT_PROFILE, Boolean.TRUE.toString());
-						wc.removeAttribute(IConsoleConfigurationLaunchConstants.CONNECTION_PROFILE_NAME);
+						wc.setAttribute(IBasicHibernateLaunchConstants.USE_JPA_PROJECT_PROFILE, Boolean.TRUE.toString());
+						wc.removeAttribute(IBasicHibernateLaunchConstants.CONNECTION_PROFILE_NAME);
 					} else if (index == 1){//hibernate
-						wc.removeAttribute(IConsoleConfigurationLaunchConstants.USE_JPA_PROJECT_PROFILE);
-						wc.removeAttribute(IConsoleConfigurationLaunchConstants.CONNECTION_PROFILE_NAME);
+						wc.removeAttribute(IBasicHibernateLaunchConstants.USE_JPA_PROJECT_PROFILE);
+						wc.removeAttribute(IBasicHibernateLaunchConstants.CONNECTION_PROFILE_NAME);
 					} else {//connection profile
 						String[] values = getConnectionNames();
-						wc.setAttribute(IConsoleConfigurationLaunchConstants.CONNECTION_PROFILE_NAME, values[index]);
-						wc.removeAttribute(IConsoleConfigurationLaunchConstants.USE_JPA_PROJECT_PROFILE);
+						wc.setAttribute(IBasicHibernateLaunchConstants.CONNECTION_PROFILE_NAME, values[index]);
+						wc.removeAttribute(IBasicHibernateLaunchConstants.USE_JPA_PROJECT_PROFILE);
 					}
 					wc.doSave();
 				} else {

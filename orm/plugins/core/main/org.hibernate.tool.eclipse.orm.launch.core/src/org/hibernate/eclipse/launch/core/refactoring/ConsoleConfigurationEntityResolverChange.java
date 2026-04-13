@@ -19,7 +19,7 @@ import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.ltk.core.refactoring.Change;
 import org.eclipse.ltk.core.refactoring.RefactoringStatus;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
-import org.hibernate.tool.eclipse.common.base.core.console.launch.IConsoleConfigurationLaunchConstants;
+import org.hibernate.tool.eclipse.common.base.core.launch.IBasicHibernateLaunchConstants;
 
 /**
  * @author Dmitry Geraskov
@@ -34,7 +34,7 @@ public class ConsoleConfigurationEntityResolverChange extends Change {
 	public ConsoleConfigurationEntityResolverChange(ILaunchConfiguration launchConfiguration, String newEntityResolverName) throws CoreException {
 		fLaunchConfiguration = launchConfiguration;
 		fNewEntityResolverName = newEntityResolverName;
-		fOldEntityResolverTypeName = fLaunchConfiguration.getAttribute(IConsoleConfigurationLaunchConstants.NAMING_STRATEGY, (String) null);
+		fOldEntityResolverTypeName = fLaunchConfiguration.getAttribute(IBasicHibernateLaunchConstants.NAMING_STRATEGY, (String) null);
 	}
 
 	@Override
@@ -60,7 +60,7 @@ public class ConsoleConfigurationEntityResolverChange extends Change {
 	public Change perform(IProgressMonitor pm) throws CoreException {
 		final ILaunchConfigurationWorkingCopy wc = fLaunchConfiguration.getWorkingCopy();
 		String oldEntityResolverTypeName = fOldEntityResolverTypeName;
-		wc.setAttribute(IConsoleConfigurationLaunchConstants.ENTITY_RESOLVER, fNewEntityResolverName);
+		wc.setAttribute(IBasicHibernateLaunchConstants.ENTITY_RESOLVER, fNewEntityResolverName);
 
 		fLaunchConfiguration = wc.doSave();
 

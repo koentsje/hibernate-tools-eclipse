@@ -27,7 +27,7 @@ import org.eclipse.ltk.core.refactoring.Change;
 import org.eclipse.ltk.core.refactoring.RefactoringStatus;
 import org.eclipse.ltk.core.refactoring.participants.RenameArguments;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
-import org.hibernate.tool.eclipse.common.base.core.console.launch.IConsoleConfigurationLaunchConstants;
+import org.hibernate.tool.eclipse.common.base.core.launch.IBasicHibernateLaunchConstants;
 
 /**
  * @author Dmitry Geraskov
@@ -88,8 +88,8 @@ public class ConnectionProfileRenameChange extends ConnectionProfileChange {
 			}
 			
 			final ILaunchConfigurationWorkingCopy wc = fLaunchConfiguration.getWorkingCopy();
-			String oldName = wc.getAttribute(IConsoleConfigurationLaunchConstants.CONNECTION_PROFILE_NAME, ""); //$NON-NLS-1$
-			wc.setAttribute(IConsoleConfigurationLaunchConstants.CONNECTION_PROFILE_NAME, fRenameArguments.getNewName());
+			String oldName = wc.getAttribute(IBasicHibernateLaunchConstants.CONNECTION_PROFILE_NAME, ""); //$NON-NLS-1$
+			wc.setAttribute(IBasicHibernateLaunchConstants.CONNECTION_PROFILE_NAME, fRenameArguments.getNewName());
 			ILaunchConfiguration newConfig = wc.isDirty() ? wc.doSave() : fLaunchConfiguration;
 			RenameArguments args = new RenameArguments(oldName, true);
 			return new ConnectionProfileRenameChange(newConfig, mSource, args);

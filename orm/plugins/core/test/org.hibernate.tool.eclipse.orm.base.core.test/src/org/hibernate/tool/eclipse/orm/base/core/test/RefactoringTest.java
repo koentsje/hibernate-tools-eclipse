@@ -26,7 +26,7 @@ import org.eclipse.jdt.internal.launching.DefaultProjectClasspathEntry;
 import org.eclipse.jdt.internal.launching.RuntimeClasspathEntry;
 import org.eclipse.jdt.launching.IRuntimeClasspathEntry;
 import org.hibernate.eclipse.launch.HibernateLaunchConstants;
-import org.hibernate.tool.eclipse.common.base.core.console.launch.IConsoleConfigurationLaunchConstants;
+import org.hibernate.tool.eclipse.common.base.core.launch.IBasicHibernateLaunchConstants;
 import org.hibernate.eclipse.launch.core.refactoring.HibernateRefactoringUtil;
 import org.hibernate.tool.eclipse.orm.base.core.test.utils.TestConsoleMessages;
 import org.hibernate.tool.eclipse.orm.base.core.test.utils.TestLaunchConfig;
@@ -77,12 +77,12 @@ public class RefactoringTest {
 		Map<String, Object> testCodeGenerationAttr = new HashMap<String, Object>();
 		Map<String, Object> testNotChangedCodeGenerationAttr = new HashMap<String, Object>();
 
-		testStrAttr.put(IConsoleConfigurationLaunchConstants.CFG_XML_FILE, oldPathStr);
+		testStrAttr.put(IBasicHibernateLaunchConstants.CFG_XML_FILE, oldPathStr);
 
-		testStrListAttr.put(IConsoleConfigurationLaunchConstants.FILE_MAPPINGS, Arrays.asList(new String[]{oldPathStr}));
+		testStrListAttr.put(IBasicHibernateLaunchConstants.FILE_MAPPINGS, Arrays.asList(new String[]{oldPathStr}));
 
-		testNotChangedAttr.put(IConsoleConfigurationLaunchConstants.CFG_XML_FILE, notChangedPathStr);
-		testNotChangedAttr.put(IConsoleConfigurationLaunchConstants.FILE_MAPPINGS, Arrays.asList(new String[]{notChangedPathStr}));
+		testNotChangedAttr.put(IBasicHibernateLaunchConstants.CFG_XML_FILE, notChangedPathStr);
+		testNotChangedAttr.put(IBasicHibernateLaunchConstants.FILE_MAPPINGS, Arrays.asList(new String[]{notChangedPathStr}));
 
 		testCodeGenerationAttr.put(HibernateLaunchConstants.ATTR_TEMPLATE_DIR, generateOldPathForSegment(2).toString());
 		testCodeGenerationAttr.put(HibernateLaunchConstants.ATTR_OUTPUT_DIR, generateOldPathForSegment(2).toString());
@@ -275,9 +275,9 @@ public class RefactoringTest {
 
 	@SuppressWarnings("unchecked")
 	private void checkPaths(Path truePath) throws CoreException{
-		String newPath = (String) testStrConfig.getNewAttribute(IConsoleConfigurationLaunchConstants.CFG_XML_FILE);
+		String newPath = (String) testStrConfig.getNewAttribute(IBasicHibernateLaunchConstants.CFG_XML_FILE);
 		Assert.assertEquals(truePath.makeAbsolute(), new Path(newPath).makeAbsolute());
-		newPath = ((List<String>) testStrListConfig.getNewAttribute(IConsoleConfigurationLaunchConstants.FILE_MAPPINGS)).get(0);
+		newPath = ((List<String>) testStrListConfig.getNewAttribute(IBasicHibernateLaunchConstants.FILE_MAPPINGS)).get(0);
 		Assert.assertEquals(truePath.makeAbsolute(), new Path(newPath).makeAbsolute());
 		
 		newPath = (String) testCodeGenerationConfig.getNewAttribute(HibernateLaunchConstants.ATTR_REVERSE_ENGINEER_SETTINGS);

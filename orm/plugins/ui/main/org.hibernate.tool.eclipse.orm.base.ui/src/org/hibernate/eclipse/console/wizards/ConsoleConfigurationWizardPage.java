@@ -77,7 +77,7 @@ import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.LaunchHelper;
 import org.hibernate.eclipse.launch.ConsoleConfigurationJavaClasspathTab;
 import org.hibernate.eclipse.launch.ConsoleConfigurationMainTab;
 import org.hibernate.eclipse.launch.ConsoleConfigurationTabGroup;
-import org.hibernate.tool.eclipse.common.base.core.console.launch.IConsoleConfigurationLaunchConstants;
+import org.hibernate.tool.eclipse.common.base.core.launch.IBasicHibernateLaunchConstants;
 import org.hibernate.util.xpl.StringHelper;
 
 /**
@@ -500,13 +500,13 @@ public class ConsoleConfigurationWizardPage extends WizardPage implements
 					String uniqName = lm.generateLaunchConfigurationName(v.getJavaProject().getElementName());
 					launchConfig.rename(uniqName);							
 				}
-				setPathAttribute(launchConfig, IConsoleConfigurationLaunchConstants.PROPERTY_FILE, v.getPropertyFile());
-				setPathAttribute(launchConfig, IConsoleConfigurationLaunchConstants.CFG_XML_FILE, v.getConfigFile());
+				setPathAttribute(launchConfig, IBasicHibernateLaunchConstants.PROPERTY_FILE, v.getPropertyFile());
+				setPathAttribute(launchConfig, IBasicHibernateLaunchConstants.CFG_XML_FILE, v.getConfigFile());
 				if (v.getPersistencexml() != null) {
-					setStrAttribute(launchConfig, IConsoleConfigurationLaunchConstants.CONFIGURATION_FACTORY, ConfigurationMode.JPA.toString());
+					setStrAttribute(launchConfig, IBasicHibernateLaunchConstants.CONFIGURATION_FACTORY, ConfigurationMode.JPA.toString());
 				}
 				else {
-					setStrAttribute(launchConfig, IConsoleConfigurationLaunchConstants.CONFIGURATION_FACTORY, ConfigurationMode.CORE.toString());
+					setStrAttribute(launchConfig, IBasicHibernateLaunchConstants.CONFIGURATION_FACTORY, ConfigurationMode.CORE.toString());
 				}
 				if (!v.getMappings().isEmpty() && v.getConfigFile() == null && v.getPersistencexml() == null) {
 					IPath[] mappings = v.getMappings().toArray(new IPath[]{});
@@ -516,10 +516,10 @@ public class ConsoleConfigurationWizardPage extends WizardPage implements
 						l.add(path.toPortableString());
 					}
 				
-					launchConfig.setAttribute(IConsoleConfigurationLaunchConstants.FILE_MAPPINGS, l);
+					launchConfig.setAttribute(IBasicHibernateLaunchConstants.FILE_MAPPINGS, l);
 				}
 				else {
-					launchConfig.setAttribute(IConsoleConfigurationLaunchConstants.FILE_MAPPINGS, (List<String>)null);
+					launchConfig.setAttribute(IBasicHibernateLaunchConstants.FILE_MAPPINGS, (List<String>)null);
 				}
 				if (!v.getClasspath().isEmpty()) {
 					launchConfig.setAttribute(IJavaLaunchConfigurationConstants.ATTR_DEFAULT_CLASSPATH, false);
@@ -564,8 +564,8 @@ public class ConsoleConfigurationWizardPage extends WizardPage implements
 				BasicHibernateMessages.ConsoleConfigurationWizardPage_problem_while_initializing_cc, e);
 		}
 		if (flagFileWillBeCreated) {
-			setPathAttribute(currentLaunchConfig, IConsoleConfigurationLaunchConstants.CFG_XML_FILE, configFullPath);
-			setStrAttribute(currentLaunchConfig, IConsoleConfigurationLaunchConstants.CONFIGURATION_FACTORY, ConfigurationMode.CORE.toString());
+			setPathAttribute(currentLaunchConfig, IBasicHibernateLaunchConstants.CFG_XML_FILE, configFullPath);
+			setStrAttribute(currentLaunchConfig, IBasicHibernateLaunchConstants.CONFIGURATION_FACTORY, ConfigurationMode.CORE.toString());
 			ConsoleConfigurationMainTab ccmt = null;
 			ConsoleConfigurationJavaClasspathTab classpathTab = null;
 			ILaunchConfigurationTab[] tabs = tabGroup.getTabs();

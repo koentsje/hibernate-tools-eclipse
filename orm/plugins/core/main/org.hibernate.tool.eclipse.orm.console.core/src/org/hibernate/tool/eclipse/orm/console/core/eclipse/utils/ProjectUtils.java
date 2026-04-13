@@ -68,7 +68,7 @@ import org.hibernate.console.preferences.ConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateConsoleCorePlugin;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.properties.HibernatePropertiesConstants;
-import org.hibernate.tool.eclipse.common.base.core.console.launch.IConsoleConfigurationLaunchConstants;
+import org.hibernate.tool.eclipse.common.base.core.launch.IBasicHibernateLaunchConstants;
 import org.hibernate.util.xpl.StringHelper;
 import org.osgi.service.prefs.BackingStoreException;
 import org.osgi.service.prefs.Preferences;
@@ -180,7 +180,7 @@ public class ProjectUtils {
 						consoleConfiguration.getName());
 				if(launchConfiguration != null) {
 					String projName = launchConfiguration.getAttribute(
-							IConsoleConfigurationLaunchConstants.PROJECT_NAME, ""); //$NON-NLS-1$
+							IBasicHibernateLaunchConstants.PROJECT_NAME, ""); //$NON-NLS-1$
 					return findProject(projName);
 				}
 			} catch (CoreException e1) {

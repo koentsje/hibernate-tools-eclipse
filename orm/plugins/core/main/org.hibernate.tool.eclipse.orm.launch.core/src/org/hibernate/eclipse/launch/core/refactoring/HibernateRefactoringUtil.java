@@ -57,7 +57,7 @@ import org.hibernate.eclipse.launch.model.ExporterFactoryStrings;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.properties.HibernatePropertiesConstants;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.LaunchHelper;
 import org.hibernate.eclipse.launch.HibernateLaunchConstants;
-import org.hibernate.tool.eclipse.common.base.core.console.launch.IConsoleConfigurationLaunchConstants;
+import org.hibernate.tool.eclipse.common.base.core.launch.IBasicHibernateLaunchConstants;
 import org.hibernate.tool.eclipse.orm.resources.HibernateNature;
 import org.osgi.service.prefs.Preferences;
 import org.w3c.dom.Document;
@@ -77,8 +77,8 @@ public class HibernateRefactoringUtil {
 	private static final String ERROR_MESS = BasicHibernateMessages.HibernateRefactoringUtil_error_during_refactoring;
 
 	private static String[] ccKeys = new String[]{
-		IConsoleConfigurationLaunchConstants.CFG_XML_FILE,
-		IConsoleConfigurationLaunchConstants.PROPERTY_FILE,
+		IBasicHibernateLaunchConstants.CFG_XML_FILE,
+		IBasicHibernateLaunchConstants.PROPERTY_FILE,
 		HibernateLaunchConstants.ATTR_TEMPLATE_DIR,
 		HibernateLaunchConstants.ATTR_OUTPUT_DIR,
 		HibernateLaunchConstants.ATTR_REVERSE_ENGINEER_SETTINGS,
@@ -91,7 +91,7 @@ public class HibernateRefactoringUtil {
 		};
 
 	private static String[] ccListKeys = new String[]{
-		IConsoleConfigurationLaunchConstants.FILE_MAPPINGS,
+		IBasicHibernateLaunchConstants.FILE_MAPPINGS,
 	};
 
 	public static boolean isConsoleConfigAffected(ILaunchConfiguration config, IPath oldPath) throws CoreException{
@@ -532,7 +532,7 @@ public class HibernateRefactoringUtil {
 			configs = LaunchHelper.findHibernateLaunchConfigs();
 			List<ILaunchConfiguration> list = new ArrayList<ILaunchConfiguration>();
 			for(int i = 0; i < configs.length && configs[i].exists(); i++) {//refactor only hibernate launch configurations
-				if (profile.getName().equals(configs[i].getAttribute(IConsoleConfigurationLaunchConstants.CONNECTION_PROFILE_NAME, "")))  //$NON-NLS-1$
+				if (profile.getName().equals(configs[i].getAttribute(IBasicHibernateLaunchConstants.CONNECTION_PROFILE_NAME, "")))  //$NON-NLS-1$
 					list.add(configs[i]);
 			}
 			configs = list.toArray(new ILaunchConfiguration[list.size()]);
@@ -599,8 +599,8 @@ public class HibernateRefactoringUtil {
 				String attrib = configs[i].getAttribute(IJavaLaunchConfigurationConstants.ATTR_PROJECT_NAME, (String)null);
 				if(attrib != null) {
 					if(attrib.equals(pname)) {
-						nsName = configs[i].getAttribute(IConsoleConfigurationLaunchConstants.NAMING_STRATEGY, (String)null);
-						ername = configs[i].getAttribute(IConsoleConfigurationLaunchConstants.ENTITY_RESOLVER, (String)null);
+						nsName = configs[i].getAttribute(IBasicHibernateLaunchConstants.NAMING_STRATEGY, (String)null);
+						ername = configs[i].getAttribute(IBasicHibernateLaunchConstants.ENTITY_RESOLVER, (String)null);
 						if (typename.equals(nsName) ) {
 							changes.add(new ConsoleConfigurationNamingStrategyChange(configs[i], newfqname));
 						}
