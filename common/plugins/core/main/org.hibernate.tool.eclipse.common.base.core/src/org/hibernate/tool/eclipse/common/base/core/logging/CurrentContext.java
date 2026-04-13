@@ -1,4 +1,4 @@
-package org.hibernate.eclipse.logging;
+package org.hibernate.tool.eclipse.common.base.core.logging;
 
 import java.util.Hashtable;
 import java.util.Stack;

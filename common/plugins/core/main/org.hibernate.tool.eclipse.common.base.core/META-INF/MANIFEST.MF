@@ -5,8 +5,10 @@ Bundle-SymbolicName: org.hibernate.tool.eclipse.common.base.core
 Bundle-Version: 6.0.0.qualifier
 Bundle-Vendor: hibernate.org
 Export-Package: org.hibernate.tool.eclipse.common.base.core.launch,
+ org.hibernate.tool.eclipse.common.base.core.logging,
  org.hibernate.tool.eclipse.common.base.core.messages
 Require-Bundle: org.eclipse.core.runtime;bundle-version="3.10.0",
- org.eclipse.jdt.launching
+ org.eclipse.jdt.launching,
+ org.apache.log4j;bundle-version="1.2.15"
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Import-Package: org.eclipse.osgi.util

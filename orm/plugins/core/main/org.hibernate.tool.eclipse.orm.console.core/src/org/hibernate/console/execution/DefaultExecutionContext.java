@@ -26,7 +26,7 @@ import java.util.WeakHashMap;
 
 import org.eclipse.osgi.util.NLS;
 import org.hibernate.console.ConsoleMessages;
-import org.hibernate.eclipse.logging.CurrentContext;
+import org.hibernate.tool.eclipse.common.base.core.logging.CurrentContext;
 
 public class DefaultExecutionContext implements ExecutionContext {
 

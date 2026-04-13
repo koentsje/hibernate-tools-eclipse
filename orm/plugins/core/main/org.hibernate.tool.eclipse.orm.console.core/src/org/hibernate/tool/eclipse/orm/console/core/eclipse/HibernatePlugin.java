@@ -39,8 +39,8 @@ import org.eclipse.core.runtime.Status;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.common.HibernateExtension;
-import org.hibernate.eclipse.logging.LoggingHelper;
-import org.hibernate.eclipse.logging.PluginLogManager;
+import org.hibernate.tool.eclipse.common.base.core.logging.LoggingHelper;
+import org.hibernate.tool.eclipse.common.base.core.logging.PluginLogManager;
 import org.osgi.framework.BundleContext;
 
 /**

@@ -1,4 +1,4 @@
-package org.hibernate.console;
+package org.hibernate.tool.eclipse.common.base.core.logging;
 
 import java.io.PrintStream;
 

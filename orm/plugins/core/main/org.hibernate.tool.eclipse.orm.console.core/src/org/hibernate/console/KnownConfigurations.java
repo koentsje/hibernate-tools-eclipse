@@ -47,6 +47,8 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.PrintStream;
 
 import org.hibernate.console.node.BaseNode;
+import org.hibernate.tool.eclipse.common.base.core.logging.LoggingStreamProvider;
+import org.hibernate.tool.eclipse.common.base.core.logging.PluginLogAppender;
 import org.hibernate.console.node.ConfigurationListNode;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
 import org.w3c.dom.Document;
@@ -266,6 +268,7 @@ public class KnownConfigurations  {
 
 	public void setLoggingStreamProvider(LoggingStreamProvider provider) {
 		this.loggingStreamProvider = provider;
+		PluginLogAppender.setLoggingStreamProvider(provider);
 	}
 
 	public PrintStream findLoggingStream(String name) {

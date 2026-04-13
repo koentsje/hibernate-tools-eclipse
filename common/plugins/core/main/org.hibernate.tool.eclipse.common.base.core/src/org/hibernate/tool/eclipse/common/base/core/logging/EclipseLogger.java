@@ -9,7 +9,7 @@
  *     IBM Corporation - initial API and implementation
  *     Max Rydahl Andersen, JBoss Inc. - made non-static for reuse instead of copy/paste.
  *******************************************************************************/
-package org.hibernate.eclipse.logging.xpl;
+package org.hibernate.tool.eclipse.common.base.core.logging;
 
 import java.util.StringTokenizer;
 

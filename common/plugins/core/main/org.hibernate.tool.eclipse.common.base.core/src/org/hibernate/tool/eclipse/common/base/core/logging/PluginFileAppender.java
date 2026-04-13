@@ -19,7 +19,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.hibernate.eclipse.logging;
+package org.hibernate.tool.eclipse.common.base.core.logging;
 
 import java.io.IOException;
 
@@ -27,7 +27,6 @@ import org.apache.log4j.Layout;
 import org.apache.log4j.RollingFileAppender;
 import org.apache.log4j.spi.LoggingEvent;
 import org.eclipse.core.runtime.IPath;
-import org.hibernate.console.ConsoleMessages;
 
 /**
  * PluginFileAppender
@@ -122,7 +121,7 @@ public class PluginFileAppender extends RollingFileAppender {
 	 */
 	public void setFile(String fileName,boolean append,boolean bufferedIO,int bufferSize) throws IOException {
 		if (this.stateLocation == null)
-			throw new IOException(ConsoleMessages.PluginFileAppender_missing_plugin_state_location);
+			throw new IOException("Missing Plugin State Location."); //$NON-NLS-1$
 
 		fileName = (this.translatePath) ?  getTranslatedFileName(fileName) : fileName;
 		super.setFile(fileName,append,bufferedIO,bufferSize);

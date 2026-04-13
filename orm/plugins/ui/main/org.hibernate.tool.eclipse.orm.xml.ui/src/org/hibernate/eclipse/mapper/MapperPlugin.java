@@ -25,7 +25,7 @@ import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
-import org.hibernate.eclipse.logging.xpl.EclipseLogger;
+import org.hibernate.tool.eclipse.common.base.core.logging.EclipseLogger;
 import org.osgi.framework.BundleContext;
 
 /**

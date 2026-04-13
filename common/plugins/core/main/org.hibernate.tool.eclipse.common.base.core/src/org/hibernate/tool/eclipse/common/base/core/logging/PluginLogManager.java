@@ -19,7 +19,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.hibernate.eclipse.logging;
+package org.hibernate.tool.eclipse.common.base.core.logging;
 
 import java.net.URL;
 import java.util.Enumeration;
@@ -42,9 +42,6 @@ import org.eclipse.core.runtime.ILog;
 import org.eclipse.core.runtime.ILogListener;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Plugin;
-import org.hibernate.console.execution.DefaultExecutionContext;
-import org.hibernate.console.execution.ExecutionContext;
-import org.hibernate.console.execution.ExecutionContext.Command;
 
 /**
  * PluginLogManager
@@ -102,13 +99,15 @@ public class PluginLogManager {
 			}
 		
 		}, "hibernate-tools"); //$NON-NLS-1$
-		ExecutionContext ec = new DefaultExecutionContext("logConfiguration", getClass().getClassLoader()); //$NON-NLS-1$
-		ec.execute(new Command(){
-			@Override
-			public Object execute() {
-				OptionConverter.selectAndConfigure(log4jUrl, null, hierarchy);
-				return null;
-			}});
+		ClassLoader previousLoader = Thread.currentThread().getContextClassLoader();
+		try {
+			CurrentContext.push("logConfiguration"); //$NON-NLS-1$
+			Thread.currentThread().setContextClassLoader(getClass().getClassLoader());
+			OptionConverter.selectAndConfigure(log4jUrl, null, hierarchy);
+		} finally {
+			Thread.currentThread().setContextClassLoader(previousLoader);
+			CurrentContext.pop();
+		}
 		
 		this.helper = helper;
 		helper.addLogManager(this); 

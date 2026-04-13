@@ -19,16 +19,13 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.hibernate.eclipse.logging;
+package org.hibernate.tool.eclipse.common.base.core.logging;
 
 import org.apache.log4j.AppenderSkeleton;
 import org.apache.log4j.spi.ErrorCode;
 import org.apache.log4j.spi.LoggingEvent;
 import org.apache.log4j.spi.ThrowableInformation;
 import java.io.PrintStream;
-
-import org.hibernate.console.ConsoleMessages;
-import org.hibernate.console.KnownConfigurations;
 
 /**
  * PluginLogAppender
@@ -37,6 +34,12 @@ import org.hibernate.console.KnownConfigurations;
  * @author Manoel Marques
  */
 public class PluginLogAppender extends AppenderSkeleton {
+
+	private static volatile LoggingStreamProvider loggingStreamProvider;
+
+	public static void setLoggingStreamProvider(LoggingStreamProvider provider) {
+		loggingStreamProvider = provider;
+	}
 
 	/**
 	 * Log event happened.
@@ -50,7 +53,7 @@ public class PluginLogAppender extends AppenderSkeleton {
 	public void append(LoggingEvent event) {
 
 		if (this.layout == null) {
-			this.errorHandler.error(ConsoleMessages.PluginLogAppender_missing_layout_for_appender +
+			this.errorHandler.error("Missing layout for appender " + //$NON-NLS-1$
 			       this.name,null,ErrorCode.MISSING_LAYOUT);
 			return;
 		}
@@ -82,7 +85,8 @@ public class PluginLogAppender extends AppenderSkeleton {
 				 level.toInt(),text,thrown));*/
 
 		Object peek = CurrentContext.peek();
-		PrintStream stream = KnownConfigurations.getInstance().findLoggingStream( (String)peek );
+		LoggingStreamProvider provider = loggingStreamProvider;
+		PrintStream stream = (provider != null) ? provider.findLoggingStream( (String)peek ) : null;
 		if(stream!=null) {
 			stream.println(text);
 			if(thrown!=null) {
