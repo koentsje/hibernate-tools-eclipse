@@ -43,7 +43,7 @@ import org.eclipse.text.edits.MalformedTreeException;
 import org.eclipse.text.edits.ReplaceEdit;
 import org.eclipse.text.edits.TextEdit;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
-import org.hibernate.tool.eclipse.orm.utils.FileUtils;
+import org.hibernate.tool.eclipse.common.base.core.utils.FileUtils;
 
 /**
  * Preview wizard page for new hibernate mappings.

@@ -22,7 +22,7 @@ import org.hibernate.console.ConnectionProfileUtil;
 import org.hibernate.console.HibernateConsoleRuntimeException;
 import org.hibernate.console.preferences.ConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.orm.utils.ClassLoaderHelper;
-import org.hibernate.tool.eclipse.orm.utils.DriverClassHelpers;
+import org.hibernate.tool.eclipse.common.base.core.utils.DriverClassHelpers;
 import org.hibernate.tool.eclipse.common.base.core.launch.IBasicHibernateLaunchConstants;
 import org.hibernate.tool.eclipse.orm.utils.HibernateEclipseUtils;
 import org.hibernate.util.xpl.StringHelper;

@@ -1,4 +1,4 @@
-package org.hibernate.tool.eclipse.orm.utils;
+package org.hibernate.tool.eclipse.common.base.core.utils;
 
 import java.util.ArrayList;
 import java.util.Iterator;

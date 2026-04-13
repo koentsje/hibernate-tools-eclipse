@@ -8,7 +8,7 @@
  * Contributor:
  *     Red Hat, Inc. - initial API and implementation
  ******************************************************************************/
-package org.hibernate.tool.eclipse.orm.utils;
+package org.hibernate.tool.eclipse.common.base.core.utils;
 
 import java.io.File;
 

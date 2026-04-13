@@ -21,6 +21,8 @@
  */
 package org.hibernate.tool.eclipse.orm.utils;
 
+import org.hibernate.tool.eclipse.common.base.core.utils.Formatter;
+
 public class QLFormatHelper {
 
 	static public String formatForScreen(String query) {
