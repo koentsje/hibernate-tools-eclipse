@@ -41,7 +41,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchWindow;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.jdt.ui.Activator;
 import org.hibernate.eclipse.jdt.ui.internal.JdtUiMessages;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.collect.AllEntitiesInfoCollector;
@@ -261,11 +261,11 @@ public class JPAMapToolActor {
 						}
 					}
 				} catch (IllegalArgumentException e) {
-					HibernateConsolePlugin.getDefault().logErrorMessage("IllegalArgumentException: ", e); //$NON-NLS-1$
+					HibernateBasePlugin.getDefault().logErrorMessage("IllegalArgumentException: ", e); //$NON-NLS-1$
 				} catch (IllegalAccessException e) {
-					HibernateConsolePlugin.getDefault().logErrorMessage("IllegalAccessException: ", e); //$NON-NLS-1$
+					HibernateBasePlugin.getDefault().logErrorMessage("IllegalAccessException: ", e); //$NON-NLS-1$
 				} catch (SecurityException e) {
-					HibernateConsolePlugin.getDefault().logErrorMessage("SecurityException: ", e); //$NON-NLS-1$
+					HibernateBasePlugin.getDefault().logErrorMessage("SecurityException: ", e); //$NON-NLS-1$
 				}
 			}
 			clearSelectionCU();

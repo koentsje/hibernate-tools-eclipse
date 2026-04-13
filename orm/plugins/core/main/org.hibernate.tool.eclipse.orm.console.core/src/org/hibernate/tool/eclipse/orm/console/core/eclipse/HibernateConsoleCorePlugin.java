@@ -43,10 +43,10 @@ public class HibernateConsoleCorePlugin {
 		Throwable temp = t;
 		while (temp != null && temp.getCause() != temp) {
 			causes.add(new Status(IStatus.ERROR, ID, code,
-					temp.getMessage() == null ? temp.toString() + HibernateConsoleMessages.HibernateConsolePlugin_no_message_1 : temp.toString(), temp));
+					temp.getMessage() == null ? temp.toString() + HibernateConsoleMessages.HibernateBasePlugin_no_message_1 : temp.toString(), temp));
 			temp = temp.getCause();
 		}
-		String msg = HibernateConsoleMessages.HibernateConsolePlugin_no_message_2;
+		String msg = HibernateConsoleMessages.HibernateBasePlugin_no_message_2;
 		if (t != null && t.getMessage() != null) {
 			msg = t.toString();
 		}

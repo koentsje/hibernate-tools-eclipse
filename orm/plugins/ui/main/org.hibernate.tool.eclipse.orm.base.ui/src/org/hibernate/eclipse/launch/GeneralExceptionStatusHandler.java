@@ -25,15 +25,15 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.debug.core.IStatusHandler;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 
 public class GeneralExceptionStatusHandler implements IStatusHandler {
 
 	public Object handleStatus(IStatus status, Object source)
 			throws CoreException {
 		final boolean[] result = new boolean[1];
-		HibernateConsolePlugin.getDefault().log( status );
-		HibernateConsolePlugin.openError(null, HibernateConsoleMessages.GeneralExceptionStatusHandler_generating_code, HibernateConsoleMessages.GeneralExceptionStatusHandler_exception_while_generating_code, status.getException(), HibernateConsolePlugin.PERFORM_SYNC_EXEC);
+		HibernateBasePlugin.getDefault().log( status );
+		HibernateBasePlugin.openError(null, HibernateConsoleMessages.GeneralExceptionStatusHandler_generating_code, HibernateConsoleMessages.GeneralExceptionStatusHandler_exception_while_generating_code, status.getException(), HibernateBasePlugin.PERFORM_SYNC_EXEC);
 		return Boolean.valueOf(result[0]);
 	}
 

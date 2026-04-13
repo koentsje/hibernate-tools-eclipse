@@ -4,12 +4,12 @@ import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.ui.dialogs.ISelectionStatusValidator;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 
 public class TypedElementSelectionValidator implements ISelectionStatusValidator {
 
-	private IStatus errorStatus= new Status(IStatus.ERROR, HibernateConsolePlugin.ID, ""); //$NON-NLS-1$
-	private IStatus okStatus= new Status(IStatus.OK, HibernateConsolePlugin.ID, ""); //$NON-NLS-1$
+	private IStatus errorStatus= new Status(IStatus.ERROR, HibernateBasePlugin.ID, ""); //$NON-NLS-1$
+	private IStatus okStatus= new Status(IStatus.OK, HibernateBasePlugin.ID, ""); //$NON-NLS-1$
 
 	private Class<?>[] fAcceptedTypes;
 

@@ -64,7 +64,7 @@ import org.eclipse.ui.ide.IDE;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.tool.eclipse.orm.utils.FileUtils;
 import org.hibernate.eclipse.jdt.ui.internal.JdtUiMessages;
@@ -326,7 +326,7 @@ public class NewHibernateMappingFileWizard extends Wizard implements INewWizard,
 			try {
 				hce.start();
 			} catch (Exception e){
-				HibernateConsolePlugin.getDefault().log(e);
+				HibernateBasePlugin.getDefault().log(e);
 			}
 		}
 		return places2Gen;
@@ -369,7 +369,7 @@ public class NewHibernateMappingFileWizard extends Wizard implements INewWizard,
 				res = false;
 			} catch (InvocationTargetException e) {
 				Throwable realException = e.getTargetException();
-				HibernateConsolePlugin.getDefault().showError(getShell(), HibernateConsoleMessages.NewReverseEngineeringFileWizard_error, realException);
+				HibernateBasePlugin.getDefault().showError(getShell(), HibernateConsoleMessages.NewReverseEngineeringFileWizard_error, realException);
 				res = false;
 			}
 			cleanUpGenFolders();
@@ -391,9 +391,9 @@ public class NewHibernateMappingFileWizard extends Wizard implements INewWizard,
 						}
 					}
 				} catch (JavaModelException e) {
-					HibernateConsolePlugin.getDefault().log(e);
+					HibernateBasePlugin.getDefault().log(e);
 				} catch (CoreException e) {
-					HibernateConsolePlugin.getDefault().log(e);
+					HibernateBasePlugin.getDefault().log(e);
 				}
 			}
 			cleanUpGenFolders();
@@ -440,7 +440,7 @@ public class NewHibernateMappingFileWizard extends Wizard implements INewWizard,
 				try {
 					IDE.openEditor(page, file, true);
 				} catch (PartInitException e) {
-					HibernateConsolePlugin.getDefault().log(e);
+					HibernateBasePlugin.getDefault().log(e);
 				}
 			}
 		});
@@ -455,7 +455,7 @@ public class NewHibernateMappingFileWizard extends Wizard implements INewWizard,
 		try {
             return new ByteArrayInputStream(sw.toString().getBytes("UTF-8") ); //$NON-NLS-1$
         } catch (UnsupportedEncodingException uec) {
-            HibernateConsolePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.NewConfigurationWizard_problems_converting_to_utf8, uec);
+            HibernateBasePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.NewConfigurationWizard_problems_converting_to_utf8, uec);
             return new ByteArrayInputStream(sw.toString().getBytes() );
         }
 	}
@@ -536,7 +536,7 @@ public class NewHibernateMappingFileWizard extends Wizard implements INewWizard,
 			}
 		} catch (JavaModelException e) {
 			// just ignore it!
-			//HibernateConsolePlugin.getDefault().logErrorMessage("JavaModelException: ", e); //$NON-NLS-1$
+			//HibernateBasePlugin.getDefault().logErrorMessage("JavaModelException: ", e); //$NON-NLS-1$
 		}
 	}
 	
@@ -575,9 +575,9 @@ public class NewHibernateMappingFileWizard extends Wizard implements INewWizard,
 					}
 				});
 			} catch (InvocationTargetException e) {
-				HibernateConsolePlugin.getDefault().log(e);
+				HibernateBasePlugin.getDefault().log(e);
 			} catch (InterruptedException e) {
-				HibernateConsolePlugin.getDefault().log(e);
+				HibernateBasePlugin.getDefault().log(e);
 			}
 		}
 	}

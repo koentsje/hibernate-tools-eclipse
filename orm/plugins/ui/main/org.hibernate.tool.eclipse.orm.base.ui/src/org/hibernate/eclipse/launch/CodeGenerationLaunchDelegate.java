@@ -72,7 +72,7 @@ import org.hibernate.console.HibernateConsoleRuntimeException;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.console.execution.ExecutionContext.Command;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.launch.ICodeGenerationLaunchConstants;
 import org.hibernate.eclipse.launch.exporter.ConsoleExtension;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.common.HibernateExtension;
@@ -119,7 +119,7 @@ public class CodeGenerationLaunchDelegate extends AntLaunchDelegate {
 			TextEdit edit = codeFormatter.format(CodeFormatter.K_COMPILATION_UNIT, string, 0, string.length(), 0, null);
 			MultiTextEditWithProgress multiTextEditWithProgress = new MultiTextEditWithProgress(getOperationName());
 			if(edit==null) {
-				//HibernateConsolePlugin.getDefault().log("empty format for " + textFileBuffer.getLocation().toOSString());
+				//HibernateBasePlugin.getDefault().log("empty format for " + textFileBuffer.getLocation().toOSString());
 			} else {
 				multiTextEditWithProgress.addChild(edit);
 			}
@@ -234,7 +234,7 @@ public class CodeGenerationLaunchDelegate extends AntLaunchDelegate {
     	try {
 			fileName = getPath2GenBuildXml().toString();
 		} catch (IOException e) {
-			throw new CoreException(HibernateConsolePlugin.throwableToStatus(e, 666));
+			throw new CoreException(HibernateBasePlugin.throwableToStatus(e, 666));
 		}
 		// setup location of Ant build.xml file 
 		tmpAttributes.put(IExternalToolConstants.ATTR_LOCATION, fileName);
@@ -287,9 +287,9 @@ public class CodeGenerationLaunchDelegate extends AntLaunchDelegate {
 				fileName = getPath2GenBuildXml().toString();
 		    	createBuildXmlFile(configuration, fileName);
 			} catch (UnsupportedEncodingException e) {
-				throw new CoreException(HibernateConsolePlugin.throwableToStatus(e, 666));
+				throw new CoreException(HibernateBasePlugin.throwableToStatus(e, 666));
 			} catch (IOException e) {
-				throw new CoreException(HibernateConsolePlugin.throwableToStatus(e, 666));
+				throw new CoreException(HibernateBasePlugin.throwableToStatus(e, 666));
 			}
 			configuration = updateLaunchConfig(configuration);
 			super.launch(configuration, mode, launch, monitor);
@@ -329,9 +329,9 @@ public class CodeGenerationLaunchDelegate extends AntLaunchDelegate {
 
 
 		} catch(Exception e) {
-			throw new CoreException(HibernateConsolePlugin.throwableToStatus(e, 666));
+			throw new CoreException(HibernateBasePlugin.throwableToStatus(e, 666));
 		} catch(NoClassDefFoundError e) {
-			throw new CoreException(HibernateConsolePlugin.throwableToStatus(new HibernateConsoleRuntimeException(HibernateConsoleMessages.CodeGenerationLaunchDelegate_received_noclassdeffounderror,e), 666));
+			throw new CoreException(HibernateBasePlugin.throwableToStatus(new HibernateConsoleRuntimeException(HibernateConsoleMessages.CodeGenerationLaunchDelegate_received_noclassdeffounderror,e), 666));
 		} finally {
 			monitor.done();
 		}*/
@@ -352,17 +352,17 @@ public class CodeGenerationLaunchDelegate extends AntLaunchDelegate {
 					locations[i] = new Path(file.getPath());
 				}
 
-				FileBufferOperationRunner runner= new FileBufferOperationRunner(FileBuffers.getTextFileBufferManager(), HibernateConsolePlugin.getShell());
+				FileBufferOperationRunner runner= new FileBufferOperationRunner(FileBuffers.getTextFileBufferManager(), HibernateBasePlugin.getShell());
 				try {
 					runner.execute(locations, operation, monitor);
 				}
 				catch (OperationCanceledException e) {
-					HibernateConsolePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.CodeGenerationLaunchDelegate_java_format_cancelled, e);
+					HibernateBasePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.CodeGenerationLaunchDelegate_java_format_cancelled, e);
 				}
 				catch (CoreException e) {
-					HibernateConsolePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.CodeGenerationLaunchDelegate_exception_during_java_format, e);
+					HibernateBasePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.CodeGenerationLaunchDelegate_exception_during_java_format, e);
 				} catch (Throwable e) { // full guard since the above operation seem to be able to fail with IllegalArugmentException and SWT Invalid thread access while users are editing.
-					HibernateConsolePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.CodeGenerationLaunchDelegate_exception_during_java_format, e);
+					HibernateBasePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.CodeGenerationLaunchDelegate_exception_during_java_format, e);
 				}
 			}
 		}
@@ -531,7 +531,7 @@ public class CodeGenerationLaunchDelegate extends AntLaunchDelegate {
 
 	protected void abort(String message, Throwable exception, int code)
 	throws CoreException {
-		throw new CoreException(new Status(IStatus.ERROR, HibernateConsolePlugin.ID, code, message, exception));
+		throw new CoreException(new Status(IStatus.ERROR, HibernateBasePlugin.ID, code, message, exception));
 	}
 
 	public IPath getPath2GenBuildXml() throws IOException {

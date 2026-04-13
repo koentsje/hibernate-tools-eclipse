@@ -46,7 +46,7 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.ui.ide.IDE;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.model.core.ITableFilter;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 
@@ -132,7 +132,7 @@ public class NewReverseEngineeringFileWizard extends Wizard implements INewWizar
 			return false;
 		} catch (InvocationTargetException e) {
 			Throwable realException = e.getTargetException();
-			HibernateConsolePlugin.getDefault().showError(getShell(), HibernateConsoleMessages.NewReverseEngineeringFileWizard_error, realException);
+			HibernateBasePlugin.getDefault().showError(getShell(), HibernateConsoleMessages.NewReverseEngineeringFileWizard_error, realException);
 			return false;
 		}
 		return true;
@@ -204,7 +204,7 @@ public class NewReverseEngineeringFileWizard extends Wizard implements INewWizar
 		try {
             return new ByteArrayInputStream(sw.toString().getBytes("UTF-8") ); //$NON-NLS-1$
         } catch (UnsupportedEncodingException uec) {
-            HibernateConsolePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.NewReverseEngineeringFileWizard_problems_converting_to_utf8, uec);
+            HibernateBasePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.NewReverseEngineeringFileWizard_problems_converting_to_utf8, uec);
             return new ByteArrayInputStream(sw.toString().getBytes() );
         }
 	}

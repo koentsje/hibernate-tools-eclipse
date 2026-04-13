@@ -65,7 +65,7 @@ import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.console.actions.EditConsoleConfiguration;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.eclipse.console.utils.LaunchHelperUI;
@@ -168,7 +168,7 @@ public class HibernatePropertyPage extends PropertyPage {
             public void run() {
 				String title = HibernateConsoleMessages.HibernatePropertyPage_open_url;
 				String msg = HibernateConsoleMessages.HibernatePropertyPage_unable_open_webbrowser_for_url + href;
-				IStatus status = HibernateConsolePlugin.throwableToStatus(t);
+				IStatus status = HibernateBasePlugin.throwableToStatus(t);
                 ErrorDialog.openError(getShell(), title, msg, status);
             }
         });
@@ -351,7 +351,7 @@ public class HibernatePropertyPage extends PropertyPage {
 					try {
 						reference.rebuild();
 					} catch (InterruptedException e) {
-						throw new CoreException(new Status(IStatus.CANCEL, HibernateConsolePlugin.ID, null, e));
+						throw new CoreException(new Status(IStatus.CANCEL, HibernateBasePlugin.ID, null, e));
 					}
 					getProject().build(IncrementalProjectBuilder.FULL_BUILD, monitor);
 				}
@@ -373,9 +373,9 @@ public class HibernatePropertyPage extends PropertyPage {
 			try{
 				new ProgressMonitorDialog(getShell()).run(true, false, op);
 			} catch (InvocationTargetException e) {
-				HibernateConsolePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.HibernatePropertyPage_Error_updating_JpaProject, e);
+				HibernateBasePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.HibernatePropertyPage_Error_updating_JpaProject, e);
 			} catch (InterruptedException e) {
-				HibernateConsolePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.HibernatePropertyPage_Error_updating_JpaProject, e);
+				HibernateBasePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.HibernatePropertyPage_Error_updating_JpaProject, e);
 			}
 		}
 	}
@@ -392,7 +392,7 @@ public class HibernatePropertyPage extends PropertyPage {
 				node.flush();
 				return true;
 			} catch (BackingStoreException e) {
-				HibernateConsolePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.ProjectUtils_could_not_save_changes_to_preferences, e);
+				HibernateBasePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.ProjectUtils_could_not_save_changes_to_preferences, e);
 			}
 		}
 		return false;

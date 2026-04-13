@@ -61,7 +61,7 @@ public class Utils {
 				lwType = javaProject.findType(fullyQualifiedName,(IProgressMonitor)null);
 			} catch (JavaModelException e) {
 				// just ignore it!
-				//HibernateConsolePlugin.getDefault().logErrorMessage("JavaModelException: ", e); //$NON-NLS-1$
+				//HibernateBasePlugin.getDefault().logErrorMessage("JavaModelException: ", e); //$NON-NLS-1$
 			}
 		}
 		return lwType;
@@ -116,7 +116,7 @@ public class Utils {
 			javaElement = javaProject.findElement(path.makeRelative());
 		} catch (JavaModelException e) {
 			// just ignore it!
-			//HibernateConsolePlugin.getDefault().logErrorMessage("JavaModelException: ", e); //$NON-NLS-1$
+			//HibernateBasePlugin.getDefault().logErrorMessage("JavaModelException: ", e); //$NON-NLS-1$
 		}
 		ICompilationUnit[] res = null;
 		if (javaElement != null) {
@@ -128,7 +128,7 @@ public class Utils {
 					res = ((IPackageFragment)javaElement).getCompilationUnits();
 				} catch (JavaModelException e) {
 					// just ignore it!
-					//HibernateConsolePlugin.getDefault().logErrorMessage("JavaModelException: ", e); //$NON-NLS-1$
+					//HibernateBasePlugin.getDefault().logErrorMessage("JavaModelException: ", e); //$NON-NLS-1$
 				}
 			}
 			else if (javaElement instanceof IClassFile) {

@@ -27,14 +27,14 @@ public class HibernateConsoleMessages extends NLS {
 	public static String EclipseLaunchConsoleConfigurationPreferences_could_not_compute_classpath;
 	public static String EclipseLaunchConsoleConfigurationPreferences_could_not_load_property_file;
 	public static String EclipseLaunchConsoleConfigurationPreferences_could_not_resolve_to_file;
-	public static String HibernateConsolePlugin_could_not_delete_launch_config_for;
-	public static String HibernateConsolePlugin_could_not_open_criteria_editor_for_console;
-	public static String HibernateConsolePlugin_could_not_open_hql_editor_for_console;
-	public static String HibernateConsolePlugin_error_while_reading_console_config;
-	public static String HibernateConsolePlugin_hibernate_console;
-	public static String HibernateConsolePlugin_no_message_1;
-	public static String HibernateConsolePlugin_no_message_2;
-	public static String HibernateConsolePlugin_problem_to_get_flag;
+	public static String HibernateBasePlugin_could_not_delete_launch_config_for;
+	public static String HibernateBasePlugin_could_not_open_criteria_editor_for_console;
+	public static String HibernateBasePlugin_could_not_open_hql_editor_for_console;
+	public static String HibernateBasePlugin_error_while_reading_console_config;
+	public static String HibernateBasePlugin_hibernate_console;
+	public static String HibernateBasePlugin_no_message_1;
+	public static String HibernateBasePlugin_no_message_2;
+	public static String HibernateBasePlugin_problem_to_get_flag;
 	//
 	public static String AddConfigurationAction_add_config;
 	public static String AddConfigurationAction_hibernate;

@@ -63,7 +63,7 @@ import org.hibernate.console.KnownConfigurations;
 import org.hibernate.console.QueryPage;
 import org.hibernate.eclipse.console.AbstractQueryEditor;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.console.views.IQueryParametersPage;
 import org.hibernate.eclipse.console.views.QueryPageTabView;
 import org.hibernate.eclipse.console.views.QueryParametersPage;
@@ -75,7 +75,7 @@ import org.hibernate.eclipse.console.views.QueryParametersPage;
 public class HQLEditor extends AbstractQueryEditor {
 
 
-	public static final String PLUGIN_NAME = HibernateConsolePlugin.ID;
+	public static final String PLUGIN_NAME = HibernateBasePlugin.ID;
 	public static final String HELP_CONTEXT_ID = PLUGIN_NAME + ".hqleditorhelp"; //$NON-NLS-1$
 
 	/** The HQL code scanner, which is used for colorizing the edit text. */

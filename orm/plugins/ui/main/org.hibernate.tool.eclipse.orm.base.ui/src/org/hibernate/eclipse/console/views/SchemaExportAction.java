@@ -31,7 +31,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.execution.ExecutionContext.Command;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.console.actions.ConsoleConfigReadyUseBaseAction;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ISchemaExport;
@@ -109,9 +109,9 @@ public class SchemaExportAction extends ConsoleConfigReadyUseBaseAction {
 							while (iterator.hasNext()) {
 								Throwable element = iterator.next();
 								String outStr = NLS.bind(HibernateConsoleMessages.SchemaExportAction_errornum_while_performing_schemaexport, cnt++);
-								HibernateConsolePlugin.getDefault().logErrorMessage(outStr, element);
+								HibernateBasePlugin.getDefault().logErrorMessage(outStr, element);
 							}
-							HibernateConsolePlugin.getDefault().showError(viewer.getControl().getShell(),
+							HibernateBasePlugin.getDefault().showError(viewer.getControl().getShell(),
 								NLS.bind(HibernateConsoleMessages.SchemaExportAction_error_while_performing_schemaexport, cnt - 1),
 								(Throwable)null );
 						}
@@ -123,7 +123,7 @@ public class SchemaExportAction extends ConsoleConfigReadyUseBaseAction {
 				// build ?
 			}
 			catch (Exception he) {
-				HibernateConsolePlugin.getDefault().showError(
+				HibernateBasePlugin.getDefault().showError(
 						viewer.getControl().getShell(),
 						HibernateConsoleMessages.SchemaExportAction_exception_running_schemaexport, he );
 			}

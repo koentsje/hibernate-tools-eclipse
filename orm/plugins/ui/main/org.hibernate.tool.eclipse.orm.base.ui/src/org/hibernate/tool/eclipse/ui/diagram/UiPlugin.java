@@ -20,7 +20,7 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.jface.resource.ImageDescriptor;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 
 /**
  *
@@ -37,12 +37,12 @@ public class UiPlugin {
 
 	public static ImageDescriptor getImageDescriptor(String path) {
 		return AbstractUIPlugin.imageDescriptorFromPlugin(
-				HibernateConsolePlugin.getDefault().getBundle().getSymbolicName(), path);
+				HibernateBasePlugin.getDefault().getBundle().getSymbolicName(), path);
 	}
 
 	public static ImageDescriptor getImageDescriptor2(String name) {
 		final String iconPath = "images/"; //$NON-NLS-1$
-		final URL installURL = HibernateConsolePlugin.getDefault().getBundle().getEntry("/"); //$NON-NLS-1$
+		final URL installURL = HibernateBasePlugin.getDefault().getBundle().getEntry("/"); //$NON-NLS-1$
 		URL url = null;
 		try {
 			url = new URL(installURL, iconPath + name);
@@ -64,6 +64,6 @@ public class UiPlugin {
 	}
 
 	public org.eclipse.core.runtime.IPath getStateLocation() {
-		return HibernateConsolePlugin.getDefault().getStateLocation();
+		return HibernateBasePlugin.getDefault().getStateLocation();
 	}
 }

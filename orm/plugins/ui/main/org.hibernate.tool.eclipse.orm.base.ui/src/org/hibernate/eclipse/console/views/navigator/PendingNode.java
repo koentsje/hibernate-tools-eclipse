@@ -24,7 +24,7 @@ package org.hibernate.eclipse.console.views.navigator;
 import org.eclipse.swt.graphics.Image;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 
 public class PendingNode {
@@ -39,7 +39,7 @@ public class PendingNode {
 			loadingImage[2] = EclipseImages.getImage( ImageConstants.EXECUTE );
 			loadingImage[3] = EclipseImages.getImage( ImageConstants.HQL_EDITOR );
 		} catch (RuntimeException e) {
-			HibernateConsolePlugin.getDefault().logErrorMessage( HibernateConsoleMessages.PendingNode_error_getting_images, e );
+			HibernateBasePlugin.getDefault().logErrorMessage( HibernateConsoleMessages.PendingNode_error_getting_images, e );
 			throw new ExceptionInInitializerError(e);
 		}
 	}

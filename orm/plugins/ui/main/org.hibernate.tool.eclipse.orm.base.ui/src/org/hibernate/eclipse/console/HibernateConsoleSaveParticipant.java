@@ -51,12 +51,12 @@ public class HibernateConsoleSaveParticipant implements ISaveParticipant {
 			// save the plug-in state
 			int saveNumber = context.getSaveNumber();
 			String saveFileName = SAVENAME + "-" + Integer.toString(saveNumber); //$NON-NLS-1$
-			File f = HibernateConsolePlugin
+			File f = HibernateBasePlugin
 					.getDefault().getStateLocation().append(saveFileName)
 					.toFile();
 			// if we fail to write, an exception is thrown and we do not update
 			// the path
-			HibernateConsolePlugin
+			HibernateBasePlugin
 					.getDefault().writeStateTo(f);
 			context.map(new Path(SAVENAME), new Path(saveFileName) );
 			context.needSaveNumber();
@@ -76,7 +76,7 @@ public class HibernateConsoleSaveParticipant implements ISaveParticipant {
 	}
 
 	public void doneSaving(ISaveContext context) {
-		HibernateConsolePlugin myPluginInstance = HibernateConsolePlugin
+		HibernateBasePlugin myPluginInstance = HibernateBasePlugin
 				.getDefault();
 
 		// delete the old saved state since it is not necessary anymore
@@ -89,7 +89,7 @@ public class HibernateConsoleSaveParticipant implements ISaveParticipant {
 	}
 
 	public void rollback(ISaveContext context) {
-		HibernateConsolePlugin myPluginInstance = HibernateConsolePlugin
+		HibernateBasePlugin myPluginInstance = HibernateBasePlugin
 				.getDefault();
 
 		// since the save operation has failed, delete the saved state we have
@@ -101,7 +101,7 @@ public class HibernateConsoleSaveParticipant implements ISaveParticipant {
 		f.delete();
 	}
 
-	public void doStart(HibernateConsolePlugin plugin) throws CoreException {
+	public void doStart(HibernateBasePlugin plugin) throws CoreException {
 		ISavedState lastState = ResourcesPlugin.getWorkspace().addSaveParticipant(plugin.getBundle().getSymbolicName(), this);
 		if (lastState == null) {
 			return;

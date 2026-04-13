@@ -14,7 +14,7 @@ import org.eclipse.jface.viewers.ITreeSelection;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.execution.ExecutionContext.Command;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
 import org.hibernate.tool.eclipse.search.core.HSearchConsoleConfigurationPreferences;
@@ -83,12 +83,12 @@ public class IndexRebuildHandler extends AbstractHandler {
 					return null;
 				}
 			});
-			MessageDialog.openInformation(HibernateConsolePlugin.getDefault()
+			MessageDialog.openInformation(HibernateBasePlugin.getDefault()
 					.getWorkbench().getActiveWorkbenchWindow().getShell(), 
 					"Initial index rebuild", 
 					"Initial index rebuild succesfully finished");
 		} catch (Exception e) {
-			MessageDialog.openError(HibernateConsolePlugin.getDefault()
+			MessageDialog.openError(HibernateBasePlugin.getDefault()
 					.getWorkbench().getActiveWorkbenchWindow().getShell(), 
 					"Initial index rebuild failed", 
 					e.getMessage());

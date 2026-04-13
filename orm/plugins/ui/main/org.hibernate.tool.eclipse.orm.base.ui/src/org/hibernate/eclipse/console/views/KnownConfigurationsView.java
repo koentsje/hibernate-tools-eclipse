@@ -55,7 +55,7 @@ import org.eclipse.ui.views.properties.PropertySheetPage;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.console.node.BaseNode;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.console.actions.EditConsoleConfiguration;
 import org.hibernate.eclipse.console.actions.OpenMappingAction;
 import org.hibernate.eclipse.console.viewers.xpl.MTreeViewer;
@@ -181,7 +181,7 @@ public class KnownConfigurationsView extends ViewPart {
 					if(consoleConfiguration.isSessionFactoryCreated() ) {
 						String hql = node.getHQL();
 						// open HQL Editor
-						HibernateConsolePlugin.getDefault().openScratchHQLEditor(consoleConfiguration.getName(), hql);
+						HibernateBasePlugin.getDefault().openScratchHQLEditor(consoleConfiguration.getName(), hql);
 						/** /
 						// execute query and show results in 
 						// Hibernate Query result view - commented cause old version
@@ -191,7 +191,7 @@ public class KnownConfigurationsView extends ViewPart {
 									getSite().getPage().showView(QueryPageTabView.ID);
 								}
 							} catch (PartInitException e) {
-								HibernateConsolePlugin.getDefault().logErrorMessage("Can't show QueryPageTabView.", e);	//$NON-NLS-1$
+								HibernateBasePlugin.getDefault().logErrorMessage("Can't show QueryPageTabView.", e);	//$NON-NLS-1$
 							}
 							consoleConfiguration.executeHQLQuery( hql );
 						}
@@ -206,11 +206,11 @@ public class KnownConfigurationsView extends ViewPart {
 						try {
 							OpenMappingAction.run(consoleConfig, path);
 						} catch (PartInitException e) {
-							HibernateConsolePlugin.getDefault().logErrorMessage("Can't find mapping file.", e);	//$NON-NLS-1$
+							HibernateBasePlugin.getDefault().logErrorMessage("Can't find mapping file.", e);	//$NON-NLS-1$
 						} catch (JavaModelException e) {
-							HibernateConsolePlugin.getDefault().logErrorMessage("Can't find mapping file.", e);	//$NON-NLS-1$
+							HibernateBasePlugin.getDefault().logErrorMessage("Can't find mapping file.", e);	//$NON-NLS-1$
 						} catch (FileNotFoundException e) {
-							HibernateConsolePlugin.getDefault().logErrorMessage("Can't find mapping file.", e);	//$NON-NLS-1$
+							HibernateBasePlugin.getDefault().logErrorMessage("Can't find mapping file.", e);	//$NON-NLS-1$
 						}
 					}
 					else {

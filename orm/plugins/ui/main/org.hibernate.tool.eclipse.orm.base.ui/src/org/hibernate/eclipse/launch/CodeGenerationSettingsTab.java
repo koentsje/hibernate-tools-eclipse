@@ -60,7 +60,7 @@ import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.console.utils.DialogSelectionHelper;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.eclipse.console.utils.LaunchHelperUI;
@@ -463,7 +463,7 @@ public class CodeGenerationSettingsTab extends	AbstractLaunchConfigurationTab {
 //	   try {
 //	      attributes = new ExporterAttributes(configuration);
 //       } catch (CoreException ce) {
-//          HibernateConsolePlugin.getDefault().logErrorMessage("Problem when setting up defaults for launch configuration", ce);
+//          HibernateBasePlugin.getDefault().logErrorMessage("Problem when setting up defaults for launch configuration", ce);
 //       }
 	}
 
@@ -472,7 +472,7 @@ public class CodeGenerationSettingsTab extends	AbstractLaunchConfigurationTab {
 		try {
 			attributes = new ExporterAttributes(configuration);
 		} catch (CoreException ce) {
-			HibernateConsolePlugin.getDefault().logErrorMessage(
+			HibernateBasePlugin.getDefault().logErrorMessage(
 				HibernateConsoleMessages.CodeGenerationSettingsTab_problems_when_reading, ce);
 		}
 		if (attributes == null) {

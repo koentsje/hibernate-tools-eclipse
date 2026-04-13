@@ -38,7 +38,7 @@ import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.utils.XMLPrettyPrinter;
 
 public class JTidyFormatAction implements IObjectActionDelegate {
@@ -90,9 +90,9 @@ public class JTidyFormatAction implements IObjectActionDelegate {
                 }
             }
             } catch (CoreException e) {
-                HibernateConsolePlugin.getDefault().showError(targetPart.getSite().getShell(), HibernateConsoleMessages.JTidyFormatAction_error_while_running_jtidy, e);
+                HibernateBasePlugin.getDefault().showError(targetPart.getSite().getShell(), HibernateConsoleMessages.JTidyFormatAction_error_while_running_jtidy, e);
             } catch (IOException io) {
-                HibernateConsolePlugin.getDefault().showError(targetPart.getSite().getShell(), HibernateConsoleMessages.JTidyFormatAction_error_while_running_jtidy, io);
+                HibernateBasePlugin.getDefault().showError(targetPart.getSite().getShell(), HibernateConsoleMessages.JTidyFormatAction_error_while_running_jtidy, io);
             }
         }
 	}

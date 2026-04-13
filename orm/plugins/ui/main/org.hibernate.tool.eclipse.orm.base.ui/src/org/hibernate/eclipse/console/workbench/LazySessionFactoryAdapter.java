@@ -27,7 +27,7 @@ import org.hibernate.console.ImageConstants;
 import org.hibernate.console.node.BaseNode;
 import org.hibernate.console.node.NodeFactory;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.workbench.LazySessionFactory;
 
@@ -44,7 +44,7 @@ public class LazySessionFactoryAdapter extends BasicWorkbenchAdapter {
 					lazySessionFactory.getConsoleConfiguration().buildSessionFactory();
 				} catch(Throwable t) {
 					label = NLS.bind(HibernateConsoleMessages.LazySessionFactoryAdapter_sessionfactory_error, t.getMessage());
-					HibernateConsolePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.LazySessionFactoryAdapter_problems_while_creating_sessionfactory, t);
+					HibernateBasePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.LazySessionFactoryAdapter_problems_while_creating_sessionfactory, t);
 				}
 			}
 			if(lazySessionFactory.getConsoleConfiguration().isSessionFactoryCreated()) {

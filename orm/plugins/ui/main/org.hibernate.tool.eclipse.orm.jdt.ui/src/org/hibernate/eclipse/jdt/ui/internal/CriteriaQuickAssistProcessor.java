@@ -38,7 +38,7 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.texteditor.ITextEditor;
 import org.hibernate.console.ImageConstants;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.eclipse.console.utils.OpenMappingUtils;
 import org.hibernate.eclipse.jdt.ui.Activator;
@@ -60,7 +60,7 @@ public class CriteriaQuickAssistProcessor extends BasicQuickAssistProcessor  {
 			result = new IJavaCompletionProposal[1];
 			result[0] = new ExternalActionQuickAssistProposal(contents, EclipseImages.getImage(ImageConstants.CRITERIA_EDITOR), JdtUiMessages.CriteriaQuickAssistProcessor_copy_to_criteria_editor, context) {
 				public void apply(IDocument target) {
-					//IEditorPart editorPart = HibernateConsolePlugin.getDefault().openCriteriaEditor(getName(), getContents());
+					//IEditorPart editorPart = HibernateBasePlugin.getDefault().openCriteriaEditor(getName(), getContents());
 					IEditorPart editorPart = Activator.getDefault().getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
 					ITextEditor[] textEditors = OpenMappingUtils.getTextEditors(editorPart);
 					if (textEditors.length == 0) return;
@@ -69,7 +69,7 @@ public class CriteriaQuickAssistProcessor extends BasicQuickAssistProcessor  {
 			};
 		}
 		catch (BadLocationException e) {
-			HibernateConsolePlugin.getDefault().logErrorMessage( JdtUiMessages.CriteriaQuickAssistProcessor_errormessage, e );
+			HibernateBasePlugin.getDefault().logErrorMessage( JdtUiMessages.CriteriaQuickAssistProcessor_errormessage, e );
 		}
 		return result;
 	}

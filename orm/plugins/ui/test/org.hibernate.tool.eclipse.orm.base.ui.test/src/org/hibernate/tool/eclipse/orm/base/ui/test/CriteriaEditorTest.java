@@ -27,7 +27,7 @@ import org.eclipse.ui.IEditorPart;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.console.QueryInputModel;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.criteriaeditor.CriteriaEditor;
 import org.hibernate.eclipse.criteriaeditor.JavaCompletionProcessor;
 import org.hibernate.tool.eclipse.orm.base.ui.test.utils.ConsoleConfigUtils;
@@ -94,7 +94,7 @@ public class CriteriaEditorTest {
 	
 	@Test
 	public void testCriteriaEditorOpen(){
-		IEditorPart editorPart = HibernateConsolePlugin.getDefault()
+		IEditorPart editorPart = HibernateBasePlugin.getDefault()
 			.openCriteriaEditor(consoleConfiguration.getName(), ""); //$NON-NLS-1$
 		Assert.assertNotNull("Criteria Editor was not opened", editorPart); //$NON-NLS-1$
 		Assert.assertTrue("Opened editor is not CriteriaEditor", editorPart instanceof CriteriaEditor); //$NON-NLS-1$
@@ -126,7 +126,7 @@ public class CriteriaEditorTest {
 		
 		String query = "Object o = new Object();\n" +  //$NON-NLS-1$
 			"System.out.print(o.toString());"; //$NON-NLS-1$
-		IEditorPart editorPart = HibernateConsolePlugin.getDefault()
+		IEditorPart editorPart = HibernateBasePlugin.getDefault()
 			.openCriteriaEditor(CONSOLE_NAME, query);
 		Assert.assertTrue("Opened editor is not CriteriaEditor", editorPart instanceof CriteriaEditor); //$NON-NLS-1$
 		

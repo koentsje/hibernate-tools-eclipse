@@ -26,7 +26,7 @@ import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IAction;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.eclipse.graph.AbstractGraphViewPart;
 
@@ -42,7 +42,7 @@ public class ToggleLayoutAction extends Action {
 		this.pluginKey = pluginKey;
 		setImageDescriptor(EclipseImages.getImageDescriptor(ImageConstants.LAYOUT));
 		setDisabledImageDescriptor(EclipseImages.getImageDescriptor(ImageConstants.LAYOUT));
-		Preferences prefs = HibernateConsolePlugin.getDefault().getPluginPreferences();
+		Preferences prefs = HibernateBasePlugin.getDefault().getPluginPreferences();
 		boolean checked = prefs.getBoolean(pluginKey);
 		valueChanged(!checked, false);
 	}
@@ -63,9 +63,9 @@ public class ToggleLayoutAction extends Action {
         		HibernateConsoleMessages.ToggleLayoutAction_enable_auto_layout :
         		HibernateConsoleMessages.ToggleLayoutAction_enable_manual_layout);
         if (doStore) {
-	        Preferences prefs = HibernateConsolePlugin.getDefault().getPluginPreferences();
+	        Preferences prefs = HibernateBasePlugin.getDefault().getPluginPreferences();
 	        prefs.setValue(pluginKey, value);
-	        HibernateConsolePlugin.getDefault().savePluginPreferences();
+	        HibernateBasePlugin.getDefault().savePluginPreferences();
         }
     }
 }

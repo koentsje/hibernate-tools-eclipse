@@ -28,7 +28,7 @@ import org.eclipse.osgi.util.NLS;
 import org.eclipse.ui.actions.SelectionListenerAction;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 
 /**
  * @author max
@@ -64,7 +64,7 @@ public abstract class ConsoleConfigurationBasedAction extends SelectionListenerA
 			doRun();
 		} catch(Exception he) {
 			String out = NLS.bind(HibernateConsoleMessages.ConsoleConfigurationBasedAction_problem_while_executing, getText(), he);
-			HibernateConsolePlugin.getDefault().showError(null, out, he);
+			HibernateBasePlugin.getDefault().showError(null, out, he);
 		}
 	}
 

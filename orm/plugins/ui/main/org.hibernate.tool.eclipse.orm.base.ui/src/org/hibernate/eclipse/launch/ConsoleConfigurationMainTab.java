@@ -45,7 +45,7 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.console.preferences.ConsoleConfigurationPreferences.ConfigurationMode;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.console.utils.DialogSelectionHelper;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.ProjectUtils;
@@ -248,7 +248,7 @@ public class ConsoleConfigurationMainTab extends ConsoleConfigurationTab {
 				connectionProfileCtrl.selectValue(configuration.getAttribute(IConsoleConfigurationLaunchConstants.CONNECTION_PROFILE_NAME, ConnectionProfileCtrl.NO_CONNECTIN_NAME));			
 		}
 		catch (CoreException e) {
-			HibernateConsolePlugin.getDefault().log( e );
+			HibernateBasePlugin.getDefault().log( e );
 		}	
 	}
 

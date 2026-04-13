@@ -31,7 +31,7 @@ import org.eclipse.ui.part.MultiPageEditorPart;
 import org.eclipse.ui.texteditor.ITextEditor;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.console.utils.OpenMappingUtils;
 import org.hibernate.eclipse.console.utils.ProjectUtilsUI;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
@@ -54,7 +54,7 @@ public class OpenMappingAction extends SelectionListenerAction {
 		super(HibernateConsoleMessages.OpenMappingAction_open_mapping_file);
 		setToolTipText(HibernateConsoleMessages.OpenMappingAction_open_mapping_file);
 		setEnabled(true);
-		setImageDescriptor(HibernateConsolePlugin.getImageDescriptor(imageFilePath ));
+		setImageDescriptor(HibernateBasePlugin.getImageDescriptor(imageFilePath ));
 		setId(OPENMAPPING_ACTIONID);
 	}
 
@@ -70,11 +70,11 @@ public class OpenMappingAction extends SelectionListenerAction {
 			try {
 				run(consoleConfig, path);
 			} catch (JavaModelException e) {
-				HibernateConsolePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.OpenMappingAction_cannot_find_mapping_file, e);
+				HibernateBasePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.OpenMappingAction_cannot_find_mapping_file, e);
 			} catch (PartInitException e) {
-				HibernateConsolePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.OpenMappingAction_cannot_open_mapping_file, e);
+				HibernateBasePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.OpenMappingAction_cannot_open_mapping_file, e);
 			} catch (FileNotFoundException e) {
-				HibernateConsolePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.OpenMappingAction_cannot_find_mapping_file, e);
+				HibernateBasePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.OpenMappingAction_cannot_find_mapping_file, e);
 			}
 		}
 	}
@@ -275,7 +275,7 @@ public class OpenMappingAction extends SelectionListenerAction {
 				}
 			}
 		} catch (BadLocationException e) {
-			HibernateConsolePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.OpenMappingAction_selection_not_found, e);
+			HibernateBasePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.OpenMappingAction_selection_not_found, e);
 		}
 		if (propRegion == null && parentProperty.isComposite()){
 			String[] componentPatterns = new String[]{

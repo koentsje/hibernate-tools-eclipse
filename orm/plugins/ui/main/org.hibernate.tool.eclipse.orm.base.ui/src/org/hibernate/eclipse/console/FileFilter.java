@@ -100,7 +100,7 @@ public class FileFilter extends ViewerFilter {
 					}
 				}
 			} catch (CoreException e) {
-				HibernateConsolePlugin.getDefault().log(e.getStatus() );
+				HibernateBasePlugin.getDefault().log(e.getStatus() );
 			}				
 		}
 		return false;

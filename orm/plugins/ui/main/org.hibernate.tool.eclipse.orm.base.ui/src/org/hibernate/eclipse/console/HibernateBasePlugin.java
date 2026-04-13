@@ -81,7 +81,7 @@ import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessa
 /**
  * The main plugin class to be used in the desktop.
  */
-public class HibernateConsolePlugin extends AbstractUIPlugin implements PluginLogger {
+public class HibernateBasePlugin extends AbstractUIPlugin implements PluginLogger {
 
 	public static final String ID = "org.hibernate.eclipse.console"; //$NON-NLS-1$
 
@@ -90,7 +90,7 @@ public class HibernateConsolePlugin extends AbstractUIPlugin implements PluginLo
 	public static final int PERFORM_SYNC_EXEC = 1;
 
 	//The shared instance.
-	private static HibernateConsolePlugin plugin;
+	private static HibernateBasePlugin plugin;
 	//Resource bundle.
 	private ResourceBundle resourceBundle;
 	private EclipseLogger logger;
@@ -103,7 +103,7 @@ public class HibernateConsolePlugin extends AbstractUIPlugin implements PluginLo
 	/**
 	 * The constructor.
 	 */
-	public HibernateConsolePlugin() {
+	public HibernateBasePlugin() {
 		super();
 		setPlugin(this);
 	}
@@ -145,7 +145,7 @@ public class HibernateConsolePlugin extends AbstractUIPlugin implements PluginLo
 					try {
 						removeConfiguration(root.getName());
 					} catch (CoreException e) {
-						logErrorMessage(HibernateConsoleMessages.HibernateConsolePlugin_could_not_delete_launch_config_for + root.getName(), e);
+						logErrorMessage(HibernateConsoleMessages.HibernateBasePlugin_could_not_delete_launch_config_for + root.getName(), e);
 					}
 				}
 			}
@@ -161,7 +161,7 @@ public class HibernateConsolePlugin extends AbstractUIPlugin implements PluginLo
 					return configuration.getType().getIdentifier().equals(ICodeGenerationLaunchConstants.CONSOLE_CONFIGURATION_LAUNCH_TYPE_ID);
 				}
 				catch (CoreException e) {
-					//HibernateConsolePlugin.getDefault().log( e );
+					//HibernateBasePlugin.getDefault().log( e );
 					// ignore since it occurs on delete
 				}
 				return false;
@@ -239,8 +239,8 @@ public class HibernateConsolePlugin extends AbstractUIPlugin implements PluginLo
 			    	}
 			    	catch (CoreException ce) 
 			    	{
-			    		HibernateConsolePlugin.openError(new Shell(), HibernateConsoleMessages.EditConsoleConfiguration_rename_refactoring_error_totle,
-			    				ce.getLocalizedMessage(), ce, HibernateConsolePlugin.PERFORM_SYNC_EXEC);
+			    		HibernateBasePlugin.openError(new Shell(), HibernateConsoleMessages.EditConsoleConfiguration_rename_refactoring_error_totle,
+			    				ce.getLocalizedMessage(), ce, HibernateBasePlugin.PERFORM_SYNC_EXEC);
 			    	}
 				}
 			}
@@ -250,7 +250,7 @@ public class HibernateConsolePlugin extends AbstractUIPlugin implements PluginLo
 				try {
 					temporary = configuration.getAttribute(AddConfigurationAction.TEMPORARY_CONFIG_FLAG, false);
 				} catch (CoreException e) {
-					HibernateConsolePlugin.getDefault().showError( getShell(), HibernateConsoleMessages.HibernateConsolePlugin_problem_to_get_flag,  e);
+					HibernateBasePlugin.getDefault().showError( getShell(), HibernateConsoleMessages.HibernateBasePlugin_problem_to_get_flag,  e);
 				}
 				return temporary;
 			}
@@ -310,12 +310,12 @@ public class HibernateConsolePlugin extends AbstractUIPlugin implements PluginLo
 	/**
 	 * Returns the shared instance.
 	 */
-	public static HibernateConsolePlugin getDefault() {
+	public static HibernateBasePlugin getDefault() {
 		return plugin;
 	}
 
-	private static void setPlugin(HibernateConsolePlugin plugin) {
-		HibernateConsolePlugin.plugin = plugin;
+	private static void setPlugin(HibernateBasePlugin plugin) {
+		HibernateBasePlugin.plugin = plugin;
 	}
 	
 	/**
@@ -323,7 +323,7 @@ public class HibernateConsolePlugin extends AbstractUIPlugin implements PluginLo
 	 * or 'key' if not found.
 	 */
 	public static String getResourceString(String key) {
-		ResourceBundle bundle = HibernateConsolePlugin.getDefault().getResourceBundle();
+		ResourceBundle bundle = HibernateBasePlugin.getDefault().getResourceBundle();
 		try {
 			return (bundle != null) ? bundle.getString(key) : key;
 		} catch (MissingResourceException e) {
@@ -337,7 +337,7 @@ public class HibernateConsolePlugin extends AbstractUIPlugin implements PluginLo
 	public ResourceBundle getResourceBundle() {
 		try {
 			if (resourceBundle == null)
-				resourceBundle = ResourceBundle.getBundle("org.hibernate.eclipse.console.HibernateConsolePluginResources"); //$NON-NLS-1$
+				resourceBundle = ResourceBundle.getBundle("org.hibernate.eclipse.console.HibernateBasePluginResources"); //$NON-NLS-1$
 		} catch (MissingResourceException x) {
 			resourceBundle = null;
 		}
@@ -360,7 +360,7 @@ public class HibernateConsolePlugin extends AbstractUIPlugin implements PluginLo
 	 * @param message the error message to log
 	 */
 	public void log(String message) {
-		log(new Status(IStatus.INFO, HibernateConsolePlugin.ID, 0, message, null) );
+		log(new Status(IStatus.INFO, HibernateBasePlugin.ID, 0, message, null) );
 	}
 
 	/**
@@ -376,7 +376,7 @@ public class HibernateConsolePlugin extends AbstractUIPlugin implements PluginLo
 		if(t==null) {
 			log(message);
 		} else {
-			log(new MultiStatus(HibernateConsolePlugin.ID, lvl , new IStatus[] { throwableToStatus(t) }, message, null));
+			log(new MultiStatus(HibernateBasePlugin.ID, lvl , new IStatus[] { throwableToStatus(t) }, message, null));
 		}
 	}
 
@@ -384,10 +384,10 @@ public class HibernateConsolePlugin extends AbstractUIPlugin implements PluginLo
 		List<IStatus> causes = new ArrayList<IStatus>();
 		Throwable temp = t;
 		while(temp!=null && temp.getCause()!=temp) {
-			causes.add(new Status(IStatus.ERROR, ID, code, temp.getMessage()==null?temp.toString() + HibernateConsoleMessages.HibernateConsolePlugin_no_message_1:temp.toString(), temp) );
+			causes.add(new Status(IStatus.ERROR, ID, code, temp.getMessage()==null?temp.toString() + HibernateConsoleMessages.HibernateBasePlugin_no_message_1:temp.toString(), temp) );
 			temp = temp.getCause();
 		}
-        String msg = HibernateConsoleMessages.HibernateConsolePlugin_no_message_2;
+        String msg = HibernateConsoleMessages.HibernateBasePlugin_no_message_2;
         if(t!=null && t.getMessage()!=null) {
             msg = t.toString();
         }
@@ -433,7 +433,7 @@ public class HibernateConsolePlugin extends AbstractUIPlugin implements PluginLo
 				KnownConfigurations.getInstance().addConfiguration(new EclipseConsoleConfiguration(prefs), false); // TODO: do we need to broadcast every time when reading state ?
 			}
 		} catch(HibernateConsoleRuntimeException hcr) {
-			logErrorMessage(HibernateConsoleMessages.HibernateConsolePlugin_error_while_reading_console_config, hcr);
+			logErrorMessage(HibernateConsoleMessages.HibernateBasePlugin_error_while_reading_console_config, hcr);
 		}
 	}
 
@@ -451,13 +451,13 @@ public class HibernateConsolePlugin extends AbstractUIPlugin implements PluginLo
 		logErrorMessage(message, he);
 		IStatus warning = throwableToStatus(he);
 		 	   ErrorDialog.openError(shell,
-		 	      HibernateConsoleMessages.HibernateConsolePlugin_hibernate_console, message, warning);
+		 	      HibernateConsoleMessages.HibernateBasePlugin_hibernate_console, message, warning);
 	}
 
 	public void showError(Shell shell, String message, IStatus s) {
 		log(s);
 	 	   ErrorDialog.openError(shell,
-	 			  HibernateConsoleMessages.HibernateConsolePlugin_hibernate_console, message, s);
+	 			  HibernateConsoleMessages.HibernateBasePlugin_hibernate_console, message, s);
 	}
 
 	public IEditorPart openCriteriaEditor(String consoleName, String criteria) {
@@ -471,7 +471,7 @@ public class HibernateConsolePlugin extends AbstractUIPlugin implements PluginLo
 		        return page.openEditor(editorInput, "org.hibernate.eclipse.criteriaeditor.CriteriaEditor", true); //$NON-NLS-1$
 		        //page.openEditor(editorInput, "org.eclipse.jdt.ui.CompilationUnitEditor", true);
 		    } catch (PartInitException ex) {
-		    	logErrorMessage(HibernateConsoleMessages.HibernateConsolePlugin_could_not_open_criteria_editor_for_console + consoleName, ex);
+		    	logErrorMessage(HibernateConsoleMessages.HibernateBasePlugin_could_not_open_criteria_editor_for_console + consoleName, ex);
 		    	return null;
 		    }
 	}
@@ -485,13 +485,13 @@ public class HibernateConsolePlugin extends AbstractUIPlugin implements PluginLo
 		        final HQLEditorInput editorInput = new HQLEditorInput(storage);
 		            return page.openEditor(editorInput, "org.hibernate.eclipse.hqleditor.HQLEditor", true); //$NON-NLS-1$
 		    } catch (PartInitException ex) {
-		        logErrorMessage(HibernateConsoleMessages.HibernateConsolePlugin_could_not_open_hql_editor_for_console + consoleName, ex);
+		        logErrorMessage(HibernateConsoleMessages.HibernateBasePlugin_could_not_open_hql_editor_for_console + consoleName, ex);
 		        return null;
 		    }
 	}
 
 	/*public ConsoleConfiguration getLastUsedConfiguration() {
-		String lastUsedName = getDefault().getPreferenceStore().getString(HibernateConsolePlugin.LAST_USED_CONFIGURATION_PREFERENCE);
+		String lastUsedName = getDefault().getPreferenceStore().getString(HibernateBasePlugin.LAST_USED_CONFIGURATION_PREFERENCE);
 
 		ConsoleConfiguration lastUsed = (lastUsedName == null || lastUsedName.trim().length()==0)
 				? null
@@ -512,7 +512,7 @@ public class HibernateConsolePlugin extends AbstractUIPlugin implements PluginLo
 			name = lastUsed.getName();
 		}
 
-		HibernateConsolePlugin.getDefault().getPreferenceStore().setValue(
+		HibernateBasePlugin.getDefault().getPreferenceStore().setValue(
 				LAST_USED_CONFIGURATION_PREFERENCE, name );
 	}*/
 

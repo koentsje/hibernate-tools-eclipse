@@ -29,7 +29,7 @@ import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.widgets.Display;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 
 public class HQLColors {
 
@@ -44,7 +44,7 @@ public class HQLColors {
 
 	public Color getColor (String colorName) {
 		RGB rgb = PreferenceConverter.getColor(
-				HibernateConsolePlugin.getDefault().getPreferenceStore(),
+				HibernateBasePlugin.getDefault().getPreferenceStore(),
 				colorName);
 		return getColor(rgb);
 	}

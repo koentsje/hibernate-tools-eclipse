@@ -57,7 +57,7 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.ui.ide.IDE;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.console.actions.AddConfigurationAction;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IExporter;
@@ -137,7 +137,7 @@ public class NewConfigurationWizard extends Wizard implements INewWizard {
 						}										
 					}
 				} catch (CoreException e) {
-					HibernateConsolePlugin.getDefault().log(e);
+					HibernateBasePlugin.getDefault().log(e);
 				}
         		return true;
         	}
@@ -214,7 +214,7 @@ public class NewConfigurationWizard extends Wizard implements INewWizard {
 			return false;
 		} catch (InvocationTargetException e) {
 			Throwable realException = e.getTargetException();
-			HibernateConsolePlugin.getDefault().showError(getShell(), HibernateConsoleMessages.NewConfigurationWizard_error, realException);
+			HibernateBasePlugin.getDefault().showError(getShell(), HibernateConsoleMessages.NewConfigurationWizard_error, realException);
 			return false;
 		}
 		
@@ -225,7 +225,7 @@ public class NewConfigurationWizard extends Wizard implements INewWizard {
 				AddConfigurationAction.deleteTemporaryLaunchConfigurations();
 	        }
 		} catch (CoreException ce) {
-			HibernateConsolePlugin.getDefault().showError(getShell(), HibernateConsoleMessages.AddConfigurationAction_problem_add_console_config,  ce);
+			HibernateBasePlugin.getDefault().showError(getShell(), HibernateConsoleMessages.AddConfigurationAction_problem_add_console_config,  ce);
 		}
         
 		return true;
@@ -235,7 +235,7 @@ public class NewConfigurationWizard extends Wizard implements INewWizard {
 		try {
 			confPage.performCancel();
 		} catch (CoreException ce) {
-			HibernateConsolePlugin.getDefault().showError(getShell(), HibernateConsoleMessages.AddConfigurationAction_problem_add_console_config,  ce);
+			HibernateBasePlugin.getDefault().showError(getShell(), HibernateConsoleMessages.AddConfigurationAction_problem_add_console_config,  ce);
 		}
         return true;
     }
@@ -302,7 +302,7 @@ public class NewConfigurationWizard extends Wizard implements INewWizard {
         try {
             return new ByteArrayInputStream(stringWriter.toString().getBytes("UTF-8") ); //$NON-NLS-1$
         } catch (UnsupportedEncodingException uec) {
-            HibernateConsolePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.NewConfigurationWizard_problems_converting_to_utf8, uec);
+            HibernateBasePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.NewConfigurationWizard_problems_converting_to_utf8, uec);
             return new ByteArrayInputStream(stringWriter.toString().getBytes() );
         }
 	}
@@ -325,7 +325,7 @@ public class NewConfigurationWizard extends Wizard implements INewWizard {
 						jproj =  (IJavaProject)((IProject)selection.getFirstElement()).getNature(JavaCore.NATURE_ID);
 					}
 				} catch (CoreException e) {
-					HibernateConsolePlugin.getDefault().log(e);
+					HibernateBasePlugin.getDefault().log(e);
 				}
 			}
 			if (jproj != null){
@@ -336,7 +336,7 @@ public class NewConfigurationWizard extends Wizard implements INewWizard {
 						this.selection = new StructuredSelection(roots[0]);
 					}
 				} catch (JavaModelException e) {
-					HibernateConsolePlugin.getDefault().log(e);
+					HibernateBasePlugin.getDefault().log(e);
 				}				
 			};			
 		}		

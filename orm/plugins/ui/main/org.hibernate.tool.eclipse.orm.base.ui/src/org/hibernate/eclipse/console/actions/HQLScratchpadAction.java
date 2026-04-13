@@ -26,7 +26,7 @@ import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.console.node.BaseNode;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IProperty;
@@ -44,7 +44,7 @@ public class HQLScratchpadAction extends OpenQueryEditorAction {
 	}
 
 	protected void openQueryEditor(ConsoleConfiguration config, String query) {
-		HibernateConsolePlugin.getDefault().openScratchHQLEditor(config==null?null:config.getName(), query);
+		HibernateBasePlugin.getDefault().openScratchHQLEditor(config==null?null:config.getName(), query);
 	}
 
 	/* (non-Javadoc)

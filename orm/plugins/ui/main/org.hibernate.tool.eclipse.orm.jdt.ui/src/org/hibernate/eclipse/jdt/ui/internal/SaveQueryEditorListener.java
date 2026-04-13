@@ -44,7 +44,7 @@ import org.eclipse.ui.editors.text.TextFileDocumentProvider;
 import org.eclipse.ui.texteditor.IDocumentProvider;
 import org.eclipse.ui.texteditor.ITextEditor;
 import org.hibernate.eclipse.console.AbstractQueryEditor;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.hqleditor.HQLEditor;
 
 /**
@@ -72,12 +72,12 @@ public class SaveQueryEditorListener implements IPropertyListener {
 		this.position = position;
 		switch (editorNum) {
 		case HQLEditor:
-			editor = (AbstractQueryEditor) HibernateConsolePlugin.getDefault()
+			editor = (AbstractQueryEditor) HibernateBasePlugin.getDefault()
 						.openScratchHQLEditor( consoleName, query );
 			break;
 
 		default:
-			editor = (AbstractQueryEditor) HibernateConsolePlugin.getDefault()
+			editor = (AbstractQueryEditor) HibernateBasePlugin.getDefault()
 						.openCriteriaEditor( consoleName, query );
 		}
 		editor.addPropertyListener(this);

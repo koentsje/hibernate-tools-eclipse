@@ -28,7 +28,7 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.actions.SelectionListenerAction;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.ProjectUtils;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IProperty;
@@ -49,7 +49,7 @@ public class OpenSourceAction extends SelectionListenerAction {
 		super(HibernateConsoleMessages.OpenSourceAction_open_source_file);
 		setToolTipText(HibernateConsoleMessages.OpenSourceAction_open_source_file);
 		setEnabled( true );
-		setImageDescriptor(HibernateConsolePlugin.getImageDescriptor(imageFilePath));
+		setImageDescriptor(HibernateBasePlugin.getImageDescriptor(imageFilePath));
 		setId(OPENSOURCE_ACTIONID);
 	}
 
@@ -80,11 +80,11 @@ public class OpenSourceAction extends SelectionListenerAction {
 			try {
 				run(consoleConfig, lastSegment, fullyQualifiedName);
 			} catch (JavaModelException e) {
-				HibernateConsolePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.OpenSourceAction_cannot_find_source_file, e);
+				HibernateBasePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.OpenSourceAction_cannot_find_source_file, e);
 			} catch (PartInitException e) {
-				HibernateConsolePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.OpenSourceAction_cannot_open_source_file, e);
+				HibernateBasePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.OpenSourceAction_cannot_open_source_file, e);
 			} catch (FileNotFoundException e) {
-				HibernateConsolePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.OpenSourceAction_cannot_find_source_file, e);
+				HibernateBasePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.OpenSourceAction_cannot_find_source_file, e);
 			}
 		}
 	}

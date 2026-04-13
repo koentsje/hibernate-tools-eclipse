@@ -36,7 +36,7 @@ import org.eclipse.osgi.util.NLS;
 import org.eclipse.ui.progress.IDeferredWorkbenchAdapter;
 import org.eclipse.ui.progress.IElementCollector;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 
 public abstract class BasicWorkbenchAdapter implements IDeferredWorkbenchAdapter {
 
@@ -115,8 +115,8 @@ public abstract class BasicWorkbenchAdapter implements IDeferredWorkbenchAdapter
 	}
 
 	protected void handleError(IElementCollector collector, Object object, Exception e) {
-		HibernateConsolePlugin.getDefault().logMessage(IStatus.WARNING, e.toString(), e);
-		HibernateConsolePlugin.openError(null, getDefaultErrorTitle(), getDefaultErrorMessage(object), e, HibernateConsolePlugin.PERFORM_SYNC_EXEC);
+		HibernateBasePlugin.getDefault().logMessage(IStatus.WARNING, e.toString(), e);
+		HibernateBasePlugin.openError(null, getDefaultErrorTitle(), getDefaultErrorMessage(object), e, HibernateBasePlugin.PERFORM_SYNC_EXEC);
 	}
 
 	protected String getDefaultErrorMessage(Object object) {

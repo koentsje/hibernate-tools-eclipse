@@ -35,7 +35,7 @@ import org.eclipse.jface.text.contentassist.IContextInformation;
 import org.eclipse.jface.text.contentassist.IContextInformationValidator;
 import org.eclipse.swt.widgets.Shell;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.ProjectUtils;
 import org.hibernate.eclipse.hqleditor.CompletionHelper;
 import org.hibernate.util.xpl.StringHelper;
@@ -98,7 +98,7 @@ public class JavaCompletionProcessor implements IContentAssistProcessor {
 			/*} catch (RuntimeException e){
 				String mess = NLS.bind(HibernateConsoleMessages.JavaCompletionProcessor_error_find_project,
 						editor.getConsoleConfiguration().getName());
-				HibernateConsolePlugin.getDefault().logErrorMessage(mess, e);
+				HibernateBasePlugin.getDefault().logErrorMessage(mess, e);
 			}*/
 			for (int i = 0; projects != null && i < projects.length && results.length <= 0; i++) {
 				IJavaProject javaProject = projects[i];
@@ -113,7 +113,7 @@ public class JavaCompletionProcessor implements IContentAssistProcessor {
 							.openError(
 									shell,
 									HibernateConsoleMessages.JavaCompletionProcessor_error, HibernateConsoleMessages.JavaCompletionProcessor_error_while_performing_code_completion, x.getStatus() );
-					HibernateConsolePlugin.getDefault().log( x );
+					HibernateBasePlugin.getDefault().log( x );
 				}
 				results = collector.getJavaCompletionProposals();
 			}

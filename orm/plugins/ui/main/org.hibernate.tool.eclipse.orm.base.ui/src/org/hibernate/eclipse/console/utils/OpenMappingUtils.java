@@ -47,7 +47,7 @@ import org.eclipse.ui.texteditor.ITextEditor;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.execution.ExecutionContext;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.util.xpl.StringHelper;
 import org.hibernate.util.xpl.XMLHelper;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ICfg2HbmTool;
@@ -382,7 +382,7 @@ public class OpenMappingUtils {
 		try {
 			stream = new FileInputStream(configXMLFile);
 		} catch (FileNotFoundException e) {
-			HibernateConsolePlugin.getDefault().logErrorMessage("Configuration file not found", e); //$NON-NLS-1$
+			HibernateBasePlugin.getDefault().logErrorMessage("Configuration file not found", e); //$NON-NLS-1$
 		}
 		try {
 			List<SAXParseException> errors = new ArrayList<SAXParseException>();
@@ -391,18 +391,18 @@ public class OpenMappingUtils {
 			saxReader.setValidation(false);
 			doc = saxReader.read(new InputSource( stream));
 			if (errors.size() != 0) {
-    			HibernateConsolePlugin.getDefault().logErrorMessage("invalid configuration", (Throwable[])errors.toArray(new Throwable[0]));	//$NON-NLS-1$
+    			HibernateBasePlugin.getDefault().logErrorMessage("invalid configuration", (Throwable[])errors.toArray(new Throwable[0]));	//$NON-NLS-1$
 			}
 		}
 		catch (DocumentException e) {
-			HibernateConsolePlugin.getDefault().logErrorMessage("Could not parse configuration", e);			//$NON-NLS-1$
+			HibernateBasePlugin.getDefault().logErrorMessage("Could not parse configuration", e);			//$NON-NLS-1$
 		}
 		finally {
 			try {
 				if (stream != null) stream.close();
 			}
 			catch (IOException ioe) {
-    			HibernateConsolePlugin.getDefault().logErrorMessage("could not close input stream for", ioe);	//$NON-NLS-1$
+    			HibernateBasePlugin.getDefault().logErrorMessage("could not close input stream for", ioe);	//$NON-NLS-1$
 			}
 		}
 		return doc;
@@ -422,7 +422,7 @@ public class OpenMappingUtils {
 				}
 			}
 		} catch (JavaModelException e) {
-			HibernateConsolePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.OpenFileActionUtils_problems_while_get_project_package_fragment_roots, e);
+			HibernateBasePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.OpenFileActionUtils_problems_while_get_project_package_fragment_roots, e);
 		}
 		return res.toArray(new IPackageFragmentRoot[0]);
 	}

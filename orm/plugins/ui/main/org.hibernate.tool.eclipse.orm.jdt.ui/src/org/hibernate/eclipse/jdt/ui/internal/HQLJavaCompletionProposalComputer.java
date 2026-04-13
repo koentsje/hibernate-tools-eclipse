@@ -35,7 +35,7 @@ import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.jface.text.contentassist.IContextInformation;
 import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.ui.console.common.CompletionProposalsResult;
 import org.hibernate.eclipse.launch.exporter.ConsoleExtension;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.common.HibernateExtension;
@@ -90,10 +90,10 @@ public class HQLJavaCompletionProposalComputer implements IJavaCompletionProposa
 					}
 				 }
 		} catch(RuntimeException re) {
-			HibernateConsolePlugin.getDefault().logErrorMessage( JdtUiMessages.HQLJavaCompletionProposalComputer_errormessage, re );
+			HibernateBasePlugin.getDefault().logErrorMessage( JdtUiMessages.HQLJavaCompletionProposalComputer_errormessage, re );
 		}
 		catch (BadLocationException e) {
-			HibernateConsolePlugin.getDefault().logErrorMessage( JdtUiMessages.HQLJavaCompletionProposalComputer_errormessage, e );
+			HibernateBasePlugin.getDefault().logErrorMessage( JdtUiMessages.HQLJavaCompletionProposalComputer_errormessage, e );
 		}
 
 		return proposals;

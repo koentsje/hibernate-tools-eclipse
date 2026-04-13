@@ -25,7 +25,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.actions.SelectionListenerAction;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.LaunchHelper;
 
 /**
@@ -43,7 +43,7 @@ public class RenameAction extends SelectionListenerAction {
 	public RenameAction(StructuredViewer viewer) {
 		super(HibernateConsoleMessages.RenameAction_name);
 		this.viewer = viewer;
-		setImageDescriptor(HibernateConsolePlugin.getImageDescriptor(imageFilePath  ));
+		setImageDescriptor(HibernateBasePlugin.getImageDescriptor(imageFilePath  ));
 		setId(RENAME_ACTIONID);
 	}
 
@@ -65,7 +65,7 @@ public class RenameAction extends SelectionListenerAction {
 		try {
 			launchConfiguration = LaunchHelper.findHibernateLaunchConfig(config.getName());
 		} catch (CoreException e) {
-			HibernateConsolePlugin.getDefault().showError(null, HibernateConsoleMessages.RenameAction_error_title, e);
+			HibernateBasePlugin.getDefault().showError(null, HibernateConsoleMessages.RenameAction_error_title, e);
 		}
 		return launchConfiguration != null ? renameLaunchConfiguration(launchConfiguration) : false;
 	}
@@ -85,7 +85,7 @@ public class RenameAction extends SelectionListenerAction {
 				wc.doSave();
 				return true;
 			} catch (CoreException e) {
-				HibernateConsolePlugin.getDefault().showError(mParentShell, HibernateConsoleMessages.RenameAction_error_title, e);
+				HibernateBasePlugin.getDefault().showError(mParentShell, HibernateConsoleMessages.RenameAction_error_title, e);
 			}
 		}
 
@@ -106,7 +106,7 @@ class NameValidator implements IInputValidator {
 				return null;
 		}
 		catch(Exception iae) {
-			HibernateConsolePlugin.getDefault().log(iae);
+			HibernateBasePlugin.getDefault().log(iae);
 		}
 		return HibernateConsoleMessages.RenameAction_error_name;
 	}

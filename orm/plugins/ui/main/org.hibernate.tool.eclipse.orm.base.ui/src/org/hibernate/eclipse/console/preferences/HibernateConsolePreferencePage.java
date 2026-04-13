@@ -30,7 +30,7 @@ import org.eclipse.jface.preference.StringFieldEditor;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 
 /**
  * This class represents a preference page that
@@ -57,7 +57,7 @@ public class HibernateConsolePreferencePage
 
 	public HibernateConsolePreferencePage() {
 		super(GRID);
-		setPreferenceStore(HibernateConsolePlugin.getDefault().getPreferenceStore() );
+		setPreferenceStore(HibernateBasePlugin.getDefault().getPreferenceStore() );
 		setDescription(HibernateConsoleMessages.HibernateConsolePreferencePage_demo_of_pref_page_impl);
 		initializeDefaults();
 	}

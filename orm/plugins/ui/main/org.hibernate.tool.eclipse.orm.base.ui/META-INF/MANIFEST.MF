@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Hibernate ORM UI
 Bundle-SymbolicName: org.hibernate.tool.eclipse.orm.base.ui;singleton:=true
 Bundle-Version: 6.0.0.qualifier
-Bundle-Activator: org.hibernate.eclipse.console.HibernateConsolePlugin
+Bundle-Activator: org.hibernate.eclipse.console.HibernateBasePlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Export-Package: org.hibernate.eclipse.ui,

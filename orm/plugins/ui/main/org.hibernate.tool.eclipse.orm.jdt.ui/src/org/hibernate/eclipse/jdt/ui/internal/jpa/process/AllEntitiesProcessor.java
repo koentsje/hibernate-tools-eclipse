@@ -31,7 +31,7 @@ import org.eclipse.jface.text.BadLocationException;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.text.edits.MalformedTreeException;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.jdt.ui.Activator;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.common.EntityInfo;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.common.EntityInfosCollection;
@@ -202,7 +202,7 @@ public class AllEntitiesProcessor implements IHibernateJPAWizardParams {
 			try {
 				bufferManager.disconnect(cs.path, LocationKind.IFILE, null);
 			} catch (CoreException e) {
-				HibernateConsolePlugin.getDefault().logErrorMessage("CoreException: ", e); //$NON-NLS-1$
+				HibernateBasePlugin.getDefault().logErrorMessage("CoreException: ", e); //$NON-NLS-1$
 			}
 		}
 		changes.clear();
@@ -219,15 +219,15 @@ public class AllEntitiesProcessor implements IHibernateJPAWizardParams {
 				try {
 					cs.textEdit.apply(document);
 				} catch (MalformedTreeException e) {
-					HibernateConsolePlugin.getDefault().logErrorMessage("MalformedTreeException: ", e); //$NON-NLS-1$
+					HibernateBasePlugin.getDefault().logErrorMessage("MalformedTreeException: ", e); //$NON-NLS-1$
 				} catch (BadLocationException e) {
-					HibernateConsolePlugin.getDefault().logErrorMessage("BadLocationException: ", e); //$NON-NLS-1$
+					HibernateBasePlugin.getDefault().logErrorMessage("BadLocationException: ", e); //$NON-NLS-1$
 				}
 				try {
 					// commit changes to underlying file
 					textFileBuffer.commit(null, true);
 				} catch (CoreException e) {
-					HibernateConsolePlugin.getDefault().logErrorMessage("CoreException: ", e); //$NON-NLS-1$
+					HibernateBasePlugin.getDefault().logErrorMessage("CoreException: ", e); //$NON-NLS-1$
 				}
 			}
 		}
@@ -265,7 +265,7 @@ public class AllEntitiesProcessor implements IHibernateJPAWizardParams {
 				try {
 					bufferManager.connect(path, LocationKind.IFILE, null);
 				} catch (CoreException e) {
-					HibernateConsolePlugin.getDefault().logErrorMessage("CoreException: ", e); //$NON-NLS-1$
+					HibernateBasePlugin.getDefault().logErrorMessage("CoreException: ", e); //$NON-NLS-1$
 				}
 			}
 			final EntityInfo entityInfo = entry.getValue();

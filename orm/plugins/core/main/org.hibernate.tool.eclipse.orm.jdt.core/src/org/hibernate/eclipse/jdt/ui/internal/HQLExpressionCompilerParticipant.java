@@ -96,7 +96,7 @@ public class HQLExpressionCompilerParticipant extends CompilationParticipant {
 			}
 		}
 		catch(CoreException e){
-			HibernateConsolePlugin.getDefault().logErrorMessage( "Unable to delete batch hql markers", e); 
+			HibernateBasePlugin.getDefault().logErrorMessage( "Unable to delete batch hql markers", e); 
 		}*/
 		super.cleanStarting( javaProject );
 	}

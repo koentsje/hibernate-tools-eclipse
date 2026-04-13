@@ -43,7 +43,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.internal.dialogs.PropertyDialog;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.util.xpl.StringHelper;
 
 /**
@@ -182,7 +182,7 @@ public class ConnectionProfileCtrl {
 										: mProfilePage.getRepository()
 												.getName(), false);
 					} catch (ConnectionProfileException e) {
-						HibernateConsolePlugin.getDefault().log(e);
+						HibernateBasePlugin.getDefault().log(e);
 					}
 					return true;
 				}

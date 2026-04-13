@@ -27,7 +27,7 @@ import org.eclipse.jface.viewers.StructuredViewer;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.HibernateConsoleRuntimeException;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 
 /**
  * @author max
@@ -59,9 +59,9 @@ public class BuildSessionFactoryAction extends ConsoleConfigurationBasedAction {
             }
 
         	} catch(HibernateConsoleRuntimeException he) {
-        		 HibernateConsolePlugin.getDefault().showError(viewer.getControl().getShell(), HibernateConsoleMessages.BuildSessionFactoryAction_exception_while_start_hibernate,he);
+        		 HibernateBasePlugin.getDefault().showError(viewer.getControl().getShell(), HibernateConsoleMessages.BuildSessionFactoryAction_exception_while_start_hibernate,he);
         	} catch(UnsupportedClassVersionError ucve) {
-				 HibernateConsolePlugin.getDefault().showError(viewer.getControl().getShell(), HibernateConsoleMessages.BuildSessionFactoryAction_start_hibernate_resulted,ucve);
+				 HibernateBasePlugin.getDefault().showError(viewer.getControl().getShell(), HibernateConsoleMessages.BuildSessionFactoryAction_start_hibernate_resulted,ucve);
         	}
         }
 	}

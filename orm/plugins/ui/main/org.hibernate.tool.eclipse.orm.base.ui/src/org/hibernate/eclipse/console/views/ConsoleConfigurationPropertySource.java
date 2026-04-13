@@ -48,7 +48,7 @@ import org.hibernate.console.KnownConfigurations;
 import org.hibernate.console.preferences.ConsoleConfigurationPreferences;
 import org.hibernate.console.preferences.ConsoleConfigurationPreferences.ConfigurationMode;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.LaunchHelper;
 import org.hibernate.tool.eclipse.common.base.core.console.launch.IConsoleConfigurationLaunchConstants;
 
@@ -99,15 +99,15 @@ public class ConsoleConfigurationPropertySource implements IPropertySource {
 		ConsoleConfigurationPreferences preferences = cfg.getPreferences();
 		if ("project".equals(id)){ //$NON-NLS-1$
 			try {
-				ILaunchConfiguration lc = HibernateConsolePlugin.getDefault().findLaunchConfig(cfg.getName());
+				ILaunchConfiguration lc = HibernateBasePlugin.getDefault().findLaunchConfig(cfg.getName());
 				if (lc != null){
 					String projectName = lc.getAttribute(IJavaLaunchConfigurationConstants.ATTR_PROJECT_NAME, "");  //$NON-NLS-1$
 					return Arrays.binarySearch(getSortedProjectNames(), projectName);
 				} else {
-					HibernateConsolePlugin.getDefault().log("Can't find Console Configuration \"" + cfg.getName() + "\"");//$NON-NLS-1$//$NON-NLS-2$
+					HibernateBasePlugin.getDefault().log("Can't find Console Configuration \"" + cfg.getName() + "\"");//$NON-NLS-1$//$NON-NLS-2$
 				}
 			} catch (CoreException e) {
-				HibernateConsolePlugin.getDefault().log(e);
+				HibernateBasePlugin.getDefault().log(e);
 			}
 		}
 		if("mode".equals(id)) { //$NON-NLS-1$
@@ -122,7 +122,7 @@ public class ConsoleConfigurationPropertySource implements IPropertySource {
 		}
 		if("connection".equals(id)) { //$NON-NLS-1$
 			try {
-				ILaunchConfiguration lc = HibernateConsolePlugin.getDefault().findLaunchConfig(cfg.getName());
+				ILaunchConfiguration lc = HibernateBasePlugin.getDefault().findLaunchConfig(cfg.getName());
 				if (lc != null){
 					String connectionName = lc.getAttribute(IConsoleConfigurationLaunchConstants.CONNECTION_PROFILE_NAME, (String)null);  
 					if (connectionName == null){
@@ -140,10 +140,10 @@ public class ConsoleConfigurationPropertySource implements IPropertySource {
 						}
 					}
 				} else {
-					HibernateConsolePlugin.getDefault().log("Can't find Console Configuration \"" + cfg.getName() + "\"");//$NON-NLS-1$//$NON-NLS-2$
+					HibernateBasePlugin.getDefault().log("Can't find Console Configuration \"" + cfg.getName() + "\"");//$NON-NLS-1$//$NON-NLS-2$
 				}
 			} catch (CoreException e) {
-				HibernateConsolePlugin.getDefault().log(e);
+				HibernateBasePlugin.getDefault().log(e);
 			}
 		}
 		if("hibernate.cfg.xml".equals(id)) { //$NON-NLS-1$
@@ -177,7 +177,7 @@ public class ConsoleConfigurationPropertySource implements IPropertySource {
 			}
 			String oldName = cfg.getName();			
 			try {
-				ILaunchConfiguration lc = HibernateConsolePlugin.getDefault().findLaunchConfig(oldName);
+				ILaunchConfiguration lc = HibernateBasePlugin.getDefault().findLaunchConfig(oldName);
 				if (lc != null){
 					ILaunchConfigurationWorkingCopy wc = lc.getWorkingCopy();
 					wc.rename(newName);
@@ -185,29 +185,29 @@ public class ConsoleConfigurationPropertySource implements IPropertySource {
 					//find newly created console configuration
 					cfg = KnownConfigurations.getInstance().find(newName);
 				} else {
-					HibernateConsolePlugin.getDefault().log("Can't find Console Configuration \"" + oldName + "\"");//$NON-NLS-1$//$NON-NLS-2$
+					HibernateBasePlugin.getDefault().log("Can't find Console Configuration \"" + oldName + "\"");//$NON-NLS-1$//$NON-NLS-2$
 				}
 			} catch (CoreException e) {
-				HibernateConsolePlugin.getDefault().log(e);
+				HibernateBasePlugin.getDefault().log(e);
 			}
 		} else if ("mode".equals(id) && value instanceof Integer){		//$NON-NLS-1$	
 			int index = (Integer) value;
 			try {
-				ILaunchConfiguration lc = HibernateConsolePlugin.getDefault().findLaunchConfig(cfg.getName());
+				ILaunchConfiguration lc = HibernateBasePlugin.getDefault().findLaunchConfig(cfg.getName());
 				if (lc != null){
 					ILaunchConfigurationWorkingCopy wc = lc.getWorkingCopy();
 					wc.setAttribute("org.hibernate.eclipse.launch.CONFIGURATION_FACTORY", ConfigurationMode.values()[index]);////$NON-NLS-1$
 					wc.doSave();
 				} else {
-					HibernateConsolePlugin.getDefault().log("Can't find Console Configuration \"" + cfg.getName() + "\"");//$NON-NLS-1$//$NON-NLS-2$
+					HibernateBasePlugin.getDefault().log("Can't find Console Configuration \"" + cfg.getName() + "\"");//$NON-NLS-1$//$NON-NLS-2$
 				}
 			} catch (CoreException e) {
-				HibernateConsolePlugin.getDefault().log("Can't find Console Configuration \"" + cfg.getName() + "\"");//$NON-NLS-1$//$NON-NLS-2$
+				HibernateBasePlugin.getDefault().log("Can't find Console Configuration \"" + cfg.getName() + "\"");//$NON-NLS-1$//$NON-NLS-2$
 			}			
 		}  else if ("project".equals(id) && value instanceof Integer){		//$NON-NLS-1$	
 			int index = (Integer) value;
 			try {
-				ILaunchConfiguration lc = HibernateConsolePlugin.getDefault().findLaunchConfig(cfg.getName());
+				ILaunchConfiguration lc = HibernateBasePlugin.getDefault().findLaunchConfig(cfg.getName());
 				if (lc != null){
 					ILaunchConfigurationWorkingCopy wc = lc.getWorkingCopy();
 					String projectName = getSortedProjectNames()[index];
@@ -222,15 +222,15 @@ public class ConsoleConfigurationPropertySource implements IPropertySource {
 					}
 					wc.doSave();
 				} else {
-					HibernateConsolePlugin.getDefault().log("Can't find Console Configuration \"" + cfg.getName() + "\"");//$NON-NLS-1$//$NON-NLS-2$
+					HibernateBasePlugin.getDefault().log("Can't find Console Configuration \"" + cfg.getName() + "\"");//$NON-NLS-1$//$NON-NLS-2$
 				}
 			} catch (CoreException e) {
-				HibernateConsolePlugin.getDefault().log("Can't find Console Configuration \"" + cfg.getName() + "\"");//$NON-NLS-1$//$NON-NLS-2$
+				HibernateBasePlugin.getDefault().log("Can't find Console Configuration \"" + cfg.getName() + "\"");//$NON-NLS-1$//$NON-NLS-2$
 			}
 		} else if ("connection".equals(id) && value instanceof Integer){		//$NON-NLS-1$	
 			int index = (Integer) value;
 			try {
-				ILaunchConfiguration lc = HibernateConsolePlugin.getDefault().findLaunchConfig(cfg.getName());
+				ILaunchConfiguration lc = HibernateBasePlugin.getDefault().findLaunchConfig(cfg.getName());
 				if (lc != null){
 					ILaunchConfigurationWorkingCopy wc = lc.getWorkingCopy();
 					if (index == 0){//jpa
@@ -246,10 +246,10 @@ public class ConsoleConfigurationPropertySource implements IPropertySource {
 					}
 					wc.doSave();
 				} else {
-					HibernateConsolePlugin.getDefault().log("Can't find Console Configuration \"" + cfg.getName() + "\"");//$NON-NLS-1$//$NON-NLS-2$
+					HibernateBasePlugin.getDefault().log("Can't find Console Configuration \"" + cfg.getName() + "\"");//$NON-NLS-1$//$NON-NLS-2$
 				}
 			} catch (CoreException e) {
-				HibernateConsolePlugin.getDefault().log("Can't find Console Configuration \"" + cfg.getName() + "\"");//$NON-NLS-1$//$NON-NLS-2$
+				HibernateBasePlugin.getDefault().log("Can't find Console Configuration \"" + cfg.getName() + "\"");//$NON-NLS-1$//$NON-NLS-2$
 			}
 		}
 	}
@@ -264,17 +264,17 @@ public class ConsoleConfigurationPropertySource implements IPropertySource {
 				if (value instanceof Integer){
 					if (((Integer)value).intValue() < 0){
 						try {
-							ILaunchConfiguration lc = HibernateConsolePlugin.getDefault().findLaunchConfig(cfg.getName());
+							ILaunchConfiguration lc = HibernateBasePlugin.getDefault().findLaunchConfig(cfg.getName());
 							if (lc != null){
 								String projectName = lc.getAttribute(IJavaLaunchConfigurationConstants.ATTR_PROJECT_NAME, (String)null);
 								if (projectName != null){
 									return NLS.bind(HibernateConsoleMessages.ConsoleConfigurationMainTab_the_java_project_does_not_exist, projectName);
 								}
 							} else {
-								HibernateConsolePlugin.getDefault().log("Can't find Console Configuration \"" + cfg.getName() + "\"");//$NON-NLS-1$//$NON-NLS-2$
+								HibernateBasePlugin.getDefault().log("Can't find Console Configuration \"" + cfg.getName() + "\"");//$NON-NLS-1$//$NON-NLS-2$
 							}
 						} catch (CoreException e) {
-							HibernateConsolePlugin.getDefault().log(e);
+							HibernateBasePlugin.getDefault().log(e);
 						}
 					}
 				}

@@ -76,7 +76,7 @@ public class HibernateConsolePerspectiveFactory implements IPerspectiveFactory {
 		
 		layout.setEditorAreaVisible(true);
 		
-		//HibernateConsolePlugin.getDefault().openScratchHQLEditor(null);
+		//HibernateBasePlugin.getDefault().openScratchHQLEditor(null);
 	}
 
 }

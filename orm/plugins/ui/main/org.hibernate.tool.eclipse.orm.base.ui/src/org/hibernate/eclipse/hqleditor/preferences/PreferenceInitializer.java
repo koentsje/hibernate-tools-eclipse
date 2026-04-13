@@ -5,7 +5,7 @@ import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.swt.graphics.RGB;
 
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 
 /**
  * Class used to initialize default preference values.
@@ -18,7 +18,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 	 * @see org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer#initializeDefaultPreferences()
 	 */
 	public void initializeDefaultPreferences() {
-		IPreferenceStore store = HibernateConsolePlugin.getDefault()
+		IPreferenceStore store = HibernateBasePlugin.getDefault()
 				.getPreferenceStore();
 		PreferenceConverter.setDefault( store, HQLPreferenceConstants.HQL_DEFAULT_COLOR, new RGB( 0, 0, 0 ) );
 		PreferenceConverter.setDefault( store, HQLPreferenceConstants.HQL_IDENTIFIER_COLOR, new RGB( 0, 128, 128 ) );

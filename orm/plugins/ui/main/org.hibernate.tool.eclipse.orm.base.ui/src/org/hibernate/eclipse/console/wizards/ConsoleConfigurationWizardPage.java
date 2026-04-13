@@ -71,7 +71,7 @@ import org.eclipse.ui.PlatformUI;
 import org.hibernate.console.preferences.ConsoleConfigurationPreferences.ConfigurationMode;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.EclipseConsoleConfiguration;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.console.actions.AddConfigurationAction;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.LaunchHelper;
 import org.hibernate.eclipse.launch.ConsoleConfigurationJavaClasspathTab;
@@ -182,7 +182,7 @@ public class ConsoleConfigurationWizardPage extends WizardPage implements
 		try {
 			performStart();
 		} catch (CoreException ce) {
-			HibernateConsolePlugin
+			HibernateBasePlugin
 				.getDefault().showError(getShell(),
 					HibernateConsoleMessages.AddConfigurationAction_problem_add_console_config,
 					ce);
@@ -190,7 +190,7 @@ public class ConsoleConfigurationWizardPage extends WizardPage implements
 		try {
 			initialize(currentLaunchConfig, selection);
 		} catch (CoreException ce) {
-			HibernateConsolePlugin
+			HibernateBasePlugin
 				.getDefault().logErrorMessage(
 					HibernateConsoleMessages.ConsoleConfigurationWizardPage_problem_while_initializing_cc,
 					ce);
@@ -560,7 +560,7 @@ public class ConsoleConfigurationWizardPage extends WizardPage implements
 			}
 			initialize(currentLaunchConfig, new StructuredSelection(resource));
 		} catch (CoreException e) {
-			HibernateConsolePlugin.getDefault().logErrorMessage(
+			HibernateBasePlugin.getDefault().logErrorMessage(
 				HibernateConsoleMessages.ConsoleConfigurationWizardPage_problem_while_initializing_cc, e);
 		}
 		if (flagFileWillBeCreated) {

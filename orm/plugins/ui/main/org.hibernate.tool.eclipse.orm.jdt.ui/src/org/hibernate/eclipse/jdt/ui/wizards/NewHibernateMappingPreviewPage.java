@@ -42,7 +42,7 @@ import org.eclipse.ltk.internal.ui.refactoring.PreviewWizardPage;
 import org.eclipse.text.edits.MalformedTreeException;
 import org.eclipse.text.edits.ReplaceEdit;
 import org.eclipse.text.edits.TextEdit;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.utils.FileUtils;
 
 /**
@@ -93,7 +93,7 @@ public class NewHibernateMappingPreviewPage extends PreviewWizardPage {
 			try {
 				bufferManager.disconnect(filePathTo_Show, LocationKind.IFILE, null);
 			} catch (CoreException e) {
-				HibernateConsolePlugin.getDefault().logErrorMessage("CoreException: ", e); //$NON-NLS-1$
+				HibernateBasePlugin.getDefault().logErrorMessage("CoreException: ", e); //$NON-NLS-1$
 			}
 		}
 		paths2Disconnect.clear();
@@ -119,15 +119,15 @@ public class NewHibernateMappingPreviewPage extends PreviewWizardPage {
 				try {
 					tfc.getEdit().apply(document);
 				} catch (MalformedTreeException e) {
-					HibernateConsolePlugin.getDefault().logErrorMessage("MalformedTreeException: ", e); //$NON-NLS-1$
+					HibernateBasePlugin.getDefault().logErrorMessage("MalformedTreeException: ", e); //$NON-NLS-1$
 				} catch (BadLocationException e) {
-					HibernateConsolePlugin.getDefault().logErrorMessage("BadLocationException: ", e); //$NON-NLS-1$
+					HibernateBasePlugin.getDefault().logErrorMessage("BadLocationException: ", e); //$NON-NLS-1$
 				}
 				try {
 					// commit changes to underlying file
 					textFileBuffer.commit(null, true);
 				} catch (CoreException e) {
-					HibernateConsolePlugin.getDefault().logErrorMessage("CoreException: ", e); //$NON-NLS-1$
+					HibernateBasePlugin.getDefault().logErrorMessage("CoreException: ", e); //$NON-NLS-1$
 				}
 			}
 		}
@@ -151,7 +151,7 @@ public class NewHibernateMappingPreviewPage extends PreviewWizardPage {
 				try {
 					n = bis.read(buff);
 				} catch (IOException e) {
-					HibernateConsolePlugin.getDefault().log(e);
+					HibernateBasePlugin.getDefault().log(e);
 				}
 				if (n == -1) {
 					break;
@@ -159,7 +159,7 @@ public class NewHibernateMappingPreviewPage extends PreviewWizardPage {
 				str.append(new String(buff, 0, n));
 			}
 		} catch (FileNotFoundException e) {
-			HibernateConsolePlugin.getDefault().log(e);
+			HibernateBasePlugin.getDefault().log(e);
 		} finally {
 			if (bis != null) {
 				try {
@@ -224,7 +224,7 @@ public class NewHibernateMappingPreviewPage extends PreviewWizardPage {
 					bufferManager.connect(filePathTo_Show, LocationKind.IFILE, null);
 					paths2Disconnect.add(filePathTo_Show);
 				} catch (CoreException e) {
-					HibernateConsolePlugin.getDefault().logErrorMessage("CoreException: ", e); //$NON-NLS-1$
+					HibernateBasePlugin.getDefault().logErrorMessage("CoreException: ", e); //$NON-NLS-1$
 				}
 				textFileBuffer = bufferManager.getTextFileBuffer(filePathTo_Show, LocationKind.IFILE);
 			}
@@ -298,7 +298,7 @@ public class NewHibernateMappingPreviewPage extends PreviewWizardPage {
 		try {
 			getChange().perform(new NullProgressMonitor());
 		} catch (CoreException e) {
-			HibernateConsolePlugin.getDefault().logErrorMessage("CoreException: ", e); //$NON-NLS-1$
+			HibernateBasePlugin.getDefault().logErrorMessage("CoreException: ", e); //$NON-NLS-1$
 		}
 		performDisconnect();
 		return true;

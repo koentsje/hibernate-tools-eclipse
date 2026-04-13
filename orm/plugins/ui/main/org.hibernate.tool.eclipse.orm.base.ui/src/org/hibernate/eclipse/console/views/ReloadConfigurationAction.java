@@ -7,7 +7,7 @@ import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.HibernateConsoleRuntimeException;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.console.actions.ConsoleConfigurationBasedAction;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 
@@ -36,11 +36,11 @@ public class ReloadConfigurationAction extends ConsoleConfigurationBasedAction {
 					viewer.refresh(node);
 				}
 			} catch (HibernateConsoleRuntimeException he) {
-				HibernateConsolePlugin.getDefault().showError(
+				HibernateBasePlugin.getDefault().showError(
 						viewer.getControl().getShell(),
 						HibernateConsoleMessages.ReloadConfigurationAction_exception_while_start_hibernate, he);
 			} catch (UnsupportedClassVersionError ucve) {
-				HibernateConsolePlugin
+				HibernateBasePlugin
 						.getDefault()
 						.showError(
 								viewer.getControl().getShell(),

@@ -36,7 +36,7 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.ui.IViewPart;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.LaunchHelper;
 
@@ -84,7 +84,7 @@ public class AddConfigurationAction extends Action {
 			}
 
 		} catch (CoreException ce) {
-			HibernateConsolePlugin.getDefault().showError( part.getSite().getShell(), HibernateConsoleMessages.AddConfigurationAction_problem_add_console_config,  ce);
+			HibernateBasePlugin.getDefault().showError( part.getSite().getShell(), HibernateConsoleMessages.AddConfigurationAction_problem_add_console_config,  ce);
 		}
 
 

@@ -27,7 +27,7 @@ import java.util.List;
 import java.util.Observable;
 
 import org.eclipse.swt.graphics.Image;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.ui.console.workbench.HibernateWorkbenchHelper;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IProperty;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IType;
@@ -96,7 +96,7 @@ public class PropertyViewAdapter extends Observable {
 				target.addTargetAssociation( pava );
 			}
 		} catch(Exception he) {
-			HibernateConsolePlugin.getDefault().logWarning( he );
+			HibernateBasePlugin.getDefault().logWarning( he );
 		}
 		
 		}

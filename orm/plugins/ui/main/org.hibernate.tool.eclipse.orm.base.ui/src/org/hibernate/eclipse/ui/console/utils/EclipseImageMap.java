@@ -31,7 +31,7 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
 import org.hibernate.console.ImageMap;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 
 /**
  * @author max
@@ -64,7 +64,7 @@ public class EclipseImageMap extends ImageMap {
 		try {
 			desc = ImageDescriptor.createFromURL(makeIconFileURL(path) );
 		} catch (MalformedURLException me) {
-			HibernateConsolePlugin.getDefault().log(me);
+			HibernateBasePlugin.getDefault().log(me);
 		}
 		imageRegistry.put(key, desc);
 		imageDescriptors.put(key, desc);

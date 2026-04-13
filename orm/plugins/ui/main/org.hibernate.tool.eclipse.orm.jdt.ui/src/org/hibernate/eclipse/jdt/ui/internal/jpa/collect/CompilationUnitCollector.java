@@ -129,7 +129,7 @@ public class CompilationUnitCollector {
 				pfr = javaProject.getAllPackageFragmentRoots();
 			} catch (JavaModelException e) {
 				// just ignore it!
-				//HibernateConsolePlugin.getDefault().logErrorMessage("JavaModelException: ", e); //$NON-NLS-1$
+				//HibernateBasePlugin.getDefault().logErrorMessage("JavaModelException: ", e); //$NON-NLS-1$
 			}
 			if (pfr != null) {
 				for (int i = 0; i < pfr.length; i++) {
@@ -143,7 +143,7 @@ public class CompilationUnitCollector {
 				cus = packageFragment.getCompilationUnits();
 			} catch (JavaModelException e) {
 				// just ignore it!
-				//HibernateConsolePlugin.getDefault().logErrorMessage("JavaModelException: ", e); //$NON-NLS-1$
+				//HibernateBasePlugin.getDefault().logErrorMessage("JavaModelException: ", e); //$NON-NLS-1$
 			}
 			if (cus != null && cus.length > 0) {
 				if (bCollect) {
@@ -161,7 +161,7 @@ public class CompilationUnitCollector {
 				javaElementInfo = (JavaElementInfo)javaElement.getElementInfo();
 			} catch (JavaModelException e) {
 				// just ignore it!
-				//HibernateConsolePlugin.getDefault().logErrorMessage("JavaModelException: ", e); //$NON-NLS-1$
+				//HibernateBasePlugin.getDefault().logErrorMessage("JavaModelException: ", e); //$NON-NLS-1$
 			}
 			if (javaElementInfo != null) {
 				IJavaElement[] je = javaElementInfo.getChildren();

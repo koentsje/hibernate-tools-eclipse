@@ -19,7 +19,7 @@ import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.IExportWizard;
 import org.eclipse.ui.IWorkbench;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 
 /**
  * Export wizard responsible to generate Ant code generation script
@@ -44,7 +44,7 @@ public class ExportAntCodeGenWizard extends Wizard implements IExportWizard {
      */
 	public ExportAntCodeGenWizard() {
 		setWindowTitle(HibernateConsoleMessages.ExportAntCodeGenWizard_title);
-		ImageDescriptor descriptor = HibernateConsolePlugin.getImageDescriptor("icons/images/newhibernate_wiz.gif"); //$NON-NLS-1$
+		ImageDescriptor descriptor = HibernateBasePlugin.getImageDescriptor("icons/images/newhibernate_wiz.gif"); //$NON-NLS-1$
 		setDefaultPageImageDescriptor(descriptor);
 	}
 
@@ -59,7 +59,7 @@ public class ExportAntCodeGenWizard extends Wizard implements IExportWizard {
 		try {
 			file.getParent().refreshLocal(IResource.DEPTH_ZERO, null);
 		} catch (CoreException e) {
-			HibernateConsolePlugin.getDefault()
+			HibernateBasePlugin.getDefault()
 				.logErrorMessage("Refresh parent: ", e); //$NON-NLS-1$
 		}
 		return true;
@@ -84,7 +84,7 @@ public class ExportAntCodeGenWizard extends Wizard implements IExportWizard {
 		this.workbench = workbench;
 		this.selection = currentSelection;
 		setWindowTitle(HibernateConsoleMessages.ExportAntCodeGenWizard_title);
-		ImageDescriptor descriptor = HibernateConsolePlugin.getImageDescriptor("icons/images/newhibernate_wiz.gif"); //$NON-NLS-1$
+		ImageDescriptor descriptor = HibernateBasePlugin.getImageDescriptor("icons/images/newhibernate_wiz.gif"); //$NON-NLS-1$
 		setDefaultPageImageDescriptor(descriptor);
 	}
 

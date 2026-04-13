@@ -27,7 +27,7 @@ import java.util.List;
 import org.eclipse.jface.viewers.StructuredViewer;
 import org.eclipse.ui.actions.SelectionListenerAction;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 
 /**
  * @author max
@@ -43,7 +43,7 @@ public class RefreshAction extends SelectionListenerAction {
 	public RefreshAction(StructuredViewer viewer) {
 		super(HibernateConsoleMessages.RefreshAction_refresh);
 		this.viewer = viewer;
-		setImageDescriptor(HibernateConsolePlugin.getImageDescriptor(imageFilePath  ));
+		setImageDescriptor(HibernateBasePlugin.getImageDescriptor(imageFilePath  ));
 		setId(REFRESH_ACTIONID);
 	}
 

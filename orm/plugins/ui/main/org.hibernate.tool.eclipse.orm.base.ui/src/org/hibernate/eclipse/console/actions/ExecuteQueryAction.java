@@ -27,7 +27,7 @@ import org.eclipse.swt.widgets.Event;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.QueryEditor;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.eclipse.console.workbench.ProjectCompilerVersionChecker;
@@ -72,8 +72,8 @@ public class ExecuteQueryAction extends Action {
 			    				try {
 			    					cfg.build();
 			    				} catch (Exception he) {
-			    					HibernateConsolePlugin.getDefault().showError(
-			    						HibernateConsolePlugin.getShell(), 
+			    					HibernateBasePlugin.getDefault().showError(
+			    						HibernateBasePlugin.getShell(), 
 			    						HibernateConsoleMessages.LoadConsoleCFGCompletionProposal_could_not_load_configuration +
 			    						' ' + cfg.getName(), he);
 			    				}
@@ -90,7 +90,7 @@ public class ExecuteQueryAction extends Action {
 			} 
 		
 		} catch (Throwable t) {
-			HibernateConsolePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.ExecuteQueryAction_problems_while_executing_query, t);
+			HibernateBasePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.ExecuteQueryAction_problems_while_executing_query, t);
 		}
 		
 	}

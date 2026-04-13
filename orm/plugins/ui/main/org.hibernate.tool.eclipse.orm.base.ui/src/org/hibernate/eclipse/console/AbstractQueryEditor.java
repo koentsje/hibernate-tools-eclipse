@@ -88,7 +88,7 @@ public abstract class AbstractQueryEditor extends TextEditor implements
 	
 	final public boolean askUserForConfiguration(String name) {
 		String out = NLS.bind(HibernateConsoleMessages.AbstractQueryEditor_do_you_want_open_session_factory, name);
-		return MessageDialog.openQuestion( HibernateConsolePlugin.getDefault()
+		return MessageDialog.openQuestion( HibernateBasePlugin.getDefault()
 				.getWorkbench().getActiveWorkbenchWindow().getShell(),
 				HibernateConsoleMessages.AbstractQueryEditor_open_session_factory, out );
 	}
@@ -138,7 +138,7 @@ public abstract class AbstractQueryEditor extends TextEditor implements
 			updateExecButton();
 		}
 		catch (CoreException e) {
-			HibernateConsolePlugin.getDefault().logErrorMessage(
+			HibernateBasePlugin.getDefault().logErrorMessage(
 					HibernateConsoleMessages.AbstractQueryEditor_could_not_show_query_editor_input, e );
 		}
 	}
@@ -310,7 +310,7 @@ public abstract class AbstractQueryEditor extends TextEditor implements
 		defTitleImage = getTitleImage();
 		setPartName(defPartName + "->" + editor.getTitle()); //$NON-NLS-1$
 		if (connectedTitleImage == null){
-			connectedTitleImage = HibernateConsolePlugin.getImageDescriptor(getConnectedImageFilePath()).createImage();
+			connectedTitleImage = HibernateBasePlugin.getImageDescriptor(getConnectedImageFilePath()).createImage();
 		}
 		setTitleImage(connectedTitleImage);
 	}
@@ -381,7 +381,7 @@ public abstract class AbstractQueryEditor extends TextEditor implements
 			try {
 				fileStore= EFS.getStore(localFile.toURI());
 			} catch (CoreException ex) {
-				HibernateConsolePlugin.getDefault().log(ex.getStatus());
+				HibernateBasePlugin.getDefault().log(ex.getStatus());
 				String title= HibernateConsoleMessages.AbstractQueryEditor_problems_during_save_as;
 				String msg= MessageFormat.format(HibernateConsoleMessages.AbstractQueryEditor_save_could_not_be_completed, ex.getMessage());
 				MessageDialog.openError(shell, title, msg);

@@ -44,7 +44,7 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.ui.ide.IDE;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.jdt.ui.internal.JdtUiMessages;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.common.EntityInfo;
 
@@ -63,7 +63,7 @@ public class NewHibernateMappingFilePage extends WizardPage {
 	
 	private final ImageDescriptorRegistry registry = JavaPlugin.getImageDescriptorRegistry();
 	
-	private final Image hibMapping = HibernateConsolePlugin.getImageDescriptor("icons/images/hibernate_mapping.gif").createImage(); //$NON-NLS-1$
+	private final Image hibMapping = HibernateBasePlugin.getImageDescriptor("icons/images/hibernate_mapping.gif").createImage(); //$NON-NLS-1$
 	
 	/**
 	 * @param pageName

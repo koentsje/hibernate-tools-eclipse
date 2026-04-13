@@ -13,7 +13,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.LaunchHelper;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.ProjectUtils;
 import org.hibernate.tool.eclipse.common.base.core.console.launch.IConsoleConfigurationLaunchConstants;
@@ -76,7 +76,7 @@ public class AnalyzersCombo {
 					comboControl.setItems(typesList.toArray(new String[0]));		
 					comboControl.setText(DEFAULT_ANALYZER);
 				} catch (JavaModelException e) {
-					HibernateConsolePlugin.getDefault().log(e);
+					HibernateBasePlugin.getDefault().log(e);
 				}
 			}
 		});

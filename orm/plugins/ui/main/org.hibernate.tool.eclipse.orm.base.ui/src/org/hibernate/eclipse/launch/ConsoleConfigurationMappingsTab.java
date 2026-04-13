@@ -18,7 +18,7 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableItem;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.console.utils.DialogSelectionHelper;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.eclipse.console.wizards.UpDownListComposite;
@@ -92,7 +92,7 @@ public class ConsoleConfigurationMappingsTab extends ConsoleConfigurationTab {
 			mappingFilesViewer.add(mapA, false);
 		}
 		catch (CoreException e) {
-			HibernateConsolePlugin.getDefault().log( e );
+			HibernateBasePlugin.getDefault().log( e );
 		}
 	}
 

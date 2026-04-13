@@ -36,7 +36,7 @@ import org.eclipse.jface.text.contentassist.IContextInformation;
 import org.eclipse.jface.text.contentassist.IContextInformationValidator;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.QueryEditor;
 import org.hibernate.eclipse.ui.console.common.CompletionProposalsResult;
 import org.hibernate.eclipse.launch.exporter.ConsoleExtension;
@@ -86,7 +86,7 @@ public class HQLCompletionProcessor implements IContentAssistProcessor {
         catch (BadLocationException x) {
         }
         catch (RuntimeException re) {
-        	HibernateConsolePlugin.getDefault().logErrorMessage( HibernateConsoleMessages.HQLCompletionProcessor_error_while_performing_hql_completion, re );
+        	HibernateBasePlugin.getDefault().logErrorMessage( HibernateConsoleMessages.HQLCompletionProcessor_error_while_performing_hql_completion, re );
         }
 
         if (result != null)

@@ -51,7 +51,7 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.hibernate.console.QueryPage;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 
 
 /**
@@ -122,7 +122,7 @@ public class QueryPageViewer {
 					return ensureNotNull(objects);
 				} else {
 					Throwable[] throwables = qp.getExceptions().toArray(new Throwable[0]);
-					HibernateConsolePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.QueryPageViewer_exception_while_executing_hql_query, throwables);
+					HibernateBasePlugin.getDefault().logErrorMessage(HibernateConsoleMessages.QueryPageViewer_exception_while_executing_hql_query, throwables);
 					return throwables; // TODO: provide actual error page
 				}
 			} else {

@@ -31,7 +31,7 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.LaunchHelper;
 
 /**
@@ -67,14 +67,14 @@ public class EditConsoleConfiguration extends ConsoleConfigurationBasedAction {
 						edit( config );
 					}
 				} catch(Exception he) {
-					HibernateConsolePlugin.getDefault().showError(null, HibernateConsoleMessages.EditConsoleConfiguration_exception_while_edit_config, he);
+					HibernateBasePlugin.getDefault().showError(null, HibernateConsoleMessages.EditConsoleConfiguration_exception_while_edit_config, he);
 				}
 			}
 		} else {
 			try {
 				edit(cfg);
 			} catch(Exception he) {
-				HibernateConsolePlugin.getDefault().showError(null, HibernateConsoleMessages.EditConsoleConfiguration_exception_while_edit_config, he);
+				HibernateBasePlugin.getDefault().showError(null, HibernateConsoleMessages.EditConsoleConfiguration_exception_while_edit_config, he);
 			}
 		}
 	}
@@ -88,9 +88,9 @@ public class EditConsoleConfiguration extends ConsoleConfigurationBasedAction {
 				return;
 			}
 			String out = NLS.bind(HibernateConsoleMessages.EditConsoleConfiguration_could_not_find_launch_cfg, config.getName());
-			HibernateConsolePlugin.getDefault().showError(win.getShell(), out, new IllegalStateException(HibernateConsoleMessages.EditConsoleConfiguration_no_launch_cfg_matched + config.getName()));
+			HibernateBasePlugin.getDefault().showError(win.getShell(), out, new IllegalStateException(HibernateConsoleMessages.EditConsoleConfiguration_no_launch_cfg_matched + config.getName()));
 		} catch (CoreException ce) {
-			HibernateConsolePlugin.getDefault().showError( win.getShell(), HibernateConsoleMessages.EditConsoleConfiguration_problem_adding_console_cfg,  ce);
+			HibernateBasePlugin.getDefault().showError( win.getShell(), HibernateConsoleMessages.EditConsoleConfiguration_problem_adding_console_cfg,  ce);
 		}
 	}
 

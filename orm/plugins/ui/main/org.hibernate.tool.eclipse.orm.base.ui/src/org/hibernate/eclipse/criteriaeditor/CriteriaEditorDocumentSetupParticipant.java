@@ -26,7 +26,7 @@ import org.eclipse.jdt.ui.text.JavaTextTools;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.text.IDocumentExtension3;
 import org.eclipse.jface.text.IDocumentPartitioner;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 
 public class CriteriaEditorDocumentSetupParticipant {
 
@@ -36,7 +36,7 @@ public class CriteriaEditorDocumentSetupParticipant {
 	 * @see org.eclipse.core.filebuffers.IDocumentSetupParticipant#setup(org.eclipse.jface.text.IDocument)
 	 */
 	public void setup( IDocument document ) {
-		JavaTextTools tools= HibernateConsolePlugin.getDefault().getJavaTextTools();
+		JavaTextTools tools= HibernateBasePlugin.getDefault().getJavaTextTools();
 		IDocumentPartitioner partitioner= tools.createDocumentPartitioner();
 		partitioner.connect(document);
 		if (document instanceof IDocumentExtension3) {

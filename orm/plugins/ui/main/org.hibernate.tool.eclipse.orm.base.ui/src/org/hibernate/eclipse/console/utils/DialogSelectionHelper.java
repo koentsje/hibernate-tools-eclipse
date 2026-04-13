@@ -46,7 +46,7 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.eclipse.ui.dialogs.FilteredList;
 import org.eclipse.ui.dialogs.SelectionDialog;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.ProjectUtils;
 
 /**
@@ -66,7 +66,7 @@ public class DialogSelectionHelper extends org.hibernate.eclipse.console.utils.x
 		try {
 			projects= JavaCore.create(ResourcesPlugin.getWorkspace().getRoot() ).getJavaProjects();
 		} catch (JavaModelException e) {
-			HibernateConsolePlugin.getDefault().log(e.getStatus() );
+			HibernateBasePlugin.getDefault().log(e.getStatus() );
 			projects= new IJavaProject[0];
 		}
 		

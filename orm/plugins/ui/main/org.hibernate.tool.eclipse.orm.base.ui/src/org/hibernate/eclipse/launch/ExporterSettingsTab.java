@@ -87,7 +87,7 @@ import org.eclipse.ui.views.properties.PropertySheetPage;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.eclipse.launch.ExtensionManager;
 import org.hibernate.tool.eclipse.common.base.core.console.HibernateConsoleMessages;
-import org.hibernate.eclipse.console.HibernateConsolePlugin;
+import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.launch.model.ExporterFactoryStrings;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.hibernate.eclipse.launch.model.ExporterDefinition;
@@ -924,7 +924,7 @@ public class ExporterSettingsTab extends AbstractLaunchConfigurationTab {
 
 		}
 		catch (CoreException ce) {
-			HibernateConsolePlugin
+			HibernateBasePlugin
 					.getDefault()
 					.logErrorMessage(
 							HibernateConsoleMessages.ExporterSettingsTab_problem_when_reading_hibernate_tools_launch_configuration,
@@ -938,7 +938,7 @@ public class ExporterSettingsTab extends AbstractLaunchConfigurationTab {
 		if (control instanceof Tree && !control.isDisposed()) {
 			Tree tree = (Tree)control;
 			TreeColumn[] columns = tree.getColumns();
-			IPreferenceStore preferenceStore = HibernateConsolePlugin.getDefault().getPreferenceStore();
+			IPreferenceStore preferenceStore = HibernateBasePlugin.getDefault().getPreferenceStore();
 			int colWidth_0 = preferenceStore.getInt(EXPORTERS_PROPERTIES_COLUMN_PROPERTY_WIDTH);
 			int colWidth_1 = preferenceStore.getInt(EXPORTERS_PROPERTIES_COLUMN_VALUE_WIDTH);
 			if (colWidth_0 > 0 && colWidth_1 > 0) {
@@ -972,7 +972,7 @@ public class ExporterSettingsTab extends AbstractLaunchConfigurationTab {
 		if (control != null) {
 			if (control instanceof Tree && !control.isDisposed()) {
 				Tree tree = (Tree)control;
-				IPreferenceStore preferenceStore = HibernateConsolePlugin.getDefault().getPreferenceStore();
+				IPreferenceStore preferenceStore = HibernateBasePlugin.getDefault().getPreferenceStore();
 				TreeColumn[] columns = tree.getColumns();
 				preferenceStore.setValue(EXPORTERS_PROPERTIES_COLUMN_PROPERTY_WIDTH, columns[0].getWidth());
 				preferenceStore.setValue(EXPORTERS_PROPERTIES_COLUMN_VALUE_WIDTH, columns[1].getWidth());
