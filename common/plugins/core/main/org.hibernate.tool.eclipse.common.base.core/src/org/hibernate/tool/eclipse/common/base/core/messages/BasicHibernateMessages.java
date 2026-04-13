@@ -1,4 +1,4 @@
-package org.hibernate.tool.eclipse.common.base.core.console;
+package org.hibernate.tool.eclipse.common.base.core.messages;
 
 import org.eclipse.osgi.util.NLS;
 

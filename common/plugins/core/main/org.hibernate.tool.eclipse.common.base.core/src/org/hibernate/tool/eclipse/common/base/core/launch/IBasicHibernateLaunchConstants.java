@@ -1,4 +1,4 @@
-package org.hibernate.tool.eclipse.common.base.core.console.launch;
+package org.hibernate.tool.eclipse.common.base.core.launch;
 
 import org.eclipse.jdt.launching.IJavaLaunchConfigurationConstants;
 
