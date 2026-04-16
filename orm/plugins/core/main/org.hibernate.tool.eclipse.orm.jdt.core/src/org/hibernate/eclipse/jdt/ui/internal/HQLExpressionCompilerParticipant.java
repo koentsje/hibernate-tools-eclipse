@@ -13,7 +13,7 @@ import org.eclipse.jdt.core.dom.CompilationUnit;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateProjectConsoleManager;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.ProjectUtils;
-import org.hibernate.tool.eclipse.orm.resources.HibernateNature;
+import org.hibernate.tool.eclipse.orm.project.HibernateNature;
 
 public class HQLExpressionCompilerParticipant extends CompilationParticipant {
 

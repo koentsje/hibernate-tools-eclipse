@@ -19,7 +19,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.hibernate.tool.eclipse.orm.facet;
+package org.hibernate.tool.eclipse.orm.project;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;

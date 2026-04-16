@@ -58,7 +58,7 @@ import org.hibernate.tool.eclipse.orm.console.core.eclipse.properties.HibernateP
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.LaunchHelper;
 import org.hibernate.eclipse.launch.HibernateLaunchConstants;
 import org.hibernate.tool.eclipse.common.base.core.launch.IBasicHibernateLaunchConstants;
-import org.hibernate.tool.eclipse.orm.resources.HibernateNature;
+import org.hibernate.tool.eclipse.orm.project.HibernateNature;
 import org.osgi.service.prefs.Preferences;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;

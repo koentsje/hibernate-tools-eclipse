@@ -11,7 +11,7 @@
 
 package org.hibernate.tool.eclipse.orm.console.core.eclipse.properties;
 
-import org.hibernate.tool.eclipse.orm.resources.HibernateNature;
+import org.hibernate.tool.eclipse.orm.project.HibernateNature;
 
 /**
  * @author Dmitry Geraskov
