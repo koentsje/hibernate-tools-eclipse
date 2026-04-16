@@ -61,9 +61,9 @@ import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.ui.part.IPageSite;
 import org.eclipse.ui.part.Page;
-import org.hibernate.console.ConsoleQueryParameter;
 import org.hibernate.console.ImageConstants;
-import org.hibernate.console.QueryInputModel;
+import org.hibernate.tool.eclipse.orm.query.QueryParameter;
+import org.hibernate.tool.eclipse.orm.query.QueryInputModel;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.QueryEditor;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
@@ -180,8 +180,8 @@ public class QueryParametersPage extends Page implements IQueryParametersPage {
 			public void selectionChanged(SelectionChangedEvent event) {
 				if(statusLabel!=null) {
 					Object firstElement = ((IStructuredSelection)tableViewer.getSelection()).getFirstElement();
-					if(firstElement instanceof ConsoleQueryParameter) {
-						statusLabel.setText(BasicHibernateMessages.QueryParametersPage_format + ((ConsoleQueryParameter)firstElement).getDefaultFormat());
+					if(firstElement instanceof QueryParameter) {
+						statusLabel.setText(BasicHibernateMessages.QueryParametersPage_format + ((QueryParameter)firstElement).getDefaultFormat());
 					} else {
 						statusLabel.setText(""); //$NON-NLS-1$
 					}
@@ -203,7 +203,7 @@ public class QueryParametersPage extends Page implements IQueryParametersPage {
 
 			public void modify(Object element, String property, Object value) {
 				TableItem item = (TableItem) element;
-				ConsoleQueryParameter cqp = (ConsoleQueryParameter) item
+				QueryParameter cqp = (QueryParameter) item
 						.getData();
 				if ( NAME_PROPERTY.equals( property ) ) {
 					cqp.setName( (String) value );
@@ -253,7 +253,7 @@ public class QueryParametersPage extends Page implements IQueryParametersPage {
 			}
 
 			public Object getValue(Object element, String property) {
-				ConsoleQueryParameter cqp = (ConsoleQueryParameter) element;
+				QueryParameter cqp = (QueryParameter) element;
 				if ( NAME_PROPERTY.equals( property ) ) {
 					return cqp.getName();
 				}
@@ -316,9 +316,9 @@ public class QueryParametersPage extends Page implements IQueryParametersPage {
 			
 			public void activate() {
 				Object param = ((IStructuredSelection) tableViewer.getSelection()).getFirstElement();
-				if (param instanceof ConsoleQueryParameter) {
+				if (param instanceof QueryParameter) {
 					try {
-						Integer.parseInt(((ConsoleQueryParameter) param).getName());
+						Integer.parseInt(((QueryParameter) param).getName());
 						// "ordered" parameter doesn't allow list value
 						// see also HQLQueryPage#setupParameters()
 						b.setVisible(false);
@@ -355,7 +355,7 @@ public class QueryParametersPage extends Page implements IQueryParametersPage {
 			}
 
 			public String getColumnText(Object element, int columnIndex) {
-				ConsoleQueryParameter cqp = (ConsoleQueryParameter) element;
+				QueryParameter cqp = (QueryParameter) element;
 
 				switch (columnIndex) {
 				case 0:
@@ -379,7 +379,7 @@ public class QueryParametersPage extends Page implements IQueryParametersPage {
 
 			public Image getColumnImage(Object element, int columnIndex) {
 				if(columnIndex==3) {
-					ConsoleQueryParameter cqp = (ConsoleQueryParameter) element;
+					QueryParameter cqp = (QueryParameter) element;
 					return cqp.isNull()?EclipseImages.getImage( ImageConstants.CHECKBOX_FULL ):EclipseImages.getImage( ImageConstants.CHECKBOX_EMPTY );
 				} else {
 					return null;
@@ -409,11 +409,11 @@ public class QueryParametersPage extends Page implements IQueryParametersPage {
 		}
 
 		public void run() {
-			ConsoleQueryParameter[] queryParameters = model.getQueryParameters();
+			QueryParameter[] queryParameters = model.getQueryParameters();
 
-			Map<String, ConsoleQueryParameter> qp = new HashMap<String, ConsoleQueryParameter>();
+			Map<String, QueryParameter> qp = new HashMap<String, QueryParameter>();
 			for (int i = 0; i < queryParameters.length; i++) {
-				ConsoleQueryParameter parameter = queryParameters[i];
+				QueryParameter parameter = queryParameters[i];
 				qp.put(parameter.getName(), parameter);
 			}
 
@@ -421,7 +421,7 @@ public class QueryParametersPage extends Page implements IQueryParametersPage {
 
 			String queryString = editor.getQueryString();
 
-			ConsoleQueryParameter cqp = null;
+			QueryParameter cqp = null;
 			int[] positions = StringHelper.locateUnquoted( queryString, '?' );
 			for (int i = 0; i < positions.length; i++) {
 				cqp = qp.get(""+i); //$NON-NLS-1$
@@ -469,7 +469,7 @@ public class QueryParametersPage extends Page implements IQueryParametersPage {
 			Object firstElement = ((IStructuredSelection)tableViewer.getSelection()).getFirstElement();
 			if(firstElement!=null) {
 				tableViewer.cancelEditing();
-				model.removeParameter((ConsoleQueryParameter) firstElement);
+				model.removeParameter((QueryParameter) firstElement);
 				if(model.getParameterCount()>0) {
 					tableViewer.setSelection(new StructuredSelection(model.getQueryParameters()[0]));
 				}

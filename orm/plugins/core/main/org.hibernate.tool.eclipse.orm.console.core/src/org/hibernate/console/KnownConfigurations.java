@@ -47,9 +47,12 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.PrintStream;
 
 import org.hibernate.console.node.BaseNode;
+import org.hibernate.console.node.ConfigurationListNode;
 import org.hibernate.tool.eclipse.common.base.core.logging.LoggingStreamProvider;
 import org.hibernate.tool.eclipse.common.base.core.logging.PluginLogAppender;
-import org.hibernate.console.node.ConfigurationListNode;
+import org.hibernate.tool.eclipse.orm.query.QueryPage;
+import org.hibernate.tool.eclipse.orm.query.QueryPageModel;
+import org.hibernate.tool.eclipse.orm.query.QueryParameter;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -336,13 +339,13 @@ public class KnownConfigurations  {
 		xformer.transform(source, result);
 	}
 
-	List<ConsoleQueryParameter> queryParameters = new ArrayList<ConsoleQueryParameter>();
+	List<QueryParameter> queryParameters = new ArrayList<QueryParameter>();
 
-	public ConsoleQueryParameter[] getQueryParameters() {
-		return queryParameters.toArray(new ConsoleQueryParameter[queryParameters.size()]);
+	public QueryParameter[] getQueryParameters() {
+		return queryParameters.toArray(new QueryParameter[queryParameters.size()]);
 	}
 
-	public List<ConsoleQueryParameter> getQueryParameterList() {
+	public List<QueryParameter> getQueryParameterList() {
 		return queryParameters;
 	}
 

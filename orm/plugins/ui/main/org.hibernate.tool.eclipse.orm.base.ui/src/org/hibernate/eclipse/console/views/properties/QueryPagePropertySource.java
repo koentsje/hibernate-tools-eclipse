@@ -26,7 +26,7 @@ import org.eclipse.ui.views.properties.IPropertyDescriptor;
 import org.eclipse.ui.views.properties.IPropertySource2;
 import org.eclipse.ui.views.properties.PropertyDescriptor;
 import org.eclipse.ui.views.properties.TextPropertyDescriptor;
-import org.hibernate.console.QueryPage;
+import org.hibernate.tool.eclipse.orm.query.QueryPage;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 
 public class QueryPagePropertySource implements IPropertySource2
@@ -101,7 +101,7 @@ public class QueryPagePropertySource implements IPropertySource2
 
 	public Object getPropertyValue(Object id) {
 		if(CONFIGURATION_TEXT.equals(id) ) {
-			return page.getHibernateExtension().getConsoleConfigurationName();
+			return page.getConsoleConfigurationName();
 		}
 		if(QUERY_TEXT.equals(id) ) {
 			return page.getQueryString();

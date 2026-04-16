@@ -27,10 +27,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import org.hibernate.console.AbstractQueryPage;
 import org.hibernate.console.ConsoleMessages;
 import org.hibernate.console.IHibernateExtension;
-import org.hibernate.console.QueryInputModel;
+import org.hibernate.tool.eclipse.orm.query.AbstractQueryPage;
+import org.hibernate.tool.eclipse.orm.query.QueryInputModel;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ICriteria;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ISession;
 
@@ -55,7 +55,7 @@ public class JavaPage extends AbstractQueryPage {
      * @param session2
      */
     public JavaPage(IHibernateExtension extension, String criteriaCode, QueryInputModel model) {
-		super(extension, model);
+		super(extension.getConsoleConfigurationName(), model);
         this.criteriaCode =  criteriaCode;
 		setTabName(getQueryString().replace('\n', ' ').replace('\r', ' '));
     }

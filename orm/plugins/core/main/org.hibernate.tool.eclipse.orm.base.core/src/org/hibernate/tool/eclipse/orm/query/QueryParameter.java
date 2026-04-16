@@ -19,35 +19,35 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.hibernate.console;
+package org.hibernate.tool.eclipse.orm.query;
 
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IType;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ITypeFactory;
 
 
-public class ConsoleQueryParameter {
+public class QueryParameter {
 
 	static private final Object NULL_MARKER = null; //new Object() { public String toString() { return "[null]"; } };
-	
+
 	private ITypeFactory typeFactory;
-	
+
 	String name;
 	IType type;
 	Object value;
-	
-	public ConsoleQueryParameter(IService service, ConsoleQueryParameter cqp) {
+
+	public QueryParameter(IService service, QueryParameter cqp) {
 		this(service);
 		name = cqp.name;
 		type = cqp.type;
 		value = cqp.value;
 	}
 
-	public ConsoleQueryParameter(IService service) {
+	public QueryParameter(IService service) {
 		this.typeFactory = service.newTypeFactory();
 	}
 
-	public ConsoleQueryParameter(IService service, String name, IType type, Object value) {
+	public QueryParameter(IService service, String name, IType type, Object value) {
 		this(service);
 		this.name = name;
 		this.type = type;

@@ -27,10 +27,10 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-import org.hibernate.console.AbstractQueryPage;
-import org.hibernate.console.ConsoleQueryParameter;
 import org.hibernate.console.IHibernateExtension;
-import org.hibernate.console.QueryInputModel;
+import org.hibernate.tool.eclipse.orm.query.AbstractQueryPage;
+import org.hibernate.tool.eclipse.orm.query.QueryParameter;
+import org.hibernate.tool.eclipse.orm.query.QueryInputModel;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IQuery;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ISession;
@@ -40,6 +40,7 @@ import org.hibernate.tool.eclipse.orm.runtime.spi.ITypeFactory;
 
 public class HQLQueryPage extends AbstractQueryPage {
 
+	private final IHibernateExtension extension;
 	private IQuery query;
 	private String queryString;
 	
@@ -76,9 +77,9 @@ public class HQLQueryPage extends AbstractQueryPage {
 			query2.setMaxResults( model.getMaxResults().intValue() );
 		}
 		
-		ConsoleQueryParameter[] qp = model.getQueryParameters();
+		QueryParameter[] qp = model.getQueryParameters();
 		for (int i = 0; i < qp.length; i++) {
-			ConsoleQueryParameter parameter = qp[i];
+			QueryParameter parameter = qp[i];
 		
 			try {
 				int pos = Integer.parseInt(parameter.getName());
@@ -105,7 +106,7 @@ public class HQLQueryPage extends AbstractQueryPage {
 		}		
 	}
 
-	private Object calcValue(ConsoleQueryParameter parameter) {
+	private Object calcValue(QueryParameter parameter) {
 		return parameter.getValueForQuery();				
 	}
 	
@@ -123,7 +124,8 @@ public class HQLQueryPage extends AbstractQueryPage {
 	 * @param queryParameters 
 	 */
 	public HQLQueryPage(IHibernateExtension extension, String string, QueryInputModel model) {
-		super(extension, model);
+		super(extension.getConsoleConfigurationName(), model);
+		this.extension = extension;
 		queryString = string;
 		setTabName(getQueryString().replace('\n', ' ').replace('\r', ' ').replace('\t', ' '));
 	}
@@ -206,7 +208,7 @@ public class HQLQueryPage extends AbstractQueryPage {
     }
     
     private IService getService() {
-    	return getHibernateExtension().getHibernateService();
+    	return extension.getHibernateService();
     }
 
 

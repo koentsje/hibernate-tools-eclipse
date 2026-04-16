@@ -21,6 +21,7 @@
  */
 package org.hibernate.console;
 
+import org.hibernate.tool.eclipse.orm.query.QueryPage;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
 
 

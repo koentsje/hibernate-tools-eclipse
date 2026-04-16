@@ -9,11 +9,11 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PlatformUI;
 import org.hibernate.console.ConcoleConfigurationAdapter;
 import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.console.ConsoleQueryParameter;
 import org.hibernate.console.HibernateConsoleRuntimeException;
 import org.hibernate.console.KnownConfigurations;
-import org.hibernate.console.QueryInputModel;
-import org.hibernate.console.QueryPage;
+import org.hibernate.tool.eclipse.orm.query.QueryParameter;
+import org.hibernate.tool.eclipse.orm.query.QueryInputModel;
+import org.hibernate.tool.eclipse.orm.query.QueryPage;
 import org.hibernate.eclipse.console.views.QueryPageTabView;
 import org.hibernate.tool.eclipse.orm.base.ui.test.utils.TestConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.orm.base.ui.test.utils.TestConsoleMessages;
@@ -183,10 +183,10 @@ public class ConsoleConfigurationTest {
 
 		consoleCfg.buildSessionFactory();
 		
-		ConsoleQueryParameter paramA = new ConsoleQueryParameter(service, "a", typeFactory.getIntegerType(),
+		QueryParameter paramA = new QueryParameter(service, "a", typeFactory.getIntegerType(),
 				new Integer[]{new Integer(1), new Integer(2)});
-		ConsoleQueryParameter paramB = new ConsoleQueryParameter(service, "b", typeFactory.getIntegerType(), new Integer(3));
-		ConsoleQueryParameter paramOrdered = new ConsoleQueryParameter(service, "0", typeFactory.getIntegerType(), new Integer(4));
+		QueryParameter paramB = new QueryParameter(service, "b", typeFactory.getIntegerType(), new Integer(3));
+		QueryParameter paramOrdered = new QueryParameter(service, "0", typeFactory.getIntegerType(), new Integer(4));
 		QueryInputModel model = new QueryInputModel(service);
 		model.addParameter(paramA);
 		model.addParameter(paramB);

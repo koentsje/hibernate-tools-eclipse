@@ -19,7 +19,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.hibernate.console;
+package org.hibernate.tool.eclipse.orm.query;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -42,7 +42,7 @@ import org.hibernate.tool.eclipse.orm.runtime.spi.ITypeFactory;
  */
 public class QueryInputModel extends Observable {
 
-	List<ConsoleQueryParameter> parameters;
+	List<QueryParameter> parameters;
 	boolean ignoreParameters = false;
 	private ITypeFactory typeFactory;
 	private IService service;
@@ -50,7 +50,7 @@ public class QueryInputModel extends Observable {
 	private Integer maxResults;
 	
 	public QueryInputModel(IService service) {
-		parameters = new ArrayList<ConsoleQueryParameter>();
+		parameters = new ArrayList<QueryParameter>();
 		this.service = service;
 		this.typeFactory = service.newTypeFactory();
 	}
@@ -59,21 +59,21 @@ public class QueryInputModel extends Observable {
 		return parameters.size();
 	}
 	
-	public ConsoleQueryParameter[] getQueryParameters() {
-		return parameters.toArray(new ConsoleQueryParameter[parameters.size()]);
+	public QueryParameter[] getQueryParameters() {
+		return parameters.toArray(new QueryParameter[parameters.size()]);
 	}
 	
 	/** return a copy of the parameters currently in this model */
-	public ConsoleQueryParameter[] getQueryParametersForQuery() {
+	public QueryParameter[] getQueryParametersForQuery() {
 		//pass 0-size array to guarantee Collection.toArray(T[]) will return new Array instance
-		return ignoreParameters ? new ConsoleQueryParameter[0] 
-		                        : parameters.toArray(new ConsoleQueryParameter[0]);
+		return ignoreParameters ? new QueryParameter[0] 
+		                        : parameters.toArray(new QueryParameter[0]);
 	}
 	
 	public QueryInputModel getCopyForQuery() {
 		QueryInputModel result = new QueryInputModel(service);
 		
-		ConsoleQueryParameter[] queryParametersForQuery = getQueryParametersForQuery();
+		QueryParameter[] queryParametersForQuery = getQueryParametersForQuery();
 		result.parameters = Arrays.asList( queryParametersForQuery );
 	
 		result.maxResults = getMaxResults();
@@ -82,23 +82,23 @@ public class QueryInputModel extends Observable {
 		return result;
 	}
 
-	public void addParameter(ConsoleQueryParameter cqp) {
+	public void addParameter(QueryParameter cqp) {
 		parameters.add(cqp);
 		setChanged();
 		notifyObservers("addParameter"); //$NON-NLS-1$
 	}
 	
-	public void removeParameter(ConsoleQueryParameter cqp) {
+	public void removeParameter(QueryParameter cqp) {
 		parameters.remove(cqp);
 		setChanged();
 		notifyObservers("removeParameter"); //$NON-NLS-1$
 	}
 	
-	public void moveUp(ConsoleQueryParameter cqp) {
+	public void moveUp(QueryParameter cqp) {
 		move(cqp, 1, parameters);
 	}
 	
-	public void moveDown(ConsoleQueryParameter cqp) {
+	public void moveDown(QueryParameter cqp) {
 		move(cqp, 1, parameters);
 	}
 	
@@ -116,24 +116,24 @@ public class QueryInputModel extends Observable {
 	}
 
 	/** create a parameter which does not collide with any other parameter */
-	public ConsoleQueryParameter createUniqueParameter(String paramName) {
+	public QueryParameter createUniqueParameter(String paramName) {
 		if(parameters.isEmpty()) {
-			return new ConsoleQueryParameter(service, paramName, typeFactory.getStringType(), ""); //$NON-NLS-1$
+			return new QueryParameter(service, paramName, typeFactory.getStringType(), ""); //$NON-NLS-1$
 		} else {
-			ConsoleQueryParameter cqp = parameters.get(parameters.size()-1);
-			ConsoleQueryParameter c = new ConsoleQueryParameter(service, cqp);
+			QueryParameter cqp = parameters.get(parameters.size()-1);
+			QueryParameter c = new QueryParameter(service, cqp);
 			c.setName(makeUnique(parameters.iterator(), paramName));
 			return c;
 		}
 	}
 	
-	private static String makeUnique(Iterator<ConsoleQueryParameter> items, String originalPropertyName) {
+	private static String makeUnique(Iterator<QueryParameter> items, String originalPropertyName) {
         int cnt = 0;
         String propertyName = originalPropertyName;
         Set<String> uniqueNames = new HashSet<String>();
         
         while ( items.hasNext() ) {
-            ConsoleQueryParameter element = items.next();
+            QueryParameter element = items.next();
             uniqueNames.add( element.getName() );
         }
         

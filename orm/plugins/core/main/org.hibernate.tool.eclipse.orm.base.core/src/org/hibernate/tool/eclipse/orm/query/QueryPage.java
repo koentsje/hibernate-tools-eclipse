@@ -19,7 +19,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.hibernate.console;
+package org.hibernate.tool.eclipse.orm.query;
 
 import java.beans.PropertyChangeListener;
 import java.util.List;
@@ -33,10 +33,10 @@ import org.hibernate.tool.eclipse.orm.runtime.spi.ISession;
 public interface QueryPage {
 	/**
 	 * Returns query run time in milliseconds
-	 * @return 
+	 * @return
 	 */
 	public abstract long getQueryTime();
-		
+
     public abstract List<?> getList();
     /**
      * @param i
@@ -70,12 +70,12 @@ public interface QueryPage {
      * @param b
      */
     public abstract void setSticky(boolean b);
-    
+
     public ISession getSession();
     public void setSession(ISession session);
-    
-	public IHibernateExtension getHibernateExtension();
-	
+
+	public String getConsoleConfigurationName();
+
     public void addPropertyChangeListener(PropertyChangeListener listener);
 
     public void addPropertyChangeListener(
@@ -87,11 +87,11 @@ public interface QueryPage {
     public void removePropertyChangeListener(
     		String propertyName,
 			PropertyChangeListener listener);
-	
+
     public void addException(Throwable he);
-    
-    /** Return result size if known, -1 if not */ 
+
+    /** Return result size if known, -1 if not */
     public int getResultSize();
-    
+
     public void setModel(QueryInputModel model);
 }

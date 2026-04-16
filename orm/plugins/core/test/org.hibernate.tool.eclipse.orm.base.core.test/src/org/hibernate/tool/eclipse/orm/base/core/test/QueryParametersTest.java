@@ -6,9 +6,9 @@ import java.util.Observable;
 import java.util.Observer;
 
 import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.console.ConsoleQueryParameter;
 import org.hibernate.console.KnownConfigurations;
-import org.hibernate.console.QueryInputModel;
+import org.hibernate.tool.eclipse.orm.query.QueryParameter;
+import org.hibernate.tool.eclipse.orm.query.QueryInputModel;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.common.HibernateExtension;
 import org.hibernate.tool.eclipse.orm.base.core.test.utils.TestConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
@@ -63,7 +63,7 @@ public class QueryParametersTest {
 	public void testQueryParameter() {
 		QueryInputModel model = new QueryInputModel(service);
 		
-		ConsoleQueryParameter[] cqps = model.getQueryParameters();
+		QueryParameter[] cqps = model.getQueryParameters();
 		Assert.assertNotNull(cqps);
 		
 		QueryInputModel qpmodel = model;
@@ -78,7 +78,7 @@ public class QueryParametersTest {
 		
 		TestObserver testObserver = new TestObserver();
 		qpmodel.addObserver(testObserver);
-		ConsoleQueryParameter consoleQueryParameter = new ConsoleQueryParameter(service);
+		QueryParameter consoleQueryParameter = new QueryParameter(service);
 		qpmodel.addParameter(consoleQueryParameter);
 		Assert.assertEquals(1,testObserver.cnt);
 		
@@ -91,7 +91,7 @@ public class QueryParametersTest {
 		
 		QueryInputModel model = new QueryInputModel(service);
 		
-		ConsoleQueryParameter parameter = model.createUniqueParameter("param"); //$NON-NLS-1$
+		QueryParameter parameter = model.createUniqueParameter("param"); //$NON-NLS-1$
 		model.addParameter(parameter);
 		
 		Assert.assertFalse(model.createUniqueParameter("param").getName().equals(parameter.getName())); //$NON-NLS-1$

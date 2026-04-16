@@ -1,5 +1,7 @@
 package org.hibernate.console;
 
+import org.hibernate.tool.eclipse.orm.query.QueryInputModel;
+import org.hibernate.tool.eclipse.orm.query.QueryPage;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 

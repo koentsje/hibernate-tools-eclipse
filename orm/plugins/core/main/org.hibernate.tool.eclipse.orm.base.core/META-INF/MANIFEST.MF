@@ -8,6 +8,7 @@ Bundle-Localization: plugin
 Export-Package: org.hibernate.tool.eclipse.orm.hql,
  org.hibernate.tool.eclipse.orm.launch,
  org.hibernate.tool.eclipse.orm.project,
+ org.hibernate.tool.eclipse.orm.query,
  org.hibernate.tool.eclipse.orm.utils,
  org.hibernate.tool.eclipse.orm.workbench
 Require-Bundle: org.hibernate.tool.eclipse.orm.model.core;visibility:=reexport,

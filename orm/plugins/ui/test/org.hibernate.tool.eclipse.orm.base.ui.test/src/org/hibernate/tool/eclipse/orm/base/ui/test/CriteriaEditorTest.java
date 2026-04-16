@@ -26,7 +26,7 @@ import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.ui.IEditorPart;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.KnownConfigurations;
-import org.hibernate.console.QueryInputModel;
+import org.hibernate.tool.eclipse.orm.query.QueryInputModel;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.criteriaeditor.CriteriaEditor;
 import org.hibernate.eclipse.criteriaeditor.JavaCompletionProcessor;

@@ -19,7 +19,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.hibernate.console;
+package org.hibernate.tool.eclipse.orm.query;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
@@ -37,7 +37,7 @@ public abstract class AbstractQueryPage implements QueryPage {
 	protected PropertyChangeSupport pcs = new PropertyChangeSupport(this);    
     private int id;
     private ISession session;
-	private final IHibernateExtension extension;
+	private final String consoleConfigurationName;
     protected List<?> list;
     protected long queryTime = -1;				//shows how long query runs
     protected boolean sticky = true;
@@ -60,8 +60,8 @@ public abstract class AbstractQueryPage implements QueryPage {
 		}
 	}
 
-	public AbstractQueryPage(IHibernateExtension extension, QueryInputModel model) {
-		this.extension = extension;
+	public AbstractQueryPage(String consoleConfigurationName, QueryInputModel model) {
+		this.consoleConfigurationName = consoleConfigurationName;
 		this.model = model;
 	}
     /**
@@ -128,8 +128,8 @@ public abstract class AbstractQueryPage implements QueryPage {
 	}
 	
 	@Override
-	public IHibernateExtension getHibernateExtension() {
-		return extension;
+	public String getConsoleConfigurationName() {
+		return consoleConfigurationName;
 	}
 	
 	public long getQueryTime(){

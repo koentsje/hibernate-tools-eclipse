@@ -30,9 +30,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-import javax.swing.event.ListDataEvent;
-import javax.swing.event.ListDataListener;
-
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.ISelectionProvider;
@@ -52,7 +49,8 @@ import org.eclipse.ui.part.ViewPart;
 import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.PropertySheetPage;
 import org.hibernate.console.KnownConfigurations;
-import org.hibernate.console.QueryPage;
+import org.hibernate.tool.eclipse.orm.query.QueryPage;
+import org.hibernate.tool.eclipse.orm.query.QueryPageModel;
 import org.hibernate.eclipse.console.views.properties.HibernatePropertySourceProvider;
 
 
@@ -70,25 +68,19 @@ public class QueryPageTabView extends ViewPart implements ISelectionProvider {
 	
 	protected List<QueryPageViewer> pageViewers = Collections.synchronizedList(new ArrayList<QueryPageViewer>() );
 	
-	ListDataListener dataListener = new ListDataListener() {
-		public void contentsChanged(ListDataEvent e) {
-			rebuild();
-		}
-
-		public void intervalAdded(ListDataEvent e) {
+	QueryPageModel.Listener modelListener = new QueryPageModel.Listener() {
+		public void pageAdded(QueryPageModel model) {
 			try {
 				getSite().getPage().showView(ID);
 			}
 			catch (PartInitException e1) {
 				// ignore
 			}
-			contentsChanged(e);
-
+			rebuild();
 		}
 
-		public void intervalRemoved(ListDataEvent e) {
-			contentsChanged(e);
-
+		public void pagesChanged(QueryPageModel model) {
+			rebuild();
 		}
 	};
 
@@ -98,7 +90,7 @@ public class QueryPageTabView extends ViewPart implements ISelectionProvider {
 	 * Generic contructor
 	 */
 	public QueryPageTabView() {
-		KnownConfigurations.getInstance().getQueryPageModel().addListDataListener(dataListener);
+		KnownConfigurations.getInstance().getQueryPageModel().addListener(modelListener);
 	}
 
 
@@ -133,7 +125,7 @@ public class QueryPageTabView extends ViewPart implements ISelectionProvider {
 	}
 	
 	public void dispose() {
-		KnownConfigurations.getInstance().getQueryPageModel().removeListDataListener(dataListener);
+		KnownConfigurations.getInstance().getQueryPageModel().removeListener(modelListener);
 		for (int i = 0; i < pageViewers.size(); i++) {
 			pageViewers.get(i).dispose();
 		}
