@@ -18,7 +18,7 @@ import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.ltk.core.refactoring.Change;
 import org.eclipse.ltk.core.refactoring.RefactoringStatus;
 import org.eclipse.osgi.util.NLS;
-import org.hibernate.console.KnownConfigurations;
+import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
 import org.hibernate.eclipse.launch.HibernateLaunchConstants;
 
 /**

@@ -13,7 +13,7 @@ package org.hibernate.eclipse.console.actions;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.text.ITextViewer;
 import org.eclipse.ui.texteditor.ITextEditor;
-import org.hibernate.console.ImageConstants;
+import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
 import org.hibernate.eclipse.console.AbstractQueryEditor;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;

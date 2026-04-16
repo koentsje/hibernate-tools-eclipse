@@ -40,7 +40,7 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.actions.ActionGroup;
 import org.eclipse.ui.part.ViewPart;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.ConsolePreferencesConstants;
+import org.hibernate.tool.eclipse.orm.console.core.properties.ConsolePreferencesConstants;
 import org.hibernate.eclipse.graph.model.ConfigurationViewAdapter;
 import org.hibernate.eclipse.graph.parts.ConfigurationEditPart;
 

@@ -2,10 +2,10 @@ package org.hibernate.tool.eclipse.search.core.test;
 
 import static org.junit.Assert.assertEquals;
 
-import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.console.KnownConfigurations;
-import org.hibernate.console.preferences.ConsoleConfigurationPreferences;
-import org.hibernate.console.preferences.StandAloneConsoleConfigurationPreferences;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
+import org.hibernate.tool.eclipse.orm.console.core.preferences.ConsoleConfigurationPreferences;
+import org.hibernate.tool.eclipse.orm.console.core.preferences.StandAloneConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.search.core.HSearchConsoleConfigurationPreferences;
 import org.junit.Test;
 

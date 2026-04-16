@@ -16,8 +16,8 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.console.KnownConfigurations;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IColumn;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IForeignKey;

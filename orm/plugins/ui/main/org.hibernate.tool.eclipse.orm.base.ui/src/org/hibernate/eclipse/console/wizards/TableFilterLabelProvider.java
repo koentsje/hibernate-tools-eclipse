@@ -24,7 +24,7 @@ package org.hibernate.eclipse.console.wizards;
 import org.eclipse.jface.viewers.ITableLabelProvider;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.graphics.Image;
-import org.hibernate.console.ImageConstants;
+import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
 import org.hibernate.tool.eclipse.orm.model.core.ITableFilter;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 

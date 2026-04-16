@@ -32,7 +32,7 @@ import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.actions.ActionFactory;
 import org.eclipse.ui.actions.ActionGroup;
 import org.eclipse.ui.actions.SelectionListenerAction;
-import org.hibernate.console.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.eclipse.console.actions.AddConfigurationAction;
 import org.hibernate.eclipse.console.actions.CloseConfigAction;
 import org.hibernate.eclipse.console.actions.CriteriaEditorAction;

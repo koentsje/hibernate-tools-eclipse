@@ -24,13 +24,13 @@ package org.hibernate.eclipse.console.workbench;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.osgi.util.NLS;
 //import org.hibernate.cfg.Configuration;
-import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.console.ImageConstants;
-import org.hibernate.console.KnownConfigurations;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
+import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.workbench.LazyDatabaseSchema;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.workbench.LazySessionFactory;
+import org.hibernate.tool.eclipse.orm.console.core.workbench.LazyDatabaseSchema;
+import org.hibernate.tool.eclipse.orm.console.core.workbench.LazySessionFactory;
 
 public class ConsoleConfigurationWorkbenchAdapter extends BasicWorkbenchAdapter {
 

@@ -13,8 +13,8 @@ package org.hibernate.eclipse.console.actions;
 import java.util.List;
 
 import org.eclipse.jface.action.Action;
-import org.hibernate.console.ImageConstants;
-import org.hibernate.console.KnownConfigurations;
+import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
+import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
 import org.hibernate.tool.eclipse.orm.query.QueryPage;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 

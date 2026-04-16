@@ -30,9 +30,9 @@ import org.eclipse.ui.model.IWorkbenchAdapter;
 import org.eclipse.ui.progress.IDeferredWorkbenchAdapter;
 import org.eclipse.ui.views.properties.IPropertySource;
 import org.eclipse.ui.views.properties.IPropertySource2;
-import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.console.KnownConfigurations;
-import org.hibernate.console.node.BaseNode;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
+import org.hibernate.tool.eclipse.orm.console.core.node.BaseNode;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IColumn;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
@@ -40,8 +40,8 @@ import org.hibernate.tool.eclipse.orm.runtime.spi.IPrimaryKey;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IProperty;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ITable;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IValue;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.workbench.LazyDatabaseSchema;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.workbench.LazySessionFactory;
+import org.hibernate.tool.eclipse.orm.console.core.workbench.LazyDatabaseSchema;
+import org.hibernate.tool.eclipse.orm.console.core.workbench.LazySessionFactory;
 import org.hibernate.tool.eclipse.orm.workbench.TableContainer;
 
 public class ConfigurationAdapterFactory implements IAdapterFactory {

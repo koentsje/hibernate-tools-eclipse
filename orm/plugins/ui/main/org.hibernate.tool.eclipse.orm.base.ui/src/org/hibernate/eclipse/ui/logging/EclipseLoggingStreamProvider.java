@@ -10,7 +10,7 @@ import org.eclipse.ui.console.IConsole;
 import org.eclipse.ui.console.IConsoleManager;
 import org.eclipse.ui.console.MessageConsole;
 import org.eclipse.ui.console.MessageConsoleStream;
-import org.hibernate.console.ConsoleMessages;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleMessages;
 import org.hibernate.tool.eclipse.common.base.core.logging.LoggingStreamProvider;
 
 public class EclipseLoggingStreamProvider implements LoggingStreamProvider {

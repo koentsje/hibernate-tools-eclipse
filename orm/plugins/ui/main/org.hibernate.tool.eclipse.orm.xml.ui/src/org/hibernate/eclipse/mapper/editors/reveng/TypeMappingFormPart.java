@@ -27,8 +27,8 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.widgets.FormToolkit;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.reveng.IReverseEngineeringDefinition;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.workbench.LazyDatabaseSchema;
+import org.hibernate.tool.eclipse.orm.console.core.reveng.IReverseEngineeringDefinition;
+import org.hibernate.tool.eclipse.orm.console.core.workbench.LazyDatabaseSchema;
 import org.hibernate.eclipse.mapper.MapperMessages;
 import org.hibernate.eclipse.mapper.editors.ReverseEngineeringEditor;
 

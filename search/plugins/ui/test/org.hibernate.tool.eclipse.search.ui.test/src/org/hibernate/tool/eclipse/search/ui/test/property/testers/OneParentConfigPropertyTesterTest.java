@@ -7,7 +7,7 @@ import static org.mockito.Mockito.mock;
 import org.eclipse.jface.viewers.ITreeSelection;
 import org.eclipse.jface.viewers.TreePath;
 import org.eclipse.jface.viewers.TreeSelection;
-import org.hibernate.console.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.search.property.testers.OneParentConfigPropertyTester;
 import org.junit.Test;
 

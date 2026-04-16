@@ -37,7 +37,7 @@ import org.eclipse.jface.text.rules.DefaultDamagerRepairer;
 import org.eclipse.jface.text.rules.Token;
 import org.eclipse.jface.text.source.ISourceViewer;
 import org.eclipse.jface.text.source.SourceViewerConfiguration;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.QueryEditor;
+import org.hibernate.tool.eclipse.orm.console.core.ui.QueryEditor;
 import org.hibernate.eclipse.hqleditor.preferences.HQLPreferenceConstants;
 
 public class HQLSourceViewerConfiguration extends SourceViewerConfiguration {

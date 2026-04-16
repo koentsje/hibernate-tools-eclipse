@@ -34,11 +34,11 @@ import org.eclipse.debug.ui.DebugUITools;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.window.Window;
 import org.eclipse.ui.IViewPart;
-import org.hibernate.console.ImageConstants;
+import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.LaunchHelper;
+import org.hibernate.tool.eclipse.orm.console.core.utils.LaunchHelper;
 
 /**
  *

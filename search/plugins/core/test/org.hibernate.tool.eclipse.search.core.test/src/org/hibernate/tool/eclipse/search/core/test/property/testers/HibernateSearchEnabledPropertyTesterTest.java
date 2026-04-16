@@ -11,8 +11,8 @@ import java.net.URL;
 import org.eclipse.jface.viewers.ITreeSelection;
 import org.eclipse.jface.viewers.TreePath;
 import org.eclipse.jface.viewers.TreeSelection;
-import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.console.preferences.ConsoleConfigurationPreferences;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.preferences.ConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.search.core.property.testers.HibernateSearchEnabledPropertyTester;
 import org.junit.Test;
 

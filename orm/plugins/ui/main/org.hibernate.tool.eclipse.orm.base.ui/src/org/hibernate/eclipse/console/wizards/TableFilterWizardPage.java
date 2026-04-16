@@ -34,11 +34,11 @@ import org.eclipse.swt.custom.ScrolledComposite;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
-import org.hibernate.console.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.reveng.IReverseEngineeringDefinition;
+import org.hibernate.tool.eclipse.orm.console.core.reveng.IReverseEngineeringDefinition;
 import org.hibernate.tool.eclipse.orm.model.core.ITableFilter;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.reveng.impl.ReverseEngineeringDefinitionImpl;
+import org.hibernate.tool.eclipse.orm.console.core.reveng.ReverseEngineeringDefinitionImpl;
 import org.hibernate.eclipse.console.utils.LaunchHelperUI;
 
 

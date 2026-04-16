@@ -7,7 +7,7 @@ import org.eclipse.core.commands.IHandlerListener;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ITreeSelection;
 import org.eclipse.ui.handlers.HandlerUtil;
-import org.hibernate.console.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.search.HibernateSearchConsolePlugin;
 import org.hibernate.tool.eclipse.search.console.ConsoleConfigurationUtils;
 

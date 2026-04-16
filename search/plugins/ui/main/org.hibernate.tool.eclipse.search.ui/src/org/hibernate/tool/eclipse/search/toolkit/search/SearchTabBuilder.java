@@ -16,7 +16,7 @@ import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
-import org.hibernate.console.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.search.core.HSearchConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.search.console.ConsoleConfigurationUtils;
 import org.hibernate.tool.eclipse.search.runtime.spi.HSearchServiceLookup;

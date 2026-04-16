@@ -24,11 +24,11 @@ package org.hibernate.eclipse.console.actions;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.swt.widgets.Event;
-import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.console.ImageConstants;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.QueryEditor;
+import org.hibernate.tool.eclipse.orm.console.core.ui.QueryEditor;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.eclipse.console.workbench.ProjectCompilerVersionChecker;
 

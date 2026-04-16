@@ -20,7 +20,7 @@ import org.eclipse.ltk.core.refactoring.Change;
 import org.eclipse.ltk.core.refactoring.NullChange;
 import org.eclipse.ltk.core.refactoring.RefactoringStatus;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateConsoleCorePlugin;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.properties.HibernatePropertiesConstants;
+import org.hibernate.tool.eclipse.orm.console.core.properties.HibernatePropertiesConstants;
 import org.osgi.service.prefs.BackingStoreException;
 import org.osgi.service.prefs.Preferences;
 

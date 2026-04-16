@@ -49,10 +49,10 @@ import org.eclipse.wst.common.project.facet.core.events.IFacetedProjectEvent.Typ
 import org.eclipse.wst.common.project.facet.core.events.IFacetedProjectListener;
 import org.eclipse.wst.common.project.facet.core.events.IProjectFacetActionEvent;
 import org.hibernate.tool.eclipse.orm.utils.ConnectionProfileUtil;
-import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.console.preferences.ConsoleConfigurationPreferences.ConfigurationMode;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.LaunchHelper;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.ProjectUtils;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.preferences.ConsoleConfigurationPreferences.ConfigurationMode;
+import org.hibernate.tool.eclipse.orm.console.core.utils.LaunchHelper;
+import org.hibernate.tool.eclipse.orm.console.core.utils.ProjectUtils;
 import org.hibernate.tool.eclipse.common.base.core.launch.IBasicHibernateLaunchConstants;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateProjectConsoleManager;
 import org.hibernate.tool.eclipse.orm.utils.HibernateEclipseUtils;

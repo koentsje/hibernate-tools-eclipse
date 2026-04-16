@@ -16,9 +16,9 @@ import org.eclipse.jdt.debug.ui.launchConfigurations.JavaClasspathTab;
 import org.eclipse.jdt.launching.IRuntimeClasspathEntry;
 import org.eclipse.jdt.launching.JavaRuntime;
 import org.eclipse.osgi.util.NLS;
-import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.console.HibernateConsoleRuntimeException;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.EclipseLaunchConsoleConfigurationPreferences;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.HibernateConsoleRuntimeException;
+import org.hibernate.tool.eclipse.orm.console.core.preferences.EclipseLaunchConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 
 /**

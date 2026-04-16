@@ -35,7 +35,7 @@ import org.eclipse.ui.part.EditorActionBarContributor;
 import org.eclipse.ui.texteditor.ITextEditor;
 import org.eclipse.ui.texteditor.RetargetTextEditorAction;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.QueryEditor;
+import org.hibernate.tool.eclipse.orm.console.core.ui.QueryEditor;
 import org.hibernate.eclipse.console.actions.ExecuteQueryAction;
 
 

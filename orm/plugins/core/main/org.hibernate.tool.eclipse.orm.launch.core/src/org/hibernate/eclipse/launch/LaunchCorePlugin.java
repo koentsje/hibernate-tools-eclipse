@@ -1,7 +1,7 @@
 package org.hibernate.eclipse.launch;
 
 import org.eclipse.core.runtime.Plugin;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.common.HibernateExtension;
+import org.hibernate.tool.eclipse.orm.console.core.HibernateExtension;
 import org.hibernate.eclipse.launch.exporter.ConsoleExtension;
 import org.osgi.framework.BundleContext;
 

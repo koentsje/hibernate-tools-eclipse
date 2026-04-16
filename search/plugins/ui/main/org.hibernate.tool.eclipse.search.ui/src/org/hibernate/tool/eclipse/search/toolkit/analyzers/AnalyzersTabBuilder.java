@@ -8,7 +8,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Text;
-import org.hibernate.console.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.search.core.HSearchConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.search.runtime.spi.HSearchServiceLookup;
 import org.hibernate.tool.eclipse.search.runtime.spi.IHSearchService;

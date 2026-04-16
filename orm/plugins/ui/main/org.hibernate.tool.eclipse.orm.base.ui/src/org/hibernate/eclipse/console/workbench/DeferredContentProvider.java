@@ -31,7 +31,7 @@ import org.eclipse.ui.model.IWorkbenchAdapter;
 import org.eclipse.ui.progress.DeferredTreeContentManager;
 import org.eclipse.ui.progress.IDeferredWorkbenchAdapter;
 import org.eclipse.ui.progress.PendingUpdateAdapter;
-import org.hibernate.console.ImageConstants;
+import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 
 public class DeferredContentProvider extends BaseWorkbenchContentProvider {

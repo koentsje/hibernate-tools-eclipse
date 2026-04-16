@@ -5,11 +5,11 @@ import java.io.FileWriter;
 import java.util.Observable;
 import java.util.Observer;
 
-import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.console.KnownConfigurations;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
 import org.hibernate.tool.eclipse.orm.query.QueryParameter;
 import org.hibernate.tool.eclipse.orm.query.QueryInputModel;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.common.HibernateExtension;
+import org.hibernate.tool.eclipse.orm.console.core.HibernateExtension;
 import org.hibernate.tool.eclipse.orm.base.core.test.utils.TestConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 import org.junit.After;

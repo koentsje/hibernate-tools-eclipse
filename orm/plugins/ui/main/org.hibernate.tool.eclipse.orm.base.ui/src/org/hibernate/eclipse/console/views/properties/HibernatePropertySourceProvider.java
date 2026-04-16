@@ -23,11 +23,11 @@ package org.hibernate.eclipse.console.views.properties;
 
 import org.eclipse.ui.views.properties.IPropertySource;
 import org.eclipse.ui.views.properties.IPropertySourceProvider;
-import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.console.KnownConfigurations;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
 import org.hibernate.tool.eclipse.orm.query.QueryPage;
 import org.hibernate.eclipse.launch.exporter.ConsoleExtension;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.common.HibernateExtension;
+import org.hibernate.tool.eclipse.orm.console.core.HibernateExtension;
 import org.hibernate.eclipse.console.views.QueryPageTabView;
 import org.hibernate.eclipse.ui.console.common.ConsoleExtensionUI;
 

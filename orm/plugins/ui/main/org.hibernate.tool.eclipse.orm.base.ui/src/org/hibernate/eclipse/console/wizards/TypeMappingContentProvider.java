@@ -26,7 +26,7 @@ import java.beans.PropertyChangeListener;
 
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.Viewer;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.reveng.IReverseEngineeringDefinition;
+import org.hibernate.tool.eclipse.orm.console.core.reveng.IReverseEngineeringDefinition;
 
 public class TypeMappingContentProvider implements IStructuredContentProvider, PropertyChangeListener {
 

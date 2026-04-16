@@ -32,9 +32,9 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.osgi.util.NLS;
-import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.console.ImageConstants;
-import org.hibernate.console.execution.ExecutionContext;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
+import org.hibernate.tool.eclipse.orm.console.core.execution.ExecutionContext;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
@@ -43,7 +43,7 @@ import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IProgressListener;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IReverseEngineeringStrategy;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ITable;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.workbench.LazyDatabaseSchema;
+import org.hibernate.tool.eclipse.orm.console.core.workbench.LazyDatabaseSchema;
 import org.hibernate.tool.eclipse.orm.workbench.TableContainer;
 
 public class LazyDatabaseSchemaWorkbenchAdapter extends BasicWorkbenchAdapter {

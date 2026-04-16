@@ -58,15 +58,15 @@ import org.eclipse.ui.editors.text.TextEditor;
 import org.eclipse.ui.ide.FileStoreEditorInput;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.texteditor.IDocumentProvider;
-import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.console.KnownConfigurations;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
 import org.hibernate.tool.eclipse.orm.query.QueryInputModel;
 import org.hibernate.eclipse.console.actions.ClearAction;
 import org.hibernate.eclipse.console.actions.ExecuteQueryAction;
 import org.hibernate.eclipse.console.actions.StickResTabAction;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.QueryEditor;
+import org.hibernate.tool.eclipse.orm.console.core.ui.QueryEditor;
 
 public abstract class AbstractQueryEditor extends TextEditor implements
 		QueryEditor, IShowEditorInput {

@@ -43,13 +43,13 @@ import org.eclipse.ui.views.properties.IPropertyDescriptor;
 import org.eclipse.ui.views.properties.IPropertySource;
 import org.eclipse.ui.views.properties.PropertyDescriptor;
 import org.eclipse.ui.views.properties.TextPropertyDescriptor;
-import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.console.KnownConfigurations;
-import org.hibernate.console.preferences.ConsoleConfigurationPreferences;
-import org.hibernate.console.preferences.ConsoleConfigurationPreferences.ConfigurationMode;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
+import org.hibernate.tool.eclipse.orm.console.core.preferences.ConsoleConfigurationPreferences;
+import org.hibernate.tool.eclipse.orm.console.core.preferences.ConsoleConfigurationPreferences.ConfigurationMode;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.LaunchHelper;
+import org.hibernate.tool.eclipse.orm.console.core.utils.LaunchHelper;
 import org.hibernate.tool.eclipse.common.base.core.launch.IBasicHibernateLaunchConstants;
 
 @SuppressWarnings("restriction")

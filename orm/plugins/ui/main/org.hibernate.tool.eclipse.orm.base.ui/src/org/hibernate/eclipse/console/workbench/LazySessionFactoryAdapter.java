@@ -23,13 +23,13 @@ package org.hibernate.eclipse.console.workbench;
 
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.osgi.util.NLS;
-import org.hibernate.console.ImageConstants;
-import org.hibernate.console.node.BaseNode;
-import org.hibernate.console.node.NodeFactory;
+import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
+import org.hibernate.tool.eclipse.orm.console.core.node.BaseNode;
+import org.hibernate.tool.eclipse.orm.console.core.node.NodeFactory;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.workbench.LazySessionFactory;
+import org.hibernate.tool.eclipse.orm.console.core.workbench.LazySessionFactory;
 
 public class LazySessionFactoryAdapter extends BasicWorkbenchAdapter {
 

@@ -4,7 +4,7 @@ import java.io.File;
 import java.net.URL;
 import java.util.Properties;
 
-import org.hibernate.console.preferences.ConsoleConfigurationPreferences;
+import org.hibernate.tool.eclipse.orm.console.core.preferences.ConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IEnvironment;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 import org.hibernate.tool.eclipse.orm.runtime.spi.RuntimeServiceManager;

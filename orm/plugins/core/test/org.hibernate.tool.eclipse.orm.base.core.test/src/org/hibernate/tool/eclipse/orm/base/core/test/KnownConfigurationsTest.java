@@ -6,10 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.console.KnownConfigurations;
-import org.hibernate.console.KnownConfigurationsAdapter;
-import org.hibernate.console.preferences.ConsoleConfigurationPreferences;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
+import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurationsAdapter;
+import org.hibernate.tool.eclipse.orm.console.core.preferences.ConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.orm.base.core.test.utils.TestConsoleMessages;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
 import org.junit.Assert;

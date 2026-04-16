@@ -31,7 +31,7 @@ import org.hibernate.tool.eclipse.orm.model.core.IRevEngGenerator;
 import org.hibernate.tool.eclipse.orm.model.core.IRevEngParameter;
 import org.hibernate.tool.eclipse.orm.model.core.IRevEngPrimaryKey;
 import org.hibernate.tool.eclipse.orm.model.core.IRevEngTable;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.reveng.IReverseEngineeringDefinition;
+import org.hibernate.tool.eclipse.orm.console.core.reveng.IReverseEngineeringDefinition;
 
 public class TablePropertiesContentProvider implements
 		ITreeContentProvider, PropertyChangeListener {

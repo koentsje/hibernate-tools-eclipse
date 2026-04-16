@@ -19,8 +19,8 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.preferences.IScopeContext;
 import org.eclipse.jdt.core.JavaModelException;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.properties.HibernatePropertiesConstants;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.ProjectUtils;
+import org.hibernate.tool.eclipse.orm.console.core.properties.HibernatePropertiesConstants;
+import org.hibernate.tool.eclipse.orm.console.core.utils.ProjectUtils;
 import org.osgi.service.prefs.BackingStoreException;
 import org.osgi.service.prefs.Preferences;
 

@@ -23,7 +23,7 @@ import org.eclipse.osgi.util.NLS;
 import org.hibernate.eclipse.console.test.ConsoleTestMessages;
 import org.hibernate.eclipse.console.test.project.TestProject;
 import org.hibernate.eclipse.console.test.utils.FilesTransfer;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.ProjectUtils;
+import org.hibernate.tool.eclipse.orm.console.core.utils.ProjectUtils;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.collect.AllEntitiesInfoCollector;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.common.Utils;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.process.AllEntitiesProcessor;

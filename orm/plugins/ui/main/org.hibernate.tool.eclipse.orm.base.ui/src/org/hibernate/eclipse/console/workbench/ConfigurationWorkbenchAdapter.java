@@ -26,8 +26,8 @@ import java.util.Comparator;
 import java.util.Iterator;
 
 import org.eclipse.jface.resource.ImageDescriptor;
-import org.hibernate.console.ImageConstants;
-import org.hibernate.console.KnownConfigurations;
+import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
+import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
 import org.hibernate.eclipse.ui.console.workbench.HibernateWorkbenchHelper;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;

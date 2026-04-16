@@ -23,7 +23,7 @@ package org.hibernate.eclipse.mapper.editors.reveng;
 
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.graphics.Image;
-import org.hibernate.console.ImageConstants;
+import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
 import org.hibernate.tool.eclipse.orm.model.core.IRevEngColumn;
 import org.hibernate.tool.eclipse.orm.model.core.IRevEngGenerator;
 import org.hibernate.tool.eclipse.orm.model.core.IRevEngParameter;

@@ -7,7 +7,7 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
-import org.hibernate.console.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.common.base.core.logging.EclipseLogger;
 import org.hibernate.tool.eclipse.search.toolkit.IndexToolkitView;
 import org.osgi.framework.BundleContext;

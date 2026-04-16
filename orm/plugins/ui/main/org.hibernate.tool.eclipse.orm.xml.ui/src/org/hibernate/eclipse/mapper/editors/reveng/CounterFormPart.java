@@ -30,7 +30,7 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.widgets.FormToolkit;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.reveng.IReverseEngineeringDefinition;
+import org.hibernate.tool.eclipse.orm.console.core.reveng.IReverseEngineeringDefinition;
 import org.hibernate.eclipse.mapper.MapperMessages;
 
 public class CounterFormPart extends RevEngSectionPart {

@@ -15,10 +15,10 @@ import java.util.Iterator;
 
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.StructuredViewer;
-import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.console.ConsoleConfigurationListener;
-import org.hibernate.console.KnownConfigurations;
-import org.hibernate.console.KnownConfigurationsListener;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfigurationListener;
+import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
+import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurationsListener;
 import org.hibernate.tool.eclipse.orm.query.QueryPage;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
 

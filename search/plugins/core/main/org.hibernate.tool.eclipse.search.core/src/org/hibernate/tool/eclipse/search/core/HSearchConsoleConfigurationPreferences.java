@@ -3,8 +3,8 @@ package org.hibernate.tool.eclipse.search.core;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.console.KnownConfigurations;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
 
 public class HSearchConsoleConfigurationPreferences {
 

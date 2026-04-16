@@ -9,7 +9,7 @@ import org.eclipse.datatools.connectivity.ui.PingJob;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.ui.PlatformUI;
-import org.hibernate.console.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.tool.eclipse.search.core.HSearchConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.search.HibernateSearchConsolePlugin;

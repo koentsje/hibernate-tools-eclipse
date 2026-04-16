@@ -24,7 +24,7 @@ package org.hibernate.eclipse.console.views.navigator;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.navigator.CommonNavigator;
-import org.hibernate.console.KnownConfigurations;
+import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
 
 public class KnownConfigurationsNavigator extends CommonNavigator {
 

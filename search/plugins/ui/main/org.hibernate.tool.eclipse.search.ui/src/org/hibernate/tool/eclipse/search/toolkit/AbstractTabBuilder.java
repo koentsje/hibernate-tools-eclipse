@@ -5,7 +5,7 @@ import java.util.Map;
 
 import org.eclipse.swt.custom.CTabFolder;
 import org.eclipse.swt.widgets.Composite;
-import org.hibernate.console.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 
 public abstract class AbstractTabBuilder {
 	

@@ -21,10 +21,10 @@
  */
 package org.hibernate.tool.eclipse.orm.console.core.eclipse;
 
-import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.console.IHibernateExtension;
-import org.hibernate.console.preferences.ConsoleConfigurationPreferences;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.common.HibernateExtension;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.IHibernateExtension;
+import org.hibernate.tool.eclipse.orm.console.core.preferences.ConsoleConfigurationPreferences;
+import org.hibernate.tool.eclipse.orm.console.core.HibernateExtension;
 
 /**
  * @author max

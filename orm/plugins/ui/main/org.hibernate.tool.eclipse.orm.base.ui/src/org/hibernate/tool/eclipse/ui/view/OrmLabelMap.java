@@ -10,7 +10,7 @@
  ******************************************************************************/
 package org.hibernate.tool.eclipse.ui.view;
 
-import org.hibernate.console.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.workbench.ValueTypeNameHelper;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IColumn;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;

@@ -44,8 +44,8 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.ide.IDE;
 import org.eclipse.ui.part.MultiPageEditorPart;
 import org.eclipse.ui.texteditor.ITextEditor;
-import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.console.execution.ExecutionContext;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.execution.ExecutionContext;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
@@ -60,7 +60,7 @@ import org.hibernate.tool.eclipse.orm.runtime.spi.IValue;
 import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXParseException;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.ProjectUtils;
+import org.hibernate.tool.eclipse.orm.console.core.utils.ProjectUtils;
 
 /**
  * Utility class for useful open mapping file action functions. 

@@ -40,10 +40,10 @@ import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.model.IWorkbenchAdapter;
-import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.console.KnownConfigurations;
-import org.hibernate.console.KnownConfigurationsListener;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.LaunchHelper;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
+import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurationsListener;
+import org.hibernate.tool.eclipse.orm.console.core.utils.LaunchHelper;
 import org.hibernate.eclipse.console.workbench.DeferredContentProvider;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
 

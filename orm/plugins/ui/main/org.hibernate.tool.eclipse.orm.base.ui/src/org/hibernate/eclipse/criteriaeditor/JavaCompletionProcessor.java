@@ -36,7 +36,7 @@ import org.eclipse.jface.text.contentassist.IContextInformationValidator;
 import org.eclipse.swt.widgets.Shell;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.ProjectUtils;
+import org.hibernate.tool.eclipse.orm.console.core.utils.ProjectUtils;
 import org.hibernate.eclipse.hqleditor.CompletionHelper;
 import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
 

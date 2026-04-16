@@ -25,7 +25,7 @@ import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
-import org.hibernate.console.ConfigurationXMLFactory;
+import org.hibernate.tool.eclipse.orm.console.core.config.ConfigurationXMLFactory;
 import org.osgi.framework.Bundle;
 
 /**

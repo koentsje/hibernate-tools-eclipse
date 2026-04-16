@@ -24,8 +24,8 @@ package org.hibernate.eclipse.console.actions;
 import java.util.Iterator;
 
 import org.eclipse.jface.viewers.StructuredViewer;
-import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.console.HibernateConsoleRuntimeException;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.HibernateConsoleRuntimeException;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 

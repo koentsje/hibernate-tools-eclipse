@@ -27,7 +27,7 @@ import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
-import org.hibernate.console.ImageConstants;
+import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
 
 public class PersistentClassFigure extends Figure {
 

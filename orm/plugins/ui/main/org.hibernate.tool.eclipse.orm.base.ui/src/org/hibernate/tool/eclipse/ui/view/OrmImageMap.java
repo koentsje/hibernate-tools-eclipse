@@ -11,7 +11,7 @@
 package org.hibernate.tool.eclipse.ui.view;
 
 import org.eclipse.jface.resource.ImageDescriptor;
-import org.hibernate.console.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IColumn;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IProperty;

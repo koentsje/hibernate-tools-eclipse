@@ -29,10 +29,10 @@ import org.eclipse.debug.ui.DebugUITools;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
-import org.hibernate.console.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.LaunchHelper;
+import org.hibernate.tool.eclipse.orm.console.core.utils.LaunchHelper;
 
 /**
  * @author max

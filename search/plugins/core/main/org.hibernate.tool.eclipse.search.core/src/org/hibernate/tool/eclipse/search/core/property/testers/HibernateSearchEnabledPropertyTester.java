@@ -7,8 +7,8 @@ import java.util.Set;
 import org.eclipse.core.expressions.PropertyTester;
 import org.eclipse.jface.viewers.ITreeSelection;
 import org.eclipse.jface.viewers.TreePath;
-import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.console.preferences.PreferencesClassPathUtils;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.preferences.PreferencesClassPathUtils;
 
 public class HibernateSearchEnabledPropertyTester extends PropertyTester {
 

@@ -8,13 +8,13 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
-import org.hibernate.console.ConsoleConfiguration;
-import org.hibernate.console.KnownConfigurations;
-import org.hibernate.console.KnownConfigurationsAdapter;
-import org.hibernate.console.KnownConfigurationsListener;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
+import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurationsAdapter;
+import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurationsListener;
 import org.hibernate.eclipse.console.utils.LaunchHelperUI;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
-import org.hibernate.tool.eclipse.orm.console.core.eclipse.QueryEditor;
+import org.hibernate.tool.eclipse.orm.console.core.ui.QueryEditor;
 
 final class ConfigurationCombo extends ComboContribution {
 
