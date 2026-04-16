@@ -38,7 +38,7 @@ import org.eclipse.debug.core.ILaunchConfiguration;
 import org.hibernate.console.ConfigurationFactory;
 import org.hibernate.console.ConfigurationXMLFactory;
 import org.hibernate.console.ConfigurationXMLStrings;
-import org.hibernate.console.ConnectionProfileUtil;
+import org.hibernate.tool.eclipse.orm.utils.ConnectionProfileUtil;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.console.KnownConfigurations;
 import org.hibernate.console.preferences.ConsoleConfigurationPreferences;

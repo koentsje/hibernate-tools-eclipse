@@ -14,7 +14,7 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import org.hibernate.console.ConnectionProfileUtil;
+import org.hibernate.tool.eclipse.orm.utils.ConnectionProfileUtil;
 
 /**
  * Utils class to extract classpath urls from ConsoleConfigurationPreferences
