@@ -23,7 +23,7 @@ package org.hibernate.eclipse.console.workbench;
 
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.model.IWorkbenchAdapter;
-import org.hibernate.tool.eclipse.util.JDBCToHibernateTypeHelper;
+import org.hibernate.tool.eclipse.orm.utils.JdbcTypeMapper;
 import org.hibernate.console.ImageConstants;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IColumn;
@@ -46,7 +46,7 @@ public class ColumnWorkbenchAdapter implements IWorkbenchAdapter {
 	static String getColumnLabel(IColumn c) {
 		String label = c.getName();
 		if(c.getSqlTypeCode()!=null) {
-			label += " : " + JDBCToHibernateTypeHelper.getJDBCTypeName(c.getSqlTypeCode().intValue()); //$NON-NLS-1$
+			label += " : " + JdbcTypeMapper.getJDBCTypeName(c.getSqlTypeCode().intValue()); //$NON-NLS-1$
 		}
 		return label;
 	}

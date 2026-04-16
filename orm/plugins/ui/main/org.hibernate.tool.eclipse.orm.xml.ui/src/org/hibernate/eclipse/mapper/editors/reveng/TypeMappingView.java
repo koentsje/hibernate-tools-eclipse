@@ -47,7 +47,7 @@ import org.hibernate.eclipse.console.workbench.xpl.AnyAdaptableLabelProvider;
 import org.hibernate.eclipse.mapper.MapperMessages;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IColumn;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IPrimaryKey;
-import org.hibernate.tool.eclipse.util.JDBCToHibernateTypeHelper;
+import org.hibernate.tool.eclipse.orm.utils.JdbcTypeMapper;
 
 public abstract class TypeMappingView extends TreeToTableComposite {
 
@@ -84,7 +84,7 @@ public abstract class TypeMappingView extends TreeToTableComposite {
 				"length", "scale", "precision", "not-null" } );   //$NON-NLS-1$//$NON-NLS-2$ //$NON-NLS-3$//$NON-NLS-4$
 
 		CellEditor[] editors = new CellEditor[result.getColumnProperties().length];
-		editors[0] = new NullableTextCellEditor( result.getTable() );//new ComboBoxCellEditor( result.getTable(), JDBCToHibernateTypeHelper.getJDBCTypes() );
+		editors[0] = new NullableTextCellEditor( result.getTable() );//new ComboBoxCellEditor( result.getTable(), JdbcTypeMapper.getJDBCTypes() );
 		editors[1] = new NullableTextCellEditor( result.getTable() );
 		editors[2] = new IntegerCellEditor( result.getTable() );
 		editors[3] = new IntegerCellEditor( result.getTable() );
@@ -147,18 +147,18 @@ public abstract class TypeMappingView extends TreeToTableComposite {
 		if(sqlTypeCode!=null) {
 			ITypeMapping typeMapping = revEngDef.createTypeMapping();
 
-			typeMapping.setJDBCType(JDBCToHibernateTypeHelper.getJDBCTypeName(sqlTypeCode.intValue()));
+			typeMapping.setJDBCType(JdbcTypeMapper.getJDBCTypeName(sqlTypeCode.intValue()));
 			int length = (int)col.getLength();
 			int precision = col.getPrecision();
 			int scale = col.getScale();
 			boolean nullability = col.isNullable();
-			typeMapping.setHibernateType(JDBCToHibernateTypeHelper.getPreferredHibernateType(sqlTypeCode.intValue(), length, precision, scale, nullability, false));
-			if(JDBCToHibernateTypeHelper.typeHasLength(sqlTypeCode.intValue())) {
+			typeMapping.setHibernateType(JdbcTypeMapper.getPreferredHibernateType(sqlTypeCode.intValue(), length, precision, scale, nullability, false));
+			if(JdbcTypeMapper.typeHasLength(sqlTypeCode.intValue())) {
 				if(length!=0 && col.getDefaultLength()!=length) {
 					typeMapping.setLength(new Integer(length));
 				}
 			}
-			if(JDBCToHibernateTypeHelper.typeHasScaleAndPrecision(sqlTypeCode.intValue())) {
+			if(JdbcTypeMapper.typeHasScaleAndPrecision(sqlTypeCode.intValue())) {
 				if(precision!=0 && col.getDefaultPrecision()!=precision) {
 					typeMapping.setPrecision(new Integer(precision));
 				}

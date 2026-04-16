@@ -1,13 +1,12 @@
-package org.hibernate.tool.eclipse.util;
+package org.hibernate.tool.eclipse.orm.utils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
-import java.sql.SQLException;
 import java.sql.Types;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.hibernate.tool.eclipse.exception.MappingException;
+import org.hibernate.tool.eclipse.orm.runtime.spi.HibernateException;
 
 /**
  * Utility class for mapping between sqltypes and hibernate type names.
@@ -15,9 +14,9 @@ import org.hibernate.tool.eclipse.exception.MappingException;
  * @author max (based on parts from Sql2Java from Middlegen)
  *
  */
-public final class JDBCToHibernateTypeHelper {
+public final class JdbcTypeMapper {
    
-	private JDBCToHibernateTypeHelper() {
+	private JdbcTypeMapper() {
 		
 	}
 	
@@ -116,7 +115,7 @@ public final class JDBCToHibernateTypeHelper {
 				return Integer.parseInt(value);
 			} 
 			catch (NumberFormatException nfe) {
-				throw new MappingException("jdbc-type: " + value + " is not a known JDBC Type nor a valid number"); //$NON-NLS-1$ //$NON-NLS-2$
+				throw new HibernateException("jdbc-type: " + value + " is not a known JDBC Type nor a valid number"); //$NON-NLS-1$ //$NON-NLS-2$
 			}
 		} 
 		else {

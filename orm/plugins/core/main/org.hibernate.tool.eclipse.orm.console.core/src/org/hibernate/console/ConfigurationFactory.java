@@ -48,7 +48,6 @@ import org.hibernate.tool.eclipse.orm.utils.DTDEntityResolver;
 import org.hibernate.tool.eclipse.common.base.core.utils.ReflectHelper;
 import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
 import org.hibernate.tool.eclipse.orm.utils.XMLHelper;
-import org.hibernate.tool.eclipse.exception.MappingException;
 import org.hibernate.tool.eclipse.orm.runtime.spi.HibernateException;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IEnvironment;
@@ -311,7 +310,7 @@ public class ConfigurationFactory {
 				doc = xmlHelper.createSAXReader(resourceName, errors, entityResolver).read(
 						new InputSource(stream));
 				if (errors.size() != 0) {
-					throw new MappingException(
+					throw new HibernateException(
 							ConsoleMessages.ConsoleConfiguration_invalid_configuration, errors
 									.get(0));
 				}
