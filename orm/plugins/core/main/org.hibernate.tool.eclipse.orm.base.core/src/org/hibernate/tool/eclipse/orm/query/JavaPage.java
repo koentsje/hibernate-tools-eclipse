@@ -19,18 +19,13 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.hibernate.tool.eclipse.orm.console.core.eclipse.common;
+package org.hibernate.tool.eclipse.orm.query;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
-import org.hibernate.console.ConsoleMessages;
-import org.hibernate.console.IHibernateExtension;
-import org.hibernate.tool.eclipse.orm.query.AbstractQueryPage;
-import org.hibernate.tool.eclipse.orm.query.QueryInputModel;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ICriteria;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ISession;
 
@@ -54,8 +49,8 @@ public class JavaPage extends AbstractQueryPage {
      * @param model
      * @param session2
      */
-    public JavaPage(IHibernateExtension extension, String criteriaCode, QueryInputModel model) {
-		super(extension.getConsoleConfigurationName(), model);
+    public JavaPage(String consoleConfigurationName, String criteriaCode, QueryInputModel model) {
+		super(consoleConfigurationName, model);
         this.criteriaCode =  criteriaCode;
 		setTabName(getQueryString().replace('\n', ' ').replace('\r', ' '));
     }
@@ -67,7 +62,7 @@ public class JavaPage extends AbstractQueryPage {
         try {
         	if(criteriaCode.indexOf( "System.exit" )>=0) { // TODO: externalize run so we don't need this bogus check! //$NON-NLS-1$
         		list = Collections.emptyList();
-        		addException( new IllegalArgumentException(ConsoleMessages.JavaPage_not_allowed) );
+        		addException( new IllegalArgumentException("System.exit not allowed!") ); //$NON-NLS-1$
         		return;
         	}
             ip = setupInterpreter(getSession());
@@ -142,7 +137,7 @@ public class JavaPage extends AbstractQueryPage {
 
 	public List<String> getPathNames() {
         List<String> l = new ArrayList<String>();
-        l.add(ConsoleMessages.JavaPage_no_info);
+        l.add("<no info>"); //$NON-NLS-1$
         return l;
     }
 

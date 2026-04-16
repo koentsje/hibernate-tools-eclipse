@@ -19,18 +19,13 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.hibernate.tool.eclipse.orm.console.core.eclipse.common;
+package org.hibernate.tool.eclipse.orm.query;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-
-import org.hibernate.console.IHibernateExtension;
-import org.hibernate.tool.eclipse.orm.query.AbstractQueryPage;
-import org.hibernate.tool.eclipse.orm.query.QueryParameter;
-import org.hibernate.tool.eclipse.orm.query.QueryInputModel;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IQuery;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ISession;
@@ -40,7 +35,7 @@ import org.hibernate.tool.eclipse.orm.runtime.spi.ITypeFactory;
 
 public class HQLQueryPage extends AbstractQueryPage {
 
-	private final IHibernateExtension extension;
+	private final IService service;
 	private IQuery query;
 	private String queryString;
 	
@@ -123,9 +118,9 @@ public class HQLQueryPage extends AbstractQueryPage {
 	 * @param string
 	 * @param queryParameters 
 	 */
-	public HQLQueryPage(IHibernateExtension extension, String string, QueryInputModel model) {
-		super(extension.getConsoleConfigurationName(), model);
-		this.extension = extension;
+	public HQLQueryPage(IService service, String consoleConfigurationName, String string, QueryInputModel model) {
+		super(consoleConfigurationName, model);
+		this.service = service;
 		queryString = string;
 		setTabName(getQueryString().replace('\n', ' ').replace('\r', ' ').replace('\t', ' '));
 	}
@@ -208,7 +203,7 @@ public class HQLQueryPage extends AbstractQueryPage {
     }
     
     private IService getService() {
-    	return extension.getHibernateService();
+    	return service;
     }
 
 

@@ -15,6 +15,9 @@ import org.hibernate.console.ConsoleConfigClassLoader;
 import org.hibernate.console.ConsoleMessages;
 import org.hibernate.console.FakeDelegatingDriver;
 import org.hibernate.console.IHibernateExtension;
+import org.hibernate.tool.eclipse.orm.query.HQLQueryPage;
+import org.hibernate.tool.eclipse.orm.query.JavaPage;
+import org.hibernate.tool.eclipse.orm.query.QueryHelper;
 import org.hibernate.tool.eclipse.orm.query.QueryInputModel;
 import org.hibernate.tool.eclipse.orm.query.QueryPage;
 import org.hibernate.console.execution.DefaultExecutionContext;
@@ -119,7 +122,7 @@ public class HibernateExtension implements IHibernateExtension {
 		return (QueryPage)execute(new Command() {
 			public Object execute() {
 				ISession session = sessionFactory.openSession();
-				QueryPage qp = new HQLQueryPage(HibernateExtension.this, hql,queryParameters);
+				QueryPage qp = new HQLQueryPage(getHibernateService(), getConsoleConfigurationName(), hql, queryParameters);
 				qp.setSession(session);
 				return qp;
 			}
@@ -131,7 +134,7 @@ public class HibernateExtension implements IHibernateExtension {
 		return (QueryPage)execute(new Command() {
 			public Object execute() {
 				ISession session = sessionFactory.openSession();
-				QueryPage qp = new JavaPage(HibernateExtension.this,criteriaCode,model);
+				QueryPage qp = new JavaPage(getConsoleConfigurationName(), criteriaCode, model);
 				qp.setSession(session);
 				return qp;
 			}
@@ -265,7 +268,11 @@ public class HibernateExtension implements IHibernateExtension {
 	}
 	
 	public String generateSQL(final String query) {
-		return QueryHelper.generateSQL(executionContext, sessionFactory, query, getHibernateService());
+		return (String) execute(new Command() {
+			public Object execute() {
+				return QueryHelper.generateSQL(sessionFactory, query, getHibernateService());
+			}
+		});
 	}
 
 	public void buildMappings() {
