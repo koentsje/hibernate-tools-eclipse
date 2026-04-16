@@ -233,8 +233,20 @@ public class HibernateExtension implements IHibernateExtension {
 		return configuration;
 	}
 	
+	public ISessionFactory getSessionFactory() {
+		return sessionFactory;
+	}
+
 	public boolean isSessionFactoryCreated() {
 		return sessionFactory != null;
+	}
+
+	public URL findResource(String name) {
+		return classLoader != null ? classLoader.findResource(name) : null;
+	}
+
+	public ClassLoader getClassLoader() {
+		return classLoader;
 	}
 	
 	public void buildMappings() {

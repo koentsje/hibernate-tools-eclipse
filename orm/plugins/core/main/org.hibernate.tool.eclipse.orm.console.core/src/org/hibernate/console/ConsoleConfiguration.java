@@ -25,22 +25,12 @@ import java.io.File;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.security.AccessController;
-import java.security.PrivilegedAction;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
 
-import org.eclipse.osgi.util.NLS;
-import org.hibernate.console.execution.DefaultExecutionContext;
 import org.hibernate.console.execution.ExecutionContext;
 import org.hibernate.console.execution.ExecutionContext.Command;
 import org.hibernate.console.execution.ExecutionContextHolder;
 import org.hibernate.console.preferences.ConsoleConfigurationPreferences;
-import org.hibernate.console.preferences.PreferencesClassPathUtils;
 import org.hibernate.tool.eclipse.orm.query.HQLQueryPage;
 import org.hibernate.tool.eclipse.orm.query.JavaPage;
 import org.hibernate.tool.eclipse.orm.query.QueryHelper;
@@ -53,15 +43,6 @@ import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
 
 public class ConsoleConfiguration implements ExecutionContextHolder {
 
-	private ExecutionContext executionContext;
-	private ConsoleConfigClassLoader classLoader = null;
-
-	private Map<String, FakeDelegatingDriver> fakeDrivers = new HashMap<String, FakeDelegatingDriver>();
-
-	/* TODO: move this out to the actual users of the configuraiton/sf ? */
-	private IConfiguration configuration;
-	private ISessionFactory sessionFactory;
-	
 	//****************************** EXTENSION **********************
 	private String hibernateVersion = "==<None>=="; //set to some unused value //$NON-NLS-1$
 
@@ -87,14 +68,14 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
 	private void loadHibernateExtension(){
 		extension = createHibernateExtension();
 	}
-	
+
 	private void updateHibernateVersion(String hibernateVersion){
 		if (!equals(this.hibernateVersion, hibernateVersion)){
 			this.hibernateVersion = hibernateVersion;
 			loadHibernateExtension();
 		}
 	}
-	
+
     private boolean equals(String str1, String str2) {
         return (str1 == null ? str2 == null : str1.equals(str2) );
     }
@@ -105,7 +86,7 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
 	}
 
 	//****************************** EXTENSION **********************
-	
+
 	public ConsoleConfiguration(ConsoleConfigurationPreferences config) {
 		prefs = config;
 	}
@@ -116,11 +97,7 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
 	}
 
 	public synchronized Object execute(Command c) {
-		if (executionContext != null) {
-			return executionContext.execute(c);
-		}
-		final String msg = NLS.bind(ConsoleMessages.ConsoleConfiguration_null_execution_context, getName());
-		throw new HibernateConsoleRuntimeException(msg);
+		return getHibernateExtension().execute(c);
 	}
 
 	public ConsoleConfigurationPreferences prefs = null;
@@ -131,116 +108,19 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
 	 */
 	public synchronized boolean reset() {
 		boolean resetted = false;
-		// resetting state
 		if (getHibernateExtension() != null ) {
-			getHibernateExtension().reset();
-			getHibernateExtension().closeSessionFactory();
+			resetted = getHibernateExtension().reset();
 		}
-		if (configuration != null) {
-			configuration = null;
-			resetted = true;
-		}
-		resetted = resetted | closeSessionFactory() | cleanUpClassLoader();
-
 		if (resetted) {
 			fireConfigurationReset();
 		}
-		executionContext = null;
 		return resetted;
-	}
-
-	protected boolean cleanUpClassLoader() {
-		boolean resetted = false;
-		if (executionContext != null) {
-			executionContext.execute(new Command() {
-				public Object execute() {
-					Iterator<FakeDelegatingDriver> it = fakeDrivers.values().iterator();
-					while (it.hasNext()) {
-						try {
-							DriverManager.deregisterDriver(it.next());
-						} catch (SQLException e) {
-							// ignore
-						}
-					}
-					return null;
-				}
-			});
-		}
-		if (fakeDrivers.size() > 0) {
-			fakeDrivers.clear();
-			resetted = true;
-		}
-		ClassLoader classLoaderTmp = classLoader;
-		while (classLoaderTmp != null) {
-			if (classLoaderTmp instanceof ConsoleConfigClassLoader) {
-				((ConsoleConfigClassLoader)classLoaderTmp).close();
-				resetted = true;
-			}
-			classLoaderTmp = classLoaderTmp.getParent();
-		}
-		if (classLoader != null) {
-			classLoader = null;
-			resetted = true;
-		}
-		return resetted;
-	}
-	
-	/**
-	 * Create class loader - so it uses the original urls list from preferences. 
-	 */
-	protected void reinitClassLoader() {
-		//the class loader caches user's compiled classes
-		//need to rebuild it on every console configuration rebuild to pick up latest versions.
-		final URL[] customClassPathURLs = PreferencesClassPathUtils.getCustomClassPathURLs(prefs);
-		cleanUpClassLoader();
-		classLoader = createClassLoader(customClassPathURLs);
 	}
 
 	public void build() {
 		reset();
 		getHibernateExtension().build();
-//		configuration = getHibernateExtension().getConfiguration();
-//		reinitClassLoader();
-//		executionContext = new DefaultExecutionContext(getName(), classLoader);
-		configuration = buildWith(null, true);
 		fireConfigurationBuilt();
-	}
-	
-	protected ConsoleConfigClassLoader createClassLoader(final URL[] customClassPathURLs) {
-		ConsoleConfigClassLoader classLoader = AccessController.doPrivileged(new PrivilegedAction<ConsoleConfigClassLoader>() {
-			public ConsoleConfigClassLoader run() {
-				return new ConsoleConfigClassLoader(customClassPathURLs, getParentClassLoader()) {
-					protected Class<?> findClass(String name) throws ClassNotFoundException {
-						try {
-							return super.findClass(name);
-						} catch (ClassNotFoundException cnfe) {
-							throw cnfe;
-						}
-					}
-		
-					protected synchronized Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
-						try {
-							return super.loadClass(name, resolve);
-						} catch (ClassNotFoundException cnfe) {
-							throw cnfe;
-						}
-					}
-		
-					public Class<?> loadClass(String name) throws ClassNotFoundException {
-						try {
-							return super.loadClass(name);
-						} catch (ClassNotFoundException cnfe) {
-							throw cnfe;
-						}
-					}
-					
-					public URL getResource(String name) {
-					      return super.getResource(name);
-					}
-				};
-			}
-		});
-		return classLoader;
 	}
 
 	/**
@@ -248,62 +128,34 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
 	 *
 	 */
 	public IConfiguration buildWith(final IConfiguration cfg, final boolean includeMappings) {
-		reinitClassLoader();
-		executionContext = new DefaultExecutionContext(getName(), classLoader);
-		IConfiguration result = (IConfiguration)execute(new Command() {
-			public Object execute() {
-				ConfigurationFactory csf = new ConfigurationFactory(prefs, fakeDrivers);
-				return csf.createConfiguration(cfg, includeMappings);
-			}
-		});
-		return result;
+		return getHibernateExtension().buildWith(cfg, includeMappings);
 	}
 
-	protected ClassLoader getParentClassLoader() {
-		IHibernateExtension extension = getHibernateExtension();
-		if (extension != null) {
-			return extension.getHibernateService().getClassLoader();
-		} else {
-			return Thread.currentThread().getContextClassLoader();
-		}
-	}
-	
 	public IConfiguration getConfiguration() {
-		return configuration;
+		return getHibernateExtension().getConfiguration();
 	}
+
 	/**
 	 * @return
 	 */
 	public boolean hasConfiguration() {
-		return configuration != null;
+		return getHibernateExtension().hasConfiguration();
 	}
-	
+
 	public void buildMappings(){
-		execute(new Command() {
-			public Object execute() {
-				getConfiguration().buildMappings();
-				return null;
-			}
-		});
 		getHibernateExtension().buildMappings();
 	}
 
 	public void buildSessionFactory() {
-		execute(new Command() {
-			public Object execute() {
-				if (sessionFactory != null) {
-					throw new HibernateConsoleRuntimeException(ConsoleMessages.ConsoleConfiguration_factory_not_closed_before_build_new_factory);
-				}
-				sessionFactory = getConfiguration().buildSessionFactory();
-				fireFactoryBuilt();
-				return null;
-			}
-		});
+		if (isSessionFactoryCreated()) {
+			throw new HibernateConsoleRuntimeException(ConsoleMessages.ConsoleConfiguration_factory_not_closed_before_build_new_factory);
+		}
 		getHibernateExtension().buildSessionFactory();
+		fireFactoryBuilt();
 	}
 
 	public ISessionFactory getSessionFactory() {
-		return sessionFactory;
+		return getHibernateExtension().getSessionFactory();
 	}
 
 
@@ -311,13 +163,13 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
 	ArrayList<ConsoleConfigurationListener> consoleCfgListeners = new ArrayList<ConsoleConfigurationListener>();
 
 	public QueryPage executeHQLQuery(final String hql) {
-		return executeHQLQuery(hql, new QueryInputModel(extension.getHibernateService()));
+		return executeHQLQuery(hql, new QueryInputModel(getHibernateExtension().getHibernateService()));
 	}
 
 	public QueryPage executeHQLQuery(final String hql, final QueryInputModel queryParameters) {
 		QueryPage qp = (QueryPage)execute(new Command() {
 			public Object execute() {
-				ISession session = sessionFactory.openSession();
+				ISession session = getSessionFactory().openSession();
 				QueryPage qp = new HQLQueryPage(
 						getHibernateExtension().getHibernateService(),
 						getName(), hql, queryParameters);
@@ -333,7 +185,7 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
 	public QueryPage executeBSHQuery(final String queryString, final QueryInputModel model) {
 		QueryPage qp = (QueryPage)execute(new Command() {
 			public Object execute() {
-				ISession session = sessionFactory.openSession();
+				ISession session = getSessionFactory().openSession();
 				QueryPage qp = new JavaPage(getName(), queryString, model);
 				qp.setSession(session);
 				return qp;
@@ -347,11 +199,11 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
 	public String generateSQL(final String query) {
 		return (String) execute(new Command() {
 			public Object execute() {
-				return QueryHelper.generateSQL(sessionFactory, query, getHibernateExtension().getHibernateService());
+				return QueryHelper.generateSQL(getSessionFactory(), query, getHibernateExtension().getHibernateService());
 			}
 		});
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	// clone listeners to thread safe iterate over array
 	private ArrayList<ConsoleConfigurationListener> cloneConsoleCfgListeners() {
@@ -362,13 +214,13 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
 		for (ConsoleConfigurationListener view : cloneConsoleCfgListeners()) {
 			view.configurationBuilt(this);
 		}
-	}	
+	}
 
 	private void fireConfigurationReset() {
 		for (ConsoleConfigurationListener view : cloneConsoleCfgListeners()) {
 			view.configurationReset(this);
 		}
-	}	
+	}
 
 	private void fireQueryPageCreated(QueryPage qp) {
 		for (ConsoleConfigurationListener view : cloneConsoleCfgListeners()) {
@@ -378,13 +230,13 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
 
 	private void fireFactoryBuilt() {
 		for (ConsoleConfigurationListener view : cloneConsoleCfgListeners()) {
-			view.sessionFactoryBuilt(this, sessionFactory);
+			view.sessionFactoryBuilt(this, getSessionFactory());
 		}
 	}
 
-	private void fireFactoryClosing(ISessionFactory sessionFactory2) {
+	private void fireFactoryClosing(ISessionFactory closingFactory) {
 		for (ConsoleConfigurationListener view : cloneConsoleCfgListeners()) {
-			view.sessionFactoryClosing(this, sessionFactory2);
+			view.sessionFactoryClosing(this, closingFactory);
 		}
 	}
 
@@ -402,13 +254,13 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
 
 
 	public boolean isSessionFactoryCreated() {
-		return sessionFactory != null;
+		return getHibernateExtension().isSessionFactoryCreated();
 	}
 
 	public ConsoleConfigurationPreferences getPreferences() {
 		return prefs;
 	}
-	
+
 	public File getConfigXMLFile() {
 		IEnvironment environment = getHibernateExtension().getHibernateService().getEnvironment();
 		File configXMLFile = null;
@@ -416,11 +268,7 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
 			configXMLFile = prefs.getConfigXMLFile();
 		}
 		if (configXMLFile == null) {
-			URL url = null;
-			//reinitClassLoader();
-			if (classLoader != null) {
-				url = classLoader.findResource("hibernate.cfg.xml"); //$NON-NLS-1$
-			}
+			URL url = getHibernateExtension().findResource("hibernate.cfg.xml"); //$NON-NLS-1$
 			if (url != null) {
 				URI uri = null;
 				try {
@@ -451,21 +299,19 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
 	}
 
 	public ExecutionContext getExecutionContext() {
-		return executionContext;
+		return new ExecutionContext() {
+			public void installLoader() { }
+			public Object execute(Command c) { return ConsoleConfiguration.this.execute(c); }
+			public void uninstallLoader() { }
+		};
 	}
 
 	public boolean closeSessionFactory() {
-		boolean resetted = false;
-		if (sessionFactory != null) {
-			fireFactoryClosing(sessionFactory);
-			sessionFactory.close();
-			sessionFactory = null;
-			resetted = true;
+		ISessionFactory sf = getSessionFactory();
+		if (sf != null) {
+			fireFactoryClosing(sf);
 		}
-		if (getHibernateExtension() != null){
-			getHibernateExtension().closeSessionFactory();
-		}
-		return resetted;
+		return getHibernateExtension().closeSessionFactory();
 	}
 
 }

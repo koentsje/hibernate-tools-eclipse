@@ -41,8 +41,4 @@ public class EclipseConsoleConfiguration extends ConsoleConfiguration {
 		return new HibernateExtension(prefs);
 	}
 
-	protected ClassLoader getParentClassLoader() {
-		return HibernatePlugin.getDefault().getClass().getClassLoader();
-	}
-
 }

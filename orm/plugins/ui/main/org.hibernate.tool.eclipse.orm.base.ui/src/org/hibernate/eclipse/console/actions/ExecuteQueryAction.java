@@ -64,21 +64,20 @@ public class ExecuteQueryAction extends Action {
 
 			ConsoleConfiguration cfg = queryEditor.getConsoleConfiguration();
 			if (cfg != null) {
-				//keep states of ConsoleConfiguration and HibernateExtension synchronized
-				if (!(cfg.isSessionFactoryCreated() && cfg.getHibernateExtension().isSessionFactoryCreated())) {
+				if (!cfg.isSessionFactoryCreated()) {
 					if (ProjectCompilerVersionChecker.validateProjectComplianceLevel(cfg)){
 						if (queryEditor.askUserForConfiguration(cfg.getName())) {
-							if (!(cfg.hasConfiguration() && cfg.getHibernateExtension().hasConfiguration())) {
+							if (!cfg.hasConfiguration()) {
 			    				try {
 			    					cfg.build();
 			    				} catch (Exception he) {
 			    					HibernateBasePlugin.getDefault().showError(
-			    						HibernateBasePlugin.getShell(), 
+			    						HibernateBasePlugin.getShell(),
 			    						BasicHibernateMessages.LoadConsoleCFGCompletionProposal_could_not_load_configuration +
 			    						' ' + cfg.getName(), he);
 			    				}
 							}
-							if (cfg.hasConfiguration() && cfg.getHibernateExtension().hasConfiguration()) {
+							if (cfg.hasConfiguration()) {
 								cfg.buildSessionFactory();
 								queryEditor.executeQuery(cfg);
 							}

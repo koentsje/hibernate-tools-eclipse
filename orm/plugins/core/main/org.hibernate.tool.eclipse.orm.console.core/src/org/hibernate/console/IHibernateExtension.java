@@ -1,7 +1,11 @@
 package org.hibernate.console;
 
+import java.net.URL;
+
+import org.hibernate.console.execution.ExecutionContext;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
 
 public interface IHibernateExtension {
 
@@ -21,9 +25,17 @@ public interface IHibernateExtension {
 
 	boolean hasConfiguration();
 
+	ISessionFactory getSessionFactory();
+
 	boolean isSessionFactoryCreated();
 
+	Object execute(ExecutionContext.Command c);
+
 	boolean hasExecutionContext();
+
+	URL findResource(String name);
+
+	ClassLoader getClassLoader();
 
 	IService getHibernateService();
 

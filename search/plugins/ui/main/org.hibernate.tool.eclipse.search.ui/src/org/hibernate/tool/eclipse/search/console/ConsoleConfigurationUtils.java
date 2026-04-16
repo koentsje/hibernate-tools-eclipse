@@ -1,6 +1,5 @@
 package org.hibernate.tool.eclipse.search.console;
 
-import java.lang.reflect.Field;
 import java.util.Set;
 
 import org.eclipse.datatools.connectivity.IConnection;
@@ -10,7 +9,6 @@ import org.eclipse.datatools.connectivity.ui.PingJob;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.ui.PlatformUI;
-import org.hibernate.console.ConsoleConfigClassLoader;
 import org.hibernate.console.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.tool.eclipse.search.core.HSearchConsoleConfigurationPreferences;
@@ -19,16 +17,9 @@ import org.hibernate.tool.eclipse.search.runtime.spi.HSearchServiceLookup;
 import org.hibernate.tool.eclipse.search.runtime.spi.IHSearchService;
 
 public class ConsoleConfigurationUtils {
-	
+
 	public static ClassLoader getClassLoader(ConsoleConfiguration cc) {
-		try {
-			Field loaderField = cc.getClass().getDeclaredField("classLoader");
-			loaderField.setAccessible(true);
-			return (ConsoleConfigClassLoader)loaderField.get(cc);
-			
-		} catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException e1) {
-			return null;
-		}
+		return cc.getHibernateExtension().getClassLoader();
 	}
 	
 	public static boolean loadSessionFactorySafely(ConsoleConfiguration cc) {
