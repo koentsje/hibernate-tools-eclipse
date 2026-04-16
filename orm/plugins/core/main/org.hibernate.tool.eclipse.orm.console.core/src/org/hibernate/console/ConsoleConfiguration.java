@@ -41,10 +41,14 @@ import org.hibernate.console.execution.ExecutionContext.Command;
 import org.hibernate.console.execution.ExecutionContextHolder;
 import org.hibernate.console.preferences.ConsoleConfigurationPreferences;
 import org.hibernate.console.preferences.PreferencesClassPathUtils;
+import org.hibernate.tool.eclipse.orm.query.HQLQueryPage;
+import org.hibernate.tool.eclipse.orm.query.JavaPage;
+import org.hibernate.tool.eclipse.orm.query.QueryHelper;
 import org.hibernate.tool.eclipse.orm.query.QueryInputModel;
 import org.hibernate.tool.eclipse.orm.query.QueryPage;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IEnvironment;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ISession;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
 
 public class ConsoleConfiguration implements ExecutionContextHolder {
@@ -311,17 +315,41 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
 	}
 
 	public QueryPage executeHQLQuery(final String hql, final QueryInputModel queryParameters) {
-		QueryPage qp = getHibernateExtension().executeHQLQuery(hql, queryParameters);
+		QueryPage qp = (QueryPage)execute(new Command() {
+			public Object execute() {
+				ISession session = sessionFactory.openSession();
+				QueryPage qp = new HQLQueryPage(
+						getHibernateExtension().getHibernateService(),
+						getName(), hql, queryParameters);
+				qp.setSession(session);
+				return qp;
+			}
+		});
 		qp.setId(++execcount);
 		fireQueryPageCreated(qp);
 		return qp;
 	}
 
 	public QueryPage executeBSHQuery(final String queryString, final QueryInputModel model) {
-		QueryPage qp = getHibernateExtension().executeCriteriaQuery(queryString, model);
+		QueryPage qp = (QueryPage)execute(new Command() {
+			public Object execute() {
+				ISession session = sessionFactory.openSession();
+				QueryPage qp = new JavaPage(getName(), queryString, model);
+				qp.setSession(session);
+				return qp;
+			}
+		});
 		qp.setId(++execcount);
 		fireQueryPageCreated(qp);
 		return qp;
+	}
+
+	public String generateSQL(final String query) {
+		return (String) execute(new Command() {
+			public Object execute() {
+				return QueryHelper.generateSQL(sessionFactory, query, getHibernateExtension().getHibernateService());
+			}
+		});
 	}
 	
 	@SuppressWarnings("unchecked")

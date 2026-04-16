@@ -15,11 +15,6 @@ import org.hibernate.console.ConsoleConfigClassLoader;
 import org.hibernate.console.ConsoleMessages;
 import org.hibernate.console.FakeDelegatingDriver;
 import org.hibernate.console.IHibernateExtension;
-import org.hibernate.tool.eclipse.orm.query.HQLQueryPage;
-import org.hibernate.tool.eclipse.orm.query.JavaPage;
-import org.hibernate.tool.eclipse.orm.query.QueryHelper;
-import org.hibernate.tool.eclipse.orm.query.QueryInputModel;
-import org.hibernate.tool.eclipse.orm.query.QueryPage;
 import org.hibernate.console.execution.DefaultExecutionContext;
 import org.hibernate.console.execution.ExecutionContext;
 import org.hibernate.console.execution.ExecutionContext.Command;
@@ -28,7 +23,6 @@ import org.hibernate.console.preferences.PreferencesClassPathUtils;
 import org.hibernate.tool.eclipse.orm.runtime.spi.HibernateException;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
-import org.hibernate.tool.eclipse.orm.runtime.spi.ISession;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
 import org.hibernate.tool.eclipse.orm.runtime.spi.RuntimeServiceManager;
 
@@ -115,30 +109,6 @@ public class HibernateExtension implements IHibernateExtension {
 		// return hibernate 3.5 by default
 		// TODO do something smarter here
 		return result != null ? result : "3.5"; //$NON-NLS-1$
-	}
-
-	public QueryPage executeHQLQuery(final String hql,
-			final QueryInputModel queryParameters) {
-		return (QueryPage)execute(new Command() {
-			public Object execute() {
-				ISession session = sessionFactory.openSession();
-				QueryPage qp = new HQLQueryPage(getHibernateService(), getConsoleConfigurationName(), hql, queryParameters);
-				qp.setSession(session);
-				return qp;
-			}
-		});
-	}
-
-	public QueryPage executeCriteriaQuery(final String criteriaCode,
-			final QueryInputModel model) {
-		return (QueryPage)execute(new Command() {
-			public Object execute() {
-				ISession session = sessionFactory.openSession();
-				QueryPage qp = new JavaPage(getConsoleConfigurationName(), criteriaCode, model);
-				qp.setSession(session);
-				return qp;
-			}
-		});
 	}
 
 	public void build() {
@@ -267,14 +237,6 @@ public class HibernateExtension implements IHibernateExtension {
 		return sessionFactory != null;
 	}
 	
-	public String generateSQL(final String query) {
-		return (String) execute(new Command() {
-			public Object execute() {
-				return QueryHelper.generateSQL(sessionFactory, query, getHibernateService());
-			}
-		});
-	}
-
 	public void buildMappings() {
 		execute(new Command() {
 			public Object execute() {
