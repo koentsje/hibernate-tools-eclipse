@@ -25,7 +25,7 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.hibernate.console.preferences.ConsoleConfigurationPreferences;
 import org.hibernate.console.preferences.ConsoleConfigurationPreferences.ConfigurationMode;
-import org.hibernate.util.xpl.StringHelper;
+import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
 
 /**
  * XML document part creation factory,

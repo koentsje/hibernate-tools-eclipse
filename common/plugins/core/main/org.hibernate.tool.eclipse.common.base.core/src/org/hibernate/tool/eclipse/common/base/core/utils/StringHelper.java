@@ -22,7 +22,7 @@
  * Boston, MA  02110-1301  USA
  *
  */
-package org.hibernate.util.xpl;
+package org.hibernate.tool.eclipse.common.base.core.utils;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -30,7 +30,7 @@ import org.eclipse.core.runtime.Platform;
 import org.hibernate.console.ConsoleConfigClassLoader;
 import org.hibernate.console.execution.DefaultExecutionContext;
 import org.hibernate.console.execution.ExecutionContext;
-import org.hibernate.util.xpl.ReflectHelper;
+import org.hibernate.tool.eclipse.common.base.core.utils.ReflectHelper;
 import org.hibernate.tool.eclipse.orm.base.core.test.utils.GarbageCollectionUtil;
 import org.junit.After;
 import org.junit.Assert;

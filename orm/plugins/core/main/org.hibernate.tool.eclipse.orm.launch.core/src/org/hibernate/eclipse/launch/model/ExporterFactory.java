@@ -19,7 +19,7 @@ import org.hibernate.console.HibernateConsoleRuntimeException;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.launch.HibernateLaunchConstants;
 import org.hibernate.eclipse.launch.PathHelper;
-import org.hibernate.util.xpl.StringHelper;
+import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IArtifactCollector;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IExporter;

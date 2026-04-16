@@ -38,7 +38,7 @@ import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessag
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.ProjectUtils;
 import org.hibernate.eclipse.hqleditor.CompletionHelper;
-import org.hibernate.util.xpl.StringHelper;
+import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
 
 public class JavaCompletionProcessor implements IContentAssistProcessor {
 

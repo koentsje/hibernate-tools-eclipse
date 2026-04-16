@@ -50,7 +50,7 @@ import org.hibernate.eclipse.console.utils.DialogSelectionHelper;
 import org.hibernate.tool.eclipse.common.base.core.utils.DriverClassHelpers;
 import org.hibernate.eclipse.console.utils.LaunchHelperUI;
 import org.hibernate.eclipse.launch.PathHelper;
-import org.hibernate.util.xpl.StringHelper;
+import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
 import org.hibernate.tool.eclipse.jpt.core.internal.HibernateJpaProject;
 import org.hibernate.tool.eclipse.jpt.ui.HibernateJptUIPlugin;
 import org.hibernate.tool.eclipse.orm.runtime.spi.RuntimeServiceManager;

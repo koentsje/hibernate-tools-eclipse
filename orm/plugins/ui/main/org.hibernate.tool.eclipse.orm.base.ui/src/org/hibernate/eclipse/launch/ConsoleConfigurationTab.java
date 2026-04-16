@@ -14,7 +14,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Text;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
-import org.hibernate.util.xpl.StringHelper;
+import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
 
 abstract public class ConsoleConfigurationTab extends AbstractLaunchConfigurationTab {
 

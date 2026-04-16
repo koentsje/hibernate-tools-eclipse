@@ -54,7 +54,7 @@ import org.hibernate.eclipse.mapper.editors.reveng.RevEngTypeMappingPage;
 import org.hibernate.eclipse.mapper.editors.xpl.XMLFormEditorPart;
 import org.hibernate.eclipse.mapper.model.DOMReverseEngineeringDefinition;
 import org.hibernate.tool.eclipse.orm.project.HibernateNature;
-import org.hibernate.util.xpl.StringHelper;
+import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IOverrideRepository;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ITableFilter;

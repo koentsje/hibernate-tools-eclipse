@@ -44,7 +44,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.internal.dialogs.PropertyDialog;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
-import org.hibernate.util.xpl.StringHelper;
+import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
 
 /**
  * 

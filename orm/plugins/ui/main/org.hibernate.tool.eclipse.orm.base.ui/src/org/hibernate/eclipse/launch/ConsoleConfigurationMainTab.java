@@ -52,7 +52,7 @@ import org.hibernate.tool.eclipse.orm.console.core.eclipse.utils.ProjectUtils;
 import org.hibernate.eclipse.console.wizards.NewConfigurationWizard;
 import org.hibernate.eclipse.console.wizards.NewConfigurationWizardPage;
 import org.hibernate.tool.eclipse.orm.utils.HibernateEclipseUtils;
-import org.hibernate.util.xpl.StringHelper;
+import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
 import org.hibernate.tool.eclipse.orm.runtime.spi.RuntimeServiceManager;
 import org.hibernate.tool.eclipse.common.base.core.launch.IBasicHibernateLaunchConstants;
 

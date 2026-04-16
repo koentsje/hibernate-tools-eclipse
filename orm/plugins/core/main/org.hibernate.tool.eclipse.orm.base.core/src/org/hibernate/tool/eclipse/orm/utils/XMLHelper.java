@@ -1,4 +1,4 @@
-package org.hibernate.util.xpl;
+package org.hibernate.tool.eclipse.orm.utils;
 
 import java.util.List;
 

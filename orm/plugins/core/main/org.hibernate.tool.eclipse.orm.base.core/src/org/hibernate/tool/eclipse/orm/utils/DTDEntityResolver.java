@@ -1,4 +1,4 @@
-package org.hibernate.util.xpl;
+package org.hibernate.tool.eclipse.orm.utils;
 
 import java.io.InputStream;
 import java.io.Serializable;

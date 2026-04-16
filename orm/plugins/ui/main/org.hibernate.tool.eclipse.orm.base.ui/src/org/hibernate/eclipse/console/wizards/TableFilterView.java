@@ -45,7 +45,7 @@ import org.hibernate.eclipse.console.workbench.DeferredContentProvider;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.workbench.LazyDatabaseSchema;
 import org.hibernate.tool.eclipse.orm.workbench.TableContainer;
 import org.hibernate.eclipse.console.workbench.xpl.AnyAdaptableLabelProvider;
-import org.hibernate.util.xpl.StringHelper;
+import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IColumn;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ITable;
 

@@ -77,7 +77,7 @@ import org.hibernate.tool.eclipse.orm.launch.ICodeGenerationLaunchConstants;
 import org.hibernate.eclipse.launch.exporter.ConsoleExtension;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.common.HibernateExtension;
 import org.hibernate.eclipse.launch.model.ExporterFactory;
-import org.hibernate.util.xpl.StringHelper;
+import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
 import org.hibernate.tool.eclipse.orm.runtime.spi.HibernateException;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IArtifactCollector;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;

@@ -26,7 +26,7 @@ import org.hibernate.eclipse.hqleditor.HQLEditor;
 import org.hibernate.eclipse.hqleditor.HQLEditorDocumentSetupParticipant;
 import org.hibernate.eclipse.hqleditor.HQLSourceViewer;
 import org.hibernate.eclipse.hqleditor.HQLSourceViewerConfiguration;
-import org.hibernate.util.xpl.StringHelper;
+import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
 
 public class DynamicSQLPreviewView extends ViewPart {
 

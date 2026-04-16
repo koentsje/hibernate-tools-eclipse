@@ -36,4 +36,5 @@ Bundle-ActivationPolicy: lazy
 Eclipse-BuddyPolicy: registered
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Eclipse-BundleShape: dir
-Import-Package: org.eclipse.osgi.util
+Import-Package: org.eclipse.osgi.util,
+ org.slf4j;version="1.7.2"

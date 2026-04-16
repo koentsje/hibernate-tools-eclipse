@@ -53,7 +53,7 @@ import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessag
 import org.hibernate.eclipse.launch.model.ExporterFactory;
 import org.hibernate.eclipse.launch.model.ExporterProperty;
 import org.hibernate.eclipse.console.utils.DialogSelectionHelper;
-import org.hibernate.util.xpl.StringHelper;
+import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
 
 /**
  * Add/edit property dialog to configure Hibernate Exporters.

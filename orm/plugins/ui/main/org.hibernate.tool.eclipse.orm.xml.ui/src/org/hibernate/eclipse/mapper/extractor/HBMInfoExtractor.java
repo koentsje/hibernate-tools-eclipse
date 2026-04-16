@@ -41,7 +41,7 @@ import org.eclipse.jdt.core.Signature;
 import org.eclipse.wst.sse.ui.internal.contentassist.CustomCompletionProposal;
 import org.eclipse.wst.xml.ui.internal.contentassist.XMLRelevanceConstants;
 import org.hibernate.eclipse.mapper.MapperMessages;
-import org.hibernate.util.xpl.StringHelper;
+import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IEnvironment;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 import org.w3c.dom.NamedNodeMap;

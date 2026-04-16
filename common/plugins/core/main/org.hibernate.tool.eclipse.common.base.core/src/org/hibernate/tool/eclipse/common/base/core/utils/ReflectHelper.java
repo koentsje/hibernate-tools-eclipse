@@ -1,4 +1,4 @@
-package org.hibernate.util.xpl;
+package org.hibernate.tool.eclipse.common.base.core.utils;
 
 
 public final class ReflectHelper {

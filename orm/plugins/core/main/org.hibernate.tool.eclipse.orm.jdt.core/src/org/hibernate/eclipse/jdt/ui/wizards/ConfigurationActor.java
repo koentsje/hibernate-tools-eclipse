@@ -49,7 +49,7 @@ import org.hibernate.eclipse.jdt.ui.internal.jpa.common.RefEntityInfo;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.common.RefType;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.common.Utils;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateProjectConsoleManager;
-import org.hibernate.util.xpl.StringHelper;
+import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IColumn;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
