@@ -25,7 +25,7 @@ import org.eclipse.core.resources.IStorage;
 import org.eclipse.ui.IMemento;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.QueryEditorInput;
-import org.hibernate.tool.eclipse.orm.hqleditor.HQLEditorStorage;
+import org.hibernate.tool.eclipse.orm.hql.EditorStorage;
 
 /**
  * input for hql editor on non file based storage.
@@ -33,7 +33,7 @@ import org.hibernate.tool.eclipse.orm.hqleditor.HQLEditorStorage;
 public class HQLEditorInput extends QueryEditorInput {
 
     public HQLEditorInput( String storageSource ) {
-        super( new HQLEditorStorage( storageSource ) );
+        super( new EditorStorage( storageSource ) );
     }
 
     public HQLEditorInput( IStorage storage ) {

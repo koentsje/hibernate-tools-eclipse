@@ -67,7 +67,7 @@ import org.hibernate.eclipse.console.workbench.ConfigurationAdapterFactory;
 import org.hibernate.eclipse.criteriaeditor.CriteriaEditorInput;
 import org.hibernate.eclipse.criteriaeditor.CriteriaEditorStorage;
 import org.hibernate.eclipse.hqleditor.HQLEditorInput;
-import org.hibernate.tool.eclipse.orm.hqleditor.HQLEditorStorage;
+import org.hibernate.tool.eclipse.orm.hql.EditorStorage;
 import org.hibernate.tool.eclipse.orm.launch.ICodeGenerationLaunchConstants;
 import org.hibernate.eclipse.launch.core.refactoring.ConsoleConfigurationRenameProcessor;
 import org.hibernate.tool.eclipse.common.base.core.logging.PluginLogger;
@@ -480,7 +480,7 @@ public class HibernateBasePlugin extends AbstractUIPlugin implements PluginLogge
 		 try {
 		        IWorkbenchPage page = getActiveWorkbenchWindow().getActivePage();
 
-		        HQLEditorStorage storage = new HQLEditorStorage(consoleName, hql==null?"":hql);		         //$NON-NLS-1$
+		        EditorStorage storage = new EditorStorage(consoleName, hql==null?"":hql);		         //$NON-NLS-1$
 
 		        final HQLEditorInput editorInput = new HQLEditorInput(storage);
 		            return page.openEditor(editorInput, "org.hibernate.eclipse.hqleditor.HQLEditor", true); //$NON-NLS-1$

@@ -19,7 +19,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.hibernate.tool.eclipse.orm.hqleditor;
+package org.hibernate.tool.eclipse.orm.hql;
 
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.tool.eclipse.common.base.core.resources.InMemoryStorage;
@@ -27,17 +27,17 @@ import org.hibernate.tool.eclipse.common.base.core.resources.InMemoryStorage;
 /**
  * Storage for HQL editors without a file
  */
-public class HQLEditorStorage extends InMemoryStorage {
+public class EditorStorage extends InMemoryStorage {
 
-    public HQLEditorStorage( String source ) {
+    public EditorStorage( String source ) {
         super(source);
     }
 
-    public HQLEditorStorage( String configurationName, String name, String source ) {
+    public EditorStorage( String configurationName, String name, String source ) {
         super(configurationName,name, source);
     }
 
-    public HQLEditorStorage(String consoleName, String string) {
+    public EditorStorage(String consoleName, String string) {
 		super(consoleName, "HQL: " + (consoleName==null?BasicHibernateMessages.HQLEditorStorage_none:consoleName), string); //$NON-NLS-1$
 	}
 

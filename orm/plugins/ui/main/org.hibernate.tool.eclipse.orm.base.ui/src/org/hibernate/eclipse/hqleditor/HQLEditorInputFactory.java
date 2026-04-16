@@ -25,7 +25,7 @@ import org.eclipse.core.resources.IStorage;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.ui.IElementFactory;
 import org.eclipse.ui.IMemento;
-import org.hibernate.tool.eclipse.orm.hqleditor.HQLEditorStorage;
+import org.hibernate.tool.eclipse.orm.hql.EditorStorage;
 
 public class HQLEditorInputFactory implements IElementFactory {
 
@@ -44,7 +44,7 @@ public class HQLEditorInputFactory implements IElementFactory {
         String contentName = memento.getString( KEY_STORAGE_NAME );
         String contentString = memento.getString( KEY_STORAGE_CONTENT );
         String configurationName = memento.getString(KEY_CONFIGURATION_NAME);
-        HQLEditorStorage storage = new HQLEditorStorage( configurationName, contentName, contentString );
+        EditorStorage storage = new EditorStorage( configurationName, contentName, contentString );
         
         HQLEditorInput hqlStorageInput = new HQLEditorInput( storage );
         
@@ -64,8 +64,8 @@ public class HQLEditorInputFactory implements IElementFactory {
         IStorage storage = input.getStorage();
         if (storage != null) {
             storageName = storage.getName();            
-            if (storage instanceof HQLEditorStorage) {
-                HQLEditorStorage sqlEditorStorage = (HQLEditorStorage) storage;
+            if (storage instanceof EditorStorage) {
+                EditorStorage sqlEditorStorage = (EditorStorage) storage;
                 storageContent = sqlEditorStorage.getContentsString();
                 configurationName = sqlEditorStorage.getConfigurationName();
             }

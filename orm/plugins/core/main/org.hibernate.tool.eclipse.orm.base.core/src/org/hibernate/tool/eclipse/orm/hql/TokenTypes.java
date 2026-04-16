@@ -1,6 +1,6 @@
-package org.hibernate.tool.eclipse.orm.hqleditor;
+package org.hibernate.tool.eclipse.orm.hql;
 
-public interface HQLTokenTypes {
+public interface TokenTypes {
 	
 	int EOF = 1;
 	int NULL_TREE_LOOKAHEAD = 3;

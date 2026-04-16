@@ -1,4 +1,4 @@
-package org.hibernate.tool.eclipse.orm.hqleditor;
+package org.hibernate.tool.eclipse.orm.hql;
 
 import java.io.InputStream;
 import java.io.Reader;
@@ -20,21 +20,21 @@ import antlr.TokenStreamIOException;
 import antlr.TokenStreamRecognitionException;
 import antlr.collections.impl.BitSet;
 
-public class HQLBaseLexer extends antlr.CharScanner implements HQLTokenTypes, TokenStream
+public class BaseLexer extends antlr.CharScanner implements TokenTypes, TokenStream
 {
 
 	// NOTE: The real implementations are in the subclass.
 	protected void setPossibleID(boolean possibleID) {}
-public HQLBaseLexer(InputStream in) {
+public BaseLexer(InputStream in) {
 	this(new ByteBuffer(in));
 }
-public HQLBaseLexer(Reader in) {
+public BaseLexer(Reader in) {
 	this(new CharBuffer(in));
 }
-public HQLBaseLexer(InputBuffer ib) {
+public BaseLexer(InputBuffer ib) {
 	this(new LexerSharedInputState(ib));
 }
-public HQLBaseLexer(LexerSharedInputState state) {
+public BaseLexer(LexerSharedInputState state) {
 	super(state);
 	caseSensitiveLiterals = false;
 	setCaseSensitive(false);
