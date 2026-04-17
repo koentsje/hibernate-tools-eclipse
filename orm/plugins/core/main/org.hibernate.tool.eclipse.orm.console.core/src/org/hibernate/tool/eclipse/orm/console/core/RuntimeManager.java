@@ -120,6 +120,7 @@ public class RuntimeManager implements IRuntimeManager {
 	}
 
 	public IConfiguration buildWith(final IConfiguration cfg, final boolean includeMappings) {
+		closeSessionFactory();
 		reinitClassLoader();
 		//TODO handle user libraries here
 		executionContext = new DefaultExecutionContext(prefs.getName(), classLoader);

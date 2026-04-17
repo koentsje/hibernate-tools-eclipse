@@ -168,29 +168,27 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
 	}
 
 	public QueryPage executeHQLQuery(final String hql, final QueryInputModel queryParameters) {
-		QueryPage qp = (QueryPage)execute(() -> {
+		return (QueryPage)execute(() -> {
 			ISession session = getSessionFactory().openSession();
 			QueryPage page = new HQLQueryPage(
 					getRuntimeManager().getHibernateService(),
 					getName(), hql, queryParameters);
 			page.setSession(session);
+			page.setId(++execcount);
+			fireQueryPageCreated(page);
 			return page;
 		});
-		qp.setId(++execcount);
-		fireQueryPageCreated(qp);
-		return qp;
 	}
 
 	public QueryPage executeBSHQuery(final String queryString, final QueryInputModel model) {
-		QueryPage qp = (QueryPage)execute(() -> {
+		return (QueryPage)execute(() -> {
 			ISession session = getSessionFactory().openSession();
 			QueryPage page = new JavaPage(getName(), queryString, model);
 			page.setSession(session);
+			page.setId(++execcount);
+			fireQueryPageCreated(page);
 			return page;
 		});
-		qp.setId(++execcount);
-		fireQueryPageCreated(qp);
-		return qp;
 	}
 
 	public String generateSQL(final String query) {
