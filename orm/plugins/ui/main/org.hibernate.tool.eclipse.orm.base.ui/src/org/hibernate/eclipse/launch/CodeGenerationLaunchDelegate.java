@@ -70,7 +70,6 @@ import org.eclipse.text.edits.TextEdit;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.HibernateConsoleRuntimeException;
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
-import org.hibernate.tool.eclipse.orm.console.core.execution.ExecutionContext.Command;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.launch.ICodeGenerationLaunchConstants;
@@ -264,7 +263,7 @@ public class CodeGenerationLaunchDelegate extends AntLaunchDelegate {
 		Assert.isNotNull(monitor);
 		ExporterAttributes attributes = new ExporterAttributes(configuration);
 		ConsoleConfiguration cc = KnownConfigurations.getInstance().find(attributes.getConsoleConfigurationName());
-		ConsoleExtension consoleExtension = (ConsoleExtension) ((HibernateExtension) cc.getHibernateExtension()).getConsoleExtension();
+		ConsoleExtension consoleExtension = (ConsoleExtension) ((HibernateExtension) cc.getRuntimeManager()).getConsoleExtension();
 		Map<String, File[]> generatedFiles = consoleExtension.launchExporters(configuration, mode, launch, monitor);
 		// code formatting needs to happen *after* refresh to make sure eclipse will format the uptodate files!
         if(generatedFiles!=null) {
@@ -388,11 +387,9 @@ public class CodeGenerationLaunchDelegate extends AntLaunchDelegate {
 			if (monitor.isCanceled())
 				return null;
 			
-			final IService service = cc.getHibernateExtension().getHibernateService();
+			final IService service = cc.getRuntimeManager().getHibernateService();
 
-			return (IArtifactCollector) cc.execute(new Command() {
-
-				public Object execute() {
+			return (IArtifactCollector) cc.execute(() -> {
 					IArtifactCollector artifactCollector = service.newArtifactCollector();
 
                     // Global properties
@@ -422,8 +419,6 @@ public class CodeGenerationLaunchDelegate extends AntLaunchDelegate {
                        monitor.worked(1);
                     }
 					return artifactCollector;
-				}
-
 			});
 
 
@@ -444,7 +439,7 @@ public class CodeGenerationLaunchDelegate extends AntLaunchDelegate {
 			}
 
 //			final JDBCMetaDataConfiguration cfg = new JDBCMetaDataConfiguration();
-			final IService service = cc.getHibernateExtension().getHibernateService();
+			final IService service = cc.getRuntimeManager().getHibernateService();
 			final IConfiguration cfg = service.newJDBCMetaDataConfiguration();
 			Properties properties = configuration.getProperties();
 			cfg.setProperties( properties );
@@ -452,43 +447,40 @@ public class CodeGenerationLaunchDelegate extends AntLaunchDelegate {
 
 			cfg.setPreferBasicCompositeIds(preferBasicCompositeids);
 
-			cc.execute(new Command() { // need to execute in the consoleconfiguration to let it handle classpath stuff!
+			cc.execute(() -> { // need to execute in the consoleconfiguration to let it handle classpath stuff!
+				//todo: factor this setup of revengstrategy to core
 
-				public Object execute() {					
-					//todo: factor this setup of revengstrategy to core		
-					
-					IReverseEngineeringStrategy res = service.newDefaultReverseEngineeringStrategy();
+				IReverseEngineeringStrategy res = service.newDefaultReverseEngineeringStrategy();
 
-					IOverrideRepository repository = null;
-					
-					if(revengres!=null) {
-						File file = PathHelper.getLocation( revengres ).toFile();
-						repository = service.newOverrideRepository();
-						repository.addFile(file);						
-					}
-					
-					if (repository != null){
-						res = repository.getReverseEngineeringStrategy(res);
-					}
+				IOverrideRepository repository = null;
 
-					if(reverseEngineeringStrategy!=null && reverseEngineeringStrategy.trim().length()>0) {
-						res = service.newReverseEngineeringStrategy(reverseEngineeringStrategy, res);
-					}
-					
-					IReverseEngineeringSettings qqsettings = service.newReverseEngineeringSettings(res)
-							.setDefaultPackageName(attributes.getPackageName())
-							.setDetectManyToMany( attributes.detectManyToMany() )
-							.setDetectOneToOne( attributes.detectOneToOne() )
-							.setDetectOptimisticLock( attributes.detectOptimisticLock() );
-
-					res.setSettings(qqsettings);
-
-					cfg.setReverseEngineeringStrategy( res );
-
-					cfg.readFromJDBC();
-                    cfg.buildMappings();
-					return null;
+				if(revengres!=null) {
+					File file = PathHelper.getLocation( revengres ).toFile();
+					repository = service.newOverrideRepository();
+					repository.addFile(file);
 				}
+
+				if (repository != null){
+					res = repository.getReverseEngineeringStrategy(res);
+				}
+
+				if(reverseEngineeringStrategy!=null && reverseEngineeringStrategy.trim().length()>0) {
+					res = service.newReverseEngineeringStrategy(reverseEngineeringStrategy, res);
+				}
+
+				IReverseEngineeringSettings qqsettings = service.newReverseEngineeringSettings(res)
+						.setDefaultPackageName(attributes.getPackageName())
+						.setDetectManyToMany( attributes.detectManyToMany() )
+						.setDetectOneToOne( attributes.detectOneToOne() )
+						.setDetectOptimisticLock( attributes.detectOptimisticLock() );
+
+				res.setSettings(qqsettings);
+
+				cfg.setReverseEngineeringStrategy( res );
+
+				cfg.readFromJDBC();
+                cfg.buildMappings();
+				return null;
 			});
 
 			return cfg;

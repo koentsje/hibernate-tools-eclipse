@@ -32,7 +32,7 @@ public class LazyDatabaseSchema {
 	protected boolean errorFlag = false;
 	
 	public LazyDatabaseSchema(ConsoleConfiguration ccfg) {
-		this(ccfg, ccfg.getHibernateExtension().getHibernateService().newDefaultReverseEngineeringStrategy());
+		this(ccfg, ccfg.getRuntimeManager().getHibernateService().newDefaultReverseEngineeringStrategy());
 	}
 
 	public LazyDatabaseSchema(ConsoleConfiguration ccfg, IReverseEngineeringStrategy res) {

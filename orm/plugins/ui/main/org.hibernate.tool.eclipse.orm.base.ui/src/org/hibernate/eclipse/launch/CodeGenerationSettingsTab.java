@@ -286,7 +286,7 @@ public class CodeGenerationSettingsTab extends	AbstractLaunchConfigurationTab {
     	if (ccn == null || "".equals(ccn)) return null; //$NON-NLS-1$
     	ConsoleConfiguration cc = KnownConfigurations.getInstance().find(ccn);
     	if (cc == null) return null;
-    	return cc.getHibernateExtension().getHibernateService();
+    	return cc.getRuntimeManager().getHibernateService();
     }
 
     private void fillLabel(Composite container) {

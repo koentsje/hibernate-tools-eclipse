@@ -19,7 +19,7 @@ import org.hibernate.tool.eclipse.search.runtime.spi.IHSearchService;
 public class ConsoleConfigurationUtils {
 
 	public static ClassLoader getClassLoader(ConsoleConfiguration cc) {
-		return cc.getHibernateExtension().getClassLoader();
+		return cc.getRuntimeManager().getClassLoader();
 	}
 	
 	public static boolean loadSessionFactorySafely(ConsoleConfiguration cc) {

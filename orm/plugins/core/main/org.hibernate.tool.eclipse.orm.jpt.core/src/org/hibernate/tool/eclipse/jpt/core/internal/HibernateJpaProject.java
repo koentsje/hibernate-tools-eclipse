@@ -76,7 +76,7 @@ public class HibernateJpaProject extends AbstractJpaProject {
 		if (environment == null) {
 			ConsoleConfiguration cc = getDefaultConsoleConfiguration();
 			if (cc != null) {
-				environment = cc.getHibernateExtension().getHibernateService().getEnvironment();
+				environment = cc.getRuntimeManager().getHibernateService().getEnvironment();
 			}
 		}
 		return environment;

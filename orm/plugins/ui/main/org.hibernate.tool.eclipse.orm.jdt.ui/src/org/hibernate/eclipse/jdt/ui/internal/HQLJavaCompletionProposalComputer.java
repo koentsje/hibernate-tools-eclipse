@@ -77,7 +77,7 @@ public class HQLJavaCompletionProposalComputer implements IJavaCompletionProposa
 					 int stringStart = getStringStart( ctx.getDocument(), ctx.getInvocationOffset() );
 					 int stringEnd = getStringEnd( ctx.getDocument(), ctx.getInvocationOffset() );
 					 query = ctx.getDocument().get(stringStart, stringEnd-stringStart );
-					 ConsoleExtension consoleExtension = (ConsoleExtension) ((HibernateExtension) consoleConfiguration.getHibernateExtension()).getConsoleExtension();
+					 ConsoleExtension consoleExtension = (ConsoleExtension) ((HibernateExtension) consoleConfiguration.getRuntimeManager()).getConsoleExtension();
 					 if (consoleExtension != null){
 							ConsoleExtensionUI consoleExtensionUI = new ConsoleExtensionUI(consoleExtension);
 							CompletionProposalsResult codeCompletions = consoleExtensionUI.hqlCodeComplete(query, stringStart, ctx.getInvocationOffset() - stringStart);
@@ -86,7 +86,7 @@ public class HQLJavaCompletionProposalComputer implements IJavaCompletionProposa
 							proposals = codeCompletions.getCompletionProposals();
 					} else {
 						errorMessage = "There is no completion proposal implementation for this hibernate version \'" //$NON-NLS-1$
-								+ consoleConfiguration.getHibernateExtension().getHibernateVersion() + "\'"; //$NON-NLS-1$
+								+ consoleConfiguration.getRuntimeManager().getHibernateVersion() + "\'"; //$NON-NLS-1$
 					}
 				 }
 		} catch(RuntimeException re) {

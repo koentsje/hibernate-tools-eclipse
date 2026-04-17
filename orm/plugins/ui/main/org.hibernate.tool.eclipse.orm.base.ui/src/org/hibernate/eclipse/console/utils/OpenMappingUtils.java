@@ -45,7 +45,6 @@ import org.eclipse.ui.ide.IDE;
 import org.eclipse.ui.part.MultiPageEditorPart;
 import org.eclipse.ui.texteditor.ITextEditor;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
-import org.hibernate.tool.eclipse.orm.console.core.execution.ExecutionContext;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
@@ -532,13 +531,11 @@ public class OpenMappingUtils {
         	return file;
     	}
 		final ConsoleConfiguration cc2 = consoleConfig;
-		List<String> documentPaths = (List<String>)consoleConfig.execute(new ExecutionContext.Command() {
-			public Object execute() {
-				String persistenceUnitName = cc2.getPreferences().getPersistenceUnitName();
-				EntityResolver entityResolver = cc2.getConfiguration().getEntityResolver();
-				IService service = cc2.getHibernateExtension().getHibernateService();
-				return service.getJPAMappingFilePaths(persistenceUnitName, entityResolver);
-			}
+		List<String> documentPaths = (List<String>)consoleConfig.execute(() -> {
+			String persistenceUnitName = cc2.getPreferences().getPersistenceUnitName();
+			EntityResolver entityResolver = cc2.getConfiguration().getEntityResolver();
+			IService service = cc2.getRuntimeManager().getHibernateService();
+			return service.getJPAMappingFilePaths(persistenceUnitName, entityResolver);
 		});
     	if (documentPaths == null) {
         	return file;

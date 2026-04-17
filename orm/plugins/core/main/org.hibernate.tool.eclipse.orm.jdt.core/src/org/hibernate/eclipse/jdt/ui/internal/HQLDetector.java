@@ -107,7 +107,7 @@ public class HQLDetector extends ASTVisitor {
 			if(allowEL) {
 				query = ELTransformer.removeEL(query);
 			}
-			IService service = cc.getHibernateExtension().getHibernateService();
+			IService service = cc.getRuntimeManager().getHibernateService();
 			service.newHQLQueryPlan(query, false, cc.getSessionFactory());
 		} else {											
 			//messager.printWarning( annoValue.getPosition(), "Could not verify syntax. SessionFactory not created." );

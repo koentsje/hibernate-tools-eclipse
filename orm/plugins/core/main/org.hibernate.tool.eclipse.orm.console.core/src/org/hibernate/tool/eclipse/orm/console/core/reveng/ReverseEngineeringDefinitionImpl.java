@@ -61,7 +61,7 @@ public class ReverseEngineeringDefinitionImpl implements
 
 	public ITableFilter createTableFilter(ConsoleConfiguration cc) {
 		if (cc == null) return null;
-		IService service = cc.getHibernateExtension().getHibernateService();
+		IService service = cc.getRuntimeManager().getHibernateService();
 		return new TableFilterImpl(this, service);
 	}
 	

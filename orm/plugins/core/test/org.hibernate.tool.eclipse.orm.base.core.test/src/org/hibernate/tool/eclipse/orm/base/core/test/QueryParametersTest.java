@@ -39,7 +39,7 @@ public class QueryParametersTest {
 
 	@Before
 	public void setUp() throws Exception {
-		ConsoleConfiguration.setHibernateExtensionFactory(
+		ConsoleConfiguration.setRuntimeManagerFactory(
 			prefs -> new HibernateExtension(prefs));
 		cfgXmlFile = new File(temporaryFolder.getRoot(), "hibernate.cfg.xml");
 		FileWriter fw = new FileWriter(cfgXmlFile);
@@ -49,7 +49,7 @@ public class QueryParametersTest {
 				new TestConsoleConfigurationPreferences(cfgXmlFile);
 		consoleCfg = new ConsoleConfiguration(cfgprefs);
 		KnownConfigurations.getInstance().addConfiguration(consoleCfg, true);
-		service = consoleCfg.getHibernateExtension().getHibernateService();
+		service = consoleCfg.getRuntimeManager().getHibernateService();
 	}
 	
 	@After

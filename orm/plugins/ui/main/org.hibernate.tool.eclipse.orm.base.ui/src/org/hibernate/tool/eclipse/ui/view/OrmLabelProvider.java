@@ -25,7 +25,6 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
-import org.hibernate.tool.eclipse.orm.console.core.execution.ExecutionContext;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateConsoleCorePlugin;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IColumn;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
@@ -59,12 +58,9 @@ public class OrmLabelProvider extends LabelProvider implements IColorProvider, I
 		final ConsoleConfiguration consoleConfig = getConsoleConfig();
 		// need to build session factory for hibernate 4.3
 		// TODO verify if/how this can be done differently
-		if (consoleConfig != null && "4.3".equals(consoleConfig.getHibernateExtension().getHibernateVersion())) {
-			getConsoleConfig().execute(new ExecutionContext.Command() {			
-				@Override
-				public Object execute() {
-					return getConfig().buildSessionFactory();
-				}
+		if (consoleConfig != null && "4.3".equals(consoleConfig.getRuntimeManager().getHibernateVersion())) {
+			getConsoleConfig().execute(() -> {
+				return getConfig().buildSessionFactory();
 			});
 		}
 	}
@@ -152,10 +148,8 @@ public class OrmLabelProvider extends LabelProvider implements IColorProvider, I
 		if (config != null) {
 			final ConsoleConfiguration consoleConfig = getConsoleConfig();
 			try {
-				sqlType = (String)consoleConfig.execute(new ExecutionContext.Command() {
-					public Object execute() {
+				sqlType = (String)consoleConfig.execute(() -> {
 						return column.getSqlType(config);
-					}
 				} );
 			} catch (Exception e) {
 				// do not ignore it - print in Error Log

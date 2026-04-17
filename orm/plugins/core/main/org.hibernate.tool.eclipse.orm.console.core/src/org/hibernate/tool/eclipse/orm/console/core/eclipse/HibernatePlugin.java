@@ -61,7 +61,7 @@ public class HibernatePlugin extends Plugin {
 
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
-		ConsoleConfiguration.setHibernateExtensionFactory(
+		ConsoleConfiguration.setRuntimeManagerFactory(
 			prefs -> new HibernateExtension(prefs));
 		configureLog4jHooks();
 		Log log = LogFactory.getLog(HibernatePlugin.class);

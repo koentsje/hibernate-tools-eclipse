@@ -11,7 +11,6 @@
 package org.hibernate.tool.eclipse.ui.diagram.editors.model;
 
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
-import org.hibernate.tool.eclipse.orm.console.core.execution.ExecutionContext.Command;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateConsoleCorePlugin;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IType;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IValue;
@@ -28,10 +27,8 @@ public class UtilTypeExtract {
 		}
 		try {
 			if (cfg != null) {
-				type = (IType) cfg.execute(new Command() {
-					public Object execute() {
-						return val.getType();
-					}
+				type = (IType) cfg.execute(() -> {
+					return val.getType();
 				});								
 			} else {
 				type = val.getType();

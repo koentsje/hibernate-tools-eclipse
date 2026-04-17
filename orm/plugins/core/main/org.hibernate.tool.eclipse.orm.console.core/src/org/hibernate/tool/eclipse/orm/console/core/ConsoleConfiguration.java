@@ -26,9 +26,9 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.concurrent.Callable;
 
 import org.hibernate.tool.eclipse.orm.console.core.execution.ExecutionContext;
-import org.hibernate.tool.eclipse.orm.console.core.execution.ExecutionContext.Command;
 import org.hibernate.tool.eclipse.orm.console.core.execution.ExecutionContextHolder;
 import org.hibernate.tool.eclipse.orm.console.core.preferences.ConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.orm.query.HQLQueryPage;
@@ -38,41 +38,42 @@ import org.hibernate.tool.eclipse.orm.query.QueryInputModel;
 import org.hibernate.tool.eclipse.orm.query.QueryPage;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IEnvironment;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IRuntimeManager;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ISession;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
 
 public class ConsoleConfiguration implements ExecutionContextHolder {
 
-	//****************************** EXTENSION **********************
+	//****************************** RUNTIME MANAGER **********************
 	private String hibernateVersion = "==<None>=="; //set to some unused value //$NON-NLS-1$
 
-	private IHibernateExtension extension;
+	private IRuntimeManager runtimeManager;
 
-	private static java.util.function.Function<ConsoleConfigurationPreferences, IHibernateExtension> extensionFactory;
+	private static java.util.function.Function<ConsoleConfigurationPreferences, IRuntimeManager> runtimeManagerFactory;
 
-	public static void setHibernateExtensionFactory(
-			java.util.function.Function<ConsoleConfigurationPreferences, IHibernateExtension> factory) {
-		extensionFactory = factory;
+	public static void setRuntimeManagerFactory(
+			java.util.function.Function<ConsoleConfigurationPreferences, IRuntimeManager> factory) {
+		runtimeManagerFactory = factory;
 	}
 
-	protected IHibernateExtension createHibernateExtension(){
-		if (extensionFactory != null) {
-			return extensionFactory.apply(prefs);
+	protected IRuntimeManager createRuntimeManager(){
+		if (runtimeManagerFactory != null) {
+			return runtimeManagerFactory.apply(prefs);
 		}
 		throw new IllegalStateException(
-			"No HibernateExtension factory registered. " + //$NON-NLS-1$
+			"No RuntimeManager factory registered. " + //$NON-NLS-1$
 			"Ensure the plugin activator has called " + //$NON-NLS-1$
-			"ConsoleConfiguration.setHibernateExtensionFactory()"); //$NON-NLS-1$
+			"ConsoleConfiguration.setRuntimeManagerFactory()"); //$NON-NLS-1$
 	}
 
-	private void loadHibernateExtension(){
-		extension = createHibernateExtension();
+	private void loadRuntimeManager(){
+		runtimeManager = createRuntimeManager();
 	}
 
 	private void updateHibernateVersion(String hibernateVersion){
 		if (!equals(this.hibernateVersion, hibernateVersion)){
 			this.hibernateVersion = hibernateVersion;
-			loadHibernateExtension();
+			loadRuntimeManager();
 		}
 	}
 
@@ -80,12 +81,12 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
         return (str1 == null ? str2 == null : str1.equals(str2) );
     }
 
-    public IHibernateExtension getHibernateExtension(){
+    public IRuntimeManager getRuntimeManager(){
 		updateHibernateVersion(prefs.getHibernateVersion());//reinit if necessary
-		return this.extension;
+		return this.runtimeManager;
 	}
 
-	//****************************** EXTENSION **********************
+	//****************************** RUNTIME MANAGER **********************
 
 	public ConsoleConfiguration(ConsoleConfigurationPreferences config) {
 		prefs = config;
@@ -96,8 +97,8 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
 		return prefs.getName();
 	}
 
-	public synchronized Object execute(Command c) {
-		return getHibernateExtension().execute(c);
+	public synchronized Object execute(Callable<Object> c) {
+		return getRuntimeManager().execute(c);
 	}
 
 	public ConsoleConfigurationPreferences prefs = null;
@@ -108,8 +109,8 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
 	 */
 	public synchronized boolean reset() {
 		boolean resetted = false;
-		if (getHibernateExtension() != null ) {
-			resetted = getHibernateExtension().reset();
+		if (getRuntimeManager() != null ) {
+			resetted = getRuntimeManager().reset();
 		}
 		if (resetted) {
 			fireConfigurationReset();
@@ -119,7 +120,7 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
 
 	public void build() {
 		reset();
-		getHibernateExtension().build();
+		getRuntimeManager().build();
 		fireConfigurationBuilt();
 	}
 
@@ -128,34 +129,34 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
 	 *
 	 */
 	public IConfiguration buildWith(final IConfiguration cfg, final boolean includeMappings) {
-		return getHibernateExtension().buildWith(cfg, includeMappings);
+		return getRuntimeManager().buildWith(cfg, includeMappings);
 	}
 
 	public IConfiguration getConfiguration() {
-		return getHibernateExtension().getConfiguration();
+		return getRuntimeManager().getConfiguration();
 	}
 
 	/**
 	 * @return
 	 */
 	public boolean hasConfiguration() {
-		return getHibernateExtension().hasConfiguration();
+		return getRuntimeManager().hasConfiguration();
 	}
 
 	public void buildMappings(){
-		getHibernateExtension().buildMappings();
+		getRuntimeManager().buildMappings();
 	}
 
 	public void buildSessionFactory() {
 		if (isSessionFactoryCreated()) {
 			throw new HibernateConsoleRuntimeException(ConsoleMessages.ConsoleConfiguration_factory_not_closed_before_build_new_factory);
 		}
-		getHibernateExtension().buildSessionFactory();
+		getRuntimeManager().buildSessionFactory();
 		fireFactoryBuilt();
 	}
 
 	public ISessionFactory getSessionFactory() {
-		return getHibernateExtension().getSessionFactory();
+		return getRuntimeManager().getSessionFactory();
 	}
 
 
@@ -163,19 +164,17 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
 	ArrayList<ConsoleConfigurationListener> consoleCfgListeners = new ArrayList<ConsoleConfigurationListener>();
 
 	public QueryPage executeHQLQuery(final String hql) {
-		return executeHQLQuery(hql, new QueryInputModel(getHibernateExtension().getHibernateService()));
+		return executeHQLQuery(hql, new QueryInputModel(getRuntimeManager().getHibernateService()));
 	}
 
 	public QueryPage executeHQLQuery(final String hql, final QueryInputModel queryParameters) {
-		QueryPage qp = (QueryPage)execute(new Command() {
-			public Object execute() {
-				ISession session = getSessionFactory().openSession();
-				QueryPage qp = new HQLQueryPage(
-						getHibernateExtension().getHibernateService(),
-						getName(), hql, queryParameters);
-				qp.setSession(session);
-				return qp;
-			}
+		QueryPage qp = (QueryPage)execute(() -> {
+			ISession session = getSessionFactory().openSession();
+			QueryPage page = new HQLQueryPage(
+					getRuntimeManager().getHibernateService(),
+					getName(), hql, queryParameters);
+			page.setSession(session);
+			return page;
 		});
 		qp.setId(++execcount);
 		fireQueryPageCreated(qp);
@@ -183,13 +182,11 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
 	}
 
 	public QueryPage executeBSHQuery(final String queryString, final QueryInputModel model) {
-		QueryPage qp = (QueryPage)execute(new Command() {
-			public Object execute() {
-				ISession session = getSessionFactory().openSession();
-				QueryPage qp = new JavaPage(getName(), queryString, model);
-				qp.setSession(session);
-				return qp;
-			}
+		QueryPage qp = (QueryPage)execute(() -> {
+			ISession session = getSessionFactory().openSession();
+			QueryPage page = new JavaPage(getName(), queryString, model);
+			page.setSession(session);
+			return page;
 		});
 		qp.setId(++execcount);
 		fireQueryPageCreated(qp);
@@ -197,10 +194,8 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
 	}
 
 	public String generateSQL(final String query) {
-		return (String) execute(new Command() {
-			public Object execute() {
-				return QueryHelper.generateSQL(getSessionFactory(), query, getHibernateExtension().getHibernateService());
-			}
+		return (String) execute(() -> {
+			return QueryHelper.generateSQL(getSessionFactory(), query, getRuntimeManager().getHibernateService());
 		});
 	}
 
@@ -254,7 +249,7 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
 
 
 	public boolean isSessionFactoryCreated() {
-		return getHibernateExtension().isSessionFactoryCreated();
+		return getRuntimeManager().isSessionFactoryCreated();
 	}
 
 	public ConsoleConfigurationPreferences getPreferences() {
@@ -262,13 +257,13 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
 	}
 
 	public File getConfigXMLFile() {
-		IEnvironment environment = getHibernateExtension().getHibernateService().getEnvironment();
+		IEnvironment environment = getRuntimeManager().getHibernateService().getEnvironment();
 		File configXMLFile = null;
 		if (prefs != null) {
 			configXMLFile = prefs.getConfigXMLFile();
 		}
 		if (configXMLFile == null) {
-			URL url = getHibernateExtension().findResource("hibernate.cfg.xml"); //$NON-NLS-1$
+			URL url = getRuntimeManager().findResource("hibernate.cfg.xml"); //$NON-NLS-1$
 			if (url != null) {
 				URI uri = null;
 				try {
@@ -301,7 +296,7 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
 	public ExecutionContext getExecutionContext() {
 		return new ExecutionContext() {
 			public void installLoader() { }
-			public Object execute(Command c) { return ConsoleConfiguration.this.execute(c); }
+			public Object execute(ExecutionContext.Command c) { return ConsoleConfiguration.this.execute(() -> c.execute()); }
 			public void uninstallLoader() { }
 		};
 	}
@@ -311,7 +306,7 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
 		if (sf != null) {
 			fireFactoryClosing(sf);
 		}
-		return getHibernateExtension().closeSessionFactory();
+		return getRuntimeManager().closeSessionFactory();
 	}
 
 }

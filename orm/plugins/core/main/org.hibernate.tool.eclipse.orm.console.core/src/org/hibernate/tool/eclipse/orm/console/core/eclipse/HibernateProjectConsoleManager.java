@@ -39,7 +39,6 @@ import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
-import org.hibernate.tool.eclipse.orm.console.core.execution.ExecutionContext.Command;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.tool.eclipse.orm.console.core.properties.HibernatePropertiesConstants;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
@@ -132,16 +131,14 @@ public class HibernateProjectConsoleManager {
 
 		protected IStatus run(IProgressMonitor monitor) {
 			IConfiguration cfg = ccfg.buildWith(null, false);
-			IService service = ccfg.getHibernateExtension().getHibernateService();
+			IService service = ccfg.getRuntimeManager().getHibernateService();
 			final IConfiguration jcfg = service.newJDBCMetaDataConfiguration();
 			jcfg.setProperties(cfg.getProperties());
 			monitor.beginTask(BasicHibernateMessages.HibernateNature_reading_database_metadata, IProgressMonitor.UNKNOWN);
 			try {
-				ccfg.execute(new Command() {
-					public Object execute() {
-						jcfg.readFromJDBC();
-						return null;
-					}
+				ccfg.execute(() -> {
+					jcfg.readFromJDBC();
+					return null;
 				});
 
 				List<ITable> result = new ArrayList<ITable>();

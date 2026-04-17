@@ -13,7 +13,6 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ITreeSelection;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
-import org.hibernate.tool.eclipse.orm.console.core.execution.ExecutionContext.Command;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
@@ -72,16 +71,14 @@ public class IndexRebuildHandler extends AbstractHandler {
 	
 	private void run(final ConsoleConfiguration consoleConfig, final Set<Class> classes) {
 		try {
-			consoleConfig.execute(new Command() {
-				public Object execute() {
-					final IConfiguration cfg = consoleConfig.getConfiguration();
-					if (cfg == null) {
-						return null;
-					}
-					IHSearchService service = HSearchServiceLookup.findService(HSearchConsoleConfigurationPreferences.getHSearchVersion(consoleConfig.getName()));
-					service.newIndexRebuild(consoleConfig.getSessionFactory(), classes);
+			consoleConfig.execute(() -> {
+				final IConfiguration cfg = consoleConfig.getConfiguration();
+				if (cfg == null) {
 					return null;
 				}
+				IHSearchService service = HSearchServiceLookup.findService(HSearchConsoleConfigurationPreferences.getHSearchVersion(consoleConfig.getName()));
+				service.newIndexRebuild(consoleConfig.getSessionFactory(), classes);
+				return null;
 			});
 			MessageDialog.openInformation(HibernateBasePlugin.getDefault()
 					.getWorkbench().getActiveWorkbenchWindow().getShell(), 

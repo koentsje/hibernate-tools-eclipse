@@ -8,25 +8,25 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.concurrent.Callable;
 
 import org.eclipse.osgi.util.NLS;
 import org.hibernate.tool.eclipse.orm.console.core.config.ConfigurationFactory;
 import org.hibernate.tool.eclipse.orm.console.core.config.ConsoleConfigClassLoader;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleMessages;
 import org.hibernate.tool.eclipse.orm.console.core.config.FakeDelegatingDriver;
-import org.hibernate.tool.eclipse.orm.console.core.IHibernateExtension;
 import org.hibernate.tool.eclipse.orm.console.core.execution.DefaultExecutionContext;
 import org.hibernate.tool.eclipse.orm.console.core.execution.ExecutionContext;
-import org.hibernate.tool.eclipse.orm.console.core.execution.ExecutionContext.Command;
 import org.hibernate.tool.eclipse.orm.console.core.preferences.ConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.orm.console.core.preferences.PreferencesClassPathUtils;
 import org.hibernate.tool.eclipse.orm.runtime.spi.HibernateException;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IRuntimeManager;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
 import org.hibernate.tool.eclipse.orm.runtime.spi.RuntimeServiceManager;
 
-public class HibernateExtension implements IHibernateExtension {
+public class HibernateExtension implements IRuntimeManager {
 
 	private IConfiguration configuration;
 	
@@ -116,14 +116,12 @@ public class HibernateExtension implements IHibernateExtension {
 	}
 
 	public void buildSessionFactory() {
-		execute(new Command() {
-			public Object execute() {
-				if (sessionFactory != null) {
-					throw new HibernateException("Factory was not closed before attempt to build a new Factory"); //$NON-NLS-1$
-				}
-				sessionFactory = configuration.buildSessionFactory();
-				return null;
+		execute(() -> {
+			if (sessionFactory != null) {
+				throw new HibernateException("Factory was not closed before attempt to build a new Factory"); //$NON-NLS-1$
 			}
+			sessionFactory = configuration.buildSessionFactory();
+			return null;
 		});
 	}
 
@@ -141,11 +139,9 @@ public class HibernateExtension implements IHibernateExtension {
 		reinitClassLoader();
 		//TODO handle user libraries here
 		executionContext = new DefaultExecutionContext(prefs.getName(), classLoader);
-		IConfiguration result = (IConfiguration)execute(new Command() {
-			public Object execute() {
-				ConfigurationFactory cf = new ConfigurationFactory(prefs, fakeDrivers);
-				return cf.createConfiguration(cfg, includeMappings);
-			}
+		IConfiguration result = (IConfiguration)execute(() -> {
+			ConfigurationFactory cf = new ConfigurationFactory(prefs, fakeDrivers);
+			return cf.createConfiguration(cfg, includeMappings);
 		});
 		return result;
 	}
@@ -165,9 +161,17 @@ public class HibernateExtension implements IHibernateExtension {
 		return prefs.getName();
 	}
 	
-	public Object execute(Command c) {
+	public Object execute(Callable<Object> c) {
 		if (executionContext != null) {
-			return executionContext.execute(c);
+			return executionContext.execute(() -> {
+				try {
+					return c.call();
+				} catch (RuntimeException e) {
+					throw e;
+				} catch (Exception e) {
+					throw new HibernateException(e);
+				}
+			});
 		}
 		final String msg = NLS.bind(ConsoleMessages.ConsoleConfiguration_null_execution_context, getName());
 		throw new HibernateException(msg);
@@ -189,18 +193,16 @@ public class HibernateExtension implements IHibernateExtension {
 	protected boolean cleanUpClassLoader() {
 		boolean resetted = false;
 		if (executionContext != null) {
-			executionContext.execute(new Command() {
-				public Object execute() {
-					Iterator<FakeDelegatingDriver> it = fakeDrivers.values().iterator();
-					while (it.hasNext()) {
-						try {
-							DriverManager.deregisterDriver(it.next());
-						} catch (SQLException e) {
-							// ignore
-						}
+			executionContext.execute(() -> {
+				Iterator<FakeDelegatingDriver> it = fakeDrivers.values().iterator();
+				while (it.hasNext()) {
+					try {
+						DriverManager.deregisterDriver(it.next());
+					} catch (SQLException e) {
+						// ignore
 					}
-					return null;
 				}
+				return null;
 			});
 		}
 		if (fakeDrivers.size() > 0) {
@@ -250,16 +252,10 @@ public class HibernateExtension implements IHibernateExtension {
 	}
 	
 	public void buildMappings() {
-		execute(new Command() {
-			public Object execute() {
-				getConfiguration().buildMappings();
-				return null;
-			}
+		execute(() -> {
+			getConfiguration().buildMappings();
+			return null;
 		});
-	}
-
-	public boolean hasExecutionContext() {
-		return executionContext != null;
 	}
 
 	public String getConsoleConfigurationName() {

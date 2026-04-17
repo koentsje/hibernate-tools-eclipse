@@ -85,7 +85,7 @@ public class ExporterAttributesTest {
 		TestConsoleConfigurationPreferences cfgprefs = 
 				new TestConsoleConfigurationPreferences(cfgXmlFile);
 		consoleCfg = new ConsoleConfiguration(cfgprefs);
-		service = consoleCfg.getHibernateExtension().getHibernateService();
+		service = consoleCfg.getRuntimeManager().getHibernateService();
 		KnownConfigurations.getInstance().addConfiguration(consoleCfg, true);
 	}
 

@@ -63,7 +63,7 @@ public class ConsoleConfigurationTest {
 		TestConsoleConfigurationPreferences cfgprefs = 
 				new TestConsoleConfigurationPreferences(cfgXmlFile);
 		consoleCfg = new ConsoleConfiguration(cfgprefs);
-		service = consoleCfg.getHibernateExtension().getHibernateService();
+		service = consoleCfg.getRuntimeManager().getHibernateService();
 		typeFactory = service.newTypeFactory();
 		KnownConfigurations.getInstance().addConfiguration(consoleCfg, true);
 	}

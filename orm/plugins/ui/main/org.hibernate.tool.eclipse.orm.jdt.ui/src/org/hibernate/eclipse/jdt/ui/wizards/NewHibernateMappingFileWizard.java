@@ -298,7 +298,7 @@ public class NewHibernateMappingFileWizard extends Wizard implements INewWizard,
 		// See JBIDE-23066 and JBIDE-21766
 		ConsoleConfiguration cc = HibernateProjectConsoleManager.getDefaultConsoleConfiguration(project);
 		if (cc != null) {
-			return cc.getHibernateExtension().getHibernateService();
+			return cc.getRuntimeManager().getHibernateService();
 		} else {
 			return RuntimeServiceManager.getInstance().getDefaultService();
 		}

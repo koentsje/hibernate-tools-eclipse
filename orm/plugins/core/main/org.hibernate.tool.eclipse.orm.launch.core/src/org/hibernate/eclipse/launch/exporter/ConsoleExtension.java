@@ -30,7 +30,6 @@ import org.eclipse.debug.core.ILaunchConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.HibernateConsoleRuntimeException;
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
-import org.hibernate.tool.eclipse.orm.console.core.execution.ExecutionContext.Command;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernatePlugin;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.tool.eclipse.orm.console.core.HibernateExtension;
@@ -149,56 +148,52 @@ public class ConsoleExtension implements IConsoleExtension {
 		if (monitor.isCanceled())
 			return null;
 
-		return (IArtifactCollector) cc.execute(new Command() {
+		return (IArtifactCollector) cc.execute(() -> {
+			IArtifactCollector artifactCollector = hibernateExtension
+					.getHibernateService().newArtifactCollector();
 
-			public Object execute() {
-				IArtifactCollector artifactCollector = hibernateExtension
-						.getHibernateService().newArtifactCollector();
+			// Global properties
+			Properties props = new Properties();
+			props.put(CodeGenerationStrings.EJB3,
+					"" + attributes.isEJB3Enabled()); //$NON-NLS-1$
+			props.put(CodeGenerationStrings.JDK5,
+					"" + attributes.isJDK5Enabled()); //$NON-NLS-1$
 
-				// Global properties
-				Properties props = new Properties();
-				props.put(CodeGenerationStrings.EJB3,
-						"" + attributes.isEJB3Enabled()); //$NON-NLS-1$
-				props.put(CodeGenerationStrings.JDK5,
-						"" + attributes.isJDK5Enabled()); //$NON-NLS-1$
+			for (int i = 0; i < exporterFactories.length; i++) {
+				monitor.subTask(exporterFactories[i]
+						.getExporterDefinition().getDescription());
 
-				for (int i = 0; i < exporterFactories.length; i++) {
-					monitor.subTask(exporterFactories[i]
-							.getExporterDefinition().getDescription());
+				Properties globalProperties = new Properties();
+				globalProperties.putAll(props);
 
-					Properties globalProperties = new Properties();
-					globalProperties.putAll(props);
-
-					IExporter exporter;
-					try {
-						exporter = exporterFactories[i]
-								.createConfiguredExporter(cfg, attributes
-										.getOutputPath(), attributes
-										.getTemplatePath(), globalProperties,
-										outputDirectories, artifactCollector,
-										hibernateExtension
-												.getHibernateService());
-					} catch (CoreException e) {
-						throw new HibernateConsoleRuntimeException(
-								BasicHibernateMessages.CodeGenerationLaunchDelegate_error_while_setting_up
-										+ exporterFactories[i]
-												.getExporterDefinition(), e);
-					}
-
-					try {
-						exporter.start();
-					} catch (HibernateException he) {
-						throw new HibernateConsoleRuntimeException(
-								BasicHibernateMessages.CodeGenerationLaunchDelegate_error_while_running
-										+ exporterFactories[i]
-												.getExporterDefinition()
-												.getDescription(), he);
-					}
-					monitor.worked(1);
+				IExporter exporter;
+				try {
+					exporter = exporterFactories[i]
+							.createConfiguredExporter(cfg, attributes
+									.getOutputPath(), attributes
+									.getTemplatePath(), globalProperties,
+									outputDirectories, artifactCollector,
+									hibernateExtension
+											.getHibernateService());
+				} catch (CoreException e) {
+					throw new HibernateConsoleRuntimeException(
+							BasicHibernateMessages.CodeGenerationLaunchDelegate_error_while_setting_up
+									+ exporterFactories[i]
+											.getExporterDefinition(), e);
 				}
-				return artifactCollector;
-			}
 
+				try {
+					exporter.start();
+				} catch (HibernateException he) {
+					throw new HibernateConsoleRuntimeException(
+							BasicHibernateMessages.CodeGenerationLaunchDelegate_error_while_running
+									+ exporterFactories[i]
+											.getExporterDefinition()
+											.getDescription(), he);
+				}
+				monitor.worked(1);
+			}
+			return artifactCollector;
 		});
 
 	}
@@ -233,52 +228,49 @@ public class ConsoleExtension implements IConsoleExtension {
 
 			cfg.setPreferBasicCompositeIds(preferBasicCompositeids);
 
-			cc.execute(new Command() { // need to execute in the
-										// consoleconfiguration to let it handle
-										// classpath stuff!
+			cc.execute(() -> { // need to execute in the
+				// consoleconfiguration to let it handle classpath stuff!
 
-				public Object execute() {
-					// todo: factor this setup of revengstrategy to core
+				// todo: factor this setup of revengstrategy to core
 
-					IService service = hibernateExtension.getHibernateService();
+				IService service = hibernateExtension.getHibernateService();
 
-					IReverseEngineeringStrategy res = service
-							.newDefaultReverseEngineeringStrategy();
+				IReverseEngineeringStrategy res = service
+						.newDefaultReverseEngineeringStrategy();
 
-					IOverrideRepository repository = null;
+				IOverrideRepository repository = null;
 
-					if (revengres != null) {
-						File file = PathHelper.getLocation(revengres).toFile();
-						repository = service.newOverrideRepository();
-						repository.addFile(file);
-					}
-
-					if (repository != null) {
-						res = repository.getReverseEngineeringStrategy(res);
-					}
-
-					if (reverseEngineeringStrategy != null
-							&& reverseEngineeringStrategy.trim().length() > 0) {
-						res = service.newReverseEngineeringStrategy(
-								reverseEngineeringStrategy, res);
-					}
-
-					IReverseEngineeringSettings qqsettings = service
-							.newReverseEngineeringSettings(res)
-							.setDefaultPackageName(attributes.getPackageName())
-							.setDetectManyToMany(attributes.detectManyToMany())
-							.setDetectOneToOne(attributes.detectOneToOne())
-							.setDetectOptimisticLock(
-									attributes.detectOptimisticLock());
-
-					res.setSettings(qqsettings);
-
-					cfg.setReverseEngineeringStrategy(res);
-
-					cfg.readFromJDBC();
-					cfg.buildMappings();
-					return null;
+				if (revengres != null) {
+					File file = PathHelper.getLocation(revengres).toFile();
+					repository = service.newOverrideRepository();
+					repository.addFile(file);
 				}
+
+				if (repository != null) {
+					res = repository.getReverseEngineeringStrategy(res);
+				}
+
+				if (reverseEngineeringStrategy != null
+						&& reverseEngineeringStrategy.trim().length() > 0) {
+					res = service.newReverseEngineeringStrategy(
+							reverseEngineeringStrategy, res);
+				}
+
+				IReverseEngineeringSettings qqsettings = service
+						.newReverseEngineeringSettings(res)
+						.setDefaultPackageName(attributes.getPackageName())
+						.setDetectManyToMany(attributes.detectManyToMany())
+						.setDetectOneToOne(attributes.detectOneToOne())
+						.setDetectOptimisticLock(
+								attributes.detectOptimisticLock());
+
+				res.setSettings(qqsettings);
+
+				cfg.setReverseEngineeringStrategy(res);
+
+				cfg.readFromJDBC();
+				cfg.buildMappings();
+				return null;
 			});
 
 			return cfg;

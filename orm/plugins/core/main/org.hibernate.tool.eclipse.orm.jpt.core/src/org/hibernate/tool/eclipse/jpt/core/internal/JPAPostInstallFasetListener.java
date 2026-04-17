@@ -113,7 +113,7 @@ public class JPAPostInstallFasetListener implements IFacetedProjectListener {
 		if (javaProject != null) {
 			ConsoleConfiguration cc = HibernateProjectConsoleManager.getDefaultConsoleConfiguration(javaProject);
 			if (cc != null) {
-				service = cc.getHibernateExtension().getHibernateService();
+				service = cc.getRuntimeManager().getHibernateService();
 			}
 		}
 		String cpName = HibernateEclipseUtils.getConnectionProfileName(project);

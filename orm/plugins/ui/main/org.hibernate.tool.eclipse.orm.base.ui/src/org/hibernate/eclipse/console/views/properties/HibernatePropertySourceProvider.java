@@ -57,7 +57,7 @@ public class HibernatePropertySourceProvider implements IPropertySourceProvider 
 				String configName = selectedQueryPage.getConsoleConfigurationName();
 				ConsoleConfiguration cc = KnownConfigurations.getInstance().find(configName);
 				if (cc != null) {
-					HibernateExtension hibernateExtension = (HibernateExtension) cc.getHibernateExtension();
+					HibernateExtension hibernateExtension = (HibernateExtension) cc.getRuntimeManager();
 					if (hibernateExtension != null) {
 						ConsoleExtension consoleExtension = (ConsoleExtension) hibernateExtension.getConsoleExtension();
 						if (consoleExtension != null) {

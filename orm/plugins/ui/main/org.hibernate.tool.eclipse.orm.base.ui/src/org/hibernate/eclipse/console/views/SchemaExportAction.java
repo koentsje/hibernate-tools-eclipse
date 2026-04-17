@@ -29,7 +29,6 @@ import org.eclipse.jface.viewers.StructuredViewer;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.widgets.Shell;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
-import org.hibernate.tool.eclipse.orm.console.core.execution.ExecutionContext.Command;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.console.actions.ConsoleConfigReadyUseBaseAction;
@@ -88,36 +87,34 @@ public class SchemaExportAction extends ConsoleConfigReadyUseBaseAction {
 			}
 			final ConsoleConfiguration config = (ConsoleConfiguration) node;
 			try {
-				config.execute( new Command() {
-					public Object execute() {
-						final IConfiguration cfg = config.getConfiguration();
-						if (cfg == null) {
-							return null;
-						}
-						String out = NLS.bind(BasicHibernateMessages.SchemaExportAction_sure_run_schemaexport, config.getName());
-						boolean res = openWarningYesNoDlg(viewer.getControl().getShell(),
-							BasicHibernateMessages.SchemaExportAction_run_schemaexport, out);
-						if (!res) {
-							return null;
-						}
-						IService service = config.getHibernateExtension().getHibernateService();
-						ISchemaExport export = service.newSchemaExport(cfg);
-						export.create();
-						if (!export.getExceptions().isEmpty()) {
-							Iterator<Throwable> iterator = export.getExceptions().iterator();
-							int cnt = 1;
-							while (iterator.hasNext()) {
-								Throwable element = iterator.next();
-								String outStr = NLS.bind(BasicHibernateMessages.SchemaExportAction_errornum_while_performing_schemaexport, cnt++);
-								HibernateBasePlugin.getDefault().logErrorMessage(outStr, element);
-							}
-							HibernateBasePlugin.getDefault().showError(viewer.getControl().getShell(),
-								NLS.bind(BasicHibernateMessages.SchemaExportAction_error_while_performing_schemaexport, cnt - 1),
-								(Throwable)null );
-						}
+				config.execute(() -> {
+					final IConfiguration cfg = config.getConfiguration();
+					if (cfg == null) {
 						return null;
 					}
-				} );
+					String out = NLS.bind(BasicHibernateMessages.SchemaExportAction_sure_run_schemaexport, config.getName());
+					boolean res = openWarningYesNoDlg(viewer.getControl().getShell(),
+						BasicHibernateMessages.SchemaExportAction_run_schemaexport, out);
+					if (!res) {
+						return null;
+					}
+					IService service = config.getRuntimeManager().getHibernateService();
+					ISchemaExport export = service.newSchemaExport(cfg);
+					export.create();
+					if (!export.getExceptions().isEmpty()) {
+						Iterator<Throwable> iterator = export.getExceptions().iterator();
+						int cnt = 1;
+						while (iterator.hasNext()) {
+							Throwable element = iterator.next();
+							String outStr = NLS.bind(BasicHibernateMessages.SchemaExportAction_errornum_while_performing_schemaexport, cnt++);
+							HibernateBasePlugin.getDefault().logErrorMessage(outStr, element);
+						}
+						HibernateBasePlugin.getDefault().showError(viewer.getControl().getShell(),
+							NLS.bind(BasicHibernateMessages.SchemaExportAction_error_while_performing_schemaexport, cnt - 1),
+							(Throwable)null );
+					}
+					return null;
+				});
 				viewer.refresh( node ); // todo: should we do it here or should
 				// the view just react to config being
 				// build ?

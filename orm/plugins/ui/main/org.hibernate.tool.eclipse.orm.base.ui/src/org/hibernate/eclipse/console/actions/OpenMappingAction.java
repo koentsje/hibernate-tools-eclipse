@@ -131,7 +131,7 @@ public class OpenMappingAction extends SelectionListenerAction {
 		}
 		if (file != null) {
 			editorPart = OpenMappingUtils.openFileInEditor(file);
-			IService service = consoleConfig.getHibernateExtension().getHibernateService();
+			IService service = consoleConfig.getRuntimeManager().getHibernateService();
 			boolean updateRes = updateEditorSelection(editorPart, selection, service);
 			if (!updateRes && selectionParent != null) {
 				// if it is not possible to select object, try to select it's parent
@@ -182,7 +182,7 @@ public class OpenMappingAction extends SelectionListenerAction {
 		IEditorPart editorPart = null;
 		if (file != null){
 			editorPart = OpenMappingUtils.openFileInEditor(file);
-			IService service = consoleConfig.getHibernateExtension().getHibernateService();
+			IService service = consoleConfig.getRuntimeManager().getHibernateService();
 			updateEditorSelection(editorPart, compositeProperty, parentProperty, service);
 		}
    		if (editorPart == null && parentProperty.isComposite()) {

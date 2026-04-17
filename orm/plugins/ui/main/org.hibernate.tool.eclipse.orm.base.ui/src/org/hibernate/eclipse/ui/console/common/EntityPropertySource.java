@@ -26,7 +26,6 @@ import java.util.Collection;
 import org.eclipse.ui.views.properties.IPropertyDescriptor;
 import org.eclipse.ui.views.properties.IPropertySource2;
 import org.eclipse.ui.views.properties.PropertyDescriptor;
-import org.hibernate.tool.eclipse.orm.console.core.execution.ExecutionContext.Command;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.tool.eclipse.orm.console.core.HibernateExtension;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IClassMetadata;
@@ -65,14 +64,12 @@ public class EntityPropertySource implements IPropertySource2
 	public IPropertyDescriptor[] getPropertyDescriptors() {
 		if (propertyDescriptors == null) {
 			if (extension != null) {
-				if (!extension.hasExecutionContext()) {
+				if (!extension.hasConfiguration()) {
 					extension.build();
 				}
-				extension.execute(new Command() {
-					public Object execute() {
-						propertyDescriptors = initializePropertyDescriptors(classMetadata);
-						return null;
-					}
+				extension.execute(() -> {
+					propertyDescriptors = initializePropertyDescriptors(classMetadata);
+					return null;
 				});
 			}
 		}

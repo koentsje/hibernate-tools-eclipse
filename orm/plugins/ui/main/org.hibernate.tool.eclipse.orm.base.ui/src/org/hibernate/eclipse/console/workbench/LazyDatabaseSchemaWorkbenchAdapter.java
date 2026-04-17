@@ -34,7 +34,6 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.osgi.util.NLS;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
-import org.hibernate.tool.eclipse.orm.console.core.execution.ExecutionContext;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
@@ -118,24 +117,20 @@ public class LazyDatabaseSchemaWorkbenchAdapter extends BasicWorkbenchAdapter {
 
 	protected Map<?, ?> readDatabaseSchema(final IProgressMonitor monitor, final ConsoleConfiguration consoleConfiguration, final IReverseEngineeringStrategy strategy) {
 		final IConfiguration configuration = consoleConfiguration.buildWith(null, false);
-		return (Map<?, ?>) consoleConfiguration.execute(new ExecutionContext.Command() {
-
-			public Object execute() {
-				Map<String, List<ITable>> result = null;
-				try {
-					result = consoleConfiguration
-							.getHibernateExtension()
-							.getHibernateService()
-							.collectDatabaseTables(
-									configuration.getProperties(), 
-									strategy, 
-									new ProgressListener(monitor));
-				} catch (Exception he) {
-					throw new HibernateException(he.getMessage(), he.getCause());
-				}
-				return result;
+		return (Map<?, ?>) consoleConfiguration.execute(() -> {
+			Map<String, List<ITable>> result = null;
+			try {
+				result = consoleConfiguration
+						.getRuntimeManager()
+						.getHibernateService()
+						.collectDatabaseTables(
+								configuration.getProperties(),
+								strategy,
+								new ProgressListener(monitor));
+			} catch (Exception he) {
+				throw new HibernateException(he.getMessage(), he.getCause());
 			}
-			
+			return result;
 		});
 	}
 	

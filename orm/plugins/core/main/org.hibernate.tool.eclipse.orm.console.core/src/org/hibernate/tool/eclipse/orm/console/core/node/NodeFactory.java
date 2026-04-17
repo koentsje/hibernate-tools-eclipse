@@ -195,7 +195,7 @@ public class NodeFactory {
 		}
 		
 		public IService getService() {
-			return getConsoleConfiguration().getHibernateExtension().getHibernateService();
+			return getConsoleConfiguration().getRuntimeManager().getHibernateService();
 		}
 
 }

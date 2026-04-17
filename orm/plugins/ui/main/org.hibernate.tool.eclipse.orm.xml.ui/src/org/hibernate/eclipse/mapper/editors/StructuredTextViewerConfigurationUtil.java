@@ -16,9 +16,9 @@ import org.eclipse.wst.sse.core.internal.provisional.IStructuredModel;
 import org.eclipse.wst.sse.core.internal.provisional.text.IStructuredDocumentRegion;
 import org.eclipse.wst.xml.ui.internal.contentassist.ContentAssistRequest;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
-import org.hibernate.tool.eclipse.orm.console.core.IHibernateExtension;
 import org.hibernate.eclipse.mapper.MapperPlugin;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateProjectConsoleManager;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IRuntimeManager;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 import org.hibernate.tool.eclipse.orm.runtime.spi.RuntimeServiceManager;
 
@@ -115,9 +115,9 @@ public class StructuredTextViewerConfigurationUtil {
 		IJavaProject javaProject = findJavaProject(sourceViewer);
 		ConsoleConfiguration cc = HibernateProjectConsoleManager.getDefaultConsoleConfiguration(javaProject);
 		if (cc != null) {
-			IHibernateExtension extension = cc.getHibernateExtension();
-			if (extension != null) {
-				return extension.getHibernateService();
+			IRuntimeManager runtimeManager = cc.getRuntimeManager();
+			if (runtimeManager != null) {
+				return runtimeManager.getHibernateService();
 			}
 		}
 		return RuntimeServiceManager.getInstance().getDefaultService();

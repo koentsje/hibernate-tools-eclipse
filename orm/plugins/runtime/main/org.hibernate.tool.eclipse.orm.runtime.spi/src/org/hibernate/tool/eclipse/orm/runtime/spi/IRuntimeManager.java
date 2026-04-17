@@ -1,13 +1,9 @@
-package org.hibernate.tool.eclipse.orm.console.core;
+package org.hibernate.tool.eclipse.orm.runtime.spi;
 
 import java.net.URL;
+import java.util.concurrent.Callable;
 
-import org.hibernate.tool.eclipse.orm.console.core.execution.ExecutionContext;
-import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
-import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
-import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
-
-public interface IHibernateExtension {
+public interface IRuntimeManager {
 
 	void build();
 
@@ -29,9 +25,7 @@ public interface IHibernateExtension {
 
 	boolean isSessionFactoryCreated();
 
-	Object execute(ExecutionContext.Command c);
-
-	boolean hasExecutionContext();
+	Object execute(Callable<Object> c);
 
 	URL findResource(String name);
 

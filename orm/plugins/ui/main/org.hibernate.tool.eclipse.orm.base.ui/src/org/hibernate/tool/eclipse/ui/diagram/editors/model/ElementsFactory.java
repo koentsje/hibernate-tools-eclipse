@@ -532,7 +532,7 @@ public class ElementsFactory {
 	
 	private IService getService() {
 		if (service == null) {
-			service = getConsoleConfig().getHibernateExtension().getHibernateService();
+			service = getConsoleConfig().getRuntimeManager().getHibernateService();
 		}
 		return service;
 	}
