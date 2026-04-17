@@ -37,11 +37,10 @@ import org.eclipse.jface.text.contentassist.IContextInformation;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.ui.console.common.CompletionProposalsResult;
-import org.hibernate.eclipse.launch.exporter.ConsoleExtension;
-import org.hibernate.tool.eclipse.orm.console.core.HibernateExtension;
 import org.hibernate.eclipse.ui.console.common.ConsoleExtensionUI;
 import org.hibernate.eclipse.hqleditor.HQLCompletionProcessor;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateProjectConsoleManager;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IRuntimeManager;
 
 public class HQLJavaCompletionProposalComputer implements IJavaCompletionProposalComputer {
 
@@ -77,17 +76,12 @@ public class HQLJavaCompletionProposalComputer implements IJavaCompletionProposa
 					 int stringStart = getStringStart( ctx.getDocument(), ctx.getInvocationOffset() );
 					 int stringEnd = getStringEnd( ctx.getDocument(), ctx.getInvocationOffset() );
 					 query = ctx.getDocument().get(stringStart, stringEnd-stringStart );
-					 ConsoleExtension consoleExtension = (ConsoleExtension) ((HibernateExtension) consoleConfiguration.getRuntimeManager()).getConsoleExtension();
-					 if (consoleExtension != null){
-							ConsoleExtensionUI consoleExtensionUI = new ConsoleExtensionUI(consoleExtension);
-							CompletionProposalsResult codeCompletions = consoleExtensionUI.hqlCodeComplete(query, stringStart, ctx.getInvocationOffset() - stringStart);
-					
-							errorMessage = codeCompletions.getErrorMessage();
-							proposals = codeCompletions.getCompletionProposals();
-					} else {
-						errorMessage = "There is no completion proposal implementation for this hibernate version \'" //$NON-NLS-1$
-								+ consoleConfiguration.getRuntimeManager().getHibernateVersion() + "\'"; //$NON-NLS-1$
-					}
+					 IRuntimeManager runtimeManager = consoleConfiguration.getRuntimeManager();
+					 ConsoleExtensionUI consoleExtensionUI = new ConsoleExtensionUI(runtimeManager);
+					 CompletionProposalsResult codeCompletions = consoleExtensionUI.hqlCodeComplete(query, stringStart, ctx.getInvocationOffset() - stringStart);
+
+					 errorMessage = codeCompletions.getErrorMessage();
+					 proposals = codeCompletions.getCompletionProposals();
 				 }
 		} catch(RuntimeException re) {
 			HibernateBasePlugin.getDefault().logErrorMessage( JdtUiMessages.HQLJavaCompletionProposalComputer_errormessage, re );

@@ -26,10 +26,9 @@ import org.eclipse.ui.views.properties.IPropertySourceProvider;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
 import org.hibernate.tool.eclipse.orm.query.QueryPage;
-import org.hibernate.eclipse.launch.exporter.ConsoleExtension;
-import org.hibernate.tool.eclipse.orm.console.core.HibernateExtension;
 import org.hibernate.eclipse.console.views.QueryPageTabView;
 import org.hibernate.eclipse.ui.console.common.ConsoleExtensionUI;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IRuntimeManager;
 
 public class HibernatePropertySourceProvider implements IPropertySourceProvider {	
 
@@ -57,13 +56,10 @@ public class HibernatePropertySourceProvider implements IPropertySourceProvider 
 				String configName = selectedQueryPage.getConsoleConfigurationName();
 				ConsoleConfiguration cc = KnownConfigurations.getInstance().find(configName);
 				if (cc != null) {
-					HibernateExtension hibernateExtension = (HibernateExtension) cc.getRuntimeManager();
-					if (hibernateExtension != null) {
-						ConsoleExtension consoleExtension = (ConsoleExtension) hibernateExtension.getConsoleExtension();
-						if (consoleExtension != null) {
-							ConsoleExtensionUI consoleExtensionUI = new ConsoleExtensionUI(consoleExtension);
-							result = consoleExtensionUI.getPropertySource(object, selectedQueryPage);
-						}
+					IRuntimeManager runtimeManager = cc.getRuntimeManager();
+					if (runtimeManager != null) {
+						ConsoleExtensionUI consoleExtensionUI = new ConsoleExtensionUI(runtimeManager);
+						result = consoleExtensionUI.getPropertySource(object, selectedQueryPage);
 					}
 				}
 			}

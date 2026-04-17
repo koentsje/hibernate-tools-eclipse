@@ -55,16 +55,7 @@ public class ConsoleConfigurationWorkbenchAdapter extends BasicWorkbenchAdapter 
 			}
 		}*/
 		
-		Object configuration = ccfg.getConfiguration();		
-		
-		// if getConfiguration() would return an spi interface 
-		// the following code could be a solution to use a proxy
-		// class proper to the hibernate version
-//		if (ccfg.getHibernateExtension() != null) {
-//			configuration = ccfg.getHibernateExtension().getConfiguration();
-//		} else {
-//			configuration = ccfg.getConfiguration();
-//		}
+		Object configuration = ccfg.getConfiguration();
 
 		Object o1;
 		if(configuration!=null) {

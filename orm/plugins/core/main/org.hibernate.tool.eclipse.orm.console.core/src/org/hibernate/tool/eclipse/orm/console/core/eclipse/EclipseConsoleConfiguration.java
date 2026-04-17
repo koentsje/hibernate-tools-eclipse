@@ -23,7 +23,7 @@ package org.hibernate.tool.eclipse.orm.console.core.eclipse;
 
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.preferences.ConsoleConfigurationPreferences;
-import org.hibernate.tool.eclipse.orm.console.core.HibernateExtension;
+import org.hibernate.tool.eclipse.orm.console.core.RuntimeManager;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IRuntimeManager;
 
 /**
@@ -38,7 +38,7 @@ public class EclipseConsoleConfiguration extends ConsoleConfiguration {
 
 	@Override
 	protected IRuntimeManager createRuntimeManager() {
-		return new HibernateExtension(prefs);
+		return new RuntimeManager(prefs);
 	}
 
 }

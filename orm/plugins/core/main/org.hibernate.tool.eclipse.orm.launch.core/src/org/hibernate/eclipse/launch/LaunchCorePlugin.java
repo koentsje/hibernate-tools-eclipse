@@ -1,8 +1,6 @@
 package org.hibernate.eclipse.launch;
 
 import org.eclipse.core.runtime.Plugin;
-import org.hibernate.tool.eclipse.orm.console.core.HibernateExtension;
-import org.hibernate.eclipse.launch.exporter.ConsoleExtension;
 import org.osgi.framework.BundleContext;
 
 public class LaunchCorePlugin extends Plugin {
@@ -16,11 +14,6 @@ public class LaunchCorePlugin extends Plugin {
 
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
-		HibernateExtension.setConsoleExtensionFactory(he -> {
-			ConsoleExtension ce = new ConsoleExtension();
-			ce.setHibernateExtention(he);
-			return ce;
-		});
 	}
 
 	public void stop(BundleContext context) throws Exception {

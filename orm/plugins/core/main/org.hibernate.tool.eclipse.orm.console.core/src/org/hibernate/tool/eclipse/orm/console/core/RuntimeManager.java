@@ -26,38 +26,22 @@ import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
 import org.hibernate.tool.eclipse.orm.runtime.spi.RuntimeServiceManager;
 
-public class HibernateExtension implements IRuntimeManager {
+public class RuntimeManager implements IRuntimeManager {
 
 	private IConfiguration configuration;
-	
+
 	private ConsoleConfigClassLoader classLoader = null;
 
 	private ExecutionContext executionContext;
-	
+
 	private ConsoleConfigurationPreferences prefs;
-	
+
 	private ISessionFactory sessionFactory;
-	
+
 	private Map<String, FakeDelegatingDriver> fakeDrivers = new HashMap<String, FakeDelegatingDriver>();
-	
-	private IConsoleExtension consoleExtension;
 
-	private static java.util.function.Function<HibernateExtension, IConsoleExtension> consoleExtensionFactory;
-
-	public static void setConsoleExtensionFactory(
-			java.util.function.Function<HibernateExtension, IConsoleExtension> factory) {
-		consoleExtensionFactory = factory;
-	}
-
-	public HibernateExtension(ConsoleConfigurationPreferences prefs) {
+	public RuntimeManager(ConsoleConfigurationPreferences prefs) {
 		this.prefs = prefs;
-		if (consoleExtensionFactory != null) {
-			consoleExtension = consoleExtensionFactory.apply(this);
-		}
-	}
-
-	public IConsoleExtension getConsoleExtension() {
-		return consoleExtension;
 	}
 
 	protected ConsoleConfigClassLoader createClassLoader(final URL[] customClassPathURLs) {

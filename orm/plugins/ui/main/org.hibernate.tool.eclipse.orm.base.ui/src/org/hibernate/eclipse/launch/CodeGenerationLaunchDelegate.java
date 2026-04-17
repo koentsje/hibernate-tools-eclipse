@@ -73,8 +73,7 @@ import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.launch.ICodeGenerationLaunchConstants;
-import org.hibernate.eclipse.launch.exporter.ConsoleExtension;
-import org.hibernate.tool.eclipse.orm.console.core.HibernateExtension;
+import org.hibernate.eclipse.launch.exporter.ExporterLauncher;
 import org.hibernate.eclipse.launch.model.ExporterFactory;
 import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
 import org.hibernate.tool.eclipse.orm.runtime.spi.HibernateException;
@@ -263,8 +262,8 @@ public class CodeGenerationLaunchDelegate extends AntLaunchDelegate {
 		Assert.isNotNull(monitor);
 		ExporterAttributes attributes = new ExporterAttributes(configuration);
 		ConsoleConfiguration cc = KnownConfigurations.getInstance().find(attributes.getConsoleConfigurationName());
-		ConsoleExtension consoleExtension = (ConsoleExtension) ((HibernateExtension) cc.getRuntimeManager()).getConsoleExtension();
-		Map<String, File[]> generatedFiles = consoleExtension.launchExporters(configuration, mode, launch, monitor);
+		ExporterLauncher exporterLauncher = new ExporterLauncher(cc.getRuntimeManager());
+		Map<String, File[]> generatedFiles = exporterLauncher.launchExporters(configuration, mode, launch, monitor);
 		// code formatting needs to happen *after* refresh to make sure eclipse will format the uptodate files!
         if(generatedFiles!=null) {
         	formatGeneratedCode( monitor, generatedFiles );

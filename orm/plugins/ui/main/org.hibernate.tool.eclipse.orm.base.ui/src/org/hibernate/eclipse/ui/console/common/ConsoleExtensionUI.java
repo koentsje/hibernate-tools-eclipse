@@ -2,34 +2,32 @@ package org.hibernate.eclipse.ui.console.common;
 
 import org.eclipse.ui.views.properties.IPropertySource;
 import org.hibernate.tool.eclipse.orm.query.QueryPage;
-import org.hibernate.eclipse.launch.exporter.ConsoleExtension;
-import org.hibernate.tool.eclipse.orm.console.core.HibernateExtension;
 import org.hibernate.tool.eclipse.orm.runtime.spi.HibernateException;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IHQLCodeAssist;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IRuntimeManager;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ISession;
 
 public class ConsoleExtensionUI {
 
-    private final ConsoleExtension consoleExtension;
+    private final IRuntimeManager runtimeManager;
 
-    public ConsoleExtensionUI(ConsoleExtension consoleExtension) {
-        this.consoleExtension = consoleExtension;
+    public ConsoleExtensionUI(IRuntimeManager runtimeManager) {
+        this.runtimeManager = runtimeManager;
     }
 
     public CompletionProposalsResult hqlCodeComplete(String query,
             int startPosition, int currentOffset) {
-        HibernateExtension hibernateExtension = consoleExtension.getHibernateExtension();
         HQLCompletionHandler handler = new HQLCompletionHandler(startPosition);
-        if (!hibernateExtension.hasConfiguration()) {
+        if (!runtimeManager.hasConfiguration()) {
             try {
-                hibernateExtension.build();
-                hibernateExtension.buildMappings();
+                runtimeManager.build();
+                runtimeManager.buildMappings();
             } catch (HibernateException e) {
                 // ignore
             }
         }
-        IHQLCodeAssist hqlEval = hibernateExtension.getHibernateService()
-                .newHQLCodeAssist(hibernateExtension.getConfiguration());
+        IHQLCodeAssist hqlEval = runtimeManager.getHibernateService()
+                .newHQLCodeAssist(runtimeManager.getConfiguration());
         query = query.replace('\t', ' ');
         hqlEval.codeComplete(query, currentOffset, handler);
         return new CompletionProposalsResult(handler.getCompletionProposals(),
@@ -38,17 +36,16 @@ public class ConsoleExtensionUI {
 
     public IPropertySource getPropertySource(Object object,
             QueryPage selectedQueryPage) {
-        HibernateExtension hibernateExtension = consoleExtension.getHibernateExtension();
         ISession currentSession = ((ISession) selectedQueryPage.getSession());
         if ((currentSession.isOpen() && currentSession.contains(object))
-                || hasMetaData(object, currentSession, hibernateExtension)) {
-            return new EntityPropertySource(object, currentSession, hibernateExtension);
+                || hasMetaData(object, currentSession)) {
+            return new EntityPropertySource(object, currentSession, runtimeManager);
         }
         return null;
     }
 
-    private boolean hasMetaData(Object object, ISession currentSession, HibernateExtension hibernateExtension) {
+    private boolean hasMetaData(Object object, ISession currentSession) {
         return currentSession.getSessionFactory().getClassMetadata(
-                hibernateExtension.getHibernateService().getClassWithoutInitializingProxy(object)) != null;
+                runtimeManager.getHibernateService().getClassWithoutInitializingProxy(object)) != null;
     }
 }

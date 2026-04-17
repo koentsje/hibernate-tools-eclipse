@@ -39,9 +39,8 @@ import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessag
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.console.core.ui.QueryEditor;
 import org.hibernate.eclipse.ui.console.common.CompletionProposalsResult;
-import org.hibernate.eclipse.launch.exporter.ConsoleExtension;
-import org.hibernate.tool.eclipse.orm.console.core.HibernateExtension;
 import org.hibernate.eclipse.ui.console.common.ConsoleExtensionUI;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IRuntimeManager;
 
 /**
  * content assist processor for HQL code.
@@ -118,22 +117,17 @@ public class HQLCompletionProcessor implements IContentAssistProcessor {
 				}
 
 				if(consoleConfiguration != null) {
-					ConsoleExtension consoleExtension = (ConsoleExtension) ((HibernateExtension) consoleConfiguration.getRuntimeManager()).getConsoleExtension();
-					if (consoleExtension != null){
-						ConsoleExtensionUI consoleExtensionUI = new ConsoleExtensionUI(consoleExtension);
-						CompletionProposalsResult codeCompletions = consoleExtensionUI.hqlCodeComplete(doc.get(), 0, currentOffset);
-						
-						proposalList.addAll(codeCompletions.getCompletionProposals());
-						errorMessage = codeCompletions.getErrorMessage();//eclipseHQLCompletionCollector.getLastErrorMessage();
-						
-						result = proposalList.toArray(new ICompletionProposal[proposalList.size()]);
-		    			if(result.length==0 && errorMessage==null) {
-		    				errorMessage = BasicHibernateMessages.HQLCompletionProcessor_no_hql_completions_available;
-		    			}
-					} else {
-						errorMessage = "There is no completion proposal implementation for this hibernate version \'" //$NON-NLS-1$
-								+ consoleConfiguration.getRuntimeManager().getHibernateVersion() + "\'"; //$NON-NLS-1$
-					}
+					IRuntimeManager runtimeManager = consoleConfiguration.getRuntimeManager();
+					ConsoleExtensionUI consoleExtensionUI = new ConsoleExtensionUI(runtimeManager);
+					CompletionProposalsResult codeCompletions = consoleExtensionUI.hqlCodeComplete(doc.get(), 0, currentOffset);
+
+					proposalList.addAll(codeCompletions.getCompletionProposals());
+					errorMessage = codeCompletions.getErrorMessage();
+
+					result = proposalList.toArray(new ICompletionProposal[proposalList.size()]);
+	    			if(result.length==0 && errorMessage==null) {
+	    				errorMessage = BasicHibernateMessages.HQLCompletionProcessor_no_hql_completions_available;
+	    			}
 				}
     		} else {
     			errorMessage = BasicHibernateMessages.HQLCompletionProcessor_no_start_word_found;

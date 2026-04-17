@@ -32,8 +32,6 @@ import org.hibernate.tool.eclipse.orm.console.core.HibernateConsoleRuntimeExcept
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernatePlugin;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
-import org.hibernate.tool.eclipse.orm.console.core.HibernateExtension;
-import org.hibernate.tool.eclipse.orm.console.core.IConsoleExtension;
 import org.hibernate.eclipse.launch.model.ExporterFactory;
 import org.hibernate.eclipse.launch.CodeGenerationStrings;
 import org.hibernate.eclipse.launch.CodeGenerationUtils;
@@ -46,6 +44,7 @@ import org.hibernate.tool.eclipse.orm.runtime.spi.IExporter;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IOverrideRepository;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IReverseEngineeringSettings;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IReverseEngineeringStrategy;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IRuntimeManager;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 
 
@@ -53,16 +52,12 @@ import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
  * @author Dmitry Geraskov
  *
  */
-public class ConsoleExtension implements IConsoleExtension {
-	
-	private HibernateExtension hibernateExtension;
+public class ExporterLauncher {
 
-	public void setHibernateExtention(HibernateExtension hibernateExtension) {
-		this.hibernateExtension = hibernateExtension;
-	}
+	private final IRuntimeManager runtimeManager;
 
-	public HibernateExtension getHibernateExtension() {
-		return hibernateExtension;
+	public ExporterLauncher(IRuntimeManager runtimeManager) {
+		this.runtimeManager = runtimeManager;
 	}
 
 	public Map<String, File[]> launchExporters(
@@ -149,7 +144,7 @@ public class ConsoleExtension implements IConsoleExtension {
 			return null;
 
 		return (IArtifactCollector) cc.execute(() -> {
-			IArtifactCollector artifactCollector = hibernateExtension
+			IArtifactCollector artifactCollector = runtimeManager
 					.getHibernateService().newArtifactCollector();
 
 			// Global properties
@@ -173,7 +168,7 @@ public class ConsoleExtension implements IConsoleExtension {
 									.getOutputPath(), attributes
 									.getTemplatePath(), globalProperties,
 									outputDirectories, artifactCollector,
-									hibernateExtension
+									runtimeManager
 											.getHibernateService());
 				} catch (CoreException e) {
 					throw new HibernateConsoleRuntimeException(
@@ -217,7 +212,7 @@ public class ConsoleExtension implements IConsoleExtension {
 				configuration = cc.buildWith(null, false);
 			}
 
-			final IConfiguration cfg = hibernateExtension.getHibernateService()
+			final IConfiguration cfg = runtimeManager.getHibernateService()
 					.newJDBCMetaDataConfiguration();
 
 			// final JDBCMetaDataConfiguration cfg = new
@@ -233,7 +228,7 @@ public class ConsoleExtension implements IConsoleExtension {
 
 				// todo: factor this setup of revengstrategy to core
 
-				IService service = hibernateExtension.getHibernateService();
+				IService service = runtimeManager.getHibernateService();
 
 				IReverseEngineeringStrategy res = service
 						.newDefaultReverseEngineeringStrategy();
