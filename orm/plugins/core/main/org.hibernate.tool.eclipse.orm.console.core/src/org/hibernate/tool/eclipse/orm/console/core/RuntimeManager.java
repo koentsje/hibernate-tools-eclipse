@@ -96,7 +96,13 @@ public class RuntimeManager implements IRuntimeManager {
 	}
 
 	public void build() {
-		configuration = buildWith(null, true);
+		closeSessionFactory();
+		reinitClassLoader();
+		executionContext = new DefaultExecutionContext(prefs.getName(), classLoader);
+		configuration = (IConfiguration)execute(() -> {
+			ConfigurationFactory cf = new ConfigurationFactory(prefs, fakeDrivers);
+			return cf.createConfiguration(null, true);
+		});
 	}
 
 	public void buildSessionFactory() {
@@ -120,15 +126,14 @@ public class RuntimeManager implements IRuntimeManager {
 	}
 
 	public IConfiguration buildWith(final IConfiguration cfg, final boolean includeMappings) {
-		closeSessionFactory();
-		reinitClassLoader();
-		//TODO handle user libraries here
-		executionContext = new DefaultExecutionContext(prefs.getName(), classLoader);
-		IConfiguration result = (IConfiguration)execute(() -> {
+		if (executionContext == null) {
+			reinitClassLoader();
+			executionContext = new DefaultExecutionContext(prefs.getName(), classLoader);
+		}
+		return (IConfiguration)execute(() -> {
 			ConfigurationFactory cf = new ConfigurationFactory(prefs, fakeDrivers);
 			return cf.createConfiguration(cfg, includeMappings);
 		});
-		return result;
 	}
 	
 	/**
