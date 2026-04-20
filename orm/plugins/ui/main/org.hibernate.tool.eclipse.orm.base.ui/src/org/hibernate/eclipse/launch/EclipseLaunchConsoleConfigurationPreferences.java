@@ -1,4 +1,4 @@
-package org.hibernate.tool.eclipse.orm.console.core.preferences;
+package org.hibernate.eclipse.launch;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -122,7 +122,7 @@ public class EclipseLaunchConsoleConfigurationPreferences implements ConsoleConf
 			for (String element : mappings) {
 				result[i++] = strToFile( element );
 			}
-			return result;				
+			return result;
 		}
 		catch (CoreException e) {
 			throw new HibernateConsoleRuntimeException(e);
@@ -162,7 +162,7 @@ public class EclipseLaunchConsoleConfigurationPreferences implements ConsoleConf
 		return getAttribute( IBasicHibernateLaunchConstants.PERSISTENCE_UNIT_NAME, null );
 	}
 
-	public Properties getProperties() {		
+	public Properties getProperties() {
 		File propFile = getPropertyFile();
 		if(propFile==null) return getProjectOverrides();
 		Properties fileProp = new Properties();
@@ -207,7 +207,7 @@ public class EclipseLaunchConsoleConfigurationPreferences implements ConsoleConf
 	public void writeStateTo(Element node) {
 		throw new IllegalStateException(BasicHibernateMessages.EclipseLaunchConsoleConfigurationPreferences_cannot_write_to_xml);
 	}
-	
+
 	public String getDialectName() {
 		String dialect = getAttribute( IBasicHibernateLaunchConstants.DIALECT, null );
 		// determine dialect when connection profile is used
@@ -217,12 +217,12 @@ public class EclipseLaunchConsoleConfigurationPreferences implements ConsoleConf
 		}
 		return dialect;
 	}
-	
+
 	public String getProjectName(){
 		return getAttribute(IJavaLaunchConfigurationConstants.ATTR_PROJECT_NAME, null);
-		
+
 	}
-	
+
 	public Properties getProjectOverrides(){
 		Properties prop = new Properties();
 		String projName = getProjectName();
@@ -257,7 +257,7 @@ public class EclipseLaunchConsoleConfigurationPreferences implements ConsoleConf
 		if (launchConfiguration.exists()){
 			return getAttribute(IBasicHibernateLaunchConstants.HIBERNATE_VERSION, defaultVersion);
 		}
-		return defaultVersion; 
+		return defaultVersion;
 	}
 
 }

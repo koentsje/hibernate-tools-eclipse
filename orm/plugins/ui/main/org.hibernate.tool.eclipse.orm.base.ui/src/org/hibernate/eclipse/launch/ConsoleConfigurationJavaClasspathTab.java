@@ -18,7 +18,6 @@ import org.eclipse.jdt.launching.JavaRuntime;
 import org.eclipse.osgi.util.NLS;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.HibernateConsoleRuntimeException;
-import org.hibernate.tool.eclipse.orm.console.core.preferences.EclipseLaunchConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 
 /**

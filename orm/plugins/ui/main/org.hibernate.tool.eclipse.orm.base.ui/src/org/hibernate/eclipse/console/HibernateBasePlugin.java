@@ -75,7 +75,7 @@ import org.hibernate.tool.eclipse.common.base.core.logging.EclipseLogger;
 import org.osgi.framework.BundleContext;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.EclipseConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.preferences.EclipseConsoleConfigurationPreferences;
-import org.hibernate.tool.eclipse.orm.console.core.preferences.EclipseLaunchConsoleConfigurationPreferences;
+import org.hibernate.eclipse.launch.EclipseLaunchConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 
 /**
