@@ -16,7 +16,7 @@ import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.osgi.util.NLS;
 import org.hibernate.tool.eclipse.orm.console.core.HibernateConsoleRuntimeException;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
+import org.hibernate.eclipse.launch.LaunchMessages;
 import org.hibernate.eclipse.launch.HibernateLaunchConstants;
 import org.hibernate.eclipse.launch.PathHelper;
 import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
@@ -226,7 +226,7 @@ public class ExporterFactory {
 		String resolvedOutputDir = resolve(outputPath);
 		String loc = PathHelper.getLocationAsStringPath(resolvedOutputDir);
 		if (outputPath != null && loc == null) {
-			String out = NLS.bind(BasicHibernateMessages.ExporterFactory_output_dir_in_does_not_exist,
+			String out = NLS.bind(LaunchMessages.ExporterFactory_output_dir_in_does_not_exist,
 				resolvedOutputDir, getExporterDefinition().getDescription());
 			throw new HibernateConsoleRuntimeException(out);
 		}
@@ -246,7 +246,7 @@ public class ExporterFactory {
 			while (st.hasMoreTokens()) {
 				String locationAsStringPath = PathHelper.getLocationAsStringPath(st.nextToken());
 				if (locationAsStringPath == null) {
-					out += NLS.bind(BasicHibernateMessages.ExporterFactory_template_dir_in_does_not_exist,
+					out += NLS.bind(LaunchMessages.ExporterFactory_template_dir_in_does_not_exist,
 						resolveTemplatePath, getExporterDefinition().getDescription()) + '\n';					
 				} else {
 					templatePathList.add(locationAsStringPath);
@@ -267,7 +267,7 @@ public class ExporterFactory {
 				if (locationAsStringPath != null) {
 					templatePathList.add(locationAsStringPath);
 				} else {
-					out = NLS.bind(BasicHibernateMessages.ExporterFactory_template_dir_in_does_not_exist,
+					out = NLS.bind(LaunchMessages.ExporterFactory_template_dir_in_does_not_exist,
 						resolvedCustomTemplatePath, getExporterDefinition().getDescription());
 				}
 			}

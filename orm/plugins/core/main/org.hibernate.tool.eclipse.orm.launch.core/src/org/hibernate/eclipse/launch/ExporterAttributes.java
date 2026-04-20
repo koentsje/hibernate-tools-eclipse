@@ -55,6 +55,7 @@ import org.eclipse.osgi.util.NLS;
 import org.hibernate.tool.eclipse.orm.console.core.HibernateConsoleRuntimeException;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernatePlugin;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
+import org.hibernate.eclipse.launch.LaunchMessages;
 import org.hibernate.eclipse.launch.model.ExporterDefinition;
 import org.hibernate.eclipse.launch.model.ExporterFactory;
 
@@ -132,7 +133,7 @@ public class ExporterAttributes
 
 			   ExporterDefinition expDef = exDefinitions.get(extensionId);
 			   if(expDef==null) {
-				   String out = NLS.bind(BasicHibernateMessages.ExporterAttributes_could_not_locate_exporter_for_in, extensionId, configuration.getName());
+				   String out = NLS.bind(LaunchMessages.ExporterAttributes_could_not_locate_exporter_for_in, extensionId, configuration.getName());
 				   throw new HibernateConsoleRuntimeException(out);
 			   } else {
 				   ExporterFactory exporterFactory = new ExporterFactory( expDef, exporterId );
@@ -388,7 +389,7 @@ public class ExporterAttributes
         }
         if (msg == null) {
             if (reverseEngineer && !preferBasicCompositeIds) {
-                msg = BasicHibernateMessages.CodeGenerationSettingsTab_script_can_not_be_generated_correctly_without;
+                msg = LaunchMessages.CodeGenerationSettingsTab_script_can_not_be_generated_correctly_without;
             }
         }
 		return msg;

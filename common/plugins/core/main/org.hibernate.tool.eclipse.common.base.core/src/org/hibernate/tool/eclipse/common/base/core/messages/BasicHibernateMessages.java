@@ -17,17 +17,12 @@ public class BasicHibernateMessages extends NLS {
 	//
 	public static String AddConfigurationAction_hibernate;
 	//
-	public static String ExporterFactory_output_dir_in_does_not_exist;
-	public static String ExporterFactory_template_dir_in_does_not_exist;
-	public static String ExporterProperty_generate_ejb3_annotations;
-	public static String ExporterProperty_use_java5_syntax;
 	//
 	//
 
 
 	//
 	public static String ClassLoaderHelper_could_not_determine_physical_location_for;
-	public static String LaunchHelper_launch_cfg_type_cannot_be_null;
 	public static String ProjectUtils_could_not_activate_hibernate_nature_on_project;
 	public static String ProjectUtils_could_not_save_changes_to_preferences;
 	//
@@ -36,10 +31,6 @@ public class BasicHibernateMessages extends NLS {
 	//
 	//
 	//
-	public static String ConsoleConfigurationWizardPage_config_name_already_exist;
-	public static String ConsoleConfigurationWizardPage_name_must_specified;
-	public static String ConsoleConfigurationWizardPage_bad_name;
-	public static String ConsoleConfigurationWizardPage_bad_char;
 	public static String NewConfigurationWizard_open_file_for_editing;
 	public static String NewConfigurationWizard_problems_converting_to_utf8;
 	public static String NewConfigurationWizardPage_connection_url;
@@ -79,8 +70,6 @@ public class BasicHibernateMessages extends NLS {
 	public static String CodeGenerationSettingsTab_select_output_dir;
 	public static String CodeGenerationSettingsTab_setup;
 	public static String CodeGenerationSettingsTab_template_dir;
-	public static String CodeGenerationSettingsTab_script_can_not_be_generated_correctly_without;
-	public static String ConsoleConfigurationLaunchDelegate_direct_launch_not_supported;
 	public static String ConsoleConfigurationMainTab_0;
 
 	public static String ConsoleConfigurationMainTab_cfg_xml;
@@ -93,23 +82,8 @@ public class BasicHibernateMessages extends NLS {
 	public static String ConsoleConfigurationMainTab_use_existing;
 	public static String ConsoleConfigurationMainTab_wizard_page;
 	
-	public static String ExporterAttributes_could_not_locate_exporter_for_in;
-	public static String PathHelper_does_not_exist;
-	public static String PathHelper_has_invalid_variable_references;
-	public static String PathHelper_not_directory;
-	public static String PathHelper_not_file;
-	public static String PathHelper_has_to_be_folder_or_project;
-	public static String PathHelper_has_to_be_file;
-	public static String PathHelper_project_for_is_closed;
 	
 	//
-	public static String HibernateRefactoringUtil_error_during_refactoring;
-	public static String HibernateRefactoringUtil_error_occured_while_updating_classpath;
-	public static String LaunchConfigurationResourceNameChange_update_resource_path_in_launch_cfg;
-	public static String MoveResourceParticipant_launch_configurations_updates;
-	public static String RenameResourceParticipant_launch_configurations_updates;
-	public static String ConsoleConfigurationITypeRenameParticipant_update;
-	public static String ConsoleConfigurationITypeRenameParticipant_update_names;
 	//
 	public static String HibernateNature_error_while_performing_background_reading_of_database_schema;
 	public static String HibernateNature_reading_database_metadata;
@@ -119,11 +93,7 @@ public class BasicHibernateMessages extends NLS {
 
 
 
-	public static String ConnectionProfileRenameChange_update_connection_profile_name;
-	public static String ConnectionProfileRenameParticipant_launch_configurations_updates;
 
-	public static String DeleteProjectParticipant_console_configurations_updates;
-	public static String DeleteProjectParticipant_delete_console_configuration;
 	
 	public static String AddRemoveTableComposite_no_dependencies;
 	public static String AddRemoveTableComposite_control_depth_level;

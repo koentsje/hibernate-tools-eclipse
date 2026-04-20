@@ -22,7 +22,7 @@ import org.eclipse.ltk.core.refactoring.Change;
 import org.eclipse.ltk.core.refactoring.RefactoringStatus;
 import org.eclipse.ltk.core.refactoring.participants.CheckConditionsContext;
 import org.eclipse.ltk.core.refactoring.participants.RenameParticipant;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
+import org.hibernate.eclipse.launch.LaunchMessages;
 
 /**
  * @author Dmitry Geraskov
@@ -54,7 +54,7 @@ public class ConnectionProfileRenameParticipant extends RenameParticipant {
 
 	@Override
 	public String getName() {
-		return BasicHibernateMessages.ConnectionProfileRenameParticipant_launch_configurations_updates;
+		return LaunchMessages.ConnectionProfileRenameParticipant_launch_configurations_updates;
 	}
 
 	@Override

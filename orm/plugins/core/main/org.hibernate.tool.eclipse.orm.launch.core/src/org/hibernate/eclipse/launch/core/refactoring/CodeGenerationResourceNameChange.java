@@ -19,7 +19,7 @@ import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.ltk.core.refactoring.Change;
 import org.eclipse.ltk.core.refactoring.RefactoringStatus;
 import org.eclipse.osgi.util.NLS;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
+import org.hibernate.eclipse.launch.LaunchMessages;
 
 /**
  * @author Dmitry Geraskov
@@ -44,7 +44,7 @@ public class CodeGenerationResourceNameChange extends Change {
 
 	@Override
 	public String getName() {
-		return NLS.bind(BasicHibernateMessages.LaunchConfigurationResourceNameChange_update_resource_path_in_launch_cfg, fLaunchConfiguration.getName());
+		return NLS.bind(LaunchMessages.LaunchConfigurationResourceNameChange_update_resource_path_in_launch_cfg, fLaunchConfiguration.getName());
 	}
 
 	@Override
