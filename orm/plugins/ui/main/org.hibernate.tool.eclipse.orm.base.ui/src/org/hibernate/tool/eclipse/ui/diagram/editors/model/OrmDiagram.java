@@ -49,7 +49,7 @@ import org.eclipse.ui.views.properties.TextPropertyDescriptor;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateConsoleCorePlugin;
-import org.hibernate.tool.eclipse.orm.console.core.utils.ProjectUtils;
+import org.hibernate.eclipse.console.utils.ProjectUtilsUI;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ITable;
@@ -295,7 +295,7 @@ public class OrmDiagram extends BaseElement {
 	public IPath getStoreFolderPath() {
 		IPath storePath = null;
 		ConsoleConfiguration consoleConfig = getConsoleConfig();
-		IJavaProject javaProject = ProjectUtils.findJavaProject(consoleConfig);
+		IJavaProject javaProject = ProjectUtilsUI.findJavaProject(consoleConfig);
 		if (javaProject != null && javaProject.getProject() != null) {
 			storePath = javaProject.getProject().getLocation();
 		}

@@ -29,6 +29,7 @@ import org.eclipse.ui.actions.SelectionListenerAction;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
+import org.hibernate.eclipse.console.utils.ProjectUtilsUI;
 import org.hibernate.tool.eclipse.orm.console.core.utils.ProjectUtils;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IProperty;
@@ -102,7 +103,7 @@ public class OpenSourceAction extends SelectionListenerAction {
 		if (fullyQualifiedName == null) {
 			return null;
 		}
-		IJavaProject[] projs = ProjectUtils.findJavaProjects(consoleConfig);
+		IJavaProject[] projs = ProjectUtilsUI.findJavaProjects(consoleConfig);
 		String remainder = null;
 		IType type = null;
 		IJavaProject proj = null;

@@ -23,7 +23,6 @@ package org.hibernate.tool.eclipse.orm.console.core.utils;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -51,7 +50,6 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.preferences.IScopeContext;
-import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IType;
@@ -63,12 +61,9 @@ import org.eclipse.jdt.core.dom.ITypeBinding;
 import org.eclipse.jdt.core.dom.Type;
 import org.eclipse.jdt.core.dom.TypeDeclaration;
 import org.eclipse.jdt.internal.core.SourceType;
-import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
-import org.hibernate.tool.eclipse.orm.console.core.preferences.ConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateConsoleCorePlugin;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.tool.eclipse.orm.console.core.properties.HibernatePropertiesConstants;
-import org.hibernate.tool.eclipse.common.base.core.launch.IBasicHibernateLaunchConstants;
 import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
 import org.osgi.service.prefs.BackingStoreException;
 import org.osgi.service.prefs.Preferences;
@@ -173,31 +168,6 @@ public class ProjectUtils {
 		return null;
 	}
 
-	public static IProject findProject(ConsoleConfiguration consoleConfiguration) {
-		if (consoleConfiguration != null) {
-			try {
-				ILaunchConfiguration launchConfiguration = LaunchHelper.findHibernateLaunchConfig(
-						consoleConfiguration.getName());
-				if(launchConfiguration != null) {
-					String projName = launchConfiguration.getAttribute(
-							IBasicHibernateLaunchConstants.PROJECT_NAME, ""); //$NON-NLS-1$
-					return findProject(projName);
-				}
-			} catch (CoreException e1) {
-				HibernateConsoleCorePlugin.getDefault().log(e1);
-			}
-		}
-		return null;
-	}
-
-	public static IJavaProject findJavaProject(ConsoleConfiguration consoleConfiguration) {
-		IProject project = findProject(consoleConfiguration);
-		if (project != null) {
-			return JavaCore.create(project);
-		}
-		return null;
-	}
-
 	public static boolean exists(IFile f) {
 		if (!(f instanceof File)) {
 			return false;
@@ -212,52 +182,6 @@ public class ProjectUtils {
 			}
 		}
 		return false;
-	}
-
-	private static boolean updateCollection(ArrayList<IProject> projects, IProject project) {
-		if (project == null) {
-			return false;
-		}
-		for (Iterator<IProject> it = projects.iterator(); it.hasNext();) {
-			if (project.equals(it.next())) {
-				return false;
-			}
-		}
-		projects.add(project);
-		return true;
-	}
-
-	public static IJavaProject[] findJavaProjects(ConsoleConfiguration consoleConfiguration) {
-		ConsoleConfigurationPreferences ccp = consoleConfiguration.getPreferences();
-		URL[] classPathURLs = new URL[0];
-		if (ccp != null) {
-			classPathURLs = ccp.getCustomClassPathURLS();
-		}
-		ArrayList<IProject> projects = new ArrayList<IProject>();
-		IFile file = null;
-		for (int i = 0; i < classPathURLs.length; i++) {
-			IPath path = Path.fromOSString(classPathURLs[i].getFile());
-			file = ResourcesPlugin.getWorkspace().getRoot().getFile(path);
-			if (file == null || !exists(file)) {
-				file = ResourcesPlugin.getWorkspace().getRoot().getFileForLocation(path);
-			}
-			if (file != null && exists(file)) {
-				updateCollection(projects, file.getProject());
-			}
-		}
-		// insert this in last place
-		updateCollection(projects, findProject(consoleConfiguration));
-		List<IJavaProject> res = new ArrayList<IJavaProject>();
-		for (int i = 0; i < projects.size(); i++) {
-			try {
-				if (projects.get(i).isOpen() && projects.get(i).hasNature(JavaCore.NATURE_ID)){
-					res.add(JavaCore.create(projects.get(i)));
-				}
-			} catch (CoreException e) {
-				HibernateConsoleCorePlugin.getDefault().log(e);
-			}
-		}
-		return res.toArray(new IJavaProject[0]);
 	}
 
 	static public org.eclipse.jdt.core.dom.CompilationUnit getCompilationUnit(

@@ -36,7 +36,7 @@ import org.eclipse.jface.text.contentassist.IContextInformationValidator;
 import org.eclipse.swt.widgets.Shell;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
-import org.hibernate.tool.eclipse.orm.console.core.utils.ProjectUtils;
+import org.hibernate.eclipse.console.utils.ProjectUtilsUI;
 import org.hibernate.eclipse.hqleditor.CompletionHelper;
 import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
 
@@ -94,7 +94,7 @@ public class JavaCompletionProcessor implements IContentAssistProcessor {
 			IJavaCompletionProposal[] results = new IJavaCompletionProposal[0];
 			IJavaProject[] projects = null;
 			//try {
-				projects = ProjectUtils.findJavaProjects(editor.getConsoleConfiguration());
+				projects = ProjectUtilsUI.findJavaProjects(editor.getConsoleConfiguration());
 			/*} catch (RuntimeException e){
 				String mess = NLS.bind(BasicHibernateMessages.JavaCompletionProcessor_error_find_project,
 						editor.getConsoleConfiguration().getName());

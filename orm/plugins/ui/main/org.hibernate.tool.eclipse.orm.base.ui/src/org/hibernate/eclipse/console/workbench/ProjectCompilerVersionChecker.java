@@ -16,7 +16,7 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.widgets.Display;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
-import org.hibernate.tool.eclipse.orm.console.core.utils.ProjectUtils;
+import org.hibernate.eclipse.console.utils.ProjectUtilsUI;
 import org.hibernate.tool.eclipse.orm.workbench.Messages;
 
 /**
@@ -31,7 +31,7 @@ public class ProjectCompilerVersionChecker {
 	 * @return false if Projects jdk version is bigger than Eclipse jdk version
 	 */
 	public static boolean validateProjectComplianceLevel(final ConsoleConfiguration ccfg){
-		IJavaProject[] javaProjects = ProjectUtils.findJavaProjects(ccfg);
+		IJavaProject[] javaProjects = ProjectUtilsUI.findJavaProjects(ccfg);
 		if (javaProjects.length > 0){
 			for (final IJavaProject iJavaProject : javaProjects) {
 				if (iJavaProject.exists()) {

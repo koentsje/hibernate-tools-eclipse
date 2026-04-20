@@ -60,6 +60,7 @@ import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXParseException;
 import org.hibernate.tool.eclipse.orm.console.core.utils.ProjectUtils;
+import org.hibernate.eclipse.console.utils.ProjectUtilsUI;
 
 /**
  * Utility class for useful open mapping file action functions. 
@@ -408,7 +409,7 @@ public class OpenMappingUtils {
 	}
 	
 	public static IPackageFragmentRoot[] getCCPackageFragmentRoots(ConsoleConfiguration consoleConfiguration) {
-		IJavaProject[] projs = ProjectUtils.findJavaProjects(consoleConfiguration);
+		IJavaProject[] projs = ProjectUtilsUI.findJavaProjects(consoleConfiguration);
 		ArrayList<IPackageFragmentRoot> res = new ArrayList<IPackageFragmentRoot>(); 
 		try {
 			for (int i = 0; i < projs.length; i++) {
@@ -540,7 +541,7 @@ public class OpenMappingUtils {
     	if (documentPaths == null) {
         	return file;
     	}
-		IJavaProject[] projs = ProjectUtils.findJavaProjects(consoleConfig);
+		IJavaProject[] projs = ProjectUtilsUI.findJavaProjects(consoleConfig);
 		ArrayList<IPath> pathsSrc = new ArrayList<IPath>(); 
 		ArrayList<IPath> pathsOut = new ArrayList<IPath>(); 
 		ArrayList<IPath> pathsFull = new ArrayList<IPath>(); 
