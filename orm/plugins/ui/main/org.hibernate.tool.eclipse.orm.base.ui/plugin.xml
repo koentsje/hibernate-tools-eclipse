@@ -26,9 +26,9 @@
       <objectContribution id="diagramEditorAction" objectClass="java.lang.Object">
          <visibility>
            <or>
-             <objectClass name="org.hibernate.tool.eclipse.spi.IConfiguration"/>
-             <objectClass name="org.hibernate.console.ConsoleConfiguration"/>
-             <objectClass name="org.hibernate.tool.eclipse.spi.IPersistentClass"/>
+             <objectClass name="org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration"/>
+             <objectClass name="org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration"/>
+             <objectClass name="org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass"/>
            </or>
          </visibility>
          <action
