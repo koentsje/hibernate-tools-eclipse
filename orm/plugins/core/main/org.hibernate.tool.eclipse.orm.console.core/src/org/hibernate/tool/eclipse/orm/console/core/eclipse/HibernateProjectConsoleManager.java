@@ -39,7 +39,7 @@ import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleMessages;
 import org.hibernate.tool.eclipse.orm.console.core.properties.HibernatePropertiesConstants;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
@@ -124,7 +124,7 @@ public class HibernateProjectConsoleManager {
 		private final TableCache cache;
 
 		public ReadDatabaseMetaData(IProject project, ConsoleConfiguration ccfg, TableCache cache) {
-			super(BasicHibernateMessages.HibernateNature_reading_database_metadata_for + project.getName());
+			super(ConsoleMessages.HibernateNature_reading_database_metadata_for + project.getName());
 			this.ccfg = ccfg;
 			this.cache = cache;
 		}
@@ -134,7 +134,7 @@ public class HibernateProjectConsoleManager {
 			IService service = ccfg.getRuntimeManager().getHibernateService();
 			final IConfiguration jcfg = service.newJDBCMetaDataConfiguration();
 			jcfg.setProperties(cfg.getProperties());
-			monitor.beginTask(BasicHibernateMessages.HibernateNature_reading_database_metadata, IProgressMonitor.UNKNOWN);
+			monitor.beginTask(ConsoleMessages.HibernateNature_reading_database_metadata, IProgressMonitor.UNKNOWN);
 			try {
 				ccfg.execute(() -> {
 					jcfg.readFromJDBC();
@@ -154,7 +154,7 @@ public class HibernateProjectConsoleManager {
 				return Status.OK_STATUS;
 			} catch (Throwable t) {
 				return new Status(IStatus.ERROR, HibernateConsoleCorePlugin.ID, 1,
-					BasicHibernateMessages.HibernateNature_error_while_performing_background_reading_of_database_schema, t);
+					ConsoleMessages.HibernateNature_error_while_performing_background_reading_of_database_schema, t);
 			}
 		}
 	}

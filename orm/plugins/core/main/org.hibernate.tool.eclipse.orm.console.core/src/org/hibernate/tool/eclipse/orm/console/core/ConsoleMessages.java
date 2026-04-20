@@ -41,6 +41,14 @@ public class ConsoleMessages extends NLS {
 	public static String StringListDialog_Remove;
 public static String DynamicSQLPreviewView_caused_by;
 	public static String DynamicSQLPreviewView_manipulation_of;
+	public static String EclipseConsoleConfigurationPreferences_could_not_compute_def_classpath;
+	public static String EclipseConsoleConfigurationPreferences_could_not_resolve_to_file;
+	public static String EclipseConsoleConfigurationPreferences_could_not_resolve_classpaths;
+	public static String EclipseConsoleConfigurationPreferences_errors_while_parsing;
+	public static String HibernateNature_error_while_performing_background_reading_of_database_schema;
+	public static String HibernateNature_reading_database_metadata;
+	public static String HibernateNature_reading_database_metadata_for;
+	public static String ProjectUtils_could_not_activate_hibernate_nature_on_project;
 	static {
 		// initialize resource bundle
 		NLS.initializeMessages(BUNDLE_NAME, ConsoleMessages.class);

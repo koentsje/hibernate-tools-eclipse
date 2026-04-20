@@ -8,10 +8,6 @@ public class BasicHibernateMessages extends NLS {
 	//
 	public static String AbstractQueryEditor_do_you_want_open_session_factory;
 	public static String AbstractQueryEditor_open_session_factory;
-	public static String EclipseConsoleConfigurationPreferences_could_not_compute_def_classpath;
-	public static String EclipseConsoleConfigurationPreferences_could_not_resolve_to_file;
-	public static String EclipseConsoleConfigurationPreferences_could_not_resolve_classpaths;
-	public static String EclipseConsoleConfigurationPreferences_errors_while_parsing;
 	public static String HibernateBasePlugin_no_message_1;
 	public static String HibernateBasePlugin_no_message_2;
 	//
@@ -23,7 +19,6 @@ public class BasicHibernateMessages extends NLS {
 
 	//
 	public static String ClassLoaderHelper_could_not_determine_physical_location_for;
-	public static String ProjectUtils_could_not_activate_hibernate_nature_on_project;
 	public static String ProjectUtils_could_not_save_changes_to_preferences;
 	//
 	//
@@ -85,9 +80,6 @@ public class BasicHibernateMessages extends NLS {
 	
 	//
 	//
-	public static String HibernateNature_error_while_performing_background_reading_of_database_schema;
-	public static String HibernateNature_reading_database_metadata;
-	public static String HibernateNature_reading_database_metadata_for;
 
 	
 
