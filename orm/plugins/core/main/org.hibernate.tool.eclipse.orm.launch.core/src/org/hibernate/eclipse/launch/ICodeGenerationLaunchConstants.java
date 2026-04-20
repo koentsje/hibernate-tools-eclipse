@@ -1,4 +1,4 @@
-package org.hibernate.tool.eclipse.orm.launch;
+package org.hibernate.eclipse.launch;
 
 public interface ICodeGenerationLaunchConstants {
 

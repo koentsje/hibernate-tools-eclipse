@@ -8,7 +8,8 @@ Bundle-Vendor: hibernate.org
 Export-Package: org.hibernate.eclipse.launch,
  org.hibernate.eclipse.launch.core.refactoring,
  org.hibernate.eclipse.launch.exporter,
- org.hibernate.eclipse.launch.model
+ org.hibernate.eclipse.launch.model,
+ org.hibernate.eclipse.launch.utils
 Require-Bundle: org.hibernate.tool.eclipse.orm.base.core,
  org.hibernate.tool.eclipse.orm.console.core,
  org.eclipse.core.runtime;bundle-version="3.10.0",

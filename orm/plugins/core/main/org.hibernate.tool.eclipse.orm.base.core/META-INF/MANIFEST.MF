@@ -6,7 +6,6 @@ Bundle-Version: 6.0.0.qualifier
 Bundle-Vendor: %Bundle-Vendor.0
 Bundle-Localization: plugin
 Export-Package: org.hibernate.tool.eclipse.orm.hql,
- org.hibernate.tool.eclipse.orm.launch,
  org.hibernate.tool.eclipse.orm.project,
  org.hibernate.tool.eclipse.orm.query,
  org.hibernate.tool.eclipse.orm.utils,

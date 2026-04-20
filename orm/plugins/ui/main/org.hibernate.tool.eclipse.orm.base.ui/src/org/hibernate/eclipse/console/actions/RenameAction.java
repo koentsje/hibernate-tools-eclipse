@@ -26,7 +26,7 @@ import org.eclipse.ui.actions.SelectionListenerAction;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
-import org.hibernate.tool.eclipse.orm.console.core.utils.LaunchHelper;
+import org.hibernate.eclipse.launch.utils.LaunchHelper;
 
 /**
  * 

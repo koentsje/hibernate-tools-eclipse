@@ -1,4 +1,4 @@
-package org.hibernate.tool.eclipse.orm.console.core.utils;
+package org.hibernate.eclipse.launch.utils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,7 +16,7 @@ import org.eclipse.jdt.launching.IJavaLaunchConfigurationConstants;
 import org.eclipse.osgi.util.NLS;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateConsoleCorePlugin;
-import org.hibernate.tool.eclipse.orm.launch.ICodeGenerationLaunchConstants;
+import org.hibernate.eclipse.launch.ICodeGenerationLaunchConstants;
 
 public class LaunchHelper {
 

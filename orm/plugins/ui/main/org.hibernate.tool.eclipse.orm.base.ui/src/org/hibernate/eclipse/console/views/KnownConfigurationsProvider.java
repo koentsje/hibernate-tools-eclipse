@@ -43,7 +43,7 @@ import org.eclipse.ui.model.IWorkbenchAdapter;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurationsListener;
-import org.hibernate.tool.eclipse.orm.console.core.utils.LaunchHelper;
+import org.hibernate.eclipse.launch.utils.LaunchHelper;
 import org.hibernate.eclipse.console.workbench.DeferredContentProvider;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
 

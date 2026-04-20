@@ -72,7 +72,7 @@ import org.hibernate.tool.eclipse.orm.console.core.HibernateConsoleRuntimeExcept
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
-import org.hibernate.tool.eclipse.orm.launch.ICodeGenerationLaunchConstants;
+import org.hibernate.eclipse.launch.ICodeGenerationLaunchConstants;
 import org.hibernate.eclipse.launch.exporter.ExporterLauncher;
 import org.hibernate.eclipse.launch.model.ExporterFactory;
 import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;

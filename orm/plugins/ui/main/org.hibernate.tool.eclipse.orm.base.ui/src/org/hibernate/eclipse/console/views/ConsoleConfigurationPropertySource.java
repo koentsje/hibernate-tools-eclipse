@@ -49,7 +49,7 @@ import org.hibernate.tool.eclipse.orm.console.core.preferences.ConsoleConfigurat
 import org.hibernate.tool.eclipse.orm.console.core.preferences.ConsoleConfigurationPreferences.ConfigurationMode;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
-import org.hibernate.tool.eclipse.orm.console.core.utils.LaunchHelper;
+import org.hibernate.eclipse.launch.utils.LaunchHelper;
 import org.hibernate.eclipse.launch.IBasicHibernateLaunchConstants;
 
 @SuppressWarnings("restriction")
