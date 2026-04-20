@@ -20,7 +20,6 @@ import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessag
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.console.utils.DialogSelectionHelper;
 import org.hibernate.tool.eclipse.common.base.core.utils.DriverClassHelpers;
-import org.hibernate.tool.eclipse.common.base.core.launch.IBasicHibernateLaunchConstants;
 import org.xml.sax.EntityResolver;
 
 public class ConsoleConfigurationOptionsTab extends ConsoleConfigurationTab {

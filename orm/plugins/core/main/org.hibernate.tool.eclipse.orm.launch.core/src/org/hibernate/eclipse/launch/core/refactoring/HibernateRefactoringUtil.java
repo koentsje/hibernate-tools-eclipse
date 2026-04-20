@@ -57,7 +57,7 @@ import org.hibernate.eclipse.launch.model.ExporterFactoryStrings;
 import org.hibernate.tool.eclipse.orm.console.core.properties.HibernatePropertiesConstants;
 import org.hibernate.tool.eclipse.orm.console.core.utils.LaunchHelper;
 import org.hibernate.eclipse.launch.HibernateLaunchConstants;
-import org.hibernate.tool.eclipse.common.base.core.launch.IBasicHibernateLaunchConstants;
+import org.hibernate.eclipse.launch.IBasicHibernateLaunchConstants;
 import org.hibernate.tool.eclipse.orm.project.HibernateNature;
 import org.osgi.service.prefs.Preferences;
 import org.w3c.dom.Document;

@@ -77,7 +77,7 @@ import org.hibernate.tool.eclipse.orm.console.core.utils.LaunchHelper;
 import org.hibernate.eclipse.launch.ConsoleConfigurationJavaClasspathTab;
 import org.hibernate.eclipse.launch.ConsoleConfigurationMainTab;
 import org.hibernate.eclipse.launch.ConsoleConfigurationTabGroup;
-import org.hibernate.tool.eclipse.common.base.core.launch.IBasicHibernateLaunchConstants;
+import org.hibernate.eclipse.launch.IBasicHibernateLaunchConstants;
 import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
 
 /**

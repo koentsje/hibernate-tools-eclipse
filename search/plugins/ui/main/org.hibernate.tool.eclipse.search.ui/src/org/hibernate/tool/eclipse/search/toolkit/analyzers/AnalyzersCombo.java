@@ -16,7 +16,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.console.core.utils.LaunchHelper;
 import org.hibernate.tool.eclipse.orm.console.core.utils.ProjectUtils;
-import org.hibernate.tool.eclipse.common.base.core.launch.IBasicHibernateLaunchConstants;
+import org.hibernate.eclipse.launch.IBasicHibernateLaunchConstants;
 import org.hibernate.tool.eclipse.search.HibernateSearchConsolePlugin;
 
 public class AnalyzersCombo {

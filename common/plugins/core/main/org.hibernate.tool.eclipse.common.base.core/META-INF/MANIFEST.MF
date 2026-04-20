@@ -4,8 +4,7 @@ Bundle-Name: Hibernate Tooling Common Core
 Bundle-SymbolicName: org.hibernate.tool.eclipse.common.base.core
 Bundle-Version: 6.0.0.qualifier
 Bundle-Vendor: hibernate.org
-Export-Package: org.hibernate.tool.eclipse.common.base.core.launch,
- org.hibernate.tool.eclipse.common.base.core.logging,
+Export-Package: org.hibernate.tool.eclipse.common.base.core.logging,
  org.hibernate.tool.eclipse.common.base.core.messages,
  org.hibernate.tool.eclipse.common.base.core.resources,
  org.hibernate.tool.eclipse.common.base.core.utils

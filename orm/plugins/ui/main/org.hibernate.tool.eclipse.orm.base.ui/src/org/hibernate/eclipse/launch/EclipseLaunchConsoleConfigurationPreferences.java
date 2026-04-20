@@ -23,7 +23,6 @@ import org.hibernate.tool.eclipse.orm.console.core.HibernateConsoleRuntimeExcept
 import org.hibernate.tool.eclipse.orm.console.core.preferences.ConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.orm.utils.ClassLoaderHelper;
 import org.hibernate.tool.eclipse.common.base.core.utils.DriverClassHelpers;
-import org.hibernate.tool.eclipse.common.base.core.launch.IBasicHibernateLaunchConstants;
 import org.hibernate.tool.eclipse.orm.utils.HibernateEclipseUtils;
 import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
 import org.w3c.dom.Element;
