@@ -13,7 +13,7 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.DirectoryDialog;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
 import org.hibernate.eclipse.console.utils.DialogSelectionHelper;
 
 public class DirectoryBrowseField extends StringDialogField {
@@ -27,8 +27,8 @@ public class DirectoryBrowseField extends StringDialogField {
 	{
 		super();
 
-		filesystemBrowseLabel =  BasicHibernateMessages.DirectoryBrowseField_filesystem;
-		workspaceBrowseLabel = BasicHibernateMessages.DirectoryBrowseField_workspace;
+		filesystemBrowseLabel =  OrmBaseUiMessages.DirectoryBrowseField_filesystem;
+		workspaceBrowseLabel = OrmBaseUiMessages.DirectoryBrowseField_workspace;
 
 		this.initialFilesystemPath = initialFilesystemPath;
 		this.initialWorkspacePath = initialWorkspacePath;

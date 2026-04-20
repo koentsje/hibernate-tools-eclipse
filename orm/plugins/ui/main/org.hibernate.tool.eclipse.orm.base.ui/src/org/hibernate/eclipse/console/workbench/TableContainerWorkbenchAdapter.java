@@ -28,7 +28,7 @@ import java.util.List;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.model.IWorkbenchAdapter;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ITable;
 import org.hibernate.tool.eclipse.orm.workbench.TableContainer;
@@ -66,7 +66,7 @@ public class TableContainerWorkbenchAdapter implements IWorkbenchAdapter {
 
 	public String getLabel(Object o) {
 		String name = getTableContainer(o).getName();
-		return "".equals(name)?BasicHibernateMessages.TableContainerWorkbenchAdapter_default:name; //$NON-NLS-1$
+		return "".equals(name)?OrmBaseUiMessages.TableContainerWorkbenchAdapter_default:name; //$NON-NLS-1$
 	}
 
 	public Object getParent(Object o) {

@@ -27,7 +27,7 @@ import org.eclipse.osgi.util.NLS;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.tool.eclipse.orm.console.core.workbench.LazyDatabaseSchema;
 import org.hibernate.tool.eclipse.orm.console.core.workbench.LazySessionFactory;
@@ -61,7 +61,7 @@ public class ConsoleConfigurationWorkbenchAdapter extends BasicWorkbenchAdapter 
 		if(configuration!=null) {
 			o1 = configuration;
 		} else {
-			o1 = BasicHibernateMessages.ConsoleConfigurationWorkbenchAdapter_empty_configuration;
+			o1 = OrmBaseUiMessages.ConsoleConfigurationWorkbenchAdapter_empty_configuration;
 		}
 
 		/*Object o2;
@@ -95,6 +95,6 @@ public class ConsoleConfigurationWorkbenchAdapter extends BasicWorkbenchAdapter 
 	}
 
 	protected String getDefaultErrorMessage(Object object) {
-		return NLS.bind(BasicHibernateMessages.BasicWorkbenchAdapter_error_while_opening_configuration, getLabel(object));
+		return NLS.bind(OrmBaseUiMessages.BasicWorkbenchAdapter_error_while_opening_configuration, getLabel(object));
 	}
 }

@@ -26,7 +26,7 @@ import org.eclipse.jface.action.IAction;
 import org.eclipse.swt.widgets.Event;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.console.core.ui.QueryEditor;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
@@ -42,7 +42,7 @@ public class ExecuteQueryAction extends Action {
 
 	public ExecuteQueryAction() {
 		setImageDescriptor(EclipseImages.getImageDescriptor(ImageConstants.EXECUTE) );
-		initTextAndToolTip(BasicHibernateMessages.ExecuteQueryAction_run_default);
+		initTextAndToolTip(OrmBaseUiMessages.ExecuteQueryAction_run_default);
 	}
 
 
@@ -73,7 +73,7 @@ public class ExecuteQueryAction extends Action {
 			    				} catch (Exception he) {
 			    					HibernateBasePlugin.getDefault().showError(
 			    						HibernateBasePlugin.getShell(),
-			    						BasicHibernateMessages.LoadConsoleCFGCompletionProposal_could_not_load_configuration +
+			    						OrmBaseUiMessages.LoadConsoleCFGCompletionProposal_could_not_load_configuration +
 			    						' ' + cfg.getName(), he);
 			    				}
 							}
@@ -89,7 +89,7 @@ public class ExecuteQueryAction extends Action {
 			} 
 		
 		} catch (Throwable t) {
-			HibernateBasePlugin.getDefault().logErrorMessage(BasicHibernateMessages.ExecuteQueryAction_problems_while_executing_query, t);
+			HibernateBasePlugin.getDefault().logErrorMessage(OrmBaseUiMessages.ExecuteQueryAction_problems_while_executing_query, t);
 		}
 		
 	}

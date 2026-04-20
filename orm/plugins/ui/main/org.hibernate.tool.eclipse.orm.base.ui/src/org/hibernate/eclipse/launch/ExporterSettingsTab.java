@@ -86,7 +86,7 @@ import org.eclipse.ui.views.properties.PropertySheetEntry;
 import org.eclipse.ui.views.properties.PropertySheetPage;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
 import org.hibernate.eclipse.launch.ExtensionManager;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.launch.model.ExporterFactoryStrings;
 import org.eclipse.jface.resource.ImageDescriptor;
@@ -168,7 +168,7 @@ public class ExporterSettingsTab extends AbstractLaunchConfigurationTab {
 	}
 
 	private void createExporterProperties(Composite parent) {
-		Composite exportersComposite = createComposite( parent, BasicHibernateMessages.ExporterSettingsTab_properties );
+		Composite exportersComposite = createComposite( parent, OrmBaseUiMessages.ExporterSettingsTab_properties );
 
 		exportersComposite.setLayout( new GridLayout( 2, false ) );
 
@@ -193,7 +193,7 @@ public class ExporterSettingsTab extends AbstractLaunchConfigurationTab {
 
 		add = new Button( exportersComposite, SWT.PUSH );
 		add.setEnabled( false );
-		add.setText( BasicHibernateMessages.ExporterSettingsTab_add );
+		add.setText( OrmBaseUiMessages.ExporterSettingsTab_add );
 		gd = new GridData( GridData.HORIZONTAL_ALIGN_FILL
 				| GridData.VERTICAL_ALIGN_BEGINNING );
 		gd.horizontalIndent = 5;
@@ -217,7 +217,7 @@ public class ExporterSettingsTab extends AbstractLaunchConfigurationTab {
 		} );
 
 		remove = new Button( exportersComposite, SWT.PUSH );
-		remove.setText( BasicHibernateMessages.ExporterSettingsTab_remove );
+		remove.setText( OrmBaseUiMessages.ExporterSettingsTab_remove );
 		remove.setEnabled( false );
 		remove.addSelectionListener( new SelectionAdapter() {
 
@@ -240,7 +240,7 @@ public class ExporterSettingsTab extends AbstractLaunchConfigurationTab {
 
 		edit = new Button( exportersComposite, SWT.PUSH );
 		edit.setEnabled( false );
-		edit.setText( BasicHibernateMessages.ExporterSettingsTab_edit );
+		edit.setText( OrmBaseUiMessages.ExporterSettingsTab_edit );
 		gd = new GridData( GridData.HORIZONTAL_ALIGN_FILL
 				| GridData.VERTICAL_ALIGN_BEGINNING );
 		gd.horizontalIndent = 5;
@@ -391,13 +391,13 @@ public class ExporterSettingsTab extends AbstractLaunchConfigurationTab {
 	}
 
 	private void createExporterTable(Composite parent) {
-		exporterUpDown = new UpDownListComposite(parent, SWT.NONE, BasicHibernateMessages.ExporterSettingsTab_exporters, true, new ExporterLabelProvider(), new ExporterContentProvider()) {
+		exporterUpDown = new UpDownListComposite(parent, SWT.NONE, OrmBaseUiMessages.ExporterSettingsTab_exporters, true, new ExporterLabelProvider(), new ExporterContentProvider()) {
 
 			protected Object[] handleAdd(int idx) {
 
 				switch (idx) {
 				case 0:
-					Object[] selectExporters = selectExporters(getShell(), BasicHibernateMessages.ExporterSettingsTab_add_exporter, BasicHibernateMessages.ExporterSettingsTab_select_exporter_you_want_to_add);
+					Object[] selectExporters = selectExporters(getShell(), OrmBaseUiMessages.ExporterSettingsTab_add_exporter, OrmBaseUiMessages.ExporterSettingsTab_select_exporter_you_want_to_add);
 					for (int i = 0; i < selectExporters.length; i++) {
 						ExporterDefinition exporterDefinition = (ExporterDefinition) selectExporters[i];
 						addDef(exporterDefinition);
@@ -495,7 +495,7 @@ public class ExporterSettingsTab extends AbstractLaunchConfigurationTab {
 			}
 
 			protected String[] getAddButtonLabels() {
-				return new String[] { BasicHibernateMessages.ExporterSettingsTab_add, BasicHibernateMessages.ExporterSettingsTab_select_all, BasicHibernateMessages.ExporterSettingsTab_deselect_all };
+				return new String[] { OrmBaseUiMessages.ExporterSettingsTab_add, OrmBaseUiMessages.ExporterSettingsTab_select_all, OrmBaseUiMessages.ExporterSettingsTab_deselect_all };
 			}
 			protected void listChanged() {
 				dialogChanged();
@@ -531,7 +531,7 @@ public class ExporterSettingsTab extends AbstractLaunchConfigurationTab {
 	// currently unused functionality
 	@SuppressWarnings("unused")
 	private void createOldExporterTable(Composite parent) {
-		Composite exporterOptions = createComposite( parent, BasicHibernateMessages.ExporterSettingsTab_exporters );
+		Composite exporterOptions = createComposite( parent, OrmBaseUiMessages.ExporterSettingsTab_exporters );
 
 		GridData gd = new GridData( SWT.FILL, SWT.FILL, true, true );
 		gd.minimumHeight = 100;
@@ -547,7 +547,7 @@ public class ExporterSettingsTab extends AbstractLaunchConfigurationTab {
 
 		// exporterTable.getControl().setLayoutData(
 		// new GridData( SWT.FILL, SWT.FILL, true, true ) );
-		getExporterTable().setColumnProperties( new String[] { "", BasicHibernateMessages.ExporterSettingsTab_description } ); //$NON-NLS-1$
+		getExporterTable().setColumnProperties( new String[] { "", OrmBaseUiMessages.ExporterSettingsTab_description } ); //$NON-NLS-1$
 		getExporterTable().addCheckStateListener( new ICheckStateListener() {
 			public void checkStateChanged(CheckStateChangedEvent event) {
 
@@ -572,7 +572,7 @@ public class ExporterSettingsTab extends AbstractLaunchConfigurationTab {
 		table.setLayoutData( gd );
 
 		selectAll = new Button( exporterOptions, SWT.PUSH );
-		selectAll.setText( BasicHibernateMessages.ExporterSettingsTab_select_all );
+		selectAll.setText( OrmBaseUiMessages.ExporterSettingsTab_select_all );
 		selectAll.addSelectionListener( new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent e) {
 				getExporterTable().setAllChecked( true );
@@ -585,7 +585,7 @@ public class ExporterSettingsTab extends AbstractLaunchConfigurationTab {
 		selectAll.setLayoutData( gd );
 
 		deselectAll = new Button( exporterOptions, SWT.PUSH );
-		deselectAll.setText( BasicHibernateMessages.ExporterSettingsTab_deselect_all );
+		deselectAll.setText( OrmBaseUiMessages.ExporterSettingsTab_deselect_all );
 		deselectAll.addSelectionListener( new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent e) {
 				getExporterTable().setAllChecked( false );
@@ -612,16 +612,16 @@ public class ExporterSettingsTab extends AbstractLaunchConfigurationTab {
 			}
 		};
 		Composite generalSettingsComposite = createComposite( parent,
-				BasicHibernateMessages.ExporterSettingsTab_general_settings );
+				OrmBaseUiMessages.ExporterSettingsTab_general_settings );
 		generalSettingsComposite.setLayoutData( new GridData( SWT.BEGINNING,
 				SWT.BEGINNING, false, false ) );
 
 		enableJDK5 = new Button( generalSettingsComposite, SWT.CHECK );
-		enableJDK5.setText( BasicHibernateMessages.ExporterSettingsTab_use_java5_syntax );
+		enableJDK5.setText( OrmBaseUiMessages.ExporterSettingsTab_use_java5_syntax );
 		enableJDK5.addSelectionListener( fieldlistener );
 
 		enableEJB3annotations = new Button( generalSettingsComposite, SWT.CHECK );
-		enableEJB3annotations.setText( BasicHibernateMessages.ExporterSettingsTab_generate_ejb3annotations );
+		enableEJB3annotations.setText( OrmBaseUiMessages.ExporterSettingsTab_generate_ejb3annotations );
 		enableEJB3annotations.addSelectionListener( fieldlistener );
 	}
 
@@ -789,12 +789,12 @@ public class ExporterSettingsTab extends AbstractLaunchConfigurationTab {
 		// ...getConfigurationName().length()==0;
 
 		if ( !configSelected ) {
-			updateStatus( BasicHibernateMessages.ExporterSettingsTab_console_configuration_must_be_specified );
+			updateStatus( OrmBaseUiMessages.ExporterSettingsTab_console_configuration_must_be_specified );
 			return;
 		}
 
 		if ( selectedExporters.size() == 0 ) {
-			updateStatus( BasicHibernateMessages.ExporterSettingsTab_at_least_one_exporter_option_must_be_selected );
+			updateStatus( OrmBaseUiMessages.ExporterSettingsTab_at_least_one_exporter_option_must_be_selected );
 			return;
 		}
 
@@ -804,14 +804,14 @@ public class ExporterSettingsTab extends AbstractLaunchConfigurationTab {
 		for (ExporterFactory ef : selectedExporters) {// check only selected exporters
 			String str = ef.getProperties().get(ExporterFactoryStrings.OUTPUTDIR);
 			if (str != null) {
-				msg = PathHelper.checkDirectory(str, BasicHibernateMessages.ExporterSettingsTab_output_directory_for + " " + ef.getExporterDefinition().getDescription(), true); //$NON-NLS-1$
+				msg = PathHelper.checkDirectory(str, OrmBaseUiMessages.ExporterSettingsTab_output_directory_for + " " + ef.getExporterDefinition().getDescription(), true); //$NON-NLS-1$
 				if (msg != null) {
 					break;
 				}
 			}
 			str = ef.getProperties().get(ExporterFactoryStrings.TEMPLATE_PATH);
 			if (str != null) {
-				msg = PathHelper.checkDirectory(str, BasicHibernateMessages.ExporterSettingsTab_template_directory_for + " " + ef.getExporterDefinition().getDescription(), true); //$NON-NLS-1$
+				msg = PathHelper.checkDirectory(str, OrmBaseUiMessages.ExporterSettingsTab_template_directory_for + " " + ef.getExporterDefinition().getDescription(), true); //$NON-NLS-1$
 				if (msg != null) {
 					break;
 				}
@@ -820,7 +820,7 @@ public class ExporterSettingsTab extends AbstractLaunchConfigurationTab {
 			if (str != null) {
 				str = str.trim();
 				if (str.length() == 0) {
-					msg = NLS.bind(BasicHibernateMessages.ExporterSettingsTab_query_should_have_not_empty_value, ef.getExporterDefinition().getDescription());
+					msg = NLS.bind(OrmBaseUiMessages.ExporterSettingsTab_query_should_have_not_empty_value, ef.getExporterDefinition().getDescription());
 					break;
 				}
 			}
@@ -836,16 +836,16 @@ public class ExporterSettingsTab extends AbstractLaunchConfigurationTab {
 			if ( resType == IResource.PROJECT || resType == IResource.FOLDER ) {
 				IProject proj = res.getProject();
 				if ( !proj.isOpen() ) {
-					String out = NLS.bind(BasicHibernateMessages.ExporterSettingsTab_project_for_is_closed, name);
+					String out = NLS.bind(OrmBaseUiMessages.ExporterSettingsTab_project_for_is_closed, name);
 					return out;
 				}
 			}
 			else {
-				return NLS.bind(BasicHibernateMessages.ExporterSettingsTab_has_to_be_folder_or_project, name);
+				return NLS.bind(OrmBaseUiMessages.ExporterSettingsTab_has_to_be_folder_or_project, name);
 			}
 		}
 		else {
-			return NLS.bind(BasicHibernateMessages.ExporterSettingsTab_does_not_exist, name);
+			return NLS.bind(OrmBaseUiMessages.ExporterSettingsTab_does_not_exist, name);
 		}
 		return null;
 	}
@@ -859,11 +859,11 @@ public class ExporterSettingsTab extends AbstractLaunchConfigurationTab {
 				return null;
 			}
 			else {
-				return NLS.bind(BasicHibernateMessages.ExporterSettingsTab_must_be_file, name);
+				return NLS.bind(OrmBaseUiMessages.ExporterSettingsTab_must_be_file, name);
 			}
 		}
 		else {
-			return NLS.bind(BasicHibernateMessages.ExporterSettingsTab_does_not_exist, name);
+			return NLS.bind(OrmBaseUiMessages.ExporterSettingsTab_does_not_exist, name);
 		}
 	}
 
@@ -927,7 +927,7 @@ public class ExporterSettingsTab extends AbstractLaunchConfigurationTab {
 			HibernateBasePlugin
 					.getDefault()
 					.logErrorMessage(
-							BasicHibernateMessages.ExporterSettingsTab_problem_when_reading_hibernate_tools_launch_configuration,
+							OrmBaseUiMessages.ExporterSettingsTab_problem_when_reading_hibernate_tools_launch_configuration,
 							ce );
 		}
 	}
@@ -1015,7 +1015,7 @@ public class ExporterSettingsTab extends AbstractLaunchConfigurationTab {
 
 
 	public String getName() {
-		return BasicHibernateMessages.ExporterSettingsTab_exporters_2;
+		return OrmBaseUiMessages.ExporterSettingsTab_exporters_2;
 	}
 
 	public Image getImage() {

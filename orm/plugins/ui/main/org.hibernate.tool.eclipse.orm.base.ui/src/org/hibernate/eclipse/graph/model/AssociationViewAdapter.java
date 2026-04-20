@@ -25,7 +25,7 @@ import org.eclipse.draw2d.ConnectionRouter;
 import org.eclipse.draw2d.PolygonDecoration;
 import org.eclipse.draw2d.RotatableDecoration;
 import org.eclipse.osgi.util.NLS;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
 
 public abstract class AssociationViewAdapter {
 
@@ -42,7 +42,7 @@ public abstract class AssociationViewAdapter {
 	}
 
 	public String toString() {
-		String out = NLS.bind(BasicHibernateMessages.AssociationViewAdapter_association_target_source, getTargetName(), getSourceName());
+		String out = NLS.bind(OrmBaseUiMessages.AssociationViewAdapter_association_target_source, getTargetName(), getSourceName());
 		return out;
 	}
 

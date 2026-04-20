@@ -27,7 +27,7 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.actions.SelectionListenerAction;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.console.utils.ProjectUtilsUI;
 import org.hibernate.tool.eclipse.orm.console.core.utils.ProjectUtils;
@@ -47,8 +47,8 @@ public class OpenSourceAction extends SelectionListenerAction {
 	private String imageFilePath = "icons/images/java.gif"; //$NON-NLS-1$
 
 	public OpenSourceAction() {
-		super(BasicHibernateMessages.OpenSourceAction_open_source_file);
-		setToolTipText(BasicHibernateMessages.OpenSourceAction_open_source_file);
+		super(OrmBaseUiMessages.OpenSourceAction_open_source_file);
+		setToolTipText(OrmBaseUiMessages.OpenSourceAction_open_source_file);
 		setEnabled( true );
 		setImageDescriptor(HibernateBasePlugin.getImageDescriptor(imageFilePath));
 		setId(OPENSOURCE_ACTIONID);
@@ -81,11 +81,11 @@ public class OpenSourceAction extends SelectionListenerAction {
 			try {
 				run(consoleConfig, lastSegment, fullyQualifiedName);
 			} catch (JavaModelException e) {
-				HibernateBasePlugin.getDefault().logErrorMessage(BasicHibernateMessages.OpenSourceAction_cannot_find_source_file, e);
+				HibernateBasePlugin.getDefault().logErrorMessage(OrmBaseUiMessages.OpenSourceAction_cannot_find_source_file, e);
 			} catch (PartInitException e) {
-				HibernateBasePlugin.getDefault().logErrorMessage(BasicHibernateMessages.OpenSourceAction_cannot_open_source_file, e);
+				HibernateBasePlugin.getDefault().logErrorMessage(OrmBaseUiMessages.OpenSourceAction_cannot_open_source_file, e);
 			} catch (FileNotFoundException e) {
-				HibernateBasePlugin.getDefault().logErrorMessage(BasicHibernateMessages.OpenSourceAction_cannot_find_source_file, e);
+				HibernateBasePlugin.getDefault().logErrorMessage(OrmBaseUiMessages.OpenSourceAction_cannot_find_source_file, e);
 			}
 		}
 	}
@@ -162,7 +162,7 @@ public class OpenSourceAction extends SelectionListenerAction {
 			selectionToEditor(jElement, jEditor);
 		}
 		if (editorPart == null) {
-			String out = NLS.bind(BasicHibernateMessages.OpenSourceAction_source_file_for_class_not_found, fullyQualifiedName);
+			String out = NLS.bind(OrmBaseUiMessages.OpenSourceAction_source_file_for_class_not_found, fullyQualifiedName);
 			throw new FileNotFoundException(out);
 		}
 		return editorPart;

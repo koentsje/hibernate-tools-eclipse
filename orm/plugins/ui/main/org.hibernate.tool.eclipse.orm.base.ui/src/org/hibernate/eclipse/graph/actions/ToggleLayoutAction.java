@@ -25,7 +25,7 @@ import org.eclipse.core.runtime.Preferences;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IAction;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.eclipse.graph.AbstractGraphViewPart;
@@ -37,7 +37,7 @@ public class ToggleLayoutAction extends Action {
 
 	public ToggleLayoutAction(AbstractGraphViewPart view, String pluginKey)
 	{
-		super(BasicHibernateMessages.ToggleLayoutAction_auto_layout, IAction.AS_CHECK_BOX);
+		super(OrmBaseUiMessages.ToggleLayoutAction_auto_layout, IAction.AS_CHECK_BOX);
 		this.view = view;
 		this.pluginKey = pluginKey;
 		setImageDescriptor(EclipseImages.getImageDescriptor(ImageConstants.LAYOUT));
@@ -57,11 +57,11 @@ public class ToggleLayoutAction extends Action {
         view.setManualLayout(value);
 
         setToolTipText(value ?
-			BasicHibernateMessages.ToggleLayoutAction_manual_layout_active :
-			BasicHibernateMessages.ToggleLayoutAction_auto_layout_active);
+			OrmBaseUiMessages.ToggleLayoutAction_manual_layout_active :
+			OrmBaseUiMessages.ToggleLayoutAction_auto_layout_active);
         setDescription(value ?
-        		BasicHibernateMessages.ToggleLayoutAction_enable_auto_layout :
-        		BasicHibernateMessages.ToggleLayoutAction_enable_manual_layout);
+        		OrmBaseUiMessages.ToggleLayoutAction_enable_auto_layout :
+        		OrmBaseUiMessages.ToggleLayoutAction_enable_manual_layout);
         if (doStore) {
 	        Preferences prefs = HibernateBasePlugin.getDefault().getPluginPreferences();
 	        prefs.setValue(pluginKey, value);

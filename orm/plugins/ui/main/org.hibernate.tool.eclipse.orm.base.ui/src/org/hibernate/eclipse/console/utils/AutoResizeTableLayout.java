@@ -32,7 +32,7 @@ import org.eclipse.swt.events.ControlEvent;
 import org.eclipse.swt.events.ControlListener;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
 
 public class AutoResizeTableLayout extends TableLayout implements
         ControlListener {
@@ -93,7 +93,7 @@ public class AutoResizeTableLayout extends TableLayout implements
                 int weight = cw.weight;
                 totalWeight += weight;
             } else {
-                throw new IllegalStateException(BasicHibernateMessages.AutoResizeTableLayout_unknown_column_layout_data);
+                throw new IllegalStateException(OrmBaseUiMessages.AutoResizeTableLayout_unknown_column_layout_data);
             }
         }
 

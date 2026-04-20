@@ -22,7 +22,7 @@
 package org.hibernate.eclipse.criteriaeditor;
 
 import org.eclipse.core.runtime.IPath;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
 import org.hibernate.tool.eclipse.common.base.core.resources.InMemoryStorage;
 
 /**
@@ -41,7 +41,7 @@ public class CriteriaEditorStorage extends InMemoryStorage {
 
 
     public CriteriaEditorStorage(String consoleName, String string) {
-		super(consoleName, BasicHibernateMessages.CriteriaEditorStorage_criteria + (consoleName==null?BasicHibernateMessages.CriteriaEditorStorage_none:consoleName), string);
+		super(consoleName, OrmBaseUiMessages.CriteriaEditorStorage_criteria + (consoleName==null?OrmBaseUiMessages.CriteriaEditorStorage_none:consoleName), string);
 	}
 
 	public IPath getFullPath() {

@@ -64,7 +64,7 @@ import org.eclipse.ui.part.Page;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
 import org.hibernate.tool.eclipse.orm.query.QueryParameter;
 import org.hibernate.tool.eclipse.orm.query.QueryInputModel;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
 import org.hibernate.tool.eclipse.orm.console.core.ui.QueryEditor;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
@@ -158,19 +158,19 @@ public class QueryParametersPage extends Page implements IQueryParametersPage {
 		TableColumn nameColumn = new TableColumn( queryParametersTable,
 				SWT.NONE );
 		nameColumn.setWidth(100);
-		nameColumn.setText( BasicHibernateMessages.QueryParametersPage_name );
+		nameColumn.setText( OrmBaseUiMessages.QueryParametersPage_name );
 		TableColumn typeColumn = new TableColumn( queryParametersTable,
 				SWT.NONE );
 		typeColumn.setWidth(75);
-		typeColumn.setText( BasicHibernateMessages.QueryParametersPage_type );
+		typeColumn.setText( OrmBaseUiMessages.QueryParametersPage_type );
 		TableColumn valueColumn = new TableColumn( queryParametersTable,
 				SWT.NONE );
 		valueColumn.setWidth( 100 );
-		valueColumn.setText( BasicHibernateMessages.QueryParametersPage_value );
+		valueColumn.setText( OrmBaseUiMessages.QueryParametersPage_value );
 		TableColumn nullColumn = new TableColumn( queryParametersTable,
 				SWT.NONE );
 		nullColumn.setWidth( 32 );
-		nullColumn.setText( BasicHibernateMessages.QueryParametersPage_null );
+		nullColumn.setText( OrmBaseUiMessages.QueryParametersPage_null );
 
 
 		tableViewer = new TableViewer( queryParametersTable );
@@ -181,7 +181,7 @@ public class QueryParametersPage extends Page implements IQueryParametersPage {
 				if(statusLabel!=null) {
 					Object firstElement = ((IStructuredSelection)tableViewer.getSelection()).getFirstElement();
 					if(firstElement instanceof QueryParameter) {
-						statusLabel.setText(BasicHibernateMessages.QueryParametersPage_format + ((QueryParameter)firstElement).getDefaultFormat());
+						statusLabel.setText(OrmBaseUiMessages.QueryParametersPage_format + ((QueryParameter)firstElement).getDefaultFormat());
 					} else {
 						statusLabel.setText(""); //$NON-NLS-1$
 					}
@@ -404,7 +404,7 @@ public class QueryParametersPage extends Page implements IQueryParametersPage {
 	private class NewRowAction extends Action {
 		public NewRowAction() {
 			super( "" ); //$NON-NLS-1$
-			setToolTipText(BasicHibernateMessages.QueryParametersPage_add_query_parameter_tooltip);
+			setToolTipText(OrmBaseUiMessages.QueryParametersPage_add_query_parameter_tooltip);
 			setImageDescriptor(EclipseImages.getImageDescriptor(ImageConstants.NEW_PARAMETER));
 		}
 
@@ -461,7 +461,7 @@ public class QueryParametersPage extends Page implements IQueryParametersPage {
 	private class RemoveRowAction extends Action {
 		public RemoveRowAction() {
 			super( "" ); //$NON-NLS-1$
-			setToolTipText(BasicHibernateMessages.QueryParametersPage_remove_query_parameter_tooltip);
+			setToolTipText(OrmBaseUiMessages.QueryParametersPage_remove_query_parameter_tooltip);
 			setImageDescriptor(getSite().getWorkbenchWindow().getWorkbench().getSharedImages().getImageDescriptor(org.eclipse.ui.ISharedImages.IMG_TOOL_DELETE));
 		}
 
@@ -480,7 +480,7 @@ public class QueryParametersPage extends Page implements IQueryParametersPage {
 	private class ToggleActive extends Action {
 		public ToggleActive() {
 			super(""); //$NON-NLS-1$
-			setToolTipText(BasicHibernateMessages.QueryParametersPage_enable_disable_parameters_tooltip);
+			setToolTipText(OrmBaseUiMessages.QueryParametersPage_enable_disable_parameters_tooltip);
 			setChecked(false);
 			setImageDescriptor(EclipseImages.getImageDescriptor(ImageConstants.IGNORE_PARAMETER));
 		}

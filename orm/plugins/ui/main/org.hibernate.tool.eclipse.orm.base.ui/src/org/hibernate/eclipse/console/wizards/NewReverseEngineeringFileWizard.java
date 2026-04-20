@@ -46,6 +46,7 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.ui.ide.IDE;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.model.core.ITableFilter;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
@@ -95,8 +96,8 @@ public class NewReverseEngineeringFileWizard extends Wizard implements INewWizar
 			selection = new StructuredSelection();
 		}
 	    cPage = new ExtendedWizardNewFileCreationPage( "Ccfgxml", selection ); //$NON-NLS-1$
-	    cPage.setTitle( BasicHibernateMessages.NewReverseEngineeringFileWizard_create_hibernate_reverse_engineering_file );
-	    cPage.setDescription( BasicHibernateMessages.NewReverseEngineeringFileWizard_create_new_hibernate_reveng_xml );
+	    cPage.setTitle( OrmBaseUiMessages.NewReverseEngineeringFileWizard_create_hibernate_reverse_engineering_file );
+	    cPage.setDescription( OrmBaseUiMessages.NewReverseEngineeringFileWizard_create_new_hibernate_reveng_xml );
 	    cPage.setFileName("hibernate.reveng.xml"); //$NON-NLS-1$
 	    addPage( cPage );
 
@@ -163,7 +164,7 @@ public class NewReverseEngineeringFileWizard extends Wizard implements INewWizar
 
 		}
 		monitor.worked(1);
-		monitor.setTaskName(BasicHibernateMessages.NewReverseEngineeringFileWizard_opening_file_for_editing);
+		monitor.setTaskName(OrmBaseUiMessages.NewReverseEngineeringFileWizard_opening_file_for_editing);
 		getShell().getDisplay().asyncExec(new Runnable() {
 			public void run() {
 				IWorkbenchPage page =
@@ -204,7 +205,7 @@ public class NewReverseEngineeringFileWizard extends Wizard implements INewWizar
 		try {
             return new ByteArrayInputStream(sw.toString().getBytes("UTF-8") ); //$NON-NLS-1$
         } catch (UnsupportedEncodingException uec) {
-            HibernateBasePlugin.getDefault().logErrorMessage(BasicHibernateMessages.NewReverseEngineeringFileWizard_problems_converting_to_utf8, uec);
+            HibernateBasePlugin.getDefault().logErrorMessage(OrmBaseUiMessages.NewReverseEngineeringFileWizard_problems_converting_to_utf8, uec);
             return new ByteArrayInputStream(sw.toString().getBytes() );
         }
 	}

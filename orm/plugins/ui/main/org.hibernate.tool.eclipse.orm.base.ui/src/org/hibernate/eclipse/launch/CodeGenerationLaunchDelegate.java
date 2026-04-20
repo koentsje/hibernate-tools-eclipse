@@ -71,6 +71,7 @@ import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.HibernateConsoleRuntimeException;
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.launch.ICodeGenerationLaunchConstants;
 import org.hibernate.eclipse.launch.exporter.ExporterLauncher;
@@ -337,7 +338,7 @@ public class CodeGenerationLaunchDelegate extends AntLaunchDelegate {
 	}
 
 	private void formatGeneratedCode(IProgressMonitor monitor, Map<String, File[]> generatedFiles) {
-		final TextFileBufferOperation operation = new FormatGeneratedCode( BasicHibernateMessages.CodeGenerationLaunchDelegate_formate_generated_code );
+		final TextFileBufferOperation operation = new FormatGeneratedCode( OrmBaseUiMessages.CodeGenerationLaunchDelegate_formate_generated_code );
 
 		if (generatedFiles != null){
 			File[] javaFiles = generatedFiles.get("java"); //$NON-NLS-1$
@@ -355,12 +356,12 @@ public class CodeGenerationLaunchDelegate extends AntLaunchDelegate {
 					runner.execute(locations, operation, monitor);
 				}
 				catch (OperationCanceledException e) {
-					HibernateBasePlugin.getDefault().logErrorMessage(BasicHibernateMessages.CodeGenerationLaunchDelegate_java_format_cancelled, e);
+					HibernateBasePlugin.getDefault().logErrorMessage(OrmBaseUiMessages.CodeGenerationLaunchDelegate_java_format_cancelled, e);
 				}
 				catch (CoreException e) {
-					HibernateBasePlugin.getDefault().logErrorMessage(BasicHibernateMessages.CodeGenerationLaunchDelegate_exception_during_java_format, e);
+					HibernateBasePlugin.getDefault().logErrorMessage(OrmBaseUiMessages.CodeGenerationLaunchDelegate_exception_during_java_format, e);
 				} catch (Throwable e) { // full guard since the above operation seem to be able to fail with IllegalArugmentException and SWT Invalid thread access while users are editing.
-					HibernateBasePlugin.getDefault().logErrorMessage(BasicHibernateMessages.CodeGenerationLaunchDelegate_exception_during_java_format, e);
+					HibernateBasePlugin.getDefault().logErrorMessage(OrmBaseUiMessages.CodeGenerationLaunchDelegate_exception_during_java_format, e);
 				}
 			}
 		}
@@ -495,16 +496,16 @@ public class CodeGenerationLaunchDelegate extends AntLaunchDelegate {
 
 		String configName = attributes.getConsoleConfigurationName();
 		if(StringHelper.isEmpty( configName )) {
-			abort(BasicHibernateMessages.CodeGenerationLaunchDelegate_console_configuration_name_is_empty_in + configuration.getName(), null, ICodeGenerationLaunchConstants.ERR_UNSPECIFIED_CONSOLE_CONFIGURATION);
+			abort(OrmBaseUiMessages.CodeGenerationLaunchDelegate_console_configuration_name_is_empty_in + configuration.getName(), null, ICodeGenerationLaunchConstants.ERR_UNSPECIFIED_CONSOLE_CONFIGURATION);
 		}
 
 		if(KnownConfigurations.getInstance().find( configName )==null) {
-			String out = NLS.bind(BasicHibernateMessages.CodeGenerationLaunchDelegate_console_configuration_not_found_in, configName, configuration.getName());
+			String out = NLS.bind(OrmBaseUiMessages.CodeGenerationLaunchDelegate_console_configuration_not_found_in, configName, configuration.getName());
 			abort(out, null, ICodeGenerationLaunchConstants.ERR_CONSOLE_CONFIGURATION_NOTFOUND);
 		}
 
 		if(StringHelper.isEmpty(attributes.getOutputPath())) {
-			abort(BasicHibernateMessages.CodeGenerationLaunchDelegate_output_has_to_be_specified_in + configuration.getName(), null, ICodeGenerationLaunchConstants.ERR_OUTPUT_PATH_NOTFOUND);
+			abort(OrmBaseUiMessages.CodeGenerationLaunchDelegate_output_has_to_be_specified_in + configuration.getName(), null, ICodeGenerationLaunchConstants.ERR_OUTPUT_PATH_NOTFOUND);
 		}
 		
 		List<ExporterFactory> exporterFactories = attributes.getExporterFactories();

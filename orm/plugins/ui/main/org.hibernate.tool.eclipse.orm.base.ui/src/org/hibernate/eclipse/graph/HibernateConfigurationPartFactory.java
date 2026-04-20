@@ -24,7 +24,7 @@ package org.hibernate.eclipse.graph;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPartFactory;
 import org.eclipse.osgi.util.NLS;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
 import org.hibernate.eclipse.graph.model.AssociationViewAdapter;
 import org.hibernate.eclipse.graph.model.ConfigurationViewAdapter;
 import org.hibernate.eclipse.graph.model.PersistentClassViewAdapter;
@@ -52,7 +52,7 @@ public class HibernateConfigurationPartFactory implements EditPartFactory {
 		}
 
 		throw new IllegalArgumentException(NLS.bind(
-				BasicHibernateMessages.HibernateConfigurationPartFactory_not_known_by_factory, 
+				OrmBaseUiMessages.HibernateConfigurationPartFactory_not_known_by_factory, 
 				model.getClass()));
 	}
 

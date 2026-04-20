@@ -65,6 +65,7 @@ import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.console.actions.EditConsoleConfiguration;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
@@ -121,7 +122,7 @@ public class HibernatePropertyPage extends PropertyPage {
 		Composite composite = createDefaultComposite(parent,2);
 
 		enableHibernate = new Button(composite, SWT.CHECK);
-		enableHibernate.setText(BasicHibernateMessages.HibernatePropertyPage_enable_hibernate3_support);
+		enableHibernate.setText(OrmBaseUiMessages.HibernatePropertyPage_enable_hibernate3_support);
 		enableHibernate.addSelectionListener(new SelectionAdapter() {
 
 			public void widgetSelected(SelectionEvent e) {
@@ -166,8 +167,8 @@ public class HibernatePropertyPage extends PropertyPage {
     private void openWebBrowserError(final String href, final Throwable t) {
         getShell().getDisplay().asyncExec(new Runnable() {
             public void run() {
-				String title = BasicHibernateMessages.HibernatePropertyPage_open_url;
-				String msg = BasicHibernateMessages.HibernatePropertyPage_unable_open_webbrowser_for_url + href;
+				String title = OrmBaseUiMessages.HibernatePropertyPage_open_url;
+				String msg = OrmBaseUiMessages.HibernatePropertyPage_unable_open_webbrowser_for_url + href;
 				IStatus status = HibernateBasePlugin.throwableToStatus(t);
                 ErrorDialog.openError(getShell(), title, msg, status);
             }
@@ -198,7 +199,7 @@ public class HibernatePropertyPage extends PropertyPage {
 	private void addSecondSection(Composite parent) {
 		// Label for owner field
 		Label ownerLabel = new Label(parent, SWT.NONE);
-		ownerLabel.setText(BasicHibernateMessages.HibernatePropertyPage_default_hibernate_console_config);
+		ownerLabel.setText(OrmBaseUiMessages.HibernatePropertyPage_default_hibernate_console_config);
 
 		Composite settingsPart = createDefaultComposite(parent,2);
 		selectedConfiguration = new Combo(settingsPart, SWT.DROP_DOWN | SWT.READ_ONLY);
@@ -215,7 +216,7 @@ public class HibernatePropertyPage extends PropertyPage {
 		}
 		
 		details = new Link(settingsPart, SWT.NONE);
-		details.setText(BasicHibernateMessages.HibernatePropertyPage_details);
+		details.setText(OrmBaseUiMessages.HibernatePropertyPage_details);
 		details.addSelectionListener(new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent e) {
 				ConsoleConfiguration config = KnownConfigurations.getInstance().find(selectedConfiguration.getText());
@@ -234,7 +235,7 @@ public class HibernatePropertyPage extends PropertyPage {
 		Composite settingsPart2 = createDefaultComposite(parent,2);
 		
 		enableNamingStrategy = new Button(settingsPart2, SWT.CHECK);
-		enableNamingStrategy.setText(BasicHibernateMessages.HibernatePropertyPage_use_naming_strategy);
+		enableNamingStrategy.setText(OrmBaseUiMessages.HibernatePropertyPage_use_naming_strategy);
 		enableNamingStrategy.setSelection(initNamingStrategy);
 		
 		settings = new Control[] { ownerLabel, selectedConfiguration, details, enableNamingStrategy};
@@ -373,9 +374,9 @@ public class HibernatePropertyPage extends PropertyPage {
 			try{
 				new ProgressMonitorDialog(getShell()).run(true, false, op);
 			} catch (InvocationTargetException e) {
-				HibernateBasePlugin.getDefault().logErrorMessage(BasicHibernateMessages.HibernatePropertyPage_Error_updating_JpaProject, e);
+				HibernateBasePlugin.getDefault().logErrorMessage(OrmBaseUiMessages.HibernatePropertyPage_Error_updating_JpaProject, e);
 			} catch (InterruptedException e) {
-				HibernateBasePlugin.getDefault().logErrorMessage(BasicHibernateMessages.HibernatePropertyPage_Error_updating_JpaProject, e);
+				HibernateBasePlugin.getDefault().logErrorMessage(OrmBaseUiMessages.HibernatePropertyPage_Error_updating_JpaProject, e);
 			}
 		}
 	}

@@ -28,7 +28,7 @@ import org.eclipse.ui.model.WorkbenchContentProvider;
 import org.eclipse.ui.model.WorkbenchLabelProvider;
 import org.eclipse.ui.views.navigator.ResourceComparator;
 import org.hibernate.eclipse.console.FileFilter;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
 
 public class DialogSelectionHelper {
 
@@ -53,7 +53,7 @@ public class DialogSelectionHelper {
 	 */
 	public static IPath[] chooseFileEntries(Shell shell, IPath initialSelection, IPath[] usedEntries, String title, String description, String[] fileExtensions, boolean allowMultiple, boolean allowDirectories, boolean allowFiles ) {
 		if (usedEntries == null) {
-			throw new IllegalArgumentException(BasicHibernateMessages.DialogSelectionHelper_used_entries_must_be_notnull);
+			throw new IllegalArgumentException(OrmBaseUiMessages.DialogSelectionHelper_used_entries_must_be_notnull);
 		}
 
 		List<Class<?>> clazzes = new ArrayList<Class<?>>();

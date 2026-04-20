@@ -31,6 +31,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.texteditor.ITextEditor;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 
 /**
@@ -52,7 +53,7 @@ public class ClearAction extends Action {
 
 		//setToolTipText(BasicHibernateMessages.ClearOutputAction_toolTipText); //$NON-NLS-1$
 		setImageDescriptor(EclipseImages.getImageDescriptor(ImageConstants.CLEAR) );
-		setToolTipText(BasicHibernateMessages.ClearAction_clear_editor);
+		setToolTipText(OrmBaseUiMessages.ClearAction_clear_editor);
 		//setHoverImageDescriptor(ConsolePluginImages.getImageDescriptor(IConsoleConstants.IMG_LCL_CLEAR));
 		//setDisabledImageDescriptor(ConsolePluginImages.getImageDescriptor(IInternalConsoleConstants.IMG_DLCL_CLEAR));
 		//setImageDescriptor(ConsolePluginImages.getImageDescriptor(IInternalConsoleConstants.IMG_ELCL_CLEAR));
@@ -62,7 +63,7 @@ public class ClearAction extends Action {
 	public ClearAction(ITextEditor textEditor) {
 		fTextEditor = textEditor;
 		setImageDescriptor(EclipseImages.getImageDescriptor(ImageConstants.CLEAR) );
-		setToolTipText(BasicHibernateMessages.ClearAction_clear_editor);
+		setToolTipText(OrmBaseUiMessages.ClearAction_clear_editor);
 	}
 
 	/* (non-Javadoc)

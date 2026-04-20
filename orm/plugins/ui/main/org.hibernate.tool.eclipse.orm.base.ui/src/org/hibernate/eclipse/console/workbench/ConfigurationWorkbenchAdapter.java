@@ -29,7 +29,7 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
 import org.hibernate.eclipse.ui.console.workbench.HibernateWorkbenchHelper;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
@@ -66,7 +66,7 @@ public class ConfigurationWorkbenchAdapter extends BasicWorkbenchAdapter {
 	}
 
 	public String getLabel(Object o) {
-		return BasicHibernateMessages.ConfigurationWorkbenchAdapter_configuration;
+		return OrmBaseUiMessages.ConfigurationWorkbenchAdapter_configuration;
 	}
 
 	public Object getParent(Object o) {

@@ -38,7 +38,7 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.swt.widgets.Widget;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
 
 public class TreeToTableComposite extends Composite {
 
@@ -70,10 +70,10 @@ public class TreeToTableComposite extends Composite {
 
 		public MultiStateCellEditor(Composite parent, int stateCount, int initialValue) {
 			super(parent);
-			if(stateCount < 1) throw new IllegalArgumentException(BasicHibernateMessages.TreeToTableComposite_incorrect_state_count);
+			if(stateCount < 1) throw new IllegalArgumentException(OrmBaseUiMessages.TreeToTableComposite_incorrect_state_count);
 			maxStates= stateCount;
 
-			if(!(initialValue >= 0 && initialValue < stateCount)) throw new IllegalArgumentException(BasicHibernateMessages.TreeToTableComposite_incorrect_initial_value);
+			if(!(initialValue >= 0 && initialValue < stateCount)) throw new IllegalArgumentException(OrmBaseUiMessages.TreeToTableComposite_incorrect_initial_value);
 			value= initialValue;
 
 			setValueValid(true);
@@ -85,8 +85,8 @@ public class TreeToTableComposite extends Composite {
 		}
 
 		public static int getNextValue(int stateCount, int currentValue){
-			if(!(stateCount > 1)) throw new IllegalStateException(BasicHibernateMessages.TreeToTableComposite_incorrect_state_count);
-			if(!(currentValue >= 0 && currentValue < stateCount)) throw new IllegalStateException(BasicHibernateMessages.TreeToTableComposite_incorrect_initial_value);
+			if(!(stateCount > 1)) throw new IllegalStateException(OrmBaseUiMessages.TreeToTableComposite_incorrect_state_count);
+			if(!(currentValue >= 0 && currentValue < stateCount)) throw new IllegalStateException(OrmBaseUiMessages.TreeToTableComposite_incorrect_initial_value);
 			return (currentValue + 1) % stateCount;
 		}
 
@@ -104,7 +104,7 @@ public class TreeToTableComposite extends Composite {
 		protected void doSetValue(Object value) {
 			this.value = ((Integer) value).intValue();
 			if(!(this.value >= 0 && this.value < maxStates)) {
-				throw new IllegalStateException(BasicHibernateMessages.TreeToTableComposite_invalid_value);
+				throw new IllegalStateException(OrmBaseUiMessages.TreeToTableComposite_invalid_value);
 			}
 		}
 	}
@@ -204,7 +204,7 @@ public class TreeToTableComposite extends Composite {
 	}
 
 	protected String getTreeTitle() {
-		return BasicHibernateMessages.TreeToTableComposite_database_schema;
+		return OrmBaseUiMessages.TreeToTableComposite_database_schema;
 	}
 
 	/**
@@ -244,7 +244,7 @@ public class TreeToTableComposite extends Composite {
 		fillLabel.setText(""); //$NON-NLS-1$
 		fillLabel.setLayoutData(gridData6);
 		upButton = new Button(manipulationGroup, SWT.NONE);
-		upButton.setText(BasicHibernateMessages.TreeToTableComposite_up);
+		upButton.setText(OrmBaseUiMessages.TreeToTableComposite_up);
 		upButton.setLayoutData(gridData5);
 		upButton.addSelectionListener( new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
@@ -252,7 +252,7 @@ public class TreeToTableComposite extends Composite {
 			}
 		} );
 		downButton = new Button(manipulationGroup, SWT.NONE);
-		downButton.setText(BasicHibernateMessages.TreeToTableComposite_down);
+		downButton.setText(OrmBaseUiMessages.TreeToTableComposite_down);
 		downButton.setLayoutData(gridData4);
 		downButton.addSelectionListener( new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
@@ -260,7 +260,7 @@ public class TreeToTableComposite extends Composite {
 			}
 		} );
 		removeButton = new Button(manipulationGroup, SWT.NONE);
-		removeButton.setText(BasicHibernateMessages.TreeToTableComposite_remove);
+		removeButton.setText(OrmBaseUiMessages.TreeToTableComposite_remove);
 		removeButton.setLayoutData(gridData3);
 		removeButton.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
@@ -268,7 +268,7 @@ public class TreeToTableComposite extends Composite {
 			}
 		});
 		removeAllButton = new Button(manipulationGroup, SWT.NONE);
-		removeAllButton.setText(BasicHibernateMessages.TreeToTableComposite_remove_all);
+		removeAllButton.setText(OrmBaseUiMessages.TreeToTableComposite_remove_all);
 		removeAllButton.setLayoutData(gridData3);
 		removeAllButton.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
 			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
@@ -302,7 +302,7 @@ public class TreeToTableComposite extends Composite {
 	}
 
 	protected String[] getAddButtonLabels() {
-		return new String[] { BasicHibernateMessages.TreeToTableComposite_include, BasicHibernateMessages.TreeToTableComposite_exclude};
+		return new String[] { OrmBaseUiMessages.TreeToTableComposite_include, OrmBaseUiMessages.TreeToTableComposite_exclude};
 	}
 
 	protected void doRemove() {
@@ -352,7 +352,7 @@ public class TreeToTableComposite extends Composite {
 	}
 
 	protected String getTableTitle() {
-		return BasicHibernateMessages.TreeToTableComposite_table_filters;
+		return OrmBaseUiMessages.TreeToTableComposite_table_filters;
 	}
 
 	/**
@@ -393,7 +393,7 @@ public class TreeToTableComposite extends Composite {
 		emptyLabel.setText(""); //$NON-NLS-1$
 		emptyLabel.setLayoutData(gridData9);
 		refreshButton = new Button(composite, SWT.NONE);
-		refreshButton.setText(BasicHibernateMessages.TreeToTableComposite_refresh);
+		refreshButton.setText(OrmBaseUiMessages.TreeToTableComposite_refresh);
 		refreshButton
 				.addSelectionListener( new org.eclipse.swt.events.SelectionAdapter() {
 					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {

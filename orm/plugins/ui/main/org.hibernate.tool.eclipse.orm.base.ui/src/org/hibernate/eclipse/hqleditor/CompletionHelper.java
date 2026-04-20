@@ -35,7 +35,7 @@ import org.eclipse.jdt.internal.ui.text.java.LazyJavaCompletionProposal;
 import org.eclipse.jdt.ui.text.java.CompletionProposalComparator;
 import org.eclipse.jdt.ui.text.java.IJavaCompletionProposal;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.hqleditor.HibernateResultCollector.Settings;
 
@@ -59,7 +59,7 @@ public class CompletionHelper {
 				// the smallest snippet possible
 				context.codeComplete(start, start.length(), rc);
 			} catch (JavaModelException jme) {
-				HibernateBasePlugin.getDefault().logErrorMessage(BasicHibernateMessages.CompletionHelper_could_not_complete_java_types, jme);
+				HibernateBasePlugin.getDefault().logErrorMessage(OrmBaseUiMessages.CompletionHelper_could_not_complete_java_types, jme);
 			}
 			IJavaCompletionProposal[] results = rc.getJavaCompletionProposals();
 			transpose(start, offset, results);
@@ -78,7 +78,7 @@ public class CompletionHelper {
 				AbstractJavaCompletionProposal proposal = (AbstractJavaCompletionProposal) results[i]; // TODO: eclipse bug https://bugs.eclipse.org/bugs/show_bug.cgi?id=84998
 				transpose(offset, proposal);
 			} else {
-				HibernateBasePlugin.getDefault().log(BasicHibernateMessages.CompletionHelper_error_unknown_completion_proposal_class);
+				HibernateBasePlugin.getDefault().log(OrmBaseUiMessages.CompletionHelper_error_unknown_completion_proposal_class);
 			}
 		}
 		Arrays.sort(results, new CompletionProposalComparator() );

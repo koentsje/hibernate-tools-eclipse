@@ -30,7 +30,7 @@ import org.eclipse.ui.actions.SelectionListenerAction;
 import org.eclipse.ui.part.MultiPageEditorPart;
 import org.eclipse.ui.texteditor.ITextEditor;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.console.utils.OpenMappingUtils;
 import org.hibernate.eclipse.console.utils.ProjectUtilsUI;
@@ -51,8 +51,8 @@ public class OpenMappingAction extends SelectionListenerAction {
 	private final String imageFilePath =  "icons/images/mapping.gif"; //$NON-NLS-1$
 
 	public OpenMappingAction() {
-		super(BasicHibernateMessages.OpenMappingAction_open_mapping_file);
-		setToolTipText(BasicHibernateMessages.OpenMappingAction_open_mapping_file);
+		super(OrmBaseUiMessages.OpenMappingAction_open_mapping_file);
+		setToolTipText(OrmBaseUiMessages.OpenMappingAction_open_mapping_file);
 		setEnabled(true);
 		setImageDescriptor(HibernateBasePlugin.getImageDescriptor(imageFilePath ));
 		setId(OPENMAPPING_ACTIONID);
@@ -70,11 +70,11 @@ public class OpenMappingAction extends SelectionListenerAction {
 			try {
 				run(consoleConfig, path);
 			} catch (JavaModelException e) {
-				HibernateBasePlugin.getDefault().logErrorMessage(BasicHibernateMessages.OpenMappingAction_cannot_find_mapping_file, e);
+				HibernateBasePlugin.getDefault().logErrorMessage(OrmBaseUiMessages.OpenMappingAction_cannot_find_mapping_file, e);
 			} catch (PartInitException e) {
-				HibernateBasePlugin.getDefault().logErrorMessage(BasicHibernateMessages.OpenMappingAction_cannot_open_mapping_file, e);
+				HibernateBasePlugin.getDefault().logErrorMessage(OrmBaseUiMessages.OpenMappingAction_cannot_open_mapping_file, e);
 			} catch (FileNotFoundException e) {
-				HibernateBasePlugin.getDefault().logErrorMessage(BasicHibernateMessages.OpenMappingAction_cannot_find_mapping_file, e);
+				HibernateBasePlugin.getDefault().logErrorMessage(OrmBaseUiMessages.OpenMappingAction_cannot_find_mapping_file, e);
 			}
 		}
 	}
@@ -158,8 +158,8 @@ public class OpenMappingAction extends SelectionListenerAction {
 			}
 		}
    		if (editorPart == null) {
-			final String title = BasicHibernateMessages.OpenMappingAction_open_mapping_file;
-			final String msg = NLS.bind(BasicHibernateMessages.OpenMappingAction_mapping_for_not_found, selection);
+			final String title = OrmBaseUiMessages.OpenMappingAction_open_mapping_file;
+			final String msg = NLS.bind(OrmBaseUiMessages.OpenMappingAction_mapping_for_not_found, selection);
 			MessageDialog.openError(null, title, msg);
 			throw new FileNotFoundException(msg);
 		}
@@ -192,8 +192,8 @@ public class OpenMappingAction extends SelectionListenerAction {
 			}
 	    }
    		if (editorPart == null) {
-			final String title = BasicHibernateMessages.OpenMappingAction_open_mapping_file;
-			final String msg = NLS.bind(BasicHibernateMessages.OpenMappingAction_mapping_file_for_property_not_found, compositeProperty.getName());
+			final String title = OrmBaseUiMessages.OpenMappingAction_open_mapping_file;
+			final String msg = NLS.bind(OrmBaseUiMessages.OpenMappingAction_mapping_file_for_property_not_found, compositeProperty.getName());
 			MessageDialog.openError(null, title, msg);
    			throw new FileNotFoundException(msg);
    		}
@@ -275,7 +275,7 @@ public class OpenMappingAction extends SelectionListenerAction {
 				}
 			}
 		} catch (BadLocationException e) {
-			HibernateBasePlugin.getDefault().logErrorMessage(BasicHibernateMessages.OpenMappingAction_selection_not_found, e);
+			HibernateBasePlugin.getDefault().logErrorMessage(OrmBaseUiMessages.OpenMappingAction_selection_not_found, e);
 		}
 		if (propRegion == null && parentProperty.isComposite()){
 			String[] componentPatterns = new String[]{

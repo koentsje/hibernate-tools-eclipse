@@ -29,7 +29,7 @@ import org.eclipse.jface.preference.RadioGroupFieldEditor;
 import org.eclipse.jface.preference.StringFieldEditor;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 
 /**
@@ -58,7 +58,7 @@ public class HibernateConsolePreferencePage
 	public HibernateConsolePreferencePage() {
 		super(GRID);
 		setPreferenceStore(HibernateBasePlugin.getDefault().getPreferenceStore() );
-		setDescription(BasicHibernateMessages.HibernateConsolePreferencePage_demo_of_pref_page_impl);
+		setDescription(OrmBaseUiMessages.HibernateConsolePreferencePage_demo_of_pref_page_impl);
 		initializeDefaults();
 	}
 /**
@@ -67,8 +67,8 @@ public class HibernateConsolePreferencePage
 	private void initializeDefaults() {
 		IPreferenceStore store = getPreferenceStore();
 		store.setDefault(P_BOOLEAN, true);
-		store.setDefault(P_CHOICE, BasicHibernateMessages.HibernateConsolePreferencePage_choice2);
-		store.setDefault(P_STRING, BasicHibernateMessages.HibernateConsolePreferencePage_def_value);
+		store.setDefault(P_CHOICE, OrmBaseUiMessages.HibernateConsolePreferencePage_choice2);
+		store.setDefault(P_STRING, OrmBaseUiMessages.HibernateConsolePreferencePage_def_value);
 	}
 
 /**
@@ -80,22 +80,22 @@ public class HibernateConsolePreferencePage
 
 	public void createFieldEditors() {
 		addField(new DirectoryFieldEditor(P_PATH,
-				BasicHibernateMessages.HibernateConsolePreferencePage_dir_preference, getFieldEditorParent() ) );
+				OrmBaseUiMessages.HibernateConsolePreferencePage_dir_preference, getFieldEditorParent() ) );
 		addField(
 			new BooleanFieldEditor(
 				P_BOOLEAN,
-				BasicHibernateMessages.HibernateConsolePreferencePage_example_of_bool_pref,
+				OrmBaseUiMessages.HibernateConsolePreferencePage_example_of_bool_pref,
 				getFieldEditorParent() ) );
 
 		addField(new RadioGroupFieldEditor(
 			P_CHOICE,
-			BasicHibernateMessages.HibernateConsolePreferencePage_example_of_multichoise_pref,
+			OrmBaseUiMessages.HibernateConsolePreferencePage_example_of_multichoise_pref,
 			1,
-			new String[][] { { BasicHibernateMessages.HibernateConsolePreferencePage_choice_1, BasicHibernateMessages.HibernateConsolePreferencePage_choice1 }, {
-				BasicHibernateMessages.HibernateConsolePreferencePage_choice_2, BasicHibernateMessages.HibernateConsolePreferencePage_choice2 }
+			new String[][] { { OrmBaseUiMessages.HibernateConsolePreferencePage_choice_1, OrmBaseUiMessages.HibernateConsolePreferencePage_choice1 }, {
+				OrmBaseUiMessages.HibernateConsolePreferencePage_choice_2, OrmBaseUiMessages.HibernateConsolePreferencePage_choice2 }
 		}, getFieldEditorParent() ) );
 		addField(
-			new StringFieldEditor(P_STRING, BasicHibernateMessages.HibernateConsolePreferencePage_text_pref, getFieldEditorParent() ) );
+			new StringFieldEditor(P_STRING, OrmBaseUiMessages.HibernateConsolePreferencePage_text_pref, getFieldEditorParent() ) );
 	}
 
 	public void init(IWorkbench workbench) {
