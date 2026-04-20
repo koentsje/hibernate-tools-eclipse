@@ -3,7 +3,7 @@ package org.hibernate.tool.eclipse.orm.utils;
 import java.io.InputStream;
 import java.io.Serializable;
 
-import org.hibernate.tool.eclipse.orm.runtime.spi.HibernateException;
+import org.hibernate.tool.eclipse.common.runtime.HibernateRuntimeException;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -120,7 +120,7 @@ public class DTDEntityResolver implements EntityResolver, Serializable {
 		}
 
 		if ( stream == null ) {
-			throw new HibernateException( resource + " not found" ); //$NON-NLS-1$
+			throw new HibernateRuntimeException( resource + " not found" ); //$NON-NLS-1$
 		}
 
 		return stream;

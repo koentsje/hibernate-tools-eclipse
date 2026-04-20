@@ -48,7 +48,7 @@ import org.hibernate.tool.eclipse.orm.utils.DTDEntityResolver;
 import org.hibernate.tool.eclipse.common.base.core.utils.ReflectHelper;
 import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
 import org.hibernate.tool.eclipse.orm.utils.XMLHelper;
-import org.hibernate.tool.eclipse.orm.runtime.spi.HibernateException;
+import org.hibernate.tool.eclipse.common.runtime.HibernateRuntimeException;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IEnvironment;
 import org.hibernate.tool.eclipse.orm.runtime.spi.INamingStrategy;
@@ -312,7 +312,7 @@ public class ConfigurationFactory {
 				doc = xmlHelper.createSAXReader(resourceName, errors, entityResolver).read(
 						new InputSource(stream));
 				if (errors.size() != 0) {
-					throw new HibernateException(
+					throw new HibernateRuntimeException(
 							ConsoleMessages.ConsoleConfiguration_invalid_configuration, errors
 									.get(0));
 				}
@@ -326,7 +326,7 @@ public class ConfigurationFactory {
 				return localCfg.configure(document);
 
 			} catch (DocumentException e) {
-				throw new HibernateException(
+				throw new HibernateRuntimeException(
 						ConsoleMessages.ConsoleConfiguration_could_not_parse_configuration
 								+ resourceName, e);
 			} finally {
@@ -354,7 +354,7 @@ public class ConfigurationFactory {
 		InputStream is = null;
 		try {
 			is = getResourceAsStream(resource);
-		} catch (HibernateException e) {
+		} catch (HibernateRuntimeException e) {
 			// just ignore
 		} finally {
 			try {
@@ -450,7 +450,7 @@ public class ConfigurationFactory {
 			stream = environment.getClass().getClassLoader().getResourceAsStream( stripped );
 		}
 		if ( stream == null ) {
-			throw new HibernateException( resource + " not found" ); //$NON-NLS-1$
+			throw new HibernateRuntimeException( resource + " not found" ); //$NON-NLS-1$
 		}
 		return stream;
 	}

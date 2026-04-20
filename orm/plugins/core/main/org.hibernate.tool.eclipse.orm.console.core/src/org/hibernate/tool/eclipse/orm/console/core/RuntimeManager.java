@@ -19,7 +19,7 @@ import org.hibernate.tool.eclipse.orm.console.core.execution.DefaultExecutionCon
 import org.hibernate.tool.eclipse.orm.console.core.execution.ExecutionContext;
 import org.hibernate.tool.eclipse.orm.console.core.preferences.ConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.orm.console.core.preferences.PreferencesClassPathUtils;
-import org.hibernate.tool.eclipse.orm.runtime.spi.HibernateException;
+import org.hibernate.tool.eclipse.common.runtime.HibernateRuntimeException;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IRuntimeManager;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
@@ -108,7 +108,7 @@ public class RuntimeManager implements IRuntimeManager {
 	public void buildSessionFactory() {
 		execute(() -> {
 			if (sessionFactory != null) {
-				throw new HibernateException("Factory was not closed before attempt to build a new Factory"); //$NON-NLS-1$
+				throw new HibernateRuntimeException("Factory was not closed before attempt to build a new Factory"); //$NON-NLS-1$
 			}
 			sessionFactory = configuration.buildSessionFactory();
 			return null;
@@ -159,12 +159,12 @@ public class RuntimeManager implements IRuntimeManager {
 				} catch (RuntimeException e) {
 					throw e;
 				} catch (Exception e) {
-					throw new HibernateException(e);
+					throw new HibernateRuntimeException(e);
 				}
 			});
 		}
 		final String msg = NLS.bind(ConsoleMessages.ConsoleConfiguration_null_execution_context, getName());
-		throw new HibernateException(msg);
+		throw new HibernateRuntimeException(msg);
 	}
 
 	public boolean reset() {

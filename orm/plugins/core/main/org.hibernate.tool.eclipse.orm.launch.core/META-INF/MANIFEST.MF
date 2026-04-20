@@ -22,6 +22,7 @@ Require-Bundle: org.hibernate.tool.eclipse.orm.base.core,
  org.eclipse.datatools.connectivity.ui,
  org.apache.ant,
  org.apache.commons.logging;bundle-version="1.1.1",
+ org.hibernate.tool.eclipse.common.runtime,
  org.hibernate.tool.eclipse.orm.runtime.spi;bundle-version="5.0.0",
  org.hibernate.tool.eclipse.libs.dom4j.v_1_6_1;bundle-version="5.0.0"
 Bundle-ActivationPolicy: lazy

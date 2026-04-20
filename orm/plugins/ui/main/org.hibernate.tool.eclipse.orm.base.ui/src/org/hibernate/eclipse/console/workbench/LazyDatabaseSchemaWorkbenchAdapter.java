@@ -37,7 +37,7 @@ import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
-import org.hibernate.tool.eclipse.orm.runtime.spi.HibernateException;
+import org.hibernate.tool.eclipse.common.runtime.HibernateRuntimeException;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IProgressListener;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IReverseEngineeringStrategy;
@@ -128,7 +128,7 @@ public class LazyDatabaseSchemaWorkbenchAdapter extends BasicWorkbenchAdapter {
 								strategy,
 								new ProgressListener(monitor));
 			} catch (Exception he) {
-				throw new HibernateException(he.getMessage(), he.getCause());
+				throw new HibernateRuntimeException(he.getMessage(), he.getCause());
 			}
 			return result;
 		});

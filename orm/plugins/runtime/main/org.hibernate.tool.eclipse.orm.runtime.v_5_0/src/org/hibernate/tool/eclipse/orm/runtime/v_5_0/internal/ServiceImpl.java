@@ -68,7 +68,7 @@ import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractService;
 import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacade;
 import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 import org.hibernate.tool.eclipse.common.runtime.Util;
-import org.hibernate.tool.eclipse.orm.runtime.spi.HibernateException;
+import org.hibernate.tool.eclipse.common.runtime.HibernateRuntimeException;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IArtifactCollector;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ICfg2HbmTool;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IColumn;
@@ -309,7 +309,7 @@ public class ServiceImpl extends AbstractService {
 							return new DatabaseMetaDataDialectResolutionInfoAdapter( connection.getMetaData() );
 						}
 						catch ( SQLException sqlException ) {
-							throw new HibernateException(
+							throw new HibernateRuntimeException(
 									"Unable to access java.sql.DatabaseMetaData to determine appropriate Dialect to use",
 									sqlException
 							);
@@ -491,11 +491,11 @@ public class ServiceImpl extends AbstractService {
 				return clazz.newInstance();
 			}
 			catch (Exception eq) {
-				throw new HibernateException(eq);
+				throw new HibernateRuntimeException(eq);
 			}
 		}
         catch (Exception e) {
-			throw new HibernateException(e);
+			throw new HibernateRuntimeException(e);
 		}
     }
 

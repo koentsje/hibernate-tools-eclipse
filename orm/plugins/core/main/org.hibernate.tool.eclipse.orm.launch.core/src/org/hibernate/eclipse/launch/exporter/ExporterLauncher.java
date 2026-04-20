@@ -37,7 +37,7 @@ import org.hibernate.eclipse.launch.CodeGenerationStrings;
 import org.hibernate.eclipse.launch.CodeGenerationUtils;
 import org.hibernate.eclipse.launch.ExporterAttributes;
 import org.hibernate.eclipse.launch.PathHelper;
-import org.hibernate.tool.eclipse.orm.runtime.spi.HibernateException;
+import org.hibernate.tool.eclipse.common.runtime.HibernateRuntimeException;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IArtifactCollector;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IExporter;
@@ -179,7 +179,7 @@ public class ExporterLauncher {
 
 				try {
 					exporter.start();
-				} catch (HibernateException he) {
+				} catch (HibernateRuntimeException he) {
 					throw new HibernateConsoleRuntimeException(
 							BasicHibernateMessages.CodeGenerationLaunchDelegate_error_while_running
 									+ exporterFactories[i]

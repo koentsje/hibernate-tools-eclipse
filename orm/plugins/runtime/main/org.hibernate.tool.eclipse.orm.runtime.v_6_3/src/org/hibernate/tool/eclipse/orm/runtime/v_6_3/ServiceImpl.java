@@ -26,7 +26,7 @@ import org.hibernate.tool.orm.jbt.wrp.WrapperFactory;
 import org.hibernate.tool.eclipse.orm.runtime.common.GenericFacadeFactory;
 import org.hibernate.tool.eclipse.orm.runtime.common.IDatabaseReader;
 import org.hibernate.tool.eclipse.common.runtime.IFacade;
-import org.hibernate.tool.eclipse.orm.runtime.spi.HibernateException;
+import org.hibernate.tool.eclipse.common.runtime.HibernateRuntimeException;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IArtifactCollector;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ICfg2HbmTool;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IColumn;
@@ -244,7 +244,7 @@ public class ServiceImpl implements IService {
 							return new DatabaseMetaDataDialectResolutionInfoAdapter( connection.getMetaData() );
 						}
 						catch ( SQLException sqlException ) {
-							throw new HibernateException(
+							throw new HibernateRuntimeException(
 									"Unable to access java.sql.DatabaseMetaData to determine appropriate Dialect to use",
 									sqlException
 							);

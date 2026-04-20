@@ -15,7 +15,7 @@ import org.hibernate.cfg.Environment;
 import org.hibernate.dialect.H2Dialect;
 import org.hibernate.tool.hbm2ddl.SchemaExport;
 import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
-import org.hibernate.tool.eclipse.orm.runtime.spi.HibernateException;
+import org.hibernate.tool.eclipse.common.runtime.HibernateRuntimeException;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ISchemaExport;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -85,7 +85,7 @@ public class SchemaExportFacadeTest {
 		ISchemaExport schemaExportFacade = FACADE_FACTORY
 				.createSchemaExport(schemaExport);
 		assertTrue(schemaExportFacade.getExceptions().isEmpty());
-		schemaExport.getExceptions().add(new HibernateException("blah"));
+		schemaExport.getExceptions().add(new HibernateRuntimeException("blah"));
 		assertFalse(schemaExportFacade.getExceptions().isEmpty());
 	}
 

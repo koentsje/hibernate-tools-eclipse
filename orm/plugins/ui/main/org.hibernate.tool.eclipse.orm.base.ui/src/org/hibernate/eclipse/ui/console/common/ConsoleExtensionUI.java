@@ -2,7 +2,7 @@ package org.hibernate.eclipse.ui.console.common;
 
 import org.eclipse.ui.views.properties.IPropertySource;
 import org.hibernate.tool.eclipse.orm.query.QueryPage;
-import org.hibernate.tool.eclipse.orm.runtime.spi.HibernateException;
+import org.hibernate.tool.eclipse.common.runtime.HibernateRuntimeException;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IHQLCodeAssist;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IRuntimeManager;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ISession;
@@ -22,7 +22,7 @@ public class ConsoleExtensionUI {
             try {
                 runtimeManager.build();
                 runtimeManager.buildMappings();
-            } catch (HibernateException e) {
+            } catch (HibernateRuntimeException e) {
                 // ignore
             }
         }

@@ -9,7 +9,7 @@ public interface IClassMetadata {
 	IType[] getPropertyTypes();
 	Class<?> getMappedClass();
 	IType getIdentifierType();
-	Object getPropertyValue(Object object, String name) throws HibernateException;
+	Object getPropertyValue(Object object, String name);
 	boolean hasIdentifierProperty();
 	Object getIdentifier(Object object, ISession implementor);
 	boolean isInstanceOfAbstractEntityPersister();

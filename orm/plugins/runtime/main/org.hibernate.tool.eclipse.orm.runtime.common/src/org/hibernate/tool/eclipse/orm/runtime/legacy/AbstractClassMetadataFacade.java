@@ -4,7 +4,7 @@ import org.hibernate.tool.eclipse.common.runtime.Util;
 
 import java.util.ArrayList;
 
-import org.hibernate.tool.eclipse.orm.runtime.spi.HibernateException;
+import org.hibernate.tool.eclipse.common.runtime.HibernateRuntimeException;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IClassMetadata;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ISession;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IType;
@@ -32,7 +32,7 @@ implements IClassMetadata {
 	}
 
 	@Override
-	public Object getPropertyValue(Object object, String name) throws HibernateException {
+	public Object getPropertyValue(Object object, String name) {
 		try {
 			return Util.invokeMethod(
 					getTarget(), 
@@ -40,7 +40,7 @@ implements IClassMetadata {
 					new Class[] { Object.class, String.class }, 
 					new Object[] { object, name });
 		} catch (Throwable t) {
-			throw new HibernateException(t.getMessage(), t.getCause());
+			throw new HibernateRuntimeException(t.getMessage(), t.getCause());
 		}
 	}
 

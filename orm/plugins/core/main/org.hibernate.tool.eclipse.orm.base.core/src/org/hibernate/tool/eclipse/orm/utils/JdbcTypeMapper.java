@@ -6,7 +6,7 @@ import java.sql.Types;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.hibernate.tool.eclipse.orm.runtime.spi.HibernateException;
+import org.hibernate.tool.eclipse.common.runtime.HibernateRuntimeException;
 
 /**
  * Utility class for mapping between sqltypes and hibernate type names.
@@ -115,7 +115,7 @@ public final class JdbcTypeMapper {
 				return Integer.parseInt(value);
 			} 
 			catch (NumberFormatException nfe) {
-				throw new HibernateException("jdbc-type: " + value + " is not a known JDBC Type nor a valid number"); //$NON-NLS-1$ //$NON-NLS-2$
+				throw new HibernateRuntimeException("jdbc-type: " + value + " is not a known JDBC Type nor a valid number"); //$NON-NLS-1$ //$NON-NLS-2$
 			}
 		} 
 		else {

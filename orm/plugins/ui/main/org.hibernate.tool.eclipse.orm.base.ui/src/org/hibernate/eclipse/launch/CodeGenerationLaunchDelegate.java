@@ -76,7 +76,7 @@ import org.hibernate.tool.eclipse.orm.launch.ICodeGenerationLaunchConstants;
 import org.hibernate.eclipse.launch.exporter.ExporterLauncher;
 import org.hibernate.eclipse.launch.model.ExporterFactory;
 import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
-import org.hibernate.tool.eclipse.orm.runtime.spi.HibernateException;
+import org.hibernate.tool.eclipse.common.runtime.HibernateRuntimeException;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IArtifactCollector;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IExporter;
@@ -412,7 +412,7 @@ public class CodeGenerationLaunchDelegate extends AntLaunchDelegate {
 
 					try {
                        exporter.start();
-					} catch(HibernateException he) {
+					} catch(HibernateRuntimeException he) {
 						throw new HibernateConsoleRuntimeException(BasicHibernateMessages.CodeGenerationLaunchDelegate_error_while_running + exporterFactories[i].getExporterDefinition().getDescription(), he);
 					}
                        monitor.worked(1);

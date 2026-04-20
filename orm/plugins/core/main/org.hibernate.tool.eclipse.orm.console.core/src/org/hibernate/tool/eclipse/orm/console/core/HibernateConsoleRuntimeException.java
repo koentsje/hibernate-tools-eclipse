@@ -21,7 +21,7 @@
  */
 package org.hibernate.tool.eclipse.orm.console.core;
 
-import org.hibernate.tool.eclipse.orm.runtime.spi.HibernateException;
+import org.hibernate.tool.eclipse.common.runtime.HibernateRuntimeException;
 
 
 /**
@@ -29,7 +29,7 @@ import org.hibernate.tool.eclipse.orm.runtime.spi.HibernateException;
  *
  */
 @SuppressWarnings("serial")
-public class HibernateConsoleRuntimeException extends HibernateException {
+public class HibernateConsoleRuntimeException extends HibernateRuntimeException {
 
 	
 	public HibernateConsoleRuntimeException(String message) {

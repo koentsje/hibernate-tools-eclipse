@@ -5,7 +5,7 @@ import org.hibernate.metadata.ClassMetadata;
 import org.hibernate.persister.entity.EntityPersister;
 import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractClassMetadataFacade;
 import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
-import org.hibernate.tool.eclipse.orm.runtime.spi.HibernateException;
+import org.hibernate.tool.eclipse.common.runtime.HibernateRuntimeException;
 
 public class ClassMetadataFacadeImpl extends AbstractClassMetadataFacade {
 	
@@ -21,12 +21,12 @@ public class ClassMetadataFacadeImpl extends AbstractClassMetadataFacade {
 	}
 
 	@Override
-	public Object getPropertyValue(Object object, String name) throws HibernateException {
+	public Object getPropertyValue(Object object, String name) {
 		try {
 			return ((ClassMetadata)getTarget()).getPropertyValue(
 					object, name, EntityMode.POJO);
 		} catch (org.hibernate.HibernateException e) {
-			throw new HibernateException(e.getMessage(), e.getCause());
+			throw new HibernateRuntimeException(e.getMessage(), e.getCause());
 		}
 	}
 

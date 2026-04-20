@@ -63,7 +63,7 @@ import org.hibernate.tool.eclipse.orm.runtime.legacy.AbstractService;
 import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacade;
 import org.hibernate.tool.eclipse.orm.runtime.legacy.IFacadeFactory;
 import org.hibernate.tool.eclipse.common.runtime.Util;
-import org.hibernate.tool.eclipse.orm.runtime.spi.HibernateException;
+import org.hibernate.tool.eclipse.common.runtime.HibernateRuntimeException;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IArtifactCollector;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ICfg2HbmTool;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IColumn;
@@ -117,7 +117,7 @@ public class ServiceImpl extends AbstractService {
 				Object object = resolver.newInstance();
 				ejb3Configuration.setEntityResolver((EntityResolver)object);
 			} catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
-				throw new HibernateException(e);
+				throw new HibernateRuntimeException(e);
 			}
 		}
 		ejb3Configuration.setProperty("hibernate.validator.autoregister_listeners", "false");
@@ -301,11 +301,11 @@ public class ServiceImpl extends AbstractService {
 				return rev;
 			}
 			catch (Exception eq) {
-				throw new HibernateException(eq);
+				throw new HibernateRuntimeException(eq);
 			}
 		}
         catch (Exception e) {
-			throw new HibernateException(e);
+			throw new HibernateRuntimeException(e);
 		}
     }
 

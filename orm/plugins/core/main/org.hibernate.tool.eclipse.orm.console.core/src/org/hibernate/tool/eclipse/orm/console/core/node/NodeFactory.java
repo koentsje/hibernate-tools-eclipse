@@ -28,7 +28,7 @@ import java.util.Map;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleMessages;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
-import org.hibernate.tool.eclipse.orm.runtime.spi.HibernateException;
+import org.hibernate.tool.eclipse.common.runtime.HibernateRuntimeException;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IClassMetadata;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ICollectionMetadata;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
@@ -54,7 +54,7 @@ public class NodeFactory {
 	/**
 	 * @param c
 	 */
-	public NodeFactory(ConsoleConfiguration c) throws HibernateException {
+	public NodeFactory(ConsoleConfiguration c) throws HibernateRuntimeException {
 		setConsoleConfiguration(c);
 	}
 
