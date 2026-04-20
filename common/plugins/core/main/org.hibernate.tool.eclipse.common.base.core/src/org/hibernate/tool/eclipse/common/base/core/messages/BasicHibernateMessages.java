@@ -90,7 +90,6 @@ public class BasicHibernateMessages extends NLS {
 	public static String RenameAction_error_name;
 	public static String RenameAction_existing_name;
 	//
-	public static String ExporterDefinition_problem_creating_exporter_class;
 	public static String ExporterFactory_output_dir_in_does_not_exist;
 	public static String ExporterFactory_template_dir_in_does_not_exist;
 	public static String ExporterProperty_generate_ejb3_annotations;
@@ -182,8 +181,6 @@ public class BasicHibernateMessages extends NLS {
 	public static String ConsoleConfigurationWizardPage_bad_char;
 	public static String ConsoleConfigurationWizardPage_problem_while_initializing_cc;
 	public static String ConsoleConfigurationWizardPage_this_wizard_allows;
-	public static String ConsoleConfigurationWizardPage_warnings;
-	public static String ConsoleConfigurationWizardPage_errors;
 	public static String NewConfigurationWizard_create_hibernate_cfg_file;
 	public static String NewConfigurationWizard_create_new_hibernate_cfg_xml;
 	public static String NewConfigurationWizard_creating;
@@ -197,7 +194,6 @@ public class BasicHibernateMessages extends NLS {
 	public static String NewConfigurationWizardPage_default_catalog;
 	public static String NewConfigurationWizardPage_default_schema;
 	public static String NewConfigurationWizardPage_driver_class;
-	public static String NewConfigurationWizardPage_file_already_exist;
 	public static String NewConfigurationWizardPage_file_container_must_be_specified;
 	public static String NewConfigurationWizardPage_file_container_must_exist;
 	public static String NewConfigurationWizardPage_file_extension_should_be_cfgxml;
@@ -216,8 +212,6 @@ public class BasicHibernateMessages extends NLS {
 	public static String NewConfigurationWizardPage_session_factory_name;
 	public static String NewConfigurationWizardPage_this_wizard_creates;
 	public static String NewConfigurationWizardPage_user_name;
-	public static String NewHibernateMappingElementsSelectionPage_select;
-
 	public static String NewReverseEngineeringFileWizard_create_hibernate_reverse_engineering_file;
 	public static String NewReverseEngineeringFileWizard_create_new_hibernate_reveng_xml;
 	public static String NewReverseEngineeringFileWizard_creating;
@@ -258,15 +252,12 @@ public class BasicHibernateMessages extends NLS {
 	public static String BasicWorkbenchAdapter_error_while_expanding;
 	public static String BasicWorkbenchAdapter_hibernate_configuration_error;
 	public static String ConfigurationWorkbenchAdapter_configuration;
-	public static String ConsoleConfigurationWorkbenchAdapter_unsupported_hibernate_version;
 	public static String ConsoleConfigurationWorkbenchAdapter_empty_configuration;
 	public static String ExecuteQueryAction_problems_while_executing_query;
 	public static String KnownConfigurationsWorkbenchAdapter_configurations;
 	public static String LazyDatabaseSchemaWorkbenchAdapter_database;
-	public static String LazyDatabaseSchemaWorkbenchAdapter_problem_while_reading_database_schema;
 	public static String LazyDatabaseSchemaWorkbenchAdapter_problems_while_reading_database_schema;
 	public static String LazyDatabaseSchemaWorkbenchAdapter_reading_schema_error;
-	public static String LazyDatabaseSchemaWorkbenchAdapter_schema_not_available;
 	public static String LazySessionFactoryAdapter_problems_while_creating_sessionfactory;
 	public static String LazySessionFactoryAdapter_session_factory;
 	public static String LazySessionFactoryAdapter_sessionfactory_error;
@@ -320,20 +311,6 @@ public class BasicHibernateMessages extends NLS {
 	public static String HQLEditorPreferencePage_keyword;
 	public static String HQLEditorPreferencePage_string_literal;
 
-	// The following strings are used in org.hibernate.eclipse.hqleditor.HQLEditor.createActions()
-	// and org.hibernate.eclipse.hqleditor.HQLEditorActionContributor.HQLEditorActionContributor()
-	public static String HQLEditor_ContentAssistProposal_label;
-	public static String HQLEditor_ContentAssistProposal_tooltip;
-	public static String HQLEditor_ContentAssistProposal_image;
-	public static String HQLEditor_ContentAssistProposal_description;
-	public static String HQLEditor_ContentAssistTip_label;
-	public static String HQLEditor_ContentAssistTip_tooltip;
-	public static String HQLEditor_ContentAssistTip_image;
-	public static String HQLEditor_ContentAssistTip_description;
-	public static String HQLEditor_ContentFormat_label;
-	public static String HQLEditor_ContentFormat_tooltip;
-	public static String HQLEditor_ContentFormat_image;
-	public static String HQLEditor_ContentFormat_description;
 	//
 	public static String AddPropertyDialog_add_exporter_property;
 	public static String AddPropertyDialog_add_property_to;
@@ -349,8 +326,6 @@ public class BasicHibernateMessages extends NLS {
 	public static String AddPropertyDialog_browse;
 	public static String CodeGenerationLaunchDelegate_console_configuration_not_found_in;
 	public static String CodeGenerationLaunchDelegate_console_configuration_name_is_empty_in;
-	public static String CodeGenerationLaunchDelegate_could_not_create_or_find_with_default_noarg_constructor;
-	public static String CodeGenerationLaunchDelegate_could_not_create_or_find_with_one_argument_delegate_constructor;
 	public static String CodeGenerationLaunchDelegate_error_while_running;
 	public static String CodeGenerationLaunchDelegate_error_while_setting_up;
 	public static String CodeGenerationLaunchDelegate_exception_during_java_format;
@@ -417,8 +392,6 @@ public class BasicHibernateMessages extends NLS {
 	public static String ConsoleConfigurationMainTab_DatabaseConnection;
 	public static String ConsoleConfigurationMainTab_do_you_want_to_create_new_cfgxml;
 	public static String ConsoleConfigurationMainTab_do_you_want_to_create_new_property_file;
-	public static String ConsoleConfigurationMainTab_does_not_exist;
-	public static String ConsoleConfigurationMainTab_is_not_file;
 	public static String ConsoleConfigurationMainTab_java_project_to_determine_default_classpath;
 	public static String ConsoleConfigurationMainTab_jpa;
 	public static String ConsoleConfigurationMainTab_main;
@@ -506,13 +479,10 @@ public class BasicHibernateMessages extends NLS {
 	public static String LaunchConfigurationResourceNameChange_update_resource_path_in_launch_cfg;
 	public static String MoveResourceParticipant_launch_configurations_updates;
 	public static String RenameResourceParticipant_launch_configurations_updates;
-	public static String DeleteResourceParticipant_hibernate_configurations_updates;
-	
 	public static String ConsoleConfigurationITypeRenameParticipant_update;
 	public static String ConsoleConfigurationITypeRenameParticipant_update_names;
 	//
 	public static String HibernateNature_error_while_performing_background_reading_of_database_schema;
-	public static String HibernateNature_exception_when_trying_to_locate_hibernate_nature;
 	public static String HibernateNature_reading_database_metadata;
 	public static String HibernateNature_reading_database_metadata_for;
 
