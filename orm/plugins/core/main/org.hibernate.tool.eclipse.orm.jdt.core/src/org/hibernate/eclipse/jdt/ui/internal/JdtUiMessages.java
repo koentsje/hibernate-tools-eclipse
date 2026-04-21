@@ -41,7 +41,9 @@ public class JdtUiMessages extends NLS {
 	public static String AddRemoveTableComposite_java_packages_title;
 	public static String AddRemoveTableComposite_java_select_types;
 	public static String AddRemoveTableComposite_java_select_packages;
-	
+	public static String AddRemoveTableComposite_no_dependencies;
+	public static String AddRemoveTableComposite_control_depth_level;
+
 	public static String NewHibernateMappingElementsSelectionPage2_title;
 	public static String NewHibernateMappingElementsSelectionPage2_description;
 	public static String NewHibernateMappingFilePage_class_name_column;

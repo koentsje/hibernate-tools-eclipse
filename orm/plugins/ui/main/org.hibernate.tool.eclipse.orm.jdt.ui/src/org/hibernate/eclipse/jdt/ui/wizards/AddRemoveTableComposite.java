@@ -42,7 +42,6 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Widget;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.SelectionDialog;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.wizards.UpDownListComposite;
 import org.hibernate.eclipse.jdt.ui.internal.JdtUiMessages;
 
@@ -80,8 +79,8 @@ public class AddRemoveTableComposite extends UpDownListComposite {
 		gridData2.grabExcessHorizontalSpace = false;
 		gridData2.grabExcessVerticalSpace = false;
 		depthControl = new Button(parent, SWT.CHECK);
-		//depthControl.setText(BasicHibernateMessages.AddRemoveTableComposite_no_dependencies);
-		depthControl.setText(BasicHibernateMessages.AddRemoveTableComposite_control_depth_level);
+		//depthControl.setText(JdtUiMessages.AddRemoveTableComposite_no_dependencies);
+		depthControl.setText(JdtUiMessages.AddRemoveTableComposite_control_depth_level);
 		depthControl.setLayoutData(gridData);
 		depthNumbers = new Text(parent, SWT.SINGLE | SWT.BORDER | SWT.TRAIL);
 		depthNumbers.setText("0"); //$NON-NLS-1$

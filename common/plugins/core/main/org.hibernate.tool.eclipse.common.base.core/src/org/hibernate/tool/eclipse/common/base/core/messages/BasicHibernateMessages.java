@@ -18,7 +18,6 @@ public class BasicHibernateMessages extends NLS {
 
 
 	//
-	public static String ClassLoaderHelper_could_not_determine_physical_location_for;
 	public static String ProjectUtils_could_not_save_changes_to_preferences;
 	//
 	//
@@ -45,7 +44,6 @@ public class BasicHibernateMessages extends NLS {
 	//
 	//
 	//
-	public static String HQLEditorStorage_none;
 	//
 
 	//
@@ -86,12 +84,6 @@ public class BasicHibernateMessages extends NLS {
 
 
 
-	
-	public static String AddRemoveTableComposite_no_dependencies;
-	public static String AddRemoveTableComposite_control_depth_level;
-	
-	
-	
 	
 	//
 	static {
