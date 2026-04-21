@@ -1,10 +1,10 @@
 package org.hibernate.tool.eclipse.orm.console.core;
 
 import org.hibernate.tool.eclipse.orm.query.HQLQueryPage;
-import org.hibernate.tool.eclipse.orm.query.JavaPage;
+import org.hibernate.tool.eclipse.orm.query.CriteriaQueryPage;
 import org.hibernate.tool.eclipse.orm.query.QueryHelper;
 import org.hibernate.tool.eclipse.orm.query.QueryInputModel;
-import org.hibernate.tool.eclipse.orm.query.QueryPage;
+import org.hibernate.tool.eclipse.orm.query.IQueryPage;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ISession;
 
 public class QueryExecutor {
@@ -16,15 +16,15 @@ public class QueryExecutor {
 		this.consoleConfiguration = consoleConfiguration;
 	}
 
-	public QueryPage executeHQLQuery(final String hql) {
+	public IQueryPage executeHQLQuery(final String hql) {
 		return executeHQLQuery(hql, new QueryInputModel(
 				consoleConfiguration.getRuntimeManager().getHibernateService()));
 	}
 
-	public QueryPage executeHQLQuery(final String hql, final QueryInputModel queryParameters) {
-		QueryPage qp = (QueryPage) consoleConfiguration.execute(() -> {
+	public IQueryPage executeHQLQuery(final String hql, final QueryInputModel queryParameters) {
+		IQueryPage qp = (IQueryPage) consoleConfiguration.execute(() -> {
 			ISession session = consoleConfiguration.getSessionFactory().openSession();
-			QueryPage page = new HQLQueryPage(
+			IQueryPage page = new HQLQueryPage(
 					consoleConfiguration.getRuntimeManager().getHibernateService(),
 					consoleConfiguration.getName(), hql, queryParameters);
 			page.setSession(session);
@@ -35,10 +35,10 @@ public class QueryExecutor {
 		return qp;
 	}
 
-	public QueryPage executeBSHQuery(final String queryString, final QueryInputModel model) {
-		QueryPage qp = (QueryPage) consoleConfiguration.execute(() -> {
+	public IQueryPage executeBSHQuery(final String queryString, final QueryInputModel model) {
+		IQueryPage qp = (IQueryPage) consoleConfiguration.execute(() -> {
 			ISession session = consoleConfiguration.getSessionFactory().openSession();
-			QueryPage page = new JavaPage(consoleConfiguration.getName(), queryString, model);
+			IQueryPage page = new CriteriaQueryPage(consoleConfiguration.getName(), queryString, model);
 			page.setSession(session);
 			return page;
 		});

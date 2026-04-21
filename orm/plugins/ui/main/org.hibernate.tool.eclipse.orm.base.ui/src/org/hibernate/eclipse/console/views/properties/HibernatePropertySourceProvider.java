@@ -25,7 +25,7 @@ import org.eclipse.ui.views.properties.IPropertySource;
 import org.eclipse.ui.views.properties.IPropertySourceProvider;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
-import org.hibernate.tool.eclipse.orm.query.QueryPage;
+import org.hibernate.tool.eclipse.orm.query.IQueryPage;
 import org.hibernate.eclipse.console.views.QueryPageTabView;
 import org.hibernate.eclipse.ui.console.common.ConsoleExtensionUI;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IRuntimeManager;
@@ -43,15 +43,15 @@ public class HibernatePropertySourceProvider implements IPropertySourceProvider 
 		if (object==null) {
 			return null;
 		}
-		else if (object instanceof QueryPage)
+		else if (object instanceof IQueryPage)
 		{
-			return new QueryPagePropertySource( (QueryPage)object);
+			return new QueryPagePropertySource( (IQueryPage)object);
 		}
 		else if (object instanceof IPropertySource) {
 			return (IPropertySource) object;
 		}
 		else {
-			QueryPage selectedQueryPage = view.getSelectedQueryPage();
+			IQueryPage selectedQueryPage = view.getSelectedQueryPage();
 			if (selectedQueryPage != null) {
 				String configName = selectedQueryPage.getConsoleConfigurationName();
 				ConsoleConfiguration cc = KnownConfigurations.getInstance().find(configName);

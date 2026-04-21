@@ -50,7 +50,7 @@ import org.hibernate.tool.eclipse.orm.console.core.node.BaseNode;
 import org.hibernate.tool.eclipse.orm.console.core.node.ConfigurationListNode;
 import org.hibernate.tool.eclipse.common.base.core.logging.LoggingStreamProvider;
 import org.hibernate.tool.eclipse.common.base.core.logging.PluginLogAppender;
-import org.hibernate.tool.eclipse.orm.query.QueryPage;
+import org.hibernate.tool.eclipse.orm.query.IQueryPage;
 import org.hibernate.tool.eclipse.orm.query.QueryPageModel;
 import org.hibernate.tool.eclipse.orm.query.QueryParameter;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
@@ -85,7 +85,7 @@ public class KnownConfigurations  {
 			});
 		}
 
-		public void queryPageCreated(QueryPage qp) {
+		public void queryPageCreated(IQueryPage qp) {
 			queryPages.add(qp);
 		}
 		

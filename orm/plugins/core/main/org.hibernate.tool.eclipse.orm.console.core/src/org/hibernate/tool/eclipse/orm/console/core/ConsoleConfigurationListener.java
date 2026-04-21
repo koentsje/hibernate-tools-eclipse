@@ -21,7 +21,7 @@
  */
 package org.hibernate.tool.eclipse.orm.console.core;
 
-import org.hibernate.tool.eclipse.orm.query.QueryPage;
+import org.hibernate.tool.eclipse.orm.query.IQueryPage;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
 
 
@@ -30,7 +30,7 @@ import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
  */
 public interface ConsoleConfigurationListener {
 	
-	public void queryPageCreated(QueryPage qp);
+	public void queryPageCreated(IQueryPage qp);
 	
 	/** 
 	 * called when the factory has just been created 

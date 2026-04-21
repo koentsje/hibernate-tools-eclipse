@@ -26,24 +26,24 @@ import org.eclipse.ui.views.properties.IPropertyDescriptor;
 import org.eclipse.ui.views.properties.IPropertySource2;
 import org.eclipse.ui.views.properties.PropertyDescriptor;
 import org.eclipse.ui.views.properties.TextPropertyDescriptor;
-import org.hibernate.tool.eclipse.orm.query.QueryPage;
+import org.hibernate.tool.eclipse.orm.query.IQueryPage;
 import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
 
 public class QueryPagePropertySource implements IPropertySource2
 {
-	private final QueryPage page;
+	private final IQueryPage page;
 
 	static IPropertyDescriptor[] descriptors;
 
-	private static final String QUERY_TEXT = "QueryPage.queryString"; //$NON-NLS-1$
+	private static final String QUERY_TEXT = "IQueryPage.queryString"; //$NON-NLS-1$
 
-	private static final Object CONFIGURATION_TEXT = "QueryPage.consoleConfiguration"; //$NON-NLS-1$
+	private static final Object CONFIGURATION_TEXT = "IQueryPage.consoleConfiguration"; //$NON-NLS-1$
 
-	private static final String QUERY_SIZE = "QueryPage.size"; //$NON-NLS-1$
+	private static final String QUERY_SIZE = "IQueryPage.size"; //$NON-NLS-1$
 
-	private static final String QUERY_TIME = "QueryPage.time"; //$NON-NLS-1$
+	private static final String QUERY_TIME = "IQueryPage.time"; //$NON-NLS-1$
 
-	private static final String TAB_NAME = "QueryPage.tabName"; //$NON-NLS-1$
+	private static final String TAB_NAME = "IQueryPage.tabName"; //$NON-NLS-1$
 
 	static {
 		descriptors = new IPropertyDescriptor[5];
@@ -83,7 +83,7 @@ public class QueryPagePropertySource implements IPropertySource2
         descriptors[4] = descriptor;
     }
 
-	public QueryPagePropertySource (QueryPage page) {
+	public QueryPagePropertySource (IQueryPage page) {
 		this.page = page;
 	}
 

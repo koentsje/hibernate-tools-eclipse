@@ -19,7 +19,7 @@ import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfigurationListener;
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurationsListener;
-import org.hibernate.tool.eclipse.orm.query.QueryPage;
+import org.hibernate.tool.eclipse.orm.query.IQueryPage;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
 
 /**
@@ -79,7 +79,7 @@ public abstract class ConsoleConfigReadyUseBaseAction extends ConsoleConfigurati
 		selectionChanged(getStructuredSelection());
 	}
 
-	public void queryPageCreated(QueryPage qp) {
+	public void queryPageCreated(IQueryPage qp) {
 	}
 
 	public void sessionFactoryBuilt(ConsoleConfiguration ccfg, ISessionFactory builtSessionFactory) {

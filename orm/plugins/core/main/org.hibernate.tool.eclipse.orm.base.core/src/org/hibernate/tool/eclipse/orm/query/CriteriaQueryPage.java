@@ -37,7 +37,7 @@ import bsh.Interpreter;
  *
  *
  */
-public class JavaPage extends AbstractQueryPage {
+public class CriteriaQueryPage extends AbstractQueryPage {
 
     private String criteriaCode;
 
@@ -49,7 +49,7 @@ public class JavaPage extends AbstractQueryPage {
      * @param model
      * @param session2
      */
-    public JavaPage(String consoleConfigurationName, String criteriaCode, QueryInputModel model) {
+    public CriteriaQueryPage(String consoleConfigurationName, String criteriaCode, QueryInputModel model) {
 		super(consoleConfigurationName, model);
         this.criteriaCode =  criteriaCode;
 		setTabName(getQueryString().replace('\n', ' ').replace('\r', ' '));

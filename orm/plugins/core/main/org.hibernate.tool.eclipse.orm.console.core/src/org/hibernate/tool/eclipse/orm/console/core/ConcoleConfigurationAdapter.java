@@ -10,7 +10,7 @@
  ******************************************************************************/
 package org.hibernate.tool.eclipse.orm.console.core;
 
-import org.hibernate.tool.eclipse.orm.query.QueryPage;
+import org.hibernate.tool.eclipse.orm.query.IQueryPage;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
 
 
@@ -31,7 +31,7 @@ import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
 public abstract class ConcoleConfigurationAdapter implements
 		ConsoleConfigurationListener {
 
-	public void queryPageCreated(QueryPage qp) {}
+	public void queryPageCreated(IQueryPage qp) {}
 
 	public void sessionFactoryBuilt(ConsoleConfiguration ccfg,
 			ISessionFactory builtSessionFactory) {}

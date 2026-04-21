@@ -1,7 +1,7 @@
 package org.hibernate.eclipse.ui.console.common;
 
 import org.eclipse.ui.views.properties.IPropertySource;
-import org.hibernate.tool.eclipse.orm.query.QueryPage;
+import org.hibernate.tool.eclipse.orm.query.IQueryPage;
 import org.hibernate.tool.eclipse.common.runtime.HibernateRuntimeException;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IHQLCodeAssist;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IRuntimeManager;
@@ -35,7 +35,7 @@ public class ConsoleExtensionUI {
     }
 
     public IPropertySource getPropertySource(Object object,
-            QueryPage selectedQueryPage) {
+            IQueryPage selectedQueryPage) {
         ISession currentSession = ((ISession) selectedQueryPage.getSession());
         if ((currentSession.isOpen() && currentSession.contains(object))
                 || hasMetaData(object, currentSession)) {

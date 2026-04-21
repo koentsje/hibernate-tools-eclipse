@@ -15,7 +15,7 @@ import java.util.List;
 import org.eclipse.jface.action.Action;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
-import org.hibernate.tool.eclipse.orm.query.QueryPage;
+import org.hibernate.tool.eclipse.orm.query.IQueryPage;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 
 /**
@@ -33,9 +33,9 @@ public class CloseAllQueryPageAction extends Action {
 
 	@Override
 	public void run() {
-		List<QueryPage> pages = KnownConfigurations.getInstance().getQueryPageModel().getPagesAsList();
+		List<IQueryPage> pages = KnownConfigurations.getInstance().getQueryPageModel().getPagesAsList();
 		for (int i = 0; i < pages.size(); i++ ) {
-			KnownConfigurations.getInstance().getQueryPageModel().remove( (QueryPage) pages.get(i) );
+			KnownConfigurations.getInstance().getQueryPageModel().remove( (IQueryPage) pages.get(i) );
 		}
 	}
 

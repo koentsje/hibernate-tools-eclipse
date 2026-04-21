@@ -37,7 +37,7 @@ public class QueryPageModel {
 		void pagesChanged(QueryPageModel model);
 	}
 
-	private final List<QueryPage> pages = new ArrayList<QueryPage>();
+	private final List<IQueryPage> pages = new ArrayList<IQueryPage>();
 	private final List<Listener> listeners = new ArrayList<Listener>();
 
 	PropertyChangeListener pcl = new PropertyChangeListener() {
@@ -50,13 +50,13 @@ public class QueryPageModel {
 		return pages.size();
 	}
 
-	public QueryPage get(int index) {
+	public IQueryPage get(int index) {
 		return pages.get(index);
 	}
 
-	public void add(QueryPage qp) {
+	public void add(IQueryPage qp) {
 		for (int i = pages.size() - 1; i >= 0; i--) {
-			QueryPage element = pages.get(i);
+			IQueryPage element = pages.get(i);
 			if (!element.isSticky()) {
 				pages.remove(i);
 			}
@@ -66,14 +66,14 @@ public class QueryPageModel {
 	}
 
 	public void remove(int i) {
-		QueryPage qp = pages.remove(i);
+		IQueryPage qp = pages.remove(i);
 		if (qp != null) {
 			qp.removePropertyChangeListener(pcl);
 		}
 		firePagesChanged();
 	}
 
-	public boolean remove(QueryPage page) {
+	public boolean remove(IQueryPage page) {
 		boolean b = pages.remove(page);
 		if (b) {
 			page.release();
@@ -82,12 +82,12 @@ public class QueryPageModel {
 		return b;
 	}
 
-	public Iterator<QueryPage> getPages() {
+	public Iterator<IQueryPage> getPages() {
 		return pages.iterator();
 	}
 
-	public List<QueryPage> getPagesAsList() {
-		return new ArrayList<QueryPage>(pages);
+	public List<IQueryPage> getPagesAsList() {
+		return new ArrayList<IQueryPage>(pages);
 	}
 
 	public void addListener(Listener listener) {

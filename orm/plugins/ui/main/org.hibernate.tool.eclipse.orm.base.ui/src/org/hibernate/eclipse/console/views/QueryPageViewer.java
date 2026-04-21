@@ -49,7 +49,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
-import org.hibernate.tool.eclipse.orm.query.QueryPage;
+import org.hibernate.tool.eclipse.orm.query.IQueryPage;
 import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 
@@ -67,8 +67,8 @@ public class QueryPageViewer {
 		public String getColumnText(Object element, int columnIndex) {
 			try {
 				Object value = element; //TODO: should just be a columnprovider per querypage....
-				if (element instanceof QueryPage) {
-					value = ( (QueryPage) element).getList().get(columnIndex);
+				if (element instanceof IQueryPage) {
+					value = ( (IQueryPage) element).getList().get(columnIndex);
 				}
 				if (value == null) {
 					return ""; //$NON-NLS-1$
@@ -115,8 +115,8 @@ public class QueryPageViewer {
 	// should map to our table model instead
 	static class ContentProviderImpl implements IStructuredContentProvider {
 		public Object[] getElements(Object inputElement) {
-			if (inputElement instanceof QueryPage) {
-				QueryPage qp = ( (QueryPage) inputElement);
+			if (inputElement instanceof IQueryPage) {
+				IQueryPage qp = ( (IQueryPage) inputElement);
 				Object[] objects = qp.getList().toArray();
 				if(qp.getExceptions().isEmpty() ) {
 					return ensureNotNull(objects);
@@ -148,12 +148,12 @@ public class QueryPageViewer {
 	}
 
 
-	private final QueryPage queryPage;
+	private final IQueryPage queryPage;
 	private TableViewer tableViewer;
 	private CTabItem tabItem;
 	private final QueryPageTabView qrView;
 
-	public QueryPageViewer(QueryPageTabView qrView, QueryPage queryPage) {
+	public QueryPageViewer(QueryPageTabView qrView, IQueryPage queryPage) {
 		this.qrView = qrView;
 		this.queryPage = queryPage;
 
@@ -304,7 +304,7 @@ public class QueryPageViewer {
 		this.tabItem.dispose();
 	}
 
-	protected QueryPage getQueryPage() {
+	protected IQueryPage getQueryPage() {
 		return this.queryPage;
 	}
 

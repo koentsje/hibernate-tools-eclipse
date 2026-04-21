@@ -28,7 +28,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.actions.SelectionListenerAction;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
-import org.hibernate.tool.eclipse.orm.query.QueryPage;
+import org.hibernate.tool.eclipse.orm.query.IQueryPage;
 import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 
@@ -60,7 +60,7 @@ public class CloseQueryPageAction extends SelectionListenerAction {
 			(IStructuredSelection) this.selectionProvider.getSelection();
 		if (!selection.isEmpty() ) {
 			for (Iterator<?> i = selection.iterator(); i.hasNext(); ) {
-				KnownConfigurations.getInstance().getQueryPageModel().remove( (QueryPage) i.next() );
+				KnownConfigurations.getInstance().getQueryPageModel().remove( (IQueryPage) i.next() );
 			}
 		}
 	}

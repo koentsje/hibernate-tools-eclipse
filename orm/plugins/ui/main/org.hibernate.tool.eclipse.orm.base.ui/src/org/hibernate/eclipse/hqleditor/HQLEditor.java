@@ -61,7 +61,7 @@ import org.eclipse.ui.views.contentoutline.IContentOutlinePage;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
 import org.hibernate.tool.eclipse.orm.console.core.QueryExecutor;
-import org.hibernate.tool.eclipse.orm.query.QueryPage;
+import org.hibernate.tool.eclipse.orm.query.IQueryPage;
 import org.hibernate.eclipse.console.AbstractQueryEditor;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
@@ -436,7 +436,7 @@ public class HQLEditor extends AbstractQueryEditor {
 		   return getSourceViewer();
 	   }
 
-	protected QueryPage queryPage = null;
+	protected IQueryPage queryPage = null;
 
 	public void executeQuery(ConsoleConfiguration cfg) {
 		final IWorkbenchPage activePage = getEditorSite().getPage();

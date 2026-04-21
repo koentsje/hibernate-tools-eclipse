@@ -32,7 +32,7 @@ import org.hibernate.tool.eclipse.orm.runtime.spi.ISession;
  * @author MAX
  *
  */
-public abstract class AbstractQueryPage implements QueryPage {
+public abstract class AbstractQueryPage implements IQueryPage {
 
 	protected PropertyChangeSupport pcs = new PropertyChangeSupport(this);    
     private int id;

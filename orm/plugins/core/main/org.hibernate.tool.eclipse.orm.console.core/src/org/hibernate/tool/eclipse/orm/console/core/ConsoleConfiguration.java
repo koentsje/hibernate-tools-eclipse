@@ -31,7 +31,7 @@ import java.util.concurrent.Callable;
 import org.hibernate.tool.eclipse.orm.console.core.execution.ExecutionContext;
 import org.hibernate.tool.eclipse.orm.console.core.execution.ExecutionContextHolder;
 import org.hibernate.tool.eclipse.orm.console.core.preferences.ConsoleConfigurationPreferences;
-import org.hibernate.tool.eclipse.orm.query.QueryPage;
+import org.hibernate.tool.eclipse.orm.query.IQueryPage;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IEnvironment;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IRuntimeManager;
@@ -175,7 +175,7 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
 		}
 	}
 
-	public void fireQueryPageCreated(QueryPage qp) {
+	public void fireQueryPageCreated(IQueryPage qp) {
 		for (ConsoleConfigurationListener view : cloneConsoleCfgListeners()) {
 			view.queryPageCreated(qp);
 		}

@@ -30,7 +30,7 @@ import org.hibernate.tool.eclipse.orm.runtime.spi.ISession;
  * @author MAX
  *
  */
-public interface QueryPage {
+public interface IQueryPage {
 	/**
 	 * Returns query run time in milliseconds
 	 * @return
