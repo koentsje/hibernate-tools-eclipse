@@ -59,6 +59,7 @@ import org.eclipse.ui.texteditor.ITextEditorActionDefinitionIds;
 import org.eclipse.ui.texteditor.TextOperationAction;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
+import org.hibernate.tool.eclipse.orm.console.core.QueryExecutor;
 import org.hibernate.tool.eclipse.orm.query.QueryPage;
 import org.hibernate.eclipse.console.AbstractQueryEditor;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
@@ -139,11 +140,12 @@ public class CriteriaEditor extends AbstractQueryEditor {
 			// ignore
 		}
 		
+		QueryExecutor executor = new QueryExecutor(cfg);
 		if (queryPage == null || !getPinToOneResTab()) {
-			queryPage = cfg.executeBSHQuery(getQueryString(), getQueryInputModel().getCopyForQuery() );
+			queryPage = executor.executeBSHQuery(getQueryString(), getQueryInputModel().getCopyForQuery() );
 		} else {
 			KnownConfigurations.getInstance().getQueryPageModel().remove(queryPage);
-			queryPage = cfg.executeBSHQuery(getQueryString(), getQueryInputModel().getCopyForQuery());
+			queryPage = executor.executeBSHQuery(getQueryString(), getQueryInputModel().getCopyForQuery());
 		}
 	}
 

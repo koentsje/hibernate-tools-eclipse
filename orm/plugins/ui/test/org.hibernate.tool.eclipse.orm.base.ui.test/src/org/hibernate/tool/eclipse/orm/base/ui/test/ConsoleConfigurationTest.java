@@ -11,6 +11,7 @@ import org.hibernate.tool.eclipse.orm.console.core.ConcoleConfigurationAdapter;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.HibernateConsoleRuntimeException;
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
+import org.hibernate.tool.eclipse.orm.console.core.QueryExecutor;
 import org.hibernate.tool.eclipse.orm.query.QueryParameter;
 import org.hibernate.tool.eclipse.orm.query.QueryInputModel;
 import org.hibernate.tool.eclipse.orm.query.QueryPage;
@@ -120,7 +121,7 @@ public class ConsoleConfigurationTest {
 
 		}
 
-		QueryPage qp = consoleCfg.executeHQLQuery("from java.lang.Object"); //$NON-NLS-1$
+		QueryPage qp = new QueryExecutor(consoleCfg).executeHQLQuery("from java.lang.Object"); //$NON-NLS-1$
 		Assert.assertNotNull(qp);
 		Assert.assertEquals(1, listener.queryCreated);
 
@@ -142,7 +143,7 @@ public class ConsoleConfigurationTest {
 
 		}
 
-		QueryPage qp = consoleCfg.executeHQLQuery("from java.lang.Object --this is my comment"); //$NON-NLS-1$
+		QueryPage qp = new QueryExecutor(consoleCfg).executeHQLQuery("from java.lang.Object --this is my comment"); //$NON-NLS-1$
 		Assert.assertNotNull(qp);
 	}
 	
@@ -192,7 +193,7 @@ public class ConsoleConfigurationTest {
 		model.addParameter(paramB);
 		model.addParameter(paramOrdered);
 		
-		QueryPage qp = consoleCfg.executeHQLQuery("select count(*) from java.awt.Button where 1 in ( ?, :a, :b )", model); //$NON-NLS-1$
+		QueryPage qp = new QueryExecutor(consoleCfg).executeHQLQuery("select count(*) from java.awt.Button where 1 in ( ?, :a, :b )", model); //$NON-NLS-1$
 		Assert.assertNotNull(qp);
 		try{
 			qp.getList();//execute the query

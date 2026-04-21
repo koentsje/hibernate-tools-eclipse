@@ -60,6 +60,7 @@ import org.eclipse.ui.texteditor.TextOperationAction;
 import org.eclipse.ui.views.contentoutline.IContentOutlinePage;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
+import org.hibernate.tool.eclipse.orm.console.core.QueryExecutor;
 import org.hibernate.tool.eclipse.orm.query.QueryPage;
 import org.hibernate.eclipse.console.AbstractQueryEditor;
 import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
@@ -444,11 +445,12 @@ public class HQLEditor extends AbstractQueryEditor {
 		} catch (PartInitException e) {	
 			// ignore
 		}
+		QueryExecutor executor = new QueryExecutor(cfg);
 		if (queryPage == null || !getPinToOneResTab()) {
-			queryPage = cfg.executeHQLQuery(getQueryString(), getQueryInputModel().getCopyForQuery());
+			queryPage = executor.executeHQLQuery(getQueryString(), getQueryInputModel().getCopyForQuery());
 		} else {
 			KnownConfigurations.getInstance().getQueryPageModel().remove(queryPage);
-			queryPage = cfg.executeHQLQuery(getQueryString(), getQueryInputModel().getCopyForQuery());
+			queryPage = executor.executeHQLQuery(getQueryString(), getQueryInputModel().getCopyForQuery());
 		}
 	}
 

@@ -54,6 +54,7 @@ import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.PropertySheetPage;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
+import org.hibernate.tool.eclipse.orm.console.core.QueryExecutor;
 import org.hibernate.tool.eclipse.orm.console.core.node.BaseNode;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.console.actions.EditConsoleConfiguration;
@@ -193,7 +194,7 @@ public class KnownConfigurationsView extends ViewPart {
 							} catch (PartInitException e) {
 								HibernateBasePlugin.getDefault().logErrorMessage("Can't show QueryPageTabView.", e);	//$NON-NLS-1$
 							}
-							consoleConfiguration.executeHQLQuery( hql );
+							new QueryExecutor(consoleConfiguration).executeHQLQuery( hql );
 						}
 						/**/
 					}

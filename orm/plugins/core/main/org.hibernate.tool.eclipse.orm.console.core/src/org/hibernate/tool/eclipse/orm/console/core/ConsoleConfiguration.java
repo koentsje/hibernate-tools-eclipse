@@ -31,15 +31,10 @@ import java.util.concurrent.Callable;
 import org.hibernate.tool.eclipse.orm.console.core.execution.ExecutionContext;
 import org.hibernate.tool.eclipse.orm.console.core.execution.ExecutionContextHolder;
 import org.hibernate.tool.eclipse.orm.console.core.preferences.ConsoleConfigurationPreferences;
-import org.hibernate.tool.eclipse.orm.query.HQLQueryPage;
-import org.hibernate.tool.eclipse.orm.query.JavaPage;
-import org.hibernate.tool.eclipse.orm.query.QueryHelper;
-import org.hibernate.tool.eclipse.orm.query.QueryInputModel;
 import org.hibernate.tool.eclipse.orm.query.QueryPage;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IEnvironment;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IRuntimeManager;
-import org.hibernate.tool.eclipse.orm.runtime.spi.ISession;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
 
 public class ConsoleConfiguration implements ExecutionContextHolder {
@@ -160,44 +155,7 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
 	}
 
 
-	int execcount;
 	ArrayList<ConsoleConfigurationListener> consoleCfgListeners = new ArrayList<ConsoleConfigurationListener>();
-
-	public QueryPage executeHQLQuery(final String hql) {
-		return executeHQLQuery(hql, new QueryInputModel(getRuntimeManager().getHibernateService()));
-	}
-
-	public QueryPage executeHQLQuery(final String hql, final QueryInputModel queryParameters) {
-		QueryPage qp = (QueryPage)execute(() -> {
-			ISession session = getSessionFactory().openSession();
-			QueryPage page = new HQLQueryPage(
-					getRuntimeManager().getHibernateService(),
-					getName(), hql, queryParameters);
-			page.setSession(session);
-			return page;
-		});
-		qp.setId(++execcount);
-		fireQueryPageCreated(qp);
-		return qp;
-	}
-
-	public QueryPage executeBSHQuery(final String queryString, final QueryInputModel model) {
-		QueryPage qp = (QueryPage)execute(() -> {
-			ISession session = getSessionFactory().openSession();
-			QueryPage page = new JavaPage(getName(), queryString, model);
-			page.setSession(session);
-			return page;
-		});
-		qp.setId(++execcount);
-		fireQueryPageCreated(qp);
-		return qp;
-	}
-
-	public String generateSQL(final String query) {
-		return (String) execute(() -> {
-			return QueryHelper.generateSQL(getSessionFactory(), query, getRuntimeManager().getHibernateService());
-		});
-	}
 
 	@SuppressWarnings("unchecked")
 	// clone listeners to thread safe iterate over array
@@ -217,7 +175,7 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
 		}
 	}
 
-	private void fireQueryPageCreated(QueryPage qp) {
+	public void fireQueryPageCreated(QueryPage qp) {
 		for (ConsoleConfigurationListener view : cloneConsoleCfgListeners()) {
 			view.queryPageCreated(qp);
 		}
