@@ -13,7 +13,7 @@ package org.hibernate.tool.eclipse.ui.diagram.editors.actions;
 import org.eclipse.jface.action.Action;
 import org.eclipse.swt.custom.BusyIndicator;
 import org.eclipse.swt.widgets.Display;
-import org.hibernate.tool.eclipse.ui.diagram.DiagramViewerMessages;
+import org.hibernate.tool.eclipse.orm.diagram.ui.nls.Messages;
 import org.hibernate.tool.eclipse.ui.diagram.editors.DiagramContentOutlinePage;
 import org.hibernate.tool.eclipse.ui.diagram.editors.DiagramViewer;
 import org.hibernate.tool.eclipse.ui.diagram.editors.model.OrmDiagram;
@@ -32,14 +32,14 @@ public class LexicalSortingAction extends Action {
 	
 	@SuppressWarnings("restriction")
 	public LexicalSortingAction(DiagramViewer diagramViewer, DiagramContentOutlinePage outlinePage) {
-		super(DiagramViewerMessages.DiagramViewer_OutlinePage_Sort_label, AS_CHECK_BOX);
+		super(Messages.DiagramViewer_OutlinePage_Sort_label, AS_CHECK_BOX);
 		setId(ACTION_ID);
 		this.diagramViewer = diagramViewer;
 		this.outlinePage = outlinePage;
-		setText(DiagramViewerMessages.DiagramViewer_OutlinePage_Sort_label);
+		setText(Messages.DiagramViewer_OutlinePage_Sort_label);
 		org.eclipse.jdt.internal.ui.JavaPluginImages.setLocalImageDescriptors(this, "alphab_sort_co.gif"); //$NON-NLS-1$
-		setToolTipText(DiagramViewerMessages.DiagramViewer_OutlinePage_Sort_tooltip);
-		setDescription(DiagramViewerMessages.DiagramViewer_OutlinePage_Sort_description);
+		setToolTipText(Messages.DiagramViewer_OutlinePage_Sort_tooltip);
+		setDescription(Messages.DiagramViewer_OutlinePage_Sort_description);
 
 		boolean checked = getOrmDiagram().isDeepIntoSort();
 		setChecked(checked);

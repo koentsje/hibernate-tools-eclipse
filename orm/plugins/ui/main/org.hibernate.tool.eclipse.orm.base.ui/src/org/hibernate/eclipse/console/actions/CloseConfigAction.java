@@ -15,7 +15,7 @@ import java.util.Iterator;
 import org.eclipse.jface.viewers.StructuredViewer;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.eclipse.console.viewers.xpl.MTreeViewer;
 
@@ -37,8 +37,8 @@ public class CloseConfigAction extends ConsoleConfigReadyUseBaseAction {
 	}
 
 	public CloseConfigAction(StructuredViewer sv) {
-		super(OrmBaseUiMessages.CloseConfigAction_close_config);
-		setText(OrmBaseUiMessages.CloseConfigAction_close_config);
+		super(Messages.CloseConfigAction_close_config);
+		setText(Messages.CloseConfigAction_close_config);
 		setImageDescriptor(EclipseImages.getImageDescriptor(ImageConstants.CLOSE));
 		setId(CLOSECONFIG_ACTIONID);
 		init(sv);

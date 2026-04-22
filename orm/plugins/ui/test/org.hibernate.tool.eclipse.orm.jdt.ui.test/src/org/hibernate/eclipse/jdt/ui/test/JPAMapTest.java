@@ -30,7 +30,7 @@ import org.eclipse.jdt.core.dom.AST;
 import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.ASTParser;
 import org.eclipse.osgi.util.NLS;
-import org.hibernate.eclipse.console.test.ConsoleTestMessages;
+import org.hibernate.tool.eclipse.orm.jdt.ui.test.nls.Messages;
 import org.hibernate.eclipse.console.test.project.TestProject;
 import org.hibernate.eclipse.console.test.utils.FilesTransfer;
 import org.hibernate.tool.eclipse.orm.console.core.utils.ProjectUtils;
@@ -247,7 +247,7 @@ public class JPAMapTest extends TestCase {
 		File resourceFolder = getResourceItem(RESOURCE_PATH);
 		if (!resourceFolder.exists()) {
 			String out = NLS.bind(
-					ConsoleTestMessages.MappingTestProject_folder_not_found,
+					Messages.MappingTestProject_folder_not_found,
 					RESOURCE_PATH);
 			throw new RuntimeException(out);
 		}
@@ -257,7 +257,7 @@ public class JPAMapTest extends TestCase {
 		File resourceFolderLib = getResourceItem(TESTRESOURCE_PATH);
 		if (!resourceFolderLib.exists()) {
 			String out = NLS.bind(
-					ConsoleTestMessages.MappingTestProject_folder_not_found,
+					Messages.MappingTestProject_folder_not_found,
 					RESOURCE_PATH);
 			throw new RuntimeException(out);
 		}

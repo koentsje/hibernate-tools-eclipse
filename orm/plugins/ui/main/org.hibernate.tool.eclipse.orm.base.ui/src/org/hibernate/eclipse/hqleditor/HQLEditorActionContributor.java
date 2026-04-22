@@ -34,9 +34,9 @@ import org.eclipse.ui.editors.text.TextEditorActionContributor;
 import org.eclipse.ui.part.EditorActionBarContributor;
 import org.eclipse.ui.texteditor.ITextEditor;
 import org.eclipse.ui.texteditor.RetargetTextEditorAction;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.tool.eclipse.orm.console.core.ui.QueryEditor;
 import org.hibernate.eclipse.console.actions.ExecuteQueryAction;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 
 
 
@@ -57,7 +57,7 @@ public class HQLEditorActionContributor extends TextEditorActionContributor {
      */
     public HQLEditorActionContributor() {
         super();
-        ResourceBundle bundle = ResourceBundle.getBundle(BasicHibernateMessages.BUNDLE_NAME);
+        ResourceBundle bundle = ResourceBundle.getBundle(Messages.BUNDLE_NAME);
 
         contentAssistProposalAction = new RetargetTextEditorAction( bundle, "HQLEditor_ContentAssistProposal_" );//$NON-NLS-1$
         contentAssistTipAction =  new RetargetTextEditorAction( bundle, "HQLEditor_ContentAssistTip_" ); //$NON-NLS-1$

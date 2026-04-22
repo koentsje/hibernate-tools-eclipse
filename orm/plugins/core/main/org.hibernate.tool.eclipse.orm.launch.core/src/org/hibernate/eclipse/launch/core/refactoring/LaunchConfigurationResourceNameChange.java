@@ -23,7 +23,7 @@ import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.ltk.core.refactoring.Change;
 import org.eclipse.ltk.core.refactoring.RefactoringStatus;
 import org.eclipse.osgi.util.NLS;
-import org.hibernate.eclipse.launch.LaunchMessages;
+import org.hibernate.tool.eclipse.orm.launch.core.nls.Messages;
 
 /**
  * @author Dmitry Geraskov
@@ -58,7 +58,7 @@ public class LaunchConfigurationResourceNameChange extends Change {
 	 * @see org.eclipse.ltk.core.refactoring.Change#getName()
 	 */
 	public String getName() {
-		return NLS.bind(LaunchMessages.LaunchConfigurationResourceNameChange_update_resource_path_in_launch_cfg, fLaunchConfiguration.getName());
+		return NLS.bind(Messages.LaunchConfigurationResourceNameChange_update_resource_path_in_launch_cfg, fLaunchConfiguration.getName());
 	}
 
 	/* (non-Javadoc)

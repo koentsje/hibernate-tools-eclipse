@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
-import org.hibernate.tool.eclipse.orm.console.core.ConsoleMessages;
+import org.hibernate.tool.eclipse.orm.console.core.nls.Messages;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
 import org.hibernate.tool.eclipse.common.runtime.HibernateRuntimeException;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IClassMetadata;
@@ -145,7 +145,7 @@ public class NodeFactory {
 			}
 
 			public String getName() {
-				return ConsoleMessages.NodeFactory_unknown + className;
+				return Messages.NodeFactory_unknown + className;
 			}
 
 			protected void checkChildren() {

@@ -12,7 +12,7 @@ package org.hibernate.tool.eclipse.ui.diagram.editors.actions;
 
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
-import org.hibernate.tool.eclipse.ui.diagram.DiagramViewerMessages;
+import org.hibernate.tool.eclipse.orm.diagram.ui.nls.Messages;
 import org.hibernate.tool.eclipse.ui.diagram.editors.DiagramViewer;
 import org.hibernate.tool.eclipse.ui.diagram.editors.command.ExpandAllCommand;
 
@@ -26,7 +26,7 @@ public class ExpandAllAction extends DiagramBaseAction {
 	public ExpandAllAction(DiagramViewer editor) {
 		super(editor);
 		setId(ACTION_ID);
-		setText(DiagramViewerMessages.ExpandAllAction_expand_all);
+		setText(Messages.ExpandAllAction_expand_all);
 		//setImageDescriptor(ImageDescriptor.createFromFile(
 		//		DiagramViewer.class, "icons/export.png"));
 	}

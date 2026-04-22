@@ -11,7 +11,7 @@
 package org.hibernate.tool.eclipse.ui.diagram.editors.command;
 
 import org.eclipse.gef.commands.Command;
-import org.hibernate.tool.eclipse.ui.diagram.DiagramViewerMessages;
+import org.hibernate.tool.eclipse.orm.diagram.ui.nls.Messages;
 import org.hibernate.tool.eclipse.ui.diagram.rulers.DiagramGuide;
 import org.hibernate.tool.eclipse.ui.diagram.rulers.DiagramRuler;
 
@@ -25,7 +25,7 @@ public class CreateGuideCommand extends Command {
 	private int position;
 
 	public CreateGuideCommand(DiagramRuler parent, int position) {
-		super(DiagramViewerMessages.CreateGuideCommand_Label);
+		super(Messages.CreateGuideCommand_Label);
 		this.parent = parent;
 		this.position = position;
 	}

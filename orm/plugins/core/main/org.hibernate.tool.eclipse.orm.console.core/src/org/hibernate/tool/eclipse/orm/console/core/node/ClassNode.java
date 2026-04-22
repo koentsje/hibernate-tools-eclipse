@@ -24,7 +24,7 @@ package org.hibernate.tool.eclipse.orm.console.core.node;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.hibernate.tool.eclipse.orm.console.core.ConsoleMessages;
+import org.hibernate.tool.eclipse.orm.console.core.nls.Messages;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IClassMetadata;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IType;
@@ -132,7 +132,7 @@ class ClassNode extends BaseNode {
 			if(factory.getService().isInitialized(o) ) {
 				return super.renderLabel(fullyQualifiedNames) + " = " + o;	 //$NON-NLS-1$
 			} else {
-				return super.renderLabel(fullyQualifiedNames) + " = " + ConsoleMessages.ClassNode_uninitialized_proxy; //$NON-NLS-1$
+				return super.renderLabel(fullyQualifiedNames) + " = " + Messages.ClassNode_uninitialized_proxy; //$NON-NLS-1$
 			}
 
 		} else {

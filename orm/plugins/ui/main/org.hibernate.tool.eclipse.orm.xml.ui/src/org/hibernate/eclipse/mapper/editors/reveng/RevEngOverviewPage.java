@@ -35,7 +35,7 @@ import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.ui.forms.widgets.TableWrapData;
 import org.eclipse.ui.forms.widgets.TableWrapLayout;
-import org.hibernate.eclipse.mapper.MapperMessages;
+import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
 import org.hibernate.eclipse.mapper.editors.ReverseEngineeringEditor;
 
 public class RevEngOverviewPage extends RevEngFormEditorPart {
@@ -43,7 +43,7 @@ public class RevEngOverviewPage extends RevEngFormEditorPart {
 	public static final String PART_ID = "overview"; //$NON-NLS-1$
 
 	public RevEngOverviewPage(ReverseEngineeringEditor reditor) {
-		super(reditor, PART_ID, MapperMessages.RevEngOverviewPage_overview);
+		super(reditor, PART_ID, Messages.RevEngOverviewPage_overview);
 		this.reditor = reditor;
 	}
 
@@ -86,7 +86,7 @@ public class RevEngOverviewPage extends RevEngFormEditorPart {
 
 	private void createContentsSection() {
 		String sectionTitle;
-		sectionTitle = MapperMessages.RevEngOverviewPage_contents;
+		sectionTitle = Messages.RevEngOverviewPage_contents;
 		Section section = createStaticSection(
 							getManagedForm().getToolkit(),
 							getManagedForm().getForm().getBody(),
@@ -98,7 +98,7 @@ public class RevEngOverviewPage extends RevEngFormEditorPart {
 		container.setLayout(layout);
 		container.setLayoutData(new TableWrapData(TableWrapData.FILL_GRAB));
 
-		FormText text = createClient(container, MapperMessages.RevEngOverviewPage_the_content, getManagedForm().getToolkit());
+		FormText text = createClient(container, Messages.RevEngOverviewPage_the_content, getManagedForm().getToolkit());
 		//text.setImage("page", EclipseImages.getImage(ImageConstants.)); //$NON-NLS-1$
 
 		section.setClient(container);

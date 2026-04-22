@@ -13,7 +13,7 @@ package org.hibernate.tool.eclipse.ui.diagram.editors.actions;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.jface.resource.ImageDescriptor;
-import org.hibernate.tool.eclipse.ui.diagram.DiagramViewerMessages;
+import org.hibernate.tool.eclipse.orm.diagram.ui.nls.Messages;
 import org.hibernate.tool.eclipse.ui.diagram.editors.DiagramViewer;
 import org.hibernate.tool.eclipse.ui.diagram.editors.command.ToggleClassMappingCommand;
 
@@ -31,8 +31,8 @@ public class ToggleClassMappingAction extends DiagramBaseAction {
 	public ToggleClassMappingAction(DiagramViewer editor) {
 		super(editor);
 		setId(ACTION_ID);
-		setText(DiagramViewerMessages.ToggleClassMappingAction_class_mappings);
-		setToolTipText(DiagramViewerMessages.ToggleClassMappingAction_class_mappings);
+		setText(Messages.ToggleClassMappingAction_class_mappings);
+		setToolTipText(Messages.ToggleClassMappingAction_class_mappings);
 		setImageDescriptor(img);
 		boolean state = getDiagramViewer().getConnectionsVisibilityClassMapping();
 		setChecked(state);

@@ -33,7 +33,7 @@ import org.eclipse.ui.forms.IFormPart;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
 import org.hibernate.tool.eclipse.orm.model.core.IRevEngParameter;
-import org.hibernate.eclipse.mapper.MapperMessages;
+import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
 import org.hibernate.eclipse.mapper.editors.reveng.xpl.FormTextEntry;
 
 public class ParamDetailsPage extends RevEngDetailsPage implements IDetailsPage, PropertyChangeListener {
@@ -45,17 +45,17 @@ public class ParamDetailsPage extends RevEngDetailsPage implements IDetailsPage,
 	private IRevEngParameter param;
 
 	protected void buildContents(FormToolkit toolkit, Section section, Composite client) {
-		section.setText(MapperMessages.ParamDetailsPage_generator_parameter_details);
-		section.setDescription(MapperMessages.ParamDetailsPage_set_the_properties_of_the_selected_parameter);
+		section.setText(Messages.ParamDetailsPage_generator_parameter_details);
+		section.setDescription(Messages.ParamDetailsPage_set_the_properties_of_the_selected_parameter);
 
-		nameEntry = new FormTextEntry(client, toolkit, MapperMessages.ParamDetailsPage_name, SWT.NULL);
+		nameEntry = new FormTextEntry(client, toolkit, Messages.ParamDetailsPage_name, SWT.NULL);
 		nameEntry.setFormEntryListener(new FormTextEntryListenerAdapter() {
 			public void textValueChanged(FormTextEntry entry) {
 				param.setName(entry.getValue());
 			}
 		});
 
-		valueEntry = new FormTextEntry(client, toolkit, MapperMessages.ParamDetailsPage_value, SWT.NULL);
+		valueEntry = new FormTextEntry(client, toolkit, Messages.ParamDetailsPage_value, SWT.NULL);
 		valueEntry.setFormEntryListener(new FormTextEntryListenerAdapter() {
 			public void textValueChanged(FormTextEntry entry) {
 				param.setValue(entry.getValue());

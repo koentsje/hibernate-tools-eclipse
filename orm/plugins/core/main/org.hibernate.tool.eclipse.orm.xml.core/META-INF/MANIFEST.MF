@@ -9,6 +9,7 @@ Export-Package: org.hibernate.eclipse.mapper,
  org.hibernate.eclipse.mapper.factory,
  org.hibernate.eclipse.mapper.model,
  org.hibernate.eclipse.mapper.modelhandler,
+ org.hibernate.tool.eclipse.orm.xml.core.nls,
  org.hibernate.tool.eclipse.xml.core.common
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.wst.sse.core,

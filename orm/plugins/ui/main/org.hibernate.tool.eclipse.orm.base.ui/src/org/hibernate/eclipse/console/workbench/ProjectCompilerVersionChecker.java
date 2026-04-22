@@ -17,7 +17,7 @@ import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.widgets.Display;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.eclipse.console.utils.ProjectUtilsUI;
-import org.hibernate.tool.eclipse.orm.workbench.Messages;
+import org.hibernate.tool.eclipse.orm.base.core.nls.Messages;
 
 /**
  * @author Dmitry Geraskov (geraskov@gmail.com)

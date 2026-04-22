@@ -28,7 +28,7 @@ import org.eclipse.jface.text.ITextHover;
 import org.eclipse.jface.text.ITextViewer;
 import org.eclipse.jface.text.Region;
 import org.eclipse.swt.graphics.Point;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 
 /**
  * This class implements the hover popup text service for HQL code.
@@ -44,7 +44,7 @@ public class HQLTextHover implements ITextHover {
 			} catch (BadLocationException x) {
 			}
 		}
-		return OrmBaseUiMessages.HQLTextHover_empty_selection;
+		return Messages.HQLTextHover_empty_selection;
 	}
 
 	public IRegion getHoverRegion( ITextViewer textViewer, int offset ) {

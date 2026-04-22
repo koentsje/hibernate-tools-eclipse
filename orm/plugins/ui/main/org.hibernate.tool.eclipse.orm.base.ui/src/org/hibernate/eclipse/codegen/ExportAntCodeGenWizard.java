@@ -18,7 +18,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.IExportWizard;
 import org.eclipse.ui.IWorkbench;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 
 /**
@@ -43,7 +43,7 @@ public class ExportAntCodeGenWizard extends Wizard implements IExportWizard {
      * Creates a wizard for creating a new file resource in the workspace.
      */
 	public ExportAntCodeGenWizard() {
-		setWindowTitle(OrmBaseUiMessages.ExportAntCodeGenWizard_title);
+		setWindowTitle(Messages.ExportAntCodeGenWizard_title);
 		ImageDescriptor descriptor = HibernateBasePlugin.getImageDescriptor("icons/images/newhibernate_wiz.gif"); //$NON-NLS-1$
 		setDefaultPageImageDescriptor(descriptor);
 	}
@@ -70,9 +70,9 @@ public class ExportAntCodeGenWizard extends Wizard implements IExportWizard {
      */
 	public void addPages() {
 		exportAntCodeGenWizardPage = new ExportAntCodeGenWizardPage(
-			OrmBaseUiMessages.ExportAntCodeGenWizard_page_name, getSelection());
-		exportAntCodeGenWizardPage.setTitle(OrmBaseUiMessages.ExportAntCodeGenWizard_title);
-		exportAntCodeGenWizardPage.setDescription(OrmBaseUiMessages.ExportAntCodeGenWizard_description);
+			Messages.ExportAntCodeGenWizard_page_name, getSelection());
+		exportAntCodeGenWizardPage.setTitle(Messages.ExportAntCodeGenWizard_title);
+		exportAntCodeGenWizardPage.setDescription(Messages.ExportAntCodeGenWizard_description);
 		exportAntCodeGenWizardPage.setFileExtension("xml"); //$NON-NLS-1$
 		addPage(exportAntCodeGenWizardPage);
 	}
@@ -83,7 +83,7 @@ public class ExportAntCodeGenWizard extends Wizard implements IExportWizard {
 	public void init(IWorkbench workbench, IStructuredSelection currentSelection) {
 		this.workbench = workbench;
 		this.selection = currentSelection;
-		setWindowTitle(OrmBaseUiMessages.ExportAntCodeGenWizard_title);
+		setWindowTitle(Messages.ExportAntCodeGenWizard_title);
 		ImageDescriptor descriptor = HibernateBasePlugin.getImageDescriptor("icons/images/newhibernate_wiz.gif"); //$NON-NLS-1$
 		setDefaultPageImageDescriptor(descriptor);
 	}

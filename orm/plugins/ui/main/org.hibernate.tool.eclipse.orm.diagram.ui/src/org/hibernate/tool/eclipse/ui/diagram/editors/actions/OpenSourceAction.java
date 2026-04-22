@@ -25,7 +25,7 @@ import org.hibernate.tool.eclipse.orm.runtime.spi.IColumn;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IProperty;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ITable;
-import org.hibernate.tool.eclipse.ui.diagram.DiagramViewerMessages;
+import org.hibernate.tool.eclipse.orm.diagram.ui.nls.Messages;
 import org.hibernate.tool.eclipse.ui.diagram.UiPlugin;
 import org.hibernate.tool.eclipse.ui.diagram.editors.DiagramViewer;
 import org.hibernate.tool.eclipse.ui.diagram.editors.model.Connection;
@@ -44,7 +44,7 @@ public class OpenSourceAction extends SelectionAction {
 	public OpenSourceAction(IWorkbenchPart part) {
 		super(part);
 		setId(ACTION_ID);
-		setText(DiagramViewerMessages.OpenSourceAction_open_source_file);
+		setText(Messages.OpenSourceAction_open_source_file);
 		setImageDescriptor(img);
 	}
 
@@ -93,9 +93,9 @@ public class OpenSourceAction extends SelectionAction {
 			try {
 				editorPart = org.hibernate.eclipse.console.actions.OpenSourceAction.run(consoleConfig, selection, fullyQualifiedName);
 			} catch (CoreException e) {
-				HibernateConsoleCorePlugin.getDefault().logErrorMessage(DiagramViewerMessages.OpenSourceAction_canot_open_source_file, e);
+				HibernateConsoleCorePlugin.getDefault().logErrorMessage(Messages.OpenSourceAction_canot_open_source_file, e);
 			} catch (FileNotFoundException e) {
-				HibernateConsoleCorePlugin.getDefault().logErrorMessage(DiagramViewerMessages.OpenSourceAction_canot_find_source_file, e);
+				HibernateConsoleCorePlugin.getDefault().logErrorMessage(Messages.OpenSourceAction_canot_find_source_file, e);
 			}
 		}
 	}

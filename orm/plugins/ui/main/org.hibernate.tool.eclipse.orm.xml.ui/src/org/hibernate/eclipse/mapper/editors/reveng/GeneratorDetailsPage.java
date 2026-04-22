@@ -36,7 +36,7 @@ import org.eclipse.ui.forms.IFormPart;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
 import org.hibernate.tool.eclipse.orm.model.core.IRevEngGenerator;
-import org.hibernate.eclipse.mapper.MapperMessages;
+import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
 import org.hibernate.eclipse.mapper.editors.reveng.xpl.FormTextEntry;
 
 public class GeneratorDetailsPage extends RevEngDetailsPage implements IDetailsPage, PropertyChangeListener {
@@ -47,17 +47,17 @@ public class GeneratorDetailsPage extends RevEngDetailsPage implements IDetailsP
 	private IRevEngGenerator generator;
 
 	protected void buildContents(FormToolkit toolkit, Section section, Composite client) {
-		section.setText(MapperMessages.GeneratorDetailsPage_id_generator_details);
-		section.setDescription(MapperMessages.GeneratorDetailsPage_set_the_properties_of_the_selected_generator);
+		section.setText(Messages.GeneratorDetailsPage_id_generator_details);
+		section.setDescription(Messages.GeneratorDetailsPage_set_the_properties_of_the_selected_generator);
 
-		nameEntry = new FormTextEntry(client, toolkit, MapperMessages.GeneratorDetailsPage_class, SWT.NULL);
+		nameEntry = new FormTextEntry(client, toolkit, Messages.GeneratorDetailsPage_class, SWT.NULL);
 		nameEntry.setFormEntryListener(new FormTextEntryListenerAdapter() {
 			public void textValueChanged(FormTextEntry entry) {
 				generator.setGeneratorClassName(entry.getValue());
 			}
 		});
 		
-		Button button = toolkit.createButton(client, MapperMessages.GeneratorDetailsPage_add_param, SWT.NULL);
+		Button button = toolkit.createButton(client, Messages.GeneratorDetailsPage_add_param, SWT.NULL);
 		button.addSelectionListener(new SelectionAdapter() {
 
 			public void widgetSelected(SelectionEvent e) {

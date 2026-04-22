@@ -40,7 +40,7 @@ import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableItem;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 
 public class UpDownListComposite extends Composite {
 
@@ -188,18 +188,18 @@ public class UpDownListComposite extends Composite {
 			addButtons[i].setEnabled(true);
 		}
 		removeButton = new Button(buttons, SWT.NONE);
-		removeButton.setText(OrmBaseUiMessages.UpDownListComposite_remove);
+		removeButton.setText(Messages.UpDownListComposite_remove);
 		removeButton.setLayoutData(gridData3);
 		removeButton.addSelectionListener(buttonListener);
 		fillLabel = new Label(buttons, SWT.NONE);
 		fillLabel.setText(""); //$NON-NLS-1$
 		fillLabel.setLayoutData(gridData6);
 		upButton = new Button(buttons, SWT.NONE);
-		upButton.setText(OrmBaseUiMessages.UpDownListComposite_up);
+		upButton.setText(Messages.UpDownListComposite_up);
 		upButton.setLayoutData(gridData4);
 		upButton.addSelectionListener(buttonListener);
 		downButton = new Button(buttons, SWT.NONE);
-		downButton.setText(OrmBaseUiMessages.UpDownListComposite_down);
+		downButton.setText(Messages.UpDownListComposite_down);
 		downButton.setLayoutData(gridData5);
 		downButton.addSelectionListener(buttonListener);
 
@@ -210,7 +210,7 @@ public class UpDownListComposite extends Composite {
 	}
 
 	protected String[] getAddButtonLabels() {
-		return new String[] { OrmBaseUiMessages.UpDownListComposite_add };
+		return new String[] { Messages.UpDownListComposite_add };
 	}
 
 	private Button createButton(Composite parent, String label) {
@@ -322,7 +322,7 @@ public class UpDownListComposite extends Composite {
 	}
 
 	protected Object[] handleAdd(int i) {
-		return new Object[] { OrmBaseUiMessages.UpDownListComposite_test };
+		return new Object[] { Messages.UpDownListComposite_test };
 	}
 
 	/**

@@ -17,7 +17,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.TableItem;
-import org.hibernate.eclipse.jdt.ui.internal.JdtUiMessages;
+import org.hibernate.tool.eclipse.orm.jdt.core.nls.Messages;
 import org.hibernate.eclipse.jdt.ui.wizards.AddRemoveTableComposite;
 
 /**
@@ -32,7 +32,7 @@ public class EntitiesSource extends UserInputWizardPage {
 	public EntitiesSource(String name, IStructuredSelection selection) {
 		super(name);
 		this.selection = selection;
-		setDescription(JdtUiMessages.EntitiesSource_description);
+		setDescription(Messages.EntitiesSource_description);
 	}
 
 	public void createControl(Composite parent) {

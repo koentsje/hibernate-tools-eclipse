@@ -20,7 +20,7 @@ import org.eclipse.ltk.core.refactoring.CompositeChange;
 import org.eclipse.ltk.core.refactoring.Refactoring;
 import org.eclipse.ltk.core.refactoring.RefactoringStatus;
 import org.eclipse.ltk.core.refactoring.TextFileChange;
-import org.hibernate.eclipse.jdt.ui.internal.JdtUiMessages;
+import org.hibernate.tool.eclipse.orm.jdt.core.nls.Messages;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.process.ChangeStructure;
 
 /**
@@ -68,6 +68,6 @@ public class HibernateJPARefactoring extends Refactoring {
 
 	@Override
 	public String getName() {
-		return JdtUiMessages.SaveQueryEditorListener_composite_change_name;
+		return Messages.SaveQueryEditorListener_composite_change_name;
 	}
 }

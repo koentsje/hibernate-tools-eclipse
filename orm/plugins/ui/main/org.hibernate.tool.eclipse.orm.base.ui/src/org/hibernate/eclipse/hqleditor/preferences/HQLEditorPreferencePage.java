@@ -3,7 +3,7 @@ package org.hibernate.eclipse.hqleditor.preferences;
 import org.eclipse.jface.preference.*;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 import org.eclipse.ui.IWorkbench;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 
 /**
@@ -27,7 +27,7 @@ public class HQLEditorPreferencePage
 	public HQLEditorPreferencePage() {
 		super(GRID);
 		setPreferenceStore(HibernateBasePlugin.getDefault().getPreferenceStore());
-		setDescription(OrmBaseUiMessages.HQLEditorPreferencePage_colors_for_hql_editor_highlighting);
+		setDescription(Messages.HQLEditorPreferencePage_colors_for_hql_editor_highlighting);
 	}
 
 	/**
@@ -38,13 +38,13 @@ public class HQLEditorPreferencePage
 	 */
 	public void createFieldEditors() {
 		addField(new ColorFieldEditor(HQLPreferenceConstants.HQL_DEFAULT_COLOR,
-				OrmBaseUiMessages.HQLEditorPreferencePage_default, getFieldEditorParent()));
+				Messages.HQLEditorPreferencePage_default, getFieldEditorParent()));
 		addField(new ColorFieldEditor(HQLPreferenceConstants.HQL_IDENTIFIER_COLOR,
-				OrmBaseUiMessages.HQLEditorPreferencePage_identifier, getFieldEditorParent()));
+				Messages.HQLEditorPreferencePage_identifier, getFieldEditorParent()));
 		addField(new ColorFieldEditor(HQLPreferenceConstants.HQL_KEYWORD_COLOR,
-				OrmBaseUiMessages.HQLEditorPreferencePage_keyword, getFieldEditorParent()));
+				Messages.HQLEditorPreferencePage_keyword, getFieldEditorParent()));
 		addField(new ColorFieldEditor(HQLPreferenceConstants.HQL_QUOTED_LITERAL_COLOR,
-				OrmBaseUiMessages.HQLEditorPreferencePage_string_literal, getFieldEditorParent()));
+				Messages.HQLEditorPreferencePage_string_literal, getFieldEditorParent()));
 		}
 
 	/* (non-Javadoc)

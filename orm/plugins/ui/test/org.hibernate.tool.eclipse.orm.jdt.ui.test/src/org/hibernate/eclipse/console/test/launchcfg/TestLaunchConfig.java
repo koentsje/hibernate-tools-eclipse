@@ -27,7 +27,7 @@ import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.ILaunchConfigurationType;
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.debug.core.ILaunchDelegate;
-import org.hibernate.eclipse.console.test.ConsoleTestMessages;
+import org.hibernate.tool.eclipse.orm.jdt.ui.test.nls.Messages;
 
 @SuppressWarnings("rawtypes")
 public class TestLaunchConfig implements ILaunchConfiguration {
@@ -120,7 +120,7 @@ public class TestLaunchConfig implements ILaunchConfiguration {
 	}
 
 	public String getCategory() throws CoreException {
-		return ConsoleTestMessages.RefactoringTest_category;
+		return Messages.RefactoringTest_category;
 	}
 
 	public IFile getFile() {
@@ -144,7 +144,7 @@ public class TestLaunchConfig implements ILaunchConfiguration {
 	}
 
 	public String getName() {
-		return ConsoleTestMessages.RefactoringTest_test_launch_config;
+		return Messages.RefactoringTest_test_launch_config;
 	}
 
 	public ILaunchDelegate getPreferredDelegate(final Set modes) throws CoreException {

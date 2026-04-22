@@ -20,7 +20,7 @@ import org.eclipse.gef.editparts.AbstractTreeEditPart;
 import org.eclipse.gef.ui.actions.SelectionAction;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.IWorkbenchPart;
-import org.hibernate.tool.eclipse.ui.diagram.DiagramViewerMessages;
+import org.hibernate.tool.eclipse.orm.diagram.ui.nls.Messages;
 import org.hibernate.tool.eclipse.ui.diagram.editors.DiagramViewer;
 import org.hibernate.tool.eclipse.ui.diagram.editors.command.ToggleShapeExpandStateCommand;
 import org.hibernate.tool.eclipse.ui.diagram.editors.model.ExpandableShape;
@@ -39,8 +39,8 @@ public class ShapeCollapseAction extends SelectionAction {
 	public ShapeCollapseAction(IWorkbenchPart editor) {
 		super(editor);
 		setId(ACTION_ID);
-		setText(DiagramViewerMessages.ShapeCollapseAction_shape_collapse);
-		setToolTipText(DiagramViewerMessages.ShapeCollapseAction_shape_collapse_tooltip);
+		setText(Messages.ShapeCollapseAction_shape_collapse);
+		setToolTipText(Messages.ShapeCollapseAction_shape_collapse_tooltip);
 		setImageDescriptor(img);
 	}
 	

@@ -34,7 +34,7 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.osgi.util.NLS;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.tool.eclipse.common.runtime.HibernateRuntimeException;
@@ -83,8 +83,8 @@ public class LazyDatabaseSchemaWorkbenchAdapter extends BasicWorkbenchAdapter {
 			});
 			dbs.setConnected(true);
 		} catch (Exception e) {
-			HibernateBasePlugin.getDefault().logErrorMessage(OrmBaseUiMessages.LazyDatabaseSchemaWorkbenchAdapter_problems_while_reading_database_schema, e);
-			String out = NLS.bind(OrmBaseUiMessages.LazyDatabaseSchemaWorkbenchAdapter_reading_schema_error, e.getMessage());
+			HibernateBasePlugin.getDefault().logErrorMessage(Messages.LazyDatabaseSchemaWorkbenchAdapter_problems_while_reading_database_schema, e);
+			String out = NLS.bind(Messages.LazyDatabaseSchemaWorkbenchAdapter_reading_schema_error, e.getMessage());
 			res = new Object[] { out };
 			dbs.setErrorFlag(true);
 		}
@@ -108,7 +108,7 @@ public class LazyDatabaseSchemaWorkbenchAdapter extends BasicWorkbenchAdapter {
 	}
 
 	public String getLabel(Object o) {
-		return OrmBaseUiMessages.LazyDatabaseSchemaWorkbenchAdapter_database;
+		return Messages.LazyDatabaseSchemaWorkbenchAdapter_database;
 	}
 
 	public Object getParent(Object o) {

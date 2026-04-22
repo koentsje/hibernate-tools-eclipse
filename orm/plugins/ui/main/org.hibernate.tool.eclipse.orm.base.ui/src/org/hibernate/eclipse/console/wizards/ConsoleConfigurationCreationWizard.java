@@ -29,7 +29,7 @@ import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchWizard;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 
@@ -69,7 +69,7 @@ public class ConsoleConfigurationCreationWizard extends Wizard implements
 		try {
 			page.performFinish();
 		} catch (CoreException ce) {
-			HibernateBasePlugin.getDefault().showError(getShell(), OrmBaseUiMessages.AddConfigurationAction_problem_add_console_config,  ce);
+			HibernateBasePlugin.getDefault().showError(getShell(), Messages.AddConfigurationAction_problem_add_console_config,  ce);
 		}
 		return true;
 	}
@@ -78,7 +78,7 @@ public class ConsoleConfigurationCreationWizard extends Wizard implements
 		try {
 			page.performCancel();
 		} catch (CoreException ce) {
-			HibernateBasePlugin.getDefault().showError(getShell(), OrmBaseUiMessages.AddConfigurationAction_problem_add_console_config,  ce);
+			HibernateBasePlugin.getDefault().showError(getShell(), Messages.AddConfigurationAction_problem_add_console_config,  ce);
 		}
         return true;
     }

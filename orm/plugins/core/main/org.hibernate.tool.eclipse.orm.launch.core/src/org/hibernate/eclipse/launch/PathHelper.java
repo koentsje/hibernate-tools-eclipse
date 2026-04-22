@@ -14,7 +14,7 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.core.variables.IStringVariableManager;
 import org.eclipse.core.variables.VariablesPlugin;
 import org.eclipse.osgi.util.NLS;
-import org.hibernate.eclipse.launch.LaunchMessages;
+import org.hibernate.tool.eclipse.orm.launch.core.nls.Messages;
 // TODO: move to internal.
 public class PathHelper {
 
@@ -104,7 +104,7 @@ public class PathHelper {
 				manager.validateStringVariables(strpath);
 			}
 			catch (CoreException e) {
-				String out = NLS.bind(LaunchMessages.PathHelper_has_invalid_variable_references, name, e.getMessage());
+				String out = NLS.bind(Messages.PathHelper_has_invalid_variable_references, name, e.getMessage());
 				return out;
 			}
 		}
@@ -117,7 +117,7 @@ public class PathHelper {
 				if (file.isDirectory()) {
 					return null;
 				}
-				String out = NLS.bind(LaunchMessages.PathHelper_not_directory, path);
+				String out = NLS.bind(Messages.PathHelper_not_directory, path);
 				return out;
 			}
 		}
@@ -128,15 +128,15 @@ public class PathHelper {
 	        if (resType == IResource.PROJECT || resType == IResource.FOLDER) {
 	            IProject proj= res.getProject();
 	            if (!proj.isOpen() ) {
-	            	String out = NLS.bind(LaunchMessages.PathHelper_project_for_is_closed, name, path);
+	            	String out = NLS.bind(Messages.PathHelper_project_for_is_closed, name, path);
 	                return out;
 	            }
 	        } else {
-	        	String out = NLS.bind(LaunchMessages.PathHelper_has_to_be_folder_or_project, name, path);
+	        	String out = NLS.bind(Messages.PathHelper_has_to_be_folder_or_project, name, path);
 	            return out;
 	        }
 	    } else {
-        	String out = NLS.bind(LaunchMessages.PathHelper_does_not_exist, name, path);
+        	String out = NLS.bind(Messages.PathHelper_does_not_exist, name, path);
 	        return out;
 	    }
 	    return null;
@@ -159,7 +159,7 @@ public class PathHelper {
 				manager.validateStringVariables(strpath);
 			}
 			catch (CoreException e) {
-				String out = NLS.bind(LaunchMessages.PathHelper_has_invalid_variable_references, name, e.getMessage());
+				String out = NLS.bind(Messages.PathHelper_has_invalid_variable_references, name, e.getMessage());
 				return out;
 			}
 		}
@@ -172,7 +172,7 @@ public class PathHelper {
 				if (file.isFile()) {
 					return null;
 				}
-				String out = NLS.bind(LaunchMessages.PathHelper_not_file, path);
+				String out = NLS.bind(Messages.PathHelper_not_file, path);
 				return out;
 			}
 		}
@@ -183,15 +183,15 @@ public class PathHelper {
 	        if (resType == IResource.FILE) {
 	            IProject proj= res.getProject();
 	            if (!proj.isOpen() ) {
-	            	String out = NLS.bind(LaunchMessages.PathHelper_project_for_is_closed, name, path);
+	            	String out = NLS.bind(Messages.PathHelper_project_for_is_closed, name, path);
 	                return out;
 	            }
 	        } else {
-	        	String out = NLS.bind(LaunchMessages.PathHelper_has_to_be_file, name, path);
+	        	String out = NLS.bind(Messages.PathHelper_has_to_be_file, name, path);
 	            return out;
 	        }
 	    } else {
-        	String out = NLS.bind(LaunchMessages.PathHelper_does_not_exist, name, path);
+        	String out = NLS.bind(Messages.PathHelper_does_not_exist, name, path);
 	        return out;
 	    }
 	    return null;

@@ -44,7 +44,7 @@ import org.hibernate.eclipse.console.wizards.TypeMappingLabelProvider;
 import org.hibernate.eclipse.console.workbench.DeferredContentProvider;
 import org.hibernate.tool.eclipse.orm.console.core.workbench.LazyDatabaseSchema;
 import org.hibernate.eclipse.console.workbench.xpl.AnyAdaptableLabelProvider;
-import org.hibernate.eclipse.mapper.MapperMessages;
+import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IColumn;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IPrimaryKey;
 import org.hibernate.tool.eclipse.orm.utils.JdbcTypeMapper;
@@ -181,7 +181,7 @@ public abstract class TypeMappingView extends TreeToTableComposite {
 
 
 	protected String[] getAddButtonLabels() {
-		return new String[] { MapperMessages.TypeMappingView_add };
+		return new String[] { Messages.TypeMappingView_add };
 	}
 
 	protected void handleAddButtonPressed(int i) {
@@ -190,7 +190,7 @@ public abstract class TypeMappingView extends TreeToTableComposite {
 			doAdd();
 			break;
 		default:
-			throw new IllegalArgumentException( i + MapperMessages.TypeMappingView_not_known_button );
+			throw new IllegalArgumentException( i + Messages.TypeMappingView_not_known_button );
 		}
 	}
 
@@ -206,7 +206,7 @@ public abstract class TypeMappingView extends TreeToTableComposite {
 	}
 
 	protected void doRemoveAll() {
-		if(MessageDialog.openQuestion( getShell(), MapperMessages.TypeMappingView_remove_all_mappings, MapperMessages.TypeMappingView_do_you_want_to_remove_all_mappings)) {
+		if(MessageDialog.openQuestion( getShell(), Messages.TypeMappingView_remove_all_mappings, Messages.TypeMappingView_do_you_want_to_remove_all_mappings)) {
 			revEngDef.removeAllTypeMappings();
 		}
 	}
@@ -229,36 +229,36 @@ public abstract class TypeMappingView extends TreeToTableComposite {
 
 	protected void createTableColumns(org.eclipse.swt.widgets.Table table) {
 		TableColumn column = new TableColumn(table, SWT.CENTER, 0);
-		column.setText(MapperMessages.TypeMappingView_jdbc_type);
+		column.setText(Messages.TypeMappingView_jdbc_type);
 		column.setWidth(100);
 
 		column = new TableColumn(table, SWT.LEFT, 1);
-		column.setText(MapperMessages.TypeMappingView_hibernate_type);
+		column.setText(Messages.TypeMappingView_hibernate_type);
 		column.setWidth(150);
 
 		column = new TableColumn(table, SWT.LEFT, 2);
-		column.setText(MapperMessages.TypeMappingView_length);
+		column.setText(Messages.TypeMappingView_length);
 		column.setWidth(100);
 
 		column = new TableColumn(table, SWT.LEFT, 3);
-		column.setText(MapperMessages.TypeMappingView_scale);
+		column.setText(Messages.TypeMappingView_scale);
 		column.setWidth(100);
 
 		column = new TableColumn(table, SWT.LEFT, 4);
-		column.setText(MapperMessages.TypeMappingView_precision);
+		column.setText(Messages.TypeMappingView_precision);
 		column.setWidth(100);
 
 		column = new TableColumn(table, SWT.LEFT, 5);
-		column.setText(MapperMessages.TypeMappingView_not_null);
+		column.setText(Messages.TypeMappingView_not_null);
 		column.setWidth(75);
 	}
 
 	protected String getTableTitle() {
-		return MapperMessages.TypeMappingView_type_mappings;
+		return Messages.TypeMappingView_type_mappings;
 	}
 
 	protected String getTreeTitle() {
-		return MapperMessages.TypeMappingView_database_schema;
+		return Messages.TypeMappingView_database_schema;
 	}
 
 }

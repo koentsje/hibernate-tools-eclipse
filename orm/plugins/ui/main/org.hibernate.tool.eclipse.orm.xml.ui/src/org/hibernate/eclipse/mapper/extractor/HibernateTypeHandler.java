@@ -35,7 +35,7 @@ import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.ITypeHierarchy;
 import org.eclipse.jface.text.contentassist.CompletionProposal;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
-import org.hibernate.eclipse.mapper.MapperMessages;
+import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
 import org.w3c.dom.Attr;
 import org.w3c.dom.Node;
 
@@ -56,12 +56,12 @@ public class HibernateTypeHandler implements HBMInfoHandler {
 		List proposals = new ArrayList(types.size() );
 		for (Iterator iter = types.iterator(); iter.hasNext();) {
 			HibernateTypeDescriptor element = (HibernateTypeDescriptor) iter.next();
-			String extendedinfo = MapperMessages.HibernateTypeHandler_hibernate_type + element.getName();
+			String extendedinfo = Messages.HibernateTypeHandler_hibernate_type + element.getName();
 			if(element.getReturnClass()!=null) {
-				extendedinfo += MapperMessages.HibernateTypeHandler_return_class + element.getReturnClass();
+				extendedinfo += Messages.HibernateTypeHandler_return_class + element.getReturnClass();
 			}
 			if(element.getPrimitiveClass()!=null) {
-				extendedinfo += MapperMessages.HibernateTypeHandler_return_primitive + element.getPrimitiveClass();
+				extendedinfo += Messages.HibernateTypeHandler_return_primitive + element.getPrimitiveClass();
 			}
 			proposals.add(new CompletionProposal(element.getName(), offset, start.length(), element.getName().length(), null, null, null, extendedinfo) );
 		}

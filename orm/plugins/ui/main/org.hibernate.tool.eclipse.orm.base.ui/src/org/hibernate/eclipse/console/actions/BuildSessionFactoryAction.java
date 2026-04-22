@@ -26,7 +26,7 @@ import java.util.Iterator;
 import org.eclipse.jface.viewers.StructuredViewer;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.HibernateConsoleRuntimeException;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 
 /**
@@ -38,7 +38,7 @@ public class BuildSessionFactoryAction extends ConsoleConfigurationBasedAction {
 	private final StructuredViewer viewer;
 
 	public BuildSessionFactoryAction(StructuredViewer viewer) {
-		super(OrmBaseUiMessages.BuildSessionFactoryAction_build_session_factory);
+		super(Messages.BuildSessionFactoryAction_build_session_factory);
 		this.viewer = viewer;
 		setEnabledWhenNoSessionFactory(true);
 	}
@@ -59,9 +59,9 @@ public class BuildSessionFactoryAction extends ConsoleConfigurationBasedAction {
             }
 
         	} catch(HibernateConsoleRuntimeException he) {
-        		 HibernateBasePlugin.getDefault().showError(viewer.getControl().getShell(), OrmBaseUiMessages.BuildSessionFactoryAction_exception_while_start_hibernate,he);
+        		 HibernateBasePlugin.getDefault().showError(viewer.getControl().getShell(), Messages.BuildSessionFactoryAction_exception_while_start_hibernate,he);
         	} catch(UnsupportedClassVersionError ucve) {
-				 HibernateBasePlugin.getDefault().showError(viewer.getControl().getShell(), OrmBaseUiMessages.BuildSessionFactoryAction_start_hibernate_resulted,ucve);
+				 HibernateBasePlugin.getDefault().showError(viewer.getControl().getShell(), Messages.BuildSessionFactoryAction_start_hibernate_resulted,ucve);
         	}
         }
 	}
@@ -72,9 +72,9 @@ public class BuildSessionFactoryAction extends ConsoleConfigurationBasedAction {
 	protected boolean updateState(ConsoleConfiguration config) {
 		setEnabledWhenNoSessionFactory(!config.isSessionFactoryCreated() );
 		if(enabledWhenNoSessionFactory) {
-			setText(OrmBaseUiMessages.BuildSessionFactoryAction_create_sessionfactory);
+			setText(Messages.BuildSessionFactoryAction_create_sessionfactory);
 		} else {
-			setText(OrmBaseUiMessages.BuildSessionFactoryAction_close_sessionfactory);
+			setText(Messages.BuildSessionFactoryAction_close_sessionfactory);
 		}
 		return super.updateState(config);
 	}

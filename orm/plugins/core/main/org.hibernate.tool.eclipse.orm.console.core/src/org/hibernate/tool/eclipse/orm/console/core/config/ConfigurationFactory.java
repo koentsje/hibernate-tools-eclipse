@@ -54,7 +54,7 @@ import org.hibernate.tool.eclipse.orm.runtime.spi.IEnvironment;
 import org.hibernate.tool.eclipse.orm.runtime.spi.INamingStrategy;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 import org.hibernate.tool.eclipse.orm.runtime.spi.RuntimeServiceManager;
-import org.hibernate.tool.eclipse.orm.console.core.ConsoleMessages;
+import org.hibernate.tool.eclipse.orm.console.core.nls.Messages;
 import org.hibernate.tool.eclipse.orm.console.core.HibernateConsoleRuntimeException;
 import org.hibernate.tool.eclipse.orm.utils.ConnectionProfileUtil;
 import org.w3c.dom.Document;
@@ -149,7 +149,7 @@ public class ConfigurationFactory {
 				throw he;
 			} catch (Exception e) {
 				throw new HibernateConsoleRuntimeException(
-						ConsoleMessages.ConsoleConfiguration_could_not_load_annotationconfiguration,
+						Messages.ConsoleConfiguration_could_not_load_annotationconfiguration,
 						e);
 			}
 		} else if (prefs.getConfigurationMode().equals(ConfigurationMode.JPA)) {
@@ -160,7 +160,7 @@ public class ConfigurationFactory {
 				throw he;
 			} catch (Exception e) {
 				throw new HibernateConsoleRuntimeException(
-						ConsoleMessages.ConsoleConfiguration_could_not_load_jpa_configuration, e);
+						Messages.ConsoleConfiguration_could_not_load_jpa_configuration, e);
 			}
 		} else {
 			localCfg = service.newDefaultConfiguration();
@@ -233,7 +233,7 @@ public class ConfigurationFactory {
 			throw he;
 		} catch (Exception e) {
 			throw new HibernateConsoleRuntimeException(
-					ConsoleMessages.ConsoleConfiguration_could_not_create_jpa_based_configuration,
+					Messages.ConsoleConfiguration_could_not_create_jpa_based_configuration,
 					e);
 		}
 	}
@@ -250,7 +250,7 @@ public class ConfigurationFactory {
 						prefs.getEntityResolverName()).newInstance();
 			} catch (Exception c) {
 				throw new HibernateConsoleRuntimeException(
-						ConsoleMessages.ConsoleConfiguration_could_not_configure_entity_resolver
+						Messages.ConsoleConfiguration_could_not_configure_entity_resolver
 								+ prefs.getEntityResolverName(), c);
 			}
 		}
@@ -263,7 +263,7 @@ public class ConfigurationFactory {
 				localCfg.setNamingStrategy(ns);
 			} catch (Exception c) {
 				throw new HibernateConsoleRuntimeException(
-						ConsoleMessages.ConsoleConfiguration_could_not_configure_naming_strategy
+						Messages.ConsoleConfiguration_could_not_configure_naming_strategy
 								+ prefs.getNamingStrategy(), c);
 			}
 		}
@@ -295,7 +295,7 @@ public class ConfigurationFactory {
 					stream = new FileInputStream(configXMLFile);
 				} catch (FileNotFoundException e1) {
 					throw new HibernateConsoleRuntimeException(
-							ConsoleMessages.ConsoleConfiguration_could_not_access + configXMLFile,
+							Messages.ConsoleConfiguration_could_not_access + configXMLFile,
 							e1);
 				}
 			} else {
@@ -313,7 +313,7 @@ public class ConfigurationFactory {
 						new InputSource(stream));
 				if (errors.size() != 0) {
 					throw new HibernateRuntimeException(
-							ConsoleMessages.ConsoleConfiguration_invalid_configuration, errors
+							Messages.ConsoleConfiguration_invalid_configuration, errors
 									.get(0));
 				}
 				List<Node> list = doc.getRootElement()
@@ -327,7 +327,7 @@ public class ConfigurationFactory {
 
 			} catch (DocumentException e) {
 				throw new HibernateRuntimeException(
-						ConsoleMessages.ConsoleConfiguration_could_not_parse_configuration
+						Messages.ConsoleConfiguration_could_not_parse_configuration
 								+ resourceName, e);
 			} finally {
 				try {
@@ -389,7 +389,7 @@ public class ConfigurationFactory {
 			localCfg.addProperties(ConnectionProfileUtil.getHibernateConnectionProperties(service, profile));
 		} else {
 			String out = NLS.bind(
-					ConsoleMessages.ConsoleConfiguration_connection_profile_not_found,
+					Messages.ConsoleConfiguration_connection_profile_not_found,
 					connProfileName);
 			throw new HibernateConsoleRuntimeException(out);
 		}
@@ -416,19 +416,19 @@ public class ConfigurationFactory {
 				}
 			} catch (ClassNotFoundException e) {
 				String out = 
-					NLS.bind(ConsoleMessages.ConsoleConfiguration_problems_while_loading_database_driverclass, driverClassName);
+					NLS.bind(Messages.ConsoleConfiguration_problems_while_loading_database_driverclass, driverClassName);
 				throw new HibernateConsoleRuntimeException(out, e);
 			} catch (InstantiationException e) {
 				String out = 
-					NLS.bind(ConsoleMessages.ConsoleConfiguration_problems_while_loading_database_driverclass, driverClassName);
+					NLS.bind(Messages.ConsoleConfiguration_problems_while_loading_database_driverclass, driverClassName);
 				throw new HibernateConsoleRuntimeException(out, e);
 			} catch (IllegalAccessException e) {
 				String out = 
-					NLS.bind(ConsoleMessages.ConsoleConfiguration_problems_while_loading_database_driverclass, driverClassName);
+					NLS.bind(Messages.ConsoleConfiguration_problems_while_loading_database_driverclass, driverClassName);
 				throw new HibernateConsoleRuntimeException(out, e);
 			} catch (SQLException e) {
 				String out = 
-					NLS.bind(ConsoleMessages.ConsoleConfiguration_problems_while_loading_database_driverclass, driverClassName);
+					NLS.bind(Messages.ConsoleConfiguration_problems_while_loading_database_driverclass, driverClassName);
 				throw new HibernateConsoleRuntimeException(out, e);
 			}
 		}

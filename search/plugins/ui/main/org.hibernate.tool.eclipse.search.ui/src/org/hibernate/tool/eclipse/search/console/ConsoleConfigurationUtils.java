@@ -10,7 +10,7 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.ui.PlatformUI;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
+import org.hibernate.tool.eclipse.orm.console.core.nls.Messages;
 import org.hibernate.tool.eclipse.search.core.HSearchConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.search.HibernateSearchConsolePlugin;
 import org.hibernate.tool.eclipse.search.runtime.spi.HSearchServiceLookup;
@@ -58,9 +58,9 @@ public class ConsoleConfigurationUtils {
 	}
 	
 	private static boolean askUserForConfiguration(String name) {
-		String out = NLS.bind(BasicHibernateMessages.AbstractQueryEditor_do_you_want_open_session_factory, name);
+		String out = NLS.bind(Messages.AbstractQueryEditor_do_you_want_open_session_factory, name);
 		return MessageDialog.openQuestion(HibernateSearchConsolePlugin.getActiveWorkbenchWindow().getShell(),
-				BasicHibernateMessages.AbstractQueryEditor_open_session_factory, out );
+				Messages.AbstractQueryEditor_open_session_factory, out );
 	}
 	
 	public static IHSearchService getHSearchService(ConsoleConfiguration consoleConfig) {

@@ -17,7 +17,7 @@ import org.eclipse.ltk.core.refactoring.Change;
 import org.eclipse.ltk.core.refactoring.RefactoringStatus;
 import org.eclipse.ltk.core.refactoring.participants.CheckConditionsContext;
 import org.eclipse.ltk.core.refactoring.participants.RenameParticipant;
-import org.hibernate.eclipse.launch.LaunchMessages;
+import org.hibernate.tool.eclipse.orm.launch.core.nls.Messages;
 
 /**
  * @author Dmitry Geraskov
@@ -34,7 +34,7 @@ public class ConsoleConfigurationITypeRenameParticipant extends
 	}
 
 	public String getName() {
-		return LaunchMessages.ConsoleConfigurationITypeRenameParticipant_update; 
+		return Messages.ConsoleConfigurationITypeRenameParticipant_update; 
 	}
 	
 	public RefactoringStatus checkConditions(IProgressMonitor pm, CheckConditionsContext context) {

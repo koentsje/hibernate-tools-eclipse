@@ -26,7 +26,7 @@ import java.util.List;
 
 import org.eclipse.jface.viewers.StructuredViewer;
 import org.eclipse.ui.actions.SelectionListenerAction;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 
 /**
@@ -41,7 +41,7 @@ public class RefreshAction extends SelectionListenerAction {
 	private String imageFilePath = "icons/images/refresh_run.gif"; //$NON-NLS-1$
 
 	public RefreshAction(StructuredViewer viewer) {
-		super(OrmBaseUiMessages.RefreshAction_refresh);
+		super(Messages.RefreshAction_refresh);
 		this.viewer = viewer;
 		setImageDescriptor(HibernateBasePlugin.getImageDescriptor(imageFilePath  ));
 		setId(REFRESH_ACTIONID);

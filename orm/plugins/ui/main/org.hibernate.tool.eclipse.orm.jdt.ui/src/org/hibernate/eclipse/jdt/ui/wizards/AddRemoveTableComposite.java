@@ -43,7 +43,7 @@ import org.eclipse.swt.widgets.Widget;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.SelectionDialog;
 import org.hibernate.eclipse.console.wizards.UpDownListComposite;
-import org.hibernate.eclipse.jdt.ui.internal.JdtUiMessages;
+import org.hibernate.tool.eclipse.orm.jdt.core.nls.Messages;
 
 /**
  * @author Dmitry Geraskov
@@ -64,8 +64,8 @@ public class AddRemoveTableComposite extends UpDownListComposite {
 	
 	@Override
 	protected String[] getAddButtonLabels() {
-		return new String[] { JdtUiMessages.AddRemoveTableComposite_add_class,
-							  JdtUiMessages.AddRemoveTableComposite_add_package};
+		return new String[] { Messages.AddRemoveTableComposite_add_class,
+							  Messages.AddRemoveTableComposite_add_package};
 	}
 
 	@Override
@@ -79,8 +79,8 @@ public class AddRemoveTableComposite extends UpDownListComposite {
 		gridData2.grabExcessHorizontalSpace = false;
 		gridData2.grabExcessVerticalSpace = false;
 		depthControl = new Button(parent, SWT.CHECK);
-		//depthControl.setText(JdtUiMessages.AddRemoveTableComposite_no_dependencies);
-		depthControl.setText(JdtUiMessages.AddRemoveTableComposite_control_depth_level);
+		//depthControl.setText(Messages.AddRemoveTableComposite_no_dependencies);
+		depthControl.setText(Messages.AddRemoveTableComposite_control_depth_level);
 		depthControl.setLayoutData(gridData);
 		depthNumbers = new Text(parent, SWT.SINGLE | SWT.BORDER | SWT.TRAIL);
 		depthNumbers.setText("0"); //$NON-NLS-1$
@@ -155,12 +155,12 @@ public class AddRemoveTableComposite extends UpDownListComposite {
 						scope,
 						IJavaElementSearchConstants.CONSIDER_CLASSES_AND_INTERFACES,
 						true);
-					dialog.setTitle(JdtUiMessages.AddRemoveTableComposite_java_types_title); 
-					dialog.setMessage(JdtUiMessages.AddRemoveTableComposite_java_select_types);
+					dialog.setTitle(Messages.AddRemoveTableComposite_java_types_title); 
+					dialog.setMessage(Messages.AddRemoveTableComposite_java_select_types);
 				} else if (i == 1){
 					dialog = new JavaPackageSelectionDialog(getShell(), scope);
-					dialog.setTitle(JdtUiMessages.AddRemoveTableComposite_java_packages_title); 
-					dialog.setMessage(JdtUiMessages.AddRemoveTableComposite_java_select_packages);
+					dialog.setTitle(Messages.AddRemoveTableComposite_java_packages_title); 
+					dialog.setMessage(Messages.AddRemoveTableComposite_java_select_packages);
 				} else {
 					return null;
 				}					

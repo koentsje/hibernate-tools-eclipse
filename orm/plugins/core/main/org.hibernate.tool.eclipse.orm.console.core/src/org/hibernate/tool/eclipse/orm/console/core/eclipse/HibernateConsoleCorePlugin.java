@@ -6,7 +6,7 @@ import java.util.List;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.MultiStatus;
 import org.eclipse.core.runtime.Status;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
+import org.hibernate.tool.eclipse.orm.console.core.nls.Messages;
 
 public class HibernateConsoleCorePlugin {
 
@@ -43,10 +43,10 @@ public class HibernateConsoleCorePlugin {
 		Throwable temp = t;
 		while (temp != null && temp.getCause() != temp) {
 			causes.add(new Status(IStatus.ERROR, ID, code,
-					temp.getMessage() == null ? temp.toString() + BasicHibernateMessages.HibernateBasePlugin_no_message_1 : temp.toString(), temp));
+					temp.getMessage() == null ? temp.toString() + Messages.HibernateBasePlugin_no_message_1 : temp.toString(), temp));
 			temp = temp.getCause();
 		}
-		String msg = BasicHibernateMessages.HibernateBasePlugin_no_message_2;
+		String msg = Messages.HibernateBasePlugin_no_message_2;
 		if (t != null && t.getMessage() != null) {
 			msg = t.toString();
 		}

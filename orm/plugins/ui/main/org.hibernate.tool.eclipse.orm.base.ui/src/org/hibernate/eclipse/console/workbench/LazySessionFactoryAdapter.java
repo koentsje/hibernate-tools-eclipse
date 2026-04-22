@@ -26,7 +26,7 @@ import org.eclipse.osgi.util.NLS;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
 import org.hibernate.tool.eclipse.orm.console.core.node.BaseNode;
 import org.hibernate.tool.eclipse.orm.console.core.node.NodeFactory;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.tool.eclipse.orm.console.core.workbench.LazySessionFactory;
@@ -37,14 +37,14 @@ public class LazySessionFactoryAdapter extends BasicWorkbenchAdapter {
 
 	public Object[] getChildren(Object o) {
 		LazySessionFactory lazySessionFactory = getLazySessionFactory(o);
-		String label = OrmBaseUiMessages.LazySessionFactoryAdapter_session_factory;
+		String label = Messages.LazySessionFactoryAdapter_session_factory;
 		if(lazySessionFactory.getCfgNode()==null) {
 			if(lazySessionFactory.getConsoleConfiguration().getSessionFactory()==null) {
 				try {
 					lazySessionFactory.getConsoleConfiguration().buildSessionFactory();
 				} catch(Throwable t) {
-					label = NLS.bind(OrmBaseUiMessages.LazySessionFactoryAdapter_sessionfactory_error, t.getMessage());
-					HibernateBasePlugin.getDefault().logErrorMessage(OrmBaseUiMessages.LazySessionFactoryAdapter_problems_while_creating_sessionfactory, t);
+					label = NLS.bind(Messages.LazySessionFactoryAdapter_sessionfactory_error, t.getMessage());
+					HibernateBasePlugin.getDefault().logErrorMessage(Messages.LazySessionFactoryAdapter_problems_while_creating_sessionfactory, t);
 				}
 			}
 			if(lazySessionFactory.getConsoleConfiguration().isSessionFactoryCreated()) {
@@ -68,7 +68,7 @@ public class LazySessionFactoryAdapter extends BasicWorkbenchAdapter {
 	}
 
 	public String getLabel(Object o) {
-		return OrmBaseUiMessages.LazySessionFactoryAdapter_session_factory;
+		return Messages.LazySessionFactoryAdapter_session_factory;
 	}
 
 	public Object getParent(Object o) {

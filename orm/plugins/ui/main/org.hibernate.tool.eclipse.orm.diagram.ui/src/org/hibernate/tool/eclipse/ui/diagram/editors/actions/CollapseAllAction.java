@@ -12,7 +12,7 @@ package org.hibernate.tool.eclipse.ui.diagram.editors.actions;
 
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
-import org.hibernate.tool.eclipse.ui.diagram.DiagramViewerMessages;
+import org.hibernate.tool.eclipse.orm.diagram.ui.nls.Messages;
 import org.hibernate.tool.eclipse.ui.diagram.editors.DiagramViewer;
 import org.hibernate.tool.eclipse.ui.diagram.editors.command.CollapseAllCommand;
 
@@ -26,7 +26,7 @@ public class CollapseAllAction extends DiagramBaseAction {
 	public CollapseAllAction(DiagramViewer editor) {
 		super(editor);
 		setId(ACTION_ID);
-		setText(DiagramViewerMessages.CollapseAllAction_collapse_all);
+		setText(Messages.CollapseAllAction_collapse_all);
 		//setImageDescriptor(ImageDescriptor.createFromFile(
 		//		DiagramViewer.class, "icons/export.png"));
 	}

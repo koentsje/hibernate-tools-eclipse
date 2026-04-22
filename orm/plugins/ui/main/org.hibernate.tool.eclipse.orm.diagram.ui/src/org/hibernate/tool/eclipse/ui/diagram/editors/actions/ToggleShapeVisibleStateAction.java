@@ -23,7 +23,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbenchPart;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ITable;
-import org.hibernate.tool.eclipse.ui.diagram.DiagramViewerMessages;
+import org.hibernate.tool.eclipse.orm.diagram.ui.nls.Messages;
 import org.hibernate.tool.eclipse.ui.diagram.editors.DiagramViewer;
 import org.hibernate.tool.eclipse.ui.diagram.editors.command.ToggleShapeVisibleStateCommand;
 import org.hibernate.tool.eclipse.ui.diagram.editors.model.OrmShape;
@@ -43,8 +43,8 @@ public class ToggleShapeVisibleStateAction extends SelectionAction {
 	public ToggleShapeVisibleStateAction(IWorkbenchPart editor) {
 		super(editor);
 		setId(ACTION_ID);
-		setText(DiagramViewerMessages.ToggleShapeVisibleStateAction_toggle_visible_state);
-		setToolTipText(DiagramViewerMessages.ToggleShapeVisibleStateAction_toggle_visible_state_tooltip);
+		setText(Messages.ToggleShapeVisibleStateAction_toggle_visible_state);
+		setToolTipText(Messages.ToggleShapeVisibleStateAction_toggle_visible_state_tooltip);
 		setImageDescriptor(img);
 	}
 	

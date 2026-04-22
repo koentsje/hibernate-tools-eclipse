@@ -30,7 +30,7 @@ import org.eclipse.jface.viewers.StructuredViewer;
 import org.eclipse.ui.actions.SelectionListenerAction;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 
 /**
  * @author max
@@ -43,7 +43,7 @@ public class DeleteConfigurationAction extends SelectionListenerAction {
 	private StructuredViewer part;
 
 	public DeleteConfigurationAction(StructuredViewer selectionProvider) {
-		super(OrmBaseUiMessages.DeleteConfigurationAction_delete_config);
+		super(Messages.DeleteConfigurationAction_delete_config);
 		setEnabled(false);
 		this.part = selectionProvider;
 		setId(DELETECONFIG_ACTIONID);
@@ -62,13 +62,13 @@ public class DeleteConfigurationAction extends SelectionListenerAction {
 		
 		if (!ccSelected) return;
 		
-		String question =  OrmBaseUiMessages.DeleteConfigurationAction_do_you_wish_del_selected_config;
-		String title = OrmBaseUiMessages.DeleteConfigurationAction_delete_console_config;
+		String question =  Messages.DeleteConfigurationAction_do_you_wish_del_selected_config;
+		String title = Messages.DeleteConfigurationAction_delete_console_config;
 		if (selectedNonResources.size() > 1){
-			question += OrmBaseUiMessages.DeleteConfigurationAction_str_1;
-			title += OrmBaseUiMessages.DeleteConfigurationAction_str_2;
+			question += Messages.DeleteConfigurationAction_str_1;
+			title += Messages.DeleteConfigurationAction_str_2;
 		}
-		question += OrmBaseUiMessages.DeleteConfigurationAction_str_3;
+		question += Messages.DeleteConfigurationAction_str_3;
 
 		if( MessageDialog.openConfirm( null, title, question)) {
 			iter = selectedNonResources.iterator();

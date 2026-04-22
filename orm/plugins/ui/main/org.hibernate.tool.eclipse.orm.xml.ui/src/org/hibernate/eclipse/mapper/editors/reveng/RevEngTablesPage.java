@@ -24,7 +24,7 @@ package org.hibernate.eclipse.mapper.editors.reveng;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
-import org.hibernate.eclipse.mapper.MapperMessages;
+import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
 import org.hibernate.eclipse.mapper.editors.ReverseEngineeringEditor;
 
 public class RevEngTablesPage extends RevEngFormEditorPart {
@@ -32,7 +32,7 @@ public class RevEngTablesPage extends RevEngFormEditorPart {
 	public final static String PART_ID = "tables"; //$NON-NLS-1$
 
 	public RevEngTablesPage(ReverseEngineeringEditor reditor) {
-		super(reditor, PART_ID, MapperMessages.RevEngTablesPage_tables_and_columns);
+		super(reditor, PART_ID, Messages.RevEngTablesPage_tables_and_columns);
 	}
 
 	protected void createFormContent(IManagedForm managedForm) {

@@ -64,7 +64,7 @@ import org.hibernate.tool.eclipse.orm.console.core.reveng.IReverseEngineeringDef
 import org.hibernate.eclipse.console.workbench.DeferredContentProvider;
 import org.hibernate.tool.eclipse.orm.console.core.workbench.LazyDatabaseSchema;
 import org.hibernate.eclipse.console.workbench.xpl.AnyAdaptableLabelProvider;
-import org.hibernate.eclipse.mapper.MapperMessages;
+import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
 import org.hibernate.eclipse.mapper.editors.ReverseEngineeringEditor;
 import org.hibernate.eclipse.mapper.editors.reveng.xpl.CheckedTreeSelectionDialog;
 import org.hibernate.eclipse.mapper.model.RevEngColumnAdapter;
@@ -94,8 +94,8 @@ public class TablePropertiesBlock extends MasterDetailsBlock {
 		FormToolkit toolkit = managedForm.getToolkit();
 		Section section = toolkit.createSection( parent, Section.DESCRIPTION |
 				Section.FOCUS_TITLE | Section.TWISTIE | Section.EXPANDED);
-		section.setText( MapperMessages.TablePropertiesBlock_tables_columns );
-		section.setDescription( MapperMessages.TablePropertiesBlock_explicitly_control_settings_for_table_columns );
+		section.setText( Messages.TablePropertiesBlock_tables_columns );
+		section.setDescription( Messages.TablePropertiesBlock_explicitly_control_settings_for_table_columns );
 		section.marginWidth = 10;
 		section.marginHeight = 5;
 		toolkit.createCompositeSeparator( section );
@@ -113,7 +113,7 @@ public class TablePropertiesBlock extends MasterDetailsBlock {
 		t.setLayoutData( gd );
 		toolkit.paintBordersFor( client );
 
-		Button btnAdd = toolkit.createButton( client, MapperMessages.TablePropertiesBlock_add, SWT.PUSH );
+		Button btnAdd = toolkit.createButton( client, Messages.TablePropertiesBlock_add, SWT.PUSH );
 		btnAdd.addSelectionListener(new SelectionAdapter() {
 
 			public void widgetSelected(SelectionEvent e) {
@@ -124,7 +124,7 @@ public class TablePropertiesBlock extends MasterDetailsBlock {
 		gd = new GridData( GridData.VERTICAL_ALIGN_BEGINNING );
 		btnAdd.setLayoutData( gd );
 
-		Button btnDel = toolkit.createButton( client, MapperMessages.TablePropertiesBlock_delete, SWT.PUSH );
+		Button btnDel = toolkit.createButton( client, Messages.TablePropertiesBlock_delete, SWT.PUSH );
 		btnDel.addSelectionListener(new SelectionAdapter() {
 
 			public void widgetSelected(SelectionEvent e) {
@@ -187,8 +187,8 @@ public class TablePropertiesBlock extends MasterDetailsBlock {
 			editor.getReverseEngineeringDefinition().addTable(retable);
 		}
 		else {
-			dialog.setTitle(MapperMessages.TablePropertiesBlock_add_tables_columns);
-			dialog.setMessage(MapperMessages.TablePropertiesBlock_select_tables_columns);
+			dialog.setTitle(Messages.TablePropertiesBlock_add_tables_columns);
+			dialog.setMessage(Messages.TablePropertiesBlock_select_tables_columns);
 			dialog.setInput(lds);
 			dialog.setContainerMode(true);
 			dialog.open();
@@ -318,7 +318,7 @@ public class TablePropertiesBlock extends MasterDetailsBlock {
 		        data.grabExcessHorizontalSpace = true;
 		        composite.setData(data);
 		        Button selectButton = createButton(buttonComposite,
-		                IDialogConstants.SELECT_ALL_ID, MapperMessages.TablePropertiesBlock_select_all_children,
+		                IDialogConstants.SELECT_ALL_ID, Messages.TablePropertiesBlock_select_all_children,
 		                false);
 		        SelectionListener listener = new SelectionAdapter() {
 		            public void widgetSelected(SelectionEvent e) {
@@ -332,7 +332,7 @@ public class TablePropertiesBlock extends MasterDetailsBlock {
 		        };
 		        selectButton.addSelectionListener(listener);
 		        Button deselectButton = createButton(buttonComposite,
-		                IDialogConstants.DESELECT_ALL_ID, MapperMessages.TablePropertiesBlock_deselect_all,
+		                IDialogConstants.DESELECT_ALL_ID, Messages.TablePropertiesBlock_deselect_all,
 		                false);
 		        listener = new SelectionAdapter() {
 		            public void widgetSelected(SelectionEvent e) {
@@ -361,7 +361,7 @@ public class TablePropertiesBlock extends MasterDetailsBlock {
 			}
 		};
 		haction.setChecked( true );
-		haction.setToolTipText( MapperMessages.TablePropertiesBlock_horizontal_orientation );
+		haction.setToolTipText( Messages.TablePropertiesBlock_horizontal_orientation );
 		Action vaction = new Action( "ver", IAction.AS_RADIO_BUTTON ) { //$NON-NLS-1$
 			public void run() {
 				sashForm.setOrientation( SWT.VERTICAL );
@@ -369,7 +369,7 @@ public class TablePropertiesBlock extends MasterDetailsBlock {
 			}
 		};
 		vaction.setChecked( false );
-		vaction.setToolTipText( MapperMessages.TablePropertiesBlock_vertical_orientation );
+		vaction.setToolTipText( Messages.TablePropertiesBlock_vertical_orientation );
 		form.getToolBarManager().add( haction );
 		form.getToolBarManager().add( vaction );
 	}

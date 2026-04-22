@@ -22,7 +22,7 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.IWorkbenchPart;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ITable;
-import org.hibernate.tool.eclipse.ui.diagram.DiagramViewerMessages;
+import org.hibernate.tool.eclipse.orm.diagram.ui.nls.Messages;
 import org.hibernate.tool.eclipse.ui.diagram.editors.DiagramViewer;
 import org.hibernate.tool.eclipse.ui.diagram.editors.command.ToggleShapeVisibleStateCommand;
 import org.hibernate.tool.eclipse.ui.diagram.editors.model.OrmShape;
@@ -41,8 +41,8 @@ public class ShapeShowAction extends SelectionAction {
 	public ShapeShowAction(IWorkbenchPart editor) {
 		super(editor);
 		setId(ACTION_ID);
-		setText(DiagramViewerMessages.ShapeShowAction_shape_show);
-		setToolTipText(DiagramViewerMessages.ShapeShowAction_shape_show_tooltip);
+		setText(Messages.ShapeShowAction_shape_show);
+		setToolTipText(Messages.ShapeShowAction_shape_show_tooltip);
 		setImageDescriptor(img);
 	}
 	

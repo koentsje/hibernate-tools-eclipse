@@ -25,7 +25,7 @@ import java.util.Map;
 import java.util.WeakHashMap;
 
 import org.eclipse.osgi.util.NLS;
-import org.hibernate.tool.eclipse.orm.console.core.ConsoleMessages;
+import org.hibernate.tool.eclipse.orm.console.core.nls.Messages;
 import org.hibernate.tool.eclipse.common.base.core.logging.CurrentContext;
 
 public class DefaultExecutionContext implements ExecutionContext {
@@ -77,7 +77,7 @@ public class DefaultExecutionContext implements ExecutionContext {
 		if(installs==0) {
 			ClassLoader cl = previousLoaders.get(Thread.currentThread() );
 			if(configurationClassLoader!=null && Thread.currentThread().getContextClassLoader() != configurationClassLoader) {
-				String out = NLS.bind(ConsoleMessages.DefaultExecutionContext_existing_classloader, Thread.currentThread().getContextClassLoader(), configurationClassLoader);
+				String out = NLS.bind(Messages.DefaultExecutionContext_existing_classloader, Thread.currentThread().getContextClassLoader(), configurationClassLoader);
 				throw new IllegalStateException(out);
 			}
 

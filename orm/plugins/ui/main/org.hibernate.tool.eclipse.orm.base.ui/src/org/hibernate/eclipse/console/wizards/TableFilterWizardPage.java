@@ -35,7 +35,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.tool.eclipse.orm.console.core.reveng.IReverseEngineeringDefinition;
 import org.hibernate.tool.eclipse.orm.model.core.ITableFilter;
 import org.hibernate.tool.eclipse.orm.console.core.reveng.ReverseEngineeringDefinitionImpl;
@@ -53,8 +53,8 @@ public class TableFilterWizardPage extends WizardPage {
 	protected TableFilterWizardPage(String pageName, String selectedConfiguratonName) {
 		super( pageName );
 		this.selectedConfiguratonName = selectedConfiguratonName;
-		setTitle(OrmBaseUiMessages.TableFilterWizardPage_configure_table_filters);
-		setDescription(OrmBaseUiMessages.TableFilterWizardPage_specify_which_catalog);
+		setTitle(Messages.TableFilterWizardPage_configure_table_filters);
+		setDescription(Messages.TableFilterWizardPage_specify_which_catalog);
 	}
 
 	public void createControl(Composite parent) {
@@ -75,7 +75,7 @@ public class TableFilterWizardPage extends WizardPage {
 		layout.verticalSpacing = 10;
 
 		consoleConfigurationName = new ComboDialogField(SWT.READ_ONLY);
-		consoleConfigurationName.setLabelText(OrmBaseUiMessages.TableFilterWizardPage_console_configuration);
+		consoleConfigurationName.setLabelText(Messages.TableFilterWizardPage_console_configuration);
 		ConsoleConfiguration[] cfg = LaunchHelperUI.findFilteredSortedConsoleConfigs();
 		String[] names = new String[cfg.length];
 		for (int i = 0; i < cfg.length; i++) {
@@ -121,7 +121,7 @@ public class TableFilterWizardPage extends WizardPage {
     	//updateButtons();
 
     	if (hasDuplicates()) {
-        	updateWarningStatus(OrmBaseUiMessages.TableFilterWizardPage_table_filters_contains_duplicates);
+        	updateWarningStatus(Messages.TableFilterWizardPage_table_filters_contains_duplicates);
             return;
         }
 

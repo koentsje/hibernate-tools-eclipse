@@ -33,7 +33,7 @@ import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateProjectConsoleManager;
 import org.hibernate.tool.eclipse.orm.console.core.reveng.IReverseEngineeringDefinition;
 import org.hibernate.eclipse.console.utils.LaunchHelperUI;
-import org.hibernate.eclipse.mapper.MapperMessages;
+import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
 import org.hibernate.eclipse.mapper.MapperPlugin;
 import org.hibernate.eclipse.mapper.editors.ReverseEngineeringEditor;
 import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
@@ -58,7 +58,7 @@ public class ConsoleConfigNamePart extends RevEngSectionPart {
 						org.eclipse.jdt.core.JavaCore.create(re.getHibernateNature().getProject()));
 				}
 			} catch (CoreException e) {
-				MapperPlugin.getDefault().getLogger().logException(MapperMessages.ConsoleConfigNamePart_problem_when_trying_to_hibernate_project_info,e);
+				MapperPlugin.getDefault().getLogger().logException(Messages.ConsoleConfigNamePart_problem_when_trying_to_hibernate_project_info,e);
 			}
 
 			text.setText(initialConfg);
@@ -90,11 +90,11 @@ public class ConsoleConfigNamePart extends RevEngSectionPart {
 	}
 
 	protected String getSectionDescription() {
-		return MapperMessages.ConsoleConfigNamePart_select_console_configuration;
+		return Messages.ConsoleConfigNamePart_select_console_configuration;
 	}
 
 	protected String getSectionTitle() {
-		return MapperMessages.ConsoleConfigNamePart_console_configuration;
+		return Messages.ConsoleConfigNamePart_console_configuration;
 	}
 
 	String getConsoleConfigName() {

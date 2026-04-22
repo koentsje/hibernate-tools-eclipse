@@ -44,8 +44,7 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
 import org.hibernate.tool.eclipse.orm.console.core.preferences.ConsoleConfigurationPreferences.ConfigurationMode;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.console.utils.DialogSelectionHelper;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
@@ -76,7 +75,7 @@ public class ConsoleConfigurationMainTab extends ConsoleConfigurationTab {
 	private ConnectionProfileCtrl connectionProfileCtrl;
 	
 	public String getName() {
-		return OrmBaseUiMessages.ConsoleConfigurationMainTab_main;
+		return Messages.ConsoleConfigurationMainTab_main;
 	}
 
 	public void createControl(Composite parent) {
@@ -104,7 +103,7 @@ public class ConsoleConfigurationMainTab extends ConsoleConfigurationTab {
 	}
 
 	private void createDBConnectConfig(Composite container) {
-		Group group = SWTFactory.createGroup(container, OrmBaseUiMessages.ConsoleConfigurationMainTab_DatabaseConnection, 3, 2, GridData.FILL_HORIZONTAL);
+		Group group = SWTFactory.createGroup(container, Messages.ConsoleConfigurationMainTab_DatabaseConnection, 3, 2, GridData.FILL_HORIZONTAL);
 		
 		connectionProfileCtrl = new ConnectionProfileCtrl(group, 1, ""); //$NON-NLS-1$
 		connectionProfileCtrl.addModifyListener(getChangeListener());
@@ -119,25 +118,25 @@ public class ConsoleConfigurationMainTab extends ConsoleConfigurationTab {
 	};
 			
 	private void createConfigurationMode(Composite container) {
-		Group group = createGroup( container, OrmBaseUiMessages.ConsoleConfigurationMainTab_type);
+		Group group = createGroup( container, Messages.ConsoleConfigurationMainTab_type);
 		//group.setLayout( new RowLayout( SWT.HORIZONTAL ) );
 		group.setLayout(new GridLayout(4, false));
 		coreMode = new Button(group, SWT.RADIO);
-		coreMode.setText(OrmBaseUiMessages.ConsoleConfigurationMainTab_core);
+		coreMode.setText(Messages.ConsoleConfigurationMainTab_core);
 		coreMode.addSelectionListener( getChangeListener() );
 		coreMode.setSelection( true );
 		annotationsMode = new Button(group, SWT.RADIO);
-		annotationsMode.setText(OrmBaseUiMessages.ConsoleConfigurationMainTab_annotations);
+		annotationsMode.setText(Messages.ConsoleConfigurationMainTab_annotations);
 		annotationsMode.addSelectionListener( getChangeListener() );
 		jpaMode = new Button(group, SWT.RADIO);
-		jpaMode.setText(OrmBaseUiMessages.ConsoleConfigurationMainTab_jpa);
+		jpaMode.setText(Messages.ConsoleConfigurationMainTab_jpa);
 		jpaMode.addSelectionListener( getChangeListener() );
 		new Label(group, SWT.NULL);
 		Composite comp2 = new Composite(group, SWT.NULL);
 		comp2.setLayout(new GridLayout(2, false));
 		comp2.setLayoutData(new GridData(GridData.BEGINNING, -1, false, false, 2, 1));
 		Label hLabel = new Label(comp2, SWT.NULL);
-		hLabel.setText(BasicHibernateMessages.ConsoleConfigurationMainTab_0);
+		hLabel.setText(Messages.ConsoleConfigurationMainTab_0);
 		hibernateVersion = new Combo(comp2, SWT.READ_ONLY);
 		String[] versions = RuntimeServiceManager.getInstance().getEnabledVersions();
 		Arrays.sort(versions, STRING_REVERSE_ALPHABETICAL);
@@ -151,7 +150,7 @@ public class ConsoleConfigurationMainTab extends ConsoleConfigurationTab {
 	}
 
 	protected void createProjectEditor(Composite parent) {
-		Group group = createGroup( parent, OrmBaseUiMessages.ConsoleConfigurationMainTab_project );
+		Group group = createGroup( parent, Messages.ConsoleConfigurationMainTab_project );
 		projectNameText = createBrowseEditor( parent, group);
 		createBrowseButton( group, new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent e) {
@@ -161,7 +160,7 @@ public class ConsoleConfigurationMainTab extends ConsoleConfigurationTab {
 	}
 
 	private void createPropertyFileEditor(Composite parent) {
-		Group group = createGroup( parent, OrmBaseUiMessages.ConsoleConfigurationMainTab_property_file );
+		Group group = createGroup( parent, Messages.ConsoleConfigurationMainTab_property_file );
 		propertyFileText = createBrowseEditor( parent, group);
 		createSetupButton( group, new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent e) {
@@ -172,7 +171,7 @@ public class ConsoleConfigurationMainTab extends ConsoleConfigurationTab {
 
 
 	private void createConfigurationFileEditor(Composite parent) {
-		Group group = createGroup( parent, OrmBaseUiMessages.ConsoleConfigurationMainTab_configuration_file );
+		Group group = createGroup( parent, Messages.ConsoleConfigurationMainTab_configuration_file );
 		configurationFileText = createBrowseEditor( parent, group);
 		confbutton = createSetupButton( group, new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent e) {
@@ -183,7 +182,7 @@ public class ConsoleConfigurationMainTab extends ConsoleConfigurationTab {
 
 
 	private void createPersistenceUnitEditor(Composite parent) {
-		Group group = createGroup( parent, OrmBaseUiMessages.ConsoleConfigurationMainTab_persistence_unit );
+		Group group = createGroup( parent, Messages.ConsoleConfigurationMainTab_persistence_unit );
 		persistenceUnitNameText = createBrowseEditor( parent, group);
 		persistenceUnitNameButton = createBrowseButton( group, new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent e) {
@@ -261,7 +260,7 @@ public class ConsoleConfigurationMainTab extends ConsoleConfigurationTab {
 		if(initialPath!=null) {
     		defaultChoice = 1;
     	}
-		MessageDialog dialog = createSetupDialog(OrmBaseUiMessages.ConsoleConfigurationMainTab_setup_property_file, OrmBaseUiMessages.ConsoleConfigurationMainTab_do_you_want_to_create_new_property_file, defaultChoice);
+		MessageDialog dialog = createSetupDialog(Messages.ConsoleConfigurationMainTab_setup_property_file, Messages.ConsoleConfigurationMainTab_do_you_want_to_create_new_property_file, defaultChoice);
 
 		int answer = dialog.open();
 		if(answer==0) { // create new
@@ -274,14 +273,14 @@ public class ConsoleConfigurationMainTab extends ConsoleConfigurationTab {
 
 	private void handlePropertyFileBrowse() {
 		IPath initialPath = getPropertyFilePath() != null ? getPropertyFilePath() : new Path(getProjectName());
-		IPath[] paths = org.hibernate.eclipse.console.utils.xpl.DialogSelectionHelper.chooseFileEntries(getShell(),  initialPath, new IPath[0], OrmBaseUiMessages.ConsoleConfigurationMainTab_select_propertyfile, OrmBaseUiMessages.ConsoleConfigurationMainTab_choose_file_to_use_as_hibernate_properties, new String[] {OrmBaseUiMessages.ConsoleConfigurationMainTab_properties}, false, false, true);
+		IPath[] paths = org.hibernate.eclipse.console.utils.xpl.DialogSelectionHelper.chooseFileEntries(getShell(),  initialPath, new IPath[0], Messages.ConsoleConfigurationMainTab_select_propertyfile, Messages.ConsoleConfigurationMainTab_choose_file_to_use_as_hibernate_properties, new String[] {Messages.ConsoleConfigurationMainTab_properties}, false, false, true);
 		if(paths!=null && paths.length==1) {
 			propertyFileText.setText( (paths[0]).toOSString() );
 		}
 	}
 
 	private void handleProjectBrowse() {
-		IJavaProject paths = DialogSelectionHelper.chooseJavaProject( getShell(), findJavaProject(), OrmBaseUiMessages.ConsoleConfigurationMainTab_select_java_project, OrmBaseUiMessages.ConsoleConfigurationMainTab_java_project_to_determine_default_classpath );
+		IJavaProject paths = DialogSelectionHelper.chooseJavaProject( getShell(), findJavaProject(), Messages.ConsoleConfigurationMainTab_select_java_project, Messages.ConsoleConfigurationMainTab_java_project_to_determine_default_classpath );
 		if(paths!=null) {
 			projectNameText.setText( paths.getProject().getName() );
 		} else {
@@ -290,7 +289,7 @@ public class ConsoleConfigurationMainTab extends ConsoleConfigurationTab {
 	}
 
 	private void handlePersistenceUnitBrowse() {
-		String persistenceUnit = DialogSelectionHelper.choosePersistenceUnit( getShell(), persistenceUnitNameText.getText(), OrmBaseUiMessages.ConsoleConfigurationMainTab_select_persistence_unit, OrmBaseUiMessages.ConsoleConfigurationMainTab_jpa_selected_persistence_unit, findJavaProject() );
+		String persistenceUnit = DialogSelectionHelper.choosePersistenceUnit( getShell(), persistenceUnitNameText.getText(), Messages.ConsoleConfigurationMainTab_select_persistence_unit, Messages.ConsoleConfigurationMainTab_jpa_selected_persistence_unit, findJavaProject() );
 		if(persistenceUnit!=null) {
 			persistenceUnitNameText.setText( persistenceUnit );
 		} else {
@@ -310,7 +309,7 @@ public class ConsoleConfigurationMainTab extends ConsoleConfigurationTab {
 	private void handlePropertyFileCreate() {
 		Wizard wizard = new Wizard(){
 
-			String pageName = OrmBaseUiMessages.ConsoleConfigurationMainTab_create_property_file;
+			String pageName = Messages.ConsoleConfigurationMainTab_create_property_file;
 
 			WizardNewFileCreationPage cPage = null;
 
@@ -324,8 +323,8 @@ public class ConsoleConfigurationMainTab extends ConsoleConfigurationTab {
 					selection = StructuredSelection.EMPTY;
 				}
 				cPage = new WizardNewFileCreationPage(pageName, selection);
-				cPage.setTitle( OrmBaseUiMessages.ConsoleConfigurationMainTab_create_hibernate_properties_file );
-			    cPage.setDescription( OrmBaseUiMessages.ConsoleConfigurationMainTab_create_new_properties_file );
+				cPage.setTitle( Messages.ConsoleConfigurationMainTab_create_hibernate_properties_file );
+			    cPage.setDescription( Messages.ConsoleConfigurationMainTab_create_new_properties_file );
 			    cPage.setFileName("hibernate.properties"); //$NON-NLS-1$
 			    addPage( cPage );
 			}
@@ -348,7 +347,7 @@ public class ConsoleConfigurationMainTab extends ConsoleConfigurationTab {
 				null,
 				question,
 				MessageDialog.QUESTION,
-				new String[] { BasicHibernateMessages.ConsoleConfigurationMainTab_create_new, BasicHibernateMessages.ConsoleConfigurationMainTab_use_existing, IDialogConstants.CANCEL_LABEL},
+				new String[] { Messages.ConsoleConfigurationMainTab_create_new, Messages.ConsoleConfigurationMainTab_use_existing, IDialogConstants.CANCEL_LABEL},
 				defaultChoice);
 	}
 
@@ -357,7 +356,7 @@ public class ConsoleConfigurationMainTab extends ConsoleConfigurationTab {
 		if(getConfigurationFilePath()!=null) {
     		defaultChoice = 1;
     	}
-		MessageDialog dialog = createSetupDialog(BasicHibernateMessages.ConsoleConfigurationMainTab_setup_configuration_file, BasicHibernateMessages.ConsoleConfigurationMainTab_do_you_want_to_create_new_cfgxml, defaultChoice);
+		MessageDialog dialog = createSetupDialog(Messages.ConsoleConfigurationMainTab_setup_configuration_file, Messages.ConsoleConfigurationMainTab_do_you_want_to_create_new_cfgxml, defaultChoice);
 		int answer = dialog.open();
 		if(answer==0) { // create new
 			handleConfigurationFileCreate();
@@ -368,7 +367,7 @@ public class ConsoleConfigurationMainTab extends ConsoleConfigurationTab {
 
 	private void handleConfigurationFileBrowse() {
 		IPath initialPath = getConfigurationFilePath() != null ? getConfigurationFilePath() : new Path(getProjectName());
-		IPath[] paths = DialogSelectionHelper.chooseFileEntries(getShell(),  initialPath, new IPath[0], BasicHibernateMessages.ConsoleConfigurationMainTab_select_hibernate_cfg_xml_file, BasicHibernateMessages.ConsoleConfigurationMainTab_choose_file_to_use_as_hibernate_cfg_xml, new String[] {BasicHibernateMessages.ConsoleConfigurationMainTab_cfg_xml}, false, false, true);
+		IPath[] paths = DialogSelectionHelper.chooseFileEntries(getShell(),  initialPath, new IPath[0], Messages.ConsoleConfigurationMainTab_select_hibernate_cfg_xml_file, Messages.ConsoleConfigurationMainTab_choose_file_to_use_as_hibernate_cfg_xml, new String[] {Messages.ConsoleConfigurationMainTab_cfg_xml}, false, false, true);
 		if(paths!=null && paths.length==1) {
 			configurationFileText.setText( (paths[0]).toOSString() );
 		}
@@ -388,7 +387,7 @@ public class ConsoleConfigurationMainTab extends ConsoleConfigurationTab {
 
 		WizardDialog wdialog = new WizardDialog(win.getShell(), wizard);
 		wdialog.create();
-		IWizardPage configPage = wizard.getPage(BasicHibernateMessages.ConsoleConfigurationMainTab_wizard_page);
+		IWizardPage configPage = wizard.getPage(Messages.ConsoleConfigurationMainTab_wizard_page);
 		if (configPage != null && configPage instanceof NewConfigurationWizardPage){
 			((NewConfigurationWizardPage)configPage).setCreateConsoleConfigurationVisible(false);
 			String cpName = nonEmptyTrimOrNull(connectionProfileCtrl.getSelectedConnectionName());
@@ -443,12 +442,12 @@ public class ConsoleConfigurationMainTab extends ConsoleConfigurationTab {
 		if(getProjectName()!=null && StringHelper.isNotEmpty(getProjectName().trim())) {
 			Path projectPath = new Path(getProjectName());
 			if (projectPath.segmentCount() > 1){
-				setErrorMessage(OrmBaseUiMessages.ConsoleConfigurationMainTab_path_for_project_must_have_only_one_segment);
+				setErrorMessage(Messages.ConsoleConfigurationMainTab_path_for_project_must_have_only_one_segment);
 				return false;
 			}
 			IJavaProject findJavaProject = ProjectUtils.findJavaProject( getProjectName() );
 			if(findJavaProject==null || !findJavaProject.exists()) {
-				String out = NLS.bind(OrmBaseUiMessages.ConsoleConfigurationMainTab_the_java_project_does_not_exist, getProjectName());
+				String out = NLS.bind(Messages.ConsoleConfigurationMainTab_the_java_project_does_not_exist, getProjectName());
 				setErrorMessage(out);
 				return false;
 			}
@@ -457,27 +456,27 @@ public class ConsoleConfigurationMainTab extends ConsoleConfigurationTab {
 //				if (!JpaFacet.isInstalled(findJavaProject.getProject())) {
 				/* Replaced previous line by next by Koen after Dali API changes */
 				if (!HibernateEclipseUtils.isJpaFacetInstalled(findJavaProject.getProject())) {
-					setErrorMessage(NLS.bind(OrmBaseUiMessages.ConsoleConfigurationMainTab_project_must_be_jpa, getProjectName()));
+					setErrorMessage(NLS.bind(Messages.ConsoleConfigurationMainTab_project_must_be_jpa, getProjectName()));
 					return false;
 				}
 //				String projectCPName = JptJpaCorePlugin.getConnectionProfileName(findJavaProject.getProject());
 				/* Replaced previous line by next by Koen after Dali API changes */
 				String projectCPName = HibernateEclipseUtils.getConnectionProfileName(findJavaProject.getProject());
 				if (StringHelper.isEmpty(projectCPName)){
-					setErrorMessage(NLS.bind(OrmBaseUiMessages.ConsoleConfigurationMainTab_cp_not_specified, getProjectName()));
+					setErrorMessage(NLS.bind(Messages.ConsoleConfigurationMainTab_cp_not_specified, getProjectName()));
 					return false;
 				}
 			}
 		} else {//check if jpa project connection selected
 			if (ConnectionProfileCtrl.JPA_CONNECTIN_NAME.equals(cpName)){
-				setErrorMessage(OrmBaseUiMessages.ConsoleConfigurationMainTab_project_must_be_set);
+				setErrorMessage(Messages.ConsoleConfigurationMainTab_project_must_be_set);
 				return false;
 			}
 		}
 		
 		if (ConnectionProfileCtrl.JPA_CONNECTIN_NAME.equals(cpName)){
 			if (!jpaMode.getSelection()){
-				String out = NLS.bind(OrmBaseUiMessages.ConsoleConfigurationMainTab_mode_must_be_used, jpaMode.getText());
+				String out = NLS.bind(Messages.ConsoleConfigurationMainTab_mode_must_be_used, jpaMode.getText());
 				setErrorMessage(out);
 				return false;
 			}
@@ -491,8 +490,8 @@ public class ConsoleConfigurationMainTab extends ConsoleConfigurationTab {
 
 		if (propertyFilename.length() > 0) {
 			//IResource resource = ResourcesPlugin.getWorkspace().getRoot().findMember(propertyFilename);
-			//String msg = checkForFile(OrmBaseUiMessages.ConsoleConfigurationMainTab_property_file_2, resource);
-			String msg = PathHelper.checkFile(propertyFilename, OrmBaseUiMessages.ConsoleConfigurationMainTab_property_file_2, true);
+			//String msg = checkForFile(Messages.ConsoleConfigurationMainTab_property_file_2, resource);
+			String msg = PathHelper.checkFile(propertyFilename, Messages.ConsoleConfigurationMainTab_property_file_2, true);
 			if(msg!=null) {
 				setErrorMessage(msg);
 				return false;
@@ -501,8 +500,8 @@ public class ConsoleConfigurationMainTab extends ConsoleConfigurationTab {
 
 		if (!configurationFileWillBeCreated && configurationFilename.length() > 0) {
 			//IResource resource = ResourcesPlugin.getWorkspace().getRoot().findMember(configurationFilename);
-			//String msg = checkForFile(OrmBaseUiMessages.ConsoleConfigurationMainTab_configuration_file_2,resource);
-			String msg = PathHelper.checkFile(configurationFilename, OrmBaseUiMessages.ConsoleConfigurationMainTab_configuration_file_2, true);
+			//String msg = checkForFile(Messages.ConsoleConfigurationMainTab_configuration_file_2,resource);
+			String msg = PathHelper.checkFile(configurationFilename, Messages.ConsoleConfigurationMainTab_configuration_file_2, true);
 			if(msg!=null) {
 				setErrorMessage(msg);
 				return false;
@@ -513,7 +512,7 @@ public class ConsoleConfigurationMainTab extends ConsoleConfigurationTab {
 		 * Having a /hibernate.properties is not the same as this!
 		 if ((configurationFilename != null && configurationFilename.trim().length() > 0) &&
 				(propertyFilename != null && propertyFilename.trim().length() > 0)) {
-			setMessage(OrmBaseUiMessages.ConsoleConfigurationMainTab_both_hibernate_properties_and_hibernate_cfg_xml);
+			setMessage(Messages.ConsoleConfigurationMainTab_both_hibernate_properties_and_hibernate_cfg_xml);
 			return true;
 		}*/
 

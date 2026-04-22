@@ -26,7 +26,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-import org.hibernate.tool.eclipse.orm.console.core.ConsoleMessages;
+import org.hibernate.tool.eclipse.orm.console.core.nls.Messages;
 import org.hibernate.tool.eclipse.orm.console.core.HibernateConsoleRuntimeException;
 import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
 import org.w3c.dom.Document;
@@ -47,7 +47,7 @@ public abstract class AbstractConsoleConfigurationPreferences implements
 
 	private String projectName;
 
-	private String name = ConsoleMessages.AbstractConsoleConfigurationPreferences_unknown;
+	private String name = Messages.AbstractConsoleConfigurationPreferences_unknown;
 	protected String entityResolverName = null;
 	private boolean useProjectClasspath;
 	private ConfigurationMode configurationMode;
@@ -99,7 +99,7 @@ public abstract class AbstractConsoleConfigurationPreferences implements
 
 	public void setName(String name) {
 		if(name==null || name.trim().length()==0) {
-			throw new IllegalArgumentException(ConsoleMessages.AbstractConsoleConfigurationPreferences_name_not_null_or_empty);
+			throw new IllegalArgumentException(Messages.AbstractConsoleConfigurationPreferences_name_not_null_or_empty);
 		}
 
 		this.name = name;
@@ -120,7 +120,7 @@ public abstract class AbstractConsoleConfigurationPreferences implements
 			return p;
 		}
 		catch(IOException io) {
-			throw new HibernateConsoleRuntimeException(ConsoleMessages.AbstractConsoleConfigurationPreferences_could_not_load_prop_file + propFile, io);
+			throw new HibernateConsoleRuntimeException(Messages.AbstractConsoleConfigurationPreferences_could_not_load_prop_file + propFile, io);
 		} finally {
 			if(inStream!=null)
 				try {

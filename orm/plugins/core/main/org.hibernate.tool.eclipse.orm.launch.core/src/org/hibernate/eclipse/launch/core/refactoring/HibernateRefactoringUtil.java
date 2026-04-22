@@ -51,7 +51,7 @@ import org.eclipse.jdt.launching.IRuntimeClasspathEntry;
 import org.eclipse.jdt.launching.JavaRuntime;
 import org.eclipse.ltk.core.refactoring.Change;
 import org.eclipse.ltk.core.refactoring.CompositeChange;
-import org.hibernate.eclipse.launch.LaunchMessages;
+import org.hibernate.tool.eclipse.orm.launch.core.nls.Messages;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateConsoleCorePlugin;
 import org.hibernate.eclipse.launch.model.ExporterFactoryStrings;
 import org.hibernate.tool.eclipse.orm.console.core.properties.HibernatePropertiesConstants;
@@ -74,7 +74,7 @@ import org.xml.sax.SAXException;
  */
 public class HibernateRefactoringUtil {
 
-	private static final String ERROR_MESS = LaunchMessages.HibernateRefactoringUtil_error_during_refactoring;
+	private static final String ERROR_MESS = Messages.HibernateRefactoringUtil_error_during_refactoring;
 
 	private static String[] ccKeys = new String[]{
 		IBasicHibernateLaunchConstants.CFG_XML_FILE,
@@ -311,7 +311,7 @@ public class HibernateRefactoringUtil {
 	}
 
 	private static String getUpdatedMemento(String memento, IPath newPath, IPath oldPath) throws CoreException{
-		String error_mess = LaunchMessages.HibernateRefactoringUtil_error_occured_while_updating_classpath;
+		String error_mess = Messages.HibernateRefactoringUtil_error_occured_while_updating_classpath;
 		DocumentBuilder builder;
 		try {
 			builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
@@ -614,7 +614,7 @@ public class HibernateRefactoringUtil {
 			configs = new ILaunchConfiguration[0];
 			HibernateConsoleCorePlugin.getDefault().logErrorMessage( ERROR_MESS, e );
 		}
-		return createChangesFromList(changes, LaunchMessages.ConsoleConfigurationITypeRenameParticipant_update);
+		return createChangesFromList(changes, Messages.ConsoleConfigurationITypeRenameParticipant_update);
 	}
 
 

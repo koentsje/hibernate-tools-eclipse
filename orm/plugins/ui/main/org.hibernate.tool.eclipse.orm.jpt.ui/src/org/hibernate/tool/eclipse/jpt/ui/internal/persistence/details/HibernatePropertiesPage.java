@@ -11,7 +11,7 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.Section;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.basic.BasicHibernateProperties;
-import org.hibernate.tool.eclipse.jpt.ui.wizard.Messages;
+import org.hibernate.tool.eclipse.orm.jpt.ui.nls.Messages;
 
 public class HibernatePropertiesPage extends Pane<BasicHibernateProperties> {
 	private Composite parent;

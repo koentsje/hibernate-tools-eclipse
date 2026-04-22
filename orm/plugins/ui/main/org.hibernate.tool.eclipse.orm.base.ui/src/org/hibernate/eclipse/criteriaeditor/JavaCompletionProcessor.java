@@ -34,7 +34,7 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.jface.text.contentassist.IContextInformation;
 import org.eclipse.jface.text.contentassist.IContextInformationValidator;
 import org.eclipse.swt.widgets.Shell;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.console.utils.ProjectUtilsUI;
 import org.hibernate.eclipse.hqleditor.CompletionHelper;
@@ -86,17 +86,17 @@ public class JavaCompletionProcessor implements IContentAssistProcessor {
 		try {
 			setErrorMessage( null );
 			if(editor.getConsoleConfiguration()==null) {
-				setErrorMessage( OrmBaseUiMessages.JavaCompletionProcessor_no_console_configuration_found );
+				setErrorMessage( Messages.JavaCompletionProcessor_no_console_configuration_found );
 				return new ICompletionProposal[0];
 			}
-			String prefix = OrmBaseUiMessages.JavaCompletionProcessor_session_session; // has to do this because of https://bugs.eclipse.org/bugs/show_bug.cgi?id=141518
+			String prefix = Messages.JavaCompletionProcessor_session_session; // has to do this because of https://bugs.eclipse.org/bugs/show_bug.cgi?id=141518
 			
 			IJavaCompletionProposal[] results = new IJavaCompletionProposal[0];
 			IJavaProject[] projects = null;
 			//try {
 				projects = ProjectUtilsUI.findJavaProjects(editor.getConsoleConfiguration());
 			/*} catch (RuntimeException e){
-				String mess = NLS.bind(OrmBaseUiMessages.JavaCompletionProcessor_error_find_project,
+				String mess = NLS.bind(Messages.JavaCompletionProcessor_error_find_project,
 						editor.getConsoleConfiguration().getName());
 				HibernateBasePlugin.getDefault().logErrorMessage(mess, e);
 			}*/
@@ -112,7 +112,7 @@ public class JavaCompletionProcessor implements IContentAssistProcessor {
 					ErrorDialog
 							.openError(
 									shell,
-									OrmBaseUiMessages.JavaCompletionProcessor_error, OrmBaseUiMessages.JavaCompletionProcessor_error_while_performing_code_completion, x.getStatus() );
+									Messages.JavaCompletionProcessor_error, Messages.JavaCompletionProcessor_error_while_performing_code_completion, x.getStatus() );
 					HibernateBasePlugin.getDefault().log( x );
 				}
 				results = collector.getJavaCompletionProposals();

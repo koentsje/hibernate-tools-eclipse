@@ -37,7 +37,7 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.model.IWorkbenchAdapter;
 import org.eclipse.ui.model.IWorkbenchAdapter2;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 
 /**
@@ -190,7 +190,7 @@ public class AnyAdaptableLabelProvider extends LabelProvider implements
         	return (String) element;
         }
         if (adapter == null) {
-        	String out = NLS.bind(OrmBaseUiMessages.AnyAdaptableLabelProvider_unknown, element.getClass().getName(), element);
+        	String out = NLS.bind(Messages.AnyAdaptableLabelProvider_unknown, element.getClass().getName(), element);
             return out;
         }
         String label = adapter.getLabel(element);

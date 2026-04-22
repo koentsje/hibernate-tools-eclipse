@@ -63,11 +63,10 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.ui.ide.IDE;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.tool.eclipse.common.base.core.utils.FileUtils;
-import org.hibernate.eclipse.jdt.ui.internal.JdtUiMessages;
+import org.hibernate.tool.eclipse.orm.jdt.core.nls.Messages;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.collect.AllEntitiesInfoCollector;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.common.EntityInfo;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.common.Utils;
@@ -108,7 +107,7 @@ public class NewHibernateMappingFileWizard extends Wizard implements INewWizard,
 	public NewHibernateMappingFileWizard(){
 		setDefaultPageImageDescriptor(EclipseImages.getImageDescriptor(ImageConstants.NEW_WIZARD) );
 		setNeedsProgressMonitor(true);
-		setWindowTitle(JdtUiMessages.NewHibernateMappingFileWizard_create_hibernate_xml_mapping_file);
+		setWindowTitle(Messages.NewHibernateMappingFileWizard_create_hibernate_xml_mapping_file);
 	}
 
 	@Override
@@ -119,24 +118,24 @@ public class NewHibernateMappingFileWizard extends Wizard implements INewWizard,
 			selection = new StructuredSelection();
 		}
 		
-		page0 = new NewHibernateMappingElementsSelectionPage2(JdtUiMessages.NewHibernateMappingFileWizard_create_hibernate_xml_mapping_file, selection);
-		page0.setTitle(JdtUiMessages.NewHibernateMappingElementsSelectionPage2_title);
-		page0.setDescription(JdtUiMessages.NewHibernateMappingElementsSelectionPage2_description);
+		page0 = new NewHibernateMappingElementsSelectionPage2(Messages.NewHibernateMappingFileWizard_create_hibernate_xml_mapping_file, selection);
+		page0.setTitle(Messages.NewHibernateMappingElementsSelectionPage2_title);
+		page0.setDescription(Messages.NewHibernateMappingElementsSelectionPage2_description);
 		addPage(page0);
 		
 		cPage = new WizardNewFileCreationPage( "Ccfgxml", selection ); //$NON-NLS-1$
-	    cPage.setTitle( JdtUiMessages.NewHibernateMappingFileWizard_create_hibernate_xml_mapping_file );
-	    cPage.setDescription( JdtUiMessages.NewHibernateMappingFileWizard_create_empty_xml_mapping_file );
+	    cPage.setTitle( Messages.NewHibernateMappingFileWizard_create_hibernate_xml_mapping_file );
+	    cPage.setDescription( Messages.NewHibernateMappingFileWizard_create_empty_xml_mapping_file );
 	    cPage.setFileName("hibernate.hbm.xml"); //$NON-NLS-1$
 	    addPage(cPage);	    
 	    
 		page2 = new NewHibernateMappingFilePage(false);
-		page2.setTitle(JdtUiMessages.NewHibernateMappingFilePage_title);
-		page2.setMessage(JdtUiMessages.NewHibernateMappingFilePage_this_wizard_creates, IMessageProvider.WARNING);
+		page2.setTitle(Messages.NewHibernateMappingFilePage_title);
+		page2.setMessage(Messages.NewHibernateMappingFilePage_this_wizard_creates, IMessageProvider.WARNING);
 		addPage(page2);		
 
 		previewPage = new NewHibernateMappingPreviewPage();
-		previewPage.setTitle(JdtUiMessages.NewHibernateMappingPreviewPage_title);
+		previewPage.setTitle(Messages.NewHibernateMappingPreviewPage_title);
 		addPage(previewPage);
 	}
 	
@@ -369,7 +368,7 @@ public class NewHibernateMappingFileWizard extends Wizard implements INewWizard,
 				res = false;
 			} catch (InvocationTargetException e) {
 				Throwable realException = e.getTargetException();
-				HibernateBasePlugin.getDefault().showError(getShell(), BasicHibernateMessages.NewReverseEngineeringFileWizard_error, realException);
+				HibernateBasePlugin.getDefault().showError(getShell(), Messages.NewReverseEngineeringFileWizard_error, realException);
 				res = false;
 			}
 			cleanUpGenFolders();
@@ -413,7 +412,7 @@ public class NewHibernateMappingFileWizard extends Wizard implements INewWizard,
 		final IFile file, IProgressMonitor monitor)
 		throws CoreException {
 		// create a sample file
-		monitor.beginTask(BasicHibernateMessages.NewReverseEngineeringFileWizard_creating + file.getName(), 2);
+		monitor.beginTask(Messages.NewReverseEngineeringFileWizard_creating + file.getName(), 2);
 		InputStream stream = null;
 		try {
 			stream = openContentStream();
@@ -432,7 +431,7 @@ public class NewHibernateMappingFileWizard extends Wizard implements INewWizard,
 			}
 		}
 		monitor.worked(1);
-		monitor.setTaskName(BasicHibernateMessages.NewConfigurationWizard_open_file_for_editing);
+		monitor.setTaskName(Messages.NewConfigurationWizard_open_file_for_editing);
 		getShell().getDisplay().asyncExec(new Runnable() {
 			public void run() {
 				IWorkbenchPage page =
@@ -455,7 +454,7 @@ public class NewHibernateMappingFileWizard extends Wizard implements INewWizard,
 		try {
             return new ByteArrayInputStream(sw.toString().getBytes("UTF-8") ); //$NON-NLS-1$
         } catch (UnsupportedEncodingException uec) {
-            HibernateBasePlugin.getDefault().logErrorMessage(BasicHibernateMessages.NewConfigurationWizard_problems_converting_to_utf8, uec);
+            HibernateBasePlugin.getDefault().logErrorMessage(Messages.NewConfigurationWizard_problems_converting_to_utf8, uec);
             return new ByteArrayInputStream(sw.toString().getBytes() );
         }
 	}
@@ -548,7 +547,7 @@ public class NewHibernateMappingFileWizard extends Wizard implements INewWizard,
 	}
 	
 	protected void updateCompilationUnits(){
-		Assert.isNotNull(page0.getSelection(), JdtUiMessages.NewHibernateMappingFileWizard_selection_cant_be_empty);
+		Assert.isNotNull(page0.getSelection(), Messages.NewHibernateMappingFileWizard_selection_cant_be_empty);
 		if ((selectionCU == null) || !page0.getSelection().equals(selection) || 
 				processDepth != page0.getProcessDepth()) {
 			selectionCU = new HashSet<ICompilationUnit>();
@@ -561,7 +560,7 @@ public class NewHibernateMappingFileWizard extends Wizard implements INewWizard,
 					public void run(IProgressMonitor monitor)
 							throws InvocationTargetException,
 							InterruptedException {
-						monitor.beginTask(JdtUiMessages.NewHibernateMappingFileWizard_look_for_dependent_cu, selection.size() + 1);
+						monitor.beginTask(Messages.NewHibernateMappingFileWizard_look_for_dependent_cu, selection.size() + 1);
 						Iterator<?> it = selection.iterator();
 						int done = 1;
 						while (it.hasNext()) {

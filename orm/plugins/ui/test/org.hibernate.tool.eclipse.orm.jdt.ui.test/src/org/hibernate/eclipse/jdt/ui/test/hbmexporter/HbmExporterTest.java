@@ -20,7 +20,7 @@ import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.osgi.util.NLS;
-import org.hibernate.eclipse.console.test.ConsoleTestMessages;
+import org.hibernate.tool.eclipse.orm.jdt.ui.test.nls.Messages;
 import org.hibernate.eclipse.console.test.project.TestProject;
 import org.hibernate.eclipse.console.test.utils.FilesTransfer;
 import org.hibernate.tool.eclipse.orm.console.core.utils.ProjectUtils;
@@ -195,7 +195,7 @@ public class HbmExporterTest extends TestCase {
 		File resourceFolder = getResourceItem(RESOURCE_PATH);
 		if (!resourceFolder.exists()) {
 			String out = NLS.bind(
-					ConsoleTestMessages.MappingTestProject_folder_not_found,
+					Messages.MappingTestProject_folder_not_found,
 					RESOURCE_PATH);
 			throw new RuntimeException(out);
 		}
@@ -205,7 +205,7 @@ public class HbmExporterTest extends TestCase {
 		File resourceFolderLib = getResourceItem(TESTRESOURCE_PATH);
 		if (!resourceFolderLib.exists()) {
 			String out = NLS.bind(
-					ConsoleTestMessages.MappingTestProject_folder_not_found,
+					Messages.MappingTestProject_folder_not_found,
 					RESOURCE_PATH);
 			throw new RuntimeException(out);
 		}

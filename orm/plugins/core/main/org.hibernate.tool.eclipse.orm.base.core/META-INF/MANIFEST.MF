@@ -5,7 +5,8 @@ Bundle-SymbolicName: org.hibernate.tool.eclipse.orm.base.core;singleton:=true
 Bundle-Version: 6.0.0.qualifier
 Bundle-Vendor: %Bundle-Vendor.0
 Bundle-Localization: plugin
-Export-Package: org.hibernate.tool.eclipse.orm.hql,
+Export-Package: org.hibernate.tool.eclipse.orm.base.core.nls,
+ org.hibernate.tool.eclipse.orm.hql,
  org.hibernate.tool.eclipse.orm.project,
  org.hibernate.tool.eclipse.orm.query,
  org.hibernate.tool.eclipse.orm.utils,

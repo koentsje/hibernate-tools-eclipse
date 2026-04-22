@@ -26,7 +26,7 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
-import org.hibernate.eclipse.mapper.MapperMessages;
+import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
 import org.hibernate.eclipse.mapper.editors.ReverseEngineeringEditor;
 
 public class RevEngTypeMappingPage extends RevEngFormEditorPart {
@@ -34,7 +34,7 @@ public class RevEngTypeMappingPage extends RevEngFormEditorPart {
 	public final static String PART_ID = "typemappings"; //$NON-NLS-1$
 
 	public RevEngTypeMappingPage(ReverseEngineeringEditor reditor) {
-		super(reditor, PART_ID, MapperMessages.RevEngTypeMappingPage_type_mappings);
+		super(reditor, PART_ID, Messages.RevEngTypeMappingPage_type_mappings);
 	}
 
 	public void createFormContent(IManagedForm mform) {

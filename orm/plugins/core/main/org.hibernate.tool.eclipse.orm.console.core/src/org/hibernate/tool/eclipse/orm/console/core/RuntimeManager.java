@@ -13,7 +13,7 @@ import java.util.concurrent.Callable;
 import org.eclipse.osgi.util.NLS;
 import org.hibernate.tool.eclipse.orm.console.core.config.ConfigurationFactory;
 import org.hibernate.tool.eclipse.orm.console.core.config.ConsoleConfigClassLoader;
-import org.hibernate.tool.eclipse.orm.console.core.ConsoleMessages;
+import org.hibernate.tool.eclipse.orm.console.core.nls.Messages;
 import org.hibernate.tool.eclipse.orm.console.core.config.FakeDelegatingDriver;
 import org.hibernate.tool.eclipse.orm.console.core.execution.DefaultExecutionContext;
 import org.hibernate.tool.eclipse.orm.console.core.execution.ExecutionContext;
@@ -163,7 +163,7 @@ public class RuntimeManager implements IRuntimeManager {
 				}
 			});
 		}
-		final String msg = NLS.bind(ConsoleMessages.ConsoleConfiguration_null_execution_context, getName());
+		final String msg = NLS.bind(Messages.ConsoleConfiguration_null_execution_context, getName());
 		throw new HibernateRuntimeException(msg);
 	}
 

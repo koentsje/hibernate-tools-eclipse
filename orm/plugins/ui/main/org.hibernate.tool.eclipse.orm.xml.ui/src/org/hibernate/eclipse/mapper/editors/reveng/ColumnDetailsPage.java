@@ -34,7 +34,7 @@ import org.eclipse.ui.forms.IFormPart;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
 import org.hibernate.tool.eclipse.orm.model.core.IRevEngColumn;
-import org.hibernate.eclipse.mapper.MapperMessages;
+import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
 import org.hibernate.eclipse.mapper.editors.reveng.xpl.FormTextEntry;
 
 public class ColumnDetailsPage extends RevEngDetailsPage implements IDetailsPage, PropertyChangeListener {
@@ -47,18 +47,18 @@ public class ColumnDetailsPage extends RevEngDetailsPage implements IDetailsPage
 	private IRevEngColumn column;
 
 	public void buildContents(FormToolkit toolkit, Section section, Composite client) {
-		section.setText(MapperMessages.ColumnDetailsPage_column_details);
-		section.setDescription(MapperMessages.ColumnDetailsPage_set_properties_of_selected_column);
+		section.setText(Messages.ColumnDetailsPage_column_details);
+		section.setDescription(Messages.ColumnDetailsPage_set_properties_of_selected_column);
 
-		nameEntry = new FormTextEntry(client, toolkit, MapperMessages.ColumnDetailsPage_name, SWT.NULL);
-		nameEntry.setDescription(MapperMessages.ColumnDetailsPage_the_name_of_the_column);
+		nameEntry = new FormTextEntry(client, toolkit, Messages.ColumnDetailsPage_name, SWT.NULL);
+		nameEntry.setDescription(Messages.ColumnDetailsPage_the_name_of_the_column);
 		nameEntry.setFormEntryListener(new FormTextEntryListenerAdapter() {
 			public void textValueChanged(FormTextEntry entry) {
 				column.setName(entry.getValue());
 			}
 		});
 
-		//excluded = toolkit.createButton(client, MapperMessages.ColumnDetailsPage_exclude_columns_from_reverse_engineering, SWT.CHECK);
+		//excluded = toolkit.createButton(client, Messages.ColumnDetailsPage_exclude_columns_from_reverse_engineering, SWT.CHECK);
 		GridData gridData = new GridData(SWT.FILL, SWT.FILL, true,false);
 		gridData.horizontalSpan = 3;
 		/*excluded.setLayoutData(gridData);
@@ -70,23 +70,23 @@ public class ColumnDetailsPage extends RevEngDetailsPage implements IDetailsPage
 
 		});*/
 
-		jdbcTypeEntry = new FormTextEntry(client, toolkit, MapperMessages.ColumnDetailsPage_jdbc_type, SWT.NULL);
-		jdbcTypeEntry.setDescription(MapperMessages.ColumnDetailsPage_which_jdbc_type_this_column_should_have);
+		jdbcTypeEntry = new FormTextEntry(client, toolkit, Messages.ColumnDetailsPage_jdbc_type, SWT.NULL);
+		jdbcTypeEntry.setDescription(Messages.ColumnDetailsPage_which_jdbc_type_this_column_should_have);
 		jdbcTypeEntry.setFormEntryListener(new FormTextEntryListenerAdapter() {
 			public void textValueChanged(FormTextEntry entry) {
 				column.setJDBCType(entry.getValue());
 			}
 		});
-		propertyEntry = new FormTextEntry(client, toolkit, MapperMessages.ColumnDetailsPage_property_name, SWT.NULL);
-		propertyEntry.setDescription(MapperMessages.ColumnDetailsPage_the_property_name_which_must_be_used_for);
+		propertyEntry = new FormTextEntry(client, toolkit, Messages.ColumnDetailsPage_property_name, SWT.NULL);
+		propertyEntry.setDescription(Messages.ColumnDetailsPage_the_property_name_which_must_be_used_for);
 		propertyEntry.setFormEntryListener(new FormTextEntryListenerAdapter() {
 			public void textValueChanged(FormTextEntry entry) {
 				column.setPropertyName(entry.getValue());
 			}
 		});
 
-		typeEntry = new FormTextEntry(client, toolkit, MapperMessages.ColumnDetailsPage_hibernate_type, SWT.NULL);
-		typeEntry.setDescription(MapperMessages.ColumnDetailsPage_the_hibernate_type);
+		typeEntry = new FormTextEntry(client, toolkit, Messages.ColumnDetailsPage_hibernate_type, SWT.NULL);
+		typeEntry.setDescription(Messages.ColumnDetailsPage_the_hibernate_type);
 		typeEntry.setFormEntryListener(new FormTextEntryListenerAdapter() {
 			public void textValueChanged(FormTextEntry entry) {
 				column.setType(entry.getValue());

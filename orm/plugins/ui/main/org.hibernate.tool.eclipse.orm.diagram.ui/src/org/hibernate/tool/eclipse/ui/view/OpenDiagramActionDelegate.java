@@ -30,7 +30,7 @@ import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateConsoleCorePlugin;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
-import org.hibernate.tool.eclipse.ui.diagram.DiagramViewerMessages;
+import org.hibernate.tool.eclipse.orm.diagram.ui.nls.Messages;
 import org.hibernate.tool.eclipse.ui.diagram.UiPlugin;
 
 @SuppressWarnings("restriction")
@@ -77,7 +77,7 @@ public class OpenDiagramActionDelegate implements IObjectActionDelegate {
         				consoleConfig.build();
     				} catch (Exception he) {
     					HibernateConsoleCorePlugin.getDefault().logErrorMessage(
-    						DiagramViewerMessages.OpenDiagramActionDelegate_could_not_load_configuration +
+    						Messages.OpenDiagramActionDelegate_could_not_load_configuration +
     						' ' + consoleConfig.getName(), he);
     				}
 					if (consoleConfig.hasConfiguration()) {

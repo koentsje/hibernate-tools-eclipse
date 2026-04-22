@@ -25,7 +25,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
-import org.hibernate.eclipse.mapper.MapperMessages;
+import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
 import org.hibernate.eclipse.mapper.editors.ReverseEngineeringEditor;
 
 public class RevEngTableFilterPage extends RevEngFormEditorPart {
@@ -33,7 +33,7 @@ public class RevEngTableFilterPage extends RevEngFormEditorPart {
 	public final static String PART_ID = "tablefilter"; //$NON-NLS-1$
 
 	public RevEngTableFilterPage(ReverseEngineeringEditor reditor) {
-		super(reditor, PART_ID, MapperMessages.RevEngTableFilterPage_table_filters);
+		super(reditor, PART_ID, Messages.RevEngTableFilterPage_table_filters);
 	}
 
 	protected void createFormContent(IManagedForm managedForm) {

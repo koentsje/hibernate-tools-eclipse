@@ -27,7 +27,7 @@ import org.eclipse.wst.sse.core.internal.provisional.INodeNotifier;
 import org.hibernate.tool.eclipse.orm.model.core.IRevEngColumn;
 import org.hibernate.tool.eclipse.orm.model.core.IRevEngGenerator;
 import org.hibernate.tool.eclipse.orm.model.core.IRevEngPrimaryKey;
-import org.hibernate.eclipse.mapper.MapperMessages;
+import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
@@ -65,7 +65,7 @@ public class RevEngPrimaryKeyAdapter extends DOMAdapter implements
 
 	public void addColumn() {
 		RevEngColumnAdapter key = (RevEngColumnAdapter) getModel().createKeyColumn();
-		key.setName(MapperMessages.RevEngPrimaryKeyAdapter_column + (getColumns().length+1));
+		key.setName(Messages.RevEngPrimaryKeyAdapter_column + (getColumns().length+1));
 		getNode().appendChild(key.getNode());
 		DOMModelUtil.formatNode(getNode().getParentNode());
 	}

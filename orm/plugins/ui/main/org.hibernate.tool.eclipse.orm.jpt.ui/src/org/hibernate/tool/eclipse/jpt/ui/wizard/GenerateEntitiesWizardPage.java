@@ -14,12 +14,11 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.jdt.core.JavaConventions;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.internal.corext.util.JavaConventionsUtil;
-import org.eclipse.jdt.internal.corext.util.Messages;
+import org.hibernate.tool.eclipse.orm.jpt.ui.nls.Messages;
 import org.eclipse.jdt.internal.ui.wizards.NewWizardMessages;
 import org.eclipse.jdt.internal.ui.wizards.dialogfields.StringDialogField;
 import org.eclipse.jpt.jpa.core.JpaProject;
 import org.eclipse.swt.widgets.Composite;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.launch.PathHelper;
 import org.hibernate.tool.eclipse.jpt.core.internal.HibernateJpaProject;
 
@@ -42,7 +41,7 @@ public class GenerateEntitiesWizardPage extends GenerateInitWizardPage {
 	protected void createChildControls(Composite container) {
 		packageName = new StringDialogField();
         packageName.setDialogFieldListener(fieldlistener);
-        packageName.setLabelText(BasicHibernateMessages.CodeGenerationSettingsTab_package);
+        packageName.setLabelText(Messages.CodeGenerationSettingsTab_package);
         packageName.doFillIntoGrid(container, numColumns);
 	}
 
@@ -62,17 +61,17 @@ public class GenerateEntitiesWizardPage extends GenerateInitWizardPage {
 		if (packName.length() > 0) {
 			IStatus val= validatePackageName(packName, getJpaProject());
 			if (val.getSeverity() == IStatus.ERROR) {
-				setErrorMessage(Messages.format(NewWizardMessages.NewTypeWizardPage_error_InvalidPackageName, val.getMessage())); 
+				setErrorMessage(org.eclipse.jdt.internal.corext.util.Messages.format(NewWizardMessages.NewTypeWizardPage_error_InvalidPackageName, val.getMessage())); 
 				setPageComplete( false );
 				return;
 			} else if (val.getSeverity() == IStatus.WARNING) {
-				setWarningMessage(Messages.format(NewWizardMessages.NewTypeWizardPage_warning_DiscouragedPackageName, val.getMessage())); 
+				setWarningMessage(org.eclipse.jdt.internal.corext.util.Messages.format(NewWizardMessages.NewTypeWizardPage_warning_DiscouragedPackageName, val.getMessage())); 
 			}
 		} else {
 			setWarningMessage(NewWizardMessages.NewTypeWizardPage_warning_DefaultPackageDiscouraged); 
 		}
 
-		String msg = PathHelper.checkDirectory(getOutputDir(), BasicHibernateMessages.CodeGenerationSettingsTab_output_directory, false);
+		String msg = PathHelper.checkDirectory(getOutputDir(), Messages.CodeGenerationSettingsTab_output_directory, false);
 
         if (msg!=null) {
         	setErrorMessage( msg );

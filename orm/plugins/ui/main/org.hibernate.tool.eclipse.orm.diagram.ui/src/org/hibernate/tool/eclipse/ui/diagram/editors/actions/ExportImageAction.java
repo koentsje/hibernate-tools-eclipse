@@ -38,7 +38,7 @@ import org.eclipse.swt.graphics.ImageLoader;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 import org.eclipse.ui.dialogs.SaveAsDialog;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateConsoleCorePlugin;
-import org.hibernate.tool.eclipse.ui.diagram.DiagramViewerMessages;
+import org.hibernate.tool.eclipse.orm.diagram.ui.nls.Messages;
 import org.hibernate.tool.eclipse.ui.diagram.editors.DiagramViewer;
 
 /**
@@ -51,8 +51,8 @@ public class ExportImageAction extends DiagramBaseAction {
 
 	public static final String ACTION_ID = "export_as_image_id"; //$NON-NLS-1$
 	public static final String[] dialogFilterExtensions = new String[] { "*.png", "*.jpg", "*.bmp" }; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-	public static final String[] dialogFilterNames = new String[] { DiagramViewerMessages.ExportImageAction_png_format,
-		DiagramViewerMessages.ExportImageAction_jpg_format, DiagramViewerMessages.ExportImageAction_bmp_format };
+	public static final String[] dialogFilterNames = new String[] { Messages.ExportImageAction_png_format,
+		Messages.ExportImageAction_jpg_format, Messages.ExportImageAction_bmp_format };
 
 	//private FileDialog saveDialog = null;
 	private SaveAsDialog saveDialog = null;
@@ -63,7 +63,7 @@ public class ExportImageAction extends DiagramBaseAction {
 	public ExportImageAction(DiagramViewer editor) {
 		super(editor);
 		setId(ACTION_ID);
-		setText(DiagramViewerMessages.ExportImageAction_export_as_image);
+		setText(Messages.ExportImageAction_export_as_image);
 		setImageDescriptor(img);
 	}
 	
@@ -140,7 +140,7 @@ public class ExportImageAction extends DiagramBaseAction {
 					HibernateConsoleCorePlugin.getDefault().logErrorMessage("ExportImageAction", e); //$NON-NLS-1$
 					if (showErrDialog) {
 						MessageDialog.openInformation(getDiagramViewer().getSite().getShell(),
-							DiagramViewerMessages.ExportImageAction_error, DiagramViewerMessages.ExportImageAction_failed_to_export_image + e.getMessage());
+							Messages.ExportImageAction_error, Messages.ExportImageAction_failed_to_export_image + e.getMessage());
 					}
 				}
 				finally {

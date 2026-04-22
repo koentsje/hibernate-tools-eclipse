@@ -15,7 +15,7 @@ import org.eclipse.jface.text.ITextViewer;
 import org.eclipse.ui.texteditor.ITextEditor;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
 import org.hibernate.eclipse.console.AbstractQueryEditor;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 
 /**
@@ -29,9 +29,9 @@ public class StickResTabAction extends Action {
 	private ITextEditor fTextEditor;
 
 	public StickResTabAction(ITextViewer viewer) {
-		super(OrmBaseUiMessages.StickResTabAction_stick_editor, AS_CHECK_BOX);
+		super(Messages.StickResTabAction_stick_editor, AS_CHECK_BOX);
 	    fViewer = viewer;
-		setToolTipText(OrmBaseUiMessages.StickResTabAction_stick_editor);
+		setToolTipText(Messages.StickResTabAction_stick_editor);
 		AbstractQueryEditor queryEditor = getQueryEditor();
 		boolean checked = false;
 		if (queryEditor != null) {
@@ -43,9 +43,9 @@ public class StickResTabAction extends Action {
 	}
 	
 	public StickResTabAction(ITextEditor textEditor) {
-		super(OrmBaseUiMessages.StickResTabAction_stick_editor, AS_CHECK_BOX);
+		super(Messages.StickResTabAction_stick_editor, AS_CHECK_BOX);
 		fTextEditor = textEditor;
-		setToolTipText(OrmBaseUiMessages.StickResTabAction_stick_editor);
+		setToolTipText(Messages.StickResTabAction_stick_editor);
 		AbstractQueryEditor queryEditor = getQueryEditor();
 		boolean checked = false;
 		if (queryEditor != null) {

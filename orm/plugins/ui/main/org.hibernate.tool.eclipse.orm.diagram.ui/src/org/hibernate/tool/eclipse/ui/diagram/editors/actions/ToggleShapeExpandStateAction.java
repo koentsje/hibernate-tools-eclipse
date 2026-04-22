@@ -21,7 +21,7 @@ import org.eclipse.gef.ui.actions.SelectionAction;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbenchPart;
-import org.hibernate.tool.eclipse.ui.diagram.DiagramViewerMessages;
+import org.hibernate.tool.eclipse.orm.diagram.ui.nls.Messages;
 import org.hibernate.tool.eclipse.ui.diagram.editors.DiagramViewer;
 import org.hibernate.tool.eclipse.ui.diagram.editors.command.ToggleShapeExpandStateCommand;
 import org.hibernate.tool.eclipse.ui.diagram.editors.model.ExpandableShape;
@@ -41,8 +41,8 @@ public class ToggleShapeExpandStateAction extends SelectionAction {
 	public ToggleShapeExpandStateAction(IWorkbenchPart editor) {
 		super(editor);
 		setId(ACTION_ID);
-		setText(DiagramViewerMessages.ToggleShapeExpandStateAction_toggle_expand_state);
-		setToolTipText(DiagramViewerMessages.ToggleShapeExpandStateAction_toggle_expand_state_tooltip);
+		setText(Messages.ToggleShapeExpandStateAction_toggle_expand_state);
+		setToolTipText(Messages.ToggleShapeExpandStateAction_toggle_expand_state_tooltip);
 		setImageDescriptor(img);
 	}
 	

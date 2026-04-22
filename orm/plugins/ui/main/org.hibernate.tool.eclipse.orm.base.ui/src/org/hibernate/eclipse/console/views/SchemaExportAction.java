@@ -29,7 +29,7 @@ import org.eclipse.jface.viewers.StructuredViewer;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.widgets.Shell;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.console.actions.ConsoleConfigReadyUseBaseAction;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
@@ -57,7 +57,7 @@ public class SchemaExportAction extends ConsoleConfigReadyUseBaseAction {
 	 * @param selectionProvider
 	 */
 	public SchemaExportAction(StructuredViewer selectionProvider) {
-		super(OrmBaseUiMessages.SchemaExportAction_run_schemaexport);
+		super(Messages.SchemaExportAction_run_schemaexport);
 		setId(SCHEMAEXPORT_ACTIONID);
 		init(selectionProvider);
 	}
@@ -92,9 +92,9 @@ public class SchemaExportAction extends ConsoleConfigReadyUseBaseAction {
 					if (cfg == null) {
 						return null;
 					}
-					String out = NLS.bind(OrmBaseUiMessages.SchemaExportAction_sure_run_schemaexport, config.getName());
+					String out = NLS.bind(Messages.SchemaExportAction_sure_run_schemaexport, config.getName());
 					boolean res = openWarningYesNoDlg(viewer.getControl().getShell(),
-						OrmBaseUiMessages.SchemaExportAction_run_schemaexport, out);
+						Messages.SchemaExportAction_run_schemaexport, out);
 					if (!res) {
 						return null;
 					}
@@ -106,11 +106,11 @@ public class SchemaExportAction extends ConsoleConfigReadyUseBaseAction {
 						int cnt = 1;
 						while (iterator.hasNext()) {
 							Throwable element = iterator.next();
-							String outStr = NLS.bind(OrmBaseUiMessages.SchemaExportAction_errornum_while_performing_schemaexport, cnt++);
+							String outStr = NLS.bind(Messages.SchemaExportAction_errornum_while_performing_schemaexport, cnt++);
 							HibernateBasePlugin.getDefault().logErrorMessage(outStr, element);
 						}
 						HibernateBasePlugin.getDefault().showError(viewer.getControl().getShell(),
-							NLS.bind(OrmBaseUiMessages.SchemaExportAction_error_while_performing_schemaexport, cnt - 1),
+							NLS.bind(Messages.SchemaExportAction_error_while_performing_schemaexport, cnt - 1),
 							(Throwable)null );
 					}
 					return null;
@@ -122,7 +122,7 @@ public class SchemaExportAction extends ConsoleConfigReadyUseBaseAction {
 			catch (Exception he) {
 				HibernateBasePlugin.getDefault().showError(
 						viewer.getControl().getShell(),
-						OrmBaseUiMessages.SchemaExportAction_exception_running_schemaexport, he );
+						Messages.SchemaExportAction_exception_running_schemaexport, he );
 			}
 		}
 	}

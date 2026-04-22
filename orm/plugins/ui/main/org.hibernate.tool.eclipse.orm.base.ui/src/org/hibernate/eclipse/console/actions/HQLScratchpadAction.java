@@ -25,7 +25,7 @@ import org.eclipse.jface.viewers.TreePath;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
 import org.hibernate.tool.eclipse.orm.console.core.node.BaseNode;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
@@ -36,9 +36,9 @@ public class HQLScratchpadAction extends OpenQueryEditorAction {
 	public static final String HQLSCRATCHPAD_ACTIONID = "actionid.hqlscratchpad"; //$NON-NLS-1$
 	
 	public HQLScratchpadAction() {
-		super( OrmBaseUiMessages.HQLScratchpadAction_hql_editor );
+		super( Messages.HQLScratchpadAction_hql_editor );
 		setImageDescriptor(EclipseImages.getImageDescriptor(ImageConstants.HQL_EDITOR));
-		setToolTipText(OrmBaseUiMessages.HQLScratchpadAction_open_hql_editor);
+		setToolTipText(Messages.HQLScratchpadAction_open_hql_editor);
 		setEnabled( true );
 		setId(HQLSCRATCHPAD_ACTIONID);
 	}

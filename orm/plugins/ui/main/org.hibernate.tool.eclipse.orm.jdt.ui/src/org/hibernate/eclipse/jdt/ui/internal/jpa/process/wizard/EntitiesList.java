@@ -43,7 +43,7 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.ide.IDE;
-import org.hibernate.eclipse.jdt.ui.internal.JdtUiMessages;
+import org.hibernate.tool.eclipse.orm.jdt.core.nls.Messages;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.common.EntityInfo;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.process.AnnotStyle;
 
@@ -74,7 +74,7 @@ public class EntitiesList extends UserInputWizardPage {
 		super(name);
 		this.data = data;
 		this.params = params;
-		setDescription(JdtUiMessages.EntitiesList_description);
+		setDescription(Messages.EntitiesList_description);
 	}
 	
 	public IStructuredContentProvider createContentProvider(final IHibernateJPAWizardData data) {
@@ -132,7 +132,7 @@ public class EntitiesList extends UserInputWizardPage {
         container.setLayout(layout);
         layout.numColumns = 1;
         //Label label = new Label(container, SWT.NULL);
-        //label.setText(JdtUiMessages.AllEntitiesProcessor_message);
+        //label.setText(Messages.AllEntitiesProcessor_message);
 
         listViewer = new TableViewer(container, SWT.SINGLE | SWT.H_SCROLL
 				| SWT.V_SCROLL | SWT.BORDER);
@@ -163,11 +163,11 @@ public class EntitiesList extends UserInputWizardPage {
         combolabel.setLayout(layout);
         layout.numColumns = 2;
 		Label labelChoice = new Label(combolabel, SWT.NULL);
-		labelChoice.setText(JdtUiMessages.AllEntitiesProcessor_preferred_location_annotations);
+		labelChoice.setText(Messages.AllEntitiesProcessor_preferred_location_annotations);
 		Combo generateChoice = new Combo(combolabel, SWT.READ_ONLY);
-		generateChoice.add(JdtUiMessages.AllEntitiesProcessor_fields);
-		generateChoice.add(JdtUiMessages.AllEntitiesProcessor_getters);
-		generateChoice.add(JdtUiMessages.AllEntitiesProcessor_auto_select_from_class_preference);
+		generateChoice.add(Messages.AllEntitiesProcessor_fields);
+		generateChoice.add(Messages.AllEntitiesProcessor_getters);
+		generateChoice.add(Messages.AllEntitiesProcessor_auto_select_from_class_preference);
 		int idx = 0;
 		if (params.getAnnotationStyle().equals(AnnotStyle.FIELDS)) {
 			idx = 0;
@@ -200,7 +200,7 @@ public class EntitiesList extends UserInputWizardPage {
 		generateChoice.addModifyListener(mlGenerateChoice);
 
 		Label labelDefaultStrLength = new Label(combolabel, SWT.NULL);
-		labelDefaultStrLength.setText(JdtUiMessages.AllEntitiesProcessor_default_string_length);
+		labelDefaultStrLength.setText(Messages.AllEntitiesProcessor_default_string_length);
 		Text textDefaultStrLength = new Text(combolabel, SWT.SINGLE | SWT.BORDER | SWT.TRAIL);
 		textDefaultStrLength.setText(String.valueOf(params.getDefaultStrLength()));
 		GridDataFactory.fillDefaults().align(SWT.FILL, SWT.FILL)
@@ -236,7 +236,7 @@ public class EntitiesList extends UserInputWizardPage {
 		
 		// enable optimistic locking functionality
 		Label labelOptLock = new Label(combolabel, SWT.NULL);
-		labelOptLock.setText(JdtUiMessages.AllEntitiesProcessor_enable_optimistic_locking);
+		labelOptLock.setText(Messages.AllEntitiesProcessor_enable_optimistic_locking);
 		Button checkboxOptLock = new Button(combolabel, SWT.CHECK);
 		checkboxOptLock.setSelection(params.getEnableOptLock());
 		final Listener mlOptLock = new Listener() {
@@ -258,13 +258,13 @@ public class EntitiesList extends UserInputWizardPage {
 		int i = 0;
 		
 		column = new TableColumn(table, SWT.LEFT, i++);
-		column.setText(JdtUiMessages.ResolveAmbiguous_column_Class);
+		column.setText(Messages.ResolveAmbiguous_column_Class);
 		column.setWidth(200);
 		column.setImage(registry.get(
 				new JavaElementImageDescriptor(JavaPluginImages.DESC_OBJS_CLASS, 0, IMAGE_SIZE)));
 		
 		column = new TableColumn(table, SWT.LEFT, i++);
-		column.setText(JdtUiMessages.NewHibernateMappingFilePage_project_name_column);
+		column.setText(Messages.NewHibernateMappingFilePage_project_name_column);
 		column.setWidth(isOneProject() ? 0: 200);
 		column.setImage(registry.get(new JavaElementImageDescriptor(
 				JavaPlugin.getDefault().getWorkbench().getSharedImages()

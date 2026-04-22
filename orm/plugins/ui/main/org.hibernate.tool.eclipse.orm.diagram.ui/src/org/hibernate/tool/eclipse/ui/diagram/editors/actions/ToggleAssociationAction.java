@@ -13,7 +13,7 @@ package org.hibernate.tool.eclipse.ui.diagram.editors.actions;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.jface.resource.ImageDescriptor;
-import org.hibernate.tool.eclipse.ui.diagram.DiagramViewerMessages;
+import org.hibernate.tool.eclipse.orm.diagram.ui.nls.Messages;
 import org.hibernate.tool.eclipse.ui.diagram.editors.DiagramViewer;
 import org.hibernate.tool.eclipse.ui.diagram.editors.command.ToggleAssociationCommand;
 
@@ -31,8 +31,8 @@ public class ToggleAssociationAction extends DiagramBaseAction {
 	public ToggleAssociationAction(DiagramViewer editor) {
 		super(editor);
 		setId(ACTION_ID);
-		setText(DiagramViewerMessages.ToggleAssociationAction_associations);
-		setToolTipText(DiagramViewerMessages.ToggleAssociationAction_associations);
+		setText(Messages.ToggleAssociationAction_associations);
+		setToolTipText(Messages.ToggleAssociationAction_associations);
 		setImageDescriptor(img);
 		boolean state = getDiagramViewer().getConnectionsVisibilityAssociation();
 		setChecked(state);

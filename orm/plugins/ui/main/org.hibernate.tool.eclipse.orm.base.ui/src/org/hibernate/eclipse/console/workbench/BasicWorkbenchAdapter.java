@@ -35,7 +35,7 @@ import org.eclipse.core.runtime.jobs.ISchedulingRule;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.ui.progress.IDeferredWorkbenchAdapter;
 import org.eclipse.ui.progress.IElementCollector;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 
 public abstract class BasicWorkbenchAdapter implements IDeferredWorkbenchAdapter {
@@ -121,12 +121,12 @@ public abstract class BasicWorkbenchAdapter implements IDeferredWorkbenchAdapter
 
 	protected String getDefaultErrorMessage(Object object) {
 		
-		return NLS.bind(OrmBaseUiMessages.BasicWorkbenchAdapter_error_while_expanding, getLabel(object));
+		return NLS.bind(Messages.BasicWorkbenchAdapter_error_while_expanding, getLabel(object));
 	}
 
 
 	protected String getDefaultErrorTitle() {
-		return OrmBaseUiMessages.BasicWorkbenchAdapter_hibernate_configuration_error;
+		return Messages.BasicWorkbenchAdapter_hibernate_configuration_error;
 	}
 
 	public boolean isContainer() {

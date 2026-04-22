@@ -23,7 +23,7 @@ package org.hibernate.tool.eclipse.orm.console.core.node;
 
 import org.hibernate.tool.eclipse.orm.console.core.ConcoleConfigurationAdapter;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
-import org.hibernate.tool.eclipse.orm.console.core.ConsoleMessages;
+import org.hibernate.tool.eclipse.orm.console.core.nls.Messages;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ISessionFactory;
 
@@ -65,7 +65,7 @@ class ConfigurationNode extends BaseNode {
 		if(!childrenCreated) {
 			if(configuration.isSessionFactoryCreated() ) {
 				NodeFactory fac = new NodeFactory(configuration);
-				children.add(fac.createConfigurationEntitiesNode(ConsoleMessages.ConfigurationNode_mapped_entities) );
+				children.add(fac.createConfigurationEntitiesNode(Messages.ConfigurationNode_mapped_entities) );
 				childrenCreated=true;
 
 				/*Configuration cfg = configuration.getConfiguration();

@@ -42,7 +42,7 @@ import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.internal.dialogs.PropertyDialog;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
 
@@ -58,8 +58,8 @@ public class ConnectionProfileCtrl {
 	protected Button buttonEdit;
 	private boolean useSynteticValues = true;
 	
-	static final String NO_CONNECTIN_NAME = OrmBaseUiMessages.ConnectionProfileCtrl_HibernateConfiguredConnection;
-	static final String JPA_CONNECTIN_NAME = OrmBaseUiMessages.ConnectionProfileCtrl_JPAConfiguredConnection;
+	static final String NO_CONNECTIN_NAME = Messages.ConnectionProfileCtrl_HibernateConfiguredConnection;
+	static final String JPA_CONNECTIN_NAME = Messages.ConnectionProfileCtrl_JPAConfiguredConnection;
 
 	static final protected ConnectionWrapper NO_CONNECTION_PLACEHOLDER = new ConnectionWrapper(NO_CONNECTIN_NAME, null);
 	static final protected ConnectionWrapper JPA_CONNECTION_PLACEHOLDER = new ConnectionWrapper(JPA_CONNECTIN_NAME, null);
@@ -157,7 +157,7 @@ public class ConnectionProfileCtrl {
 		 * @param label
 		 */
 		public NewConnectionProfileAction() {
-			super(OrmBaseUiMessages.ConnectionProfileCtrl_New);
+			super(Messages.ConnectionProfileCtrl_New);
 		}
 
 		@Override
@@ -212,7 +212,7 @@ public class ConnectionProfileCtrl {
 		 * @param label
 		 */
 		public EditConnectionProfileAction() {
-			super(OrmBaseUiMessages.ConnectionProfileCtrl_Edit);
+			super(Messages.ConnectionProfileCtrl_Edit);
 		}
 
 		/**
@@ -280,11 +280,11 @@ public class ConnectionProfileCtrl {
 		combo.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_FILL | GridData.GRAB_HORIZONTAL));
 		
 		buttonNew = new Button(comp, SWT.PUSH);
-		buttonNew.setText(OrmBaseUiMessages.ConnectionProfileCtrl_New);
+		buttonNew.setText(Messages.ConnectionProfileCtrl_New);
 		buttonNew.addSelectionListener(action1);
 
 		buttonEdit = new Button(comp, SWT.PUSH);
-		buttonEdit.setText(OrmBaseUiMessages.ConnectionProfileCtrl_Edit);
+		buttonEdit.setText(Messages.ConnectionProfileCtrl_Edit);
 		buttonEdit.addSelectionListener(action2);
 
 		updateInput();		

@@ -25,7 +25,7 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.wst.sse.core.internal.provisional.IStructuredModel;
 import org.eclipse.wst.sse.ui.StructuredTextEditor;
 import org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart;
-import org.hibernate.eclipse.mapper.MapperMessages;
+import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
 import org.hibernate.eclipse.mapper.MapperPlugin;
 import org.hibernate.eclipse.mapper.editors.reveng.HibernateConfigurationForm;
 
@@ -46,7 +46,7 @@ public class HibernateCfgXmlEditor extends XMLMultiPageEditorPart {
 			initSourcePage();
 		} catch (PartInitException pe) {
 			MapperPlugin.getDefault().getLogger().logException(
-					MapperMessages.HibernateCfgXmlEditor_could_not_create_form_part, pe );
+					Messages.HibernateCfgXmlEditor_could_not_create_form_part, pe );
 		}
 	}
 
@@ -65,7 +65,7 @@ public class HibernateCfgXmlEditor extends XMLMultiPageEditorPart {
 		configurationForm = new HibernateConfigurationForm();
         configurationForm.createPartControl(getContainer());
         configurationPageNo = addPage(configurationForm.getControl());
-        setPageText(configurationPageNo, MapperMessages.HibernateCfgXmlEditor_configuration);
+        setPageText(configurationPageNo, Messages.HibernateCfgXmlEditor_configuration);
         setActivePage( 0 );
 	}
 

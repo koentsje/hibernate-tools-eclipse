@@ -31,7 +31,7 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.hibernate.tool.eclipse.orm.console.core.reveng.IReverseEngineeringDefinition;
-import org.hibernate.eclipse.mapper.MapperMessages;
+import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
 
 public class CounterFormPart extends RevEngSectionPart {
 
@@ -64,15 +64,15 @@ public class CounterFormPart extends RevEngSectionPart {
 		FormToolkit toolkit = form.getToolkit();
 		Composite composite = toolkit.createComposite(getSection());
 		composite.setLayout(new FillLayout());
-		text = toolkit.createText(composite, MapperMessages.CounterFormPart_zero);
+		text = toolkit.createText(composite, Messages.CounterFormPart_zero);
 		return composite;
 	}
 
 	protected String getSectionDescription() {
-		return MapperMessages.CounterFormPart_debug_counter_for_property_changes;
+		return Messages.CounterFormPart_debug_counter_for_property_changes;
 	}
 
 	protected String getSectionTitle() {
-		return MapperMessages.CounterFormPart_debug_counter;
+		return Messages.CounterFormPart_debug_counter;
 	}
 }

@@ -49,7 +49,7 @@ import org.eclipse.swt.widgets.DirectoryDialog;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.eclipse.launch.model.ExporterFactory;
 import org.hibernate.eclipse.launch.model.ExporterProperty;
 import org.hibernate.eclipse.console.utils.DialogSelectionHelper;
@@ -85,11 +85,11 @@ public class AddPropertyDialog extends TitleAreaDialog {
 
 	protected Control createDialogArea(Composite parent) {
 		
-		String dialogTitle = OrmBaseUiMessages.AddPropertyDialog_add_exporter_property;
-		String editTitle = OrmBaseUiMessages.AddPropertyDialog_add_property_to;
+		String dialogTitle = Messages.AddPropertyDialog_add_exporter_property;
+		String editTitle = Messages.AddPropertyDialog_add_property_to;
 		if (flagEdit) {
-			dialogTitle = OrmBaseUiMessages.AddPropertyDialog_edit_exporter_property;
-			editTitle = OrmBaseUiMessages.AddPropertyDialog_edit_property_to;
+			dialogTitle = Messages.AddPropertyDialog_edit_exporter_property;
+			editTitle = Messages.AddPropertyDialog_edit_property_to;
 		}
 		getShell().setText(dialogTitle);
 		setTitle(editTitle + ef.getExporterDefinition().getDescription());
@@ -105,7 +105,7 @@ public class AddPropertyDialog extends TitleAreaDialog {
         composite.setLayout(layout);
 
 		Label label = new Label(composite, SWT.NONE);
-		label.setText( OrmBaseUiMessages.AddPropertyDialog_name );
+		label.setText( Messages.AddPropertyDialog_name );
 		final Combo combo = new Combo(composite, SWT.BORDER | SWT.DROP_DOWN);
 		GridData pgd = new GridData(GridData.GRAB_HORIZONTAL | GridData.FILL_HORIZONTAL);
 		pgd.horizontalSpan = 2;
@@ -145,7 +145,7 @@ public class AddPropertyDialog extends TitleAreaDialog {
 		}
 
 		label = new Label(composite, SWT.NONE);
-		label.setText( OrmBaseUiMessages.AddPropertyDialog_value );
+		label.setText( Messages.AddPropertyDialog_value );
 
 		value = new Text(composite, SWT.BORDER);
 		value.setLayoutData(new GridData(GridData.GRAB_HORIZONTAL | GridData.FILL_HORIZONTAL));
@@ -225,15 +225,15 @@ public class AddPropertyDialog extends TitleAreaDialog {
 						}
 			
 						public void widgetSelected(SelectionEvent e) {
-							String title = isPath ? OrmBaseUiMessages.ExporterSettingsTab_select_path: OrmBaseUiMessages.ExporterSettingsTab_select_dir;
-							String description = isPath ? OrmBaseUiMessages.ExporterSettingsTab_select_path2 : OrmBaseUiMessages.ExporterSettingsTab_select_dir2;
+							String title = isPath ? Messages.ExporterSettingsTab_select_path: Messages.ExporterSettingsTab_select_dir;
+							String description = isPath ? Messages.ExporterSettingsTab_select_path2 : Messages.ExporterSettingsTab_select_dir2;
 							
 							MessageDialog dialog = new MessageDialog(getShell(),
 									title,
 									null,
 									description,	
 									MessageDialog.QUESTION,
-									new String[] { OrmBaseUiMessages.CodeGenerationSettingsTab_filesystem, OrmBaseUiMessages.CodeGenerationSettingsTab_workspace, IDialogConstants.CANCEL_LABEL},
+									new String[] { Messages.CodeGenerationSettingsTab_filesystem, Messages.CodeGenerationSettingsTab_workspace, IDialogConstants.CANCEL_LABEL},
 									1);
 							int answer = dialog.open();
 							String strPath = null;
@@ -323,9 +323,9 @@ public class AddPropertyDialog extends TitleAreaDialog {
 		disposeBrowseButton();
 		addPathButton = new Button(value.getParent(), SWT.PUSH);
 		if ("path".equals(prop.getType())){ //$NON-NLS-1$
-			addPathButton.setText(OrmBaseUiMessages.AddPropertyDialog_add_path);
+			addPathButton.setText(Messages.AddPropertyDialog_add_path);
 		} else {
-			addPathButton.setText(OrmBaseUiMessages.AddPropertyDialog_browse);
+			addPathButton.setText(Messages.AddPropertyDialog_browse);
 		}		
 		addPathButton.setLayoutData(new GridData(GridData.END));
 		addPathButton.addSelectionListener(listener);		
@@ -375,14 +375,14 @@ public class AddPropertyDialog extends TitleAreaDialog {
 
 		boolean ok = false;
 		if(StringHelper.isEmpty( getPropertyName() )) {
-			setMessage( OrmBaseUiMessages.AddPropertyDialog_the_property_name_must_be_chosen_or_entered, IMessageProvider.ERROR);
+			setMessage( Messages.AddPropertyDialog_the_property_name_must_be_chosen_or_entered, IMessageProvider.ERROR);
 		} else if (getPropertyName().indexOf( ' ' )>=0 || getPropertyName().indexOf( '\t' )>=0) {
-			setMessage( OrmBaseUiMessages.AddPropertyDialog_the_property_name_may_not_contain_whitespaces, IMessageProvider.ERROR);
+			setMessage( Messages.AddPropertyDialog_the_property_name_may_not_contain_whitespaces, IMessageProvider.ERROR);
 		} else if(StringHelper.isEmpty( getPropertyValue() )) {
-			setMessage( OrmBaseUiMessages.AddPropertyDialog_the_property_value_must_be_non_empty, IMessageProvider.ERROR);
+			setMessage( Messages.AddPropertyDialog_the_property_value_must_be_non_empty, IMessageProvider.ERROR);
 		} else {
 			if (!flagEdit && ef.hasLocalValueFor( getPropertyName() )) {
-				String out = NLS.bind(OrmBaseUiMessages.AddPropertyDialog_the_property_is_already_set, getPropertyName());
+				String out = NLS.bind(Messages.AddPropertyDialog_the_property_is_already_set, getPropertyName());
 				setMessage(out, IMessageProvider.WARNING);
 			} else {
 				setMessage(null, IMessageProvider.ERROR);

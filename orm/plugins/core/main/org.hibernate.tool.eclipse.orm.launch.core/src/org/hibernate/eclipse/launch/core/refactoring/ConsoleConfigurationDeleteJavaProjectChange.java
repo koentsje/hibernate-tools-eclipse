@@ -18,7 +18,7 @@ import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.ltk.core.refactoring.Change;
 import org.eclipse.ltk.core.refactoring.RefactoringStatus;
 import org.eclipse.osgi.util.NLS;
-import org.hibernate.eclipse.launch.LaunchMessages;
+import org.hibernate.tool.eclipse.orm.launch.core.nls.Messages;
 
 /**
  * @author Dmitry Geraskov
@@ -40,7 +40,7 @@ public class ConsoleConfigurationDeleteJavaProjectChange extends Change {
 
 	@Override
 	public String getName() {
-		return NLS.bind(LaunchMessages.DeleteProjectParticipant_delete_console_configuration,
+		return NLS.bind(Messages.DeleteProjectParticipant_delete_console_configuration,
 				fLaunchConfiguration.getName());
 	}
 

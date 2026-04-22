@@ -24,7 +24,7 @@ package org.hibernate.eclipse.console.workbench;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.model.IWorkbenchAdapter;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 
 public class ValueWorkbenchAdapter implements IWorkbenchAdapter {
@@ -38,7 +38,7 @@ public class ValueWorkbenchAdapter implements IWorkbenchAdapter {
 	}
 
 	public String getLabel(Object o) {
-		return OrmBaseUiMessages.ValueWorkbenchAdapter_value + o.getClass().getName();
+		return Messages.ValueWorkbenchAdapter_value + o.getClass().getName();
 	}
 
 	public Object getParent(Object o) {

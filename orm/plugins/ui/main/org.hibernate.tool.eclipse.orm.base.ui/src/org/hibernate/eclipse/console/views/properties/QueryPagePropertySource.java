@@ -27,7 +27,7 @@ import org.eclipse.ui.views.properties.IPropertySource2;
 import org.eclipse.ui.views.properties.PropertyDescriptor;
 import org.eclipse.ui.views.properties.TextPropertyDescriptor;
 import org.hibernate.tool.eclipse.orm.query.IQueryPage;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 
 public class QueryPagePropertySource implements IPropertySource2
 {
@@ -51,34 +51,34 @@ public class QueryPagePropertySource implements IPropertySource2
 
         // query string
         descriptor = new TextPropertyDescriptor(QUERY_TEXT,
-                OrmBaseUiMessages.QueryPagePropertySource_query_string);
+                Messages.QueryPagePropertySource_query_string);
         descriptor.setAlwaysIncompatible(false);
         //descriptor.setCategory(IResourcePropertyConstants.P_FILE_SYSTEM_CATEGORY);
         descriptors[0] = descriptor;
 
         // configuration name
         descriptor = new TextPropertyDescriptor(CONFIGURATION_TEXT,
-                OrmBaseUiMessages.QueryPagePropertySource_console_configuration);
+                Messages.QueryPagePropertySource_console_configuration);
         descriptor.setAlwaysIncompatible(false);
         //descriptor.setCategory(IResourcePropertyConstants.P_FILE_SYSTEM_CATEGORY);
         descriptors[1] = descriptor;
 
         // number of items
         descriptor = new TextPropertyDescriptor(QUERY_SIZE,
-                OrmBaseUiMessages.QueryPagePropertySource_query_size);
+                Messages.QueryPagePropertySource_query_size);
         descriptor.setAlwaysIncompatible(false);
         //descriptor.setCategory(IResourcePropertyConstants.P_FILE_SYSTEM_CATEGORY);
         descriptors[2] = descriptor;
 
         // time of query running
         descriptor = new TextPropertyDescriptor(QUERY_TIME,
-                OrmBaseUiMessages.QueryPagePropertySource_query_run_time);
+                Messages.QueryPagePropertySource_query_run_time);
         descriptor.setAlwaysIncompatible(false);
         descriptors[3] = descriptor;
 
         // time of query running
         descriptor = new TextPropertyDescriptor(TAB_NAME,
-        		OrmBaseUiMessages.QueryPagePropertySource_tab_name);
+        		Messages.QueryPagePropertySource_tab_name);
         descriptor.setAlwaysIncompatible(false);
         descriptors[4] = descriptor;
     }
@@ -108,17 +108,17 @@ public class QueryPagePropertySource implements IPropertySource2
 		}
 		if(QUERY_SIZE.equals(id) ) {
 			int resultSize = page.getResultSize();
-			return resultSize==-1?OrmBaseUiMessages.QueryPagePropertySource_unknown:String.valueOf(resultSize);
+			return resultSize==-1?Messages.QueryPagePropertySource_unknown:String.valueOf(resultSize);
 		}
 		if(QUERY_TIME.equals(id) ) {
 			long resultTime = page.getQueryTime();
-			if (resultTime==-1) return OrmBaseUiMessages.QueryPagePropertySource_unknown;
+			if (resultTime==-1) return Messages.QueryPagePropertySource_unknown;
 			if (resultTime > 1000) { 
 				return NLS.bind(
-						OrmBaseUiMessages.QueryPagePropertySource_sec,
+						Messages.QueryPagePropertySource_sec,
 						(resultTime / 1000) + "." + (resultTime / 100) % 10); //$NON-NLS-1$
 			}
-			return NLS.bind(OrmBaseUiMessages.QueryPagePropertySource_millisec, resultTime);
+			return NLS.bind(Messages.QueryPagePropertySource_millisec, resultTime);
 		}
 		if(TAB_NAME.equals(id) ) {
 			return page.getTabName();

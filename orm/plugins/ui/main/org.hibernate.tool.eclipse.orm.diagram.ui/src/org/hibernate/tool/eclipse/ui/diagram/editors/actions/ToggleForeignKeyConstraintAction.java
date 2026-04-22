@@ -13,7 +13,7 @@ package org.hibernate.tool.eclipse.ui.diagram.editors.actions;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.jface.resource.ImageDescriptor;
-import org.hibernate.tool.eclipse.ui.diagram.DiagramViewerMessages;
+import org.hibernate.tool.eclipse.orm.diagram.ui.nls.Messages;
 import org.hibernate.tool.eclipse.ui.diagram.editors.DiagramViewer;
 import org.hibernate.tool.eclipse.ui.diagram.editors.command.ToggleForeignKeyConstraintCommand;
 
@@ -32,8 +32,8 @@ public class ToggleForeignKeyConstraintAction extends DiagramBaseAction {
 	public ToggleForeignKeyConstraintAction(DiagramViewer editor) {
 		super(editor);
 		setId(ACTION_ID);
-		setText(DiagramViewerMessages.ToggleForeignKeyConstraintAction_foreign_key_constraints);
-		setToolTipText(DiagramViewerMessages.ToggleForeignKeyConstraintAction_foreign_key_constraints);
+		setText(Messages.ToggleForeignKeyConstraintAction_foreign_key_constraints);
+		setToolTipText(Messages.ToggleForeignKeyConstraintAction_foreign_key_constraints);
 		setImageDescriptor(img);
 		boolean state = getDiagramViewer().getConnectionsVisibilityForeignKeyConstraint();
 		setChecked(state);

@@ -31,7 +31,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.wst.xml.ui.views.contentoutline.XMLContentOutlineConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
-import org.hibernate.eclipse.mapper.MapperMessages;
+import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
 import org.w3c.dom.Node;
 
 public class HibernateXMLContentOutlineConfiguration extends
@@ -106,7 +106,7 @@ public class HibernateXMLContentOutlineConfiguration extends
 				Node node = (Node) element;
 				String nodeName = node.getNodeName();
 				if(node.getNodeType()==Node.PROCESSING_INSTRUCTION_NODE && "xml".equals(nodeName)) { //$NON-NLS-1$
-					return MapperMessages.xml_hibernate_tools;
+					return Messages.xml_hibernate_tools;
 				}
 			}
 			return delegate.getText( element );

@@ -30,7 +30,7 @@ import org.hibernate.tool.eclipse.orm.model.core.IRevEngParameter;
 import org.hibernate.tool.eclipse.orm.model.core.IRevEngPrimaryKey;
 import org.hibernate.tool.eclipse.orm.model.core.IRevEngTable;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
-import org.hibernate.eclipse.mapper.MapperMessages;
+import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
 
 public class TablePropertiesLabelProvider extends LabelProvider {
 
@@ -50,7 +50,7 @@ public class TablePropertiesLabelProvider extends LabelProvider {
 		} else if(element instanceof IRevEngColumn) {
 			return ((IRevEngColumn)element).getName();
 		} else if(element instanceof IRevEngPrimaryKey) {
-			return MapperMessages.TablePropertiesLabelProvider_primary_key;
+			return Messages.TablePropertiesLabelProvider_primary_key;
 		} else if(element instanceof IRevEngGenerator) {
 			return ((IRevEngGenerator)element).getGeneratorClassName();
 		} else if ( element instanceof IRevEngParameter ) {

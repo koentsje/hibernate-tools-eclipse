@@ -54,8 +54,7 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.hibernate.tool.eclipse.orm.utils.ConnectionProfileUtil;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.tool.eclipse.common.base.core.utils.DriverClassHelpers;
 import org.hibernate.tool.eclipse.orm.runtime.spi.RuntimeServiceManager;
 
@@ -105,8 +104,8 @@ public class NewConfigurationWizardPage extends WizardPage {
     public NewConfigurationWizardPage(ISelection selection, WizardNewFileCreationPage page) {
         super("wizardPage"); //$NON-NLS-1$
         this.fileCreation = page;
-        setTitle(OrmBaseUiMessages.NewConfigurationWizardPage_hibernate_config_file);
-        setDescription(OrmBaseUiMessages.NewConfigurationWizardPage_this_wizard_creates);
+        setTitle(Messages.NewConfigurationWizardPage_hibernate_config_file);
+        setDescription(Messages.NewConfigurationWizardPage_this_wizard_creates);
     }
     
     private static final Comparator<String> STRING_REVERSE_ALPHABETICAL = new Comparator<String>() {
@@ -151,21 +150,21 @@ public class NewConfigurationWizardPage extends WizardPage {
         layout.numColumns = 2;
         layout.verticalSpacing = 9;
         Label label = new Label(container, SWT.NULL);
-        label.setText(OrmBaseUiMessages.NewConfigurationWizardPage_container);
+        label.setText(Messages.NewConfigurationWizardPage_container);
 
         containerText = new Label(container, SWT.BORDER | SWT.SINGLE);
         GridData gd = new GridData(GridData.FILL_HORIZONTAL);
         containerText.setLayoutData(gd);
 
         label = new Label(container, SWT.NULL);
-        label.setText(OrmBaseUiMessages.NewConfigurationWizardPage_file_name);
+        label.setText(Messages.NewConfigurationWizardPage_file_name);
 
         fileText = new Label(container, SWT.BORDER | SWT.SINGLE);
         gd = new GridData(GridData.FILL_HORIZONTAL);
         fileText.setLayoutData(gd);
 
         Label hLabel = new Label(container, SWT.NULL);
-        hLabel.setText(OrmBaseUiMessages.NewConfigurationWizardPage_file_hibernate_version);
+        hLabel.setText(Messages.NewConfigurationWizardPage_file_hibernate_version);
         	
         hibernateVersionCombo = new Combo(container, SWT.READ_ONLY);
         String[] versions = RuntimeServiceManager.getInstance().getEnabledVersions();
@@ -174,14 +173,14 @@ public class NewConfigurationWizardPage extends WizardPage {
         hibernateVersionCombo.select(getIndexOfDefaultVersion(versions));
     
         label = new Label(container, SWT.NULL);
-        label.setText(OrmBaseUiMessages.NewConfigurationWizardPage_session_factory_name);
+        label.setText(Messages.NewConfigurationWizardPage_session_factory_name);
         sessionFactoryNameText = new Text(container, SWT.BORDER | SWT.SINGLE);
         gd = new GridData(GridData.FILL_HORIZONTAL);
         sessionFactoryNameText.setLayoutData(gd);
         sessionFactoryNameText.addModifyListener(listener);
         
         Link link = new Link(container, SWT.RIGHT);
-        link.setText(OrmBaseUiMessages.NewConfigurationWizardPage_getValuesFromConnection);
+        link.setText(Messages.NewConfigurationWizardPage_getValuesFromConnection);
         link.addSelectionListener(new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent e) {
 				Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
@@ -199,7 +198,7 @@ public class NewConfigurationWizardPage extends WizardPage {
         link.setLayoutData(gd);
         
         label = new Label(container, SWT.NULL);
-        label.setText(BasicHibernateMessages.NewConfigurationWizardPage_database_dialect);
+        label.setText(Messages.NewConfigurationWizardPage_database_dialect);
         dialectCombo = new Combo(container, SWT.NULL);
         fillHerUp(dialectCombo, helper.getDialectNames() );
         gd = new GridData(GridData.FILL_HORIZONTAL);
@@ -221,7 +220,7 @@ public class NewConfigurationWizardPage extends WizardPage {
 
         Composite driverManagerTabContainer = container;
         label = new Label(driverManagerTabContainer, SWT.NULL);
-        label.setText(BasicHibernateMessages.NewConfigurationWizardPage_driver_class);
+        label.setText(Messages.NewConfigurationWizardPage_driver_class);
         driver_classCombo = new Combo(driverManagerTabContainer, SWT.NULL);
         driver_classCombo.select(0);
         gd = new GridData(GridData.FILL_HORIZONTAL);
@@ -237,7 +236,7 @@ public class NewConfigurationWizardPage extends WizardPage {
         });
 
         label = new Label(driverManagerTabContainer, SWT.NULL);
-        label.setText(BasicHibernateMessages.NewConfigurationWizardPage_connection_url);
+        label.setText(Messages.NewConfigurationWizardPage_connection_url);
         urlCombo = new Combo(driverManagerTabContainer, SWT.NULL);
         urlCombo.select(0);
         gd = new GridData(GridData.FILL_HORIZONTAL);
@@ -246,28 +245,28 @@ public class NewConfigurationWizardPage extends WizardPage {
         urlCombo.addModifyListener(listener);
 
         label = new Label(driverManagerTabContainer, SWT.NULL);
-        label.setText(BasicHibernateMessages.NewConfigurationWizardPage_default_schema);
+        label.setText(Messages.NewConfigurationWizardPage_default_schema);
         defaultSchemaText = new Text(driverManagerTabContainer, SWT.BORDER | SWT.SINGLE);
         gd = new GridData(GridData.FILL_HORIZONTAL);
         defaultSchemaText.setLayoutData(gd);
         defaultSchemaText.addModifyListener(listener);
 
         label = new Label(driverManagerTabContainer, SWT.NULL);
-        label.setText(BasicHibernateMessages.NewConfigurationWizardPage_default_catalog);
+        label.setText(Messages.NewConfigurationWizardPage_default_catalog);
         defaultCatalogText = new Text(driverManagerTabContainer, SWT.BORDER | SWT.SINGLE);
         gd = new GridData(GridData.FILL_HORIZONTAL);
         defaultCatalogText.setLayoutData(gd);
         defaultCatalogText.addModifyListener(listener);
 
         label = new Label(driverManagerTabContainer, SWT.NULL);
-        label.setText(BasicHibernateMessages.NewConfigurationWizardPage_user_name);
+        label.setText(Messages.NewConfigurationWizardPage_user_name);
         usernameText = new Text(driverManagerTabContainer, SWT.BORDER | SWT.SINGLE);
         gd = new GridData(GridData.FILL_HORIZONTAL);
         usernameText.setLayoutData(gd);
         usernameText.addModifyListener(listener);
 
         label = new Label(driverManagerTabContainer, SWT.NULL);
-        label.setText(BasicHibernateMessages.NewConfigurationWizardPage_password);
+        label.setText(Messages.NewConfigurationWizardPage_password);
         passwordText = new Text(driverManagerTabContainer, SWT.BORDER | SWT.SINGLE);
         gd = new GridData(GridData.FILL_HORIZONTAL);
         passwordText.setLayoutData(gd);
@@ -281,7 +280,7 @@ public class NewConfigurationWizardPage extends WizardPage {
         createConsoleConfiguration = new Button(container, SWT.CHECK);
         gd = new GridData(GridData.FILL_HORIZONTAL);
         createConsoleConfiguration.setLayoutData(gd);
-        createConsoleConfiguration.setText(OrmBaseUiMessages.NewConfigurationWizardPage_create_console_configuration);
+        createConsoleConfiguration.setText(Messages.NewConfigurationWizardPage_create_console_configuration);
         createConsoleConfiguration.addSelectionListener(selectionListener);
         
         sc.setMinSize(container.computeSize(SWT.DEFAULT, SWT.DEFAULT));
@@ -359,26 +358,26 @@ public class NewConfigurationWizardPage extends WizardPage {
         String fileName = getFileName();
 
         if (getContainerName().length() == 0) {
-            updateStatus(OrmBaseUiMessages.NewConfigurationWizardPage_file_container_must_be_specified);
+            updateStatus(Messages.NewConfigurationWizardPage_file_container_must_be_specified);
             return;
         }
         if (container == null
                 || (container.getType() & (IResource.PROJECT | IResource.FOLDER) ) == 0) {
-            updateStatus(OrmBaseUiMessages.NewConfigurationWizardPage_file_container_must_exist);
+            updateStatus(Messages.NewConfigurationWizardPage_file_container_must_exist);
             return;
         }
 
         if (!container.isAccessible() ) {
-            updateStatus(OrmBaseUiMessages.NewConfigurationWizardPage_project_must_be_writable);
+            updateStatus(Messages.NewConfigurationWizardPage_project_must_be_writable);
             return;
         }
 
         if (fileName.length() == 0) {
-            updateStatus(OrmBaseUiMessages.NewConfigurationWizardPage_file_name_must_be_specified);
+            updateStatus(Messages.NewConfigurationWizardPage_file_name_must_be_specified);
             return;
         }
         if (fileName.replace('\\', '/').indexOf('/', 1) > 0) {
-            updateStatus(OrmBaseUiMessages.NewConfigurationWizardPage_file_name_must_be_valid);
+            updateStatus(Messages.NewConfigurationWizardPage_file_name_must_be_valid);
             return;
         }
 

@@ -17,7 +17,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableItem;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.console.utils.DialogSelectionHelper;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
@@ -33,7 +33,7 @@ public class ConsoleConfigurationMappingsTab extends ConsoleConfigurationTab {
 	}
 
 	private UpDownListComposite buildMappingFileTable(Composite parent) {
-		mappingFilesViewer = new UpDownListComposite(parent, SWT.NONE, OrmBaseUiMessages.ConsoleConfigurationMappingsTab_additional_mapping_files) {
+		mappingFilesViewer = new UpDownListComposite(parent, SWT.NONE, Messages.ConsoleConfigurationMappingsTab_additional_mapping_files) {
 			protected Object[] handleAdd(int idx) {
 				TableItem[] items = getTable().getItems();
 				IPath[] exclude = new IPath[items.length];
@@ -43,7 +43,7 @@ public class ConsoleConfigurationMappingsTab extends ConsoleConfigurationTab {
 					exclude[i] = (IPath) item.getData();
 				}
 
-				return DialogSelectionHelper.chooseFileEntries(getShell(), null, exclude, OrmBaseUiMessages.ConsoleConfigurationMappingsTab_add_hbm_xml_file, OrmBaseUiMessages.ConsoleConfigurationMappingsTab_add_hibernate_mapping_file, new String[] { "hbm.xml" }, true, false, true); //$NON-NLS-1$
+				return DialogSelectionHelper.chooseFileEntries(getShell(), null, exclude, Messages.ConsoleConfigurationMappingsTab_add_hbm_xml_file, Messages.ConsoleConfigurationMappingsTab_add_hibernate_mapping_file, new String[] { "hbm.xml" }, true, false, true); //$NON-NLS-1$
 			}
 
 			protected void listChanged() {
@@ -62,7 +62,7 @@ public class ConsoleConfigurationMappingsTab extends ConsoleConfigurationTab {
 	}
 
 	public String getName() {
-		return OrmBaseUiMessages.ConsoleConfigurationMappingsTab_mappings;
+		return Messages.ConsoleConfigurationMappingsTab_mappings;
 	}
 
 	private IPath[] getMappings() {

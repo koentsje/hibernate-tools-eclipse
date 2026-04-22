@@ -26,7 +26,7 @@ import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.ltk.core.refactoring.Change;
 import org.eclipse.ltk.core.refactoring.RefactoringStatus;
 import org.eclipse.ltk.core.refactoring.participants.RenameArguments;
-import org.hibernate.eclipse.launch.LaunchMessages;
+import org.hibernate.tool.eclipse.orm.launch.core.nls.Messages;
 import org.hibernate.eclipse.launch.IBasicHibernateLaunchConstants;
 
 /**
@@ -55,7 +55,7 @@ public class ConnectionProfileRenameChange extends ConnectionProfileChange {
 	 */
 	@Override
 	public String getName() {
-		return LaunchMessages.ConnectionProfileRenameChange_update_connection_profile_name;
+		return Messages.ConnectionProfileRenameChange_update_connection_profile_name;
 	}
 
 	/* (non-Javadoc)

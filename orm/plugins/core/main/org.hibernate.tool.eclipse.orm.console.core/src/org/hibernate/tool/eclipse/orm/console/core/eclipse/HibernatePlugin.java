@@ -37,10 +37,10 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Plugin;
 import org.eclipse.core.runtime.Status;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.tool.eclipse.orm.console.core.RuntimeManager;
 import org.hibernate.tool.eclipse.common.base.core.logging.LoggingHelper;
 import org.hibernate.tool.eclipse.common.base.core.logging.PluginLogManager;
+import org.hibernate.tool.eclipse.orm.console.core.nls.Messages;
 import org.osgi.framework.BundleContext;
 
 /**
@@ -117,10 +117,10 @@ public class HibernatePlugin extends Plugin {
 		List<IStatus> causes = new ArrayList<IStatus>();
 		Throwable temp = t;
 		while(temp!=null && temp.getCause()!=temp) {
-			causes.add(new Status(IStatus.ERROR, getId(), code, temp.getMessage()==null?temp.toString() + BasicHibernateMessages.HibernateBasePlugin_no_message_1:temp.toString(), temp) );
+			causes.add(new Status(IStatus.ERROR, getId(), code, temp.getMessage()==null?temp.toString() + Messages.HibernateBasePlugin_no_message_1:temp.toString(), temp) );
 			temp = temp.getCause();
 		}
-        String msg = BasicHibernateMessages.HibernateBasePlugin_no_message_2;
+        String msg = Messages.HibernateBasePlugin_no_message_2;
         if(t!=null && t.getMessage()!=null) {
             msg = t.toString();
         }

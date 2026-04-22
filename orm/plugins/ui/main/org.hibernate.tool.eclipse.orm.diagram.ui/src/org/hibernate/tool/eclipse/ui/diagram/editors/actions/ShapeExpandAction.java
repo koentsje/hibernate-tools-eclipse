@@ -20,7 +20,7 @@ import org.eclipse.gef.editparts.AbstractTreeEditPart;
 import org.eclipse.gef.ui.actions.SelectionAction;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.IWorkbenchPart;
-import org.hibernate.tool.eclipse.ui.diagram.DiagramViewerMessages;
+import org.hibernate.tool.eclipse.orm.diagram.ui.nls.Messages;
 import org.hibernate.tool.eclipse.ui.diagram.editors.DiagramViewer;
 import org.hibernate.tool.eclipse.ui.diagram.editors.command.ToggleShapeExpandStateCommand;
 import org.hibernate.tool.eclipse.ui.diagram.editors.model.ExpandableShape;
@@ -39,8 +39,8 @@ public class ShapeExpandAction extends SelectionAction {
 	public ShapeExpandAction(IWorkbenchPart editor) {
 		super(editor);
 		setId(ACTION_ID);
-		setText(DiagramViewerMessages.ShapeExpandAction_shape_expand);
-		setToolTipText(DiagramViewerMessages.ShapeExpandAction_shape_expand_tooltip);
+		setText(Messages.ShapeExpandAction_shape_expand);
+		setToolTipText(Messages.ShapeExpandAction_shape_expand_tooltip);
 		setImageDescriptor(img);
 	}
 	

@@ -45,7 +45,7 @@ import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.ui.ide.IDE;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
-import org.hibernate.eclipse.jdt.ui.internal.JdtUiMessages;
+import org.hibernate.tool.eclipse.orm.jdt.core.nls.Messages;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.common.EntityInfo;
 
 /**
@@ -125,20 +125,20 @@ public class NewHibernateMappingFilePage extends WizardPage {
 		column.setResizable(false);		
 
 		column = new TableColumn(table, SWT.LEFT, coulmnIndex++);
-		column.setText(JdtUiMessages.NewHibernateMappingFilePage_class_name_column);
+		column.setText(Messages.NewHibernateMappingFilePage_class_name_column);
 		column.setImage(registry.get(
 				new JavaElementImageDescriptor(JavaPluginImages.DESC_OBJS_CLASS, 0, IMAGE_SIZE)));
 		column.setWidth(200);
 
 		if (!hideFilename) {			
 			column = new TableColumn(table, SWT.LEFT, coulmnIndex++);
-			column.setText(JdtUiMessages.NewHibernateMappingFilePage_file_name_column);
+			column.setText(Messages.NewHibernateMappingFilePage_file_name_column);
 			column.setWidth(150);
 			column.setImage(hibMapping);
 		}
 		
 		column = new TableColumn(table, SWT.LEFT, coulmnIndex++);
-		column.setText(JdtUiMessages.NewHibernateMappingFilePage_project_name_column);
+		column.setText(Messages.NewHibernateMappingFilePage_project_name_column);
 		column.setImage(registry.get(new JavaElementImageDescriptor(
 				JavaPlugin.getDefault().getWorkbench().getSharedImages()
 					.getImageDescriptor(IDE.SharedImages.IMG_OBJ_PROJECT), 0, IMAGE_SIZE)));

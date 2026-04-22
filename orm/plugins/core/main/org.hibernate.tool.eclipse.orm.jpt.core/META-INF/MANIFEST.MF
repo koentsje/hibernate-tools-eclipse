@@ -33,7 +33,8 @@ Export-Package: org.hibernate.tool.eclipse.jpt.core.internal,
  org.hibernate.tool.eclipse.jpt.core.internal.context.basic,
  org.hibernate.tool.eclipse.jpt.core.internal.context.java,
  org.hibernate.tool.eclipse.jpt.core.internal.context.orm,
- org.hibernate.tool.eclipse.jpt.core.internal.context.persistence
+ org.hibernate.tool.eclipse.jpt.core.internal.context.persistence,
+ org.hibernate.tool.eclipse.orm.jpt.core.nls
 Bundle-Localization: plugin
 Bundle-Activator: org.hibernate.tool.eclipse.jpt.core.internal.HibernateJptPlugin
 Bundle-ActivationPolicy: lazy

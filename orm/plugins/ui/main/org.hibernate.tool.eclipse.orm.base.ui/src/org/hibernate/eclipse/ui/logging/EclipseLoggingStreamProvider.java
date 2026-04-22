@@ -10,7 +10,7 @@ import org.eclipse.ui.console.IConsole;
 import org.eclipse.ui.console.IConsoleManager;
 import org.eclipse.ui.console.MessageConsole;
 import org.eclipse.ui.console.MessageConsoleStream;
-import org.hibernate.tool.eclipse.orm.console.core.ConsoleMessages;
+import org.hibernate.tool.eclipse.orm.console.core.nls.Messages;
 import org.hibernate.tool.eclipse.common.base.core.logging.LoggingStreamProvider;
 
 public class EclipseLoggingStreamProvider implements LoggingStreamProvider {
@@ -22,8 +22,8 @@ public class EclipseLoggingStreamProvider implements LoggingStreamProvider {
         Object[] console = loggingStreams.get(name);
         if (console == null) {
             console = new Object[2];
-            String secondaryId = ConsoleMessages.KnownConfigurations_hibernate_log
-                + (name == null ? ConsoleMessages.KnownConfigurations_unknown : name);
+            String secondaryId = Messages.KnownConfigurations_hibernate_log
+                + (name == null ? Messages.KnownConfigurations_unknown : name);
             console[0] = new MessageConsole(secondaryId, null);
             IConsoleManager consoleManager = ConsolePlugin.getDefault().getConsoleManager();
             consoleManager.addConsoles(new IConsole[] { (IConsole) console[0] });

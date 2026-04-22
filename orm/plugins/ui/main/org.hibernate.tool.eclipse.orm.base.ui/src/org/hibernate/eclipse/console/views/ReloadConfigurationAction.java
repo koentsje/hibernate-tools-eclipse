@@ -6,7 +6,7 @@ import org.eclipse.jface.viewers.StructuredViewer;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.HibernateConsoleRuntimeException;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.console.actions.ConsoleConfigurationBasedAction;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
@@ -18,7 +18,7 @@ public class ReloadConfigurationAction extends ConsoleConfigurationBasedAction {
 	private StructuredViewer viewer;
 
 	protected ReloadConfigurationAction(StructuredViewer sv) {
-		super(OrmBaseUiMessages.ReloadConfigurationAction_rebuild_configuration);
+		super(Messages.ReloadConfigurationAction_rebuild_configuration);
 		setEnabledWhenNoSessionFactory(true);
 		viewer = sv;
 		setImageDescriptor(EclipseImages.getImageDescriptor(ImageConstants.RELOAD) );
@@ -38,13 +38,13 @@ public class ReloadConfigurationAction extends ConsoleConfigurationBasedAction {
 			} catch (HibernateConsoleRuntimeException he) {
 				HibernateBasePlugin.getDefault().showError(
 						viewer.getControl().getShell(),
-						OrmBaseUiMessages.ReloadConfigurationAction_exception_while_start_hibernate, he);
+						Messages.ReloadConfigurationAction_exception_while_start_hibernate, he);
 			} catch (UnsupportedClassVersionError ucve) {
 				HibernateBasePlugin
 						.getDefault()
 						.showError(
 								viewer.getControl().getShell(),
-								OrmBaseUiMessages.ReloadConfigurationAction_starting_hibernate_resulted_exception,
+								Messages.ReloadConfigurationAction_starting_hibernate_resulted_exception,
 								ucve);
 			}
 		}

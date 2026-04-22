@@ -29,7 +29,7 @@ import org.eclipse.ui.IWorkbenchActionConstants;
 import org.eclipse.ui.actions.ActionFactory;
 import org.eclipse.ui.actions.RetargetAction;
 import org.eclipse.ui.actions.ActionFactory.IWorkbenchAction;
-import org.hibernate.tool.eclipse.ui.diagram.DiagramViewerMessages;
+import org.hibernate.tool.eclipse.orm.diagram.ui.nls.Messages;
 import org.hibernate.tool.eclipse.ui.diagram.UiPlugin;
 import org.hibernate.tool.eclipse.ui.diagram.editors.actions.ActionMenu;
 import org.hibernate.tool.eclipse.ui.diagram.editors.actions.AutoLayoutAction;
@@ -58,7 +58,7 @@ public class DiagramActionBarContributor extends ActionBarContributor {
 	protected void buildActions() {
 		IWorkbenchAction workbenchAction = ActionFactory.REFRESH.create(getPage().getWorkbenchWindow());
 		workbenchAction.setImageDescriptor(UiPlugin.getImageDescriptor2(ImageBundle.getString("Explorer.refreshOrmGef"))); //$NON-NLS-1$
-		workbenchAction.setToolTipText(DiagramViewerMessages.EditorActionContributor_refresh_visual_mapping);
+		workbenchAction.setToolTipText(Messages.EditorActionContributor_refresh_visual_mapping);
 		addAction(workbenchAction);
 		//
 		DiagramBaseRetargetAction diagramAction;
@@ -66,99 +66,99 @@ public class DiagramActionBarContributor extends ActionBarContributor {
 		//
 		diagramAction = new DiagramBaseRetargetAction(
 				AutoLayoutAction.ACTION_ID, 
-				DiagramViewerMessages.AutoLayoutAction_auto_layout,
-				DiagramViewerMessages.AutoLayoutAction_auto_layout,
+				Messages.AutoLayoutAction_auto_layout,
+				Messages.AutoLayoutAction_auto_layout,
 				AutoLayoutAction.img);
 		addRetargetAction(diagramAction);
 		//
 		DiagramBaseRetargetAction diagramToggleConnectionsAction = new DiagramBaseRetargetAction(
 				ToggleConnectionsAction.ACTION_ID, 
-				DiagramViewerMessages.ToggleConnectionsAction_toggle_connections,
-				DiagramViewerMessages.ToggleConnectionsAction_toggle_connections,
+				Messages.ToggleConnectionsAction_toggle_connections,
+				Messages.ToggleConnectionsAction_toggle_connections,
 				ToggleConnectionsAction.img);
 		addRetargetAction(diagramToggleConnectionsAction);
 		//
 		DiagramBaseRetargetAction diagramToggleExpandStateAction = new DiagramBaseRetargetAction(
 				ToggleShapeExpandStateAction.ACTION_ID, 
-				DiagramViewerMessages.ToggleShapeExpandStateAction_toggle_expand_state,
-				DiagramViewerMessages.ToggleShapeExpandStateAction_toggle_expand_state_tooltip,
+				Messages.ToggleShapeExpandStateAction_toggle_expand_state,
+				Messages.ToggleShapeExpandStateAction_toggle_expand_state_tooltip,
 				ToggleShapeExpandStateAction.img);
 		addRetargetAction(diagramToggleExpandStateAction);
 		//
 		diagramAction = new DiagramBaseRetargetAction(
 				ShapeExpandAction.ACTION_ID, 
-				DiagramViewerMessages.ShapeExpandAction_shape_expand,
-				DiagramViewerMessages.ShapeExpandAction_shape_expand_tooltip,
+				Messages.ShapeExpandAction_shape_expand,
+				Messages.ShapeExpandAction_shape_expand_tooltip,
 				ShapeExpandAction.img);
 		addRetargetAction(diagramAction);
 		//
 		diagramAction = new DiagramBaseRetargetAction(
 				ShapeCollapseAction.ACTION_ID, 
-				DiagramViewerMessages.ShapeCollapseAction_shape_collapse,
-				DiagramViewerMessages.ShapeCollapseAction_shape_collapse_tooltip,
+				Messages.ShapeCollapseAction_shape_collapse,
+				Messages.ShapeCollapseAction_shape_collapse_tooltip,
 				ShapeCollapseAction.img);
 		addRetargetAction(diagramAction);
 		//
 		DiagramBaseRetargetAction diagramToggleVisibleStateAction = new DiagramBaseRetargetAction(
 				ToggleShapeVisibleStateAction.ACTION_ID, 
-				DiagramViewerMessages.ToggleShapeVisibleStateAction_toggle_visible_state,
-				DiagramViewerMessages.ToggleShapeVisibleStateAction_toggle_visible_state_tooltip,
+				Messages.ToggleShapeVisibleStateAction_toggle_visible_state,
+				Messages.ToggleShapeVisibleStateAction_toggle_visible_state_tooltip,
 				ToggleShapeVisibleStateAction.img);
 		addRetargetAction(diagramToggleVisibleStateAction);
 		//
 		diagramAction = new DiagramBaseRetargetAction(
 				ShapeHideAction.ACTION_ID, 
-				DiagramViewerMessages.ShapeHideAction_shape_hide,
-				DiagramViewerMessages.ShapeHideAction_shape_hide_tooltip,
+				Messages.ShapeHideAction_shape_hide,
+				Messages.ShapeHideAction_shape_hide_tooltip,
 				ShapeHideAction.img);
 		addRetargetAction(diagramAction);
 		//
 		diagramAction = new DiagramBaseRetargetAction(
 				ShapeShowAction.ACTION_ID, 
-				DiagramViewerMessages.ShapeShowAction_shape_show,
-				DiagramViewerMessages.ShapeShowAction_shape_show_tooltip,
+				Messages.ShapeShowAction_shape_show,
+				Messages.ShapeShowAction_shape_show_tooltip,
 				ShapeShowAction.img);
 		addRetargetAction(diagramAction);
 		//
 		diagramAction = new DiagramBaseRetargetAction(
 				ToggleClassMappingAction.ACTION_ID, 
-				DiagramViewerMessages.ToggleClassMappingAction_class_mappings,
-				DiagramViewerMessages.ToggleClassMappingAction_class_mappings,
+				Messages.ToggleClassMappingAction_class_mappings,
+				Messages.ToggleClassMappingAction_class_mappings,
 				ToggleClassMappingAction.img, IAction.AS_CHECK_BOX);
 		addRetargetAction(diagramAction);
 		//
 		diagramAction = new DiagramBaseRetargetAction(
 				TogglePropertyMappingAction.ACTION_ID, 
-				DiagramViewerMessages.TogglePropertyMappingAction_property_mappings,
-				DiagramViewerMessages.TogglePropertyMappingAction_property_mappings,
+				Messages.TogglePropertyMappingAction_property_mappings,
+				Messages.TogglePropertyMappingAction_property_mappings,
 				TogglePropertyMappingAction.img, IAction.AS_CHECK_BOX);
 		addRetargetAction(diagramAction);
 		//
 		diagramAction = new DiagramBaseRetargetAction(
 				ToggleAssociationAction.ACTION_ID, 
-				DiagramViewerMessages.ToggleAssociationAction_associations,
-				DiagramViewerMessages.ToggleAssociationAction_associations,
+				Messages.ToggleAssociationAction_associations,
+				Messages.ToggleAssociationAction_associations,
 				ToggleAssociationAction.img, IAction.AS_CHECK_BOX);
 		addRetargetAction(diagramAction);
 		//
 		diagramAction = new DiagramBaseRetargetAction(
 				ToggleForeignKeyConstraintAction.ACTION_ID, 
-				DiagramViewerMessages.ToggleForeignKeyConstraintAction_foreign_key_constraints,
-				DiagramViewerMessages.ToggleForeignKeyConstraintAction_foreign_key_constraints,
+				Messages.ToggleForeignKeyConstraintAction_foreign_key_constraints,
+				Messages.ToggleForeignKeyConstraintAction_foreign_key_constraints,
 				ToggleForeignKeyConstraintAction.img, IAction.AS_CHECK_BOX);
 		addRetargetAction(diagramAction);
 		//
 		diagramAction = new DiagramBaseRetargetAction(
 				ConnectionRouterManhattanAction.ACTION_ID, 
-				DiagramViewerMessages.ConnectionRouterManhattanAction_select_manhattan_connection_router,
-				DiagramViewerMessages.ConnectionRouterManhattanAction_select_manhattan_connection_router,
+				Messages.ConnectionRouterManhattanAction_select_manhattan_connection_router,
+				Messages.ConnectionRouterManhattanAction_select_manhattan_connection_router,
 				ConnectionRouterManhattanAction.img, IAction.AS_RADIO_BUTTON);
 		addRetargetAction(diagramAction);
 		//
 		diagramAction = new DiagramBaseRetargetAction(
 				ConnectionRouterFanAction.ACTION_ID, 
-				DiagramViewerMessages.ConnectionRouterFanAction_select_fan_connection_router,
-				DiagramViewerMessages.ConnectionRouterFanAction_select_fan_connection_router,
+				Messages.ConnectionRouterFanAction_select_fan_connection_router,
+				Messages.ConnectionRouterFanAction_select_fan_connection_router,
 				ConnectionRouterFanAction.img, IAction.AS_RADIO_BUTTON);
 		addRetargetAction(diagramAction);
 		//
@@ -237,7 +237,7 @@ public class DiagramActionBarContributor extends ActionBarContributor {
 	 */
 	public void contributeToMenu(IMenuManager menubar) {
 		super.contributeToMenu(menubar);
-		MenuManager viewMenu = new MenuManager(DiagramViewerMessages.ViewMenu_label_text);
+		MenuManager viewMenu = new MenuManager(Messages.ViewMenu_label_text);
 		viewMenu.add(getAction(GEFActionConstants.ZOOM_IN));
 		viewMenu.add(getAction(GEFActionConstants.ZOOM_OUT));
 		viewMenu.add(new Separator());

@@ -21,7 +21,7 @@
  */
 package org.hibernate.tool.eclipse.orm.hql;
 
-import org.hibernate.tool.eclipse.orm.internal.OrmBaseCoreMessages;
+import org.hibernate.tool.eclipse.orm.base.core.nls.Messages;
 import org.hibernate.tool.eclipse.common.base.core.resources.InMemoryStorage;
 
 /**
@@ -38,7 +38,7 @@ public class EditorStorage extends InMemoryStorage {
     }
 
     public EditorStorage(String consoleName, String string) {
-		super(consoleName, "HQL: " + (consoleName==null?OrmBaseCoreMessages.HQLEditorStorage_none:consoleName), string); //$NON-NLS-1$
+		super(consoleName, "HQL: " + (consoleName==null?Messages.HQLEditorStorage_none:consoleName), string); //$NON-NLS-1$
 	}
 
 }

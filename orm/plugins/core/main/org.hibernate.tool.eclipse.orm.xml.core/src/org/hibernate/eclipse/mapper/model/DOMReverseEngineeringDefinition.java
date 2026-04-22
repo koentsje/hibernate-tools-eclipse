@@ -41,7 +41,7 @@ import org.hibernate.tool.eclipse.orm.model.core.IRevEngTable;
 import org.hibernate.tool.eclipse.orm.console.core.reveng.IReverseEngineeringDefinition;
 import org.hibernate.tool.eclipse.orm.model.core.ITableFilter;
 import org.hibernate.tool.eclipse.orm.model.core.ITypeMapping;
-import org.hibernate.eclipse.mapper.MapperMessages;
+import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
 import org.hibernate.eclipse.mapper.factory.ObserverAdapterFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -204,7 +204,7 @@ public class DOMReverseEngineeringDefinition implements	IReverseEngineeringDefin
 	}
 
 	public void unknownNotifyChanged(INodeNotifier notifier, int eventType, Object changedFeature, Object oldValue, Object newValue, int pos) {
-		String out = NLS.bind(MapperMessages.DOMReverseEngineeringDefinition_unknown_change, notifier, INodeNotifier.EVENT_TYPE_STRINGS[eventType]);
+		String out = NLS.bind(Messages.DOMReverseEngineeringDefinition_unknown_change, notifier, INodeNotifier.EVENT_TYPE_STRINGS[eventType]);
 		System.out.println(out);
 	}
 

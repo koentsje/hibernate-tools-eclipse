@@ -23,7 +23,7 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
-import org.hibernate.tool.eclipse.orm.console.core.ConsoleMessages;
+import org.hibernate.tool.eclipse.orm.console.core.nls.Messages;
 
 /**
  * @author Dmitry Geraskov
@@ -67,7 +67,7 @@ public class StringListDialog extends Dialog {
 
 	protected void configureShell(Shell shell) {
 		super.configureShell(shell);
-		shell.setText(ConsoleMessages.StringListDialog_Elements);
+		shell.setText(Messages.StringListDialog_Elements);
 	}
 
 	private Button buttonAdd;
@@ -82,18 +82,18 @@ public class StringListDialog extends Dialog {
 		composite.setLayout(fillLayout);
 
 		buttonAdd = new Button(composite, SWT.PUSH);
-		buttonAdd.setText(ConsoleMessages.StringListDialog_Add);
+		buttonAdd.setText(Messages.StringListDialog_Add);
 
 		buttonModify = new Button(composite, SWT.PUSH);
-		buttonModify.setText(ConsoleMessages.StringListDialog_Modify);
+		buttonModify.setText(Messages.StringListDialog_Modify);
 
 		buttonRemove = new Button(composite, SWT.PUSH);
-		buttonRemove.setText(ConsoleMessages.StringListDialog_Remove);
+		buttonRemove.setText(Messages.StringListDialog_Remove);
 
 		buttonAdd.addSelectionListener(new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent e) {
-				InputDialog inputDialog = new InputDialog(null, ConsoleMessages.StringListDialog_Add_Element,
-						ConsoleMessages.StringListDialog_New_Element, "", null);  //$NON-NLS-1$
+				InputDialog inputDialog = new InputDialog(null, Messages.StringListDialog_Add_Element,
+						Messages.StringListDialog_New_Element, "", null);  //$NON-NLS-1$
 				if (inputDialog.open() == Window.OK) {
 					listViewer.getList().add(inputDialog.getValue());
 				}
@@ -104,8 +104,8 @@ public class StringListDialog extends Dialog {
 			public void widgetSelected(SelectionEvent e) {
 				int line = listViewer.getList().getSelectionIndex();
 				if (line >=0 ){
-					InputDialog inputDialog = new InputDialog(null, ConsoleMessages.StringListDialog_Modify_Element,
-							ConsoleMessages.StringListDialog_New_Element, listViewer.getList().getItem(line), null);
+					InputDialog inputDialog = new InputDialog(null, Messages.StringListDialog_Modify_Element,
+							Messages.StringListDialog_New_Element, listViewer.getList().getItem(line), null);
 					if (inputDialog.open() == Window.OK) {
 						listViewer.getList().setItem(line, inputDialog.getValue());
 					}

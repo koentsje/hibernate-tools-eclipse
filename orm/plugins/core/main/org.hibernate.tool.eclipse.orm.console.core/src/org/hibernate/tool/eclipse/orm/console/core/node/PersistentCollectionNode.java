@@ -27,7 +27,7 @@ import java.util.Iterator;
 import javax.swing.tree.TreeNode;
 
 import org.eclipse.osgi.util.NLS;
-import org.hibernate.tool.eclipse.orm.console.core.ConsoleMessages;
+import org.hibernate.tool.eclipse.orm.console.core.nls.Messages;
 import org.hibernate.tool.eclipse.common.runtime.HibernateRuntimeException;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IClassMetadata;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ICollectionMetadata;
@@ -72,7 +72,7 @@ class PersistentCollectionNode extends BaseNode implements TypedNode{
 		try {
 			collectionObject = md.getPropertyValue(baseObject, name);
 		} catch (HibernateRuntimeException e) {
-			IllegalArgumentException iae = new IllegalArgumentException(ConsoleMessages.PersistentCollectionNode_could_not_access_property_value);
+			IllegalArgumentException iae = new IllegalArgumentException(Messages.PersistentCollectionNode_could_not_access_property_value);
 			iae.initCause(e);
 			throw iae;
 		}

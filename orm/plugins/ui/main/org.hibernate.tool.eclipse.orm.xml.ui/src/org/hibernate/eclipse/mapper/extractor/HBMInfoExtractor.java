@@ -40,7 +40,7 @@ import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.Signature;
 import org.eclipse.wst.sse.ui.internal.contentassist.CustomCompletionProposal;
 import org.eclipse.wst.xml.ui.internal.contentassist.XMLRelevanceConstants;
-import org.hibernate.eclipse.mapper.MapperMessages;
+import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
 import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IEnvironment;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
@@ -351,9 +351,9 @@ public class HBMInfoExtractor {
 
 	private void setupAccessHandlers() {
 		List types = new ArrayList();
-		addType("property", MapperMessages.HBMInfoExtractor_use_javabean_accessor_methods, null, types); //$NON-NLS-1$
-		addType("field", MapperMessages.HBMInfoExtractor_access_fields_directly, null, types); //$NON-NLS-1$
-		addType("noop", MapperMessages.HBMInfoExtractor_do_not_perform_any_access, null, types); //$NON-NLS-1$
+		addType("property", Messages.HBMInfoExtractor_use_javabean_accessor_methods, null, types); //$NON-NLS-1$
+		addType("field", Messages.HBMInfoExtractor_access_fields_directly, null, types); //$NON-NLS-1$
+		addType("noop", Messages.HBMInfoExtractor_do_not_perform_any_access, null, types); //$NON-NLS-1$
 		Collections.sort(types);
 		propertyAccessors = (HibernateTypeDescriptor[]) types.toArray(new HibernateTypeDescriptor[types.size()]);
 

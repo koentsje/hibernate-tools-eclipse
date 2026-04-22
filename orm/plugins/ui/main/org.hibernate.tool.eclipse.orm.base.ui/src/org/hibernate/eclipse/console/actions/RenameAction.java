@@ -24,7 +24,7 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.actions.SelectionListenerAction;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.launch.utils.LaunchHelper;
 
@@ -41,7 +41,7 @@ public class RenameAction extends SelectionListenerAction {
 	private String imageFilePath = "icons/images/refresh_run.gif"; //$NON-NLS-1$
 
 	public RenameAction(StructuredViewer viewer) {
-		super(OrmBaseUiMessages.RenameAction_name);
+		super(Messages.RenameAction_name);
 		this.viewer = viewer;
 		setImageDescriptor(HibernateBasePlugin.getImageDescriptor(imageFilePath  ));
 		setId(RENAME_ACTIONID);
@@ -65,7 +65,7 @@ public class RenameAction extends SelectionListenerAction {
 		try {
 			launchConfiguration = LaunchHelper.findHibernateLaunchConfig(config.getName());
 		} catch (CoreException e) {
-			HibernateBasePlugin.getDefault().showError(null, OrmBaseUiMessages.RenameAction_error_title, e);
+			HibernateBasePlugin.getDefault().showError(null, Messages.RenameAction_error_title, e);
 		}
 		return launchConfiguration != null ? renameLaunchConfiguration(launchConfiguration) : false;
 	}
@@ -75,8 +75,8 @@ public class RenameAction extends SelectionListenerAction {
 		IInputValidator inputValidator = new NameValidator();
 		InputDialog d = new InputDialog(
 				mParentShell,
-				OrmBaseUiMessages.RenameAction_dialog_title,
-				OrmBaseUiMessages.RenameAction_dialog_message,
+				Messages.RenameAction_dialog_title,
+				Messages.RenameAction_dialog_message,
 				launchConfiguration.getName(), inputValidator);
 		if (d.open() == Window.OK ){
 			try {
@@ -85,7 +85,7 @@ public class RenameAction extends SelectionListenerAction {
 				wc.doSave();
 				return true;
 			} catch (CoreException e) {
-				HibernateBasePlugin.getDefault().showError(mParentShell, OrmBaseUiMessages.RenameAction_error_title, e);
+				HibernateBasePlugin.getDefault().showError(mParentShell, Messages.RenameAction_error_title, e);
 			}
 		}
 
@@ -101,14 +101,14 @@ class NameValidator implements IInputValidator {
 		ILaunchManager mgr = DebugPlugin.getDefault().getLaunchManager();
 		try {
 			if (mgr.isExistingLaunchConfigurationName(newText))
-				return OrmBaseUiMessages.RenameAction_existing_name;
+				return Messages.RenameAction_existing_name;
 			if (mgr.isValidLaunchConfigurationName(newText))
 				return null;
 		}
 		catch(Exception iae) {
 			HibernateBasePlugin.getDefault().log(iae);
 		}
-		return OrmBaseUiMessages.RenameAction_error_name;
+		return Messages.RenameAction_error_name;
 	}
 
 }

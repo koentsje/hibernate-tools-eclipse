@@ -24,7 +24,7 @@ import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateConsoleCoreP
 import org.hibernate.tool.eclipse.orm.runtime.spi.IColumn;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IProperty;
-import org.hibernate.tool.eclipse.ui.diagram.DiagramViewerMessages;
+import org.hibernate.tool.eclipse.orm.diagram.ui.nls.Messages;
 import org.hibernate.tool.eclipse.ui.diagram.UiPlugin;
 import org.hibernate.tool.eclipse.ui.diagram.editors.DiagramViewer;
 import org.hibernate.tool.eclipse.ui.diagram.editors.model.Shape;
@@ -42,7 +42,7 @@ public class OpenMappingAction extends SelectionAction {
 	public OpenMappingAction(IWorkbenchPart part) {
 		super(part);
 		setId(ACTION_ID);
-		setText(DiagramViewerMessages.OpenMappingAction_open_mapping_file);
+		setText(Messages.OpenMappingAction_open_mapping_file);
 		setImageDescriptor(img);
 	}
 
@@ -66,9 +66,9 @@ public class OpenMappingAction extends SelectionAction {
 				try {
 					editorPart = org.hibernate.eclipse.console.actions.OpenMappingAction.run(consoleConfig, compositSel, parentProperty);
 				} catch (CoreException e) {
-					HibernateConsoleCorePlugin.getDefault().logErrorMessage(DiagramViewerMessages.OpenMappingAction_canot_find_or_open_mapping_file, e);
+					HibernateConsoleCorePlugin.getDefault().logErrorMessage(Messages.OpenMappingAction_canot_find_or_open_mapping_file, e);
 				} catch (FileNotFoundException e) {
-					HibernateConsoleCorePlugin.getDefault().logErrorMessage(DiagramViewerMessages.OpenMappingAction_canot_find_or_open_mapping_file, e);
+					HibernateConsoleCorePlugin.getDefault().logErrorMessage(Messages.OpenMappingAction_canot_find_or_open_mapping_file, e);
 				}
 				continue;
 			}
@@ -84,9 +84,9 @@ public class OpenMappingAction extends SelectionAction {
 			try {
 				editorPart = org.hibernate.eclipse.console.actions.OpenMappingAction.run(consoleConfig, selection, selectionParent);
 			} catch (CoreException e) {
-				HibernateConsoleCorePlugin.getDefault().logErrorMessage(DiagramViewerMessages.OpenMappingAction_open_mapping_file, e);
+				HibernateConsoleCorePlugin.getDefault().logErrorMessage(Messages.OpenMappingAction_open_mapping_file, e);
 			} catch (FileNotFoundException e) {
-				HibernateConsoleCorePlugin.getDefault().logErrorMessage(DiagramViewerMessages.OpenMappingAction_open_mapping_file, e);
+				HibernateConsoleCorePlugin.getDefault().logErrorMessage(Messages.OpenMappingAction_open_mapping_file, e);
 			}
 		}
 	}

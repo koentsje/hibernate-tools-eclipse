@@ -26,7 +26,7 @@ import org.eclipse.core.runtime.jobs.ISchedulingRule;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.progress.IDeferredWorkbenchAdapter;
 import org.eclipse.ui.progress.IElementCollector;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.eclipse.console.utils.LaunchHelperUI;
 
 public class KnownConfigurationsWorkbenchAdapter implements IDeferredWorkbenchAdapter {
@@ -40,7 +40,7 @@ public class KnownConfigurationsWorkbenchAdapter implements IDeferredWorkbenchAd
 	}
 
 	public String getLabel(Object o) {
-		return OrmBaseUiMessages.KnownConfigurationsWorkbenchAdapter_configurations;
+		return Messages.KnownConfigurationsWorkbenchAdapter_configurations;
 	}
 
 	public Object getParent(Object o) {

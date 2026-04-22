@@ -54,8 +54,7 @@ import org.eclipse.jdt.core.JavaConventions;
 import org.eclipse.osgi.util.NLS;
 import org.hibernate.tool.eclipse.orm.console.core.HibernateConsoleRuntimeException;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernatePlugin;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
-import org.hibernate.eclipse.launch.LaunchMessages;
+import org.hibernate.tool.eclipse.orm.launch.core.nls.Messages;
 import org.hibernate.eclipse.launch.model.ExporterDefinition;
 import org.hibernate.eclipse.launch.model.ExporterFactory;
 
@@ -133,7 +132,7 @@ public class ExporterAttributes
 
 			   ExporterDefinition expDef = exDefinitions.get(extensionId);
 			   if(expDef==null) {
-				   String out = NLS.bind(LaunchMessages.ExporterAttributes_could_not_locate_exporter_for_in, extensionId, configuration.getName());
+				   String out = NLS.bind(Messages.ExporterAttributes_could_not_locate_exporter_for_in, extensionId, configuration.getName());
 				   throw new HibernateConsoleRuntimeException(out);
 			   } else {
 				   ExporterFactory exporterFactory = new ExporterFactory( expDef, exporterId );
@@ -364,10 +363,10 @@ public class ExporterAttributes
 		String msg = null;
 		boolean notSelected = consoleConfigurationName == null || consoleConfigurationName.length() <= 0;
 		if (notSelected) {
-			msg = BasicHibernateMessages.CodeGenerationSettingsTab_console_cfg_must_be_specified;
+			msg = Messages.CodeGenerationSettingsTab_console_cfg_must_be_specified;
 		}
         if (msg == null) {
-    		msg = PathHelper.checkDirectory(outputPath, BasicHibernateMessages.CodeGenerationSettingsTab_output_directory, true);
+    		msg = PathHelper.checkDirectory(outputPath, Messages.CodeGenerationSettingsTab_output_directory, true);
         }
         if (msg == null) {
             if (reverseEngineer && packageName.length() > 0) {
@@ -379,17 +378,17 @@ public class ExporterAttributes
         }
         if (msg == null) {
             if (reverseEngineer && revengSettings.trim().length() > 0) {
-                msg = PathHelper.checkFile(revengSettings, BasicHibernateMessages.CodeGenerationSettingsTab_reveng_xml_3, true);
+                msg = PathHelper.checkFile(revengSettings, Messages.CodeGenerationSettingsTab_reveng_xml_3, true);
             }
         }
         if (msg == null) {
             if (useOwnTemplates) {
-                msg = PathHelper.checkDirectory(templatePath, BasicHibernateMessages.CodeGenerationSettingsTab_template_dir, true);
+                msg = PathHelper.checkDirectory(templatePath, Messages.CodeGenerationSettingsTab_template_dir, true);
             }
         }
         if (msg == null) {
             if (reverseEngineer && !preferBasicCompositeIds) {
-                msg = LaunchMessages.CodeGenerationSettingsTab_script_can_not_be_generated_correctly_without;
+                msg = Messages.CodeGenerationSettingsTab_script_can_not_be_generated_correctly_without;
             }
         }
 		return msg;

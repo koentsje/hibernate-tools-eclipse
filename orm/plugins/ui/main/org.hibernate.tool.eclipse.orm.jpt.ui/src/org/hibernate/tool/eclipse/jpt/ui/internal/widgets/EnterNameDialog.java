@@ -21,7 +21,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
-import org.hibernate.tool.eclipse.jpt.ui.internal.mapping.details.HibernateUIMappingMessages;
+import org.hibernate.tool.eclipse.orm.jpt.ui.nls.Messages;
 
 /**
  * @author Dmitry Geraskov
@@ -44,11 +44,11 @@ public class EnterNameDialog extends ValidatingDialog<NameStateObject> {
             Collection<String> names){
 		this(parentShell,
 			resourceManager,
-			HibernateUIMappingMessages.EnterNameDialog_title,
+			Messages.EnterNameDialog_title,
 			descriptionTitle,
 			null,
 			null,
-			HibernateUIMappingMessages.EnterNameDialog_labelText,
+			Messages.EnterNameDialog_labelText,
 			name,
 			names);
 	}

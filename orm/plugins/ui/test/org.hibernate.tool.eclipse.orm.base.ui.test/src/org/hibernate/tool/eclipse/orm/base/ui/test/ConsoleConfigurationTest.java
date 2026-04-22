@@ -17,7 +17,7 @@ import org.hibernate.tool.eclipse.orm.query.QueryInputModel;
 import org.hibernate.tool.eclipse.orm.query.IQueryPage;
 import org.hibernate.eclipse.console.views.QueryPageTabView;
 import org.hibernate.tool.eclipse.orm.base.ui.test.utils.TestConsoleConfigurationPreferences;
-import org.hibernate.tool.eclipse.orm.base.ui.test.utils.TestConsoleMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.test.nls.Messages;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IColumn;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
@@ -116,7 +116,7 @@ public class ConsoleConfigurationTest {
 
 		try {
 			consoleCfg.buildSessionFactory();
-			Assert.fail(TestConsoleMessages.ConsoleConfigurationTest_factory_already_exists);
+			Assert.fail(Messages.ConsoleConfigurationTest_factory_already_exists);
 		} catch (HibernateConsoleRuntimeException hcre) {
 
 		}
@@ -138,7 +138,7 @@ public class ConsoleConfigurationTest {
 
 		try {
 			consoleCfg.buildSessionFactory();
-			Assert.fail(TestConsoleMessages.ConsoleConfigurationTest_factory_already_exists);
+			Assert.fail(Messages.ConsoleConfigurationTest_factory_already_exists);
 		} catch (HibernateConsoleRuntimeException hcre) {
 
 		}

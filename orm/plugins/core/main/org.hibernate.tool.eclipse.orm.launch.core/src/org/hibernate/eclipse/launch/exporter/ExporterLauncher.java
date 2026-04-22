@@ -31,7 +31,7 @@ import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.HibernateConsoleRuntimeException;
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernatePlugin;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
+import org.hibernate.tool.eclipse.orm.launch.core.nls.Messages;
 import org.hibernate.eclipse.launch.model.ExporterFactory;
 import org.hibernate.eclipse.launch.CodeGenerationStrings;
 import org.hibernate.eclipse.launch.CodeGenerationUtils;
@@ -108,7 +108,7 @@ public class ExporterLauncher {
 					HibernatePlugin
 							.throwableToStatus(
 									new HibernateConsoleRuntimeException(
-											BasicHibernateMessages.CodeGenerationLaunchDelegate_received_noclassdeffounderror,
+											Messages.CodeGenerationLaunchDelegate_received_noclassdeffounderror,
 											e), 666));
 		} finally {
 			monitor.done();
@@ -123,7 +123,7 @@ public class ExporterLauncher {
 			throws CoreException {
 
 		monitor.beginTask(
-				BasicHibernateMessages.CodeGenerationLaunchDelegate_generating_code_for
+				Messages.CodeGenerationLaunchDelegate_generating_code_for
 						+ attributes.getConsoleConfigurationName(),
 				exporterFactories.length + 1);
 
@@ -133,7 +133,7 @@ public class ExporterLauncher {
 		ConsoleConfiguration cc = KnownConfigurations.getInstance().find(
 				attributes.getConsoleConfigurationName());
 		if (attributes.isReverseEngineer()) {
-			monitor.subTask(BasicHibernateMessages.CodeGenerationLaunchDelegate_reading_jdbc_metadata);
+			monitor.subTask(Messages.CodeGenerationLaunchDelegate_reading_jdbc_metadata);
 		}
 		final IConfiguration cfg = buildConfiguration(attributes, cc,
 				ResourcesPlugin.getWorkspace().getRoot());
@@ -172,7 +172,7 @@ public class ExporterLauncher {
 											.getHibernateService());
 				} catch (CoreException e) {
 					throw new HibernateConsoleRuntimeException(
-							BasicHibernateMessages.CodeGenerationLaunchDelegate_error_while_setting_up
+							Messages.CodeGenerationLaunchDelegate_error_while_setting_up
 									+ exporterFactories[i]
 											.getExporterDefinition(), e);
 				}
@@ -181,7 +181,7 @@ public class ExporterLauncher {
 					exporter.start();
 				} catch (HibernateRuntimeException he) {
 					throw new HibernateConsoleRuntimeException(
-							BasicHibernateMessages.CodeGenerationLaunchDelegate_error_while_running
+							Messages.CodeGenerationLaunchDelegate_error_while_running
 									+ exporterFactories[i]
 											.getExporterDefinition()
 											.getDescription(), he);

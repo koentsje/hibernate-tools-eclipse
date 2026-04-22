@@ -26,7 +26,7 @@ import org.eclipse.osgi.util.NLS;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
 import org.hibernate.tool.eclipse.orm.console.core.node.BaseNode;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
@@ -37,9 +37,9 @@ public class CriteriaEditorAction extends OpenQueryEditorAction {
 	public static final String CRITERIAEDITOR_ACTIONID = "actionid.criteriaeditor"; //$NON-NLS-1$
 
 	public CriteriaEditorAction() {
-		super( OrmBaseUiMessages.CriteriaEditorAction_hibernate_criteria_editor );
+		super( Messages.CriteriaEditorAction_hibernate_criteria_editor );
 		setImageDescriptor(EclipseImages.getImageDescriptor(ImageConstants.CRITERIA_EDITOR));
-		setToolTipText(OrmBaseUiMessages.CriteriaEditorAction_open_hibernate_criteria_editor);
+		setToolTipText(Messages.CriteriaEditorAction_open_hibernate_criteria_editor);
 		setEnabled( true );
 		setId(CRITERIAEDITOR_ACTIONID);
 	}

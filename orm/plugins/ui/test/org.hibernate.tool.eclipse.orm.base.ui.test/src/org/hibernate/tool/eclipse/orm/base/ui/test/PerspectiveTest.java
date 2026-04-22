@@ -2,7 +2,7 @@ package org.hibernate.tool.eclipse.orm.base.ui.test;
 
 import org.eclipse.ui.IPerspectiveDescriptor;
 import org.eclipse.ui.PlatformUI;
-import org.hibernate.tool.eclipse.orm.base.ui.test.utils.TestConsoleMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.test.nls.Messages;
 import org.hibernate.tool.eclipse.orm.base.ui.test.utils.HibernateConsoleTestHelper;
 import org.junit.After;
 import org.junit.Assert;
@@ -34,7 +34,7 @@ public class PerspectiveTest {
 				.getPerspective();
 		Assert.assertEquals(
 				perspective.getLabel(), 
-				TestConsoleMessages.PerspectiveTest_hibernate);
+				Messages.PerspectiveTest_hibernate);
 	}
 
 }

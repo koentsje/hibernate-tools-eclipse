@@ -46,7 +46,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-import org.hibernate.tool.eclipse.orm.console.core.ConsoleMessages;
+import org.hibernate.tool.eclipse.orm.console.core.nls.Messages;
 
 /**
  * @author max
@@ -115,7 +115,7 @@ public class EclipseConsoleConfigurationPreferences extends AbstractConsoleConfi
 					additonal = JavaRuntime.computeDefaultRuntimeClassPath(project);
 				}
 				catch (CoreException e) {
-					throw new HibernateConsoleRuntimeException(ConsoleMessages.EclipseConsoleConfigurationPreferences_could_not_compute_def_classpath + project );
+					throw new HibernateConsoleRuntimeException(Messages.EclipseConsoleConfigurationPreferences_could_not_compute_def_classpath + project );
 				}
 
 			}
@@ -130,7 +130,7 @@ public class EclipseConsoleConfigurationPreferences extends AbstractConsoleConfi
 			}
 			return result;
 		} catch (MalformedURLException mue) {
-			throw new HibernateConsoleRuntimeException(ConsoleMessages.EclipseConsoleConfigurationPreferences_could_not_resolve_classpaths, mue);
+			throw new HibernateConsoleRuntimeException(Messages.EclipseConsoleConfigurationPreferences_could_not_resolve_classpaths, mue);
 		}
 	}
 
@@ -157,7 +157,7 @@ public class EclipseConsoleConfigurationPreferences extends AbstractConsoleConfi
 				return rawLocation.toFile();
 			}
 		}
-		String out = NLS.bind(ConsoleMessages.EclipseConsoleConfigurationPreferences_could_not_resolve_to_file, path);
+		String out = NLS.bind(Messages.EclipseConsoleConfigurationPreferences_could_not_resolve_to_file, path);
 		throw new HibernateConsoleRuntimeException(out);
 	}
 
@@ -215,11 +215,11 @@ public class EclipseConsoleConfigurationPreferences extends AbstractConsoleConfi
 			}
 			return result;
 		} catch(SAXException sa) {
-			throw new HibernateConsoleRuntimeException(ConsoleMessages.EclipseConsoleConfigurationPreferences_errors_while_parsing + f,sa);
+			throw new HibernateConsoleRuntimeException(Messages.EclipseConsoleConfigurationPreferences_errors_while_parsing + f,sa);
 		} catch (ParserConfigurationException e) {
-			throw new HibernateConsoleRuntimeException(ConsoleMessages.EclipseConsoleConfigurationPreferences_errors_while_parsing + f,e);
+			throw new HibernateConsoleRuntimeException(Messages.EclipseConsoleConfigurationPreferences_errors_while_parsing + f,e);
 		} catch (IOException e) {
-			throw new HibernateConsoleRuntimeException(ConsoleMessages.EclipseConsoleConfigurationPreferences_errors_while_parsing + f,e);
+			throw new HibernateConsoleRuntimeException(Messages.EclipseConsoleConfigurationPreferences_errors_while_parsing + f,e);
 		}
 	}
 

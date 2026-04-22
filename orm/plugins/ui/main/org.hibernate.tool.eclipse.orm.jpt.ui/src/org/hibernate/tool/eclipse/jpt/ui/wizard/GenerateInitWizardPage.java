@@ -45,7 +45,6 @@ import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
 import org.hibernate.tool.eclipse.orm.console.core.preferences.ConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.orm.console.core.preferences.ConsoleConfigurationPreferences.ConfigurationMode;
 import org.hibernate.tool.eclipse.orm.console.core.preferences.EclipseConsoleConfigurationPreferences;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.eclipse.console.utils.DialogSelectionHelper;
 import org.hibernate.tool.eclipse.common.base.core.utils.DriverClassHelpers;
 import org.hibernate.eclipse.console.utils.LaunchHelperUI;
@@ -54,6 +53,7 @@ import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
 import org.hibernate.tool.eclipse.jpt.core.internal.HibernateJpaProject;
 import org.hibernate.tool.eclipse.jpt.ui.HibernateJptUIPlugin;
 import org.hibernate.tool.eclipse.orm.runtime.spi.RuntimeServiceManager;
+import org.hibernate.tool.eclipse.orm.jpt.ui.nls.Messages;
 
 /**
  * @author Dmitry Geraskov
@@ -110,7 +110,7 @@ public abstract class GenerateInitWizardPage extends WizardPage {
 		
 		outputdir = new StringButtonDialogField(new IStringButtonAdapter() {
 			public void changeControlPressed(DialogField field) {
-				IPath[] paths = DialogSelectionHelper.chooseFolderEntries(getShell(),  PathHelper.pathOrNull(outputdir.getText()), BasicHibernateMessages.CodeGenerationSettingsTab_select_output_dir, BasicHibernateMessages.CodeGenerationSettingsTab_choose_dir_for_generated_files, false);
+				IPath[] paths = DialogSelectionHelper.chooseFolderEntries(getShell(),  PathHelper.pathOrNull(outputdir.getText()), Messages.CodeGenerationSettingsTab_select_output_dir, Messages.CodeGenerationSettingsTab_choose_dir_for_generated_files, false);
 				if(paths!=null && paths.length==1) {
 					outputdir.setText( ( (paths[0]).toOSString() ) );
 				}
@@ -118,8 +118,8 @@ public abstract class GenerateInitWizardPage extends WizardPage {
 		});
 		outputdir.setText(getDefaultOutput());
         outputdir.setDialogFieldListener(fieldlistener);
-		outputdir.setLabelText(BasicHibernateMessages.CodeGenerationSettingsTab_output_dir);
-		outputdir.setButtonLabel(BasicHibernateMessages.CodeGenerationSettingsTab_browse);
+		outputdir.setLabelText(Messages.CodeGenerationSettingsTab_output_dir);
+		outputdir.setButtonLabel(Messages.CodeGenerationSettingsTab_browse);
 		
 		Control[] controls = outputdir.doFillIntoGrid(container, numColumns);
 		// Hack to tell the text field to stretch!
@@ -150,7 +150,7 @@ public abstract class GenerateInitWizardPage extends WizardPage {
 		useConsoleConfiguration.setLayoutData(gd);				
 		
 		consoleConfigurationName = new ComboDialogField(SWT.READ_ONLY);
-		consoleConfigurationName.setLabelText(BasicHibernateMessages.CodeGenerationSettingsTab_console_configuration);
+		consoleConfigurationName.setLabelText(Messages.CodeGenerationSettingsTab_console_configuration);
 		ConsoleConfiguration[] cfg = LaunchHelperUI.findFilteredSortedConsoleConfigs();
 		String[] names = new String[cfg.length];
 		for (int i = 0; i < cfg.length; i++) {
@@ -163,7 +163,7 @@ public abstract class GenerateInitWizardPage extends WizardPage {
         consoleConfigurationName.doFillIntoGrid(container, numColumns);        
 
         hibernateVersion = new ComboDialogField(SWT.READ_ONLY);
-        hibernateVersion.setLabelText(BasicHibernateMessages.ConsoleConfigurationMainTab_0);
+        hibernateVersion.setLabelText(Messages.ConsoleConfigurationMainTab_0);
 		hibernateVersion.setItems(RuntimeServiceManager.getInstance().getEnabledVersions());
 		hibernateVersion.selectItem(0);
 		hibernateVersion.setDialogFieldListener(fieldlistener);
@@ -216,7 +216,7 @@ public abstract class GenerateInitWizardPage extends WizardPage {
 		connectionProfileName.setEnabled(!useConsoleConfiguration.getSelection());
 		//****************************dialect*****************
 		dialectName = new ComboDialogField(SWT.NONE);
-		dialectName.setLabelText(BasicHibernateMessages.NewConfigurationWizardPage_database_dialect);
+		dialectName.setLabelText(Messages.NewConfigurationWizardPage_database_dialect);
 		dialectName.setItems(getDialectNames());
 		dialectName.selectItem(0);
 		dialectName.doFillIntoGrid(dbGroup, numColumns);
@@ -246,7 +246,7 @@ public abstract class GenerateInitWizardPage extends WizardPage {
 	
 	protected void dialogChanged() {
 		
-		String msg = PathHelper.checkDirectory(getOutputDir(), BasicHibernateMessages.CodeGenerationSettingsTab_output_directory, false);
+		String msg = PathHelper.checkDirectory(getOutputDir(), Messages.CodeGenerationSettingsTab_output_directory, false);
 
         if (msg!=null) {
         	setErrorMessage( msg );
@@ -300,7 +300,7 @@ public abstract class GenerateInitWizardPage extends WizardPage {
 	private String createConsoleConfiguration(){		
 		ILaunchManager launchManager = DebugPlugin.getDefault().getLaunchManager();
 		String dialect = determineDialect();
-		String ccName = launchManager.generateLaunchConfigurationName(BasicHibernateMessages.AddConfigurationAction_hibernate);
+		String ccName = launchManager.generateLaunchConfigurationName(Messages.AddConfigurationAction_hibernate);
 		ConsoleConfigurationPreferences prefs = new EclipseConsoleConfigurationPreferences(ccName, 
 				ConfigurationMode.JPA, getHibernateVersion(), jpaProject.getName(), true, 
 				null, null, null, 

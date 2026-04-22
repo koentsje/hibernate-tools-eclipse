@@ -27,7 +27,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.ui.actions.SelectionListenerAction;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 
 /**
@@ -63,7 +63,7 @@ public abstract class ConsoleConfigurationBasedAction extends SelectionListenerA
 		try {
 			doRun();
 		} catch(Exception he) {
-			String out = NLS.bind(OrmBaseUiMessages.ConsoleConfigurationBasedAction_problem_while_executing, getText(), he);
+			String out = NLS.bind(Messages.ConsoleConfigurationBasedAction_problem_while_executing, getText(), he);
 			HibernateBasePlugin.getDefault().showError(null, out, he);
 		}
 	}

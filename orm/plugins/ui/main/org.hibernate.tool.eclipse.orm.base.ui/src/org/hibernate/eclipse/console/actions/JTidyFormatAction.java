@@ -37,7 +37,7 @@ import org.eclipse.osgi.util.NLS;
 import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.common.base.core.utils.XMLPrettyPrinter;
 
@@ -67,9 +67,9 @@ public class JTidyFormatAction implements IObjectActionDelegate {
 	 * @see IActionDelegate#run(IAction)
 	 */
 	public void run(IAction action) {
-		String out = NLS.bind(OrmBaseUiMessages.JTidyFormatAction_do_you_want_format_xml_files_with_jtidy, currentSelection.size());
+		String out = NLS.bind(Messages.JTidyFormatAction_do_you_want_format_xml_files_with_jtidy, currentSelection.size());
         if(currentSelection!=null && MessageDialog.openQuestion(targetPart.getSite().getShell(),
-        		OrmBaseUiMessages.JTidyFormatAction_format_with_jtidy, out) ) {
+        		Messages.JTidyFormatAction_format_with_jtidy, out) ) {
             Iterator<?> iterator = currentSelection.iterator();
             try {
             while(iterator.hasNext() ) {
@@ -90,9 +90,9 @@ public class JTidyFormatAction implements IObjectActionDelegate {
                 }
             }
             } catch (CoreException e) {
-                HibernateBasePlugin.getDefault().showError(targetPart.getSite().getShell(), OrmBaseUiMessages.JTidyFormatAction_error_while_running_jtidy, e);
+                HibernateBasePlugin.getDefault().showError(targetPart.getSite().getShell(), Messages.JTidyFormatAction_error_while_running_jtidy, e);
             } catch (IOException io) {
-                HibernateBasePlugin.getDefault().showError(targetPart.getSite().getShell(), OrmBaseUiMessages.JTidyFormatAction_error_while_running_jtidy, io);
+                HibernateBasePlugin.getDefault().showError(targetPart.getSite().getShell(), Messages.JTidyFormatAction_error_while_running_jtidy, io);
             }
         }
 	}

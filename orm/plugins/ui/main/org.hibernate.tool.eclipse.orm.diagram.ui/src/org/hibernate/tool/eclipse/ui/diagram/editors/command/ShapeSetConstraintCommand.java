@@ -14,7 +14,7 @@ import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.gef.RequestConstants;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.requests.ChangeBoundsRequest;
-import org.hibernate.tool.eclipse.ui.diagram.DiagramViewerMessages;
+import org.hibernate.tool.eclipse.orm.diagram.ui.nls.Messages;
 import org.hibernate.tool.eclipse.ui.diagram.editors.model.OrmShape;
 
 /**
@@ -35,7 +35,7 @@ public class ShapeSetConstraintCommand extends Command {
 		this.shape = shape;
 		this.request = req;
 		this.newLocation = newLocation.getCopy();
-		setLabel(DiagramViewerMessages.ShapeSetConstraintCommand_move);
+		setLabel(Messages.ShapeSetConstraintCommand_move);
 	}
 
 	public boolean canExecute() {

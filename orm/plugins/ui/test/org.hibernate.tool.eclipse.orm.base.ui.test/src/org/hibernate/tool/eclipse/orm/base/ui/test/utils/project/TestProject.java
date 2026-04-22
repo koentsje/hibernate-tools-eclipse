@@ -36,7 +36,7 @@ import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.osgi.util.NLS;
-import org.hibernate.tool.eclipse.orm.base.ui.test.utils.TestConsoleMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.test.nls.Messages;
 
 /**
  * Class wraps functionality of eclipse project creation,
@@ -185,7 +185,7 @@ public class TestProject {
 		File libFolder = new File(absolutePath);
 		if (!libFolder.exists()) {
 			String out = NLS.bind(
-					TestConsoleMessages.MappingTestProject_folder_not_found,
+					Messages.MappingTestProject_folder_not_found,
 					absolutePath);
 			throw new RuntimeException(out);
 		}
@@ -217,7 +217,7 @@ public class TestProject {
 		String resolvePath = FileLocator.resolve(resProject).getFile();
 		File folder = new File(resolvePath);
 		if (!folder.exists()) {
-			String out = NLS.bind(TestConsoleMessages.MappingTestProject_folder_not_found, path);
+			String out = NLS.bind(Messages.MappingTestProject_folder_not_found, path);
 			throw new RuntimeException(out);
 		}
 		return folder;

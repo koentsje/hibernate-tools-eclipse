@@ -23,7 +23,7 @@ package org.hibernate.eclipse.console.views.navigator;
 
 import org.eclipse.swt.graphics.Image;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 
@@ -39,7 +39,7 @@ public class PendingNode {
 			loadingImage[2] = EclipseImages.getImage( ImageConstants.EXECUTE );
 			loadingImage[3] = EclipseImages.getImage( ImageConstants.HQL_EDITOR );
 		} catch (RuntimeException e) {
-			HibernateBasePlugin.getDefault().logErrorMessage( OrmBaseUiMessages.PendingNode_error_getting_images, e );
+			HibernateBasePlugin.getDefault().logErrorMessage( Messages.PendingNode_error_getting_images, e );
 			throw new ExceptionInInitializerError(e);
 		}
 	}
@@ -49,7 +49,7 @@ public class PendingNode {
 
 	public PendingNode(String type) {
 		text = new String[4];
-		text[0] = OrmBaseUiMessages.PendingNode_pending + type;
+		text[0] = Messages.PendingNode_pending + type;
 		text[1] = text[0] + "."; //$NON-NLS-1$
 		text[2] = text[0] + ".."; //$NON-NLS-1$
 		text[3] = text[0] + "..."; //$NON-NLS-1$

@@ -36,7 +36,7 @@ import org.eclipse.ui.forms.IFormPart;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
 import org.hibernate.tool.eclipse.orm.model.core.IRevEngPrimaryKey;
-import org.hibernate.eclipse.mapper.MapperMessages;
+import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
 
 public class PrimaryKeyDetailsPage extends RevEngDetailsPage implements
 		IDetailsPage, PropertyChangeListener {
@@ -47,10 +47,10 @@ public class PrimaryKeyDetailsPage extends RevEngDetailsPage implements
 	private IRevEngPrimaryKey primaryKey;
 
 	protected void buildContents(FormToolkit toolkit, Section section, Composite client) {
-		section.setText(MapperMessages.PrimaryKeyDetailsPage_primary_key_details);
-		section.setDescription(MapperMessages.PrimaryKeyDetailsPage_primary_key_can_define_generator_strategy_and_alternative_columns);
+		section.setText(Messages.PrimaryKeyDetailsPage_primary_key_details);
+		section.setDescription(Messages.PrimaryKeyDetailsPage_primary_key_can_define_generator_strategy_and_alternative_columns);
 
-		Button createGenerator = toolkit.createButton(client, MapperMessages.PrimaryKeyDetailsPage_add_generator, SWT.NONE);
+		Button createGenerator = toolkit.createButton(client, Messages.PrimaryKeyDetailsPage_add_generator, SWT.NONE);
 		createGenerator.addSelectionListener(new SelectionAdapter() {
 
 			public void widgetSelected(SelectionEvent e) {
@@ -58,7 +58,7 @@ public class PrimaryKeyDetailsPage extends RevEngDetailsPage implements
 			}
 		});
 
-		Button createColumn = toolkit.createButton(client, MapperMessages.PrimaryKeyDetailsPage_add_column, SWT.NONE);
+		Button createColumn = toolkit.createButton(client, Messages.PrimaryKeyDetailsPage_add_column, SWT.NONE);
 		createColumn.addSelectionListener(new SelectionAdapter() {
 
 			public void widgetSelected(SelectionEvent e) {

@@ -26,7 +26,7 @@ import java.util.Collection;
 import org.eclipse.ui.views.properties.IPropertyDescriptor;
 import org.eclipse.ui.views.properties.IPropertySource2;
 import org.eclipse.ui.views.properties.PropertyDescriptor;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IClassMetadata;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IRuntimeManager;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ICollectionMetadata;
@@ -85,7 +85,7 @@ public class EntityPropertySource implements IPropertySource2
 
 		if(classMetadata.hasIdentifierProperty() ) {
 			identifier = new PropertyDescriptor(classMetadata.getIdentifierPropertyName(), classMetadata.getIdentifierPropertyName());
-			identifier.setCategory(OrmBaseUiMessages.EntityPropertySource_identifier);
+			identifier.setCategory(Messages.EntityPropertySource_identifier);
 			length++;
 		}
 
@@ -98,7 +98,7 @@ public class EntityPropertySource implements IPropertySource2
 
 		for (int i = 0; i < propertyNames.length; i++) {
 			 PropertyDescriptor prop = new PropertyDescriptor(propertyNames[i],propertyNames[i]);
-			 prop.setCategory(OrmBaseUiMessages.EntityPropertySource_properties);
+			 prop.setCategory(Messages.EntityPropertySource_properties);
 			 properties[i+idx] = prop;
 		}
 
@@ -115,7 +115,7 @@ public class EntityPropertySource implements IPropertySource2
 			try {
 				propertyValue = classMetadata.getPropertyValue(reflectedObject, (String)id);
 			} catch (RuntimeException he) {
-				propertyValue = OrmBaseUiMessages.EntityPropertySource_unable_to_resolve_property;
+				propertyValue = Messages.EntityPropertySource_unable_to_resolve_property;
 				Integer idx = classMetadata.getPropertyIndexOrNull((String)id);
 				if (idx != null) {
 					propertyValue = classMetadata.getTuplizerPropertyValue(reflectedObject, idx);

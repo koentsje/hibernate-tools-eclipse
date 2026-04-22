@@ -35,7 +35,7 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.jface.text.contentassist.IContextInformation;
 import org.eclipse.jface.text.contentassist.IContextInformationValidator;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.console.core.ui.QueryEditor;
 import org.hibernate.eclipse.ui.console.common.CompletionProposalsResult;
@@ -85,7 +85,7 @@ public class HQLCompletionProcessor implements IContentAssistProcessor {
         catch (BadLocationException x) {
         }
         catch (RuntimeException re) {
-        	HibernateBasePlugin.getDefault().logErrorMessage( OrmBaseUiMessages.HQLCompletionProcessor_error_while_performing_hql_completion, re );
+        	HibernateBasePlugin.getDefault().logErrorMessage( Messages.HQLCompletionProcessor_error_while_performing_hql_completion, re );
         }
 
         if (result != null)
@@ -112,7 +112,7 @@ public class HQLCompletionProcessor implements IContentAssistProcessor {
 					doc.get(0,doc.getLength()).toCharArray();
 				}
 				catch (BadLocationException e) {
-					errorMessage = OrmBaseUiMessages.HQLCompletionProcessor_could_not_get_document_contents;
+					errorMessage = Messages.HQLCompletionProcessor_could_not_get_document_contents;
 					return result;
 				}
 
@@ -126,11 +126,11 @@ public class HQLCompletionProcessor implements IContentAssistProcessor {
 
 					result = proposalList.toArray(new ICompletionProposal[proposalList.size()]);
 	    			if(result.length==0 && errorMessage==null) {
-	    				errorMessage = OrmBaseUiMessages.HQLCompletionProcessor_no_hql_completions_available;
+	    				errorMessage = Messages.HQLCompletionProcessor_no_hql_completions_available;
 	    			}
 				}
     		} else {
-    			errorMessage = OrmBaseUiMessages.HQLCompletionProcessor_no_start_word_found;
+    			errorMessage = Messages.HQLCompletionProcessor_no_start_word_found;
     		}
     	}
 

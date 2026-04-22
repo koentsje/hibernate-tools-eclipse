@@ -17,7 +17,7 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.eclipse.console.utils.LaunchHelperUI;
-import org.hibernate.eclipse.mapper.MapperMessages;
+import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
 
 public class ChooseConsoleConfigurationDialog extends TitleAreaDialog {
 
@@ -43,7 +43,7 @@ public class ChooseConsoleConfigurationDialog extends TitleAreaDialog {
 
     protected Control createDialogArea(Composite parent) {
         Composite composite = (Composite) super.createDialogArea(parent);
-        setTitle(MapperMessages.ChooseConsoleConfigurationDialog_select_console_configuration);
+        setTitle(Messages.ChooseConsoleConfigurationDialog_select_console_configuration);
         //setMessage("");
 
         if (getTitleImageLabel() != null) {
@@ -57,7 +57,7 @@ public class ChooseConsoleConfigurationDialog extends TitleAreaDialog {
 
     protected void configureShell(Shell shell) {
         super.configureShell(shell);
-        shell.setText(MapperMessages.ChooseConsoleConfigurationDialog_select_console_configuration);
+        shell.setText(Messages.ChooseConsoleConfigurationDialog_select_console_configuration);
     }
 
     protected void okPressed() {
@@ -83,7 +83,7 @@ public class ChooseConsoleConfigurationDialog extends TitleAreaDialog {
         panel.setFont(parent.getFont());
 
         Label label = new Label(panel, SWT.NONE);
-        label.setText(MapperMessages.ChooseConsoleConfigurationDialog_console_configuration);
+        label.setText(Messages.ChooseConsoleConfigurationDialog_console_configuration);
 
         text = new Combo(panel, SWT.BORDER | SWT.LEAD | SWT.DROP_DOWN | SWT.READ_ONLY);
 

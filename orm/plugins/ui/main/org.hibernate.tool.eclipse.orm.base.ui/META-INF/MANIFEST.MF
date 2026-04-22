@@ -37,7 +37,7 @@ Export-Package: org.hibernate.eclipse.ui,
  org.hibernate.eclipse.nature,
  org.hibernate.eclipse.util.xpl,
  org.hibernate.eclipse.utils,
- org.hibernate.tool.eclipse.orm.base.ui.internal
+ org.hibernate.tool.eclipse.orm.base.ui.nls
 Require-Bundle: org.hibernate.tool.eclipse.orm.base.core;bundle-version="5.0.0",
  org.hibernate.tool.eclipse.orm.console.core,
  org.hibernate.tool.eclipse.orm.launch.core,

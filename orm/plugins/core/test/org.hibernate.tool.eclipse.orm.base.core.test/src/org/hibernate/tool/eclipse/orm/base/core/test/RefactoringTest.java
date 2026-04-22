@@ -28,7 +28,7 @@ import org.eclipse.jdt.launching.IRuntimeClasspathEntry;
 import org.hibernate.eclipse.launch.HibernateLaunchConstants;
 import org.hibernate.eclipse.launch.IBasicHibernateLaunchConstants;
 import org.hibernate.eclipse.launch.core.refactoring.HibernateRefactoringUtil;
-import org.hibernate.tool.eclipse.orm.base.core.test.utils.TestConsoleMessages;
+import org.hibernate.tool.eclipse.orm.base.core.test.nls.Messages;
 import org.hibernate.tool.eclipse.orm.base.core.test.utils.TestLaunchConfig;
 import org.hibernate.tool.eclipse.orm.base.core.test.utils.project.SimpleTestProject;
 import org.junit.After;
@@ -150,7 +150,7 @@ public class RefactoringTest {
 				Assert.assertTrue(HibernateRefactoringUtil.isCodeGenerationConfigAffected(testCodeGenerationConfig, oldPathPart));
 				Assert.assertFalse(HibernateRefactoringUtil.isConsoleConfigAffected(testNotChangedCodeGenerationConfig, oldPathPart));
 			} catch (CoreException e) {
-				Assert.fail(TestConsoleMessages.RefactoringTest_exception_while_findchange_launch_config_processing + e.getMessage());
+				Assert.fail(Messages.RefactoringTest_exception_while_findchange_launch_config_processing + e.getMessage());
 			}
 		}
 	}
@@ -173,7 +173,7 @@ public class RefactoringTest {
 						String newMemento = newMementos.get(0);
 						checkMementoChanged(oldMemento, newMemento, oldPathPart, newPath);
 					} catch (CoreException e) {
-						Assert.fail(TestConsoleMessages.RefactoringTest_coreexception_occurred_work_with_memento + e.getMessage());
+						Assert.fail(Messages.RefactoringTest_coreexception_occurred_work_with_memento + e.getMessage());
 					}
 				} else {
 					Assert.assertFalse(HibernateRefactoringUtil.isRuntimeClassPathEntriesAffected(new IRuntimeClasspathEntry[]{runtimeClasspathEntries[j]}, oldPathPart));
@@ -191,7 +191,7 @@ public class RefactoringTest {
 			checkPaths(truePath);
 			checkAdditional(truePath);	
 		} catch (CoreException e) {
-			Assert.fail(TestConsoleMessages.RefactoringTest_exception_while_projnamechange_refactor);
+			Assert.fail(Messages.RefactoringTest_exception_while_projnamechange_refactor);
 		}
 	}
 
@@ -204,7 +204,7 @@ public class RefactoringTest {
 			checkPaths(truePath);
 			checkAdditional(truePath);		
 		} catch (CoreException e) {
-			Assert.fail(TestConsoleMessages.RefactoringTest_exception_while_srcnamechange_refactor);
+			Assert.fail(Messages.RefactoringTest_exception_while_srcnamechange_refactor);
 		}
 	}
 
@@ -217,7 +217,7 @@ public class RefactoringTest {
 			checkPaths(truePath);
 			checkAdditional(truePath);
 		} catch (CoreException e) {
-			Assert.fail(TestConsoleMessages.RefactoringTest_exception_while_packnamechange_refactor);
+			Assert.fail(Messages.RefactoringTest_exception_while_packnamechange_refactor);
 		}
 	}
 
@@ -228,7 +228,7 @@ public class RefactoringTest {
 			updatePaths(generateOldPathForSegment(segmentNum), generateNewPathForSegment(segmentNum));
 			checkPaths(generateTruePathForSegment(segmentNum));
 		} catch (CoreException e) {
-			Assert.fail(TestConsoleMessages.RefactoringTest_exception_while_filenamechange_refactor);
+			Assert.fail(Messages.RefactoringTest_exception_while_filenamechange_refactor);
 		}
 	}
 
@@ -295,7 +295,7 @@ public class RefactoringTest {
 	}
 
 	private Path generateNewPathForSegment(int segmentNum){
-		Assert.assertTrue(TestConsoleMessages.RefactoringTest_segmentnum_too_match, segmentNum < oldPathElements.length);
+		Assert.assertTrue(Messages.RefactoringTest_segmentnum_too_match, segmentNum < oldPathElements.length);
 		String newPath = ""; //$NON-NLS-1$
 		for (int i = 0; i < segmentNum; i++) {
 			newPath += oldPathElements[i] + "/"; //$NON-NLS-1$
@@ -305,7 +305,7 @@ public class RefactoringTest {
 	}
 
 	private Path generateOldPathForSegment(int segmentNum){
-		Assert.assertTrue(TestConsoleMessages.RefactoringTest_segmentnum_too_match, segmentNum < oldPathElements.length);
+		Assert.assertTrue(Messages.RefactoringTest_segmentnum_too_match, segmentNum < oldPathElements.length);
 		String oldPathPart = ""; //$NON-NLS-1$
 		for (int i = 0; i <= segmentNum; i++) {
 			oldPathPart += oldPathElements[i] + "/"; //$NON-NLS-1$
@@ -314,7 +314,7 @@ public class RefactoringTest {
 	}
 
 	private Path generateTruePathForSegment(int segmentNum){
-		Assert.assertTrue(TestConsoleMessages.RefactoringTest_segmentnum_too_match, segmentNum < oldPathElements.length);
+		Assert.assertTrue(Messages.RefactoringTest_segmentnum_too_match, segmentNum < oldPathElements.length);
 		String newPath = ""; //$NON-NLS-1$
 		for (int i = 0; i < oldPathElements.length; i++) {
 			if (i != segmentNum){

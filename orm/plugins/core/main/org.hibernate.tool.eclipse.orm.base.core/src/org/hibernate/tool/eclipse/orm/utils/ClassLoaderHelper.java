@@ -41,7 +41,7 @@ import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.launching.IRuntimeClasspathEntry;
 import org.eclipse.jdt.launching.JavaRuntime;
-import org.hibernate.tool.eclipse.orm.internal.OrmBaseCoreMessages;
+import org.hibernate.tool.eclipse.orm.base.core.nls.Messages;
 
 /**
  * @author max
@@ -106,7 +106,7 @@ public class ClassLoaderHelper {
 			if(rawLocation==null) {
 				rawLocation = member.getLocation();
 				if(rawLocation==null) {
-					throw new RuntimeException(OrmBaseCoreMessages.ClassLoaderHelper_could_not_determine_physical_location_for + simplePath);
+					throw new RuntimeException(Messages.ClassLoaderHelper_could_not_determine_physical_location_for + simplePath);
 				}
 			}
 			file = rawLocation.toFile();

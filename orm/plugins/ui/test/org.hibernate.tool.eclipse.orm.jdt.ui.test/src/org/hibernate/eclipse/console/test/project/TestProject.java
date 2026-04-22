@@ -33,7 +33,7 @@ import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.osgi.util.NLS;
-import org.hibernate.eclipse.console.test.ConsoleTestMessages;
+import org.hibernate.tool.eclipse.orm.jdt.ui.test.nls.Messages;
 import org.hibernate.eclipse.console.test.utils.FilesTransfer;
 
 /**
@@ -183,7 +183,7 @@ public class TestProject {
 		File libFolder = new File(absolutePath);
 		if (!libFolder.exists()) {
 			String out = NLS.bind(
-					ConsoleTestMessages.MappingTestProject_folder_not_found,
+					Messages.MappingTestProject_folder_not_found,
 					absolutePath);
 			throw new RuntimeException(out);
 		}

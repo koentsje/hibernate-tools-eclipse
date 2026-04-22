@@ -45,7 +45,7 @@ import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.console.core.reveng.IReverseEngineeringDefinition;
 import org.hibernate.eclipse.console.utils.ProjectUtilsUI;
 import org.hibernate.tool.eclipse.orm.console.core.workbench.LazyDatabaseSchema;
-import org.hibernate.eclipse.mapper.MapperMessages;
+import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
 import org.hibernate.eclipse.mapper.MapperPlugin;
 import org.hibernate.eclipse.mapper.editors.reveng.RevEngOverviewPage;
 import org.hibernate.eclipse.mapper.editors.reveng.RevEngTableFilterPage;
@@ -89,7 +89,7 @@ public class ReverseEngineeringEditor extends XMLFormEditorPart {
 		}
 		catch (PartInitException e) {
 			MapperPlugin.getDefault().getLogger().logException(
-					MapperMessages.ReverseEngineeringEditor_could_not_create_graphical_viewer, e );
+					Messages.ReverseEngineeringEditor_could_not_create_graphical_viewer, e );
 		}
 	}
 
@@ -97,26 +97,26 @@ public class ReverseEngineeringEditor extends XMLFormEditorPart {
 		int i = 0;
 		overviewsPage = new RevEngOverviewPage(this);
 		addPage( i, overviewsPage);
-		setPageText(i, MapperMessages.ReverseEngineeringEditor_overview);
+		setPageText(i, Messages.ReverseEngineeringEditor_overview);
 		pageNameToIndex.put(RevEngOverviewPage.PART_ID, new Integer(i));
 		i++;
 
 		typeMappingsPage = new RevEngTypeMappingPage( this );
 		addPage( i, typeMappingsPage);
-		setPageText( i, MapperMessages.ReverseEngineeringEditor_type_mappings );
+		setPageText( i, Messages.ReverseEngineeringEditor_type_mappings );
 		pageNameToIndex.put(RevEngTypeMappingPage.PART_ID, new Integer(i));
 		i++;
 
 
 		tableFilterPage = new RevEngTableFilterPage( this );
 		addPage( i, tableFilterPage);
-		setPageText( i, MapperMessages.ReverseEngineeringEditor_table_filters );
+		setPageText( i, Messages.ReverseEngineeringEditor_table_filters );
 		pageNameToIndex.put(RevEngTableFilterPage.PART_ID, new Integer(i));
 		i++;
 
 		tableProperties = new RevEngTablesPage(this );
 		addPage( i, tableProperties);
-		setPageText(i, MapperMessages.ReverseEngineeringEditor_table_column);
+		setPageText(i, Messages.ReverseEngineeringEditor_table_column);
 		pageNameToIndex.put(RevEngTablesPage.PART_ID, new Integer(i));
 		i++;
 
@@ -222,8 +222,8 @@ public class ReverseEngineeringEditor extends XMLFormEditorPart {
 			String dialogId = ReverseEngineeringEditor.class.getName();
 			if(tableFilters.length==0 && OptionalMessageDialog.isDialogEnabled(dialogId)) {
 				int returnCode = OptionalMessageDialog.open(dialogId,getContainer().getShell(),
-						MapperMessages.ReverseEngineeringEditor_no_filters_defined, null,
-						MapperMessages.ReverseEngineeringEditor_no_filters_has_been_defined, MessageDialog.QUESTION,
+						Messages.ReverseEngineeringEditor_no_filters_defined, null,
+						Messages.ReverseEngineeringEditor_no_filters_has_been_defined, MessageDialog.QUESTION,
 						new String[] { IDialogConstants.YES_LABEL, IDialogConstants.NO_LABEL }, 0);
 				if (returnCode == Window.CANCEL)
 					return null;
@@ -237,7 +237,7 @@ public class ReverseEngineeringEditor extends XMLFormEditorPart {
 
 			return lazyDatabaseSchema;
 		} catch(Exception he) {
-			HibernateBasePlugin.getDefault().showError(getContainer().getShell(), MapperMessages.ReverseEngineeringEditor_error_while_refreshing_databasetree, he);
+			HibernateBasePlugin.getDefault().showError(getContainer().getShell(), Messages.ReverseEngineeringEditor_error_while_refreshing_databasetree, he);
 			return null;
 		}
 	}

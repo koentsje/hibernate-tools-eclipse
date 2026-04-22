@@ -27,7 +27,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.forms.widgets.Section;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.TypeConverter;
-import org.hibernate.tool.eclipse.jpt.ui.internal.mapping.details.HibernateUIMappingMessages;
+import org.hibernate.tool.eclipse.orm.jpt.ui.nls.Messages;
 import org.hibernate.tool.eclipse.jpt.ui.internal.mapping.details.TypeComposite;
 
 /**
@@ -65,7 +65,7 @@ public class HibernateElementCollectionMapping2_0Composite extends
 		// Temporal
 		addRadioButton(
 			converterSection, 
-			HibernateUIMappingMessages.TypeComposite_type,
+			Messages.TypeComposite_type,
 			buildTypeBooleanHolder(), 
 			null);
 		new TypeComposite(this, buildTypeConverterHolder(converterHolder), converterSection);

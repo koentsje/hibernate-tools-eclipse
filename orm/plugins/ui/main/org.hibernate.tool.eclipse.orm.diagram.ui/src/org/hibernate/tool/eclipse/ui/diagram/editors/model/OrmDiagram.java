@@ -53,7 +53,7 @@ import org.hibernate.eclipse.console.utils.ProjectUtilsUI;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ITable;
-import org.hibernate.tool.eclipse.ui.diagram.DiagramViewerMessages;
+import org.hibernate.tool.eclipse.orm.diagram.ui.nls.Messages;
 import org.hibernate.tool.eclipse.ui.diagram.UiPlugin;
 import org.hibernate.tool.eclipse.ui.diagram.editors.model.Connection.ConnectionType;
 import org.hibernate.tool.eclipse.ui.diagram.rulers.DiagramRuler;
@@ -226,12 +226,12 @@ public class OrmDiagram extends BaseElement {
 		factory.createForeingKeyConnections();
 		updateChildrenList();
 		if (getChildrenNumber() == 0) {
-			String error = DiagramViewerMessages.MessageShape_warning;
+			String error = Messages.MessageShape_warning;
 			if (config != null) {
 				if (consoleConfigName != null && consoleConfigName.length() > 0) {
 					error = consoleConfigName;
 					error += ": "; //$NON-NLS-1$
-					error += DiagramViewerMessages.Diagram_no_items_or_incorrect_state;
+					error += Messages.Diagram_no_items_or_incorrect_state;
 				}
 			}
 			if (errorMessage.length() > 0) {
@@ -816,7 +816,7 @@ public class OrmDiagram extends BaseElement {
 		if (error != null && consoleConfigName != null && consoleConfigName.length() > 0) {
 			error.append(consoleConfigName);
 			error.append(": "); //$NON-NLS-1$
-			error.append(DiagramViewerMessages.Diagram_incorrect_state);
+			error.append(Messages.Diagram_incorrect_state);
 		}
 		return null;
 	}

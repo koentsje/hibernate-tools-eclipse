@@ -42,7 +42,7 @@ import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.actions.ActionFactory;
 import org.eclipse.ui.part.IPageSite;
 import org.eclipse.ui.part.PageBook;
-import org.hibernate.tool.eclipse.ui.diagram.DiagramViewerMessages;
+import org.hibernate.tool.eclipse.orm.diagram.ui.nls.Messages;
 import org.hibernate.tool.eclipse.ui.diagram.editors.actions.AutoLayoutAction;
 import org.hibernate.tool.eclipse.ui.diagram.editors.actions.LexicalSortingAction;
 import org.hibernate.tool.eclipse.ui.diagram.editors.actions.ToggleConnectionsAction;
@@ -194,7 +194,7 @@ public class DiagramContentOutlinePage extends ContentOutlinePage implements
 				showPage(ID_OUTLINE);
 			}
 		};
-		showOutlineAction.setToolTipText(DiagramViewerMessages.DiagramContentOutlinePage_Outline);
+		showOutlineAction.setToolTipText(Messages.DiagramContentOutlinePage_Outline);
 		showOutlineAction.setImageDescriptor(ImageDescriptor.createFromFile(
 				DiagramViewer.class, "icons/outline.gif")); //$NON-NLS-1$
 		tbm.add(showOutlineAction);
@@ -203,7 +203,7 @@ public class DiagramContentOutlinePage extends ContentOutlinePage implements
 				showPage(ID_OVERVIEW);
 			}
 		};
-		showOverviewAction.setToolTipText(DiagramViewerMessages.DiagramContentOutlinePage_Overview);
+		showOverviewAction.setToolTipText(Messages.DiagramContentOutlinePage_Overview);
 		showOverviewAction.setImageDescriptor(ImageDescriptor.createFromFile(
 				DiagramViewer.class, "icons/overview.gif")); //$NON-NLS-1$
 		tbm.add(showOverviewAction);

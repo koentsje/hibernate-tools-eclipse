@@ -12,7 +12,7 @@ package org.hibernate.tool.eclipse.ui.diagram.editors.parts;
 
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPartFactory;
-import org.hibernate.tool.eclipse.ui.diagram.DiagramViewerMessages;
+import org.hibernate.tool.eclipse.orm.diagram.ui.nls.Messages;
 import org.hibernate.tool.eclipse.ui.diagram.editors.model.ComponentShape;
 import org.hibernate.tool.eclipse.ui.diagram.editors.model.Connection;
 import org.hibernate.tool.eclipse.ui.diagram.editors.model.ExpandableShape;
@@ -52,8 +52,8 @@ public class OrmEditPartFactory implements EditPartFactory {
 		}
 		if (res == null) {
 			throw new RuntimeException(
-				DiagramViewerMessages.PartFactory_canot_create_part_for_model_element
-				+ ((baseElement != null) ? baseElement.getClass().getName() : DiagramViewerMessages.PartFactory_null));
+				Messages.PartFactory_canot_create_part_for_model_element
+				+ ((baseElement != null) ? baseElement.getClass().getName() : Messages.PartFactory_null));
 		}
 		return res;
 	}

@@ -5,7 +5,6 @@ Bundle-SymbolicName: org.hibernate.tool.eclipse.common.base.core
 Bundle-Version: 6.0.0.qualifier
 Bundle-Vendor: hibernate.org
 Export-Package: org.hibernate.tool.eclipse.common.base.core.logging,
- org.hibernate.tool.eclipse.common.base.core.messages,
  org.hibernate.tool.eclipse.common.base.core.resources,
  org.hibernate.tool.eclipse.common.base.core.utils
 Require-Bundle: org.eclipse.core.runtime;bundle-version="3.10.0",

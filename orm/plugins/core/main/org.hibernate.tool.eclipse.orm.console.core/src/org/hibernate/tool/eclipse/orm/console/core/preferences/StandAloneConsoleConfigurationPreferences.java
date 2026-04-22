@@ -30,7 +30,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
-import org.hibernate.tool.eclipse.orm.console.core.ConsoleMessages;
+import org.hibernate.tool.eclipse.orm.console.core.nls.Messages;
 import org.hibernate.tool.eclipse.orm.console.core.HibernateConsoleRuntimeException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -73,7 +73,7 @@ public class StandAloneConsoleConfigurationPreferences extends AbstractConsoleCo
 				result[i] = file.toURI().toURL();
 			}
 			catch (MalformedURLException mue) {
-				throw new HibernateConsoleRuntimeException(ConsoleMessages.StandAloneConsoleConfigurationPreferences_could_not_resolve_classpaths, mue);
+				throw new HibernateConsoleRuntimeException(Messages.StandAloneConsoleConfigurationPreferences_could_not_resolve_classpaths, mue);
 			}
 		}
 		return result;
@@ -143,13 +143,13 @@ public class StandAloneConsoleConfigurationPreferences extends AbstractConsoleCo
 			return result;
 		}
 		catch(SAXException sa) {
-			throw new HibernateConsoleRuntimeException(ConsoleMessages.StandAloneConsoleConfigurationPreferences_errors_while_parsing + f,sa);
+			throw new HibernateConsoleRuntimeException(Messages.StandAloneConsoleConfigurationPreferences_errors_while_parsing + f,sa);
 		}
 		catch (ParserConfigurationException e) {
-			throw new HibernateConsoleRuntimeException(ConsoleMessages.StandAloneConsoleConfigurationPreferences_errors_while_parsing + f,e);
+			throw new HibernateConsoleRuntimeException(Messages.StandAloneConsoleConfigurationPreferences_errors_while_parsing + f,e);
 		}
 		catch (IOException e) {
-			throw new HibernateConsoleRuntimeException(ConsoleMessages.StandAloneConsoleConfigurationPreferences_errors_while_parsing + f,e);
+			throw new HibernateConsoleRuntimeException(Messages.StandAloneConsoleConfigurationPreferences_errors_while_parsing + f,e);
 		}
 	}
 

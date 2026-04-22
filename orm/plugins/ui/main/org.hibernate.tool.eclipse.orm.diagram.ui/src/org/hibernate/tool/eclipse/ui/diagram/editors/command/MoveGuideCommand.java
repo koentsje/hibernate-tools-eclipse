@@ -14,7 +14,7 @@ import java.util.Iterator;
 
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.gef.commands.Command;
-import org.hibernate.tool.eclipse.ui.diagram.DiagramViewerMessages;
+import org.hibernate.tool.eclipse.orm.diagram.ui.nls.Messages;
 import org.hibernate.tool.eclipse.ui.diagram.editors.model.OrmShape;
 import org.hibernate.tool.eclipse.ui.diagram.rulers.DiagramGuide;
 
@@ -27,7 +27,7 @@ public class MoveGuideCommand extends Command {
 	private DiagramGuide guide;
 
 	public MoveGuideCommand(DiagramGuide guide, int positionDelta) {
-		super(DiagramViewerMessages.MoveGuideCommand_Label);
+		super(Messages.MoveGuideCommand_Label);
 		this.guide = guide;
 		pDelta = positionDelta;
 	}

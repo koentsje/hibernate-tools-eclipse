@@ -36,7 +36,7 @@ import org.eclipse.ui.forms.IFormPart;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
 import org.hibernate.tool.eclipse.orm.model.core.IRevEngTable;
-import org.hibernate.eclipse.mapper.MapperMessages;
+import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
 import org.hibernate.eclipse.mapper.editors.reveng.xpl.FormTextEntry;
 
 public class TableDetailsPage extends RevEngDetailsPage implements IDetailsPage, PropertyChangeListener {
@@ -51,37 +51,37 @@ public class TableDetailsPage extends RevEngDetailsPage implements IDetailsPage,
 	private IRevEngTable table;
 
 	protected void buildContents(FormToolkit toolkit, Section section, Composite client) {
-		section.setText(MapperMessages.TableDetailsPage_table_details);
-		section.setDescription(MapperMessages.TableDetailsPage_set_properties_of_selected_table);
+		section.setText(Messages.TableDetailsPage_table_details);
+		section.setDescription(Messages.TableDetailsPage_set_properties_of_selected_table);
 
-		catalogEntry = new FormTextEntry(client, toolkit, MapperMessages.TableDetailsPage_catalog, SWT.NULL);
+		catalogEntry = new FormTextEntry(client, toolkit, Messages.TableDetailsPage_catalog, SWT.NULL);
 		catalogEntry.setFormEntryListener(new FormTextEntryListenerAdapter() {
 			public void textValueChanged(FormTextEntry entry) {
 				table.setCatalog(entry.getValue());
 			}
 		});
-		schemaEntry = new FormTextEntry(client, toolkit, MapperMessages.TableDetailsPage_schema, SWT.NULL);
+		schemaEntry = new FormTextEntry(client, toolkit, Messages.TableDetailsPage_schema, SWT.NULL);
 		schemaEntry.setFormEntryListener(new FormTextEntryListenerAdapter() {
 			public void textValueChanged(FormTextEntry entry) {
 				table.setSchema(entry.getValue());
 			}
 		});
 
-		nameEntry = new FormTextEntry(client, toolkit, MapperMessages.TableDetailsPage_name, SWT.NULL);
+		nameEntry = new FormTextEntry(client, toolkit, Messages.TableDetailsPage_name, SWT.NULL);
 		nameEntry.setFormEntryListener(new FormTextEntryListenerAdapter() {
 			public void textValueChanged(FormTextEntry entry) {
 				table.setName(entry.getValue());
 			}
 		});
 
-		classEntry = new FormTextEntry(client, toolkit, MapperMessages.TableDetailsPage_class_name, SWT.NULL);
+		classEntry = new FormTextEntry(client, toolkit, Messages.TableDetailsPage_class_name, SWT.NULL);
 		classEntry.setFormEntryListener(new FormTextEntryListenerAdapter() {
 			public void textValueChanged(FormTextEntry entry) {
 				table.setClassname(entry.getValue());
 			}
 		});
 
-		Button button = toolkit.createButton(client, MapperMessages.TableDetailsPage_add_primary_key, SWT.NULL);
+		Button button = toolkit.createButton(client, Messages.TableDetailsPage_add_primary_key, SWT.NULL);
 		button.addSelectionListener(new SelectionAdapter() {
 
 			public void widgetSelected(SelectionEvent e) {

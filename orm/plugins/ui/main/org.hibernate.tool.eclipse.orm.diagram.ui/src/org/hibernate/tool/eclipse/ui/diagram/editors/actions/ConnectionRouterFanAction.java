@@ -13,7 +13,7 @@ package org.hibernate.tool.eclipse.ui.diagram.editors.actions;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.jface.resource.ImageDescriptor;
-import org.hibernate.tool.eclipse.ui.diagram.DiagramViewerMessages;
+import org.hibernate.tool.eclipse.orm.diagram.ui.nls.Messages;
 import org.hibernate.tool.eclipse.ui.diagram.editors.DiagramViewer;
 import org.hibernate.tool.eclipse.ui.diagram.editors.command.ToggleConnectionRouterFanCommand;
 
@@ -32,8 +32,8 @@ public class ConnectionRouterFanAction extends DiagramBaseAction
 	public ConnectionRouterFanAction(DiagramViewer editor) {
 		super(editor, AS_RADIO_BUTTON);
 		setId(ACTION_ID);
-		setText(DiagramViewerMessages.ConnectionRouterFanAction_select_fan_connection_router);
-		setToolTipText(DiagramViewerMessages.ConnectionRouterFanAction_select_fan_connection_router);
+		setText(Messages.ConnectionRouterFanAction_select_fan_connection_router);
+		setToolTipText(Messages.ConnectionRouterFanAction_select_fan_connection_router);
 		setImageDescriptor(img);
 	}
 

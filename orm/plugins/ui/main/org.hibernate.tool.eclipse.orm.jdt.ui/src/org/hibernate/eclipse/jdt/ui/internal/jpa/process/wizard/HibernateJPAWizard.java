@@ -26,7 +26,7 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
-import org.hibernate.eclipse.jdt.ui.internal.JdtUiMessages;
+import org.hibernate.tool.eclipse.orm.jdt.core.nls.Messages;
 
 /**
  * Hibernate JPA refactoring wizard dialog
@@ -36,7 +36,7 @@ import org.hibernate.eclipse.jdt.ui.internal.JdtUiMessages;
 @SuppressWarnings("restriction")
 public class HibernateJPAWizard extends RefactoringWizard implements IPageChangingListener {
 
-	protected final String wizard_title = JdtUiMessages.AllEntitiesProcessor_header;
+	protected final String wizard_title = Messages.AllEntitiesProcessor_header;
 
 	protected IHibernateJPAWizardData data;
 
@@ -61,11 +61,11 @@ public class HibernateJPAWizard extends RefactoringWizard implements IPageChangi
 		if (selection == null) {
 			selection = new StructuredSelection();
 		}
-		String title = JdtUiMessages.EntitiesSource_header;
+		String title = Messages.EntitiesSource_header;
 		EntitiesSource page0 = new EntitiesSource(title, selection);
 		addPage(page0);
 		
-		title = JdtUiMessages.EntitiesList_header;
+		title = Messages.EntitiesList_header;
 		UserInputWizardPage page1 = new EntitiesList(title, data, params);
 		addPage(page1);
 		setDefaultPageTitle(page1.getName());

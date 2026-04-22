@@ -43,7 +43,7 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.jdt.ui.Activator;
-import org.hibernate.eclipse.jdt.ui.internal.JdtUiMessages;
+import org.hibernate.tool.eclipse.orm.jdt.core.nls.Messages;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.collect.AllEntitiesInfoCollector;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.collect.CompilationUnitCollector;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.common.EntityInfo;
@@ -134,8 +134,8 @@ public class JPAMapToolActor {
 			processor.modify(mapCUs_Info, true, selection2Update);
 		} else {
 			MessageDialog.openInformation(getShell(), 
-					JdtUiMessages.JPAMapToolActor_message_title, 
-					JdtUiMessages.JPAMapToolActor_message);
+					Messages.JPAMapToolActor_message_title, 
+					Messages.JPAMapToolActor_message);
 		}
 		processor.savePreferences();
 	}
@@ -180,8 +180,8 @@ public class JPAMapToolActor {
 					processor.modify(mapCUs_Info, true, selection2Update);
 				} else {
 					MessageDialog.openInformation(getShell(), 
-							JdtUiMessages.JPAMapToolActor_message_title, 
-							JdtUiMessages.JPAMapToolActor_message);
+							Messages.JPAMapToolActor_message_title, 
+							Messages.JPAMapToolActor_message);
 				}
 			}
 		}

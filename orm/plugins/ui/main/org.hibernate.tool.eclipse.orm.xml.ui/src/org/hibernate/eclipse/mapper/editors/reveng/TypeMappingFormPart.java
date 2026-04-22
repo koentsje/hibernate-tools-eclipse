@@ -29,7 +29,7 @@ import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.hibernate.tool.eclipse.orm.console.core.reveng.IReverseEngineeringDefinition;
 import org.hibernate.tool.eclipse.orm.console.core.workbench.LazyDatabaseSchema;
-import org.hibernate.eclipse.mapper.MapperMessages;
+import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
 import org.hibernate.eclipse.mapper.editors.ReverseEngineeringEditor;
 
 public class TypeMappingFormPart extends RevEngSectionPart {
@@ -43,11 +43,11 @@ public class TypeMappingFormPart extends RevEngSectionPart {
 	}
 
 	protected String getSectionDescription() {
-		return MapperMessages.TypeMappingFormPart_type_mappings_allows_you_define_which_hibernate_type;
+		return Messages.TypeMappingFormPart_type_mappings_allows_you_define_which_hibernate_type;
 	}
 
 	protected String getSectionTitle() {
-		return MapperMessages.TypeMappingFormPart_type_mappings;
+		return Messages.TypeMappingFormPart_type_mappings;
 	}
 
 	public Control createClient(IManagedForm form) {

@@ -58,11 +58,11 @@ import org.eclipse.ui.model.WorkbenchContentProvider;
 import org.eclipse.ui.model.WorkbenchLabelProvider;
 import org.eclipse.ui.views.navigator.ResourceComparator;
 import org.hibernate.eclipse.console.FileFilter;
-import org.hibernate.tool.eclipse.common.base.core.messages.BasicHibernateMessages;
 import org.hibernate.tool.eclipse.common.base.core.utils.DriverClassHelpers;
 import org.hibernate.eclipse.console.wizards.NewConfigurationWizard;
 import org.hibernate.eclipse.console.wizards.NewConfigurationWizardPage;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.basic.BasicHibernateProperties;
+import org.hibernate.tool.eclipse.orm.jpt.ui.nls.Messages;
 
 /**
  * @author Dmitry Geraskov
@@ -117,45 +117,45 @@ public class HibernatePropertiesComposite extends Pane<BasicHibernateProperties>
 		
 		GridData gd = new GridData(GridData.FILL_HORIZONTAL);
 		
-		this.addLabel(container, BasicHibernateMessages.ConsoleConfigurationPropertySource_config_file + ':');
+		this.addLabel(container, Messages.ConsoleConfigurationPropertySource_config_file + ':');
 		this.cfgFile = this.addText(container, buildConfigFileHolder());
-		Button b = this.addButton(container, BasicHibernateMessages.CodeGenerationSettingsTab_setup, createSetupAction());
+		Button b = this.addButton(container, Messages.CodeGenerationSettingsTab_setup, createSetupAction());
 		cfgFile.setLayoutData(gd);		
-//		Button b = addButton(section, BasicHibernateMessages.CodeGenerationSettingsTab_setup, createSetupAction());
+//		Button b = addButton(section, Messages.CodeGenerationSettingsTab_setup, createSetupAction());
 //		this.cfgFile = addLabeledText(container,
-//				BasicHibernateMessages.ConsoleConfigurationPropertySource_config_file + ':', buildConfigFileHolder(),
+//				Messages.ConsoleConfigurationPropertySource_config_file + ':', buildConfigFileHolder(),
 //				b, null);
 		gd = new GridData(GridData.FILL_HORIZONTAL);
-		this.addLabel(container, BasicHibernateMessages.NewConfigurationWizardPage_database_dialect);
+		this.addLabel(container, Messages.NewConfigurationWizardPage_database_dialect);
 		Control c = this.addEditableCombo(container, lvmDialect, dialectHolder, TransformerTools.<String>objectToStringTransformer(), (String)null);
 		gd.horizontalSpan = 2;
 		c.setLayoutData(gd);
 		
 		//		addLabeledEditableCombo(
 //				section,
-//				BasicHibernateMessages.NewConfigurationWizardPage_database_dialect,
+//				Messages.NewConfigurationWizardPage_database_dialect,
 //				lvmDialect,
 //				dialectHolder,
 //				StringConverter.Default.<String>instance(),
 //				null);
 
-		this.addLabel(container, BasicHibernateMessages.NewConfigurationWizardPage_driver_class);
+		this.addLabel(container, Messages.NewConfigurationWizardPage_driver_class);
 		c = this.addEditableCombo(container, lvmDriver, driverHolder, TransformerTools.<String>objectToStringTransformer(), (String)null);
 		c.setLayoutData(gd);
 //		addLabeledEditableCombo(
 //				section,
-//				BasicHibernateMessages.NewConfigurationWizardPage_driver_class,
+//				Messages.NewConfigurationWizardPage_driver_class,
 //				lvmDriver,
 //				driverHolder,
 //				StringConverter.Default.<String>instance(),
 //				null);
 
-		this.addLabel(container, BasicHibernateMessages.NewConfigurationWizardPage_connection_url);
+		this.addLabel(container, Messages.NewConfigurationWizardPage_connection_url);
 		c = this.addEditableCombo(container, lvmUrl, urlHolder, TransformerTools.<String>objectToStringTransformer(), (String)null);
 		c.setLayoutData(gd);
 //		addLabeledEditableCombo(
 //				section,
-//				BasicHibernateMessages.NewConfigurationWizardPage_connection_url,
+//				Messages.NewConfigurationWizardPage_connection_url,
 //				lvmUrl,
 //				urlHolder,
 //				StringConverter.Default.<String>instance(),
@@ -190,36 +190,36 @@ public class HibernatePropertiesComposite extends Pane<BasicHibernateProperties>
 				}
 			) );
 
-		this.addLabel(container, BasicHibernateMessages.NewConfigurationWizardPage_default_schema);
+		this.addLabel(container, Messages.NewConfigurationWizardPage_default_schema);
 		c = this.addText(container, buildSchemaDefaultHolder());
 		c.setLayoutData(gd);
 //		addLabeledText(
 //				section,
-//				BasicHibernateMessages.NewConfigurationWizardPage_default_schema,
+//				Messages.NewConfigurationWizardPage_default_schema,
 //				buildSchemaDefaultHolder());
 
-		this.addLabel(container, BasicHibernateMessages.NewConfigurationWizardPage_default_catalog);
+		this.addLabel(container, Messages.NewConfigurationWizardPage_default_catalog);
 		c = this.addText(container, buildCatalogDefaultHolder());
 		c.setLayoutData(gd);
 //		addLabeledText(
 //				section,
-//				BasicHibernateMessages.NewConfigurationWizardPage_default_catalog,
+//				Messages.NewConfigurationWizardPage_default_catalog,
 //				buildCatalogDefaultHolder());
 
-		this.addLabel(container, BasicHibernateMessages.NewConfigurationWizardPage_user_name);
+		this.addLabel(container, Messages.NewConfigurationWizardPage_user_name);
 		c = this.addText(container, buildUsernameHolder());
 		c.setLayoutData(gd);
 //		addLabeledText(
 //				section,
-//				BasicHibernateMessages.NewConfigurationWizardPage_user_name,
+//				Messages.NewConfigurationWizardPage_user_name,
 //				buildUsernameHolder());
 
-		this.addLabel(container, BasicHibernateMessages.NewConfigurationWizardPage_password);
+		this.addLabel(container, Messages.NewConfigurationWizardPage_password);
 		c = this.addText(container, buildPasswordHolder());
 		c.setLayoutData(gd);
 //		addLabeledText(
 //				section,
-//				BasicHibernateMessages.NewConfigurationWizardPage_password,
+//				Messages.NewConfigurationWizardPage_password,
 //				buildPasswordHolder());
 	}
 
@@ -279,7 +279,7 @@ public class HibernatePropertiesComposite extends Pane<BasicHibernateProperties>
 				if(initialPath!=null) {
 		    		defaultChoice = 1;
 		    	}
-				MessageDialog dialog = createSetupDialog(BasicHibernateMessages.ConsoleConfigurationMainTab_setup_configuration_file, BasicHibernateMessages.ConsoleConfigurationMainTab_do_you_want_to_create_new_cfgxml, defaultChoice);
+				MessageDialog dialog = createSetupDialog(Messages.ConsoleConfigurationMainTab_setup_configuration_file, Messages.ConsoleConfigurationMainTab_do_you_want_to_create_new_cfgxml, defaultChoice);
 				int answer = dialog.open();
 				IPath cfgFile = null;
 				if(answer==0) { // create new
@@ -313,7 +313,7 @@ public class HibernatePropertiesComposite extends Pane<BasicHibernateProperties>
 						null,
 						question,
 						MessageDialog.QUESTION,
-						new String[] { BasicHibernateMessages.ConsoleConfigurationMainTab_create_new, BasicHibernateMessages.ConsoleConfigurationMainTab_use_existing, IDialogConstants.CANCEL_LABEL},
+						new String[] { Messages.ConsoleConfigurationMainTab_create_new, Messages.ConsoleConfigurationMainTab_use_existing, IDialogConstants.CANCEL_LABEL},
 						defaultChoice);
 			}
 
@@ -342,9 +342,9 @@ public class HibernatePropertiesComposite extends Pane<BasicHibernateProperties>
 				});
 				dialog.setValidator(validator);
 				dialog.setAllowMultiple(false);
-				dialog.setTitle(BasicHibernateMessages.ConsoleConfigurationMainTab_select_hibernate_cfg_xml_file);
-				dialog.setMessage(BasicHibernateMessages.ConsoleConfigurationMainTab_choose_file_to_use_as_hibernate_cfg_xml);
-				dialog.addFilter(new FileFilter(new String[] {BasicHibernateMessages.ConsoleConfigurationMainTab_cfg_xml}, null, true, false) );
+				dialog.setTitle(Messages.ConsoleConfigurationMainTab_select_hibernate_cfg_xml_file);
+				dialog.setMessage(Messages.ConsoleConfigurationMainTab_choose_file_to_use_as_hibernate_cfg_xml);
+				dialog.addFilter(new FileFilter(new String[] {Messages.ConsoleConfigurationMainTab_cfg_xml}, null, true, false) );
 				dialog.setInput(root);
 				dialog.setComparator(new ResourceComparator(ResourceComparator.NAME));
 				dialog.setInitialSelection(focus);
@@ -368,7 +368,7 @@ public class HibernatePropertiesComposite extends Pane<BasicHibernateProperties>
 
 				WizardDialog wdialog = new WizardDialog(win.getShell(), wizard);
 				wdialog.create();
-				IWizardPage configPage = wizard.getPage(BasicHibernateMessages.ConsoleConfigurationMainTab_wizard_page);
+				IWizardPage configPage = wizard.getPage(Messages.ConsoleConfigurationMainTab_wizard_page);
 				if (configPage != null && configPage instanceof NewConfigurationWizardPage){
 					((NewConfigurationWizardPage)configPage).setCreateConsoleConfigurationVisible(false);
 				}

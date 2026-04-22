@@ -13,7 +13,7 @@ package org.hibernate.tool.eclipse.ui.diagram.editors.actions;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.jface.resource.ImageDescriptor;
-import org.hibernate.tool.eclipse.ui.diagram.DiagramViewerMessages;
+import org.hibernate.tool.eclipse.orm.diagram.ui.nls.Messages;
 import org.hibernate.tool.eclipse.ui.diagram.editors.DiagramViewer;
 import org.hibernate.tool.eclipse.ui.diagram.editors.command.ToggleConnectionsCommand;
 
@@ -31,8 +31,8 @@ public class ToggleConnectionsAction extends DiagramBaseAction {
 	public ToggleConnectionsAction(DiagramViewer editor) {
 		super(editor, AS_DROP_DOWN_MENU);
 		setId(ACTION_ID);
-		setText(DiagramViewerMessages.ToggleConnectionsAction_toggle_connections);
-		setToolTipText(DiagramViewerMessages.ToggleConnectionsAction_toggle_connections);
+		setText(Messages.ToggleConnectionsAction_toggle_connections);
+		setToolTipText(Messages.ToggleConnectionsAction_toggle_connections);
 		setImageDescriptor(img);
 	}
 

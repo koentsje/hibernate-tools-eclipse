@@ -13,7 +13,7 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Text;
-import org.hibernate.tool.eclipse.orm.base.ui.internal.OrmBaseUiMessages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
 
 abstract public class ConsoleConfigurationTab extends AbstractLaunchConfigurationTab {
@@ -35,19 +35,19 @@ abstract public class ConsoleConfigurationTab extends AbstractLaunchConfiguratio
 	ChangeListener changeListener = new ChangeListener();
 
 	protected Button createBrowseButton(Group group, SelectionListener selectionListener) {
-		Button button = createPushButton(group, OrmBaseUiMessages.ConsoleConfigurationTab_browse, null);
+		Button button = createPushButton(group, Messages.ConsoleConfigurationTab_browse, null);
 		button.addSelectionListener(selectionListener);
 		return button;
 	}
 
 	protected Button createSetupButton(Group group, SelectionListener selectionListener) {
-		Button button = createPushButton(group, OrmBaseUiMessages.ConsoleConfigurationTab_setup, null);
+		Button button = createPushButton(group, Messages.ConsoleConfigurationTab_setup, null);
 		button.addSelectionListener(selectionListener);
 		return button;
 	}
 
 	protected Button createNewFileButton(Group group, SelectionListener selectionListener) {
-		Button button = createPushButton(group, OrmBaseUiMessages.ConsoleConfigurationTab_create_new, null);
+		Button button = createPushButton(group, Messages.ConsoleConfigurationTab_create_new, null);
 		button.addSelectionListener(selectionListener);
 		return button;
 	}

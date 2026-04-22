@@ -29,7 +29,7 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.hibernate.tool.eclipse.orm.console.core.reveng.IReverseEngineeringDefinition;
 import org.hibernate.eclipse.console.wizards.TableFilterView;
 import org.hibernate.tool.eclipse.orm.console.core.workbench.LazyDatabaseSchema;
-import org.hibernate.eclipse.mapper.MapperMessages;
+import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
 import org.hibernate.eclipse.mapper.editors.ReverseEngineeringEditor;
 
 public class TableFilterFormPart extends RevEngSectionPart {
@@ -44,11 +44,11 @@ public class TableFilterFormPart extends RevEngSectionPart {
 	}
 
 	protected String getSectionTitle() {
-		return MapperMessages.TableFilterFormPart_table_filters;
+		return Messages.TableFilterFormPart_table_filters;
 	}
 
 	protected String getSectionDescription() {
-		return MapperMessages.TableFilterFormPart_table_filters_defines_which_table_included;
+		return Messages.TableFilterFormPart_table_filters_defines_which_table_included;
 	}
 
 	public Control createClient(IManagedForm form) {

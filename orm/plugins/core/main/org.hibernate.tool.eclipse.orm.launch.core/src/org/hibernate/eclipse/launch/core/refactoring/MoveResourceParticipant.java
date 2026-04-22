@@ -22,7 +22,7 @@ import org.eclipse.ltk.core.refactoring.Change;
 import org.eclipse.ltk.core.refactoring.RefactoringStatus;
 import org.eclipse.ltk.core.refactoring.participants.CheckConditionsContext;
 import org.eclipse.ltk.core.refactoring.participants.MoveParticipant;
-import org.hibernate.eclipse.launch.LaunchMessages;
+import org.hibernate.tool.eclipse.orm.launch.core.nls.Messages;
 
 /**
  * @author Dmitry Geraskov
@@ -58,7 +58,7 @@ public class MoveResourceParticipant extends MoveParticipant {
 	}
 
 	public String getName() {
-		return LaunchMessages.MoveResourceParticipant_launch_configurations_updates;
+		return Messages.MoveResourceParticipant_launch_configurations_updates;
 	}
 
 	protected boolean initialize(Object element) {

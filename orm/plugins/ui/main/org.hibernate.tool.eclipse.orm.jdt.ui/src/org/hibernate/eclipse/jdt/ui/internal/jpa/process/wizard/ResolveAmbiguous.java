@@ -31,7 +31,7 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.TableItem;
-import org.hibernate.eclipse.jdt.ui.internal.JdtUiMessages;
+import org.hibernate.tool.eclipse.orm.jdt.core.nls.Messages;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.common.Utils;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.common.EntityInfo;
 import org.hibernate.eclipse.jdt.ui.internal.jpa.common.OwnerType;
@@ -77,7 +77,7 @@ public class ResolveAmbiguous extends UserInputWizardPage {
         container.setLayout(layout);
         layout.numColumns = 1;
         Label label = new Label(container, SWT.NULL);
-        label.setText(JdtUiMessages.ResolveAmbiguous_message);
+        label.setText(Messages.ResolveAmbiguous_message);
         table = new Table(container, SWT.SINGLE | SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL | SWT.FULL_SELECTION );
         table.setHeaderVisible(true);
         table.setLinesVisible(true);
@@ -105,7 +105,7 @@ public class ResolveAmbiguous extends UserInputWizardPage {
 					ti.setText(COLUMN_RELATED, rei.mappedBy);
 				}
 				else {
-					ti.setText(COLUMN_RELATED, JdtUiMessages.ResolveAmbiguous_empty);
+					ti.setText(COLUMN_RELATED, Messages.ResolveAmbiguous_empty);
 				}
 				ti.setText(COLUMN_OWNER, Utils.ownerTypeToStr(rei.owner));
 			}
@@ -222,7 +222,7 @@ public class ResolveAmbiguous extends UserInputWizardPage {
 			TableItem ti = editorRel.getItem();
 			RefEntityInfo rei = (RefEntityInfo)ti.getData();
 			String oldVal = rei.mappedBy;
-			if (JdtUiMessages.ResolveAmbiguous_empty.equals(str)) {
+			if (Messages.ResolveAmbiguous_empty.equals(str)) {
 				rei.mappedBy = null;
 			}
 			else {
@@ -253,7 +253,7 @@ public class ResolveAmbiguous extends UserInputWizardPage {
 		comboRel.setEditable(false);
 		Color bkgnd = table.getBackground();
 		comboRel.setBackground(bkgnd);
-		comboRel.add(JdtUiMessages.ResolveAmbiguous_empty);
+		comboRel.add(Messages.ResolveAmbiguous_empty);
 		String fullyQualifiedName = item.getText(0);
 		RefEntityInfo rei = (RefEntityInfo)item.getData();
 		Set<RefFieldInfo> setRefEntityInfo = findRelatedRefFieldInfos(fullyQualifiedName, rei);
@@ -266,7 +266,7 @@ public class ResolveAmbiguous extends UserInputWizardPage {
 			comboRel.setText(rei.mappedBy);
 		}
 		else {
-			comboRel.setText(JdtUiMessages.ResolveAmbiguous_empty);
+			comboRel.setText(Messages.ResolveAmbiguous_empty);
 		}
 		comboRel.addModifyListener(editorRelModifyListener);
 		//comboRel.selectAll();
@@ -377,7 +377,7 @@ public class ResolveAmbiguous extends UserInputWizardPage {
 			ti.setText(COLUMN_RELATED, rei.mappedBy);
 		}
 		else {
-			ti.setText(COLUMN_RELATED, JdtUiMessages.ResolveAmbiguous_empty);
+			ti.setText(COLUMN_RELATED, Messages.ResolveAmbiguous_empty);
 		}
 		ti.setText(COLUMN_OWNER, Utils.ownerTypeToStr(rei.owner));
 	}
@@ -386,23 +386,23 @@ public class ResolveAmbiguous extends UserInputWizardPage {
 		TableColumn column = null;
 		
 		column = new TableColumn(table, SWT.LEFT, COLUMN_CLASS);
-		column.setText(JdtUiMessages.ResolveAmbiguous_column_Class);
+		column.setText(Messages.ResolveAmbiguous_column_Class);
 		column.setWidth(200);
 
 		column = new TableColumn(table, SWT.LEFT, COLUMN_PROPERTY);
-		column.setText(JdtUiMessages.ResolveAmbiguous_column_Property);
+		column.setText(Messages.ResolveAmbiguous_column_Property);
 		column.setWidth(140);
 
 		column = new TableColumn(table, SWT.LEFT, COLUMN_TYPE);
-		column.setText(JdtUiMessages.ResolveAmbiguous_column_Type);
+		column.setText(Messages.ResolveAmbiguous_column_Type);
 		column.setWidth(60);
 
 		column = new TableColumn(table, SWT.LEFT, COLUMN_RELATED);
-		column.setText(JdtUiMessages.ResolveAmbiguous_column_Related);
+		column.setText(Messages.ResolveAmbiguous_column_Related);
 		column.setWidth(80);
 
 		column = new TableColumn(table, SWT.LEFT, COLUMN_OWNER);
-		column.setText(JdtUiMessages.ResolveAmbiguous_column_Owner);
+		column.setText(Messages.ResolveAmbiguous_column_Owner);
 		column.setWidth(50);
 	}
 
