@@ -24,7 +24,7 @@ import org.eclipse.jpt.common.ui.jface.ItemTreeStateProviderFactoryProvider;
 import org.eclipse.jpt.jpa.core.JpaProject;
 import org.eclipse.jpt.jpa.ui.JpaPlatformUiProvider;
 import org.eclipse.jpt.jpa.ui.internal.platform.generic.GenericJpaPlatformUi;
-import org.hibernate.eclipse.launch.HibernateLaunchConstants;
+import org.hibernate.tool.eclipse.orm.launch.core.HibernateLaunchConstants;
 import org.hibernate.tool.eclipse.jpt.core.internal.HibernateJpaProject;
 import org.hibernate.tool.eclipse.jpt.ui.HibernateJptUIPlugin;
 import org.hibernate.tool.eclipse.jpt.ui.wizard.GenerateDdlWizard;

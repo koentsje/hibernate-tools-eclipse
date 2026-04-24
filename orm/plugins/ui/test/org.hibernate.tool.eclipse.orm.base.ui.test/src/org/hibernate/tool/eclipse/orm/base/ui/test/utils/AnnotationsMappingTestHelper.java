@@ -33,6 +33,7 @@ import org.hibernate.eclipse.console.workbench.ConfigurationWorkbenchAdapter;
 import org.hibernate.eclipse.console.workbench.ConsoleConfigurationWorkbenchAdapter;
 import org.hibernate.eclipse.console.workbench.PersistentClassWorkbenchAdapter;
 import org.hibernate.eclipse.console.workbench.PropertyWorkbenchAdapter;
+import org.hibernate.tool.eclipse.orm.base.ui.test.nls.Messages;
 import org.hibernate.tool.eclipse.orm.base.ui.test.utils.project.FilesTransfer;
 import org.hibernate.tool.eclipse.orm.base.ui.test.utils.project.TestProject;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IArtifactCollector;
@@ -179,7 +180,7 @@ public class AnnotationsMappingTestHelper {
 			}
 			if (ex != null) {
 				ex.printStackTrace();
-				String out = NLS.bind(TestConsoleMessages.OpenMappingDiagramTest_mapping_diagram_for_not_opened,
+				String out = NLS.bind(Messages.OpenMappingDiagramTest_mapping_diagram_for_not_opened,
 						new Object[]{persClass.getClassName(), ex.getMessage()});
 				Assert.fail(out);
 			}
@@ -312,7 +313,7 @@ public class AnnotationsMappingTestHelper {
 					consCFG = null;
 					ConsoleConfigUtils.deleteConsoleConfig("testHbmExportExceptionTest");
 				} catch (CoreException e) {
-					String out = NLS.bind(TestConsoleMessages.UpdateConfigurationTest_error_customising_file_for_package,
+					String out = NLS.bind(Messages.UpdateConfigurationTest_error_customising_file_for_package,
 							new Object[] { ConsoleConfigUtils.CFG_FILE_NAME, testPackage.getPath(), e.getMessage() } );
 					Assert.fail(out);
 				}
@@ -371,7 +372,7 @@ public class AnnotationsMappingTestHelper {
 			Assert.assertTrue(configs[0] instanceof IConfiguration);
 			persClasses = configWorkbenchAdapter.getChildren(configs[0]);
 		} catch (Exception ex) {
-			String out = NLS.bind(TestConsoleMessages.OpenMappingDiagramTest_mapping_diagrams_for_package_cannot_be_opened,
+			String out = NLS.bind(Messages.OpenMappingDiagramTest_mapping_diagrams_for_package_cannot_be_opened,
 				new Object[] { testName.getMethodName(), ex.getMessage() });
 			Assert.fail(out);
 		}
@@ -410,7 +411,7 @@ public class AnnotationsMappingTestHelper {
 			editor = OpenMappingAction.run(consCFG, compositeProperty, parentProperty);
 			boolean highlighted = Utils.hasSelection(editor);
 			if (!highlighted) {
-				String out = NLS.bind(TestConsoleMessages.OpenMappingFileTest_highlighted_region_for_property_is_empty_package,
+				String out = NLS.bind(Messages.OpenMappingFileTest_highlighted_region_for_property_is_empty_package,
 						new Object[]{compositeProperty.getName(), packageName });
 				if (Customization.USE_CONSOLE_OUTPUT)
 					System.err.println(out);
@@ -434,7 +435,7 @@ public class AnnotationsMappingTestHelper {
 			ex = Utils.getExceptionIfItOccured(editor);
 		}
 		if (ex != null) {
-			String out = NLS.bind(TestConsoleMessages.OpenMappingFileTest_mapping_file_for_property_not_opened_package,
+			String out = NLS.bind(Messages.OpenMappingFileTest_mapping_file_for_property_not_opened_package,
 					new Object[]{compositeProperty.getName(), packageName, ex.getMessage()});
 			Assert.fail(out);
 		}
@@ -447,7 +448,7 @@ public class AnnotationsMappingTestHelper {
 			editor = OpenMappingAction.run(consCFG, selection, null);
 			boolean highlighted = Utils.hasSelection(editor);
 			if (!highlighted) {
-				String out = NLS.bind(TestConsoleMessages.OpenMappingFileTest_highlighted_region_for_is_empty_package,
+				String out = NLS.bind(Messages.OpenMappingFileTest_highlighted_region_for_is_empty_package,
 						new Object[]{selection, packageName});
 				Assert.fail(out);
 			}
@@ -464,7 +465,7 @@ public class AnnotationsMappingTestHelper {
 			ex = Utils.getExceptionIfItOccured(editor);
 		}
 		if (ex != null) {
-			String out = NLS.bind(TestConsoleMessages.OpenMappingFileTest_mapping_file_for_not_opened_package,
+			String out = NLS.bind(Messages.OpenMappingFileTest_mapping_file_for_not_opened_package,
 					new Object[]{selection, packageName, ex.getMessage()});
 			ex.printStackTrace();
 			Assert.fail(out);
@@ -481,7 +482,7 @@ public class AnnotationsMappingTestHelper {
 			}
 			boolean highlighted = Utils.hasSelection(editor);
 			if (!highlighted) {
-				String out = NLS.bind(TestConsoleMessages.OpenSourceFileTest_highlighted_region_for_is_empty, selection);
+				String out = NLS.bind(Messages.OpenSourceFileTest_highlighted_region_for_is_empty, selection);
 				if (Customization.USE_CONSOLE_OUTPUT)
 					System.err.println(out);
 				Assert.fail(out);
@@ -497,7 +498,7 @@ public class AnnotationsMappingTestHelper {
 			ex = Utils.getExceptionIfItOccured(editor);
 		}
 		if (ex != null) {
-			String out = NLS.bind(TestConsoleMessages.OpenSourceFileTest_mapping_file_for_not_opened,
+			String out = NLS.bind(Messages.OpenSourceFileTest_mapping_file_for_not_opened,
 					fullyQualifiedName/*.getClassName()*/, ex.getMessage());
 			Assert.fail(out);
 		}

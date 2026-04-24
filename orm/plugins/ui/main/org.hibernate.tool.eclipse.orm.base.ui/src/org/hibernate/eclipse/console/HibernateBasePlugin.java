@@ -62,20 +62,20 @@ import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurationsAdapter;
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurationsListener;
 import org.hibernate.tool.eclipse.orm.console.core.preferences.ConsoleConfigurationPreferences;
 import org.hibernate.eclipse.console.actions.AddConfigurationAction;
-import org.hibernate.eclipse.launch.utils.LaunchHelper;
+import org.hibernate.tool.eclipse.orm.launch.core.utils.LaunchHelper;
 import org.hibernate.eclipse.console.workbench.ConfigurationAdapterFactory;
 import org.hibernate.eclipse.criteriaeditor.CriteriaEditorInput;
 import org.hibernate.eclipse.criteriaeditor.CriteriaEditorStorage;
 import org.hibernate.eclipse.hqleditor.HQLEditorInput;
 import org.hibernate.tool.eclipse.orm.hql.EditorStorage;
-import org.hibernate.eclipse.launch.ICodeGenerationLaunchConstants;
-import org.hibernate.eclipse.launch.core.refactoring.ConsoleConfigurationRenameProcessor;
+import org.hibernate.tool.eclipse.orm.launch.core.ICodeGenerationLaunchConstants;
+import org.hibernate.tool.eclipse.orm.launch.core.refactoring.ConsoleConfigurationRenameProcessor;
 import org.hibernate.tool.eclipse.common.base.core.logging.PluginLogger;
 import org.hibernate.tool.eclipse.common.base.core.logging.EclipseLogger;
 import org.osgi.framework.BundleContext;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.EclipseConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.preferences.EclipseConsoleConfigurationPreferences;
-import org.hibernate.eclipse.launch.EclipseLaunchConsoleConfigurationPreferences;
+import org.hibernate.tool.eclipse.orm.base.ui.launch.EclipseLaunchConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 
 /**

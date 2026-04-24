@@ -20,6 +20,7 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
 import org.hibernate.tool.eclipse.jpt.core.internal.HibernateJpaProject;
+import org.hibernate.tool.eclipse.orm.jpt.ui.nls.Messages;
 
 /**
  * @author Dmitry Geraskov

@@ -23,6 +23,8 @@ package org.hibernate.tool.eclipse.orm.console.core;
 
 import java.io.File;
 import java.net.URI;
+
+import org.hibernate.tool.eclipse.orm.console.core.nls.Messages;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -144,7 +146,7 @@ public class ConsoleConfiguration implements ExecutionContextHolder {
 
 	public void buildSessionFactory() {
 		if (isSessionFactoryCreated()) {
-			throw new HibernateConsoleRuntimeException(ConsoleMessages.ConsoleConfiguration_factory_not_closed_before_build_new_factory);
+			throw new HibernateConsoleRuntimeException(Messages.ConsoleConfiguration_factory_not_closed_before_build_new_factory);
 		}
 		getRuntimeManager().buildSessionFactory();
 		fireFactoryBuilt();

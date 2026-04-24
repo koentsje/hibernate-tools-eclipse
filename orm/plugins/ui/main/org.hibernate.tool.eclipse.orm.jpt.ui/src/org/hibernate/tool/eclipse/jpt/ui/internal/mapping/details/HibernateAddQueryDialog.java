@@ -33,6 +33,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernateNamedNativeQuery;
+import org.hibernate.tool.eclipse.orm.jpt.ui.nls.Messages;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernateNamedQuery;
 
 /**
@@ -179,10 +180,10 @@ public class HibernateAddQueryDialog extends ValidatingDialog<AddQueryStateObjec
 						return JptJpaUiDetailsMessages.ADD_QUERY_DIALOG_NAMED_NATIVE_QUERY;
 					}
 					if (value == HibernateNamedQuery.HIBERNATE_NAMED_QUERY) {
-						return HibernateUIMappingMessages.HibernateAddQueryDialog_hibernateNamedQuery;
+						return Messages.HibernateAddQueryDialog_hibernateNamedQuery;
 					}
 					if (value == HibernateNamedNativeQuery.HIBERNATE_NAMED_NATIVE_QUERY) {
-						return HibernateUIMappingMessages.HibernateAddQueryDialog_hibernateNamedNativeQuery;
+						return Messages.HibernateAddQueryDialog_hibernateNamedNativeQuery;
 					}
 					return value;
 				}

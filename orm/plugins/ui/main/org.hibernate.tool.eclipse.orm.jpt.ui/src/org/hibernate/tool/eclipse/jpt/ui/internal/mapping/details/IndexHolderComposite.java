@@ -17,6 +17,7 @@ import org.eclipse.jpt.common.utility.model.value.ModifiablePropertyValueModel;
 import org.eclipse.swt.widgets.Composite;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.IndexHolder;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.java.JavaIndex;
+import org.hibernate.tool.eclipse.orm.jpt.ui.nls.Messages;
 
 /**
  * @author Dmitry Geraskov
@@ -40,11 +41,11 @@ public class IndexHolderComposite extends Pane<IndexHolder> {
 	@Override
 	protected void initializeLayout(Composite container) {
 		// Name widgets
-		this.addLabel(container, HibernateUIMappingMessages.IndexHolderComposite_name);
+		this.addLabel(container, Messages.IndexHolderComposite_name);
 		this.addText(container, buildIndexNameHolder());
 //		addLabeledText(
 //			container,
-//			HibernateUIMappingMessages.IndexHolderComposite_name,
+//			Messages.IndexHolderComposite_name,
 //			buildIndexNameHolder(),
 //			null//TODO add help
 //		);

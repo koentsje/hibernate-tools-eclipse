@@ -45,6 +45,7 @@ import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernateGeneratorCo
 import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernatePersistenceUnit;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.java.HibernateGenericGeneratorContainer;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.java.JavaDbGenericGenerator;
+import org.hibernate.tool.eclipse.orm.jpt.ui.nls.Messages;
 
 /**
  * @author Dmitry Geraskov
@@ -72,10 +73,10 @@ public class GenericGeneratorsComposite extends Pane<HibernateGenericGeneratorCo
 //		Composite parent) {
 		super((Pane<? extends HibernateGenericGeneratorContainer>) parentPane, parent);
 		dialogBuilder = new NewNameDialogBuilder(getShell());
-		dialogBuilder.setDialogTitle(HibernateUIMappingMessages.GenericGeneratorsComposite_dialogTitle);
-		dialogBuilder.setDescriptionTitle(HibernateUIMappingMessages.GenericGeneratorsComposite_DescriptionTitle);
-		dialogBuilder.setDescription(HibernateUIMappingMessages.GenericGeneratorsComposite_Description);
-		dialogBuilder.setLabelText(HibernateUIMappingMessages.GenericGeneratorsComposite_Name);		
+		dialogBuilder.setDialogTitle(Messages.GenericGeneratorsComposite_dialogTitle);
+		dialogBuilder.setDescriptionTitle(Messages.GenericGeneratorsComposite_DescriptionTitle);
+		dialogBuilder.setDescription(Messages.GenericGeneratorsComposite_Description);
+		dialogBuilder.setLabelText(Messages.GenericGeneratorsComposite_Name);		
 	}
 
 	JavaDbGenericGenerator addGenericDbGenerator() {
@@ -186,7 +187,7 @@ public class GenericGeneratorsComposite extends Pane<HibernateGenericGeneratorCo
 
 				if (name == null) {
 					int index = IterableTools.indexOf(getSubject().getGenericGenerators(), generator);
-					name = NLS.bind(HibernateUIMappingMessages.GenericGeneratorsComposite_displayString, Integer.valueOf(index));
+					name = NLS.bind(Messages.GenericGeneratorsComposite_displayString, Integer.valueOf(index));
 				}
 
 				return name;

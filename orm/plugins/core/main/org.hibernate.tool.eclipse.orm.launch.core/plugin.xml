@@ -5,7 +5,7 @@
   <extension
          point="org.eclipse.debug.core.launchConfigurationTypes">
       <launchConfigurationType
-            delegate="org.hibernate.eclipse.launch.ConsoleConfigurationLaunchDelegate"
+            delegate="org.hibernate.tool.eclipse.orm.launch.core.ConsoleConfigurationLaunchDelegate"
             id="org.hibernate.eclipse.launch.ConsoleConfigurationLaunchConfigurationType"
             modes="run"
             name="Hibernate Console Configuration"
@@ -15,7 +15,7 @@
    <extension
          point="org.eclipse.ltk.core.refactoring.renameParticipants">
          <renameParticipant
-            class="org.hibernate.eclipse.launch.core.refactoring.ConsoleConfigurationITypeRenameParticipant"
+            class="org.hibernate.tool.eclipse.orm.launch.core.refactoring.ConsoleConfigurationITypeRenameParticipant"
             name="Console Configuration IType Participant"
             id="org.hibernate.eclipse.launch.core.refactoring.ConsoleConfigurationITypeRenameParticipant">
          <enablement>
@@ -30,7 +30,7 @@
          </enablement>
       </renameParticipant>
       <renameParticipant
-            class="org.hibernate.eclipse.launch.core.refactoring.RenameResourceParticipant"
+            class="org.hibernate.tool.eclipse.orm.launch.core.refactoring.RenameResourceParticipant"
             id="org.hibernate.eclipse.launch.core.refactoring.RenameResourceParticipant"
             name="Launch Configurations resource rename updates">
            <enablement>
@@ -54,7 +54,7 @@
          </enablement>
       </renameParticipant>
       <renameParticipant
-            class="org.hibernate.eclipse.launch.core.refactoring.ConnectionProfileRenameParticipant"
+            class="org.hibernate.tool.eclipse.orm.launch.core.refactoring.ConnectionProfileRenameParticipant"
             id="org.hibernate.eclipse.console.renameConnectionProfileParticipant"
             name="name">
          <enablement>
@@ -67,7 +67,7 @@
          </enablement>
       </renameParticipant>
       <renameParticipant
-            class="org.hibernate.eclipse.launch.core.refactoring.ConsoleConfigurationRenameParticipant"
+            class="org.hibernate.tool.eclipse.orm.launch.core.refactoring.ConsoleConfigurationRenameParticipant"
             id="org.hibernate.eclipse.console.renameParticipant1"
             name="ConsoleConfigurationRenameParticipant">
          <enablement>
@@ -85,7 +85,7 @@
    <extension
          point="org.eclipse.ltk.core.refactoring.moveParticipants">
       <moveParticipant
-            class="org.hibernate.eclipse.launch.core.refactoring.MoveResourceParticipant"
+            class="org.hibernate.tool.eclipse.orm.launch.core.refactoring.MoveResourceParticipant"
             id="org.hibernate.eclipse.launch.core.refactoring.MoveResourceParticipant"
             name="Launch Configurations resource move updates">
             <enablement>
@@ -95,7 +95,7 @@
          </enablement>
       </moveParticipant>
       <moveParticipant
-            class="org.hibernate.eclipse.launch.core.refactoring.ConsoleConfigurationITypeMoveParticipant"
+            class="org.hibernate.tool.eclipse.orm.launch.core.refactoring.ConsoleConfigurationITypeMoveParticipant"
             name="Console Configuration IType Participant"
             id="org.hibernate.eclipse.launch.core.refactoring.ConsoleConfigurationITypeMoveParticipant">
          <enablement>

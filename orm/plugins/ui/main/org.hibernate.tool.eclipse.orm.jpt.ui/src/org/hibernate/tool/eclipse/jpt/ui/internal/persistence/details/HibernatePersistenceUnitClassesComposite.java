@@ -56,6 +56,7 @@ import org.hibernate.eclipse.console.utils.DialogSelectionHelper;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.basic.Hibernate;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.persistence.PackageInfoRef;
 import org.hibernate.tool.eclipse.jpt.ui.HibernateJptUIPlugin;
+import org.hibernate.tool.eclipse.orm.jpt.ui.nls.Messages;
 
 
 /**

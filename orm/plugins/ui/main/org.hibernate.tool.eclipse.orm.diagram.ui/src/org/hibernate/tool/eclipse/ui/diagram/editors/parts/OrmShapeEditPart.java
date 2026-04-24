@@ -19,6 +19,7 @@ import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.RequestConstants;
 import org.eclipse.gef.editparts.AbstractEditPart;
+import org.hibernate.tool.eclipse.orm.diagram.ui.nls.Messages;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.RGB;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
@@ -126,9 +127,9 @@ public class OrmShapeEditPart extends ExpandableShapeEditPart {
 			return ResourceManager.getInstance().getColor(new RGB(0, 0, 0));
 		} else if (element instanceof ITable || element instanceof IProperty) {
 			return ResourceManager.getInstance().getColor(new RGB(
-					Integer.parseInt(ColorConstants.Colors_DatabaseColumnR),
-					Integer.parseInt(ColorConstants.Colors_DatabaseColumnG),
-					Integer.parseInt(ColorConstants.Colors_DatabaseColumnB)));
+					Integer.parseInt(Messages.Colors_DatabaseColumnR),
+					Integer.parseInt(Messages.Colors_DatabaseColumnG),
+					Integer.parseInt(Messages.Colors_DatabaseColumnB)));
 		} else if (element instanceof String) {
 			return ResourceManager.getInstance().getColor(new RGB(0, 0, 0));
 		} else {

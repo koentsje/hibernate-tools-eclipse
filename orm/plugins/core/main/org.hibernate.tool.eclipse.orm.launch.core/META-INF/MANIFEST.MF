@@ -3,14 +3,14 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Hibernate Launch Core
 Bundle-SymbolicName: org.hibernate.tool.eclipse.orm.launch.core;singleton:=true
 Bundle-Version: 6.0.0.qualifier
-Bundle-Activator: org.hibernate.eclipse.launch.LaunchCorePlugin
+Bundle-Activator: org.hibernate.tool.eclipse.orm.launch.core.LaunchCorePlugin
 Bundle-Vendor: hibernate.org
-Export-Package: org.hibernate.eclipse.launch,
- org.hibernate.eclipse.launch.core.refactoring,
- org.hibernate.eclipse.launch.exporter,
- org.hibernate.eclipse.launch.model,
- org.hibernate.eclipse.launch.utils,
- org.hibernate.tool.eclipse.orm.launch.core.nls
+Export-Package: org.hibernate.tool.eclipse.orm.launch.core,
+ org.hibernate.tool.eclipse.orm.launch.core.exporter,
+ org.hibernate.tool.eclipse.orm.launch.core.model,
+ org.hibernate.tool.eclipse.orm.launch.core.nls,
+ org.hibernate.tool.eclipse.orm.launch.core.refactoring,
+ org.hibernate.tool.eclipse.orm.launch.core.utils
 Require-Bundle: org.hibernate.tool.eclipse.orm.base.core,
  org.hibernate.tool.eclipse.orm.console.core,
  org.eclipse.core.runtime;bundle-version="3.10.0",

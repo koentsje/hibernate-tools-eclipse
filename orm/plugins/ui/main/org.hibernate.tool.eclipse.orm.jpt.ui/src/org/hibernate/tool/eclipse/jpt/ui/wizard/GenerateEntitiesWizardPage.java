@@ -19,7 +19,7 @@ import org.eclipse.jdt.internal.ui.wizards.NewWizardMessages;
 import org.eclipse.jdt.internal.ui.wizards.dialogfields.StringDialogField;
 import org.eclipse.jpt.jpa.core.JpaProject;
 import org.eclipse.swt.widgets.Composite;
-import org.hibernate.eclipse.launch.PathHelper;
+import org.hibernate.tool.eclipse.orm.launch.core.PathHelper;
 import org.hibernate.tool.eclipse.jpt.core.internal.HibernateJpaProject;
 
 /**

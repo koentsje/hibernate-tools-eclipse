@@ -31,6 +31,7 @@ import org.hibernate.tool.eclipse.jpt.core.internal.context.Generated;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernateColumn;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.IndexHolder;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.TypeConverter;
+import org.hibernate.tool.eclipse.orm.jpt.ui.nls.Messages;
 
 /**
  * Here the layout of this pane:
@@ -163,7 +164,7 @@ public class HibernateBasicMappingComposite extends AbstractBasicMappingComposit
 
 		addRadioButton(
 				container, 
-				HibernateUIMappingMessages.TypeComposite_type,
+				Messages.TypeComposite_type,
 				buildConverterBooleanHolder(TypeConverter.class),
 				null);
 		
@@ -201,7 +202,7 @@ public class HibernateBasicMappingComposite extends AbstractBasicMappingComposit
 
 	protected void initializeIndexCollapsibleSection(Composite container) {
 		if (getSubject() instanceof IndexHolder) {
-			container = addSection(container,HibernateUIMappingMessages.Index_section_index,"");
+			container = addSection(container,Messages.Index_section_index,"");
 			((GridLayout) container.getLayout()).numColumns = 2;
 			this.initializeIndexSection(container);
 		}

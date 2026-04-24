@@ -18,6 +18,7 @@ import org.eclipse.jpt.common.ui.internal.widgets.Pane;
 import org.eclipse.swt.widgets.Composite;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.Generated;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.GenerationTime;
+import org.hibernate.tool.eclipse.orm.jpt.ui.nls.Messages;
 
 /**
  * @author Dmitry Geraskov
@@ -77,7 +78,7 @@ public class GeneratedComposite extends Pane<Generated> {
 	protected void initializeLayout(Composite container) {
 		
 		// Generation time widgets
-		this.addLabel(container, HibernateUIMappingMessages.BasicGeneralSection_generated);
+		this.addLabel(container, Messages.BasicGeneralSection_generated);
 		this.addGenerationTimeCombo(container);
 
 	}

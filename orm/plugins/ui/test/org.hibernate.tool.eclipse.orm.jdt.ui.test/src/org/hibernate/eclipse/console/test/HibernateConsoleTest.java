@@ -15,6 +15,7 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.FileEditorInput;
 import org.hibernate.eclipse.console.HibernateConsolePerspectiveFactory;
 import org.hibernate.eclipse.console.test.project.SimpleTestProject;
+import org.hibernate.tool.eclipse.orm.jdt.ui.test.nls.Messages;
 
 public abstract class HibernateConsoleTest extends TestCase {
 
@@ -136,7 +137,7 @@ public abstract class HibernateConsoleTest extends TestCase {
 					}
 				}
 				throw new RuntimeException(
-						ConsoleTestMessages.HibernateConsoleTest_long_running_task_detected + ":" + str.toString()); //$NON-NLS-1$
+						Messages.HibernateConsoleTest_long_running_task_detected + ":" + str.toString()); //$NON-NLS-1$
 			}
 		}
 		delay(1000);

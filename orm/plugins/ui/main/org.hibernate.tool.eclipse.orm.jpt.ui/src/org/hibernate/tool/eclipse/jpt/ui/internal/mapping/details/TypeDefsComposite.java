@@ -42,6 +42,7 @@ import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernatePersistence
 import org.hibernate.tool.eclipse.jpt.core.internal.context.java.HibernateJavaTypeDefContainer;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.java.JavaTypeDef;
 import org.hibernate.tool.eclipse.jpt.ui.internal.widgets.EnterNameDialog;
+import org.hibernate.tool.eclipse.orm.jpt.ui.nls.Messages;
 
 /**
  * @author Dmitry Geraskov
@@ -81,12 +82,12 @@ public class TypeDefsComposite extends Pane<HibernateJavaTypeDefContainer> {
 		return new EnterNameDialog(
 				this.getShell(),
 				getResourceManager(),
-				HibernateUIMappingMessages.TypeDefsComposite_DescriptionTitle,
-				HibernateUIMappingMessages.TypeDefsComposite_dialogTitle,
+				Messages.TypeDefsComposite_DescriptionTitle,
+				Messages.TypeDefsComposite_dialogTitle,
 				null,
-				HibernateUIMappingMessages.TypeDefsComposite_Description,
-				HibernateUIMappingMessages.TypeDefsComposite_Name,
-				HibernateUIMappingMessages.TypeDefsComposite_Name,
+				Messages.TypeDefsComposite_Description,
+				Messages.TypeDefsComposite_Name,
+				Messages.TypeDefsComposite_Name,
 				Arrays.asList(getPersistenceUnit().uniqueTypeDefNames())				
 				);
 	}
@@ -201,7 +202,7 @@ public class TypeDefsComposite extends Pane<HibernateJavaTypeDefContainer> {
 
 				if (name == null) {
 					int index = IterableTools.indexOf(getSubject().getTypeDefs(), typeDef);
-					name = NLS.bind(HibernateUIMappingMessages.TypeDefsComposite_displayString, Integer.valueOf(index));
+					name = NLS.bind(Messages.TypeDefsComposite_displayString, Integer.valueOf(index));
 				}
 
 				return name;

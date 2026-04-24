@@ -21,7 +21,7 @@ import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
 import org.hibernate.eclipse.console.wizards.ConsoleConfigurationCreationWizard;
 import org.hibernate.eclipse.console.wizards.ConsoleConfigurationWizardPage;
-import org.hibernate.eclipse.launch.ConsoleConfigurationMainTab;
+import org.hibernate.tool.eclipse.orm.base.ui.launch.ConsoleConfigurationMainTab;
 
 /**
  * Test utility class to operate with Hibernate Console configuration

@@ -35,6 +35,7 @@ import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
 import org.hibernate.eclipse.console.utils.OpenMappingUtils;
 import org.hibernate.eclipse.jdt.ui.Activator;
+import org.hibernate.tool.eclipse.orm.jdt.core.nls.Messages;
 
 public class HQLQuickAssistProcessor extends BasicQuickAssistProcessor {
 
@@ -52,7 +53,7 @@ public class HQLQuickAssistProcessor extends BasicQuickAssistProcessor {
 		final StringLiteral stringLiteral= (StringLiteral) coveringNode;
 		String contents= stringLiteral.getLiteralValue();
 		result = new IJavaCompletionProposal[1];
-		result[0] = new ExternalActionQuickAssistProposal(contents, EclipseImages.getImage(ImageConstants.HQL_EDITOR), JdtUiMessages.HQLQuickAssistProcessor_copy_to_hql_editor, context) {
+		result[0] = new ExternalActionQuickAssistProposal(contents, EclipseImages.getImage(ImageConstants.HQL_EDITOR), Messages.HQLQuickAssistProcessor_copy_to_hql_editor, context) {
 			public void apply(IDocument document) {
 				IEditorPart editorPart = Activator.getDefault().getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
 				ITextEditor[] textEditors = OpenMappingUtils.getTextEditors(editorPart);

@@ -66,7 +66,7 @@ public class HibernateJavaEntityComposite extends AbstractEntityComposite<Hibern
 		section.setClient(this.initializeTypeDefsSection(section, buildTypeDefContainerHolder()));
 //		container = addCollapsibleSection(
 //				container,
-//				HibernateUIMappingMessages.HibernateJavaEntityComposite_TypeDefinitionsSection);
+//				Messages.HibernateJavaEntityComposite_TypeDefinitionsSection);
 //		this.initializeTypeDefsSection(container, buildTypeDefContainerHolder());
 	}
 	

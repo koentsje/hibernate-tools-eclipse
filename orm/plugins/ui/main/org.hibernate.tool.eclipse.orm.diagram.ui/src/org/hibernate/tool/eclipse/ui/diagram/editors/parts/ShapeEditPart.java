@@ -28,6 +28,7 @@ import org.eclipse.gef.NodeEditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.RequestConstants;
 import org.eclipse.gef.editparts.AbstractEditPart;
+import org.hibernate.tool.eclipse.orm.diagram.ui.nls.Messages;
 import org.eclipse.gef.editpolicies.SelectionEditPolicy;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
@@ -294,34 +295,34 @@ public class ShapeEditPart extends OrmEditPart implements NodeEditPart {
 		final Object el = getElement();
 		if (el instanceof IPersistentClass || (el instanceof IValue && ((IValue)el).isComponent()))
 			return ResourceManager.getInstance().getColor(new RGB(
-					Integer.parseInt(ColorConstants.Colors_PersistentClassR),
-					Integer.parseInt(ColorConstants.Colors_PersistentClassG),
-					Integer.parseInt(ColorConstants.Colors_PersistentClassB)));
+					Integer.parseInt(Messages.Colors_PersistentClassR),
+					Integer.parseInt(Messages.Colors_PersistentClassG),
+					Integer.parseInt(Messages.Colors_PersistentClassB)));
 		else if (el instanceof IProperty || (el instanceof IValue && ((IValue)el).isSimpleValue()))
 			return ResourceManager.getInstance().getColor(new RGB(
-					Integer.parseInt(ColorConstants.Colors_PersistentFieldR),
-					Integer.parseInt(ColorConstants.Colors_PersistentFieldG),
-					Integer.parseInt(ColorConstants.Colors_PersistentFieldB)));
+					Integer.parseInt(Messages.Colors_PersistentFieldR),
+					Integer.parseInt(Messages.Colors_PersistentFieldG),
+					Integer.parseInt(Messages.Colors_PersistentFieldB)));
 		else if (el instanceof IColumn)
 			return ResourceManager.getInstance().getColor(new RGB(
-					Integer.parseInt(ColorConstants.Colors_DatabaseColumnR),
-					Integer.parseInt(ColorConstants.Colors_DatabaseColumnG),
-					Integer.parseInt(ColorConstants.Colors_DatabaseColumnB)));
+					Integer.parseInt(Messages.Colors_DatabaseColumnR),
+					Integer.parseInt(Messages.Colors_DatabaseColumnG),
+					Integer.parseInt(Messages.Colors_DatabaseColumnB)));
 		else if (el instanceof ITable)
 			return ResourceManager.getInstance().getColor(new RGB(
-					Integer.parseInt(ColorConstants.Colors_DatabaseTableR),
-					Integer.parseInt(ColorConstants.Colors_DatabaseTableG),
-					Integer.parseInt(ColorConstants.Colors_DatabaseTableB)));
+					Integer.parseInt(Messages.Colors_DatabaseTableR),
+					Integer.parseInt(Messages.Colors_DatabaseTableG),
+					Integer.parseInt(Messages.Colors_DatabaseTableB)));
 		else if (el instanceof IValue && ((IValue)el).isDependantValue())
 			return ResourceManager.getInstance().getColor(new RGB(
-					Integer.parseInt(ColorConstants.Colors_DatabaseTableR),
-					Integer.parseInt(ColorConstants.Colors_DatabaseTableG),
-					Integer.parseInt(ColorConstants.Colors_DatabaseTableB)));
+					Integer.parseInt(Messages.Colors_DatabaseTableR),
+					Integer.parseInt(Messages.Colors_DatabaseTableG),
+					Integer.parseInt(Messages.Colors_DatabaseTableB)));
 		else if (el instanceof IValue && ((IValue)el).isOneToMany())
 			return ResourceManager.getInstance().getColor(new RGB(
-					Integer.parseInt(ColorConstants.Colors_PersistentFieldR),
-					Integer.parseInt(ColorConstants.Colors_PersistentFieldG),
-					Integer.parseInt(ColorConstants.Colors_PersistentFieldB)));
+					Integer.parseInt(Messages.Colors_PersistentFieldR),
+					Integer.parseInt(Messages.Colors_PersistentFieldG),
+					Integer.parseInt(Messages.Colors_PersistentFieldB)));
 		else
 			return ResourceManager.getInstance().getColor(new RGB(255, 0, 0));
 	}

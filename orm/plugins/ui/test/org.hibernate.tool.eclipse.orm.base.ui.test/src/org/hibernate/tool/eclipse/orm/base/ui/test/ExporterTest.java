@@ -4,10 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.ui.views.properties.IPropertyDescriptor;
-import org.hibernate.eclipse.launch.model.ExporterDefinition;
-import org.hibernate.eclipse.launch.model.ExporterFactory;
-import org.hibernate.eclipse.launch.model.ExporterProperty;
-import org.hibernate.eclipse.launch.ExporterFactoryPropertySource;
+import org.hibernate.tool.eclipse.orm.launch.core.model.ExporterDefinition;
+import org.hibernate.tool.eclipse.orm.launch.core.model.ExporterFactory;
+import org.hibernate.tool.eclipse.orm.launch.core.model.ExporterProperty;
+import org.hibernate.tool.eclipse.orm.launch.ui.ExporterFactoryPropertySource;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

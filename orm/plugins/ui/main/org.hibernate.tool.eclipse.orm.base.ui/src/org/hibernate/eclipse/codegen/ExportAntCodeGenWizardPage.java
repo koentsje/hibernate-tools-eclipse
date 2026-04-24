@@ -47,8 +47,8 @@ import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
 import org.hibernate.tool.eclipse.orm.console.core.preferences.ConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.eclipse.console.utils.LaunchHelperUI;
-import org.hibernate.eclipse.launch.CodeGenXMLFactory;
-import org.hibernate.eclipse.launch.ExporterAttributes;
+import org.hibernate.tool.eclipse.orm.launch.core.CodeGenXMLFactory;
+import org.hibernate.tool.eclipse.orm.launch.core.ExporterAttributes;
 
 /**
  * @author Vitali Yemialyanchyk

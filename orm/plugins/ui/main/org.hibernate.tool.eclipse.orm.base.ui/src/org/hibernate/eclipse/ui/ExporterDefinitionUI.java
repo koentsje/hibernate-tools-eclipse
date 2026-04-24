@@ -2,7 +2,7 @@ package org.hibernate.eclipse.ui;
 
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
-import org.hibernate.eclipse.launch.model.ExporterDefinition;
+import org.hibernate.tool.eclipse.orm.launch.core.model.ExporterDefinition;
 
 public class ExporterDefinitionUI {
 

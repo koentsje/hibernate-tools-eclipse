@@ -37,6 +37,7 @@ import org.eclipse.jpt.jpa.core.resource.persistence.PersistenceFactory;
 import org.eclipse.jpt.jpa.core.resource.persistence.XmlJavaClassRef;
 import org.eclipse.jpt.jpa.core.resource.persistence.XmlPersistence;
 import org.eclipse.jpt.jpa.core.resource.persistence.XmlPersistenceUnit;
+import org.hibernate.tool.eclipse.orm.jpt.core.nls.Messages;
 
 /**
  * @author Dmitry Geraskov (geraskov@gmail.com)
@@ -49,7 +50,7 @@ public class AddGeneratedClassesJob extends WorkspaceJob {
 	private List<IResource> javaFilesToAdd;
 		
 	public AddGeneratedClassesJob(JpaProject jpaProject, List<IResource> javaFilesToAdd) {
-		super(UIMessages.SYNC_CLASSES_JOB);
+		super(Messages.SYNC_CLASSES_JOB);
 		IResourceRuleFactory ruleFactory = ResourcesPlugin.getWorkspace().getRuleFactory();
 		setRule(ruleFactory.modifyRule(jpaProject.getProject()));
 		this.jpaProject = jpaProject;
@@ -61,7 +62,7 @@ public class AddGeneratedClassesJob extends WorkspaceJob {
 		if (monitor.isCanceled()) {
 			return Status.CANCEL_STATUS;
 		}
-		final SubMonitor sm = SubMonitor.convert(monitor, UIMessages.SYNC_CLASSES_TASK, 20);
+		final SubMonitor sm = SubMonitor.convert(monitor, Messages.SYNC_CLASSES_TASK, 20);
 		final JptXmlResource resource = jpaProject.getPersistenceXmlResource();
 		if (resource == null) {
 			//the resource would only be null if the persistence.xml file had an invalid content type

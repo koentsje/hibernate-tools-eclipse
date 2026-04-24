@@ -73,11 +73,11 @@ import org.hibernate.tool.eclipse.orm.console.core.eclipse.EclipseConsoleConfigu
 import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.console.actions.AddConfigurationAction;
-import org.hibernate.eclipse.launch.utils.LaunchHelper;
-import org.hibernate.eclipse.launch.ConsoleConfigurationJavaClasspathTab;
-import org.hibernate.eclipse.launch.ConsoleConfigurationMainTab;
-import org.hibernate.eclipse.launch.ConsoleConfigurationTabGroup;
-import org.hibernate.eclipse.launch.IBasicHibernateLaunchConstants;
+import org.hibernate.tool.eclipse.orm.launch.core.utils.LaunchHelper;
+import org.hibernate.tool.eclipse.orm.base.ui.launch.ConsoleConfigurationJavaClasspathTab;
+import org.hibernate.tool.eclipse.orm.base.ui.launch.ConsoleConfigurationMainTab;
+import org.hibernate.tool.eclipse.orm.base.ui.launch.ConsoleConfigurationTabGroup;
+import org.hibernate.tool.eclipse.orm.launch.core.IBasicHibernateLaunchConstants;
 import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
 
 /**

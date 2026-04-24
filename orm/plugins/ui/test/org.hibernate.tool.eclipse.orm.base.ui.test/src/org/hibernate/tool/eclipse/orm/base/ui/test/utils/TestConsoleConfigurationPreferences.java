@@ -4,6 +4,7 @@ import java.io.File;
 import java.net.URL;
 import java.util.Properties;
 
+import org.hibernate.tool.eclipse.orm.base.ui.test.nls.Messages;
 import org.hibernate.tool.eclipse.orm.console.core.preferences.ConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IEnvironment;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
@@ -54,7 +55,7 @@ public class TestConsoleConfigurationPreferences implements ConsoleConfiguration
 	}
 
 	public String getName() {
-		return TestConsoleMessages.ConsoleConfigurationTest_fake_prefs;
+		return Messages.ConsoleConfigurationTest_fake_prefs;
 	}
 
 	public String getEntityResolverName() {

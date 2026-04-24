@@ -38,6 +38,7 @@ import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.jface.text.contentassist.IContextInformation;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Point;
+import org.hibernate.tool.eclipse.orm.jdt.core.nls.Messages;
 
 public class DebugJavaCompletionProposalComputer implements IJavaCompletionProposalComputer {
 
@@ -86,7 +87,7 @@ public class DebugJavaCompletionProposalComputer implements IJavaCompletionPropo
 		}
 
 		public String getDisplayString() {
-			return JdtUiMessages.DebugJavaCompletionProposalComputer_displaystring;
+			return Messages.DebugJavaCompletionProposalComputer_displaystring;
 		}
 
 		public Image getImage() {

@@ -20,7 +20,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jpt.jpa.ui.JptJpaUiMessages;
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
-import org.hibernate.eclipse.launch.HibernateLaunchConstants;
+import org.hibernate.tool.eclipse.orm.launch.core.HibernateLaunchConstants;
 import org.hibernate.tool.eclipse.jpt.core.internal.HibernateJpaProject;
 import org.hibernate.tool.eclipse.jpt.ui.HibernateJptUIPlugin;
 import org.hibernate.tool.eclipse.jpt.ui.internal.platform.HibernateJpaPlatformUi;

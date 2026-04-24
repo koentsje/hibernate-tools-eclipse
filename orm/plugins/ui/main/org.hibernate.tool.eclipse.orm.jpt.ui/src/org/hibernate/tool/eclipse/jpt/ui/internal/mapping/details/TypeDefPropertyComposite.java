@@ -22,6 +22,7 @@ import org.eclipse.jpt.common.utility.model.value.ModifiablePropertyValueModel;
 import org.eclipse.jpt.common.utility.model.value.PropertyValueModel;
 import org.eclipse.swt.widgets.Composite;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.java.JavaTypeDef;
+import org.hibernate.tool.eclipse.orm.jpt.ui.nls.Messages;
 
 /**
  * @author Dmitry Geraskov
@@ -42,11 +43,11 @@ public class TypeDefPropertyComposite<T extends JavaTypeDef> extends Pane<T> {
 	protected void initializeLayout(Composite container) {
 
 		// Name widgets
-		this.addLabel(container, HibernateUIMappingMessages.TypeDefPropertyComposite_Name);
+		this.addLabel(container, Messages.TypeDefPropertyComposite_Name);
 		this.addText(container, buildNameTextHolder());
 //		addLabeledText(
 //			container,
-//			HibernateUIMappingMessages.TypeDefPropertyComposite_Name,
+//			Messages.TypeDefPropertyComposite_Name,
 //			buildNameTextHolder());
 		
 		addTypeClassChooser(container);
@@ -109,7 +110,7 @@ public class TypeDefPropertyComposite<T extends JavaTypeDef> extends Pane<T> {
 
 //			@Override
 //			protected String getLabelText() {
-//				return HibernateUIMappingMessages.TypeDefPropertyComposite_TypeClass;
+//				return Messages.TypeDefPropertyComposite_TypeClass;
 //			}
 
 			@Override
@@ -158,7 +159,7 @@ public class TypeDefPropertyComposite<T extends JavaTypeDef> extends Pane<T> {
 
 //			@Override
 //			protected String getLabelText() {
-//				return HibernateUIMappingMessages.TypeDefPropertyComposite_DefaultForType;
+//				return Messages.TypeDefPropertyComposite_DefaultForType;
 //			}
 
 			@Override

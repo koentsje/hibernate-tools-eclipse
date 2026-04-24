@@ -25,6 +25,7 @@ import org.hibernate.tool.eclipse.jpt.core.internal.context.GenericGenerator;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernateGeneratorContainer;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.java.HibernateGenericGeneratorContainer;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.java.JavaDbGenericGenerator;
+import org.hibernate.tool.eclipse.orm.jpt.ui.nls.Messages;
 
 /**
  * @author Dmitry Geraskov
@@ -75,19 +76,19 @@ public class HibernateGenerationComposite extends GenerationComposite {
 		// Generic Generator sub-section
 //		container = this.addCollapsibleSubSection(
 //				this.addSubPane(container, 10),
-//				HibernateUIMappingMessages.HibernateGeneratorsComposite_SectionLabel,
+//				Messages.HibernateGeneratorsComposite_SectionLabel,
 //				this.genericGeneratorExpansionStateHolder
 //			);
 		
 		container = this.addSection(this.addSubPane(container, 10),
-			HibernateUIMappingMessages.HibernateGeneratorsComposite_SectionLabel,"")
+			Messages.HibernateGeneratorsComposite_SectionLabel,"")
 			/*this.genericGeneratorExpansionStateHolder*/
 		;
 
 		// Generic Generator check box
 		Button genericGeneratorCheckBox = addCheckBox(
 			this.addSubPane(container, 5),
-			HibernateUIMappingMessages.HibernateGeneratorsComposite_CheckBoxLabel,
+			Messages.HibernateGeneratorsComposite_CheckBoxLabel,
 			buildGenericGeneratorBooleanHolder(),
 			null
 		);

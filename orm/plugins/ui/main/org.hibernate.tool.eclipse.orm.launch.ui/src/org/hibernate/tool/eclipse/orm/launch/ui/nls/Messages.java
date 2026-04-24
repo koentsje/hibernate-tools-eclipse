@@ -1,0 +1,110 @@
+package org.hibernate.tool.eclipse.orm.launch.ui.nls;
+
+import org.eclipse.osgi.util.NLS;
+
+public class Messages extends NLS {
+	private static final String BUNDLE_NAME = "org.hibernate.tool.eclipse.orm.launch.ui.nls.Messages"; //$NON-NLS-1$
+
+	public static String AddPropertyDialog_add_exporter_property;
+	public static String AddPropertyDialog_add_path;
+	public static String AddPropertyDialog_add_property_to;
+	public static String AddPropertyDialog_browse;
+	public static String AddPropertyDialog_edit_exporter_property;
+	public static String AddPropertyDialog_edit_property_to;
+	public static String AddPropertyDialog_name;
+	public static String AddPropertyDialog_the_property_is_already_set;
+	public static String AddPropertyDialog_the_property_name_may_not_contain_whitespaces;
+	public static String AddPropertyDialog_the_property_name_must_be_chosen_or_entered;
+	public static String AddPropertyDialog_the_property_value_must_be_non_empty;
+	public static String AddPropertyDialog_value;
+	public static String CodeGenerationLaunchDelegate_console_configuration_name_is_empty_in;
+	public static String CodeGenerationLaunchDelegate_console_configuration_not_found_in;
+	public static String CodeGenerationLaunchDelegate_error_while_running;
+	public static String CodeGenerationLaunchDelegate_error_while_setting_up;
+	public static String CodeGenerationLaunchDelegate_exception_during_java_format;
+	public static String CodeGenerationLaunchDelegate_formate_generated_code;
+	public static String CodeGenerationLaunchDelegate_generating_code_for;
+	public static String CodeGenerationLaunchDelegate_java_format_cancelled;
+	public static String CodeGenerationLaunchDelegate_output_has_to_be_specified_in;
+	public static String CodeGenerationLaunchDelegate_reading_jdbc_metadata;
+	public static String CodeGenerationLaunchDelegate_received_noclassdeffounderror;
+	public static String CodeGenerationSettingsTab_browse;
+	public static String CodeGenerationSettingsTab_choose_dir_custom_templates;
+	public static String CodeGenerationSettingsTab_choose_dir_for_generated_files;
+	public static String CodeGenerationSettingsTab_choose_file_read_reverse_settings;
+	public static String CodeGenerationSettingsTab_choose_reverse_engineering_strategy;
+	public static String CodeGenerationSettingsTab_console_cfg_must_be_specified;
+	public static String CodeGenerationSettingsTab_console_configuration;
+	public static String CodeGenerationSettingsTab_create_new;
+	public static String CodeGenerationSettingsTab_detect_many_to_many_tables;
+	public static String CodeGenerationSettingsTab_detect_one_to_one_associations;
+	public static String CodeGenerationSettingsTab_detect_optimistic_lock_columns;
+	public static String CodeGenerationSettingsTab_do_you_want_create_reveng_xml;
+	public static String CodeGenerationSettingsTab_does_not_exist;
+	public static String CodeGenerationSettingsTab_filesystem;
+	public static String CodeGenerationSettingsTab_generate_basic_typed_composite_ids;
+	public static String CodeGenerationSettingsTab_main;
+	public static String CodeGenerationSettingsTab_must_be_file;
+	public static String CodeGenerationSettingsTab_output_dir;
+	public static String CodeGenerationSettingsTab_output_directory;
+	public static String CodeGenerationSettingsTab_package;
+	public static String CodeGenerationSettingsTab_problems_when_reading;
+	public static String CodeGenerationSettingsTab_reveng_strategy;
+	public static String CodeGenerationSettingsTab_reveng_xml_;
+	public static String CodeGenerationSettingsTab_reveng_xml_1;
+	public static String CodeGenerationSettingsTab_reveng_xml_2;
+	public static String CodeGenerationSettingsTab_reveng_xml_3;
+	public static String CodeGenerationSettingsTab_reverse_engineer_from_jdbc_connection;
+	public static String CodeGenerationSettingsTab_select_output_dir;
+	public static String CodeGenerationSettingsTab_select_reverse_engineering_settings_file;
+	public static String CodeGenerationSettingsTab_select_template_dir;
+	public static String CodeGenerationSettingsTab_setup;
+	public static String CodeGenerationSettingsTab_setup_reverse_engineering;
+	public static String CodeGenerationSettingsTab_template_dir;
+	public static String CodeGenerationSettingsTab_template_directory;
+	public static String CodeGenerationSettingsTab_use_custom_templates;
+	public static String CodeGenerationSettingsTab_use_existing;
+	public static String CodeGenerationSettingsTab_use_generation_in_external_process;
+	public static String CodeGenerationSettingsTab_workspace;
+	public static String DirectoryBrowseField_filesystem;
+	public static String DirectoryBrowseField_workspace;
+	public static String ExporterSettingsTab_add;
+	public static String ExporterSettingsTab_add_exporter;
+	public static String ExporterSettingsTab_at_least_one_exporter_option_must_be_selected;
+	public static String ExporterSettingsTab_console_configuration_must_be_specified;
+	public static String ExporterSettingsTab_description;
+	public static String ExporterSettingsTab_deselect_all;
+	public static String ExporterSettingsTab_does_not_exist;
+	public static String ExporterSettingsTab_edit;
+	public static String ExporterSettingsTab_exporters;
+	public static String ExporterSettingsTab_exporters_;
+	public static String ExporterSettingsTab_general_settings;
+	public static String ExporterSettingsTab_generate_ejb;
+	public static String ExporterSettingsTab_has_to_be_folder_or_project;
+	public static String ExporterSettingsTab_must_be_file;
+	public static String ExporterSettingsTab_output_directory_for;
+	public static String ExporterSettingsTab_problem_when_reading_hibernate_tools_launch_configuration;
+	public static String ExporterSettingsTab_project_for_is_closed;
+	public static String ExporterSettingsTab_properties;
+	public static String ExporterSettingsTab_query_should_have_not_empty_value;
+	public static String ExporterSettingsTab_remove;
+	public static String ExporterSettingsTab_select_all;
+	public static String ExporterSettingsTab_select_dir;
+	public static String ExporterSettingsTab_select_exporter_you_want_to_add;
+	public static String ExporterSettingsTab_select_path;
+	public static String ExporterSettingsTab_template_directory_for;
+	public static String ExporterSettingsTab_use_java5_syntax;
+	public static String ExporterSettingsTab_exporters_2;
+	public static String ExporterSettingsTab_generate_ejb3annotations;
+	public static String ExporterSettingsTab_select_dir2;
+	public static String ExporterSettingsTab_select_path2;
+	public static String GeneralExceptionStatusHandler_exception_while_generating_code;
+	public static String GeneralExceptionStatusHandler_generating_code;
+
+	static {
+		NLS.initializeMessages(BUNDLE_NAME, Messages.class);
+	}
+
+	private Messages() {
+	}
+}

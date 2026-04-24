@@ -49,8 +49,8 @@ import org.hibernate.tool.eclipse.orm.console.core.preferences.ConsoleConfigurat
 import org.hibernate.tool.eclipse.orm.console.core.preferences.ConsoleConfigurationPreferences.ConfigurationMode;
 import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
-import org.hibernate.eclipse.launch.utils.LaunchHelper;
-import org.hibernate.eclipse.launch.IBasicHibernateLaunchConstants;
+import org.hibernate.tool.eclipse.orm.launch.core.utils.LaunchHelper;
+import org.hibernate.tool.eclipse.orm.launch.core.IBasicHibernateLaunchConstants;
 
 @SuppressWarnings("restriction")
 public class ConsoleConfigurationPropertySource implements IPropertySource {

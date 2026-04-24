@@ -45,6 +45,7 @@ import org.eclipse.ui.texteditor.IDocumentProvider;
 import org.eclipse.ui.texteditor.ITextEditor;
 import org.hibernate.eclipse.console.AbstractQueryEditor;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
+import org.hibernate.tool.eclipse.orm.jdt.core.nls.Messages;
 import org.hibernate.eclipse.hqleditor.HQLEditor;
 
 /**
@@ -128,18 +129,18 @@ public class SaveQueryEditorListener implements IPropertyListener {
 			final String editorTitle = fromEditorPart.getTitle();
 
 			final String editor_name = editor instanceof HQLEditor
-									? JdtUiMessages.SaveQueryEditorListener_hql_editor
-									: JdtUiMessages.SaveQueryEditorListener_cri_editor;
+									? Messages.SaveQueryEditorListener_hql_editor
+									: Messages.SaveQueryEditorListener_cri_editor;
 
 			if (isDocChanged){
-				String information_message = NLS.bind(JdtUiMessages.SaveQueryEditorListener_replacequestion_confirm, editorTitle);
-				MessageDialog.openInformation(null, JdtUiMessages.SaveQueryEditorListener_replacetitle_info, information_message);
+				String information_message = NLS.bind(Messages.SaveQueryEditorListener_replacequestion_confirm, editorTitle);
+				MessageDialog.openInformation(null, Messages.SaveQueryEditorListener_replacetitle_info, information_message);
 				return;
 			}
 
 			final String newQuery = editor.getEditorText();
 
-			final String wizard_title = NLS.bind(JdtUiMessages.SaveQueryEditorListener_refactoringtitle, editor_name);
+			final String wizard_title = NLS.bind(Messages.SaveQueryEditorListener_refactoringtitle, editor_name);
 
 			Refactoring ref = new Refactoring(){
 
@@ -155,12 +156,12 @@ public class SaveQueryEditorListener implements IPropertyListener {
 
 				@Override
 				public Change createChange(IProgressMonitor pm){
-					String change_name = NLS.bind(JdtUiMessages.SaveQueryEditorListener_change_name, editor_name, editorTitle);
+					String change_name = NLS.bind(Messages.SaveQueryEditorListener_change_name, editor_name, editorTitle);
 					DocumentChange change = new DocumentChange(change_name, doc);
 					TextEdit replaceEdit = new ReplaceEdit(position.x, position.y, newQuery);
 					change.setEdit(replaceEdit);
 
-					String cc_name = NLS.bind(JdtUiMessages.SaveQueryEditorListener_composite_change_name, editor_name);
+					String cc_name = NLS.bind(Messages.SaveQueryEditorListener_composite_change_name, editor_name);
 					MultiStateTextFileChange mChange = new MultiStateTextFileChange(cc_name, file);
 					mChange.addChange(change);
 
@@ -169,7 +170,7 @@ public class SaveQueryEditorListener implements IPropertyListener {
 
 				@Override
 				public String getName() {
-					return JdtUiMessages.SaveQueryEditorListener_composite_change_name;
+					return Messages.SaveQueryEditorListener_composite_change_name;
 				}
 			};
 
@@ -185,7 +186,7 @@ public class SaveQueryEditorListener implements IPropertyListener {
 					        layout.numColumns = 1;
 					        layout.verticalSpacing = 9;
 					        Label label = new Label(container, SWT.NULL);
-					        label.setText(NLS.bind(JdtUiMessages.SaveQueryEditorListener_replacequestion, editor_name, editorTitle ));
+					        label.setText(NLS.bind(Messages.SaveQueryEditorListener_replacequestion, editor_name, editorTitle ));
 					        setControl(container);
 						}
 					};

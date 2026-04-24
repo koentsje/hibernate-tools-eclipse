@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.hibernate.tool.eclipse.orm.base.ui.test.nls.Messages;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
@@ -120,7 +121,7 @@ public class TestLaunchConfig implements ILaunchConfiguration {
 	}
 
 	public String getCategory() throws CoreException {
-		return TestConsoleMessages.RefactoringTest_category;
+		return Messages.RefactoringTest_category;
 	}
 
 	public IFile getFile() {
@@ -144,7 +145,7 @@ public class TestLaunchConfig implements ILaunchConfiguration {
 	}
 
 	public String getName() {
-		return TestConsoleMessages.RefactoringTest_test_launch_config;
+		return Messages.RefactoringTest_test_launch_config;
 	}
 
 	public ILaunchDelegate getPreferredDelegate(final Set<String> modes) throws CoreException {

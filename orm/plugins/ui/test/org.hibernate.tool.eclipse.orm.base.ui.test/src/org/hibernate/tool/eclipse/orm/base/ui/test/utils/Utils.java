@@ -12,6 +12,7 @@ package org.hibernate.tool.eclipse.orm.base.ui.test.utils;
 
 import java.lang.reflect.Field;
 
+import org.hibernate.tool.eclipse.orm.base.ui.test.nls.Messages;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.text.TextSelection;
@@ -65,13 +66,13 @@ public class Utils {
 			}
 		// catch close means that exception occurred but we can't get it
 		} catch (SecurityException e) {
-			ex = TestConsoleMessages.ProjectUtil_cannot_get_exception_from_erroreditorpart + e.getMessage();
+			ex = Messages.ProjectUtil_cannot_get_exception_from_erroreditorpart + e.getMessage();
 		} catch (NoSuchFieldException e) {
-			ex = TestConsoleMessages.ProjectUtil_cannot_get_error_field_from_erroreditorpart + e.getMessage();
+			ex = Messages.ProjectUtil_cannot_get_error_field_from_erroreditorpart + e.getMessage();
 		} catch (IllegalArgumentException e) {
-			ex = TestConsoleMessages.ProjectUtil_cannot_get_error_field_from_erroreditorpart + e.getMessage();
+			ex = Messages.ProjectUtil_cannot_get_error_field_from_erroreditorpart + e.getMessage();
 		} catch (IllegalAccessException e) {
-			ex = TestConsoleMessages.ProjectUtil_cannot_get_error_field_from_erroreditorpart + e.getMessage();
+			ex = Messages.ProjectUtil_cannot_get_error_field_from_erroreditorpart + e.getMessage();
 		}
 		if (ex == null) {
 			return null;

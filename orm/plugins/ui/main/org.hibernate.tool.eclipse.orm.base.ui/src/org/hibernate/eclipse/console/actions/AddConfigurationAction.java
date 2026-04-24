@@ -38,7 +38,7 @@ import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
 import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.eclipse.ui.console.utils.EclipseImages;
-import org.hibernate.eclipse.launch.utils.LaunchHelper;
+import org.hibernate.tool.eclipse.orm.launch.core.utils.LaunchHelper;
 
 /**
  *

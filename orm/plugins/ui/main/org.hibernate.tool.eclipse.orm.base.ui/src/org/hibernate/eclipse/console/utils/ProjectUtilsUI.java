@@ -21,7 +21,7 @@ import org.eclipse.ui.IFileEditorInput;
 import org.hibernate.eclipse.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.preferences.ConsoleConfigurationPreferences;
-import org.hibernate.eclipse.launch.utils.LaunchHelper;
+import org.hibernate.tool.eclipse.orm.launch.core.utils.LaunchHelper;
 import org.hibernate.tool.eclipse.orm.console.core.utils.ProjectUtils;
 
 public class ProjectUtilsUI {

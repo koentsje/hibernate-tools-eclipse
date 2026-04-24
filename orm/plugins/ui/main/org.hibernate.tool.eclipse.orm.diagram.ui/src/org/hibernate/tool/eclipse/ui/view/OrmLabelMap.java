@@ -11,6 +11,7 @@
 package org.hibernate.tool.eclipse.ui.view;
 
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.diagram.ui.nls.Messages;
 import org.hibernate.tool.eclipse.orm.workbench.ValueTypeNameHelper;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IColumn;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
@@ -52,7 +53,7 @@ public class OrmLabelMap {
 			throw unknownElement(obj);
 		}
 		if (label == null) {
-			label = UIViewMessages.OrmLabelProvider_orm_element;
+			label = Messages.OrmLabelProvider_orm_element;
 		}
 		return label;
 	}
@@ -125,13 +126,13 @@ public class OrmLabelMap {
 	 * @return
 	 */
 	public static String getParticularLabel(IValue value) {
-		String label = UIViewMessages.OrmLabelProvider_element;
+		String label = Messages.OrmLabelProvider_element;
 		if (value.isDependantValue()) {
 			label = "key"; //$NON-NLS-1$
 		} else if (value.isComponent()) {
 			label = "element"; //$NON-NLS-1$
 		} else if (value.isOneToMany()) {
-			label =  UIViewMessages.OrmLabelProvider_element;
+			label =  Messages.OrmLabelProvider_element;
 		}
 		return label;
 	}
@@ -184,7 +185,7 @@ public class OrmLabelMap {
 	}
 
 	private static RuntimeException unknownElement(Object element) {
-		String msg = UIViewMessages.OrmLabelProvider_unknown_type_of_element_in_tree_of_type;
+		String msg = Messages.OrmLabelProvider_unknown_type_of_element_in_tree_of_type;
 		if (element != null && element.getClass() != null ) {
 			msg = msg + element.getClass().getName();
 		} else {

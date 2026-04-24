@@ -25,6 +25,7 @@ import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernateGeneratorCo
 import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernateIdMapping;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.IndexHolder;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.java.HibernateJavaIdMapping;
+import org.hibernate.tool.eclipse.orm.jpt.ui.nls.Messages;
 
 /**
  * @author Dmitry Geraskov
@@ -87,7 +88,7 @@ implements JpaComposite{
 		if (getSubject() instanceof IndexHolder) {
 			container = addSection(
 					container,
-					HibernateUIMappingMessages.Index_section_index,""
+					Messages.Index_section_index,""
 				);
 			((GridLayout) container.getLayout()).numColumns = 2;
 			this.initializeIndexSection(container);			

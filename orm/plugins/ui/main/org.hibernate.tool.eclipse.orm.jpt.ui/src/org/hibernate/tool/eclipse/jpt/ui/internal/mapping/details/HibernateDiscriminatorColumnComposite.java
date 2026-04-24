@@ -115,7 +115,7 @@ public class HibernateDiscriminatorColumnComposite extends Pane<HibernateJavaEnt
 //		// Formula widgets
 //		addLabeledText(
 //			SpecifiedDiscriminatorColumnContainer,
-//			HibernateUIMappingMessages.HibernateSpecifiedDiscriminatorColumnComposite_formula,
+//			Messages.HibernateSpecifiedDiscriminatorColumnComposite_formula,
 //			buildDiscriminatorFormulaValueHolder(),
 //			null//TODO help
 //		);

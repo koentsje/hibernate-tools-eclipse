@@ -23,6 +23,8 @@ package org.hibernate.tool.eclipse.orm.console.core;
 
 import java.io.File;
 import java.util.ArrayList;
+
+import org.hibernate.tool.eclipse.orm.console.core.nls.Messages;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -316,13 +318,13 @@ public class KnownConfigurations  {
 			writeXml(document, f);
 		}
 		catch (TransformerConfigurationException e) {
-			throw new HibernateConsoleRuntimeException(ConsoleMessages.KnownConfigurations_could_not_write_state,e);
+			throw new HibernateConsoleRuntimeException(Messages.KnownConfigurations_could_not_write_state,e);
 		}
 		catch (TransformerException e) {
-			throw new HibernateConsoleRuntimeException(ConsoleMessages.KnownConfigurations_could_not_write_state,e);
+			throw new HibernateConsoleRuntimeException(Messages.KnownConfigurations_could_not_write_state,e);
 		}
 		catch (ParserConfigurationException e) {
-			throw new HibernateConsoleRuntimeException(ConsoleMessages.KnownConfigurations_could_not_write_state,e);
+			throw new HibernateConsoleRuntimeException(Messages.KnownConfigurations_could_not_write_state,e);
 		}
 	}
 

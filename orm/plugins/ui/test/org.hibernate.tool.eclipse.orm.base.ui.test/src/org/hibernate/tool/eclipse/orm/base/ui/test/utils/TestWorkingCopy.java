@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.hibernate.tool.eclipse.orm.base.ui.test.nls.Messages;
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
@@ -54,12 +55,12 @@ public class TestWorkingCopy implements ILaunchConfigurationWorkingCopy {
 	}
 
 	public boolean hasAttribute(String attributeName) throws CoreException {
-		Assert.fail(TestConsoleMessages.RefactoringTest_method_not_tested);
+		Assert.fail(Messages.RefactoringTest_method_not_tested);
 		return false;
 	}
 
 	public Object removeAttribute(String attributeName) {
-		Assert.fail(TestConsoleMessages.RefactoringTest_method_not_tested);
+		Assert.fail(Messages.RefactoringTest_method_not_tested);
 		return null;
 	}
 
@@ -110,19 +111,19 @@ public class TestWorkingCopy implements ILaunchConfigurationWorkingCopy {
 	}
 
 	public void setContainer(IContainer container) {
-		Assert.fail(TestConsoleMessages.RefactoringTest_method_not_tested);
+		Assert.fail(Messages.RefactoringTest_method_not_tested);
 	}
 
 	public void setMappedResources(IResource[] resources) {
-		Assert.fail(TestConsoleMessages.RefactoringTest_method_not_tested);
+		Assert.fail(Messages.RefactoringTest_method_not_tested);
 	}
 
 	public void setModes(Set<String> modes) {
-		Assert.fail(TestConsoleMessages.RefactoringTest_method_not_tested);
+		Assert.fail(Messages.RefactoringTest_method_not_tested);
 	}
 
 	public void setPreferredLaunchDelegate(Set<String> modes, String delegateId) {
-		Assert.fail(TestConsoleMessages.RefactoringTest_method_not_tested);
+		Assert.fail(Messages.RefactoringTest_method_not_tested);
 	}
 
 	public boolean contentsEqual(ILaunchConfiguration configuration) {
@@ -130,7 +131,7 @@ public class TestWorkingCopy implements ILaunchConfigurationWorkingCopy {
 	}
 
 	public ILaunchConfigurationWorkingCopy copy(String name) throws CoreException {
-		Assert.fail(TestConsoleMessages.RefactoringTest_method_not_tested);
+		Assert.fail(Messages.RefactoringTest_method_not_tested);
 		return null;
 	}
 
@@ -150,7 +151,7 @@ public class TestWorkingCopy implements ILaunchConfigurationWorkingCopy {
 	}
 
 	public int getAttribute(String attributeName, int defaultValue) throws CoreException {
-		Assert.fail(TestConsoleMessages.RefactoringTest_method_not_tested);
+		Assert.fail(Messages.RefactoringTest_method_not_tested);
 		return 0;
 	}
 
@@ -159,7 +160,7 @@ public class TestWorkingCopy implements ILaunchConfigurationWorkingCopy {
 	}
 
 	public Set<String> getAttribute(String attributeName, Set<String> defaultValue) throws CoreException {
-		Assert.fail(TestConsoleMessages.RefactoringTest_method_not_tested);
+		Assert.fail(Messages.RefactoringTest_method_not_tested);
 		return null;
 	}
 

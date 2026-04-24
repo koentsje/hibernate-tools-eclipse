@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            label="Hibernate Code Generation"
+            id="org.hibernate.eclipse.launch.actionset">
+         <menu
+              id="org.eclipse.ui.run"
+              label="&amp;Run">
+           <groupMarker name="HibernateToolsGroup"/>
+        </menu>
+       <action
+             label="Hibernate Code Generation..."
+             style="pulldown"
+             icon="icons/images/hibernate_launch.png"
+             class="org.hibernate.tool.eclipse.orm.launch.ui.LaunchMenuDelegate"
+             menubarPath="org.eclipse.ui.run/HibernateToolsGroup"
+             id="org.hibernate.eclipse.launch.LaunchMenuDelegateMenu">
+       </action>
+       <action
+             label="Hibernate Code Generation..."
+             style="pulldown"
+             icon="icons/images/hibernate_launch.png"
+             tooltip="Generate code via Hibernate Tools"
+             class="org.hibernate.tool.eclipse.orm.launch.ui.LaunchMenuDelegate"
+             toolbarPath="org.eclipse.debug.ui.launchActionSet/hibernatetool"
+             id="org.hibernate.eclipse.launch.LaunchMenuDelegateToolBar">
+       </action>
+       <action
+             definitionId="org.hibernate.eclipse.launch.OpenHibernateToolsConfigurations"
+             label="Hibernate Tools ..."
+             class="org.hibernate.tool.eclipse.orm.launch.ui.OpenHibernateToolsConfigurations"
+             id="org.hibernate.eclipse.launch.OpenHibernateToolsConfigurations">
+       </action>
+      </actionSet>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <actionSet id="org.hibernate.eclipse.launch.actionset"/>
+      </perspectiveExtension>
+      <perspectiveExtension targetID="org.eclipse.jdt.ui.JavaBrowsingPerspective">
+         <actionSet id="org.hibernate.eclipse.launch.actionset"/>
+      </perspectiveExtension>
+      <perspectiveExtension targetID="org.hibernate.eclipse.console.HibernateConsolePerspective">
+         <actionSet id="org.hibernate.eclipse.launch.actionset"/>
+      </perspectiveExtension>
+   </extension>
+
+   <extension
+         point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+            category="org.hibernate.eclipse.launchcategory"
+            delegate="org.hibernate.tool.eclipse.orm.launch.ui.CodeGenerationLaunchDelegate"
+            id="org.hibernate.eclipse.launch.CodeGenerationLaunchConfigurationType"
+            modes="run"
+            name="Hibernate Code Generation"
+            public="true"/>
+   </extension>
+
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+      <launchConfigurationTypeImage
+            icon="icons/images/hibernate_launch.png"
+            configTypeID="org.hibernate.eclipse.launch.CodeGenerationLaunchConfigurationType"
+            id="org.hibernate.eclipse.launch.CodeGenerationLaunchImage"/>
+   </extension>
+
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+      <launchConfigurationTabGroup
+            class="org.hibernate.tool.eclipse.orm.launch.ui.LaunchConfigurationTabGroup"
+            description="Select or configure a code generation"
+            id="org.hibernate.eclipse.launch.CodeGenerationLaunchTabGroup"
+            type="org.hibernate.eclipse.launch.CodeGenerationLaunchConfigurationType"/>
+   </extension>
+
+   <extension
+         point="org.eclipse.debug.ui.launchGroups">
+      <launchGroup
+            bannerImage="icons/images/newhibernate_wiz.gif"
+            category="org.hibernate.eclipse.launchcategory"
+            id="org.hibernate.eclipse.launch.CodeGenerationLaunchGroup"
+            image="icons/images/hibernate_launch.png"
+            label="Hibernate Code Generation"
+            mode="run"
+            title="Select or configure a code generation to run"/>
+   </extension>
+
+   <extension
+         point="org.eclipse.debug.core.statusHandlers">
+      <statusHandler
+            class="org.hibernate.tool.eclipse.orm.launch.ui.GeneralExceptionStatusHandler"
+            code="666"
+            id="org.hibernate.eclipse.launch.GeneralExceptionStatusHandler"
+            plugin="org.hibernate.tool.eclipse.orm.launch.ui"/>
+   </extension>
+
+</plugin>

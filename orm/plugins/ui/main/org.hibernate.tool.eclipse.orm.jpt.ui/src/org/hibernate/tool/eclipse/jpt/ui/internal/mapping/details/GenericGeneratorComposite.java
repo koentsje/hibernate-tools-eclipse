@@ -22,6 +22,7 @@ import org.hibernate.tool.eclipse.jpt.core.internal.context.GenericGenerator;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernateGeneratorContainer;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.java.JavaDbGenericGenerator;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.java.JavaDbGenericGeneratorImpl;
+import org.hibernate.tool.eclipse.orm.jpt.ui.nls.Messages;
 //import org.eclipse.jpt.jpa.ui.internal.details.GeneratorComposite;
 
 /**
@@ -46,11 +47,11 @@ public class GenericGeneratorComposite extends GeneratorComposite<JavaDbGenericG
 	protected void initializeLayout(Composite container) {
 
 		// Name widgets
-		this.addLabel(container, HibernateUIMappingMessages.GenericGeneratorComposite_name);
+		this.addLabel(container, Messages.GenericGeneratorComposite_name);
 		this.addText(container, this.buildGeneratorNameHolder(), null);
 
 		// Generic generator widgets
-		this.addLabel(container, HibernateUIMappingMessages.GenericGeneratorComposite_strategy);
+		this.addLabel(container, Messages.GenericGeneratorComposite_strategy);
 		this.addEditableCombo(container,
 				new SimpleListValueModel<String>(JavaDbGenericGeneratorImpl.generatorClasses),
 				buildStrategyHolder(),

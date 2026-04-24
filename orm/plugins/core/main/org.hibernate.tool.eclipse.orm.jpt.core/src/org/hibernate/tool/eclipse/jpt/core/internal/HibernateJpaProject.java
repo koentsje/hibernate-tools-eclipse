@@ -285,7 +285,7 @@ public class HibernateJpaProject extends AbstractJpaProject {
 	 *
 	 */
 	protected void revalidate() {
-		getManager().execute(revalidateCommand, org.hibernate.tool.eclipse.jpt.core.internal.Messages.HibernateJpaProject_Update_Hibernate_properties, this);
+		getManager().execute(revalidateCommand, org.hibernate.tool.eclipse.orm.jpt.core.nls.Messages.HibernateJpaProject_Update_Hibernate_properties, this);
 	}
 
 	@Override

@@ -87,6 +87,9 @@
 					<includes>
 						<include>**/*Test.class</include>
 					</includes>
+					<excludes>
+						<exclude>**/CodeGenXMLFactoryTest.class</exclude>
+					</excludes>
 					<skip>${skipTests}</skip>
 				</configuration>
 			</plugin>

@@ -30,6 +30,7 @@ import org.eclipse.swt.widgets.Spinner;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.CacheModeType;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.FlushModeType;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernateQuery;
+import org.hibernate.tool.eclipse.orm.jpt.ui.nls.Messages;
 
 /**
  * @author Dmitry Geraskov
@@ -68,18 +69,18 @@ public class HibernateQueryPropertyComposite<T extends HibernateQuery> extends P
 		// ReadOnly tri-state check box
 		addTriStateCheckBoxWithDefault(
 			container,
-			HibernateUIMappingMessages.NamedQueryPropertyComposite_readOnly,
+			Messages.NamedQueryPropertyComposite_readOnly,
 			buildReadOnlyHolder(),
 			buildReadOnlyStringHolder(),
 			null//TODO help
 		);
 
 		//Flush Mode combobox
-		this.addLabel(container, HibernateUIMappingMessages.NamedQueryPropertyComposite_flushMode);
+		this.addLabel(container, Messages.NamedQueryPropertyComposite_flushMode);
 		this.addFlushModeTypeCombo(container);
 //		addLabeledComposite(
 //			container,
-//			HibernateUIMappingMessages.NamedQueryPropertyComposite_flushMode,
+//			Messages.NamedQueryPropertyComposite_flushMode,
 //			addFlushModeTypeCombo(container),
 //			null//TODO help
 //		);
@@ -87,31 +88,31 @@ public class HibernateQueryPropertyComposite<T extends HibernateQuery> extends P
 		// Cacheable tri-state check box
 		addTriStateCheckBoxWithDefault(
 			container,
-			HibernateUIMappingMessages.NamedQueryPropertyComposite_cacheable,
+			Messages.NamedQueryPropertyComposite_cacheable,
 			buildCacheableHolder(),
 			buildCacheableStringHolder(),
 			null//TODO help
 		);
 
 		//Cache Mode combobox
-		this.addLabel(container, HibernateUIMappingMessages.NamedQueryPropertyComposite_cacheMode);
+		this.addLabel(container, Messages.NamedQueryPropertyComposite_cacheMode);
 		this.addCacheModeTypeCombo(container);
 //		addLabeledComposite(
 //			container,
-//			HibernateUIMappingMessages.NamedQueryPropertyComposite_cacheMode,
+//			Messages.NamedQueryPropertyComposite_cacheMode,
 //			addCacheModeTypeCombo(container),
 //			null//TODO help
 //		);
 
-		this.addLabel(container, HibernateUIMappingMessages.NamedQueryPropertyComposite_cacheRegion);
+		this.addLabel(container, Messages.NamedQueryPropertyComposite_cacheRegion);
 		this.addText(container, buildCacheRegionTextHolder());
 //		addLabeledText(
 //			container,
-//			HibernateUIMappingMessages.NamedQueryPropertyComposite_cacheRegion,
+//			Messages.NamedQueryPropertyComposite_cacheRegion,
 //			buildCacheRegionTextHolder());
 
 		// Fetch size widgets
-		this.addLabel(container, HibernateUIMappingMessages.NamedQueryPropertyComposite_fetchSize);
+		this.addLabel(container, Messages.NamedQueryPropertyComposite_fetchSize);
 		Spinner fetchSizeSpinner = 
 				this.addSpinner(
 						container, 
@@ -122,7 +123,7 @@ public class HibernateQueryPropertyComposite<T extends HibernateQuery> extends P
 						JpaHelpContextIds.MAPPING_COLUMN_LENGTH);
 //		Spinner fetchSizeSpinner = addLabeledSpinner(
 //			container,
-//			HibernateUIMappingMessages.NamedQueryPropertyComposite_fetchSize,
+//			Messages.NamedQueryPropertyComposite_fetchSize,
 //			buildFetchSizeHolder(),
 //			-1,
 //			-1,
@@ -133,7 +134,7 @@ public class HibernateQueryPropertyComposite<T extends HibernateQuery> extends P
 
 //		updateGridData(container, fetchSizeSpinner);
 
-		this.addLabel(container, HibernateUIMappingMessages.NamedQueryPropertyComposite_timeout);
+		this.addLabel(container, Messages.NamedQueryPropertyComposite_timeout);
 		Spinner timeoutSpinner = this.addSpinner(
 				container, 
 				buildTimeoutHolder(), 
@@ -143,7 +144,7 @@ public class HibernateQueryPropertyComposite<T extends HibernateQuery> extends P
 		// Timeout size widgets
 //		Spinner timeoutSpinner = addLabeledSpinner(
 //			container,
-//			HibernateUIMappingMessages.NamedQueryPropertyComposite_timeout,
+//			Messages.NamedQueryPropertyComposite_timeout,
 //			buildTimeoutHolder(),
 //			-1,
 //			-1,
@@ -271,12 +272,12 @@ public class HibernateQueryPropertyComposite<T extends HibernateQuery> extends P
 					                                           JptJpaUiDetailsMessages.OPTIONAL_COMPOSITE_FALSE;
 
 					return NLS.bind(
-						HibernateUIMappingMessages.NamedQueryPropertyComposite_cacheableWithDefault,
+						Messages.NamedQueryPropertyComposite_cacheableWithDefault,
 						defaultStringValue
 					);
 				}
 
-				return HibernateUIMappingMessages.NamedQueryPropertyComposite_cacheable;
+				return Messages.NamedQueryPropertyComposite_cacheable;
 			}
 		};
 	}
@@ -314,12 +315,12 @@ public class HibernateQueryPropertyComposite<T extends HibernateQuery> extends P
 					                                           JptJpaUiDetailsMessages.OPTIONAL_COMPOSITE_FALSE;
 
 					return NLS.bind(
-						HibernateUIMappingMessages.NamedQueryPropertyComposite_readOnlyWithDefault,
+						Messages.NamedQueryPropertyComposite_readOnlyWithDefault,
 						defaultStringValue
 					);
 				}
 
-				return HibernateUIMappingMessages.NamedQueryPropertyComposite_readOnly;
+				return Messages.NamedQueryPropertyComposite_readOnly;
 			}
 		};
 	}
