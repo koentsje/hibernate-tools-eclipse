@@ -2,7 +2,7 @@ package org.hibernate.tool.eclipse.orm.base.ui.test;
 
 import static org.junit.Assert.assertEquals;
 
-import org.hibernate.eclipse.jdt.ui.internal.ELTransformer;
+import org.hibernate.tool.eclipse.orm.jdt.core.internal.ELTransformer;
 import org.junit.Test;
 
 public class ELTransformerTest {

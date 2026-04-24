@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %Bundle-Name.0
 Bundle-SymbolicName: org.hibernate.tool.eclipse.orm.jdt.ui;singleton:=true
 Bundle-Version: 6.0.0.qualifier
-Bundle-Activator: org.hibernate.eclipse.jdt.ui.Activator
+Bundle-Activator: org.hibernate.tool.eclipse.orm.jdt.ui.Activator
 Bundle-Vendor: %Bundle-Vendor.0
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.jdt.ui;bundle-version="3.10.100",
@@ -30,11 +30,11 @@ Require-Bundle: org.eclipse.jdt.ui;bundle-version="3.10.100",
  org.eclipse.e4.core.commands;bundle-version="0.10.2",
  org.eclipse.jdt.core.manipulation
 Bundle-ActivationPolicy: lazy
-Export-Package: org.hibernate.eclipse.jdt.ui,
- org.hibernate.eclipse.jdt.ui.internal,
- org.hibernate.eclipse.jdt.ui.internal.jpa.actions,
- org.hibernate.eclipse.jdt.ui.internal.jpa.collect,
- org.hibernate.eclipse.jdt.ui.internal.jpa.process,
- org.hibernate.eclipse.jdt.ui.internal.jpa.process.wizard,
- org.hibernate.eclipse.jdt.ui.wizards
+Export-Package: org.hibernate.tool.eclipse.orm.jdt.ui,
+ org.hibernate.tool.eclipse.orm.jdt.ui.internal,
+ org.hibernate.tool.eclipse.orm.jdt.ui.internal.jpa.actions,
+ org.hibernate.tool.eclipse.orm.jdt.ui.internal.jpa.collect,
+ org.hibernate.tool.eclipse.orm.jdt.ui.internal.jpa.process,
+ org.hibernate.tool.eclipse.orm.jdt.ui.internal.jpa.process.wizard,
+ org.hibernate.tool.eclipse.orm.jdt.ui.wizards
 Bundle-RequiredExecutionEnvironment: JavaSE-11

@@ -4,7 +4,7 @@
    <extension
          point="org.eclipse.jdt.core.compilationParticipant">
       <compilationParticipant
-            class="org.hibernate.eclipse.jdt.ui.internal.HQLExpressionCompilerParticipant"
+            class="org.hibernate.tool.eclipse.orm.jdt.core.internal.HQLExpressionCompilerParticipant"
             createsProblems="true"
             id="org.hibernate.tool.eclipse.orm.jdt.core.HQLExpressionCompilerParticipant">
          <managedMarker markerType="org.hibernate.tool.eclipse.orm.jdt.core.hqlsyntax.problem"/>

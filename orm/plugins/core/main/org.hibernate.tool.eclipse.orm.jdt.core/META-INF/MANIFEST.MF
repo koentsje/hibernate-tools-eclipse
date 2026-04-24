@@ -15,11 +15,11 @@ Require-Bundle: org.eclipse.jdt.core;bundle-version="3.11.0",
  org.hibernate.tool.eclipse.orm.console.core,
  org.hibernate.tool.eclipse.orm.runtime.spi;bundle-version="5.0.0"
 Bundle-ActivationPolicy: lazy
-Export-Package: org.hibernate.eclipse.jdt.ui.internal,
- org.hibernate.eclipse.jdt.ui.internal.jpa.collect,
- org.hibernate.eclipse.jdt.ui.internal.jpa.common,
- org.hibernate.eclipse.jdt.ui.internal.jpa.process,
- org.hibernate.eclipse.jdt.ui.internal.jpa.process.wizard,
- org.hibernate.eclipse.jdt.ui.wizards,
+Export-Package: org.hibernate.tool.eclipse.orm.jdt.core.internal,
+ org.hibernate.tool.eclipse.orm.jdt.core.internal.configuration,
+ org.hibernate.tool.eclipse.orm.jdt.core.internal.jpa.collect,
+ org.hibernate.tool.eclipse.orm.jdt.core.internal.jpa.common,
+ org.hibernate.tool.eclipse.orm.jdt.core.internal.jpa.process,
+ org.hibernate.tool.eclipse.orm.jdt.core.internal.jpa.refactoring,
  org.hibernate.tool.eclipse.orm.jdt.core.nls
 Bundle-RequiredExecutionEnvironment: JavaSE-11
