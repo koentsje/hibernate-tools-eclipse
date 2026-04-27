@@ -3,16 +3,17 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Hibernate XML UI Plug-in
 Bundle-SymbolicName: org.hibernate.tool.eclipse.orm.xml.ui; singleton:=true
 Bundle-Version: 6.0.0.qualifier
-Bundle-Activator: org.hibernate.eclipse.mapper.MapperPlugin
+Bundle-Activator: org.hibernate.tool.eclipse.orm.xml.ui.mapper.MapperPlugin
 Bundle-Vendor: Hibernate
 Bundle-Localization: plugin
-Export-Package: org.hibernate.eclipse.mapper.editors,
- org.hibernate.eclipse.mapper.editors.reveng,
- org.hibernate.eclipse.mapper.editors.reveng.xpl,
- org.hibernate.eclipse.mapper.editors.xpl,
- org.hibernate.eclipse.mapper.extractor,
- org.hibernate.eclipse.mapper.registry,
- org.hibernate.eclipse.mapper.views.contentoutline
+Export-Package: org.hibernate.tool.eclipse.orm.xml.ui.mapper,
+ org.hibernate.tool.eclipse.orm.xml.ui.mapper.editors,
+ org.hibernate.tool.eclipse.orm.xml.ui.mapper.editors.reveng,
+ org.hibernate.tool.eclipse.orm.xml.ui.mapper.editors.reveng.xpl,
+ org.hibernate.tool.eclipse.orm.xml.ui.mapper.editors.xpl,
+ org.hibernate.tool.eclipse.orm.xml.ui.mapper.extractor,
+ org.hibernate.tool.eclipse.orm.xml.ui.mapper.registry,
+ org.hibernate.tool.eclipse.orm.xml.ui.mapper.views.contentoutline
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.ui.editors,

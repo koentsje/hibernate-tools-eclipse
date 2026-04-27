@@ -46,25 +46,25 @@
          point="org.eclipse.wst.sse.core.modelHandler">
          <modelHandler
                associatedContentTypeId="org.hibernate.tool.eclipse.orm.xml.core.hbmxmlsource"
-               class="org.hibernate.eclipse.mapper.modelhandler.ModelHandlerForHBMXML"
+               class="org.hibernate.tool.eclipse.orm.xml.core.mapper.modelhandler.ModelHandlerForHBMXML"
                default="false"
                id="org.hibernate.tool.eclipse.orm.xml.core.handler.hbm.xml">
          </modelHandler>
          <modelHandler
                associatedContentTypeId="org.hibernate.tool.eclipse.orm.xml.core.cfgxmlsource"
-               class="org.hibernate.eclipse.mapper.modelhandler.ModelHandlerForCFGXML"
+               class="org.hibernate.tool.eclipse.orm.xml.core.mapper.modelhandler.ModelHandlerForCFGXML"
                default="false"
                id="org.hibernate.tool.eclipse.orm.xml.core.handler.cfg.xml">
          </modelHandler>
          <modelHandler
                associatedContentTypeId="org.hibernate.tool.eclipse.orm.xml.core.revengxmlsource"
-               class="org.hibernate.eclipse.mapper.modelhandler.ModelHandlerForREVENGXML"
+               class="org.hibernate.tool.eclipse.orm.xml.core.mapper.modelhandler.ModelHandlerForREVENGXML"
                default="false"
                id="org.hibernate.tool.eclipse.orm.xml.core.handler.reveng.xml">
          </modelHandler>
          <modelHandler
                associatedContentTypeId="org.eclipse.jpt.core.content.persistence"
-               class="org.hibernate.eclipse.mapper.modelhandler.ModelHandlerForPersistenceUnitXML"
+               class="org.hibernate.tool.eclipse.orm.xml.core.mapper.modelhandler.ModelHandlerForPersistenceUnitXML"
                default="false"
                id="org.hibernate.tool.eclipse.orm.xml.core.handler.persistenceunit.xml">
          </modelHandler>

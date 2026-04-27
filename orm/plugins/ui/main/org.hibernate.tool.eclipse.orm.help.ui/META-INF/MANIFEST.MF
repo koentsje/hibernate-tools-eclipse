@@ -3,10 +3,10 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %Bundle-Name.0
 Bundle-SymbolicName: org.hibernate.tool.eclipse.orm.help.ui; singleton:=true
 Bundle-Version: 6.0.0.qualifier
-Bundle-Activator: org.hibernate.eclipse.help.HelpPlugin
+Bundle-Activator: org.hibernate.tool.eclipse.orm.help.ui.HelpPlugin
 Bundle-Vendor: %Bundle-Vendor.0
 Bundle-Localization: plugin
-Export-Package: org.hibernate.eclipse.help
+Export-Package: org.hibernate.tool.eclipse.orm.help.ui
 Require-Bundle: org.eclipse.help;bundle-version="3.6.0",
  org.eclipse.help.ui;bundle-version="4.0.100"
 Bundle-ActivationPolicy: lazy
