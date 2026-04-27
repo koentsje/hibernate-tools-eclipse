@@ -35,11 +35,11 @@ import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
 import org.hibernate.tool.eclipse.orm.query.QueryInputModel;
 import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
-import org.hibernate.eclipse.console.HibernateBasePlugin;
-import org.hibernate.eclipse.console.views.QueryParametersPage;
-import org.hibernate.eclipse.console.views.QueryParametersView;
-import org.hibernate.eclipse.hqleditor.HQLCompletionProcessor;
-import org.hibernate.eclipse.hqleditor.HQLEditor;
+import org.hibernate.tool.eclipse.orm.base.ui.console.HibernateBasePlugin;
+import org.hibernate.tool.eclipse.orm.base.ui.console.views.QueryParametersPage;
+import org.hibernate.tool.eclipse.orm.base.ui.console.views.QueryParametersView;
+import org.hibernate.tool.eclipse.orm.base.ui.hqleditor.HQLCompletionProcessor;
+import org.hibernate.tool.eclipse.orm.base.ui.hqleditor.HQLEditor;
 import org.hibernate.tool.eclipse.orm.base.ui.test.utils.ConsoleConfigUtils;
 import org.hibernate.tool.eclipse.orm.base.ui.test.utils.TestConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.orm.base.ui.test.utils.project.SimpleTestProject;
@@ -128,7 +128,7 @@ public class HQLEditorTest {
 		Assert.assertTrue(model.getParameterCount() == 0);
 		
 		IViewPart view = PlatformUI.getWorkbench().getActiveWorkbenchWindow()
-			.getActivePage().showView("org.hibernate.eclipse.console.views.QueryParametersView"); //$NON-NLS-1$
+			.getActivePage().showView("org.hibernate.tool.eclipse.orm.base.ui.console.views.QueryParametersView"); //$NON-NLS-1$
 		Assert.assertNotNull("View was not opened", view); //$NON-NLS-1$
 		Assert.assertTrue("Opened view is not QueryParametersView", view instanceof QueryParametersView); //$NON-NLS-1$
 		

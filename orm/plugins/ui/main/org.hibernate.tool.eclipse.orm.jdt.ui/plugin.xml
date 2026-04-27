@@ -149,7 +149,7 @@
             category="hibernatewizards"
             class="org.hibernate.tool.eclipse.orm.jdt.ui.wizards.NewHibernateMappingFileWizard"
             icon="icons/hibernate_small_icon.gif"
-            id="org.hibernate.eclipse.console.wizards.NewHibernateMappingFileWizard"
+            id="org.hibernate.tool.eclipse.orm.base.ui.console.wizards.NewHibernateMappingFileWizard"
             name="%New_wizard_menu_New_mapping_file">
          <description>
             %New_wizard_menu_New_mapping_file_description

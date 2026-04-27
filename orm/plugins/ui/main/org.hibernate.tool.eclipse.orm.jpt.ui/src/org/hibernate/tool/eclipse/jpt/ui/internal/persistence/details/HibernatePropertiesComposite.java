@@ -57,10 +57,10 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.ui.model.WorkbenchContentProvider;
 import org.eclipse.ui.model.WorkbenchLabelProvider;
 import org.eclipse.ui.views.navigator.ResourceComparator;
-import org.hibernate.eclipse.console.FileFilter;
+import org.hibernate.tool.eclipse.orm.base.ui.console.FileFilter;
 import org.hibernate.tool.eclipse.common.base.core.utils.DriverClassHelpers;
-import org.hibernate.eclipse.console.wizards.NewConfigurationWizard;
-import org.hibernate.eclipse.console.wizards.NewConfigurationWizardPage;
+import org.hibernate.tool.eclipse.orm.base.ui.console.wizards.NewConfigurationWizard;
+import org.hibernate.tool.eclipse.orm.base.ui.console.wizards.NewConfigurationWizardPage;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.basic.BasicHibernateProperties;
 import org.hibernate.tool.eclipse.orm.jpt.ui.nls.Messages;
 

@@ -10,7 +10,7 @@ import org.hibernate.tool.eclipse.orm.console.core.nls.Messages;
 
 public class HibernateConsoleCorePlugin {
 
-	public static final String ID = "org.hibernate.eclipse.console"; //$NON-NLS-1$
+	public static final String ID = "org.hibernate.tool.eclipse.orm.base.ui.console"; //$NON-NLS-1$
 
 	private static final HibernateConsoleCorePlugin INSTANCE = new HibernateConsoleCorePlugin();
 

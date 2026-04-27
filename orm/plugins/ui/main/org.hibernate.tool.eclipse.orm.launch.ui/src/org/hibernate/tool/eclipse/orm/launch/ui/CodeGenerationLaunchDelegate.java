@@ -71,7 +71,7 @@ import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.HibernateConsoleRuntimeException;
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
 import org.hibernate.tool.eclipse.orm.launch.ui.nls.Messages;
-import org.hibernate.eclipse.console.HibernateBasePlugin;
+import org.hibernate.tool.eclipse.orm.base.ui.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.launch.core.CodeGenXMLFactory;
 import org.hibernate.tool.eclipse.orm.launch.core.CodeGenerationProcessListener;
 import org.hibernate.tool.eclipse.orm.launch.core.CodeGenerationStrings;

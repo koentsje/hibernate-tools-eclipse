@@ -52,7 +52,7 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.SelectionDialog;
 import org.eclipse.ui.progress.IProgressService;
-import org.hibernate.eclipse.console.utils.DialogSelectionHelper;
+import org.hibernate.tool.eclipse.orm.base.ui.console.utils.DialogSelectionHelper;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.basic.Hibernate;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.persistence.PackageInfoRef;
 import org.hibernate.tool.eclipse.jpt.ui.HibernateJptUIPlugin;

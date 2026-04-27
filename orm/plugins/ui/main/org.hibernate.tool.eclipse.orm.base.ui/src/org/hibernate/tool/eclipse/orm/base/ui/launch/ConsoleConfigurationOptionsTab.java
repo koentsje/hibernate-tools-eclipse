@@ -19,8 +19,8 @@ import org.eclipse.swt.widgets.Text;
 import org.hibernate.tool.eclipse.orm.launch.core.HibernateLaunchConstants;
 import org.hibernate.tool.eclipse.orm.launch.core.IBasicHibernateLaunchConstants;
 import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
-import org.hibernate.eclipse.console.HibernateBasePlugin;
-import org.hibernate.eclipse.console.utils.DialogSelectionHelper;
+import org.hibernate.tool.eclipse.orm.base.ui.console.HibernateBasePlugin;
+import org.hibernate.tool.eclipse.orm.base.ui.console.utils.DialogSelectionHelper;
 import org.hibernate.tool.eclipse.common.base.core.utils.DriverClassHelpers;
 import org.xml.sax.EntityResolver;
 

@@ -29,8 +29,8 @@ import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.ui.text.java.IJavaCompletionProposal;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
-import org.hibernate.eclipse.hqleditor.CompletionHelper;
-import org.hibernate.eclipse.hqleditor.HibernateResultCollector;
+import org.hibernate.tool.eclipse.orm.base.ui.hqleditor.CompletionHelper;
+import org.hibernate.tool.eclipse.orm.base.ui.hqleditor.HibernateResultCollector;
 import org.w3c.dom.Attr;
 import org.w3c.dom.Node;
 

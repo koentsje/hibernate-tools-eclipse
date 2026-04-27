@@ -35,11 +35,11 @@ import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.jface.text.contentassist.IContextInformation;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
-import org.hibernate.eclipse.console.HibernateBasePlugin;
+import org.hibernate.tool.eclipse.orm.base.ui.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.jdt.core.nls.Messages;
-import org.hibernate.eclipse.ui.console.common.CompletionProposalsResult;
-import org.hibernate.eclipse.ui.console.common.ConsoleExtensionUI;
-import org.hibernate.eclipse.hqleditor.HQLCompletionProcessor;
+import org.hibernate.tool.eclipse.orm.base.ui.ui.console.common.CompletionProposalsResult;
+import org.hibernate.tool.eclipse.orm.base.ui.ui.console.common.ConsoleExtensionUI;
+import org.hibernate.tool.eclipse.orm.base.ui.hqleditor.HQLCompletionProcessor;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateProjectConsoleManager;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IRuntimeManager;
 

@@ -28,7 +28,7 @@ public class HibernatePropertiesConstants {
 
 	public static final String HIBERNATE3_ENABLED = "hibernate3.enabled"; //$NON-NLS-1$
 
-	public static final String HIBERNATE_CONSOLE_NODE = "org.hibernate.eclipse.console"; //$NON-NLS-1$
+	public static final String HIBERNATE_CONSOLE_NODE = "org.hibernate.tool.eclipse.orm.base.ui.console"; //$NON-NLS-1$
 
 	public static final String HIBERNATE_JPA_PLATFORM_ID = "hibernate"; //$NON-NLS-1$
 	

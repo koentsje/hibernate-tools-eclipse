@@ -90,14 +90,14 @@ import org.hibernate.tool.eclipse.orm.launch.core.ExtensionManager;
 import org.hibernate.tool.eclipse.orm.launch.core.HibernateLaunchConstants;
 import org.hibernate.tool.eclipse.orm.launch.core.PathHelper;
 import org.hibernate.tool.eclipse.orm.launch.ui.nls.Messages;
-import org.hibernate.eclipse.console.HibernateBasePlugin;
+import org.hibernate.tool.eclipse.orm.base.ui.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.launch.core.model.ExporterFactoryStrings;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.hibernate.tool.eclipse.orm.launch.core.model.ExporterDefinition;
-import org.hibernate.eclipse.ui.ExporterDefinitionUI;
+import org.hibernate.tool.eclipse.orm.base.ui.ui.ExporterDefinitionUI;
 import org.hibernate.tool.eclipse.orm.launch.core.model.ExporterFactory;
-import org.hibernate.eclipse.ui.console.utils.EclipseImages;
-import org.hibernate.eclipse.console.wizards.UpDownListComposite;
+import org.hibernate.tool.eclipse.orm.base.ui.ui.console.utils.EclipseImages;
+import org.hibernate.tool.eclipse.orm.base.ui.console.wizards.UpDownListComposite;
 
 public class ExporterSettingsTab extends AbstractLaunchConfigurationTab {
 	

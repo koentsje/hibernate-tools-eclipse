@@ -5,7 +5,7 @@ import org.eclipse.jface.preference.PreferenceDialog;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.PreferencesUtil;
-import org.hibernate.eclipse.hqleditor.preferences.HQLEditorPreferencePage;
+import org.hibernate.tool.eclipse.orm.base.ui.hqleditor.preferences.HQLEditorPreferencePage;
 import org.junit.Assert;
 import org.junit.Assume;
 import org.junit.Before;

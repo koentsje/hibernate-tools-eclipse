@@ -1,0 +1,149 @@
+/*
+ * JBoss, Home of Professional Open Source
+ * Copyright 2005, JBoss Inc., and individual contributors as indicated
+ * by the @authors tag. See the copyright.txt in the distribution for a
+ * full listing of individual contributors.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+ */
+package org.hibernate.tool.eclipse.orm.base.ui.console.workbench;
+
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.osgi.util.NLS;
+import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
+import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
+import org.hibernate.tool.eclipse.orm.base.ui.console.HibernateBasePlugin;
+import org.hibernate.tool.eclipse.orm.base.ui.ui.console.utils.EclipseImages;
+import org.hibernate.tool.eclipse.common.runtime.HibernateRuntimeException;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IProgressListener;
+import org.hibernate.tool.eclipse.orm.runtime.spi.IReverseEngineeringStrategy;
+import org.hibernate.tool.eclipse.orm.runtime.spi.ITable;
+import org.hibernate.tool.eclipse.orm.console.core.workbench.LazyDatabaseSchema;
+import org.hibernate.tool.eclipse.orm.workbench.TableContainer;
+
+public class LazyDatabaseSchemaWorkbenchAdapter extends BasicWorkbenchAdapter {
+	
+	public Object[] getChildren(Object o) {
+		return getChildren(o, new NullProgressMonitor());
+	}
+
+	public Object[] getChildren(Object o, final IProgressMonitor monitor) {
+		LazyDatabaseSchema dbs = getLazyDatabaseSchema( o );
+		dbs.setConnected(false);
+		dbs.setErrorFlag(false);
+		ConsoleConfiguration consoleConfiguration = dbs.getConsoleConfiguration();
+		Object[] res;
+		try {
+			Map<?, ?> qualifiedEntries = readDatabaseSchema(monitor, consoleConfiguration, dbs.getReverseEngineeringStrategy());
+
+			List<TableContainer> result = new ArrayList<TableContainer>();
+			
+			for (Object key : qualifiedEntries.keySet()) {
+				result.add(new TableContainer((String)key, (List<ITable>)qualifiedEntries.get(key)));
+			}
+
+			res = toArray(result.iterator(), Object.class, new Comparator<Object>() {
+				public int compare(Object arg0, Object arg1) {
+					return getName(arg0).compareTo(getName(arg1));
+				}
+				private String getName(Object o) {
+					String result = null;
+					try {
+						Method m = o.getClass().getMethod("getName", new Class[] {}); //$NON-NLS-1$
+						result = (String) m.invoke(o, new Object[] {});
+					} catch (Exception e) {
+						throw new RuntimeException(e);
+					}
+					return result;
+				}
+			});
+			dbs.setConnected(true);
+		} catch (Exception e) {
+			HibernateBasePlugin.getDefault().logErrorMessage(Messages.LazyDatabaseSchemaWorkbenchAdapter_problems_while_reading_database_schema, e);
+			String out = NLS.bind(Messages.LazyDatabaseSchemaWorkbenchAdapter_reading_schema_error, e.getMessage());
+			res = new Object[] { out };
+			dbs.setErrorFlag(true);
+		}
+		return res;
+	}
+
+	private LazyDatabaseSchema getLazyDatabaseSchema(Object o) {
+		return (LazyDatabaseSchema) o;
+	}
+
+	public ImageDescriptor getImageDescriptor(Object object) {
+		LazyDatabaseSchema dbs = getLazyDatabaseSchema(object);
+		Map<String, Integer> imageMap = new HashMap<String, Integer>();
+		if (dbs.isConnected()) {
+			imageMap.put(ImageConstants.OVR_DBS_CONNECTED, OverlayImageIcon.BOTTOM_LEFT);
+		}
+		if (dbs.getErrorFlag()) {
+			imageMap.put(ImageConstants.OVR_WARNING, OverlayImageIcon.BOTTOM_LEFT);
+		}
+        return new OverlayImageIcon(EclipseImages.getImage(ImageConstants.TABLE), imageMap);
+	}
+
+	public String getLabel(Object o) {
+		return Messages.LazyDatabaseSchemaWorkbenchAdapter_database;
+	}
+
+	public Object getParent(Object o) {
+		return getLazyDatabaseSchema(o).getConsoleConfiguration();
+	}
+
+	protected Map<?, ?> readDatabaseSchema(final IProgressMonitor monitor, final ConsoleConfiguration consoleConfiguration, final IReverseEngineeringStrategy strategy) {
+		final IConfiguration configuration = consoleConfiguration.buildWith(null, false);
+		return (Map<?, ?>) consoleConfiguration.execute(() -> {
+			Map<String, List<ITable>> result = null;
+			try {
+				result = consoleConfiguration
+						.getRuntimeManager()
+						.getHibernateService()
+						.collectDatabaseTables(
+								configuration.getProperties(),
+								strategy,
+								new ProgressListener(monitor));
+			} catch (Exception he) {
+				throw new HibernateRuntimeException(he.getMessage(), he.getCause());
+			}
+			return result;
+		});
+	}
+	
+	private class ProgressListener implements IProgressListener {
+		private IProgressMonitor progressMonitor;
+		public ProgressListener(IProgressMonitor monitor) {
+			progressMonitor = monitor;
+		}
+		@Override
+		public void startSubTask(String name) {
+			progressMonitor.subTask(name);
+		}
+		
+	}
+	
+}

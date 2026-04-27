@@ -5,7 +5,7 @@ import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
-import org.hibernate.eclipse.console.utils.LaunchHelperUI;
+import org.hibernate.tool.eclipse.orm.base.ui.console.utils.LaunchHelperUI;
 
 public class ConfigurationCombo {
 	

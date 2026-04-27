@@ -43,10 +43,10 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.editors.text.TextFileDocumentProvider;
 import org.eclipse.ui.texteditor.IDocumentProvider;
 import org.eclipse.ui.texteditor.ITextEditor;
-import org.hibernate.eclipse.console.AbstractQueryEditor;
-import org.hibernate.eclipse.console.HibernateBasePlugin;
+import org.hibernate.tool.eclipse.orm.base.ui.console.AbstractQueryEditor;
+import org.hibernate.tool.eclipse.orm.base.ui.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.jdt.core.nls.Messages;
-import org.hibernate.eclipse.hqleditor.HQLEditor;
+import org.hibernate.tool.eclipse.orm.base.ui.hqleditor.HQLEditor;
 
 /**
  * @author Dmitry Geraskov

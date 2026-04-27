@@ -24,7 +24,7 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
-import org.hibernate.eclipse.ui.console.utils.EclipseImages;
+import org.hibernate.tool.eclipse.orm.base.ui.ui.console.utils.EclipseImages;
 import org.hibernate.tool.eclipse.search.core.HSearchConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.search.console.ConsoleConfigurationUtils;
 import org.hibernate.tool.eclipse.search.runtime.spi.HSearchServiceLookup;

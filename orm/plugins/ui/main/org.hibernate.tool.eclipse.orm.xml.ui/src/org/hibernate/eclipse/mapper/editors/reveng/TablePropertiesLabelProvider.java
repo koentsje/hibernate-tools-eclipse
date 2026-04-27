@@ -29,7 +29,7 @@ import org.hibernate.tool.eclipse.orm.model.core.IRevEngGenerator;
 import org.hibernate.tool.eclipse.orm.model.core.IRevEngParameter;
 import org.hibernate.tool.eclipse.orm.model.core.IRevEngPrimaryKey;
 import org.hibernate.tool.eclipse.orm.model.core.IRevEngTable;
-import org.hibernate.eclipse.ui.console.utils.EclipseImages;
+import org.hibernate.tool.eclipse.orm.base.ui.ui.console.utils.EclipseImages;
 import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
 
 public class TablePropertiesLabelProvider extends LabelProvider {

@@ -38,7 +38,7 @@ import org.eclipse.jdt.core.IJavaProject;
 
 public class HibernateNature implements IProjectNature {
 
-	final public static String ID = "org.hibernate.eclipse.console.hibernateNature"; //$NON-NLS-1$
+	final public static String ID = "org.hibernate.tool.eclipse.orm.base.ui.console.hibernateNature"; //$NON-NLS-1$
 
 	private IProject project;
 

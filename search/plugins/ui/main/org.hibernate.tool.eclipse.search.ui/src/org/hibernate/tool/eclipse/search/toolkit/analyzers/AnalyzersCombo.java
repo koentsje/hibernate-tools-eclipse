@@ -13,7 +13,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
-import org.hibernate.eclipse.console.HibernateBasePlugin;
+import org.hibernate.tool.eclipse.orm.base.ui.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.launch.core.utils.LaunchHelper;
 import org.hibernate.tool.eclipse.orm.console.core.utils.ProjectUtils;
 import org.hibernate.tool.eclipse.orm.launch.core.IBasicHibernateLaunchConstants;

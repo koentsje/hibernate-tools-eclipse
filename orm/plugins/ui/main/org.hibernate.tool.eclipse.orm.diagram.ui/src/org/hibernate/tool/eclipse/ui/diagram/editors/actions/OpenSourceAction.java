@@ -91,7 +91,7 @@ public class OpenSourceAction extends SelectionAction {
 				fullyQualifiedName = fullyQualifiedName.substring(0, fullyQualifiedName.indexOf("$"));
 			}*/
 			try {
-				editorPart = org.hibernate.eclipse.console.actions.OpenSourceAction.run(consoleConfig, selection, fullyQualifiedName);
+				editorPart = org.hibernate.tool.eclipse.orm.base.ui.console.actions.OpenSourceAction.run(consoleConfig, selection, fullyQualifiedName);
 			} catch (CoreException e) {
 				HibernateConsoleCorePlugin.getDefault().logErrorMessage(Messages.OpenSourceAction_canot_open_source_file, e);
 			} catch (FileNotFoundException e) {

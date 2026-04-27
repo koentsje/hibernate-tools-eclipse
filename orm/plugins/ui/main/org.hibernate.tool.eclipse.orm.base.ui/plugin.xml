@@ -14,9 +14,9 @@
          point="org.eclipse.ui.perspectives">
       <perspective
             icon="icons/hibernate_small_icon.gif"
-            class="org.hibernate.eclipse.console.HibernateConsolePerspectiveFactory"
+            class="org.hibernate.tool.eclipse.orm.base.ui.console.HibernateConsolePerspectiveFactory"
             name="%perspective.name"
-            id="org.hibernate.eclipse.console.HibernateConsolePerspective"/>
+            id="org.hibernate.tool.eclipse.orm.base.ui.console.HibernateConsolePerspective"/>
    </extension>
    <extension
          point="org.eclipse.ui.views">
@@ -25,27 +25,27 @@
             id="hibernatecategory"/>
      <view
             icon="icons/hibernate_small_icon.gif"
-            class="org.hibernate.eclipse.console.views.KnownConfigurationsView"
+            class="org.hibernate.tool.eclipse.orm.base.ui.console.views.KnownConfigurationsView"
             category="hibernatecategory"
             name="%ViewName_HibernateConfigurations"
-            id="org.hibernate.eclipse.console.views.KnownConfigurationsView"/>
+            id="org.hibernate.tool.eclipse.orm.base.ui.console.views.KnownConfigurationsView"/>
       <view
             icon="icons/hibernate_small_icon.gif"
-            class="org.hibernate.eclipse.console.views.QueryPageTabView"
+            class="org.hibernate.tool.eclipse.orm.base.ui.console.views.QueryPageTabView"
             category="hibernatecategory"
             name="%ViewName_HibernateQueryResult"
-            id="org.hibernate.eclipse.console.views.QueryPageTabView"/>
+            id="org.hibernate.tool.eclipse.orm.base.ui.console.views.QueryPageTabView"/>
       <view
             category="hibernatecategory"
-            class="org.hibernate.eclipse.console.views.DynamicSQLPreviewView"
+            class="org.hibernate.tool.eclipse.orm.base.ui.console.views.DynamicSQLPreviewView"
             icon="icons/hibernate_small_icon.gif"
-            id="org.hibernate.eclipse.console.views.DynamicSQLPreviewView"
+            id="org.hibernate.tool.eclipse.orm.base.ui.console.views.DynamicSQLPreviewView"
             name="%ViewName_HibernateDynamicSQLPreview"/>
       <view
             category="hibernatecategory"
-            class="org.hibernate.eclipse.console.views.QueryParametersView"
+            class="org.hibernate.tool.eclipse.orm.base.ui.console.views.QueryParametersView"
             icon="icons/images/parameter.gif"
-            id="org.hibernate.eclipse.console.views.QueryParametersView"
+            id="org.hibernate.tool.eclipse.orm.base.ui.console.views.QueryParametersView"
             name="%ViewName_QueryParameters"/>
 
    </extension>
@@ -57,29 +57,29 @@
             id="hibernatewizards"/>
       <wizard
             category="hibernatewizards"
-            class="org.hibernate.eclipse.console.wizards.NewConfigurationWizard"
+            class="org.hibernate.tool.eclipse.orm.base.ui.console.wizards.NewConfigurationWizard"
             icon="icons/hibernate_small_icon.gif"
-            id="org.hibernate.eclipse.console.wizards.NewConfigurationWizard"
+            id="org.hibernate.tool.eclipse.orm.base.ui.console.wizards.NewConfigurationWizard"
             name="Hibernate Configuration File (cfg.xml)">
          <description>Create a new hibernate.cfg.xml file (Helping with the initial JDBC setup etc.)</description>
       </wizard>
       <wizard
             category="hibernatewizards"
-            class="org.hibernate.eclipse.console.wizards.ConsoleConfigurationCreationWizard"
+            class="org.hibernate.tool.eclipse.orm.base.ui.console.wizards.ConsoleConfigurationCreationWizard"
             descriptionImage="icons/hibernate_small_icon.gif"
-            finalPerspective="org.hibernate.eclipse.console.HibernateConsolePerspective"
+            finalPerspective="org.hibernate.tool.eclipse.orm.base.ui.console.HibernateConsolePerspective"
             icon="icons/hibernate_small_icon.gif"
-            id="org.hibernate.eclipse.console.wizards.ConsoleConfigurationCreationWizard"
+            id="org.hibernate.tool.eclipse.orm.base.ui.console.wizards.ConsoleConfigurationCreationWizard"
             name="Hibernate Console Configuration"
-            preferredPerspectives="org.hibernate.eclipse.console.HibernateConsolePerspective">
+            preferredPerspectives="org.hibernate.tool.eclipse.orm.base.ui.console.HibernateConsolePerspective">
          <description>Create a new Hibernate Console Configuration</description>
       </wizard>
       <wizard
             canFinishEarly="false"
             category="hibernatewizards"
-            class="org.hibernate.eclipse.console.wizards.NewReverseEngineeringFileWizard"
+            class="org.hibernate.tool.eclipse.orm.base.ui.console.wizards.NewReverseEngineeringFileWizard"
             icon="icons/hibernate_small_icon.gif"
-            id="org.hibernate.eclipse.console.wizards.NewReverseEngineeringFileWizard"
+            id="org.hibernate.tool.eclipse.orm.base.ui.console.wizards.NewReverseEngineeringFileWizard"
             name="Hibernate Reverse Engineering File (reveng.xml)">
          <description>Create a new hibernate.reveng.xml (Helping with the initial table and type filtering)</description>
       </wizard>
@@ -89,31 +89,31 @@
       <objectContribution
             objectClass="org.eclipse.core.resources.IFile"
             nameFilter="*.xml"
-            id="org.hibernate.eclipse.console.jtidyformat">
+            id="org.hibernate.tool.eclipse.orm.base.ui.console.jtidyformat">
          <menu
                label="JTidy"
                path="additions"
-               id="org.hibernate.eclipse.console.jtidymenu">
+               id="org.hibernate.tool.eclipse.orm.base.ui.console.jtidymenu">
             <separator name="group1"/>
          </menu>
          <action
                label="Format with JTidy"
-               class="org.hibernate.eclipse.console.actions.JTidyFormatAction"
-               menubarPath="org.hibernate.eclipse.console.jtidymenu/group1"
-               id="org.hibernate.eclipse.console.jtidyformat"/>
+               class="org.hibernate.tool.eclipse.orm.base.ui.console.actions.JTidyFormatAction"
+               menubarPath="org.hibernate.tool.eclipse.orm.base.ui.console.jtidymenu/group1"
+               id="org.hibernate.tool.eclipse.orm.base.ui.console.jtidyformat"/>
       </objectContribution>
    </extension>
    <extension
          point="org.eclipse.ui.propertyPages">
       <page
-            class="org.hibernate.eclipse.console.properties.HibernatePropertyPage"
-            id="org.hibernate.eclipse.console.properties.HibernatePropertyPage"
+            class="org.hibernate.tool.eclipse.orm.base.ui.console.properties.HibernatePropertyPage"
+            id="org.hibernate.tool.eclipse.orm.base.ui.console.properties.HibernatePropertyPage"
             name="Hibernate Settings"
             objectClass="org.eclipse.jdt.core.IJavaProject">
              </page>
       <page
-            class="org.hibernate.eclipse.console.properties.HibernatePropertyPage"
-            id="org.hibernate.eclipse.console.properties.HibernatePropertyPage"
+            class="org.hibernate.tool.eclipse.orm.base.ui.console.properties.HibernatePropertyPage"
+            id="org.hibernate.tool.eclipse.orm.base.ui.console.properties.HibernatePropertyPage"
             name="Hibernate Settings"
             objectClass="org.eclipse.core.resources.IProject">
          <filter
@@ -129,32 +129,32 @@
    <extension
          point="org.eclipse.ui.editors">
       <editor
-            class="org.hibernate.eclipse.hqleditor.HQLEditor"
-            contributorClass="org.hibernate.eclipse.hqleditor.HQLEditorActionContributor"
+            class="org.hibernate.tool.eclipse.orm.base.ui.hqleditor.HQLEditor"
+            contributorClass="org.hibernate.tool.eclipse.orm.base.ui.hqleditor.HQLEditorActionContributor"
             extensions="hql"
             icon="icons/images/hql_editor.gif"
-            id="org.hibernate.eclipse.hqleditor.HQLEditor"
+            id="org.hibernate.tool.eclipse.orm.base.ui.hqleditor.HQLEditor"
             name="HQL Editor">
       </editor>
       <editor
-            class="org.hibernate.eclipse.criteriaeditor.CriteriaEditor"
-            contributorClass="org.hibernate.eclipse.criteriaeditor.CriteriaEditorActionContributor"
+            class="org.hibernate.tool.eclipse.orm.base.ui.criteriaeditor.CriteriaEditor"
+            contributorClass="org.hibernate.tool.eclipse.orm.base.ui.criteriaeditor.CriteriaEditorActionContributor"
             extensions="crit"
             icon="icons/images/criteria_editor.gif"
-            id="org.hibernate.eclipse.criteriaeditor.CriteriaEditor"
+            id="org.hibernate.tool.eclipse.orm.base.ui.criteriaeditor.CriteriaEditor"
             name="Criteria Editor"/>
    </extension>
     <extension
           point="org.eclipse.ui.actionSets">
        <actionSet
-             id="org.hibernate.eclipse.console.actionSet"
+             id="org.hibernate.tool.eclipse.orm.base.ui.console.actionSet"
              label="HQL"
              visible="false">
           <action
                 allowLabelUpdate="true"
                 icon="icons/images/execute.gif"
-                id="org.hibernate.eclipse.console.actions.ExecuteQueryAction"
-                definitionId="org.hibernate.eclipse.console.actions.ExecuteHQLActionCommand"
+                id="org.hibernate.tool.eclipse.orm.base.ui.console.actions.ExecuteQueryAction"
+                definitionId="org.hibernate.tool.eclipse.orm.base.ui.console.actions.ExecuteHQLActionCommand"
                 label="Run Query"
                 retarget="true"
                 tooltip="Run HQL Query from current editor">
@@ -167,42 +167,42 @@
       point="org.eclipse.ui.commands">
    <command
          categoryId="org.eclipse.ui.category.edit"
-         id="org.hibernate.eclipse.console.actions.ExecuteHQLActionCommand"
+         id="org.hibernate.tool.eclipse.orm.base.ui.console.actions.ExecuteHQLActionCommand"
          name="Run Query command"/>
 </extension>
 <extension
       point="org.eclipse.ui.bindings">
    <key
-         commandId="org.hibernate.eclipse.console.actions.ExecuteHQLActionCommand"
-         contextId="org.hibernate.eclipse.console.hql"
+         commandId="org.hibernate.tool.eclipse.orm.base.ui.console.actions.ExecuteHQLActionCommand"
+         contextId="org.hibernate.tool.eclipse.orm.base.ui.console.hql"
          schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
          sequence="CTRL+ENTER"/>
 </extension>
 
  <extension point="org.eclipse.ui.actionSetPartAssociations">
-  <actionSetPartAssociation targetID="org.hibernate.eclipse.console.actionSet">
-   <part id="org.hibernate.eclipse.hqleditor.HQLEditor"/>
-   <part id="org.hibernate.eclipse.criteriaeditor.CriteriaEditor"/>
+  <actionSetPartAssociation targetID="org.hibernate.tool.eclipse.orm.base.ui.console.actionSet">
+   <part id="org.hibernate.tool.eclipse.orm.base.ui.hqleditor.HQLEditor"/>
+   <part id="org.hibernate.tool.eclipse.orm.base.ui.criteriaeditor.CriteriaEditor"/>
   </actionSetPartAssociation>
  </extension>
 
    <extension
          point="org.eclipse.ui.perspectiveExtensions">
-      <perspectiveExtension targetID="org.hibernate.eclipse.console.HibernateConsolePerspective">
+      <perspectiveExtension targetID="org.hibernate.tool.eclipse.orm.base.ui.console.HibernateConsolePerspective">
          <actionSet id="org.eclipse.jdt.ui.JavaActionSet"/>
-         <newWizardShortcut id="org.hibernate.eclipse.console.wizards.NewHibernateMappingFileWizard"/>
-         <newWizardShortcut id="org.hibernate.eclipse.console.wizards.NewConfigurationWizard"/>
-         <newWizardShortcut id="org.hibernate.eclipse.console.wizards.ConsoleConfigurationCreationWizard"/>
-         <newWizardShortcut id="org.hibernate.eclipse.console.wizards.NewReverseEngineeringFileWizard"/>
-         <viewShortcut id="org.hibernate.eclipse.console.views.KnownConfigurationsView"/>
-         <viewShortcut id="org.hibernate.eclipse.console.views.QueryPageTabView"/>
-         <viewShortcut id="org.hibernate.eclipse.console.views.DynamicSQLPreviewView"/>
+         <newWizardShortcut id="org.hibernate.tool.eclipse.orm.base.ui.console.wizards.NewHibernateMappingFileWizard"/>
+         <newWizardShortcut id="org.hibernate.tool.eclipse.orm.base.ui.console.wizards.NewConfigurationWizard"/>
+         <newWizardShortcut id="org.hibernate.tool.eclipse.orm.base.ui.console.wizards.ConsoleConfigurationCreationWizard"/>
+         <newWizardShortcut id="org.hibernate.tool.eclipse.orm.base.ui.console.wizards.NewReverseEngineeringFileWizard"/>
+         <viewShortcut id="org.hibernate.tool.eclipse.orm.base.ui.console.views.KnownConfigurationsView"/>
+         <viewShortcut id="org.hibernate.tool.eclipse.orm.base.ui.console.views.QueryPageTabView"/>
+         <viewShortcut id="org.hibernate.tool.eclipse.orm.base.ui.console.views.DynamicSQLPreviewView"/>
       </perspectiveExtension>
    </extension>
    <extension
          point="org.eclipse.ui.contexts">
       <context
-            id="org.hibernate.eclipse.console.hql"
+            id="org.hibernate.tool.eclipse.orm.base.ui.console.hql"
             name="Editing HQL"
             parentId="org.eclipse.ui.textEditorScope"/>
    </extension>
@@ -454,20 +454,20 @@
    <extension
          point="org.eclipse.ui.preferencePages">
       <page
-            class="org.hibernate.eclipse.hqleditor.preferences.HQLEditorPreferencePage"
-            id="org.hibernate.eclipse.hqleditor.preferences.HQLEditorPreferencePage"
+            class="org.hibernate.tool.eclipse.orm.base.ui.hqleditor.preferences.HQLEditorPreferencePage"
+            id="org.hibernate.tool.eclipse.orm.base.ui.hqleditor.preferences.HQLEditorPreferencePage"
             name="%Preference_Page_HQL">
-         <keywordReference id="org.hibernate.eclipse.hqleditor.preferencekeywords"/>
+         <keywordReference id="org.hibernate.tool.eclipse.orm.base.ui.hqleditor.preferencekeywords"/>
       </page>
    </extension>
    <extension
          point="org.eclipse.core.runtime.preferences">
-      <initializer class="org.hibernate.eclipse.hqleditor.preferences.PreferenceInitializer"/>
+      <initializer class="org.hibernate.tool.eclipse.orm.base.ui.hqleditor.preferences.PreferenceInitializer"/>
    </extension>
    <extension
          point="org.eclipse.ui.keywords">
       <keyword
-            id="org.hibernate.eclipse.hqleditor.preferencekeywords"
+            id="org.hibernate.tool.eclipse.orm.base.ui.hqleditor.preferencekeywords"
             label="hql editor colors coloring highlighting query"/>
    </extension>
    <extension
@@ -476,29 +476,29 @@
    <extension
          point="org.eclipse.ui.exportWizards">
       <wizard
-            category="org.hibernate.eclipse.console.HibernateToolsExport"
-            class="org.hibernate.eclipse.codegen.ExportAntCodeGenWizard"
+            category="org.hibernate.tool.eclipse.orm.base.ui.console.HibernateToolsExport"
+            class="org.hibernate.tool.eclipse.orm.base.ui.codegen.ExportAntCodeGenWizard"
             icon="icons/images/ant_codegen_export.gif"
-            id="org.hibernate.eclipse.codegen.ExportAntCodeGenWizard"
+            id="org.hibernate.tool.eclipse.orm.base.ui.codegen.ExportAntCodeGenWizard"
             name="%exportHibernateAntCodeGenerationWizardName">
          <description>
             %exportHibernateAntCodeGenerationWizardDescription
          </description>
       </wizard>
       <category
-            id="org.hibernate.eclipse.console.HibernateToolsExport"
+            id="org.hibernate.tool.eclipse.orm.base.ui.console.HibernateToolsExport"
             name="Hibernate">
       </category>
    </extension>
    <extension
          point="org.eclipse.ui.perspectiveExtensions">
       <perspectiveExtension
-            targetID="org.hibernate.eclipse.console.HibernateConsolePerspective">
+            targetID="org.hibernate.tool.eclipse.orm.base.ui.console.HibernateConsolePerspective">
          <newWizardShortcut
-               id="org.hibernate.eclipse.console.wizards.ConsoleConfigurationCreationWizard">
+               id="org.hibernate.tool.eclipse.orm.base.ui.console.wizards.ConsoleConfigurationCreationWizard">
          </newWizardShortcut>
          <perspectiveShortcut
-               id="org.hibernate.eclipse.console.HibernateConsolePerspective">
+               id="org.hibernate.tool.eclipse.orm.base.ui.console.HibernateConsolePerspective">
          </perspectiveShortcut>
       </perspectiveExtension>
    </extension>

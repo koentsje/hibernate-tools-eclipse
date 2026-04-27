@@ -36,7 +36,7 @@ import org.hibernate.tool.eclipse.orm.launch.core.nls.Messages;
  */
 public class ConsoleConfigurationRenameProcessor extends RenameProcessor {
 	
-	public static final String PROCESSOR_ID = "org.hibernate.eclipse.console.renameProcessor"; //$NON-NLS-1$
+	public static final String PROCESSOR_ID = "org.hibernate.tool.eclipse.orm.base.ui.console.renameProcessor"; //$NON-NLS-1$
 	
 	private ILaunchConfiguration config;
 	

@@ -33,7 +33,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
  */
 public class HibernateBuilder extends IncrementalProjectBuilder {
 
-	public static final String BUILDER_ID = "org.hibernate.eclipse.console.hibernateBuilder"; //$NON-NLS-1$
+	public static final String BUILDER_ID = "org.hibernate.tool.eclipse.orm.base.ui.console.hibernateBuilder"; //$NON-NLS-1$
 	
 	@Override
     protected IProject[] build(int kind, Map<String, String> args, final IProgressMonitor monitor)

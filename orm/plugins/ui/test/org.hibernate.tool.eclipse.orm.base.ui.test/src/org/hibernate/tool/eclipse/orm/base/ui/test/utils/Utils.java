@@ -20,7 +20,7 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.internal.ErrorEditorPart;
 import org.eclipse.ui.texteditor.ITextEditor;
-import org.hibernate.eclipse.console.utils.OpenMappingUtils;
+import org.hibernate.tool.eclipse.orm.base.ui.console.utils.OpenMappingUtils;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
 
 /**

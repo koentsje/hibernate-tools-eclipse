@@ -31,7 +31,7 @@ import org.eclipse.jface.text.BadLocationException;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.text.edits.MalformedTreeException;
-import org.hibernate.eclipse.console.HibernateBasePlugin;
+import org.hibernate.tool.eclipse.orm.base.ui.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.jdt.ui.Activator;
 import org.hibernate.tool.eclipse.orm.jdt.core.internal.jpa.common.EntityInfo;
 import org.hibernate.tool.eclipse.orm.jdt.core.internal.jpa.common.EntityInfosCollection;

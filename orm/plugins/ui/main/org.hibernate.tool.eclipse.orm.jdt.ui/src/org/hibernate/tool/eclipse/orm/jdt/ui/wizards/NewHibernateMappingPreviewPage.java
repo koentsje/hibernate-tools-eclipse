@@ -42,7 +42,7 @@ import org.eclipse.ltk.internal.ui.refactoring.PreviewWizardPage;
 import org.eclipse.text.edits.MalformedTreeException;
 import org.eclipse.text.edits.ReplaceEdit;
 import org.eclipse.text.edits.TextEdit;
-import org.hibernate.eclipse.console.HibernateBasePlugin;
+import org.hibernate.tool.eclipse.orm.base.ui.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.common.base.core.utils.FileUtils;
 
 /**

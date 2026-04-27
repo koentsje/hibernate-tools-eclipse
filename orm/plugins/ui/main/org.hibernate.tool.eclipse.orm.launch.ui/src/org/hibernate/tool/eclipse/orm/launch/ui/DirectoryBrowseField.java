@@ -14,7 +14,7 @@ import org.eclipse.swt.widgets.DirectoryDialog;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.hibernate.tool.eclipse.orm.launch.ui.nls.Messages;
-import org.hibernate.eclipse.console.utils.DialogSelectionHelper;
+import org.hibernate.tool.eclipse.orm.base.ui.console.utils.DialogSelectionHelper;
 
 public class DirectoryBrowseField extends StringDialogField {
 

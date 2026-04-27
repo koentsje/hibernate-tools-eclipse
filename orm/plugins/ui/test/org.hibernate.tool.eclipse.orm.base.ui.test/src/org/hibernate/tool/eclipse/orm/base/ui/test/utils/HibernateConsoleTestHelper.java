@@ -9,7 +9,7 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.FileEditorInput;
-import org.hibernate.eclipse.console.HibernateConsolePerspectiveFactory;
+import org.hibernate.tool.eclipse.orm.base.ui.console.HibernateConsolePerspectiveFactory;
 import org.hibernate.tool.eclipse.orm.base.ui.test.utils.project.SimpleTestProject;
 import org.junit.Assume;
 

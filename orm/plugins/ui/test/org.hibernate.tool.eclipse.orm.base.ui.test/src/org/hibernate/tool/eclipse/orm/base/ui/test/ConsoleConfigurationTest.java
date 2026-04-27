@@ -15,7 +15,7 @@ import org.hibernate.tool.eclipse.orm.console.core.QueryExecutor;
 import org.hibernate.tool.eclipse.orm.query.QueryParameter;
 import org.hibernate.tool.eclipse.orm.query.QueryInputModel;
 import org.hibernate.tool.eclipse.orm.query.IQueryPage;
-import org.hibernate.eclipse.console.views.QueryPageTabView;
+import org.hibernate.tool.eclipse.orm.base.ui.console.views.QueryPageTabView;
 import org.hibernate.tool.eclipse.orm.base.ui.test.utils.TestConsoleConfigurationPreferences;
 import org.hibernate.tool.eclipse.orm.base.ui.test.nls.Messages;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IColumn;

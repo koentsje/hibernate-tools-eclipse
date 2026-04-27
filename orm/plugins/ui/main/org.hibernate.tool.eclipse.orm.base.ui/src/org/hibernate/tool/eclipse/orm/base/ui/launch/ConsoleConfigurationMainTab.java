@@ -48,12 +48,12 @@ import org.hibernate.tool.eclipse.orm.launch.core.HibernateLaunchConstants;
 import org.hibernate.tool.eclipse.orm.launch.core.IBasicHibernateLaunchConstants;
 import org.hibernate.tool.eclipse.orm.launch.core.PathHelper;
 import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
-import org.hibernate.eclipse.console.HibernateBasePlugin;
-import org.hibernate.eclipse.console.utils.DialogSelectionHelper;
-import org.hibernate.eclipse.ui.console.utils.EclipseImages;
+import org.hibernate.tool.eclipse.orm.base.ui.console.HibernateBasePlugin;
+import org.hibernate.tool.eclipse.orm.base.ui.console.utils.DialogSelectionHelper;
+import org.hibernate.tool.eclipse.orm.base.ui.ui.console.utils.EclipseImages;
 import org.hibernate.tool.eclipse.orm.console.core.utils.ProjectUtils;
-import org.hibernate.eclipse.console.wizards.NewConfigurationWizard;
-import org.hibernate.eclipse.console.wizards.NewConfigurationWizardPage;
+import org.hibernate.tool.eclipse.orm.base.ui.console.wizards.NewConfigurationWizard;
+import org.hibernate.tool.eclipse.orm.base.ui.console.wizards.NewConfigurationWizardPage;
 import org.hibernate.tool.eclipse.orm.utils.HibernateEclipseUtils;
 import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
 import org.hibernate.tool.eclipse.orm.runtime.spi.RuntimeServiceManager;
@@ -276,7 +276,7 @@ public class ConsoleConfigurationMainTab extends ConsoleConfigurationTab {
 
 	private void handlePropertyFileBrowse() {
 		IPath initialPath = getPropertyFilePath() != null ? getPropertyFilePath() : new Path(getProjectName());
-		IPath[] paths = org.hibernate.eclipse.console.utils.xpl.DialogSelectionHelper.chooseFileEntries(getShell(),  initialPath, new IPath[0], Messages.ConsoleConfigurationMainTab_select_propertyfile, Messages.ConsoleConfigurationMainTab_choose_file_to_use_as_hibernate_properties, new String[] {Messages.ConsoleConfigurationMainTab_properties}, false, false, true);
+		IPath[] paths = org.hibernate.tool.eclipse.orm.base.ui.console.utils.xpl.DialogSelectionHelper.chooseFileEntries(getShell(),  initialPath, new IPath[0], Messages.ConsoleConfigurationMainTab_select_propertyfile, Messages.ConsoleConfigurationMainTab_choose_file_to_use_as_hibernate_properties, new String[] {Messages.ConsoleConfigurationMainTab_properties}, false, false, true);
 		if(paths!=null && paths.length==1) {
 			propertyFileText.setText( (paths[0]).toOSString() );
 		}

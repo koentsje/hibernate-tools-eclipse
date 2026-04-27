@@ -52,7 +52,7 @@ import org.eclipse.swt.widgets.Text;
 import org.hibernate.tool.eclipse.orm.launch.ui.nls.Messages;
 import org.hibernate.tool.eclipse.orm.launch.core.model.ExporterFactory;
 import org.hibernate.tool.eclipse.orm.launch.core.model.ExporterProperty;
-import org.hibernate.eclipse.console.utils.DialogSelectionHelper;
+import org.hibernate.tool.eclipse.orm.base.ui.console.utils.DialogSelectionHelper;
 import org.hibernate.tool.eclipse.common.base.core.utils.StringHelper;
 
 /**

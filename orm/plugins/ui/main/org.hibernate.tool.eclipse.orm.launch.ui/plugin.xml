@@ -46,7 +46,7 @@
       <perspectiveExtension targetID="org.eclipse.jdt.ui.JavaBrowsingPerspective">
          <actionSet id="org.hibernate.eclipse.launch.actionset"/>
       </perspectiveExtension>
-      <perspectiveExtension targetID="org.hibernate.eclipse.console.HibernateConsolePerspective">
+      <perspectiveExtension targetID="org.hibernate.tool.eclipse.orm.base.ui.console.HibernateConsolePerspective">
          <actionSet id="org.hibernate.eclipse.launch.actionset"/>
       </perspectiveExtension>
    </extension>

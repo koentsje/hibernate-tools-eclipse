@@ -55,7 +55,7 @@
       </renameParticipant>
       <renameParticipant
             class="org.hibernate.tool.eclipse.orm.launch.core.refactoring.ConnectionProfileRenameParticipant"
-            id="org.hibernate.eclipse.console.renameConnectionProfileParticipant"
+            id="org.hibernate.tool.eclipse.orm.base.ui.console.renameConnectionProfileParticipant"
             name="name">
          <enablement>
             <with
@@ -68,7 +68,7 @@
       </renameParticipant>
       <renameParticipant
             class="org.hibernate.tool.eclipse.orm.launch.core.refactoring.ConsoleConfigurationRenameParticipant"
-            id="org.hibernate.eclipse.console.renameParticipant1"
+            id="org.hibernate.tool.eclipse.orm.base.ui.console.renameParticipant1"
             name="ConsoleConfigurationRenameParticipant">
          <enablement>
             <with

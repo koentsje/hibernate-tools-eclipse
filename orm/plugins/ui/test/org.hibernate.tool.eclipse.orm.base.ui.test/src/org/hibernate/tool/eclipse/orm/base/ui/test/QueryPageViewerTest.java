@@ -10,7 +10,7 @@
  ******************************************************************************/
 package org.hibernate.tool.eclipse.orm.base.ui.test;
 
-import org.hibernate.eclipse.console.views.QueryPageViewer;
+import org.hibernate.tool.eclipse.orm.base.ui.console.views.QueryPageViewer;
 import org.junit.Assert;
 import org.junit.Test;
 

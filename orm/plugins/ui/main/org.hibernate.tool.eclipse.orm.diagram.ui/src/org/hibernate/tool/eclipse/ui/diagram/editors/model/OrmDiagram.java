@@ -49,7 +49,7 @@ import org.eclipse.ui.views.properties.TextPropertyDescriptor;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateConsoleCorePlugin;
-import org.hibernate.eclipse.console.utils.ProjectUtilsUI;
+import org.hibernate.tool.eclipse.orm.base.ui.console.utils.ProjectUtilsUI;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
 import org.hibernate.tool.eclipse.orm.runtime.spi.ITable;

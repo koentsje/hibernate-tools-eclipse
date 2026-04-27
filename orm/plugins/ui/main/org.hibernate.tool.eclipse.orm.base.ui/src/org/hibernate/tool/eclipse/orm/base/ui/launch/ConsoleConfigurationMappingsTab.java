@@ -20,10 +20,10 @@ import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
 import org.hibernate.tool.eclipse.orm.launch.core.HibernateLaunchConstants;
 import org.hibernate.tool.eclipse.orm.launch.core.IBasicHibernateLaunchConstants;
 import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
-import org.hibernate.eclipse.console.HibernateBasePlugin;
-import org.hibernate.eclipse.console.utils.DialogSelectionHelper;
-import org.hibernate.eclipse.ui.console.utils.EclipseImages;
-import org.hibernate.eclipse.console.wizards.UpDownListComposite;
+import org.hibernate.tool.eclipse.orm.base.ui.console.HibernateBasePlugin;
+import org.hibernate.tool.eclipse.orm.base.ui.console.utils.DialogSelectionHelper;
+import org.hibernate.tool.eclipse.orm.base.ui.ui.console.utils.EclipseImages;
+import org.hibernate.tool.eclipse.orm.base.ui.console.wizards.UpDownListComposite;
 
 public class ConsoleConfigurationMappingsTab extends ConsoleConfigurationTab {
 

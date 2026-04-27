@@ -64,7 +64,7 @@ public class OpenMappingAction extends SelectionAction {
 				IProperty compositSel = ((IProperty)selection);
 				IProperty parentProperty = ((IPersistentClass)compositSel.getPersistentClass()).getProperty();
 				try {
-					editorPart = org.hibernate.eclipse.console.actions.OpenMappingAction.run(consoleConfig, compositSel, parentProperty);
+					editorPart = org.hibernate.tool.eclipse.orm.base.ui.console.actions.OpenMappingAction.run(consoleConfig, compositSel, parentProperty);
 				} catch (CoreException e) {
 					HibernateConsoleCorePlugin.getDefault().logErrorMessage(Messages.OpenMappingAction_canot_find_or_open_mapping_file, e);
 				} catch (FileNotFoundException e) {
@@ -82,7 +82,7 @@ public class OpenMappingAction extends SelectionAction {
 				selectionParent = shapeParent.getOrmElement();
 			}
 			try {
-				editorPart = org.hibernate.eclipse.console.actions.OpenMappingAction.run(consoleConfig, selection, selectionParent);
+				editorPart = org.hibernate.tool.eclipse.orm.base.ui.console.actions.OpenMappingAction.run(consoleConfig, selection, selectionParent);
 			} catch (CoreException e) {
 				HibernateConsoleCorePlugin.getDefault().logErrorMessage(Messages.OpenMappingAction_open_mapping_file, e);
 			} catch (FileNotFoundException e) {

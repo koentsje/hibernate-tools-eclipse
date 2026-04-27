@@ -19,8 +19,8 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.KnownConfigurations;
-import org.hibernate.eclipse.console.wizards.ConsoleConfigurationCreationWizard;
-import org.hibernate.eclipse.console.wizards.ConsoleConfigurationWizardPage;
+import org.hibernate.tool.eclipse.orm.base.ui.console.wizards.ConsoleConfigurationCreationWizard;
+import org.hibernate.tool.eclipse.orm.base.ui.console.wizards.ConsoleConfigurationWizardPage;
 import org.hibernate.tool.eclipse.orm.base.ui.launch.ConsoleConfigurationMainTab;
 
 /**
