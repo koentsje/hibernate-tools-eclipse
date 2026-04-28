@@ -27,50 +27,30 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Iterator;
 
+import org.eclipse.core.commands.AbstractHandler;
+import org.eclipse.core.commands.ExecutionEvent;
+import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.osgi.util.NLS;
-import org.eclipse.ui.IActionDelegate;
-import org.eclipse.ui.IObjectActionDelegate;
-import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.handlers.HandlerUtil;
 import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 import org.hibernate.tool.eclipse.orm.base.ui.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.common.base.core.utils.XMLPrettyPrinter;
 
-public class JTidyFormatAction implements IObjectActionDelegate {
+public class JTidyFormatAction extends AbstractHandler {
 
-    private IWorkbenchPart targetPart;
-    private IStructuredSelection currentSelection;
-
-    /**
-	 * Constructor for Action1.
-	 */
-	public JTidyFormatAction() {
-		super();
-
-
-
-	}
-
-	/**
-	 * @see IObjectActionDelegate#setActivePart(IAction, IWorkbenchPart)
-	 */
-	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
-        this.targetPart = targetPart;
-	}
-
-	/**
-	 * @see IActionDelegate#run(IAction)
-	 */
-	public void run(IAction action) {
-		String out = NLS.bind(Messages.JTidyFormatAction_do_you_want_format_xml_files_with_jtidy, currentSelection.size());
-        if(currentSelection!=null && MessageDialog.openQuestion(targetPart.getSite().getShell(),
+	@Override
+	public Object execute(ExecutionEvent event) throws ExecutionException {
+		IStructuredSelection selection = HandlerUtil.getCurrentStructuredSelection(event);
+		Shell shell = HandlerUtil.getActiveShell(event);
+		String out = NLS.bind(Messages.JTidyFormatAction_do_you_want_format_xml_files_with_jtidy, selection.size());
+        if(!selection.isEmpty() && MessageDialog.openQuestion(shell,
         		Messages.JTidyFormatAction_format_with_jtidy, out) ) {
-            Iterator<?> iterator = currentSelection.iterator();
+            Iterator<?> iterator = selection.iterator();
             try {
             while(iterator.hasNext() ) {
                 IFile file = (IFile) iterator.next();
@@ -90,20 +70,12 @@ public class JTidyFormatAction implements IObjectActionDelegate {
                 }
             }
             } catch (CoreException e) {
-                HibernateBasePlugin.getDefault().showError(targetPart.getSite().getShell(), Messages.JTidyFormatAction_error_while_running_jtidy, e);
+                HibernateBasePlugin.getDefault().showError(shell, Messages.JTidyFormatAction_error_while_running_jtidy, e);
             } catch (IOException io) {
-                HibernateBasePlugin.getDefault().showError(targetPart.getSite().getShell(), Messages.JTidyFormatAction_error_while_running_jtidy, io);
+                HibernateBasePlugin.getDefault().showError(shell, Messages.JTidyFormatAction_error_while_running_jtidy, io);
             }
         }
+		return null;
 	}
-
-    /* (non-Javadoc)
-     * @see org.eclipse.ui.IActionDelegate#selectionChanged(org.eclipse.jface.action.IAction, org.eclipse.jface.viewers.ISelection)
-     */
-    public void selectionChanged(IAction action, ISelection selection) {
-    	if (selection instanceof IStructuredSelection) {
-    		currentSelection = (IStructuredSelection)selection;
-    	}
-    }
 
 }

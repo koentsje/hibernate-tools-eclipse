@@ -16,16 +16,16 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-import org.eclipse.jface.action.IAction;
+import org.eclipse.core.commands.AbstractHandler;
+import org.eclipse.core.commands.ExecutionEvent;
+import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.TreePath;
 import org.eclipse.jface.viewers.TreeSelection;
 import org.eclipse.ui.IEditorPart;
-import org.eclipse.ui.IObjectActionDelegate;
-import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.ui.ide.IDE;
-import org.eclipse.ui.internal.ObjectPluginAction;
 import org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateConsoleCorePlugin;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
@@ -33,22 +33,16 @@ import org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass;
 import org.hibernate.tool.eclipse.orm.diagram.ui.nls.Messages;
 import org.hibernate.tool.eclipse.ui.diagram.UiPlugin;
 
-@SuppressWarnings("restriction")
-public class OpenDiagramActionDelegate implements IObjectActionDelegate {
+public class OpenDiagramActionDelegate extends AbstractHandler {
 
-	//private IWorkbenchPart fPart;
-
-	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
-		//this.fPart = targetPart;
-	}
-
-	public void selectionChanged(IAction action, ISelection selection) {
-	}
-
-	public void run(IAction action) {
-    	ObjectPluginAction objectPluginAction = (ObjectPluginAction)action;
+	@Override
+	public Object execute(ExecutionEvent event) throws ExecutionException {
+    	ISelection sel = HandlerUtil.getCurrentSelection(event);
+    	if (!(sel instanceof TreeSelection)) {
+    		return null;
+    	}
     	Map<ConsoleConfiguration, Set<IPersistentClass>> mapCC_PCs = new HashMap<ConsoleConfiguration, Set<IPersistentClass>>();
-    	TreePath[] paths = ((TreeSelection)objectPluginAction.getSelection()).getPaths();
+    	TreePath[] paths = ((TreeSelection)sel).getPaths();
     	for (int i = 0; i < paths.length; i++) {
     		final Object firstSegment = paths[i].getFirstSegment();
     		if (!(firstSegment instanceof ConsoleConfiguration)) {
@@ -100,8 +94,9 @@ public class OpenDiagramActionDelegate implements IObjectActionDelegate {
 	    		openEditor(setPC, consoleConfiguration);
 	    	} catch (PartInitException e) {
 	    		HibernateConsoleCorePlugin.getDefault().logErrorMessage("Can't open mapping view.", e);		//$NON-NLS-1$
-			} 
+			}
     	}
+		return null;
 	}
 
 	public IEditorPart openEditor(IPersistentClass persClass,

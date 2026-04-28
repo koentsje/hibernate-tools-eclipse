@@ -13,23 +13,31 @@
             name="Hibernate Diagram Viewer">
       </editor>
    </extension>
-   <extension point="org.eclipse.ui.popupMenus">
-      <objectContribution id="diagramEditorAction" objectClass="java.lang.Object">
-         <visibility>
-           <or>
-             <objectClass name="org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration"/>
-             <objectClass name="org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration"/>
-             <objectClass name="org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass"/>
-           </or>
-         </visibility>
-         <action
+   <extension point="org.eclipse.ui.commands">
+      <command
             id="org.hibernate.tool.eclipse.ui.view.openDiagramAction"
-            label="Mapping Diagram"
-            icon="images/hibernate_small_icon.gif"
-            menubarPath="group.primalEditors.last"
-            class="org.hibernate.tool.eclipse.ui.view.OpenDiagramActionDelegate">
-         </action>
-      </objectContribution>
+            name="Mapping Diagram"
+            defaultHandler="org.hibernate.tool.eclipse.ui.view.OpenDiagramActionDelegate"/>
+   </extension>
+   <extension point="org.eclipse.ui.menus">
+      <menuContribution locationURI="popup:org.eclipse.ui.popup.any?after=group.primalEditors.last">
+         <command commandId="org.hibernate.tool.eclipse.ui.view.openDiagramAction"
+               icon="images/hibernate_small_icon.gif"
+               label="Mapping Diagram"
+               style="push">
+            <visibleWhen checkEnabled="false">
+               <with variable="activeMenuSelection">
+                  <iterate ifEmpty="false" operator="or">
+                     <or>
+                        <instanceof value="org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration"/>
+                        <instanceof value="org.hibernate.tool.eclipse.orm.console.core.ConsoleConfiguration"/>
+                        <instanceof value="org.hibernate.tool.eclipse.orm.runtime.spi.IPersistentClass"/>
+                     </or>
+                  </iterate>
+               </with>
+            </visibleWhen>
+         </command>
+      </menuContribution>
    </extension>
    <extension
          point="org.eclipse.ui.elementFactories">
