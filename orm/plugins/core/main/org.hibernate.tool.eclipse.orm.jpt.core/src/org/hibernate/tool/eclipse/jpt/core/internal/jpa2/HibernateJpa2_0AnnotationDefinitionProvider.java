@@ -24,19 +24,19 @@ import org.eclipse.jpt.jpa.core.internal.resource.java.NamedNativeQueryAnnotatio
 import org.eclipse.jpt.jpa.core.internal.resource.java.NamedQueryAnnotationDefinition;
 import org.eclipse.jpt.jpa.core.internal.resource.java.PrimaryKeyJoinColumnAnnotationDefinition;
 import org.eclipse.jpt.jpa.core.internal.resource.java.SecondaryTableAnnotationDefinition;
-import org.hibernate.tool.eclipse.jpt.core.internal.resource.java.DiscriminatorFormulaAnnotationImpl.DiscriminatorFormulaAnnotationDefinition;
-import org.hibernate.tool.eclipse.jpt.core.internal.resource.java.ForeignKeyAnnotationImpl.ForeignKeyAnnotationDefinition;
-import org.hibernate.tool.eclipse.jpt.core.internal.resource.java.GeneratedAnnotationImpl.GeneratedAnnotationDefinition;
-import org.hibernate.tool.eclipse.jpt.core.internal.resource.java.GenericGeneratorAnnotationDefinition;
-import org.hibernate.tool.eclipse.jpt.core.internal.resource.java.GenericGeneratorsAnnotationDefinition;
-import org.hibernate.tool.eclipse.jpt.core.internal.resource.java.HibernateNamedNativeQueriesAnnotationDefinition;
-import org.hibernate.tool.eclipse.jpt.core.internal.resource.java.HibernateNamedNativeQueryAnnotationDefinition;
-import org.hibernate.tool.eclipse.jpt.core.internal.resource.java.HibernateNamedQueriesAnnotationDefinition;
-import org.hibernate.tool.eclipse.jpt.core.internal.resource.java.HibernateNamedQueryAnnotationDefinition;
-import org.hibernate.tool.eclipse.jpt.core.internal.resource.java.IndexAnnotationImpl.IndexAnnotationDefinition;
-import org.hibernate.tool.eclipse.jpt.core.internal.resource.java.TypeAnnotationImpl.TypeAnnotationDefinition;
-import org.hibernate.tool.eclipse.jpt.core.internal.resource.java.TypeDefAnnotationDefinition;
-import org.hibernate.tool.eclipse.jpt.core.internal.resource.java.TypeDefsAnnotationDefinition;
+import org.hibernate.tool.eclipse.orm.jpt.java.resource.java.DiscriminatorFormulaAnnotationImpl.DiscriminatorFormulaAnnotationDefinition;
+import org.hibernate.tool.eclipse.orm.jpt.java.resource.java.ForeignKeyAnnotationImpl.ForeignKeyAnnotationDefinition;
+import org.hibernate.tool.eclipse.orm.jpt.java.resource.java.GeneratedAnnotationImpl.GeneratedAnnotationDefinition;
+import org.hibernate.tool.eclipse.orm.jpt.java.resource.java.GenericGeneratorAnnotationDefinition;
+import org.hibernate.tool.eclipse.orm.jpt.java.resource.java.GenericGeneratorsAnnotationDefinition;
+import org.hibernate.tool.eclipse.orm.jpt.java.resource.java.HibernateNamedNativeQueriesAnnotationDefinition;
+import org.hibernate.tool.eclipse.orm.jpt.java.resource.java.HibernateNamedNativeQueryAnnotationDefinition;
+import org.hibernate.tool.eclipse.orm.jpt.java.resource.java.HibernateNamedQueriesAnnotationDefinition;
+import org.hibernate.tool.eclipse.orm.jpt.java.resource.java.HibernateNamedQueryAnnotationDefinition;
+import org.hibernate.tool.eclipse.orm.jpt.java.resource.java.IndexAnnotationImpl.IndexAnnotationDefinition;
+import org.hibernate.tool.eclipse.orm.jpt.java.resource.java.TypeAnnotationImpl.TypeAnnotationDefinition;
+import org.hibernate.tool.eclipse.orm.jpt.java.resource.java.TypeDefAnnotationDefinition;
+import org.hibernate.tool.eclipse.orm.jpt.java.resource.java.TypeDefsAnnotationDefinition;
 
 /**
  * @author Dmitry Geraskov

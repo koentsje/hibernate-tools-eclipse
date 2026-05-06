@@ -47,9 +47,10 @@ import org.hibernate.tool.eclipse.orm.console.core.preferences.ConsoleConfigurat
 import org.hibernate.tool.eclipse.orm.console.core.properties.HibernatePropertiesConstants;
 import org.hibernate.tool.eclipse.orm.console.core.eclipse.HibernateProjectConsoleManager;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernatePersistenceUnit;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.Messages;
+import org.hibernate.tool.eclipse.orm.jpt.api.context.Messages;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.basic.BasicHibernateProperties;
-import org.hibernate.tool.eclipse.jpt.core.internal.validation.HibernateJpaValidationMessage;
+import org.hibernate.tool.eclipse.orm.jpt.api.validation.HibernateJpaValidationMessage;
+import org.hibernate.tool.eclipse.orm.jpt.api.context.IHibernateJpaProject;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IConfiguration;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IEnvironment;
 import org.hibernate.tool.eclipse.orm.runtime.spi.INamingStrategy;
@@ -59,7 +60,7 @@ import org.osgi.service.prefs.Preferences;
  * @author Dmitry Geraskov
  *
  */
-public class HibernateJpaProject extends AbstractJpaProject {
+public class HibernateJpaProject extends AbstractJpaProject implements IHibernateJpaProject {
 
 	private Boolean cachedNamingStrategyEnable;
 	

@@ -27,9 +27,9 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Spinner;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.CacheModeType;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.FlushModeType;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernateQuery;
+import org.hibernate.tool.eclipse.orm.jpt.api.context.CacheModeType;
+import org.hibernate.tool.eclipse.orm.jpt.api.context.FlushModeType;
+import org.hibernate.tool.eclipse.orm.jpt.api.context.HibernateQuery;
 import org.hibernate.tool.eclipse.orm.jpt.ui.nls.Messages;
 
 /**

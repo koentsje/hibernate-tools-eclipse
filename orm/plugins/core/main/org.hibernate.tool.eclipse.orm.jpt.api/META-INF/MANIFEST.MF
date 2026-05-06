@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Hibernate JPA API
+Bundle-SymbolicName: org.hibernate.tool.eclipse.orm.jpt.api;singleton:=true
+Bundle-Version: 6.0.0.qualifier
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.jpt.jpa.core,
+ org.eclipse.jpt.common.core,
+ org.eclipse.jpt.common.utility,
+ org.eclipse.wst.validation,
+ org.eclipse.jpt.jpa.db,
+ org.hibernate.tool.eclipse.orm.runtime.spi
+Export-Package: org.hibernate.tool.eclipse.orm.jpt.api.context,
+ org.hibernate.tool.eclipse.orm.jpt.api.validation
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-ActivationPolicy: lazy

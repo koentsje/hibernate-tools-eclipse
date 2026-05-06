@@ -20,8 +20,8 @@ import org.eclipse.jpt.jpa.core.jpa2.context.java.JavaElementCollectionMapping2_
 import org.eclipse.jpt.jpa.ui.details.JpaComposite;
 import org.eclipse.jpt.jpa.ui.internal.jpa2.details.java.GenericJavaUiFactory2_0;
 import org.eclipse.swt.widgets.Composite;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.java.HibernateJavaEntity;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.java.HibernateJavaIdMapping;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.HibernateJavaEntity;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.HibernateJavaIdMapping;
 import org.hibernate.tool.eclipse.jpt.ui.internal.jpa2.details.HibernateElementCollectionMapping2_0Composite;
 import org.hibernate.tool.eclipse.jpt.ui.internal.jpa2.details.java.HibernateJavaEntity2_0Composite;
 import org.hibernate.tool.eclipse.jpt.ui.internal.mapping.details.HibernateBasicMappingComposite;

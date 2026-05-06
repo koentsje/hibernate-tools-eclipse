@@ -16,7 +16,7 @@ import org.eclipse.jpt.jpa.core.JpaStructureNode;
 import org.eclipse.jpt.jpa.ui.details.JpaDetailsPageManager;
 import org.eclipse.jpt.jpa.ui.details.JpaDetailsProvider;
 import org.eclipse.swt.widgets.Composite;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.java.JavaPackageInfo;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.JavaPackageInfo;
 import org.hibernate.tool.eclipse.jpt.ui.internal.details.PackageInfoDetailsPage;
 
 /**

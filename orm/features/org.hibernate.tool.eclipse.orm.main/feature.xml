@@ -185,6 +185,27 @@
          unpack="false"/>
 
    <plugin
+         id="org.hibernate.tool.eclipse.orm.jpt.api"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.hibernate.tool.eclipse.orm.jpt.java"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.hibernate.tool.eclipse.orm.jpt.mapping"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
          id="org.hibernate.tool.eclipse.orm.jpt.core"
          download-size="0"
          install-size="0"

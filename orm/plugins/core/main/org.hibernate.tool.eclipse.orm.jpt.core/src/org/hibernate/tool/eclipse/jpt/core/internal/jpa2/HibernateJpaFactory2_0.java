@@ -15,7 +15,9 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jpt.common.core.resource.java.JavaResourceType;
 import org.eclipse.jpt.jpa.core.JpaDataSource;
 import org.eclipse.jpt.jpa.core.JpaProject;
+import org.eclipse.jpt.common.core.resource.java.JavaResourcePackage;
 import org.eclipse.jpt.jpa.core.context.Orderable;
+import org.eclipse.jpt.jpa.core.context.PersistentType;
 import org.eclipse.jpt.jpa.core.context.java.JavaAssociationOverrideContainer;
 import org.eclipse.jpt.jpa.core.context.java.JavaAttributeMapping;
 import org.eclipse.jpt.jpa.core.context.java.JavaEmbeddable;
@@ -61,8 +63,11 @@ import org.eclipse.jpt.jpa.core.resource.java.EmbeddableAnnotation;
 import org.eclipse.jpt.jpa.core.resource.java.NamedQueryAnnotation;
 import org.eclipse.jpt.jpa.core.resource.java.SequenceGeneratorAnnotation;
 import org.eclipse.jpt.jpa.db.DatabaseIdentifierAdapter;
-import org.hibernate.tool.eclipse.jpt.core.internal.HibernateAbstractJpaFactory;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.java.jpa2.HibernateJavaElementCollectionMapping2_0;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.HibernateAbstractJpaFactory;
+import org.hibernate.tool.eclipse.jpt.core.internal.HibernateJpaProject;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.HibernatePackageInfo;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.HibernatePackageInfoImpl;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.jpa2.HibernateJavaElementCollectionMapping2_0;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 import org.hibernate.tool.eclipse.orm.runtime.spi.RuntimeServiceManager;
 
@@ -87,7 +92,13 @@ public class HibernateJpaFactory2_0 extends HibernateAbstractJpaFactory implemen
 		if ( ! (config instanceof JpaProject2_0.Config)) {
 			throw new IllegalArgumentException("config must be 2.0-compatible: " + config); //$NON-NLS-1$
 		}
-		return super.buildJpaProject(config, monitor);
+		return new HibernateJpaProject(config, monitor);
+	}
+
+	@Override
+	public HibernatePackageInfo buildJavaPackageInfo(
+			PersistentType.Parent parent, JavaResourcePackage jrpt) {
+		return new HibernatePackageInfoImpl(parent, jrpt);
 	}
 
 	public MetamodelSourceType2_0.Synchronizer buildMetamodelSynchronizer(MetamodelSourceType2_0 sourceType) {

@@ -32,8 +32,8 @@ import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernateEntity;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.java.HibernateJavaEntity;
+import org.hibernate.tool.eclipse.orm.jpt.api.context.HibernateEntity;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.HibernateJavaEntity;
 import org.hibernate.tool.eclipse.jpt.ui.internal.mappings.db.xpl.ColumnCombo;
 
 /**

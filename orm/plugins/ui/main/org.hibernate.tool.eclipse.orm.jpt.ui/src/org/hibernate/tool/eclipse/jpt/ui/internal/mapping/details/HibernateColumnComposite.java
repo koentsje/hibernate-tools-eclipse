@@ -35,7 +35,7 @@ import org.eclipse.ui.forms.events.ExpansionAdapter;
 import org.eclipse.ui.forms.events.ExpansionEvent;
 import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.Section;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernateColumn;
+import org.hibernate.tool.eclipse.orm.jpt.api.context.HibernateColumn;
 import org.hibernate.tool.eclipse.jpt.ui.internal.mappings.db.xpl.ColumnCombo;
 import org.hibernate.tool.eclipse.jpt.ui.internal.mappings.db.xpl.DatabaseObjectCombo;
 import org.hibernate.tool.eclipse.jpt.ui.internal.mappings.db.xpl.TableCombo;

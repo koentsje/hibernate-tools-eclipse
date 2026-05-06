@@ -18,6 +18,9 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		<module>org.hibernate.tool.eclipse.orm.launch.core</module>
 		<module>org.hibernate.tool.eclipse.orm.jdt.core</module>
 		<module>org.hibernate.tool.eclipse.orm.xml.core</module>
+		<module>org.hibernate.tool.eclipse.orm.jpt.api</module>
+		<module>org.hibernate.tool.eclipse.orm.jpt.java</module>
+		<module>org.hibernate.tool.eclipse.orm.jpt.mapping</module>
 		<module>org.hibernate.tool.eclipse.orm.jpt.core</module>
 	</modules>
 

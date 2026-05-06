@@ -10,7 +10,7 @@
  ******************************************************************************/
 package org.hibernate.tool.eclipse.jpt.core.internal.context.persistence;
 
-import org.hibernate.tool.eclipse.jpt.core.internal.context.java.JavaPackageInfo;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.JavaPackageInfo;
 
 /**
  * @author Dmitry Geraskov

@@ -39,8 +39,8 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableItem;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.Parameter;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.ParametrizedElement;
+import org.hibernate.tool.eclipse.orm.jpt.api.context.Parameter;
+import org.hibernate.tool.eclipse.orm.jpt.api.context.ParametrizedElement;
 import org.hibernate.tool.eclipse.jpt.ui.internal.utils.PaneVisibilityEnabler;
 import org.hibernate.tool.eclipse.orm.jpt.ui.nls.Messages;
 

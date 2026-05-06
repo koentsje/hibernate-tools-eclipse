@@ -21,10 +21,10 @@ import org.eclipse.jpt.jpa.ui.internal.details.GenerationComposite;
 import org.eclipse.jpt.jpa.ui.internal.details.GeneratorComposite.GeneratorBuilder;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.GenericGenerator;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernateGeneratorContainer;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.java.HibernateGenericGeneratorContainer;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.java.JavaDbGenericGenerator;
+import org.hibernate.tool.eclipse.orm.jpt.api.context.GenericGenerator;
+import org.hibernate.tool.eclipse.orm.jpt.api.context.HibernateGeneratorContainer;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.HibernateGenericGeneratorContainer;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.JavaDbGenericGenerator;
 import org.hibernate.tool.eclipse.orm.jpt.ui.nls.Messages;
 
 /**

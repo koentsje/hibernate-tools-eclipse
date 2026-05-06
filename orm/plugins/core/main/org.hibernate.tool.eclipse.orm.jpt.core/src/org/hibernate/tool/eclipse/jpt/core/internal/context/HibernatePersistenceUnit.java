@@ -47,20 +47,22 @@ import org.eclipse.wst.validation.internal.provisional.core.IReporter;
 import org.hibernate.tool.eclipse.jpt.core.internal.HibernateJpaProject;
 import org.hibernate.tool.eclipse.jpt.core.internal.HibernateJptPlugin;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.basic.BasicHibernateProperties;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.basic.Hibernate;
+import org.hibernate.tool.eclipse.orm.jpt.api.context.Hibernate;
+import org.hibernate.tool.eclipse.orm.jpt.api.context.Messages;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.basic.HibernatePersistenceUnitProperties;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.java.HibernatePackageInfo;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.java.JavaTypeDef;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.HibernatePackageInfo;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.JavaTypeDef;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.persistence.HibernateClassRef;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.persistence.HibernatePersistenceUnitPropertiesBuilder;
-import org.hibernate.tool.eclipse.jpt.core.internal.validation.HibernateJpaValidationMessage;
+import org.hibernate.tool.eclipse.orm.jpt.api.validation.HibernateJpaValidationMessage;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.IHibernatePersistenceUnit;
 
 /**
  * @author Dmitry Geraskov
  *
  */
 public class HibernatePersistenceUnit extends AbstractPersistenceUnit
-implements Messages, Hibernate {
+implements Messages, Hibernate, IHibernatePersistenceUnit {
 
 	public String TYPE_DEF_LIST = "typeDefs"; //$NON-NLS-1$
 

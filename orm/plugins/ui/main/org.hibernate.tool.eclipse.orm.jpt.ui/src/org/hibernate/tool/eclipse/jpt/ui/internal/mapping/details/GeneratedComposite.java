@@ -16,8 +16,8 @@ import java.util.Collection;
 import org.eclipse.jpt.common.ui.internal.widgets.EnumFormComboViewer;
 import org.eclipse.jpt.common.ui.internal.widgets.Pane;
 import org.eclipse.swt.widgets.Composite;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.Generated;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.GenerationTime;
+import org.hibernate.tool.eclipse.orm.jpt.api.context.Generated;
+import org.hibernate.tool.eclipse.orm.jpt.api.context.GenerationTime;
 import org.hibernate.tool.eclipse.orm.jpt.ui.nls.Messages;
 
 /**

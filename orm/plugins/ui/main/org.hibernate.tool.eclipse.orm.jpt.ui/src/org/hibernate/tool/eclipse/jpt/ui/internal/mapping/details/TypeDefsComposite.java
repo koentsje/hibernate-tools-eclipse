@@ -39,8 +39,8 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.part.PageBook;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernatePersistenceUnit;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.java.HibernateJavaTypeDefContainer;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.java.JavaTypeDef;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.HibernateJavaTypeDefContainer;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.JavaTypeDef;
 import org.hibernate.tool.eclipse.jpt.ui.internal.widgets.EnterNameDialog;
 import org.hibernate.tool.eclipse.orm.jpt.ui.nls.Messages;
 

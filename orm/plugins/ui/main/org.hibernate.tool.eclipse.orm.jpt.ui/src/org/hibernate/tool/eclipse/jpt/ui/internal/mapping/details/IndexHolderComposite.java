@@ -15,8 +15,8 @@ import org.eclipse.jpt.common.ui.internal.widgets.Pane;
 import org.eclipse.jpt.common.utility.internal.model.value.PropertyAspectAdapter;
 import org.eclipse.jpt.common.utility.model.value.ModifiablePropertyValueModel;
 import org.eclipse.swt.widgets.Composite;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.IndexHolder;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.java.JavaIndex;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.IndexHolder;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.JavaIndex;
 import org.hibernate.tool.eclipse.orm.jpt.ui.nls.Messages;
 
 /**

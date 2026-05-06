@@ -32,9 +32,9 @@ import org.eclipse.jpt.jpa.ui.details.JptJpaUiDetailsMessages;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernateNamedNativeQuery;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.HibernateNamedNativeQuery;
 import org.hibernate.tool.eclipse.orm.jpt.ui.nls.Messages;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernateNamedQuery;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.HibernateNamedQuery;
 
 /**
  * @author Dmitry Geraskov

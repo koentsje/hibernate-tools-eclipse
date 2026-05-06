@@ -17,7 +17,7 @@ import org.eclipse.jpt.common.utility.internal.model.value.PropertyAspectAdapter
 import org.eclipse.jpt.common.utility.model.value.ModifiablePropertyValueModel;
 import org.eclipse.jpt.common.utility.model.value.PropertyValueModel;
 import org.eclipse.swt.widgets.Composite;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernateNamedNativeQuery;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.HibernateNamedNativeQuery;
 
 /**
  * @author Dmitry Geraskov

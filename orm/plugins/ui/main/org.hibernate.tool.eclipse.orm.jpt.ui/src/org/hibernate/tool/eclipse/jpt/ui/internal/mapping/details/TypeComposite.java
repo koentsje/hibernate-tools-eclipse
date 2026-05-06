@@ -19,7 +19,7 @@ import org.eclipse.jpt.common.utility.model.value.ModifiablePropertyValueModel;
 import org.eclipse.jpt.common.utility.model.value.PropertyValueModel;
 import org.eclipse.jpt.jpa.core.context.BaseEnumeratedConverter;
 import org.eclipse.swt.widgets.Composite;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.TypeConverter;
+import org.hibernate.tool.eclipse.orm.jpt.api.context.TypeConverter;
 
 /**
  * @author Dmitry Geraskov

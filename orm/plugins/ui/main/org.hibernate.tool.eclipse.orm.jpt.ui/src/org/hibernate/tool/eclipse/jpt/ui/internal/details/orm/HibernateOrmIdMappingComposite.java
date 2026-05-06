@@ -20,8 +20,8 @@ import org.eclipse.jpt.jpa.ui.internal.details.orm.OrmMappingNameText;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernateColumn;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.orm.HibernateOrmIdMapping;
+import org.hibernate.tool.eclipse.orm.jpt.api.context.HibernateColumn;
+import org.hibernate.tool.eclipse.orm.jpt.mapping.context.orm.HibernateOrmIdMapping;
 import org.hibernate.tool.eclipse.jpt.ui.internal.mapping.details.HibernateColumnComposite;
 
 /**

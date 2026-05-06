@@ -10,10 +10,17 @@
  ******************************************************************************/
 package org.hibernate.tool.eclipse.jpt.core.internal;
 
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.jpt.common.core.resource.java.JavaResourcePackage;
+import org.eclipse.jpt.jpa.core.JpaProject;
+import org.eclipse.jpt.jpa.core.context.PersistentType;
 import org.eclipse.jpt.jpa.core.context.java.JavaEmbeddable;
 import org.eclipse.jpt.jpa.core.context.java.JavaPersistentType;
 import org.eclipse.jpt.jpa.core.resource.java.EmbeddableAnnotation;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.java.HibernateJavaEmbeddable;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.HibernateAbstractJpaFactory;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.HibernateJavaEmbeddable;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.HibernatePackageInfo;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.HibernatePackageInfoImpl;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IService;
 import org.hibernate.tool.eclipse.orm.runtime.spi.RuntimeServiceManager;
 
@@ -23,6 +30,19 @@ import org.hibernate.tool.eclipse.orm.runtime.spi.RuntimeServiceManager;
  *
  */
 public class HibernateJpaFactory extends HibernateAbstractJpaFactory {
+
+	// ********** Core Model **********
+
+	@Override
+	public JpaProject buildJpaProject(JpaProject.Config config, IProgressMonitor monitor) {
+		return new HibernateJpaProject(config, monitor);
+	}
+
+	@Override
+	public HibernatePackageInfo buildJavaPackageInfo(
+			PersistentType.Parent parent, JavaResourcePackage jrpt) {
+		return new HibernatePackageInfoImpl(parent, jrpt);
+	}
 
 	// ********** Hibernate Specific **********
 

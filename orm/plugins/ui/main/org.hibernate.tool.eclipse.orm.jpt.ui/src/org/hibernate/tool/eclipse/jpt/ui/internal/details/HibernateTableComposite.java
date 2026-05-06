@@ -25,8 +25,8 @@ import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.FocusListener;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernateEntity;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernateTable;
+import org.hibernate.tool.eclipse.orm.jpt.api.context.HibernateEntity;
+import org.hibernate.tool.eclipse.orm.jpt.api.context.HibernateTable;
 import org.hibernate.tool.eclipse.jpt.ui.internal.mappings.db.xpl.TableCombo;
 import org.hibernate.tool.eclipse.jpt.ui.internal.utils.PaneVisibilityEnabler;
 

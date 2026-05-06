@@ -14,7 +14,7 @@ import org.eclipse.jpt.common.ui.internal.widgets.Pane;
 import org.eclipse.jpt.jpa.core.context.java.JavaEntity;
 import org.eclipse.jpt.jpa.ui.internal.details.java.JavaPrimaryKeyJoinColumnsComposite;
 import org.eclipse.swt.widgets.Composite;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.java.HibernateJavaEntity;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.HibernateJavaEntity;
 import org.hibernate.tool.eclipse.jpt.ui.internal.mapping.details.HibernateAbstractInheritanceComposite;
 
 /**

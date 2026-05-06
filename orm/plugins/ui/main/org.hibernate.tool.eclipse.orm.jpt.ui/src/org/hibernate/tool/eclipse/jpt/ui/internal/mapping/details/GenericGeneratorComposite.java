@@ -18,10 +18,10 @@ import org.eclipse.jpt.common.utility.model.value.ModifiablePropertyValueModel;
 import org.eclipse.jpt.common.utility.model.value.PropertyValueModel;
 import org.eclipse.jpt.jpa.ui.internal.details.GeneratorComposite;
 import org.eclipse.swt.widgets.Composite;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.GenericGenerator;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernateGeneratorContainer;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.java.JavaDbGenericGenerator;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.java.JavaDbGenericGeneratorImpl;
+import org.hibernate.tool.eclipse.orm.jpt.api.context.GenericGenerator;
+import org.hibernate.tool.eclipse.orm.jpt.api.context.HibernateGeneratorContainer;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.JavaDbGenericGenerator;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.JavaDbGenericGeneratorImpl;
 import org.hibernate.tool.eclipse.orm.jpt.ui.nls.Messages;
 //import org.eclipse.jpt.jpa.ui.internal.details.GeneratorComposite;
 

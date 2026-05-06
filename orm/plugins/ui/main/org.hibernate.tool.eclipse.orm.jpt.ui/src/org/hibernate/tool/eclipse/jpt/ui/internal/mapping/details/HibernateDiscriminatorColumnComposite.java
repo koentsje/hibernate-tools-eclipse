@@ -33,9 +33,9 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.Section;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.DiscriminatorFormula;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernateEntity;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.java.HibernateJavaEntity;
+import org.hibernate.tool.eclipse.orm.jpt.api.context.DiscriminatorFormula;
+import org.hibernate.tool.eclipse.orm.jpt.api.context.HibernateEntity;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.HibernateJavaEntity;
 import org.hibernate.tool.eclipse.jpt.ui.internal.mappings.db.xpl.ColumnCombo;
 
 /**

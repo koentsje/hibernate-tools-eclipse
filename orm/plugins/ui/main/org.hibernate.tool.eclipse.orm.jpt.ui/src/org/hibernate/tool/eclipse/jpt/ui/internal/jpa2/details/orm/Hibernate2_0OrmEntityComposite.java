@@ -37,7 +37,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.forms.widgets.Hyperlink;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.orm.HibernateOrmEntity;
+import org.hibernate.tool.eclipse.orm.jpt.mapping.context.orm.HibernateOrmEntity;
 import org.hibernate.tool.eclipse.jpt.ui.internal.details.HibernateTableComposite;
 
 /**

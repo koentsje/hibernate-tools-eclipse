@@ -13,7 +13,7 @@ package org.hibernate.tool.eclipse.jpt.ui.internal.mapping.details;
 import org.eclipse.jpt.common.ui.internal.widgets.Pane;
 import org.eclipse.jpt.common.utility.model.value.PropertyValueModel;
 import org.eclipse.swt.widgets.Composite;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernateNamedQuery;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.HibernateNamedQuery;
 
 /**
  * @author Dmitry Geraskov

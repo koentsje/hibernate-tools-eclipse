@@ -42,13 +42,13 @@ import org.eclipse.jpt.jpa.core.internal.jpa1.context.orm.GenericOrmXmlDefinitio
 import org.eclipse.jpt.jpa.core.internal.jpa1.context.persistence.GenericPersistenceXmlDefinition;
 import org.eclipse.jpt.jpa.core.resource.orm.XmlEntityMappings;
 import org.eclipse.jpt.jpa.core.resource.persistence.XmlPersistence;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.definition.HibernateJavaBasicMappingDefinition;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.definition.HibernateJavaEntityDefinition;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.definition.HibernateJavaIdMappingDefinition;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.definition.HibernateJavaManyToManyMappingDefinition;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.definition.HibernateJavaManyToOneMappingDefinition;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.definition.HibernateJavaOneToOneMappingDefinition;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.orm.HibernateOrmXmlDefinition;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.definition.HibernateJavaBasicMappingDefinition;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.definition.HibernateJavaEntityDefinition;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.definition.HibernateJavaIdMappingDefinition;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.definition.HibernateJavaManyToManyMappingDefinition;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.definition.HibernateJavaManyToOneMappingDefinition;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.definition.HibernateJavaOneToOneMappingDefinition;
+import org.hibernate.tool.eclipse.orm.jpt.mapping.context.orm.HibernateOrmXmlDefinition;
 import org.hibernate.tool.eclipse.jpt.core.internal.context.persistence.HibernatePersistenceXmlDefinition;
 
 /**

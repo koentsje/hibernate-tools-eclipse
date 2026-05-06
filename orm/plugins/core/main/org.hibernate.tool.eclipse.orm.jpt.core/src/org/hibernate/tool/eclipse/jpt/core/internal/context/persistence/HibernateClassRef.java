@@ -24,10 +24,10 @@ import org.eclipse.jpt.jpa.core.validation.JptJpaCoreValidationMessages;
 import org.eclipse.jst.j2ee.model.internal.validation.ValidationCancelledException;
 import org.eclipse.wst.validation.internal.provisional.core.IMessage;
 import org.eclipse.wst.validation.internal.provisional.core.IReporter;
-import org.hibernate.tool.eclipse.jpt.core.internal.HibernateAbstractJpaFactory;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.HibernateAbstractJpaFactory;
 import org.hibernate.tool.eclipse.jpt.core.internal.HibernateJptPlugin;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.java.HibernatePackageInfo;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.java.JavaPackageInfo;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.HibernatePackageInfo;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.JavaPackageInfo;
 
 
 /**

@@ -18,7 +18,7 @@ import org.eclipse.jpt.jpa.core.jpa2.context.NamedQuery2_0;
 import org.eclipse.jpt.jpa.ui.internal.jpa2.details.NamedQueryPropertyComposite2_0;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.part.PageBook;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.java.HibernateJavaQueryContainer;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.HibernateJavaQueryContainer;
 import org.hibernate.tool.eclipse.jpt.ui.internal.mapping.details.HibernateQueriesComposite;
 
 /**

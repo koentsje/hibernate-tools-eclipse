@@ -27,10 +27,10 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.Generated;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernateColumn;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.IndexHolder;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.TypeConverter;
+import org.hibernate.tool.eclipse.orm.jpt.api.context.Generated;
+import org.hibernate.tool.eclipse.orm.jpt.api.context.HibernateColumn;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.IndexHolder;
+import org.hibernate.tool.eclipse.orm.jpt.api.context.TypeConverter;
 import org.hibernate.tool.eclipse.orm.jpt.ui.nls.Messages;
 
 /**

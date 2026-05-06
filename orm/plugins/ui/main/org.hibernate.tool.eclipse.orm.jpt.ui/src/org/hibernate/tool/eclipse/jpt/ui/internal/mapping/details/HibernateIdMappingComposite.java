@@ -20,11 +20,11 @@ import org.eclipse.jpt.jpa.ui.internal.details.AbstractIdMappingComposite;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernateColumn;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernateGeneratorContainer;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernateIdMapping;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.IndexHolder;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.java.HibernateJavaIdMapping;
+import org.hibernate.tool.eclipse.orm.jpt.api.context.HibernateColumn;
+import org.hibernate.tool.eclipse.orm.jpt.api.context.HibernateGeneratorContainer;
+import org.hibernate.tool.eclipse.orm.jpt.api.context.HibernateIdMapping;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.IndexHolder;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.HibernateJavaIdMapping;
 import org.hibernate.tool.eclipse.orm.jpt.ui.nls.Messages;
 
 /**

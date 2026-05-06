@@ -51,12 +51,12 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.part.PageBook;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernateNamedNativeQuery;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.HibernateNamedQuery;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.java.HibernateJavaNamedNativeQuery;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.java.HibernateJavaNamedQuery;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.java.HibernateJavaQueryContainer;
-import org.hibernate.tool.eclipse.jpt.core.internal.context.java.HibernatePackageInfo;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.HibernateNamedNativeQuery;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.HibernateNamedQuery;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.HibernateJavaNamedNativeQuery;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.HibernateJavaNamedQuery;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.HibernateJavaQueryContainer;
+import org.hibernate.tool.eclipse.orm.jpt.java.context.java.HibernatePackageInfo;
 
 /**
  * @author Dmitry Geraskov
