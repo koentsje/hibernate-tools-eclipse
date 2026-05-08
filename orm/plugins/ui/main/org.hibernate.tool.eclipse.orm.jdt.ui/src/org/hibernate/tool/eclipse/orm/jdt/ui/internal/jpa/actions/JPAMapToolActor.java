@@ -43,7 +43,7 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.hibernate.tool.eclipse.orm.base.ui.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.jdt.ui.Activator;
-import org.hibernate.tool.eclipse.orm.jdt.core.nls.Messages;
+import org.hibernate.tool.eclipse.orm.jdt.ui.nls.Messages;
 import org.hibernate.tool.eclipse.orm.jdt.core.internal.jpa.collect.AllEntitiesInfoCollector;
 import org.hibernate.tool.eclipse.orm.jdt.ui.internal.jpa.collect.CompilationUnitCollector;
 import org.hibernate.tool.eclipse.orm.jdt.core.internal.jpa.common.EntityInfo;

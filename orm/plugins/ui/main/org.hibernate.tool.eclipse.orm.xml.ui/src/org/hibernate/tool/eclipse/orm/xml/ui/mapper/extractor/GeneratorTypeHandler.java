@@ -35,7 +35,7 @@ import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.ITypeHierarchy;
 import org.eclipse.jface.text.contentassist.CompletionProposal;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
-import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
+import org.hibernate.tool.eclipse.orm.xml.ui.nls.Messages;
 import org.w3c.dom.Attr;
 import org.w3c.dom.Node;
 

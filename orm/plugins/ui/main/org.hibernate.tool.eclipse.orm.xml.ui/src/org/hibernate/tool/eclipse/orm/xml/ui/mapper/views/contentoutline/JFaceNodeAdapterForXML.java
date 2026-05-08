@@ -31,7 +31,7 @@ import org.eclipse.wst.xml.ui.internal.contentoutline.JFaceNodeAdapter;
 import org.eclipse.wst.xml.ui.internal.contentoutline.JFaceNodeAdapterFactory;
 import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
 import org.hibernate.tool.eclipse.orm.base.ui.ui.console.utils.EclipseImages;
-import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
+import org.hibernate.tool.eclipse.orm.xml.ui.nls.Messages;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 

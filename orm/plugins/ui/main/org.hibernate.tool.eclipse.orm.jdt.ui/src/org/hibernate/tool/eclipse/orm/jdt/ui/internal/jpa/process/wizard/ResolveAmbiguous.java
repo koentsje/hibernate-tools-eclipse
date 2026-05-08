@@ -31,7 +31,7 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.TableItem;
-import org.hibernate.tool.eclipse.orm.jdt.core.nls.Messages;
+import org.hibernate.tool.eclipse.orm.jdt.ui.nls.Messages;
 import org.hibernate.tool.eclipse.orm.jdt.core.internal.jpa.common.Utils;
 import org.hibernate.tool.eclipse.orm.jdt.core.internal.jpa.common.EntityInfo;
 import org.hibernate.tool.eclipse.orm.jdt.core.internal.jpa.common.OwnerType;

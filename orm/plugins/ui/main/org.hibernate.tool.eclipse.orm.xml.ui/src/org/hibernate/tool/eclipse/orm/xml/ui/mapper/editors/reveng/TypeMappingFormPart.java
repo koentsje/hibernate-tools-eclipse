@@ -29,7 +29,7 @@ import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.hibernate.tool.eclipse.orm.console.core.reveng.IReverseEngineeringDefinition;
 import org.hibernate.tool.eclipse.orm.console.core.workbench.LazyDatabaseSchema;
-import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
+import org.hibernate.tool.eclipse.orm.xml.ui.nls.Messages;
 import org.hibernate.tool.eclipse.orm.xml.ui.mapper.editors.ReverseEngineeringEditor;
 
 public class TypeMappingFormPart extends RevEngSectionPart {

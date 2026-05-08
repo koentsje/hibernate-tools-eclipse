@@ -20,8 +20,6 @@ public class Messages extends NLS {
 	public static String JavaPage_no_info;
 	public static String JavaPage_not_allowed;
 	public static String KnownConfigurations_could_not_write_state;
-	public static String KnownConfigurations_hibernate_log;
-	public static String KnownConfigurations_unknown;
 	public static String DefaultExecutionContext_existing_classloader;
 	public static String ClassNode_uninitialized_proxy;
 	public static String ConfigurationNode_mapped_entities;
@@ -32,13 +30,7 @@ public class Messages extends NLS {
 	public static String AbstractConsoleConfigurationPreferences_unknown;
 	public static String StandAloneConsoleConfigurationPreferences_could_not_resolve_classpaths;
 	public static String StandAloneConsoleConfigurationPreferences_errors_while_parsing;
-	public static String StringListDialog_Add;
-	public static String StringListDialog_Add_Element;
-	public static String StringListDialog_Elements;
-	public static String StringListDialog_Modify;
-	public static String StringListDialog_Modify_Element;
-	public static String StringListDialog_New_Element;
-	public static String StringListDialog_Remove;
+
 public static String DynamicSQLPreviewView_caused_by;
 	public static String DynamicSQLPreviewView_manipulation_of;
 	public static String EclipseConsoleConfigurationPreferences_could_not_compute_def_classpath;

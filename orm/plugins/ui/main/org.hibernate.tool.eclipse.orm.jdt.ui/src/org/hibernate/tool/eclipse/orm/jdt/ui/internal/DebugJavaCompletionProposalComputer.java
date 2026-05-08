@@ -38,7 +38,7 @@ import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.jface.text.contentassist.IContextInformation;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Point;
-import org.hibernate.tool.eclipse.orm.jdt.core.nls.Messages;
+import org.hibernate.tool.eclipse.orm.jdt.ui.nls.Messages;
 
 public class DebugJavaCompletionProposalComputer implements IJavaCompletionProposalComputer {
 

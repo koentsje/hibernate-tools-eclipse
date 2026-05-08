@@ -24,7 +24,7 @@ package org.hibernate.tool.eclipse.orm.xml.ui.mapper.editors.reveng;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
-import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
+import org.hibernate.tool.eclipse.orm.xml.ui.nls.Messages;
 import org.hibernate.tool.eclipse.orm.xml.ui.mapper.editors.ReverseEngineeringEditor;
 
 public class RevEngTablesPage extends RevEngFormEditorPart {

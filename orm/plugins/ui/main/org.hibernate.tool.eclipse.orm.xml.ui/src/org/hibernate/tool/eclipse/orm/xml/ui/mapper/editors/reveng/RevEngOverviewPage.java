@@ -35,7 +35,7 @@ import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.ui.forms.widgets.TableWrapData;
 import org.eclipse.ui.forms.widgets.TableWrapLayout;
-import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
+import org.hibernate.tool.eclipse.orm.xml.ui.nls.Messages;
 import org.hibernate.tool.eclipse.orm.xml.ui.mapper.editors.ReverseEngineeringEditor;
 
 public class RevEngOverviewPage extends RevEngFormEditorPart {

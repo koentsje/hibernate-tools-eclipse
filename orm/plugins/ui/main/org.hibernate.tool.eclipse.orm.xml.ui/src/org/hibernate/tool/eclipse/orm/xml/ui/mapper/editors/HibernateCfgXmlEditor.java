@@ -25,7 +25,7 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.wst.sse.core.internal.provisional.IStructuredModel;
 import org.eclipse.wst.sse.ui.StructuredTextEditor;
 import org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart;
-import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
+import org.hibernate.tool.eclipse.orm.xml.ui.nls.Messages;
 import org.hibernate.tool.eclipse.orm.xml.ui.mapper.MapperPlugin;
 import org.hibernate.tool.eclipse.orm.xml.ui.mapper.editors.reveng.HibernateConfigurationForm;
 

@@ -45,7 +45,7 @@ import org.eclipse.ui.texteditor.IDocumentProvider;
 import org.eclipse.ui.texteditor.ITextEditor;
 import org.hibernate.tool.eclipse.orm.base.ui.console.AbstractQueryEditor;
 import org.hibernate.tool.eclipse.orm.base.ui.console.HibernateBasePlugin;
-import org.hibernate.tool.eclipse.orm.jdt.core.nls.Messages;
+import org.hibernate.tool.eclipse.orm.jdt.ui.nls.Messages;
 import org.hibernate.tool.eclipse.orm.base.ui.hqleditor.HQLEditor;
 
 /**

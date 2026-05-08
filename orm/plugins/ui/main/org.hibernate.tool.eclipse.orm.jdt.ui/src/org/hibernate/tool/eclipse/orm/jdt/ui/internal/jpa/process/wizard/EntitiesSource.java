@@ -17,7 +17,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.TableItem;
-import org.hibernate.tool.eclipse.orm.jdt.core.nls.Messages;
+import org.hibernate.tool.eclipse.orm.jdt.ui.nls.Messages;
 import org.hibernate.tool.eclipse.orm.jdt.ui.wizards.AddRemoveTableComposite;
 
 /**

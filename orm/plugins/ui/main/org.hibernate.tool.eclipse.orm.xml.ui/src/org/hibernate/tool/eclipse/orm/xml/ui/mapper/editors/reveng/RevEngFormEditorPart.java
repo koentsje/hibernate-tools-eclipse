@@ -25,7 +25,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.editor.FormEditor;
 import org.eclipse.ui.forms.editor.FormPage;
-import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
+import org.hibernate.tool.eclipse.orm.xml.ui.nls.Messages;
 import org.hibernate.tool.eclipse.orm.xml.ui.mapper.editors.ReverseEngineeringEditor;
 
 public class RevEngFormEditorPart extends FormPage {

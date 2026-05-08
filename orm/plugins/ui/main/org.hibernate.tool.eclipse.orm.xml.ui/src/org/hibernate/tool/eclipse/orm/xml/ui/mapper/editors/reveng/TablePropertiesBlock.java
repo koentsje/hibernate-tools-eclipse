@@ -64,7 +64,7 @@ import org.hibernate.tool.eclipse.orm.console.core.reveng.IReverseEngineeringDef
 import org.hibernate.tool.eclipse.orm.base.ui.console.workbench.DeferredContentProvider;
 import org.hibernate.tool.eclipse.orm.console.core.workbench.LazyDatabaseSchema;
 import org.hibernate.tool.eclipse.orm.base.ui.console.workbench.xpl.AnyAdaptableLabelProvider;
-import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
+import org.hibernate.tool.eclipse.orm.xml.ui.nls.Messages;
 import org.hibernate.tool.eclipse.orm.xml.ui.mapper.editors.ReverseEngineeringEditor;
 import org.hibernate.tool.eclipse.orm.xml.ui.mapper.editors.reveng.xpl.CheckedTreeSelectionDialog;
 import org.hibernate.tool.eclipse.orm.xml.core.mapper.model.RevEngColumnAdapter;

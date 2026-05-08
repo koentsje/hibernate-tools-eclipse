@@ -44,7 +44,7 @@ import org.hibernate.tool.eclipse.orm.base.ui.console.wizards.TypeMappingLabelPr
 import org.hibernate.tool.eclipse.orm.base.ui.console.workbench.DeferredContentProvider;
 import org.hibernate.tool.eclipse.orm.console.core.workbench.LazyDatabaseSchema;
 import org.hibernate.tool.eclipse.orm.base.ui.console.workbench.xpl.AnyAdaptableLabelProvider;
-import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
+import org.hibernate.tool.eclipse.orm.xml.ui.nls.Messages;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IColumn;
 import org.hibernate.tool.eclipse.orm.runtime.spi.IPrimaryKey;
 import org.hibernate.tool.eclipse.orm.utils.JdbcTypeMapper;

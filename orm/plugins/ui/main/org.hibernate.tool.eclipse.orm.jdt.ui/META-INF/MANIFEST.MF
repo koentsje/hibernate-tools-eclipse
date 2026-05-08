@@ -36,5 +36,6 @@ Export-Package: org.hibernate.tool.eclipse.orm.jdt.ui,
  org.hibernate.tool.eclipse.orm.jdt.ui.internal.jpa.collect,
  org.hibernate.tool.eclipse.orm.jdt.ui.internal.jpa.process,
  org.hibernate.tool.eclipse.orm.jdt.ui.internal.jpa.process.wizard,
+ org.hibernate.tool.eclipse.orm.jdt.ui.nls,
  org.hibernate.tool.eclipse.orm.jdt.ui.wizards
 Bundle-RequiredExecutionEnvironment: JavaSE-11

@@ -66,7 +66,7 @@ import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
 import org.hibernate.tool.eclipse.orm.base.ui.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.base.ui.ui.console.utils.EclipseImages;
 import org.hibernate.tool.eclipse.common.base.core.utils.FileUtils;
-import org.hibernate.tool.eclipse.orm.jdt.core.nls.Messages;
+import org.hibernate.tool.eclipse.orm.jdt.ui.nls.Messages;
 import org.hibernate.tool.eclipse.orm.jdt.core.internal.jpa.collect.AllEntitiesInfoCollector;
 import org.hibernate.tool.eclipse.orm.jdt.core.internal.jpa.common.EntityInfo;
 import org.hibernate.tool.eclipse.orm.jdt.core.internal.jpa.common.Utils;

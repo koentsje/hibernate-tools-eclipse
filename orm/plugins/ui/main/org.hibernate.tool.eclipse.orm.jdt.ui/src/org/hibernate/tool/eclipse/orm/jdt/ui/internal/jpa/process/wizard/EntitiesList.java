@@ -43,7 +43,7 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.ide.IDE;
-import org.hibernate.tool.eclipse.orm.jdt.core.nls.Messages;
+import org.hibernate.tool.eclipse.orm.jdt.ui.nls.Messages;
 import org.hibernate.tool.eclipse.orm.jdt.core.internal.jpa.common.EntityInfo;
 import org.hibernate.tool.eclipse.orm.jdt.core.internal.jpa.process.AnnotStyle;
 import org.hibernate.tool.eclipse.orm.jdt.core.internal.jpa.refactoring.IHibernateJPAWizardParams;

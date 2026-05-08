@@ -45,7 +45,7 @@ import org.hibernate.tool.eclipse.orm.base.ui.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.console.core.reveng.IReverseEngineeringDefinition;
 import org.hibernate.tool.eclipse.orm.base.ui.console.utils.ProjectUtilsUI;
 import org.hibernate.tool.eclipse.orm.console.core.workbench.LazyDatabaseSchema;
-import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
+import org.hibernate.tool.eclipse.orm.xml.ui.nls.Messages;
 import org.hibernate.tool.eclipse.orm.xml.ui.mapper.MapperPlugin;
 import org.hibernate.tool.eclipse.orm.xml.ui.mapper.editors.reveng.RevEngOverviewPage;
 import org.hibernate.tool.eclipse.orm.xml.ui.mapper.editors.reveng.RevEngTableFilterPage;

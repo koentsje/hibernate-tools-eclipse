@@ -36,7 +36,7 @@ import org.eclipse.ui.forms.IFormPart;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
 import org.hibernate.tool.eclipse.orm.model.core.IRevEngPrimaryKey;
-import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
+import org.hibernate.tool.eclipse.orm.xml.ui.nls.Messages;
 
 public class PrimaryKeyDetailsPage extends RevEngDetailsPage implements
 		IDetailsPage, PropertyChangeListener {

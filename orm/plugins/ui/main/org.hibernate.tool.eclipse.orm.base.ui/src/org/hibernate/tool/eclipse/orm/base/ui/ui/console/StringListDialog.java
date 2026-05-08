@@ -23,7 +23,7 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
-import org.hibernate.tool.eclipse.orm.console.core.nls.Messages;
+import org.hibernate.tool.eclipse.orm.base.ui.nls.Messages;
 
 /**
  * @author Dmitry Geraskov

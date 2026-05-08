@@ -41,7 +41,7 @@ import org.hibernate.tool.eclipse.orm.console.core.ui.ImageConstants;
 import org.hibernate.tool.eclipse.orm.base.ui.console.HibernateBasePlugin;
 import org.hibernate.tool.eclipse.orm.base.ui.ui.console.utils.EclipseImages;
 import org.hibernate.tool.eclipse.orm.jdt.ui.Activator;
-import org.hibernate.tool.eclipse.orm.jdt.core.nls.Messages;
+import org.hibernate.tool.eclipse.orm.jdt.ui.nls.Messages;
 import org.hibernate.tool.eclipse.orm.base.ui.console.utils.OpenMappingUtils;
 
 

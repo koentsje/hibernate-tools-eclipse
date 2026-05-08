@@ -33,7 +33,7 @@ import org.eclipse.ui.forms.IFormPart;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
 import org.hibernate.tool.eclipse.orm.model.core.IRevEngParameter;
-import org.hibernate.tool.eclipse.orm.xml.core.nls.Messages;
+import org.hibernate.tool.eclipse.orm.xml.ui.nls.Messages;
 import org.hibernate.tool.eclipse.orm.xml.ui.mapper.editors.reveng.xpl.FormTextEntry;
 
 public class ParamDetailsPage extends RevEngDetailsPage implements IDetailsPage, PropertyChangeListener {

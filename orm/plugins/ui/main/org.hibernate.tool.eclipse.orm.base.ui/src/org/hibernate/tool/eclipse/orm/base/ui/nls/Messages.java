@@ -439,6 +439,17 @@ public class Messages extends NLS {
 	public static String HibernateBasePlugin_no_message_1;
 	public static String HibernateBasePlugin_no_message_2;
 	public static String ProjectUtils_could_not_save_changes_to_preferences;
+	public static String KnownConfigurations_hibernate_log;
+	public static String KnownConfigurations_unknown;
+	public static String StringListDialog_Add;
+	public static String StringListDialog_Add_Element;
+	public static String StringListDialog_Elements;
+	public static String StringListDialog_Modify;
+	public static String StringListDialog_Modify_Element;
+	public static String StringListDialog_New_Element;
+	public static String StringListDialog_Remove;
+	public static String ProjectCompilerVersionChecker_title;
+	public static String ProjectCompilerVersionChecker_message;
 	static {
 		NLS.initializeMessages(BUNDLE_NAME, Messages.class);
 	}
